@@ -52,6 +52,12 @@
     <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
       <DependentUpon>frmMicrored.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestante.Designer.cs">
+      <DependentUpon>frmGestante.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
       <DependentUpon>frmMicrored.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestante.resx">
+      <DependentUpon>frmGestante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoriaClinica.resx">
+      <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
