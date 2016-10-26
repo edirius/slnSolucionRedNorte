@@ -48,7 +48,8 @@
     <Compile Include="cReglaNegocioException.cs" />
     <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
-    <Compile Include="Pacientes\cPaciente.cs" />
+    <Compile Include="Obstetra\cObstetra.cs" />
+    <Compile Include="Paciente\cPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

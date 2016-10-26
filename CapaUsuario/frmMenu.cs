@@ -35,9 +35,16 @@ namespace CapaUsuario
 
         private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pacientes.frmMantenimientoPaciente fMantenimientoPaciente = new Pacientes.frmMantenimientoPaciente();
+            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente();
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
+        }
+
+        private void mantenimientoObstetrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra();
+            fMantenimientoObstetra.MdiParent = this;
+            fMantenimientoObstetra.Show();
         }
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
