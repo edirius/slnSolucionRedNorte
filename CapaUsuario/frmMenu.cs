@@ -38,9 +38,16 @@ namespace CapaUsuario
 
         private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pacientes.frmMantenimientoPaciente fMantenimientoPaciente = new Pacientes.frmMantenimientoPaciente();
+            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente();
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
+        }
+
+        private void mantenimientoObstetrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra();
+            fMantenimientoObstetra.MdiParent = this;
+            fMantenimientoObstetra.Show();
         }
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +55,27 @@ namespace CapaUsuario
             
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
+        }
+        
+
+        private void microredToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmMicrored miMicrored = new EstablecimientoSalud.frmMicrored();
+            miMicrored.MdiParent = this;
+            miMicrored.Show();
+
+        }
+
+        private void establecimientoSaludToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmEstablecimientoSalud frmEstable = new EstablecimientoSalud.frmEstablecimientoSalud();
+            frmEstable.MdiParent = this;
+            frmEstable.Show();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

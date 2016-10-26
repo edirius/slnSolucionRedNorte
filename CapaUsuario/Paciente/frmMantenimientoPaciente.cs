@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaUsuario.Pacientes
+namespace CapaUsuario.Paciente
 {
     public partial class frmMantenimientoPaciente : Form
     {
@@ -21,51 +21,56 @@ namespace CapaUsuario.Pacientes
         string sdireccion = "";
         string stelefono = "";
         string sidtestablecimientosalud = "";
-        CapaDeNegocios.cPaciente miPaciente = new CapaDeNegocios.cPaciente();
+        CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
 
         public frmMantenimientoPaciente()
         {
             InitializeComponent();
         }
 
-        private void dgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //sidtmaestrodescuentos = Convert.ToInt32(dgvPaciente.Rows[e.RowIndex].Cells[0].Value);
-            //scodigo = Convert.ToString(dgvPaciente.Rows[e.RowIndex].Cells[1].Value);
-            //sdescripcion = Convert.ToString(dgvPaciente.Rows[e.RowIndex].Cells[2].Value);
-            //scalculo = Convert.ToString(dgvPaciente.Rows[e.RowIndex].Cells[3].Value);
-            //sabreviacion = Convert.ToString(dgvPaciente.Rows[e.RowIndex].Cells[4].Value);
-        }
-
         private void frmMantenimientoPaciente_Load(object sender, EventArgs e)
         {
+            sidtestablecimientosalud = "E0003";
             CargarDatos();
+        }
+
+        private void dgvPacientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            sidtpaciente = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["idtpaciente"].Value);
+            snombres = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["nombres"].Value);
+            sapellidopaterno = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["apellidopaterno"].Value);
+            sapellidomaterno = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["apellidomaterno"].Value);
+            sdni = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["dni"].Value);
+            sfechanacimiento = Convert.ToDateTime(dgvPacientes.Rows[e.RowIndex].Cells["fechanacimiento"].Value);
+            sdireccion = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["direccion"].Value);
+            stelefono = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["telefono"].Value);
+            sidtestablecimientosalud = Convert.ToString(dgvPacientes.Rows[e.RowIndex].Cells["idtestablecimientosalud"].Value);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmPaciente fPaciente = new frmPaciente();
-            //fPaciente.RecibirDatos(0, "", "", "", "", 1);
+            fPaciente.RecibirDatos("", "", "", "", "", DateTime.Today, "", "", sidtestablecimientosalud, 1);
             if (fPaciente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                //CargarDatos();
+                CargarDatos();
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (sidtpaciente == "" && dgvPaciente.SelectedRows.Count > 0)
+            if (sidtpaciente == "")
             {
                 MessageBox.Show("Debe seleccionar nuevamente los datos", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             frmPaciente fPaciente = new frmPaciente();
-            //fPaciente.RecibirDatos(sidtmaestrodescuentos, scodigo, sdescripcion, scalculo, sabreviacion, 2);
+            fPaciente.RecibirDatos(sidtpaciente, snombres, sapellidopaterno, sapellidomaterno, sdni, sfechanacimiento, sdireccion, stelefono, sidtestablecimientosalud, 2);
             if (fPaciente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CargarDatos();
@@ -74,7 +79,7 @@ namespace CapaUsuario.Pacientes
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (sidtpaciente == "" && dgvPaciente.SelectedRows.Count > 0)
+            if (sidtpaciente == "")
             {
                 MessageBox.Show("Debe seleccionar nuevamente los datos", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -99,12 +104,12 @@ namespace CapaUsuario.Pacientes
             //{
             //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
             //}
-            dgvPaciente.DataSource = miPaciente.ListarPaciente("E0002");
-            if (dgvPaciente.Rows.Count > 0)
+            dgvPacientes.DataSource = miPaciente.ListarPaciente(sidtestablecimientosalud);
+            if (dgvPacientes.Rows.Count > 0)
             {
-                dgvPaciente.Rows[0].Selected = true;
+                dgvPacientes.Rows[0].Selected = true;
                 DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
-                dgvPaciente_CellClick(dgvPaciente, ceo);
+                dgvPacientes_CellClick(dgvPacientes, ceo);
             }
         }
     }

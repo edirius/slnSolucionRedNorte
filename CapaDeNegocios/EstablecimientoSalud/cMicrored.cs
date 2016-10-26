@@ -32,5 +32,9 @@ namespace CapaDeNegocios.EstablecimientoSalud
         {
             return Conexion.GDatos.TraerDataTable("spListarMicrored");
         }
+        public DataTable SiguienteCodigo()
+        {
+           return Conexion.GDatos.TraerDataTable("spSiguienteCodigoMicrored");
+        }
     }
 }
