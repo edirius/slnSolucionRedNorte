@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDeNegocios;
 
 namespace CapaUsuario.EstablecimientoSalud
 {
@@ -20,9 +21,7 @@ namespace CapaUsuario.EstablecimientoSalud
         public frmMicrored()
         {
             InitializeComponent();
-            ActualizarLista();
         }
-
         public void ActualizarLista()
         {
             dgvListarMicrored.DataSource = miMicrored.ListarMicrored();
@@ -33,7 +32,7 @@ namespace CapaUsuario.EstablecimientoSalud
             txtDireccion.Text = "";
             txtMicrored.Focus();
         }
-        public void Agregar()
+        public void AgregarTipoDocumento()
         {
             if (txtMicrored.Text != "")
             {
@@ -43,6 +42,7 @@ namespace CapaUsuario.EstablecimientoSalud
                 Tabla = miMicrored.AgregarMicrored();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
+
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -88,49 +88,25 @@ namespace CapaUsuario.EstablecimientoSalud
         }
         private void EliminarTipoDocumento()
         {
-            //int valor = dgvListarTipoDoc.CurrentCell.RowIndex;
-            //miTipoDocumento.CodigoTipoDocumento = int.Parse(dgvListarTipoDoc[1, valor].Value.ToString());
-            //miTipoDocumento.Descripcion = txtDescripcion.Text;
-            //Tabla = miTipoDocumento.EliminarTipoDocumento();
-            //respuesta = Tabla.Rows[0][0].ToString();
-            //mensaje = Tabla.Rows[0][1].ToString();
-            //if (respuesta == "1")
-            //{
-            //    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    MessageBox.Show(mensaje);
-            //    ConfiguracionInicial();
-            //    ActualizarLista();
-            //}
-            //else if (respuesta == "0")
-            //{
-            //    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    ConfiguracionInicial();
-            //}
-        }
+        //    int valor = dgvListarTipoDoc.CurrentCell.RowIndex;
+        //    miTipoDocumento.CodigoTipoDocumento = int.Parse(dgvListarTipoDoc[1, valor].Value.ToString());
+        //    miTipoDocumento.Descripcion = txtDescripcion.Text;
+        //    Tabla = miTipoDocumento.EliminarTipoDocumento();
+        //    respuesta = Tabla.Rows[0][0].ToString();
+        //    mensaje = Tabla.Rows[0][1].ToString();
+        //    if (respuesta == "1")
+        //    {
+        //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        MessageBox.Show(mensaje);
+        //        ConfiguracionInicial();
+        //        ActualizarLista();
+        //    }
+        //    else if (respuesta == "0")
+        //    {
+        //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        ConfiguracionInicial();
+        //    }
+        //}
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            Agregar();
-        }
     }
 }
