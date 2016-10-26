@@ -31,13 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pacientesToolStripMenuItem});
+            this.pacientesToolStripMenuItem,
+            this.historiaClinicaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
@@ -58,6 +60,13 @@
             this.mantenimientoPacientesToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.mantenimientoPacientesToolStripMenuItem.Text = "Mantenimiento Pacientes";
             this.mantenimientoPacientesToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoPacientesToolStripMenuItem_Click);
+            // 
+            // historiaClinicaToolStripMenuItem
+            // 
+            this.historiaClinicaToolStripMenuItem.Name = "historiaClinicaToolStripMenuItem";
+            this.historiaClinicaToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.historiaClinicaToolStripMenuItem.Text = "Historia Clinica";
+            this.historiaClinicaToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -83,5 +92,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoPacientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiaClinicaToolStripMenuItem;
     }
 }

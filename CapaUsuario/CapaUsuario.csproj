@@ -81,6 +81,9 @@
     <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
       <DependentUpon>frmMicrored.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pacientes\frmMantenimientoPaciente.resx">
       <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
     </EmbeddedResource>

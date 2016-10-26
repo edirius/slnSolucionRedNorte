@@ -39,5 +39,12 @@ namespace CapaUsuario
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
         }
+
+        private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+            frmHistoriaClinica.MdiParent = this;
+            frmHistoriaClinica.Show();
+        }
     }
 }
