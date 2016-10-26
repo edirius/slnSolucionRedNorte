@@ -40,9 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Paciente\cPaciente.cs" />
+    <Compile Include="cReglaNegocioException.cs" />
+    <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
+    <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{63b96a0e-bcc5-4b29-9e2a-9aad5f6c6e93}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
