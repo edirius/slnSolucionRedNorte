@@ -64,7 +64,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTiempoEstablecimiento = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
@@ -74,6 +73,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cboDNI = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -101,6 +101,7 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Historia Clinica";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -406,9 +407,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboDNI);
             this.groupBox1.Controls.Add(this.txtTiempoEstablecimiento);
             this.groupBox1.Controls.Add(this.txtEdad);
-            this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtApellidoMaterno);
             this.groupBox1.Controls.Add(this.txtApellidoPaterno);
             this.groupBox1.Controls.Add(this.txtNombres);
@@ -427,42 +428,35 @@
             // 
             // txtTiempoEstablecimiento
             // 
-            this.txtTiempoEstablecimiento.Location = new System.Drawing.Point(252, 136);
+            this.txtTiempoEstablecimiento.Location = new System.Drawing.Point(252, 146);
             this.txtTiempoEstablecimiento.Name = "txtTiempoEstablecimiento";
             this.txtTiempoEstablecimiento.Size = new System.Drawing.Size(77, 20);
             this.txtTiempoEstablecimiento.TabIndex = 1;
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(59, 136);
+            this.txtEdad.Location = new System.Drawing.Point(59, 146);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(48, 20);
             this.txtEdad.TabIndex = 1;
             // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(147, 110);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(182, 20);
-            this.txtDNI.TabIndex = 1;
-            // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(147, 84);
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(147, 86);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(182, 20);
             this.txtApellidoMaterno.TabIndex = 1;
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(147, 58);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(147, 59);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
             this.txtApellidoPaterno.TabIndex = 1;
             // 
             // txtNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(147, 32);
+            this.txtNombres.Location = new System.Drawing.Point(147, 113);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(182, 20);
             this.txtNombres.TabIndex = 1;
@@ -470,7 +464,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 31);
+            this.label3.Location = new System.Drawing.Point(18, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 0;
@@ -480,7 +474,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(114, 143);
+            this.label7.Location = new System.Drawing.Point(114, 149);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(132, 13);
             this.label7.TabIndex = 0;
@@ -490,7 +484,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 143);
+            this.label6.Location = new System.Drawing.Point(18, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 0;
@@ -500,7 +494,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 115);
+            this.label5.Location = new System.Drawing.Point(18, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 0;
@@ -510,7 +504,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 87);
+            this.label4.Location = new System.Drawing.Point(18, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 0;
@@ -520,21 +514,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 59);
+            this.label2.Location = new System.Drawing.Point(18, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Apellido Paterno:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // cboDNI
+            // 
+            this.cboDNI.FormattingEnabled = true;
+            this.cboDNI.Location = new System.Drawing.Point(147, 31);
+            this.cboDNI.Name = "cboDNI";
+            this.cboDNI.Size = new System.Drawing.Size(182, 21);
+            this.cboDNI.TabIndex = 4;
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 696);
+            this.ClientSize = new System.Drawing.Size(642, 696);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Historia Clinica";
+            this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -589,7 +592,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtTiempoEstablecimiento;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private System.Windows.Forms.TextBox txtApellidoPaterno;
         private System.Windows.Forms.TextBox txtNombres;
@@ -599,6 +601,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboDNI;
     }
 }
 

@@ -16,5 +16,24 @@ namespace CapaUsuario
         {
             InitializeComponent();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmHistoriaClinica_Load(object sender, EventArgs e)
+        {
+            DataTable odtHistoriaClinica = new DataTable();
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+
+            odtHistoriaClinica = oHistoriaClinica.ListarPacienteXDNI();
+
+            cboDNI.DataSource = odtHistoriaClinica;
+            cboDNI.DisplayMember = "dni";
+            cboDNI.ValueMember = "idtpaciente";
+
+
+        }
     }
 }

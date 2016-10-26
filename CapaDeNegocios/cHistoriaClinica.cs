@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
+using CapaDeDatos;
+using CapaDeNegocios;
+
 namespace CapaDeNegocios
 {
-    class cHistoriaClinica
+    public class cHistoriaClinica
     {
         private string idthistoriaclinica;
 
@@ -118,6 +122,12 @@ namespace CapaDeNegocios
         {
             get { return idtpaciente; }
             set { idtpaciente = value; }
+        }
+
+ 
+        public DataTable ListarPacienteXDNI( )
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXDNI" );
         }
 
     }
