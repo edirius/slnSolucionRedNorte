@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +50,7 @@
     <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Obstetra\cObstetra.cs" />
+    <Compile Include="Obstetra\cUsuario.cs" />
     <Compile Include="Paciente\cPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

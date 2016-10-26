@@ -14,6 +14,9 @@ namespace CapaUsuario
 {
     public partial class frmMenu : Form
     {
+
+        public frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+
         public frmMenu()
         {
             InitializeComponent();
@@ -49,7 +52,7 @@ namespace CapaUsuario
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+            
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
@@ -68,6 +71,11 @@ namespace CapaUsuario
             EstablecimientoSalud.frmEstablecimientoSalud frmEstable = new EstablecimientoSalud.frmEstablecimientoSalud();
             frmEstable.MdiParent = this;
             frmEstable.Show();
+        }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

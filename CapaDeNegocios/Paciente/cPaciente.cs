@@ -45,6 +45,16 @@ namespace CapaDeNegocios.Paciente
             return Conexion.GDatos.TraerDataTable("spListarPaciente", idtestablecimientosalud);
         }
 
+        public DataTable ListarPacienteXApellidoPaterno()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno");
+        }
+
+        public DataTable ListarPacienteTodos()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteTodos");
+        }
+
         public Boolean CrearPaciente(cPaciente miPaciente)
         {
             Conexion.GDatos.Ejecutar("spCrearPaciente", miPaciente.idtpaciente, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);

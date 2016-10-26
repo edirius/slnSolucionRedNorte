@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +58,12 @@
     </Compile>
     <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
       <DependentUpon>frmMicrored.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestante.Designer.cs">
+      <DependentUpon>frmGestante.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
@@ -107,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
       <DependentUpon>frmMicrored.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestante.resx">
+      <DependentUpon>frmGestante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoriaClinica.resx">
+      <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
