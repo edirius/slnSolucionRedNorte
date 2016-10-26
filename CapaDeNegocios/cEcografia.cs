@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeNegocios
 {
-    class cEcografia
+    public class cEcografia
     {
         private string idtecografia;
 

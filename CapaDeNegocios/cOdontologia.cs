@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeNegocios
 {
-    class cOdontologia
+    public class cOdontologia
     {
 
         private string idtodontologia;
