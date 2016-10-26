@@ -31,7 +31,7 @@ namespace CapaUsuario
         private void frmGestante_Load(object sender, EventArgs e)
         {
             DataTable odtGestante = new DataTable();
-            CapaDeNegocios.cPaciente oGestante = new CapaDeNegocios.cPaciente();
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             string codigoestablecimiento = "E0003";
 
             dgvGestante.DataSource = oGestante.ListarPacienteTodos();
@@ -46,7 +46,7 @@ namespace CapaUsuario
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            CapaDeNegocios.cPaciente oGestante = new CapaDeNegocios.cPaciente();
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             string buscar = txtBuscar.Text;
             oGestante.apellidopaterno = buscar;
 
@@ -64,7 +64,7 @@ namespace CapaUsuario
 
         private void dgvGestante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CapaDeNegocios.cPaciente oGestante = new CapaDeNegocios.cPaciente();
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
 
             if (e.RowIndex != -1)
             {
@@ -79,7 +79,7 @@ namespace CapaUsuario
 
         private void dgvGestante_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CapaDeNegocios.cPaciente oGestante = new CapaDeNegocios.cPaciente();
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
 
             if (e.RowIndex != -1)
             {
