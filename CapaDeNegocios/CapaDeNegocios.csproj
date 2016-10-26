@@ -40,7 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cEcografia.cs" />
+    <Compile Include="cHistoriaClinica.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="cOdontologia.cs" />
     <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
