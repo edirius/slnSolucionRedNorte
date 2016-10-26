@@ -16,7 +16,7 @@ namespace CapaUsuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EstablecimientoSalud.frmMicrored());
+            Application.Run(new Form1());
         }
     }
 }

@@ -46,17 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EstablecimientoSalud\frmMicrored.cs">
+    <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
-      <DependentUpon>frmMicrored.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmHistoriaClinica.Designer.cs">
+      <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
@@ -66,12 +60,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
-      <DependentUpon>frmMicrored.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,11 +82,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDeDatos.csproj">
+    <Folder Include="EstablecimientoSalud\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
       <Project>{63b96a0e-bcc5-4b29-9e2a-9aad5f6c6e93}</Project>
-      <Name>CapaDeDatos</Name>
+      <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaDeNegocios\CapaDeNegocios.csproj">
       <Project>{87fda639-1f04-4224-acfc-1cc205be4ed8}</Project>
