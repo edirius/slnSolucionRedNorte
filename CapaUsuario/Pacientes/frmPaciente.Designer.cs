@@ -1,4 +1,4 @@
-﻿namespace CapaUsuario.Paciente
+﻿namespace CapaUsuario.Pacientes
 {
     partial class frmPaciente
     {

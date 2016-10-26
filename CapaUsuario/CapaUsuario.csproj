@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstablecimientoSalud\frmMicrored.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
+      <DependentUpon>frmMicrored.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHistoriaClinica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,10 +64,25 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pacientes\frmMantenimientoPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\frmMantenimientoPaciente.Designer.cs">
+      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\frmPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\frmPaciente.Designer.cs">
+      <DependentUpon>frmPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmHistoriaClinica.resx">
-      <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
+    <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
+      <DependentUpon>frmMicrored.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\frmMantenimientoPaciente.resx">
+      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,11 +106,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="EstablecimientoSalud\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+    <ProjectReference Include="..\CapaDatos\CapaDeDatos.csproj">
       <Project>{63b96a0e-bcc5-4b29-9e2a-9aad5f6c6e93}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
