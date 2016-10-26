@@ -14,50 +14,54 @@ namespace CapaUsuario.Seguridad
 {
     public partial class frmLogin : Form
     {
+        CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         public frmLogin()
         {
             InitializeComponent();
+            HacerConeccion();
         }
         private void HacerConeccion()
         {
             try
             {
                 Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
-                MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
+                //MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        public string Usuario;
         public void IniciarSesion()
         {
-            //string existe = "@a";
-            //string user = "@b";
-            //try
-            //{
-            //    int numero;
-            //    string Contraseña = oUsuario.ObtenerSHA1(txtcontraseña.Text);
-            //    numero = oUsuario.ValidarUsuarioContraseña(txtusuario.Text, Contraseña, existe, user);
-            //    Usuario = txtusuario.Text;
-            //    //
-            //    if (numero == 1)
-            //    {
-            //        frmMenuTramite MenuTramite = new frmMenuTramite();
-            //        MessageBox.Show("Bienvenido al Sistema de Tramite Documentario usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        MenuTramite.Show();
-            //        this.Hide();
-            //        MenuTramite.obtenerDatos(Usuario);
-            //    }
-            //    else
-            //    {
-            //        const string message = "El Usuario no existe o la contraseña es incorrecta.";
-            //        const string caption = "Error";
-            //        var result = MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        txtusuario.Text = ""; txtcontraseña.Text = ""; txtusuario.Focus();
-            //    }
-            //}
-            //catch { }
+            string existe = "@a";
+            string user = "@b";
+            try
+            {
+                int numero;
+                string Contraseña = txtUsuario.Text;
+                //string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
+                numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
+                Usuario = txtUsuario.Text;
+                //
+                if (numero == 1)
+                {
+                    frmMenu Menu = new frmMenu();
+                    MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu.Show();
+                    this.Hide();
+                    //Menu.obtenerDatos(Usuario);
+                }
+                else
+                {
+                    const string message = "El Usuario no existe o la contraseña es incorrecta.";
+                    const string caption = "Error";
+                    var result = MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUsuario.Text = ""; txtContraseña.Text = ""; txtUsuario.Focus();
+                }
+            }
+            catch { }
         }
         private void cbVer_CheckedChanged(object sender, EventArgs e)
         {
@@ -69,6 +73,16 @@ namespace CapaUsuario.Seguridad
             {
                 txtContraseña.PasswordChar = '●';
             }
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            IniciarSesion();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

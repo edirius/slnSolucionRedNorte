@@ -49,6 +49,7 @@
     <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Obstetra\cObstetra.cs" />
+    <Compile Include="Obstetra\cUsuario.cs" />
     <Compile Include="Paciente\cPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

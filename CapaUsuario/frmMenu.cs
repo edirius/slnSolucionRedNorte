@@ -69,5 +69,10 @@ namespace CapaUsuario
             frmEstable.MdiParent = this;
             frmEstable.Show();
         }
+
+        private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
