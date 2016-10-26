@@ -1,6 +1,6 @@
-﻿namespace CapaUsuario.Paciente
+﻿namespace CapaUsuario.Pacientes
 {
-    partial class frmPaciente
+    partial class frmMantenimientoPaciente
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmPaciente";
+            this.Text = "frmMantenimientoPaciente";
         }
 
         #endregion

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaUsuario.Paciente
+namespace CapaUsuario.Pacientes
 {
-    public partial class frmPaciente : Form
+    public partial class frmMantenimientoPaciente : Form
     {
-        public frmPaciente()
+        public frmMantenimientoPaciente()
         {
             InitializeComponent();
         }
