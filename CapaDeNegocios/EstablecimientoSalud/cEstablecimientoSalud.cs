@@ -28,11 +28,15 @@ namespace CapaDeNegocios.EstablecimientoSalud
         }
         public DataTable EliminarEstablecimiento()
         {
-            return Conexion.GDatos.TraerDataTable("spEliminarEstablecimientoSalud", IdMicrored, Descripcion);
+            return Conexion.GDatos.TraerDataTable("spEliminarEstablecimientoSalud", IdEstablecimientoSalud, Descripcion);
         }
         public DataTable ListarEstablecimiento()
         {
             return Conexion.GDatos.TraerDataTable("spListarEstablecimientoSalud");
+        }
+        public DataTable SiguienteCodigo()
+        {
+            return Conexion.GDatos.TraerDataTable("spSiguienteCodigoEstablecimiento");
         }
     }
 }

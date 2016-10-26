@@ -11,44 +11,54 @@ using CapaDeNegocios;
 
 namespace CapaUsuario.EstablecimientoSalud
 {
-    public partial class frmMicrored : Form
+    public partial class frmEstablecimientoSalud : Form
     {
+        CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud  miEstablecimiento = new CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud();
         CapaDeNegocios.EstablecimientoSalud.cMicrored miMicrored = new CapaDeNegocios.EstablecimientoSalud.cMicrored();
         DataTable Tabla = new DataTable();
         string mensaje = "";
         string respuesta = "";
 
-        public frmMicrored()
+        public frmEstablecimientoSalud()
         {
             InitializeComponent();
+            CargarCombo();
             ActualizarLista();
+        }
+
+        private void frmEstablecimientoSalud_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void CargarCombo()
+        {
+            cbMicrored.ValueMember = "idtmicrored";
+            cbMicrored.DisplayMember = "microred";
+            cbMicrored.DataSource = miMicrored.ListarMicrored();
         }
         public void ActualizarLista()
         {
-            dgvListarMicrored.DataSource = miMicrored.ListarMicrored();
-            Tabla = miMicrored.SiguienteCodigo();
+            dgvListarEstablecimiento.DataSource = miEstablecimiento.ListarEstablecimiento();
+            Tabla = miEstablecimiento.SiguienteCodigo();
             txtCodigo.Text = Tabla.Rows[0][0].ToString();
         }
         private void ConfiguracionInicial()
         {
-            Tabla = miMicrored.SiguienteCodigo();
+            Tabla = miEstablecimiento.SiguienteCodigo();
             txtCodigo.Text = Tabla.Rows[0][0].ToString();
-            txtMicrored.Text = "";
+            txtCodigo.Text = "";
+            txtDescripcion.Text = "";
             txtDireccion.Text = "";
-            txtMicrored.Focus();
-        }
-        public void SiguienteCodigo()
-        {
-
         }
         public void Agregar()
         {
-            if (txtMicrored.Text != "")
+            if (txtDescripcion.Text != "")
             {
-                miMicrored.IdMicrored = txtCodigo.Text;
-                miMicrored.Microred = txtMicrored.Text;
-                miMicrored.Direccion = txtDireccion.Text;
-                Tabla = miMicrored.AgregarMicrored();
+                miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
+                miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
+                miEstablecimiento.Descripcion = txtDescripcion.Text;
+                miEstablecimiento.Direccion = txtDireccion.Text;
+                Tabla = miEstablecimiento.AgregarEstablecimiento();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
 
@@ -70,12 +80,13 @@ namespace CapaUsuario.EstablecimientoSalud
         }
         public void Modificar()
         {
-            if (txtMicrored.Text != "")
+            if (txtDescripcion.Text != "")
             {
-                miMicrored.IdMicrored = txtCodigo.Text;
-                miMicrored.Microred = txtMicrored.Text;
-                miMicrored.Direccion = txtDireccion.Text;
-                Tabla = miMicrored.ModificarMicrored();
+                miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
+                miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
+                miEstablecimiento.Descripcion = txtDescripcion.Text;
+                miEstablecimiento.Direccion = txtDireccion.Text;
+                Tabla = miEstablecimiento.ModificarEstablecimiento();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
                 if (respuesta == "1")
@@ -93,14 +104,12 @@ namespace CapaUsuario.EstablecimientoSalud
             else
                 MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
         }
         private void Eliminar()
         {
-            miMicrored.IdMicrored = txtCodigo.Text;
-            miMicrored.Microred = txtMicrored.Text;
-            miMicrored.Direccion = txtDireccion.Text;
-            Tabla = miMicrored.EliminarMicrored();
+            miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
+            miEstablecimiento.Descripcion = txtDescripcion.Text;
+            Tabla = miEstablecimiento.EliminarEstablecimiento();
             respuesta = Tabla.Rows[0][0].ToString();
             mensaje = Tabla.Rows[0][1].ToString();
             if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
@@ -116,19 +125,27 @@ namespace CapaUsuario.EstablecimientoSalud
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ConfiguracionInicial();
                 }
-                else
+            else
                 {
                     /*NO HACER NADA*/
                 }
-
+                
         }
 
-        private void dgvListarMicrored_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvListarEstablecimiento_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int Valor = dgvListarMicrored.CurrentCell.RowIndex;
-            txtCodigo.Text = dgvListarMicrored[0, Valor].Value.ToString();
-            txtMicrored.Text = dgvListarMicrored[1, Valor].Value.ToString();
-            txtDireccion.Text = dgvListarMicrored[2, Valor].Value.ToString();
+            int Valor = dgvListarEstablecimiento.CurrentCell.RowIndex;
+            txtCodigo.Text = dgvListarEstablecimiento[0, Valor].Value.ToString();
+            cbMicrored.Text = dgvListarEstablecimiento[1, Valor].Value.ToString();
+            txtDescripcion.Text = dgvListarEstablecimiento[2, Valor].Value.ToString();
+            txtDireccion.Text = dgvListarEstablecimiento[3, Valor].Value.ToString();
+            
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            Agregar();
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -149,11 +166,6 @@ namespace CapaUsuario.EstablecimientoSalud
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            Agregar();
         }
     }
 }
