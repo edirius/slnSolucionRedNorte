@@ -81,6 +81,9 @@
     <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
       <DependentUpon>frmMicrored.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\frmMantenimientoPaciente.resx">
+      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

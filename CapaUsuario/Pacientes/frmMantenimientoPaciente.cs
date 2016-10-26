@@ -94,11 +94,12 @@ namespace CapaUsuario.Pacientes
 
         private void CargarDatos()
         {
-            dgvPaciente.Rows.Clear();
-            foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
-            {
-                dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
-            }
+            //dgvPaciente.Rows.Clear();
+            //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
+            //{
+            //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
+            //}
+            dgvPaciente.DataSource = miPaciente.ListarPaciente("E0002");
             if (dgvPaciente.Rows.Count > 0)
             {
                 dgvPaciente.Rows[0].Selected = true;
