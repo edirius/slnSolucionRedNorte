@@ -19,11 +19,12 @@ namespace CapaUsuario
             InitializeComponent();
             HacerConeccion();
         }
+
         public void HacerConeccion()
         {
             try
             {
-                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdPersonal", "root", "root");
+                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
                 MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
             }
             catch (Exception ex)
@@ -31,7 +32,12 @@ namespace CapaUsuario
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pacientes.frmMantenimientoPaciente fMantenimientoPaciente = new Pacientes.frmMantenimientoPaciente();
+            fMantenimientoPaciente.MdiParent = this;
+            fMantenimientoPaciente.Show();
+        }
     }
-
-
 }
