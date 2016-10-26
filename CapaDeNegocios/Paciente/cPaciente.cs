@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using CapaDeDatos;
 
-namespace CapaDeNegocios
+namespace CapaDeNegocios.Paciente
 {
     public class cPaciente
     {
@@ -45,15 +45,15 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarPaciente", idtestablecimientosalud);
         }
 
-        public Boolean CrearPaciente(cPaciente mipaciente)
+        public Boolean CrearPaciente(cPaciente miPaciente)
         {
-            Conexion.GDatos.Ejecutar("spCrearPaciente", mipaciente.idtpaciente, mipaciente.nombres, mipaciente.apellidopaterno, mipaciente.apellidomaterno, mipaciente.dni, mipaciente.fechanacimiento, mipaciente.direccion, mipaciente.telefono, mipaciente.idtestablecimientosalud);
+            Conexion.GDatos.Ejecutar("spCrearPaciente", miPaciente.idtpaciente, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
             return true;
         }
 
-        public Boolean ModificarPaciente(cPaciente mipaciente)
+        public Boolean ModificarPaciente(cPaciente miPaciente)
         {
-            Conexion.GDatos.Ejecutar("spModificarPaciente", mipaciente.idtpaciente, mipaciente.nombres, mipaciente.apellidopaterno, mipaciente.apellidomaterno, mipaciente.dni, mipaciente.fechanacimiento, mipaciente.direccion, mipaciente.telefono, mipaciente.idtestablecimientosalud);
+            Conexion.GDatos.Ejecutar("spModificarPaciente", miPaciente.idtpaciente, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
             return true;
         }
 

@@ -70,16 +70,28 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\frmMantenimientoPaciente.cs">
+    <Compile Include="Obstetra\frmMantenimientoObstetra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes\frmMantenimientoPaciente.Designer.cs">
+    <Compile Include="Obstetra\frmMantenimientoObstetra.Designer.cs">
+      <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\frmMantenimientoPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paciente\frmMantenimientoPaciente.Designer.cs">
       <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pacientes\frmPaciente.cs">
+    <Compile Include="Obstetra\frmObstetra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pacientes\frmPaciente.Designer.cs">
+    <Compile Include="Obstetra\frmObstetra.Designer.cs">
+      <DependentUpon>frmObstetra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\frmPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paciente\frmPaciente.Designer.cs">
       <DependentUpon>frmPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -99,8 +111,17 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pacientes\frmMantenimientoPaciente.resx">
+    <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
+      <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\frmMantenimientoPaciente.resx">
       <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obstetra\frmObstetra.resx">
+      <DependentUpon>frmObstetra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paciente\frmPaciente.resx">
+      <DependentUpon>frmPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

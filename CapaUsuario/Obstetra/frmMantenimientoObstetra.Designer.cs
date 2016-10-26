@@ -1,6 +1,6 @@
-﻿namespace CapaUsuario.Pacientes
+﻿namespace CapaUsuario.Obstetra
 {
-    partial class frmMantenimientoPaciente
+    partial class frmMantenimientoObstetra
     {
         /// <summary>
         /// Required designer variable.
@@ -33,8 +33,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dgvPaciente = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
+            this.dgvObstetras = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObstetras)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -101,29 +101,29 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dgvPaciente
+            // dgvObstetras
             // 
-            this.dgvPaciente.AllowUserToAddRows = false;
-            this.dgvPaciente.AllowUserToDeleteRows = false;
+            this.dgvObstetras.AllowUserToAddRows = false;
+            this.dgvObstetras.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvPaciente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvObstetras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvObstetras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPaciente.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvPaciente.Location = new System.Drawing.Point(12, 12);
-            this.dgvPaciente.MultiSelect = false;
-            this.dgvPaciente.Name = "dgvPaciente";
-            this.dgvPaciente.ReadOnly = true;
-            this.dgvPaciente.RowHeadersVisible = false;
-            this.dgvPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaciente.Size = new System.Drawing.Size(540, 328);
-            this.dgvPaciente.TabIndex = 49;
-            this.dgvPaciente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellClick);
-            this.dgvPaciente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellContentClick);
+            this.dgvObstetras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObstetras.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvObstetras.Location = new System.Drawing.Point(12, 12);
+            this.dgvObstetras.MultiSelect = false;
+            this.dgvObstetras.Name = "dgvObstetras";
+            this.dgvObstetras.ReadOnly = true;
+            this.dgvObstetras.RowHeadersVisible = false;
+            this.dgvObstetras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvObstetras.Size = new System.Drawing.Size(540, 328);
+            this.dgvObstetras.TabIndex = 49;
+            this.dgvObstetras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObstetras_CellClick);
+            this.dgvObstetras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObstetras_CellContentClick);
             // 
-            // frmMantenimientoPaciente
+            // frmMantenimientoObstetra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,12 +132,12 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dgvPaciente);
-            this.Name = "frmMantenimientoPaciente";
+            this.Controls.Add(this.dgvObstetras);
+            this.Name = "frmMantenimientoObstetra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento Paciente";
+            this.Text = "Mantenimiento Obstetras";
             this.Load += new System.EventHandler(this.frmMantenimientoPaciente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObstetras)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,6 +148,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dgvPaciente;
+        private System.Windows.Forms.DataGridView dgvObstetras;
     }
 }
