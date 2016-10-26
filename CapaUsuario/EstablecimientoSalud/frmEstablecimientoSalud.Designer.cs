@@ -34,6 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListarEstablecimiento = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -45,10 +49,6 @@
             this.cbMicrored = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +114,33 @@
             this.dgvListarEstablecimiento.Size = new System.Drawing.Size(474, 257);
             this.dgvListarEstablecimiento.TabIndex = 66;
             this.dgvListarEstablecimiento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEstablecimiento_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtestablecimientosalud";
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            // 
+            // microred
+            // 
+            this.microred.DataPropertyName = "microred";
+            this.microred.HeaderText = "Microred";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -248,33 +275,6 @@
             this.label4.TabIndex = 74;
             this.label4.Text = "Descripcion:";
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtestablecimientosalud";
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // microred
-            // 
-            this.microred.DataPropertyName = "microred";
-            this.microred.HeaderText = "Microred";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
             // frmEstablecimientoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +291,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
             this.Name = "frmEstablecimientoSalud";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEstablecimientoSalud";
             this.Load += new System.EventHandler(this.frmEstablecimientoSalud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).EndInit();

@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListarMicrored = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarMicrored)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +79,27 @@
             this.dgvListarMicrored.Size = new System.Drawing.Size(456, 247);
             this.dgvListarMicrored.TabIndex = 58;
             this.dgvListarMicrored.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarMicrored_CellClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "idtmicrored";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // microred
+            // 
+            this.microred.DataPropertyName = "microred";
+            this.microred.HeaderText = "Microred";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "direccion";
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -223,27 +244,6 @@
             this.label2.TabIndex = 61;
             this.label2.Text = "Dirección:";
             // 
-            // Direccion
-            // 
-            this.Direccion.DataPropertyName = "direccion";
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // microred
-            // 
-            this.microred.DataPropertyName = "microred";
-            this.microred.HeaderText = "Microred";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "idtmicrored";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
             // frmMicrored
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +258,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
             this.Name = "frmMicrored";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMicrored";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarMicrored)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

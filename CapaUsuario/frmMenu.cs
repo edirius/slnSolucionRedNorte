@@ -53,15 +53,17 @@ namespace CapaUsuario
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
+        
 
-        private void microredToolStripMenuItem_Click(object sender, EventArgs e)
+        private void microredToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             EstablecimientoSalud.frmMicrored miMicrored = new EstablecimientoSalud.frmMicrored();
             miMicrored.MdiParent = this;
             miMicrored.Show();
+
         }
 
-        private void establecimientoDeSaludToolStripMenuItem_Click(object sender, EventArgs e)
+        private void establecimientoSaludToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             EstablecimientoSalud.frmEstablecimientoSalud frmEstable = new EstablecimientoSalud.frmEstablecimientoSalud();
             frmEstable.MdiParent = this;

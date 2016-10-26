@@ -31,8 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoObstetrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.establecimientoSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.establecimientoSaludToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
-            this.historiaClinicaToolStripMenuItem});
+            this.historiaClinicaToolStripMenuItem,
+            this.establecimientoSaludToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
@@ -63,6 +67,13 @@
             this.mantenimientoPacientesToolStripMenuItem.Text = "Mantenimiento Pacientes";
             this.mantenimientoPacientesToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoPacientesToolStripMenuItem_Click);
             // 
+            // mantenimientoObstetrasToolStripMenuItem
+            // 
+            this.mantenimientoObstetrasToolStripMenuItem.Name = "mantenimientoObstetrasToolStripMenuItem";
+            this.mantenimientoObstetrasToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.mantenimientoObstetrasToolStripMenuItem.Text = "Mantenimiento Obstetras";
+            this.mantenimientoObstetrasToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoObstetrasToolStripMenuItem_Click);
+            // 
             // historiaClinicaToolStripMenuItem
             // 
             this.historiaClinicaToolStripMenuItem.Name = "historiaClinicaToolStripMenuItem";
@@ -70,12 +81,28 @@
             this.historiaClinicaToolStripMenuItem.Text = "Historia Clinica";
             this.historiaClinicaToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaToolStripMenuItem_Click);
             // 
-            // mantenimientoObstetrasToolStripMenuItem
+            // establecimientoSaludToolStripMenuItem
             // 
-            this.mantenimientoObstetrasToolStripMenuItem.Name = "mantenimientoObstetrasToolStripMenuItem";
-            this.mantenimientoObstetrasToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.mantenimientoObstetrasToolStripMenuItem.Text = "Mantenimiento Obstetras";
-            this.mantenimientoObstetrasToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoObstetrasToolStripMenuItem_Click);
+            this.establecimientoSaludToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.microredToolStripMenuItem,
+            this.establecimientoSaludToolStripMenuItem1});
+            this.establecimientoSaludToolStripMenuItem.Name = "establecimientoSaludToolStripMenuItem";
+            this.establecimientoSaludToolStripMenuItem.Size = new System.Drawing.Size(135, 20);
+            this.establecimientoSaludToolStripMenuItem.Text = "Establecimiento Salud";
+            // 
+            // microredToolStripMenuItem
+            // 
+            this.microredToolStripMenuItem.Name = "microredToolStripMenuItem";
+            this.microredToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.microredToolStripMenuItem.Text = "Microred";
+            this.microredToolStripMenuItem.Click += new System.EventHandler(this.microredToolStripMenuItem_Click_1);
+            // 
+            // establecimientoSaludToolStripMenuItem1
+            // 
+            this.establecimientoSaludToolStripMenuItem1.Name = "establecimientoSaludToolStripMenuItem1";
+            this.establecimientoSaludToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.establecimientoSaludToolStripMenuItem1.Text = "Establecimiento Salud";
+            this.establecimientoSaludToolStripMenuItem1.Click += new System.EventHandler(this.establecimientoSaludToolStripMenuItem1_Click);
             // 
             // frmMenu
             // 
@@ -103,5 +130,8 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoPacientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoObstetrasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem establecimientoSaludToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microredToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem establecimientoSaludToolStripMenuItem1;
     }
 }
