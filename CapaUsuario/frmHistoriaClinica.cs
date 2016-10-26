@@ -15,7 +15,10 @@ namespace CapaUsuario
         public frmGestante frmGestanteHC = new frmGestante();
         DataTable odtOdontologo = new DataTable();
         DataTable odtEcografia = new DataTable();
+        string idtpaciente = "";
         int i = 0;
+        string obstetra = "";
+
         public frmHistoriaClinica()
         {
             InitializeComponent();
@@ -97,6 +100,7 @@ namespace CapaUsuario
                 if (now < fn_.AddYears(age)) age--;
 
                 txtEdad.Text = age.ToString();
+                idtpaciente = frmGestanteHC.idtpaciente;
             }
         }
 
@@ -224,6 +228,58 @@ namespace CapaUsuario
 
         private void label8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void buGuardar_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            DataTable odtHistoriaClinica = new DataTable();
+
+            oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
+            oHistoriaClinica.Tipollegada =  cboTipoLlegada.Text;
+            oHistoriaClinica.Tiempollegada = txtTiempoLlegada.Text;
+            oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
+            oHistoriaClinica.Gestas = txtGestas.Text;
+            oHistoriaClinica.Partos= txtPartos.Text;
+            oHistoriaClinica.Abortos = txtAbortos.Text;
+            oHistoriaClinica.Hijosvivos = txtHv.Text;
+            oHistoriaClinica.Hijosmuertos = txtHm.Text;
+            oHistoriaClinica.Fur = dtpFUR.Text;
+            oHistoriaClinica.Fpp = dtpFPP.Text;
+
+            bool isChecked1ertrimestre = rbuPrimerTrimestre.Checked;
+            bool isChecked2dotrimestre = rbuPrimerTrimestre.Checked;
+            bool isChecked3ertrimestre = rbuPrimerTrimestre.Checked;
+
+            string respuesta_radiobutton = "";
+            
+
+            if (isChecked1ertrimestre)
+                respuesta_radiobutton = "1er Trimestre";
+
+            if (isChecked2dotrimestre)
+                respuesta_radiobutton = "2do Trimestre";
+
+            if (isChecked3ertrimestre)
+                respuesta_radiobutton = "3er Trimestre";
+
+            oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
+
+            oHistoriaClinica.Diaapn = Convert.ToString( nupSemanas.Value );
+            oHistoriaClinica.Observaciones = txtObservaciones.Text;
+            oHistoriaClinica.Idtpaciente = idtpaciente;
+            oHistoriaClinica.Idtobstetra = obstetra;
+
+            odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+
+            foreach (DataRow row in odtHistoriaClinica.Rows)
+            {
+                string respuesta_historia_clinica = row[0].ToString().Trim();
+            }
+
+
+                        
 
         }
     }

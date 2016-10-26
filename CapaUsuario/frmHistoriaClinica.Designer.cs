@@ -28,80 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dgvOdontologia = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.dtpOdontologo = new System.Windows.Forms.DateTimePicker();
-            this.buAgregarOdontologia = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvEcografia = new System.Windows.Forms.DataGridView();
             this.txtEdadGestacional = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpEcografia = new System.Windows.Forms.DateTimePicker();
             this.buAgregarEcografia = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.rbuPrimerTrimestre = new System.Windows.Forms.RadioButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTiempoEstablecimiento = new System.Windows.Forms.TextBox();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
-            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dtpFPP = new System.Windows.Forms.DateTimePicker();
+            this.dtpFUR = new System.Windows.Forms.DateTimePicker();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
+            this.txtTiempoLlegada = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgvOdontologia = new System.Windows.Forms.DataGridView();
-            this.dgvEcografia = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.nupSemanas = new System.Windows.Forms.NumericUpDown();
+            this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbuPrimerTrimestre = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtHm = new System.Windows.Forms.TextBox();
+            this.txtHv = new System.Windows.Forms.TextBox();
+            this.txtAbortos = new System.Windows.Forms.TextBox();
+            this.txtPartos = new System.Windows.Forms.TextBox();
+            this.txtGestas = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buAgregarOdontologia = new System.Windows.Forms.Button();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -111,14 +111,14 @@
             this.groupBox2.Controls.Add(this.buGuardar);
             this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.groupBox5);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpFPP);
+            this.groupBox2.Controls.Add(this.dtpFUR);
             this.groupBox2.Controls.Add(this.groupBox8);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.txtBuscar);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtObservaciones);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -132,6 +132,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Historia Clinica";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 575);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(787, 172);
+            this.dataGridView1.TabIndex = 98;
             // 
             // button1
             // 
@@ -150,6 +170,7 @@
             this.buGuardar.TabIndex = 6;
             this.buGuardar.Text = "Guardar";
             this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click);
             // 
             // groupBox6
             // 
@@ -163,22 +184,43 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Fecha de la Segunda Visita al Servicio de Odontologia:";
             // 
+            // dgvOdontologia
+            // 
+            this.dgvOdontologia.AllowUserToAddRows = false;
+            this.dgvOdontologia.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOdontologia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOdontologia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvOdontologia.Location = new System.Drawing.Point(26, 62);
+            this.dgvOdontologia.MultiSelect = false;
+            this.dgvOdontologia.Name = "dgvOdontologia";
+            this.dgvOdontologia.ReadOnly = true;
+            this.dgvOdontologia.RowHeadersVisible = false;
+            this.dgvOdontologia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOdontologia.Size = new System.Drawing.Size(245, 122);
+            this.dgvOdontologia.TabIndex = 96;
+            this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(243, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 27);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // dtpOdontologo
             // 
             this.dtpOdontologo.Location = new System.Drawing.Point(26, 30);
             this.dtpOdontologo.Name = "dtpOdontologo";
             this.dtpOdontologo.Size = new System.Drawing.Size(211, 20);
             this.dtpOdontologo.TabIndex = 1;
-            // 
-            // buAgregarOdontologia
-            // 
-            this.buAgregarOdontologia.Location = new System.Drawing.Point(252, 28);
-            this.buAgregarOdontologia.Name = "buAgregarOdontologia";
-            this.buAgregarOdontologia.Size = new System.Drawing.Size(77, 27);
-            this.buAgregarOdontologia.TabIndex = 0;
-            this.buAgregarOdontologia.Text = "Buscar";
-            this.buAgregarOdontologia.UseVisualStyleBackColor = true;
-            this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click);
             // 
             // groupBox5
             // 
@@ -196,6 +238,27 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Fecha de Ecografia Obstetrica";
             // 
+            // dgvEcografia
+            // 
+            this.dgvEcografia.AllowUserToAddRows = false;
+            this.dgvEcografia.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEcografia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEcografia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvEcografia.Location = new System.Drawing.Point(36, 55);
+            this.dgvEcografia.MultiSelect = false;
+            this.dgvEcografia.Name = "dgvEcografia";
+            this.dgvEcografia.ReadOnly = true;
+            this.dgvEcografia.RowHeadersVisible = false;
+            this.dgvEcografia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEcografia.Size = new System.Drawing.Size(445, 133);
+            this.dgvEcografia.TabIndex = 97;
+            this.dgvEcografia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcografia_CellContentClick);
+            // 
             // txtEdadGestacional
             // 
             this.txtEdadGestacional.Location = new System.Drawing.Point(355, 29);
@@ -212,6 +275,16 @@
             this.label14.Size = new System.Drawing.Size(54, 13);
             this.label14.TabIndex = 1;
             this.label14.Text = "Semanas.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(253, 37);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "por ecografia        :";
+            this.label15.Click += new System.EventHandler(this.label13_Click);
             // 
             // label13
             // 
@@ -240,12 +313,78 @@
             this.buAgregarEcografia.UseVisualStyleBackColor = true;
             this.buAgregarEcografia.Click += new System.EventHandler(this.buAgregarEcografia_Click);
             // 
+            // dtpFPP
+            // 
+            this.dtpFPP.Location = new System.Drawing.Point(597, 101);
+            this.dtpFPP.Name = "dtpFPP";
+            this.dtpFPP.Size = new System.Drawing.Size(200, 20);
+            this.dtpFPP.TabIndex = 0;
+            // 
+            // dtpFUR
+            // 
+            this.dtpFUR.Location = new System.Drawing.Point(597, 76);
+            this.dtpFUR.Name = "dtpFUR";
+            this.dtpFUR.Size = new System.Drawing.Size(200, 20);
+            this.dtpFUR.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.cboTipoLlegada);
+            this.groupBox8.Controls.Add(this.txtTiempoLlegada);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.label7);
+            this.groupBox8.Location = new System.Drawing.Point(538, 130);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(277, 69);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Tiempo al establecimiento:";
+            // 
+            // cboTipoLlegada
+            // 
+            this.cboTipoLlegada.FormattingEnabled = true;
+            this.cboTipoLlegada.Items.AddRange(new object[] {
+            "A pie",
+            "Bicicleta",
+            "Auto motorizado"});
+            this.cboTipoLlegada.Location = new System.Drawing.Point(131, 17);
+            this.cboTipoLlegada.Name = "cboTipoLlegada";
+            this.cboTipoLlegada.Size = new System.Drawing.Size(128, 21);
+            this.cboTipoLlegada.TabIndex = 2;
+            // 
+            // txtTiempoLlegada
+            // 
+            this.txtTiempoLlegada.Location = new System.Drawing.Point(131, 43);
+            this.txtTiempoLlegada.Name = "txtTiempoLlegada";
+            this.txtTiempoLlegada.Size = new System.Drawing.Size(128, 20);
+            this.txtTiempoLlegada.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(8, 46);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(97, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Tiempo de llegada:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Tipo de llegada:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.numericUpDown1);
-            this.groupBox4.Controls.Add(this.radioButton2);
-            this.groupBox4.Controls.Add(this.radioButton1);
+            this.groupBox4.Controls.Add(this.nupSemanas);
+            this.groupBox4.Controls.Add(this.rbTercerTrimestre);
+            this.groupBox4.Controls.Add(this.rbSegundoTrimestre);
             this.groupBox4.Controls.Add(this.rbuPrimerTrimestre);
             this.groupBox4.Location = new System.Drawing.Point(538, 202);
             this.groupBox4.Name = "groupBox4";
@@ -254,27 +393,58 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Primera atencion pre natal:";
             // 
-            // radioButton2
+            // label10
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(185, 17);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "3er Trimestre";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Nº de semana:";
             // 
-            // radioButton1
+            // nupSemanas
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(90, 17);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(89, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "2do Trimestre";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.nupSemanas.Location = new System.Drawing.Point(90, 40);
+            this.nupSemanas.Maximum = new decimal(new int[] {
+            42,
+            0,
+            0,
+            0});
+            this.nupSemanas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nupSemanas.Name = "nupSemanas";
+            this.nupSemanas.Size = new System.Drawing.Size(41, 20);
+            this.nupSemanas.TabIndex = 1;
+            this.nupSemanas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // rbTercerTrimestre
+            // 
+            this.rbTercerTrimestre.AutoSize = true;
+            this.rbTercerTrimestre.Location = new System.Drawing.Point(185, 17);
+            this.rbTercerTrimestre.Name = "rbTercerTrimestre";
+            this.rbTercerTrimestre.Size = new System.Drawing.Size(86, 17);
+            this.rbTercerTrimestre.TabIndex = 0;
+            this.rbTercerTrimestre.TabStop = true;
+            this.rbTercerTrimestre.Text = "3er Trimestre";
+            this.rbTercerTrimestre.UseVisualStyleBackColor = true;
+            // 
+            // rbSegundoTrimestre
+            // 
+            this.rbSegundoTrimestre.AutoSize = true;
+            this.rbSegundoTrimestre.Location = new System.Drawing.Point(90, 17);
+            this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
+            this.rbSegundoTrimestre.Size = new System.Drawing.Size(89, 17);
+            this.rbSegundoTrimestre.TabIndex = 0;
+            this.rbSegundoTrimestre.TabStop = true;
+            this.rbSegundoTrimestre.Text = "2do Trimestre";
+            this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
             // 
             // rbuPrimerTrimestre
             // 
@@ -287,259 +457,6 @@
             this.rbuPrimerTrimestre.Text = "1er Trimestre";
             this.rbuPrimerTrimestre.UseVisualStyleBackColor = true;
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(123, 487);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(691, 20);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(25, 490);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(81, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Observaciones:";
-            // 
-            // txtHistoriaClinica
-            // 
-            this.txtHistoriaClinica.Location = new System.Drawing.Point(109, 28);
-            this.txtHistoriaClinica.Name = "txtHistoriaClinica";
-            this.txtHistoriaClinica.Size = new System.Drawing.Size(182, 20);
-            this.txtHistoriaClinica.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Historia Clinica:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtDNI);
-            this.groupBox1.Controls.Add(this.buAgregarOdontologia);
-            this.groupBox1.Controls.Add(this.txtEdad);
-            this.groupBox1.Controls.Add(this.txtApellidoMaterno);
-            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
-            this.groupBox1.Controls.Add(this.txtNombres);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(21, 67);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(345, 201);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gestante";
-            // 
-            // txtTiempoEstablecimiento
-            // 
-            this.txtTiempoEstablecimiento.Location = new System.Drawing.Point(131, 43);
-            this.txtTiempoEstablecimiento.Name = "txtTiempoEstablecimiento";
-            this.txtTiempoEstablecimiento.Size = new System.Drawing.Size(128, 20);
-            this.txtTiempoEstablecimiento.TabIndex = 1;
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(147, 143);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(182, 20);
-            this.txtEdad.TabIndex = 1;
-            // 
-            // txtApellidoMaterno
-            // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(147, 86);
-            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(182, 20);
-            this.txtApellidoMaterno.TabIndex = 1;
-            // 
-            // txtApellidoPaterno
-            // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(147, 59);
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
-            this.txtApellidoPaterno.TabIndex = 1;
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Location = new System.Drawing.Point(147, 113);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(182, 20);
-            this.txtNombres.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nombre(s):";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tipo de llegada:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Edad:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 38);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "DNI:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Apellido Materno:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Apellido Paterno:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(147, 32);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(99, 20);
-            this.txtDNI.TabIndex = 2;
-            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(243, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 27);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // dgvOdontologia
-            // 
-            this.dgvOdontologia.AllowUserToAddRows = false;
-            this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvOdontologia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOdontologia.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvOdontologia.Location = new System.Drawing.Point(26, 62);
-            this.dgvOdontologia.MultiSelect = false;
-            this.dgvOdontologia.Name = "dgvOdontologia";
-            this.dgvOdontologia.ReadOnly = true;
-            this.dgvOdontologia.RowHeadersVisible = false;
-            this.dgvOdontologia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOdontologia.Size = new System.Drawing.Size(245, 122);
-            this.dgvOdontologia.TabIndex = 96;
-            this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick);
-            // 
-            // dgvEcografia
-            // 
-            this.dgvEcografia.AllowUserToAddRows = false;
-            this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEcografia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEcografia.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvEcografia.Location = new System.Drawing.Point(36, 55);
-            this.dgvEcografia.MultiSelect = false;
-            this.dgvEcografia.Name = "dgvEcografia";
-            this.dgvEcografia.ReadOnly = true;
-            this.dgvEcografia.RowHeadersVisible = false;
-            this.dgvEcografia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEcografia.Size = new System.Drawing.Size(445, 133);
-            this.dgvEcografia.TabIndex = 97;
-            this.dgvEcografia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcografia_CellContentClick);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(253, 37);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "por ecografia        :";
-            this.label15.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 575);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 172);
-            this.dataGridView1.TabIndex = 98;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(24, 552);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(136, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Buscar por Historia Clinica :";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(159, 549);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(155, 20);
-            this.txtBuscar.TabIndex = 1;
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label18);
@@ -547,11 +464,11 @@
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.textBox7);
-            this.groupBox7.Controls.Add(this.textBox8);
-            this.groupBox7.Controls.Add(this.textBox9);
-            this.groupBox7.Controls.Add(this.textBox10);
-            this.groupBox7.Controls.Add(this.textBox11);
+            this.groupBox7.Controls.Add(this.txtHm);
+            this.groupBox7.Controls.Add(this.txtHv);
+            this.groupBox7.Controls.Add(this.txtAbortos);
+            this.groupBox7.Controls.Add(this.txtPartos);
+            this.groupBox7.Controls.Add(this.txtGestas);
             this.groupBox7.Location = new System.Drawing.Point(372, 67);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(160, 201);
@@ -610,103 +527,76 @@
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // textBox7
+            // txtHm
             // 
-            this.textBox7.Location = new System.Drawing.Point(109, 144);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(36, 20);
-            this.textBox7.TabIndex = 1;
+            this.txtHm.Location = new System.Drawing.Point(109, 144);
+            this.txtHm.Name = "txtHm";
+            this.txtHm.Size = new System.Drawing.Size(36, 20);
+            this.txtHm.TabIndex = 1;
             // 
-            // textBox8
+            // txtHv
             // 
-            this.textBox8.Location = new System.Drawing.Point(109, 116);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(36, 20);
-            this.textBox8.TabIndex = 1;
+            this.txtHv.Location = new System.Drawing.Point(109, 116);
+            this.txtHv.Name = "txtHv";
+            this.txtHv.Size = new System.Drawing.Size(36, 20);
+            this.txtHv.TabIndex = 1;
             // 
-            // textBox9
+            // txtAbortos
             // 
-            this.textBox9.Location = new System.Drawing.Point(109, 88);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(36, 20);
-            this.textBox9.TabIndex = 1;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.txtAbortos.Location = new System.Drawing.Point(109, 88);
+            this.txtAbortos.Name = "txtAbortos";
+            this.txtAbortos.Size = new System.Drawing.Size(36, 20);
+            this.txtAbortos.TabIndex = 1;
+            this.txtAbortos.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
-            // textBox10
+            // txtPartos
             // 
-            this.textBox10.Location = new System.Drawing.Point(109, 60);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(36, 20);
-            this.textBox10.TabIndex = 1;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.txtPartos.Location = new System.Drawing.Point(109, 60);
+            this.txtPartos.Name = "txtPartos";
+            this.txtPartos.Size = new System.Drawing.Size(36, 20);
+            this.txtPartos.TabIndex = 1;
+            this.txtPartos.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
-            // textBox11
+            // txtGestas
             // 
-            this.textBox11.AccessibleRole = System.Windows.Forms.AccessibleRole.Diagram;
-            this.textBox11.Location = new System.Drawing.Point(109, 32);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(36, 20);
-            this.textBox11.TabIndex = 1;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.txtGestas.AccessibleRole = System.Windows.Forms.AccessibleRole.Diagram;
+            this.txtGestas.Location = new System.Drawing.Point(109, 32);
+            this.txtGestas.Name = "txtGestas";
+            this.txtGestas.Size = new System.Drawing.Size(36, 20);
+            this.txtGestas.TabIndex = 1;
+            this.txtGestas.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
-            // groupBox8
+            // txtBuscar
             // 
-            this.groupBox8.Controls.Add(this.comboBox1);
-            this.groupBox8.Controls.Add(this.txtTiempoEstablecimiento);
-            this.groupBox8.Controls.Add(this.label23);
-            this.groupBox8.Controls.Add(this.label7);
-            this.groupBox8.Location = new System.Drawing.Point(538, 130);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(277, 69);
-            this.groupBox8.TabIndex = 3;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Tiempo al establecimiento:";
+            this.txtBuscar.Location = new System.Drawing.Point(159, 549);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(155, 20);
+            this.txtBuscar.TabIndex = 1;
             // 
-            // label23
+            // label17
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(8, 46);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Tiempo de llegada:";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(24, 552);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(136, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Buscar por Historia Clinica :";
             // 
-            // comboBox1
+            // txtObservaciones
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "A pie",
-            "Bicicleta",
-            "Auto motorizado"});
-            this.comboBox1.Location = new System.Drawing.Point(131, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 2;
+            this.txtObservaciones.Location = new System.Drawing.Point(123, 487);
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(691, 20);
+            this.txtObservaciones.TabIndex = 1;
             // 
-            // label8
+            // label16
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(552, 79);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "FUR:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(597, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(597, 101);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 0;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(25, 490);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(81, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Observaciones:";
             // 
             // label9
             // 
@@ -718,36 +608,148 @@
             this.label9.Text = "FPP:";
             this.label9.Click += new System.EventHandler(this.label8_Click);
             // 
-            // numericUpDown1
+            // label8
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(90, 40);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            45,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(41, 20);
-            this.numericUpDown1.TabIndex = 1;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(552, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "FUR:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // label10
+            // txtHistoriaClinica
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Nº de día:";
+            this.txtHistoriaClinica.Location = new System.Drawing.Point(109, 28);
+            this.txtHistoriaClinica.Name = "txtHistoriaClinica";
+            this.txtHistoriaClinica.Size = new System.Drawing.Size(182, 20);
+            this.txtHistoriaClinica.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Historia Clinica:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtDNI);
+            this.groupBox1.Controls.Add(this.buAgregarOdontologia);
+            this.groupBox1.Controls.Add(this.txtEdad);
+            this.groupBox1.Controls.Add(this.txtApellidoMaterno);
+            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox1.Controls.Add(this.txtNombres);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(21, 67);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(345, 201);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestante";
+            // 
+            // buAgregarOdontologia
+            // 
+            this.buAgregarOdontologia.Location = new System.Drawing.Point(252, 28);
+            this.buAgregarOdontologia.Name = "buAgregarOdontologia";
+            this.buAgregarOdontologia.Size = new System.Drawing.Size(77, 27);
+            this.buAgregarOdontologia.TabIndex = 0;
+            this.buAgregarOdontologia.Text = "Buscar";
+            this.buAgregarOdontologia.UseVisualStyleBackColor = true;
+            this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click);
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(147, 143);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(182, 20);
+            this.txtEdad.TabIndex = 1;
+            // 
+            // txtApellidoMaterno
+            // 
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(147, 86);
+            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(182, 20);
+            this.txtApellidoMaterno.TabIndex = 1;
+            // 
+            // txtApellidoPaterno
+            // 
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(147, 59);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
+            this.txtApellidoPaterno.TabIndex = 1;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(147, 113);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(182, 20);
+            this.txtNombres.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nombre(s):";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 150);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Edad:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 38);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "DNI:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Apellido Materno:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Apellido Paterno:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(147, 30);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(99, 20);
+            this.txtDNI.TabIndex = 2;
+            this.txtDNI.Visible = false;
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             // 
             // frmHistoriaClinica
             // 
@@ -760,21 +762,21 @@
             this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -794,15 +796,15 @@
         private System.Windows.Forms.DateTimePicker dtpEcografia;
         private System.Windows.Forms.Button buAgregarEcografia;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbTercerTrimestre;
+        private System.Windows.Forms.RadioButton rbSegundoTrimestre;
         private System.Windows.Forms.RadioButton rbuPrimerTrimestre;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtHistoriaClinica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTiempoEstablecimiento;
+        private System.Windows.Forms.TextBox txtTiempoLlegada;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private System.Windows.Forms.TextBox txtApellidoPaterno;
@@ -813,7 +815,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvOdontologia;
         private System.Windows.Forms.DataGridView dgvEcografia;
@@ -827,20 +828,21 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtHm;
+        private System.Windows.Forms.TextBox txtHv;
+        private System.Windows.Forms.TextBox txtAbortos;
+        private System.Windows.Forms.TextBox txtPartos;
+        private System.Windows.Forms.TextBox txtGestas;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTipoLlegada;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFPP;
+        private System.Windows.Forms.DateTimePicker dtpFUR;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nupSemanas;
+        private System.Windows.Forms.TextBox txtDNI;
     }
 }
 

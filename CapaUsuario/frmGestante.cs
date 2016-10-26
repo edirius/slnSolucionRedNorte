@@ -12,6 +12,8 @@ namespace CapaUsuario
 {
     public partial class frmGestante : Form
     {
+        
+        public string idtpaciente = "";
         public string DNI = "";
         public string nombres = "";
         public string app = "";
@@ -68,6 +70,7 @@ namespace CapaUsuario
 
             if (e.RowIndex != -1)
             {
+                idtpaciente = dgvGestante.Rows[e.RowIndex].Cells[0].Value.ToString();
                 nombres = dgvGestante.Rows[e.RowIndex].Cells[1].Value.ToString();
                 app = dgvGestante.Rows[e.RowIndex].Cells[2].Value.ToString();
                 apm = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();

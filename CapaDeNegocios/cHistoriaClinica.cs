@@ -20,12 +20,28 @@ namespace CapaDeNegocios
             set { idthistoriaclinica = value; }
         }
 
-        private TimeZone tipollegada;
+        private string codigohistoriaclinica;
 
-        public TimeZone Tipollegada
+        public string Codigohistoriaclinica
+        {
+            get { return codigohistoriaclinica; }
+            set { codigohistoriaclinica = value; }
+        }
+
+        private string tipollegada;
+
+        public string Tipollegada
         {
             get { return tipollegada; }
             set { tipollegada = value; }
+        }
+
+        private string tiempollegada;
+
+        public string Tiempollegada
+        {
+            get { return tiempollegada; }
+            set { tiempollegada = value; }
         }
 
         private Int32 edad;
@@ -124,11 +140,22 @@ namespace CapaDeNegocios
             set { idtpaciente = value; }
         }
 
- 
+        private string idtobstetra;
+
+        public string Idtobstetra
+        {
+            get { return idtobstetra; }
+            set { idtobstetra = value; }
+        }
+
         public DataTable ListarPacienteXDNI( )
         {
             return Conexion.GDatos.TraerDataTable("spListarPacienteXDNI" );
         }
 
+        public DataTable CrearHistoriaClinica()
+        {
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Codigohistoriaclinica, Tipollegada, Tiempollegada,Edad, Gestas,Partos,Abortos,Hijosvivos,Hijosmuertos,Fur,Fpp,Trimestreapn,Diaapn,Observaciones,Idtpaciente,Idtobstetra);
+        }
     }
 }
