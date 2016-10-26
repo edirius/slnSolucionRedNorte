@@ -10,29 +10,29 @@ namespace CapaDeNegocios.EstablecimientoSalud
 {
     public class cEstablecimientoSalud
     {
-        //public string IdEstablecimientoSalud { get; set; }
+        public string IdEstablecimientoSalud { get; set; }
 
-        //public string IdMicrored { get; set; }
+        public string IdMicrored { get; set; }
 
-        //public string Direccion { get; set; }
+        public string Direccion { get; set; }
 
-        //public string Descripcion { get; set; }
+        public string Descripcion { get; set; }
 
-        //public DataTable AgregarEstablecimiento()
-        //{
-        //    return Conexion.GDatos.TraerDataTable("spCrearEstablecimientoSalud", IdMicrored, Microred, Direccion);
-        //}
-        //public DataTable ModificarEstablecimiento()
-        //{
-        //    return Conexion.GDatos.TraerDataTable("spModificarMicrored", IdMicrored, Microred, Direccion);
-        //}
-        //public DataTable EliminarEstablecimiento()
-        //{
-        //    return Conexion.GDatos.TraerDataTable("spEliminarMicrored", IdMicrored, Microred);
-        //}
-        //public DataTable ListarEstablecimiento()
-        //{
-        //    return Conexion.GDatos.TraerDataTable("spListarMicrored");
-        //}
+        public DataTable AgregarEstablecimiento()
+        {
+            return Conexion.GDatos.TraerDataTable("spCrearEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion);
+        }
+        public DataTable ModificarEstablecimiento()
+        {
+            return Conexion.GDatos.TraerDataTable("spModificarEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion);
+        }
+        public DataTable EliminarEstablecimiento()
+        {
+            return Conexion.GDatos.TraerDataTable("spEliminarEstablecimientoSalud", IdMicrored, Descripcion);
+        }
+        public DataTable ListarEstablecimiento()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarEstablecimientoSalud");
+        }
     }
 }

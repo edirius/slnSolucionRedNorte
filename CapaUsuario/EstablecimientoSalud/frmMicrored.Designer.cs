@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListarMicrored = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -51,8 +51,8 @@
             this.dgvListarMicrored.AllowUserToAddRows = false;
             this.dgvListarMicrored.AllowUserToResizeColumns = false;
             this.dgvListarMicrored.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListarMicrored.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListarMicrored.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarMicrored.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvListarMicrored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListarMicrored.GridColor = System.Drawing.Color.White;
@@ -62,6 +62,7 @@
             this.dgvListarMicrored.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListarMicrored.Size = new System.Drawing.Size(372, 247);
             this.dgvListarMicrored.TabIndex = 58;
+            this.dgvListarMicrored.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarMicrored_CellClick);
             // 
             // tableLayoutPanel1
             // 
@@ -91,6 +92,7 @@
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnEliminar
             // 
@@ -100,6 +102,7 @@
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -109,6 +112,7 @@
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInsertar
             // 
@@ -116,8 +120,9 @@
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(68, 33);
             this.btnInsertar.TabIndex = 8;
-            this.btnInsertar.Text = "Guardar";
+            this.btnInsertar.Text = "Agregar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnNuevo
             // 
@@ -125,8 +130,9 @@
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(68, 33);
             this.btnNuevo.TabIndex = 11;
-            this.btnNuevo.Text = "Limpiar";
+            this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // txtCodigo
             // 

@@ -21,6 +21,7 @@ namespace CapaUsuario.EstablecimientoSalud
         public frmMicrored()
         {
             InitializeComponent();
+            ActualizarLista();
         }
         public void ActualizarLista()
         {
@@ -32,7 +33,7 @@ namespace CapaUsuario.EstablecimientoSalud
             txtDireccion.Text = "";
             txtMicrored.Focus();
         }
-        public void AgregarTipoDocumento()
+        public void Agregar()
         {
             if (txtMicrored.Text != "")
             {
@@ -59,54 +60,86 @@ namespace CapaUsuario.EstablecimientoSalud
                 MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
-        public void ModificarTipoDocumento()
+        public void Modificar()
         {
-            //if (txtDescripcion.Text != "")
-            //{
-            //    int valor = dgvListarTipoDoc.CurrentCell.RowIndex;
-            //    miTipoDocumento.CodigoTipoDocumento = int.Parse(dgvListarTipoDoc[1, valor].Value.ToString());
-            //    miTipoDocumento.Descripcion = txtDescripcion.Text;
-            //    Tabla = miTipoDocumento.ModificarTipoDocumento();
-            //    respuesta = Tabla.Rows[0][0].ToString();
-            //    mensaje = Tabla.Rows[0][1].ToString();
-            //    if (respuesta == "1")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        ConfiguracionInicial();
-            //        ActualizarLista();
-            //    }
-            //    else if (respuesta == "0")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        ConfiguracionInicial();
-            //    }
-            //}
-            //else
-            //    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (txtMicrored.Text != "")
+            {
+                miMicrored.IdMicrored = txtCodigo.Text;
+                miMicrored.Microred = txtMicrored.Text;
+                miMicrored.Direccion = txtDireccion.Text;
+                Tabla = miMicrored.ModificarMicrored();
+                respuesta = Tabla.Rows[0][0].ToString();
+                mensaje = Tabla.Rows[0][1].ToString();
+                if (respuesta == "1")
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ConfiguracionInicial();
+                    ActualizarLista();
+                }
+                else if (respuesta == "0")
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ConfiguracionInicial();
+                }
+            }
+            else
+                MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
         }
-        private void EliminarTipoDocumento()
+        private void Eliminar()
         {
-        //    int valor = dgvListarTipoDoc.CurrentCell.RowIndex;
-        //    miTipoDocumento.CodigoTipoDocumento = int.Parse(dgvListarTipoDoc[1, valor].Value.ToString());
-        //    miTipoDocumento.Descripcion = txtDescripcion.Text;
-        //    Tabla = miTipoDocumento.EliminarTipoDocumento();
-        //    respuesta = Tabla.Rows[0][0].ToString();
-        //    mensaje = Tabla.Rows[0][1].ToString();
-        //    if (respuesta == "1")
-        //    {
-        //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        MessageBox.Show(mensaje);
-        //        ConfiguracionInicial();
-        //        ActualizarLista();
-        //    }
-        //    else if (respuesta == "0")
-        //    {
-        //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        ConfiguracionInicial();
-        //    }
-        //}
+            miMicrored.IdMicrored = txtCodigo.Text;
+            miMicrored.Microred = txtMicrored.Text;
+            miMicrored.Direccion = txtDireccion.Text;
+            Tabla = miMicrored.EliminarMicrored();
+            respuesta = Tabla.Rows[0][0].ToString();
+            mensaje = Tabla.Rows[0][1].ToString();
+            if (respuesta == "1")
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(mensaje);
+                ConfiguracionInicial();
+                ActualizarLista();
+            }
+            else if (respuesta == "0")
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ConfiguracionInicial();
+            }
+        }
 
+        private void dgvListarMicrored_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int Valor = dgvListarMicrored.CurrentCell.RowIndex;
+            txtCodigo.Text = dgvListarMicrored[0, Valor].Value.ToString();
+            txtMicrored.Text = dgvListarMicrored[1, Valor].Value.ToString();
+            txtDireccion.Text = dgvListarMicrored[2, Valor].Value.ToString();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Modificar();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ConfiguracionInicial();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            Agregar();
+        }
     }
 }
