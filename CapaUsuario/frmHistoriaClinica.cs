@@ -14,17 +14,24 @@ namespace CapaUsuario
     public partial class frmHistoriaClinica : Form
     {
         public frmGestante frmGestanteHC = new frmGestante();
+        public frmMenu frmMenuHC = new frmMenu();
         DataTable odtOdontologo = new DataTable();
         DataTable odtEcografia = new DataTable();
         public string idtpaciente = "";
         public string establecimientosalud = "";
+
+        public string IdObstetra = "";
+        public string IdEstablecimiento = "";
         
             int i = 0;
         string obstetra = "";
 
-        public frmHistoriaClinica()
+        public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
         {
             InitializeComponent();
+            IdObstetra = idObstetra;
+            IdEstablecimiento = idEstablecimiento;
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -86,8 +93,8 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
-            obstetra = "E006O00001" ;
-
+ 
+            
 
         }
 
@@ -253,9 +260,10 @@ namespace CapaUsuario
                 DataTable odtHistoriaClinica = new DataTable();
                 bool completo = false;
                 string mensaje = "";
-                establecimientosalud = "E001" ;
 
-                oHistoriaClinica.Idtestablecimientosalud = establecimientosalud;
+                
+
+                oHistoriaClinica.Idtestablecimientosalud = IdEstablecimiento;
                 oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
                 oHistoriaClinica.Tipollegada =  cboTipoLlegada.Text;
                 oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text ;
@@ -290,7 +298,7 @@ namespace CapaUsuario
                 oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
                 oHistoriaClinica.Observaciones = txtObservaciones.Text;
                 oHistoriaClinica.Idtpaciente = idtpaciente;
-                oHistoriaClinica.Idtobstetra = obstetra;
+                oHistoriaClinica.Idtobstetra = IdObstetra;
 
 
                 /*Validando datos*/

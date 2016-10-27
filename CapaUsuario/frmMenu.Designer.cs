@@ -41,7 +41,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
-            this.visitasDomiciliariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,8 +114,7 @@
             // pruebasToolStripMenuItem
             // 
             this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cItasPreNatalesToolStripMenuItem,
-            this.visitasDomiciliariasToolStripMenuItem});
+            this.cItasPreNatalesToolStripMenuItem});
             this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
             this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.pruebasToolStripMenuItem.Text = "Pruebas";
@@ -124,7 +122,7 @@
             // cItasPreNatalesToolStripMenuItem
             // 
             this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
             this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
             // 
@@ -150,13 +148,6 @@
             this.slEstablecimiento.Name = "slEstablecimiento";
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
-            // 
-            // visitasDomiciliariasToolStripMenuItem
-            // 
-            this.visitasDomiciliariasToolStripMenuItem.Name = "visitasDomiciliariasToolStripMenuItem";
-            this.visitasDomiciliariasToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.visitasDomiciliariasToolStripMenuItem.Text = "Visitas Domiciliarias";
-            this.visitasDomiciliariasToolStripMenuItem.Click += new System.EventHandler(this.visitasDomiciliariasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -196,6 +187,5 @@
         private System.Windows.Forms.ToolStripStatusLabel slEstablecimiento;
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visitasDomiciliariasToolStripMenuItem;
     }
 }
