@@ -267,17 +267,17 @@ namespace CapaUsuario
             bool isChecked2dotrimestre = rbSegundoTrimestre.Checked;
             bool isChecked3ertrimestre = rbTercerTrimestre.Checked;
 
-            string respuesta_radiobutton = "";
+            int respuesta_radiobutton = 1;
             
 
             if (isChecked1ertrimestre)
-                respuesta_radiobutton = "1er Trimestre";
+                respuesta_radiobutton = 1;
 
             if (isChecked2dotrimestre)
-                respuesta_radiobutton = "2do Trimestre";
+                respuesta_radiobutton = 2;
 
             if (isChecked3ertrimestre)
-                respuesta_radiobutton = "3er Trimestre";
+                respuesta_radiobutton = 3;
 
             oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
             oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
@@ -335,7 +335,8 @@ namespace CapaUsuario
             }
             else {
                 //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
-                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                int re = oHistoriaClinica.CrearHistoriaClinica();
                 //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica.Codigohistoriaclinica , oHistoriaClinica.Tipollegada, oHistoriaClinica.Tiempollegada, oHistoriaClinica.Edad, oHistoriaClinica.Gestas, oHistoriaClinica.Partos, oHistoriaClinica.Abortos, oHistoriaClinica.Hijosvivos, oHistoriaClinica.Hijosmuertos,oHistoriaClinica.Fur, oHistoriaClinica.Fpp, oHistoriaClinica.Trimestreapn, oHistoriaClinica.Diaapn, oHistoriaClinica.Observaciones, oHistoriaClinica.Idtpaciente, oHistoriaClinica.Idtobstetra);
                 foreach (DataRow row in odtHistoriaClinica.Rows)
                 {
@@ -376,6 +377,25 @@ namespace CapaUsuario
             FUR = FUR.AddDays(7);
             FUR = FUR.AddMonths(-3);
             dtpFPP.Value = FUR;
+        }
+
+        private void rbPrimerTrimestre_CheckedChanged(object sender, EventArgs e)
+        {
+            nupSemanas.Minimum = 1;
+            nupSemanas.Maximum = 12;
+
+        }
+
+        private void rbSegundoTrimestre_CheckedChanged(object sender, EventArgs e)
+        {
+            nupSemanas.Minimum = 13;
+            nupSemanas.Maximum = 28;
+        }
+
+        private void rbTercerTrimestre_CheckedChanged(object sender, EventArgs e)
+        {
+            nupSemanas.Minimum = 29;
+            nupSemanas.Maximum = 42;
         }
     }
 }

@@ -109,9 +109,9 @@ namespace CapaDeNegocios
             set { fpp = value; }
         }
 
-        private string trimestreapn;
+        private int trimestreapn;
 
-        public string Trimestreapn
+        public int Trimestreapn
         {
             get { return trimestreapn; }
             set { trimestreapn = value; }
@@ -156,9 +156,9 @@ namespace CapaDeNegocios
         }
 
         
-        public DataTable CrearHistoriaClinica()
+        public int CrearHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra);
+            return Conexion.GDatos.Ejecutar("spCrearHistoriaClinica", Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra);
         }
         
 
