@@ -17,7 +17,7 @@ namespace CapaUsuario.Bateria
         cSiguienteCodigo micodigo = new cSiguienteCodigo();
         DataTable Tabla = new DataTable();
         public string IdHistoria;
-        public frmBateria(string IdtHistoriaClinica)
+        public frmBateria(string IdtHistoriaClinica, string IdtEstablecimientoSalud )
         {
             InitializeComponent();
             ActualizarLista();

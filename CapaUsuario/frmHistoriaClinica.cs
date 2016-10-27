@@ -93,6 +93,7 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
+            oHistoriaClinica.Idtobstetra = IdObstetra;
             dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinica();
 
 
@@ -412,8 +413,10 @@ namespace CapaUsuario
                         if (cantidad_filas_ecografia == suma_ecografia && suma_odontologia == cantidad_filas_odontologia)
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             nueva_historia_clinica();
+                            oHistoriaClinica.Idtobstetra = IdObstetra;
                             dgvHC.DataSource= oHistoriaClinica.ListarHistoriaClinica();
-                        }
+                        
+                    }
                     }
                 }
 
@@ -487,7 +490,7 @@ namespace CapaUsuario
         private void button3_Click(object sender, EventArgs e)
         {
             if (IdtHistoriaClinica != "") {
-                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica);
+                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento );
                 //fBateria.MdiParent = this;
                 fBateria.ShowDialog();
             }

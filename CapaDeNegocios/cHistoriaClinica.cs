@@ -36,10 +36,15 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica");
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica",Idtobstetra);
         }
 
-        
+        public DataTable ListarHistoriaClinicaLargo()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica", Idtobstetra);
+        }
+
+
     }
 }
 
