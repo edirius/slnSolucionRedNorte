@@ -134,6 +134,7 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvPacientes);
             this.Name = "frmMantenimientoPaciente";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Pacientes";
             this.Load += new System.EventHandler(this.frmMantenimientoPaciente_Load);

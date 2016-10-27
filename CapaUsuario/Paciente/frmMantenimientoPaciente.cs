@@ -30,7 +30,7 @@ namespace CapaUsuario.Paciente
 
         private void frmMantenimientoPaciente_Load(object sender, EventArgs e)
         {
-            sidtestablecimientosalud = "E0003";
+            sidtestablecimientosalud = "E006";
             CargarDatos();
         }
 
