@@ -15,6 +15,7 @@ namespace CapaUsuario.Seguridad
     public partial class frmLogin : Form
     {
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace CapaUsuario.Seguridad
                     MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Menu.Show();
                     this.Hide();
-                    //Menu.obtenerDatos(Usuario);
+                    Menu.obtenerDatos(Usuario);
                 }
                 else
                 {
