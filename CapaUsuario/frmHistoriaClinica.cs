@@ -22,8 +22,8 @@ namespace CapaUsuario
 
         public string IdObstetra = "";
         public string IdEstablecimiento = "";
-        
-            int i = 0;
+        public string IdtHistoriaClinica = "";
+        int i = 0;
         string obstetra = "";
 
         public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
@@ -93,8 +93,8 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
- 
-            
+            dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinica();
+
 
         }
 
@@ -412,6 +412,7 @@ namespace CapaUsuario
                         if (cantidad_filas_ecografia == suma_ecografia && suma_odontologia == cantidad_filas_odontologia)
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             nueva_historia_clinica();
+                            dgvHC.DataSource= oHistoriaClinica.ListarHistoriaClinica();
                         }
                     }
                 }
@@ -485,7 +486,24 @@ namespace CapaUsuario
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Bateria.frmBateria
+            if (IdtHistoriaClinica != "") {
+                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica);
+                //fBateria.MdiParent = this;
+                fBateria.ShowDialog();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
+            
+        }
+
+        private void dgvHC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdtHistoriaClinica = dgvHC[0,e.RowIndex].Value.ToString();
         }
     }
 }

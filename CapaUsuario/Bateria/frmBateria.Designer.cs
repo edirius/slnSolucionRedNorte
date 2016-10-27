@@ -313,6 +313,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBateria";
             this.Text = "frmBateria";
+            this.Load += new System.EventHandler(this.frmBateria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

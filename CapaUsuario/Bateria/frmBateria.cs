@@ -14,7 +14,7 @@ namespace CapaUsuario.Bateria
     public partial class frmBateria : Form
     {
         cBateria miBateria = new cBateria();
-        public frmBateria()
+        public frmBateria(string IdtHistoriaClinica)
         {
             InitializeComponent();
             ActualizarLista();
@@ -149,6 +149,11 @@ namespace CapaUsuario.Bateria
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmBateria_Load(object sender, EventArgs e)
         {
 
         }

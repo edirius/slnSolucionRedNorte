@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHC = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -99,7 +99,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -120,7 +120,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dgvHC);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.buGuardar);
             this.groupBox2.Controls.Add(this.groupBox6);
@@ -147,25 +147,27 @@
             this.groupBox2.Text = "Historia Clinica";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // dataGridView1
+            // dgvHC
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvHC.AllowUserToAddRows = false;
+            this.dgvHC.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 575);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 172);
-            this.dataGridView1.TabIndex = 98;
+            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvHC.Location = new System.Drawing.Point(27, 575);
+            this.dgvHC.MultiSelect = false;
+            this.dgvHC.Name = "dgvHC";
+            this.dgvHC.ReadOnly = true;
+            this.dgvHC.RowHeadersVisible = false;
+            this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHC.Size = new System.Drawing.Size(787, 172);
+            this.dgvHC.TabIndex = 98;
+            this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick);
+            this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -202,8 +204,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -257,8 +259,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -897,7 +899,7 @@
             this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).EndInit();
             this.groupBox5.ResumeLayout(false);
@@ -958,7 +960,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvOdontologia;
         private System.Windows.Forms.DataGridView dgvEcografia;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHC;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label17;
