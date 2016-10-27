@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CapaUsuario
 {
@@ -15,8 +16,10 @@ namespace CapaUsuario
         public frmGestante frmGestanteHC = new frmGestante();
         DataTable odtOdontologo = new DataTable();
         DataTable odtEcografia = new DataTable();
-        string idtpaciente = "";
-        int i = 0;
+        public string idtpaciente = "";
+        public string establecimientosalud = "";
+        
+            int i = 0;
         string obstetra = "";
 
         public frmHistoriaClinica()
@@ -83,7 +86,7 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
-            obstetra = "E006O00001";
+            obstetra = "E006O00001" ;
 
 
         }
@@ -243,132 +246,160 @@ namespace CapaUsuario
 
         private void buGuardar_Click(object sender, EventArgs e)
         {
-            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-            DataTable odtHistoriaClinica = new DataTable();
-            bool completo = false;
-            string mensaje = "";
+            //try{ 
 
+                CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+                
+                DataTable odtHistoriaClinica = new DataTable();
+                bool completo = false;
+                string mensaje = "";
+                establecimientosalud = "E001" ;
 
-            oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
-            oHistoriaClinica.Tipollegada =  cboTipoLlegada.Text;
-            oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text ;
-            if (txtEdad.Text != "")
-                oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
+                oHistoriaClinica.Idtestablecimientosalud = establecimientosalud;
+                oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
+                oHistoriaClinica.Tipollegada =  cboTipoLlegada.Text;
+                oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text ;
+                if (txtEdad.Text != "")
+                    oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
             
-            oHistoriaClinica.Gestas = Convert.ToInt16( nudGestas.Text );
-            oHistoriaClinica.Partos= Convert.ToInt16(nudPartos.Text);
-            oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
-            oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
-            oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
-            oHistoriaClinica.Fur = dtpFUR.Value;
-            oHistoriaClinica.Fpp = dtpFPP.Value;
+                oHistoriaClinica.Gestas = Convert.ToInt16( nudGestas.Text );
+                oHistoriaClinica.Partos= Convert.ToInt16(nudPartos.Text);
+                oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
+                oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
+                oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
+                oHistoriaClinica.Fur = dtpFUR.Value.Date;
+                oHistoriaClinica.Fpp = dtpFPP.Value.Date;
 
-            bool isChecked1ertrimestre = rbPrimerTrimestre.Checked;
-            bool isChecked2dotrimestre = rbSegundoTrimestre.Checked;
-            bool isChecked3ertrimestre = rbTercerTrimestre.Checked;
+                bool isChecked1ertrimestre = rbPrimerTrimestre.Checked;
+                bool isChecked2dotrimestre = rbSegundoTrimestre.Checked;
+                bool isChecked3ertrimestre = rbTercerTrimestre.Checked;
 
-            int respuesta_radiobutton = 1;
+                int respuesta_radiobutton = 1;
             
 
-            if (isChecked1ertrimestre)
-                respuesta_radiobutton = 1;
+                if (isChecked1ertrimestre)
+                    respuesta_radiobutton = 1;
 
-            if (isChecked2dotrimestre)
-                respuesta_radiobutton = 2;
+                if (isChecked2dotrimestre)
+                    respuesta_radiobutton = 2;
 
-            if (isChecked3ertrimestre)
-                respuesta_radiobutton = 3;
+                if (isChecked3ertrimestre)
+                    respuesta_radiobutton = 3;
 
-            oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
-            oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
-            oHistoriaClinica.Observaciones = txtObservaciones.Text;
-            oHistoriaClinica.Idtpaciente = idtpaciente;
-            oHistoriaClinica.Idtobstetra = obstetra;
+                oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
+                oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
+                oHistoriaClinica.Observaciones = txtObservaciones.Text;
+                oHistoriaClinica.Idtpaciente = idtpaciente;
+                oHistoriaClinica.Idtobstetra = obstetra;
 
 
-            /*Validando datos*/
+                /*Validando datos*/
 
-            if (dgvEcografia.Rows.Count < 1)
-            {
-                completo = true;
-                mensaje = "Porfavor agregar fecha(s) al servicio de Odontologia.";
-            }
+                if (dgvEcografia.Rows.Count < 1)
+                {
+                    completo = true;
+                    mensaje = "Porfavor agregar fecha(s) al servicio de Odontologia.";
+                }
 
-            if (dgvEcografia.Rows.Count < 1)
-            {
-                completo = true;
-                mensaje = "Porfavor agregar fecha(s) al servicio de Ecografia Obstetrica.";
-            }
+                if (dgvEcografia.Rows.Count < 1)
+                {
+                    completo = true;
+                    mensaje = "Porfavor agregar fecha(s) al servicio de Ecografia Obstetrica.";
+                }
 
-            if (oHistoriaClinica.Diaapn == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar dia(s) APN.";
-            }
+                if (oHistoriaClinica.Diaapn == "")
+                {
+                    completo = true;
+                    mensaje = "Porfavor llenar dia(s) APN.";
+                }
 
-            if (oHistoriaClinica.Tiempollegada == "00:00")
-            {
-                completo = true;
-                mensaje = "Porfavor seleccionar Tiempo de llegada.";
-            }
+                if (oHistoriaClinica.Tiempollegada == "00:00")
+                {
+                    completo = true;
+                    mensaje = "Porfavor seleccionar Tiempo de llegada.";
+                }
 
-            if (oHistoriaClinica.Tipollegada == "")
-            {
-                completo = true;
-                mensaje = "Porfavor seleccionar tipo de llegada.";
-            }
+                if (oHistoriaClinica.Tipollegada == "")
+                {
+                    completo = true;
+                    mensaje = "Porfavor seleccionar tipo de llegada.";
+                }
             
-            if (idtpaciente == "")
-            {
-                completo = true;
-                mensaje = "Porfavor seleccionar una gestante.";
-            }
+                if (idtpaciente == "")
+                {
+                    completo = true;
+                    mensaje = "Porfavor seleccionar una gestante.";
+                }
 
-            if (oHistoriaClinica.Codigohistoriaclinica == "") {
-                completo = true;
-                mensaje = "Porfavor llenar Codigo de Historia Clinica";
-            }
+                if (oHistoriaClinica.Codigohistoriaclinica == "") {
+                    completo = true;
+                    mensaje = "Porfavor llenar Codigo de Historia Clinica";
+                }
 
            
-            if (completo) { 
-                MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else {
-                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
-                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
-                //int re = oHistoriaClinica.CrearHistoriaClinica();
-                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica.Codigohistoriaclinica , oHistoriaClinica.Tipollegada, oHistoriaClinica.Tiempollegada, oHistoriaClinica.Edad, oHistoriaClinica.Gestas, oHistoriaClinica.Partos, oHistoriaClinica.Abortos, oHistoriaClinica.Hijosvivos, oHistoriaClinica.Hijosmuertos,oHistoriaClinica.Fur, oHistoriaClinica.Fpp, oHistoriaClinica.Trimestreapn, oHistoriaClinica.Diaapn, oHistoriaClinica.Observaciones, oHistoriaClinica.Idtpaciente, oHistoriaClinica.Idtobstetra);
-                foreach (DataRow row in odtHistoriaClinica.Rows)
-                {
-
-                    string respuesta_historia_clinica = row[0].ToString().Trim();
-
-                    string[] words = respuesta_historia_clinica.Split(' ');
-
-                    foreach (string word in words)
+                if (completo) { 
+                    MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                    foreach (DataRow row in odtHistoriaClinica.Rows)
                     {
-                        string exito = word[0].ToString();
-                        string respuesta = word[1].ToString();
+
+                        string respuesta_historia_clinica = row[0].ToString().Trim();
+
+                        string[] words = respuesta_historia_clinica.Split('-');
+                        
+                        string exito = words[0].ToString();
+                        string respuesta = words[1].ToString();
+
                         if (exito == "0")
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else if (exito == "1")
                         {
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            nueva_historia_clinica();
                         }
-
                     }
-
-                    
                 }
-            }
 
+                /*
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show( ex.StackTrace +' ' + ex.Source +' '+ ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            */
 
 
         }
 
+        private void nueva_historia_clinica() {
+            txtHistoriaClinica.Text = "";
+
+            dtpTiempoLlegada.Text = "";
+            txtEdad.Text = "";
+            txtDNI.Text = "";
+            txtNombres.Text = "";
+            txtApellidoPaterno.Text = "";
+            txtApellidoMaterno.Text = "";
+
+
+            nudGestas.Value = 0;
+            nudPartos.Value = 0;
+            nudAbortos.Value = 0;
+            nudHv.Value = 0;
+            nudHm.Value = 0;
+
+            
+            txtObservaciones.Text = "";
+            txtDNI.Focus();
+        }
+
         private void dtpFUR_ValueChanged(object sender, EventArgs e)
         {
-            
+
+           
         }
 
         private void dtpFUR_KeyUp(object sender, KeyEventArgs e)
