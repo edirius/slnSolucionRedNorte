@@ -76,6 +76,16 @@ namespace CapaUsuario
             dgvEcografia.Columns[0].Width = 30;
             dgvEcografia.Columns.Insert(columnIndex, dgvbEcografia);
 
+            /*datetimepicker 24 hrs format*/
+
+            dtpTiempoLlegada.ShowUpDown = true;
+            dtpTiempoLlegada.CustomFormat = "HH:MM";
+            dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+
+            /*Id de obstetra*/
+            obstetra = "O000000001";
+
+
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -235,16 +245,21 @@ namespace CapaUsuario
         {
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
             DataTable odtHistoriaClinica = new DataTable();
+            bool completo = false;
+            string mensaje = "";
+
 
             oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
             oHistoriaClinica.Tipollegada =  cboTipoLlegada.Text;
-            oHistoriaClinica.Tiempollegada = txtTiempoLlegada.Text;
-            oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
-            oHistoriaClinica.Gestas = txtGestas.Text;
-            oHistoriaClinica.Partos= txtPartos.Text;
-            oHistoriaClinica.Abortos = txtAbortos.Text;
-            oHistoriaClinica.Hijosvivos = txtHv.Text;
-            oHistoriaClinica.Hijosmuertos = txtHm.Text;
+            oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text ;
+            if (txtEdad.Text != "")
+                oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
+            
+            oHistoriaClinica.Gestas = nudGestas.Text;
+            oHistoriaClinica.Partos= nudPartos.Text;
+            oHistoriaClinica.Abortos = nudAbortos.Text;
+            oHistoriaClinica.Hijosvivos = nudHv.Text;
+            oHistoriaClinica.Hijosmuertos = nudHm.Text;
             oHistoriaClinica.Fur = dtpFUR.Text;
             oHistoriaClinica.Fpp = dtpFPP.Text;
 
@@ -265,23 +280,126 @@ namespace CapaUsuario
                 respuesta_radiobutton = "3er Trimestre";
 
             oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
-
             oHistoriaClinica.Diaapn = Convert.ToString( nupSemanas.Value );
             oHistoriaClinica.Observaciones = txtObservaciones.Text;
             oHistoriaClinica.Idtpaciente = idtpaciente;
             oHistoriaClinica.Idtobstetra = obstetra;
 
-            odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
 
-            foreach (DataRow row in odtHistoriaClinica.Rows)
+            /*Validando datos*/
+
+            if (dgvEcografia.Rows.Count < 1)
             {
-                string respuesta_historia_clinica = row[0].ToString().Trim();
+                completo = true;
+                mensaje = "Porfavor agregar fecha(s) al servicio de Odontologia.";
+            }
+
+            if (dgvEcografia.Rows.Count < 1)
+            {
+                completo = true;
+                mensaje = "Porfavor agregar fecha(s) al servicio de Ecografia Obstetrica.";
+            }
+
+            if (oHistoriaClinica.Diaapn == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar dia(s) APN.";
+            }
+
+            if (oHistoriaClinica.Hijosmuertos == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar Hijos muertos de formula obstetrica.";
+            }
+
+            if (oHistoriaClinica.Hijosvivos == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar Hijos vivos de formula obstetrica.";
+            }
+
+            if (oHistoriaClinica.Abortos == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar Abortos de formula obstetrica.";
+            }
+
+            if (oHistoriaClinica.Partos == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar Partos de formula obstetrica.";
+            }
+
+            if (oHistoriaClinica.Gestas == "")
+            {
+                completo = true;
+                mensaje = "Porfavor llenar gestas de formula obstetrica.";
+            }
+
+            if (oHistoriaClinica.Tiempollegada == "00:00")
+            {
+                completo = true;
+                mensaje = "Porfavor seleccionar Tiempo de llegada.";
+            }
+
+            if (oHistoriaClinica.Tipollegada == "")
+            {
+                completo = true;
+                mensaje = "Porfavor seleccionar tipo de llegada.";
+            }
+
+            if (oHistoriaClinica.Codigohistoriaclinica == "") {
+                completo = true;
+                mensaje = "Porfavor llenar Codigo de Historia Clinica";
+            }
+
+           
+            if (completo) { 
+                MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else {
+                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                foreach (DataRow row in odtHistoriaClinica.Rows)
+                {
+
+                    string respuesta_historia_clinica = row[0].ToString().Trim();
+
+                    string[] words = respuesta_historia_clinica.Split(' ');
+
+                    foreach (string word in words)
+                    {
+                        string exito = word[0].ToString();
+                        string respuesta = word[1].ToString();
+                        if (exito == "0")
+                            MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else if (exito == "1")
+                        {
+                            MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
+
+                    
+                }
             }
 
 
-                        
 
+        }
+
+        private void dtpFUR_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpFUR_KeyUp(object sender, KeyEventArgs e)
+        {
+            DateTime FUR = dtpFUR.Value;
+            FUR = FUR.AddDays(7);
+            FUR = FUR.AddMonths(-3);
+            dtpFPP.Value = FUR;
         }
     }
 }
+
 

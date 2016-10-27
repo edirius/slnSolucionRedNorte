@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,7 +51,6 @@
             this.dtpFUR = new System.Windows.Forms.DateTimePicker();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
-            this.txtTiempoLlegada = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -66,11 +65,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtHm = new System.Windows.Forms.TextBox();
-            this.txtHv = new System.Windows.Forms.TextBox();
-            this.txtAbortos = new System.Windows.Forms.TextBox();
-            this.txtPartos = new System.Windows.Forms.TextBox();
-            this.txtGestas = new System.Windows.Forms.TextBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
@@ -80,6 +74,7 @@
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.buAgregarOdontologia = new System.Windows.Forms.Button();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
@@ -90,7 +85,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
+            this.nudHm = new System.Windows.Forms.NumericUpDown();
+            this.nudHv = new System.Windows.Forms.NumericUpDown();
+            this.nudAbortos = new System.Windows.Forms.NumericUpDown();
+            this.nudPartos = new System.Windows.Forms.NumericUpDown();
+            this.nudGestas = new System.Windows.Forms.NumericUpDown();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -102,6 +102,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -137,8 +142,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -188,8 +193,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -217,9 +222,10 @@
             // 
             // dtpOdontologo
             // 
-            this.dtpOdontologo.Location = new System.Drawing.Point(26, 30);
+            this.dtpOdontologo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpOdontologo.Location = new System.Drawing.Point(138, 30);
             this.dtpOdontologo.Name = "dtpOdontologo";
-            this.dtpOdontologo.Size = new System.Drawing.Size(211, 20);
+            this.dtpOdontologo.Size = new System.Drawing.Size(99, 20);
             this.dtpOdontologo.TabIndex = 1;
             // 
             // groupBox5
@@ -242,8 +248,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -298,9 +304,10 @@
             // 
             // dtpEcografia
             // 
-            this.dtpEcografia.Location = new System.Drawing.Point(36, 30);
+            this.dtpEcografia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEcografia.Location = new System.Drawing.Point(137, 30);
             this.dtpEcografia.Name = "dtpEcografia";
-            this.dtpEcografia.Size = new System.Drawing.Size(200, 20);
+            this.dtpEcografia.Size = new System.Drawing.Size(99, 20);
             this.dtpEcografia.TabIndex = 0;
             // 
             // buAgregarEcografia
@@ -315,24 +322,28 @@
             // 
             // dtpFPP
             // 
+            this.dtpFPP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFPP.Location = new System.Drawing.Point(597, 101);
             this.dtpFPP.Name = "dtpFPP";
-            this.dtpFPP.Size = new System.Drawing.Size(200, 20);
+            this.dtpFPP.Size = new System.Drawing.Size(120, 20);
             this.dtpFPP.TabIndex = 0;
             // 
             // dtpFUR
             // 
-            this.dtpFUR.Location = new System.Drawing.Point(597, 76);
+            this.dtpFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFUR.Location = new System.Drawing.Point(597, 75);
             this.dtpFUR.Name = "dtpFUR";
-            this.dtpFUR.Size = new System.Drawing.Size(200, 20);
+            this.dtpFUR.Size = new System.Drawing.Size(120, 20);
             this.dtpFUR.TabIndex = 0;
+            this.dtpFUR.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
+            this.dtpFUR.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.cboTipoLlegada);
-            this.groupBox8.Controls.Add(this.txtTiempoLlegada);
             this.groupBox8.Controls.Add(this.label23);
             this.groupBox8.Controls.Add(this.label7);
+            this.groupBox8.Controls.Add(this.dtpTiempoLlegada);
             this.groupBox8.Location = new System.Drawing.Point(538, 130);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(277, 69);
@@ -351,13 +362,6 @@
             this.cboTipoLlegada.Name = "cboTipoLlegada";
             this.cboTipoLlegada.Size = new System.Drawing.Size(128, 21);
             this.cboTipoLlegada.TabIndex = 2;
-            // 
-            // txtTiempoLlegada
-            // 
-            this.txtTiempoLlegada.Location = new System.Drawing.Point(131, 43);
-            this.txtTiempoLlegada.Name = "txtTiempoLlegada";
-            this.txtTiempoLlegada.Size = new System.Drawing.Size(128, 20);
-            this.txtTiempoLlegada.TabIndex = 1;
             // 
             // label23
             // 
@@ -404,7 +408,7 @@
             // 
             // nupSemanas
             // 
-            this.nupSemanas.Location = new System.Drawing.Point(90, 40);
+            this.nupSemanas.Location = new System.Drawing.Point(85, 40);
             this.nupSemanas.Maximum = new decimal(new int[] {
             42,
             0,
@@ -431,7 +435,6 @@
             this.rbTercerTrimestre.Name = "rbTercerTrimestre";
             this.rbTercerTrimestre.Size = new System.Drawing.Size(86, 17);
             this.rbTercerTrimestre.TabIndex = 0;
-            this.rbTercerTrimestre.TabStop = true;
             this.rbTercerTrimestre.Text = "3er Trimestre";
             this.rbTercerTrimestre.UseVisualStyleBackColor = true;
             // 
@@ -442,13 +445,13 @@
             this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
             this.rbSegundoTrimestre.Size = new System.Drawing.Size(89, 17);
             this.rbSegundoTrimestre.TabIndex = 0;
-            this.rbSegundoTrimestre.TabStop = true;
             this.rbSegundoTrimestre.Text = "2do Trimestre";
             this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
             // 
             // rbuPrimerTrimestre
             // 
             this.rbuPrimerTrimestre.AutoSize = true;
+            this.rbuPrimerTrimestre.Checked = true;
             this.rbuPrimerTrimestre.Location = new System.Drawing.Point(5, 17);
             this.rbuPrimerTrimestre.Name = "rbuPrimerTrimestre";
             this.rbuPrimerTrimestre.Size = new System.Drawing.Size(86, 17);
@@ -460,15 +463,15 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.nudGestas);
+            this.groupBox7.Controls.Add(this.nudPartos);
+            this.groupBox7.Controls.Add(this.nudAbortos);
+            this.groupBox7.Controls.Add(this.nudHv);
+            this.groupBox7.Controls.Add(this.nudHm);
             this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.txtHm);
-            this.groupBox7.Controls.Add(this.txtHv);
-            this.groupBox7.Controls.Add(this.txtAbortos);
-            this.groupBox7.Controls.Add(this.txtPartos);
-            this.groupBox7.Controls.Add(this.txtGestas);
             this.groupBox7.Location = new System.Drawing.Point(372, 67);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(160, 201);
@@ -526,45 +529,6 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // txtHm
-            // 
-            this.txtHm.Location = new System.Drawing.Point(109, 144);
-            this.txtHm.Name = "txtHm";
-            this.txtHm.Size = new System.Drawing.Size(36, 20);
-            this.txtHm.TabIndex = 1;
-            // 
-            // txtHv
-            // 
-            this.txtHv.Location = new System.Drawing.Point(109, 116);
-            this.txtHv.Name = "txtHv";
-            this.txtHv.Size = new System.Drawing.Size(36, 20);
-            this.txtHv.TabIndex = 1;
-            // 
-            // txtAbortos
-            // 
-            this.txtAbortos.Location = new System.Drawing.Point(109, 88);
-            this.txtAbortos.Name = "txtAbortos";
-            this.txtAbortos.Size = new System.Drawing.Size(36, 20);
-            this.txtAbortos.TabIndex = 1;
-            this.txtAbortos.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            // 
-            // txtPartos
-            // 
-            this.txtPartos.Location = new System.Drawing.Point(109, 60);
-            this.txtPartos.Name = "txtPartos";
-            this.txtPartos.Size = new System.Drawing.Size(36, 20);
-            this.txtPartos.TabIndex = 1;
-            this.txtPartos.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
-            // txtGestas
-            // 
-            this.txtGestas.AccessibleRole = System.Windows.Forms.AccessibleRole.Diagram;
-            this.txtGestas.Location = new System.Drawing.Point(109, 32);
-            this.txtGestas.Name = "txtGestas";
-            this.txtGestas.Size = new System.Drawing.Size(36, 20);
-            this.txtGestas.TabIndex = 1;
-            this.txtGestas.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // txtBuscar
             // 
@@ -654,6 +618,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestante";
             // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(147, 30);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(99, 20);
+            this.txtDNI.TabIndex = 2;
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            // 
             // buAgregarOdontologia
             // 
             this.buAgregarOdontologia.Location = new System.Drawing.Point(252, 28);
@@ -742,14 +714,73 @@
             this.label2.Text = "Apellido Paterno:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // txtDNI
+            // dtpTiempoLlegada
             // 
-            this.txtDNI.Location = new System.Drawing.Point(147, 30);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(99, 20);
-            this.txtDNI.TabIndex = 2;
-            this.txtDNI.Visible = false;
-            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
+            this.dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTiempoLlegada.Location = new System.Drawing.Point(131, 40);
+            this.dtpTiempoLlegada.Name = "dtpTiempoLlegada";
+            this.dtpTiempoLlegada.Size = new System.Drawing.Size(128, 20);
+            this.dtpTiempoLlegada.TabIndex = 0;
+            // 
+            // nudHm
+            // 
+            this.nudHm.Location = new System.Drawing.Point(102, 142);
+            this.nudHm.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudHm.Name = "nudHm";
+            this.nudHm.Size = new System.Drawing.Size(41, 20);
+            this.nudHm.TabIndex = 1;
+            // 
+            // nudHv
+            // 
+            this.nudHv.Location = new System.Drawing.Point(102, 114);
+            this.nudHv.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudHv.Name = "nudHv";
+            this.nudHv.Size = new System.Drawing.Size(41, 20);
+            this.nudHv.TabIndex = 1;
+            // 
+            // nudAbortos
+            // 
+            this.nudAbortos.Location = new System.Drawing.Point(102, 86);
+            this.nudAbortos.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudAbortos.Name = "nudAbortos";
+            this.nudAbortos.Size = new System.Drawing.Size(41, 20);
+            this.nudAbortos.TabIndex = 1;
+            // 
+            // nudPartos
+            // 
+            this.nudPartos.Location = new System.Drawing.Point(102, 58);
+            this.nudPartos.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPartos.Name = "nudPartos";
+            this.nudPartos.Size = new System.Drawing.Size(41, 20);
+            this.nudPartos.TabIndex = 1;
+            // 
+            // nudGestas
+            // 
+            this.nudGestas.Location = new System.Drawing.Point(102, 30);
+            this.nudGestas.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudGestas.Name = "nudGestas";
+            this.nudGestas.Size = new System.Drawing.Size(41, 20);
+            this.nudGestas.TabIndex = 1;
             // 
             // frmHistoriaClinica
             // 
@@ -777,6 +808,11 @@
             this.groupBox7.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -804,7 +840,6 @@
         private System.Windows.Forms.TextBox txtHistoriaClinica;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTiempoLlegada;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private System.Windows.Forms.TextBox txtApellidoPaterno;
@@ -828,11 +863,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtHm;
-        private System.Windows.Forms.TextBox txtHv;
-        private System.Windows.Forms.TextBox txtAbortos;
-        private System.Windows.Forms.TextBox txtPartos;
-        private System.Windows.Forms.TextBox txtGestas;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.ComboBox cboTipoLlegada;
         private System.Windows.Forms.Label label23;
@@ -843,6 +873,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nupSemanas;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.DateTimePicker dtpTiempoLlegada;
+        private System.Windows.Forms.NumericUpDown nudGestas;
+        private System.Windows.Forms.NumericUpDown nudPartos;
+        private System.Windows.Forms.NumericUpDown nudAbortos;
+        private System.Windows.Forms.NumericUpDown nudHv;
+        private System.Windows.Forms.NumericUpDown nudHm;
     }
 }
 

@@ -47,7 +47,7 @@ namespace CapaDeNegocios.Paciente
 
         public DataTable ListarPacienteXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno");
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno",apellidopaterno);
         }
 
         public DataTable ListarPacienteTodos()
