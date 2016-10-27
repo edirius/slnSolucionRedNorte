@@ -93,17 +93,17 @@ namespace CapaDeNegocios
             set { hijosmuertos = value; }
         }
 
-        private string fur;
+        private DateTime fur;
 
-        public string Fur
+        public DateTime Fur
         {
             get { return fur; }
             set { fur = value; }
         }
 
-        private string fpp;
+        private DateTime fpp;
 
-        public string Fpp
+        public DateTime Fpp
         {
             get { return fpp; }
             set { fpp = value; }

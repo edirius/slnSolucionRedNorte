@@ -260,8 +260,8 @@ namespace CapaUsuario
             oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
             oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
             oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
-            oHistoriaClinica.Fur = dtpFUR.Text;
-            oHistoriaClinica.Fpp = dtpFPP.Text;
+            oHistoriaClinica.Fur = dtpFUR.Value;
+            oHistoriaClinica.Fpp = dtpFPP.Value;
 
             bool isChecked1ertrimestre = rbPrimerTrimestre.Checked;
             bool isChecked2dotrimestre = rbSegundoTrimestre.Checked;
