@@ -10,15 +10,16 @@ namespace CapaDeNegocios.CitaPreNatal
 {
     public class cCitaPrenatal
     {
-        int codigoCitaPrenatal;
-        
+        string codigoCitaPrenatal;
+        int numeroCita;
         DateTime fechaCitaPrenatal;
         int edadGestacional;
         string fua;
         int presionArterialS;
         int presionArterialD;
+        cHistoriaClinica historiaClinica;
 
-        public int CodigoCitaPrenatal
+        public string CodigoCitaPrenatal
         {
             get
             {
@@ -96,6 +97,32 @@ namespace CapaDeNegocios.CitaPreNatal
             }
         }
 
+        public int NumeroCita
+        {
+            get
+            {
+                return numeroCita;
+            }
+
+            set
+            {
+                numeroCita = value;
+            }
+        }
+
+        public cHistoriaClinica HistoriaClinica
+        {
+            get
+            {
+                return historiaClinica;
+            }
+
+            set
+            {
+                historiaClinica = value;
+            }
+        }
+
         public int AgregarCita(cCitaPrenatal nuevaCitaPrenatal)
         {
             try
@@ -104,7 +131,7 @@ namespace CapaDeNegocios.CitaPreNatal
             }
             catch (Exception eCita)
             {
-                throw new cReglaNegocioException("Error al crear Control PreNatal ", eCita);
+                throw new cReglaNegocioException("Error al crear Control PreNatal : Mensaje : " + eCita.Message, eCita);
             }
         }
 
@@ -116,7 +143,7 @@ namespace CapaDeNegocios.CitaPreNatal
             }
             catch (Exception eCita)
             {
-                throw new cReglaNegocioException("Error al modificar Control PreNatal ", eCita);
+                throw new cReglaNegocioException("Error al modificar Control PreNatal : Mensaje : " + eCita.Message, eCita);
             }
         }
 
@@ -128,7 +155,7 @@ namespace CapaDeNegocios.CitaPreNatal
             }
             catch (Exception eCita)
             {
-                throw new cReglaNegocioException("Error al eliminar Control PreNatal ", eCita);
+                throw new cReglaNegocioException("Error al eliminar Control PreNatal : Mensaje : " + eCita.Message, eCita);
             }
         }
 
@@ -136,11 +163,11 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.TraerDataTable("spListarCitasPreNatal");
+                return Conexion.GDatos.TraerDataTable("spListarCitasPreNatal", historiaClinica.Codigohistoriaclinica);
             }
             catch (Exception eCita)
             {
-                throw new cReglaNegocioException("Error al traer la lista de CItas.", eCita);
+                throw new cReglaNegocioException("Error al traer la lista de Citas: Mensaje : " + eCita.Message, eCita);
             }
         }
     }
