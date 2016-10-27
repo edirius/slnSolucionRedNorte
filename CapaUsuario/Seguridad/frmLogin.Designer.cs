@@ -40,7 +40,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 38);
+            this.label1.Location = new System.Drawing.Point(113, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
@@ -48,16 +48,17 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(171, 35);
+            this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUsuario.Location = new System.Drawing.Point(165, 45);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "GEGE";
+            this.txtUsuario.Text = "CARMEN";
             // 
             // cbVer
             // 
             this.cbVer.AutoSize = true;
-            this.cbVer.Location = new System.Drawing.Point(171, 87);
+            this.cbVer.Location = new System.Drawing.Point(165, 97);
             this.cbVer.Name = "cbVer";
             this.cbVer.Size = new System.Drawing.Size(98, 17);
             this.cbVer.TabIndex = 2;
@@ -67,17 +68,17 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(171, 61);
+            this.txtContraseña.Location = new System.Drawing.Point(165, 71);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(121, 20);
             this.txtContraseña.TabIndex = 6;
-            this.txtContraseña.Text = "GEGE";
+            this.txtContraseña.Text = "CARMEN";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 64);
+            this.label2.Location = new System.Drawing.Point(96, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 5;
@@ -117,6 +118,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cBateria.cs" />
     <Compile Include="cEcografia.cs" />
     <Compile Include="cHistoriaClinica.cs" />
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Obstetra\cObstetra.cs" />
     <Compile Include="Obstetra\cUsuario.cs" />
+    <Compile Include="VisitaDomiciliaria\cVisitaDomiciliaria.cs" />
     <Compile Include="Paciente\cPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

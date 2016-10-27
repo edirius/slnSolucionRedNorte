@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
+using CapaDeDatos;
 namespace CapaDeNegocios
 {
     public class cOdontologia
@@ -17,9 +18,9 @@ namespace CapaDeNegocios
             set { idtodontologia = value; }
         }
 
-        private string fecha_servicio;
+        private DateTime fecha_servicio;
 
-        public string Fecha_servicio
+        public DateTime Fecha_servicio
         {
             get { return fecha_servicio; }
             set { fecha_servicio = value; }
@@ -39,6 +40,11 @@ namespace CapaDeNegocios
         {
             get { return idthistoriaclinica; }
             set { idthistoriaclinica = value; }
+        }
+
+        public DataTable CrearOdontologia()
+        {
+            return Conexion.GDatos.TraerDataTable("spCrearOdontologia", Fecha_servicio, Idthistoriaclinica);
         }
 
     }

@@ -23,14 +23,14 @@ namespace CapaUsuario.Paciente
         string sidtestablecimientosalud = "";
         CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
 
-        public frmMantenimientoPaciente()
+        public frmMantenimientoPaciente(string pidestablecimientosalud)
         {
+            sidtestablecimientosalud = pidestablecimientosalud;
             InitializeComponent();
         }
 
         private void frmMantenimientoPaciente_Load(object sender, EventArgs e)
         {
-            sidtestablecimientosalud = "E006";
             CargarDatos();
         }
 

@@ -14,8 +14,6 @@ namespace CapaUsuario
 {
     public partial class frmMenu : Form
     {
-
-        
         public CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         public string NombreObstetra;
         public string IdObstetra;
@@ -26,7 +24,6 @@ namespace CapaUsuario
         {
             InitializeComponent();
             HacerConeccion();
-            
         }
         public void obtenerDatos(string LoginUsuario)
         {
@@ -54,21 +51,21 @@ namespace CapaUsuario
 
         private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente();
+            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente(IdEstablecimientoSalud);
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
         }
 
         private void mantenimientoObstetrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra();
+            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra(IdEstablecimientoSalud);
             fMantenimientoObstetra.MdiParent = this;
             fMantenimientoObstetra.Show();
         }
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica( IdObstetra, IdEstablecimientoSalud );
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
@@ -101,6 +98,13 @@ namespace CapaUsuario
             fCitaPreNatal.HistoriaClinica = "E001H0001";
             fCitaPreNatal.MdiParent = this;
             fCitaPreNatal.Show();
+        }
+
+        private void visitasDomiciliariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VisitaDomiciliaria.frmVisitaDomiciliaria fVisitaDomiciliaria = new VisitaDomiciliaria.frmVisitaDomiciliaria();
+            fVisitaDomiciliaria.MdiParent = this;
+            fVisitaDomiciliaria.Show();
         }
     }
 }
