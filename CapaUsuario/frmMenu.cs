@@ -15,7 +15,7 @@ namespace CapaUsuario
     public partial class frmMenu : Form
     {
 
-        public frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+        
         public CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         public string NombreObstetra;
         public string IdObstetra;
@@ -68,7 +68,7 @@ namespace CapaUsuario
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
