@@ -83,7 +83,7 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
-            obstetra = "O000000001";
+            obstetra = "E006O00001";
 
 
         }
