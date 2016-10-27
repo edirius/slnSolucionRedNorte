@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cBateria.cs" />
     <Compile Include="cEcografia.cs" />
     <Compile Include="cHistoriaClinica.cs" />
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />

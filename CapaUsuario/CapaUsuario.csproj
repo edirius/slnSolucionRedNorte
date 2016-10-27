@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bateria\frmBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmBateria.Designer.cs">
+      <DependentUpon>frmBateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="CitaPreNatal\frmCitaPreNatal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Seguridad\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bateria\frmBateria.resx">
+      <DependentUpon>frmBateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
     </EmbeddedResource>
