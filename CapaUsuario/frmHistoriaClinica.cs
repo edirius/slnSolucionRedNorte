@@ -263,9 +263,9 @@ namespace CapaUsuario
             oHistoriaClinica.Fur = dtpFUR.Text;
             oHistoriaClinica.Fpp = dtpFPP.Text;
 
-            bool isChecked1ertrimestre = rbuPrimerTrimestre.Checked;
-            bool isChecked2dotrimestre = rbuPrimerTrimestre.Checked;
-            bool isChecked3ertrimestre = rbuPrimerTrimestre.Checked;
+            bool isChecked1ertrimestre = rbPrimerTrimestre.Checked;
+            bool isChecked2dotrimestre = rbSegundoTrimestre.Checked;
+            bool isChecked3ertrimestre = rbTercerTrimestre.Checked;
 
             string respuesta_radiobutton = "";
             

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
             this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
-            this.rbuPrimerTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.nudGestas = new System.Windows.Forms.NumericUpDown();
@@ -145,8 +145,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,8 +196,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -251,8 +251,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -392,7 +392,7 @@
             this.groupBox4.Controls.Add(this.nupSemanas);
             this.groupBox4.Controls.Add(this.rbTercerTrimestre);
             this.groupBox4.Controls.Add(this.rbSegundoTrimestre);
-            this.groupBox4.Controls.Add(this.rbuPrimerTrimestre);
+            this.groupBox4.Controls.Add(this.rbPrimerTrimestre);
             this.groupBox4.Location = new System.Drawing.Point(538, 202);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(277, 66);
@@ -451,17 +451,17 @@
             this.rbSegundoTrimestre.Text = "2do Trimestre";
             this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
             // 
-            // rbuPrimerTrimestre
+            // rbPrimerTrimestre
             // 
-            this.rbuPrimerTrimestre.AutoSize = true;
-            this.rbuPrimerTrimestre.Checked = true;
-            this.rbuPrimerTrimestre.Location = new System.Drawing.Point(5, 17);
-            this.rbuPrimerTrimestre.Name = "rbuPrimerTrimestre";
-            this.rbuPrimerTrimestre.Size = new System.Drawing.Size(86, 17);
-            this.rbuPrimerTrimestre.TabIndex = 0;
-            this.rbuPrimerTrimestre.TabStop = true;
-            this.rbuPrimerTrimestre.Text = "1er Trimestre";
-            this.rbuPrimerTrimestre.UseVisualStyleBackColor = true;
+            this.rbPrimerTrimestre.AutoSize = true;
+            this.rbPrimerTrimestre.Checked = true;
+            this.rbPrimerTrimestre.Location = new System.Drawing.Point(5, 17);
+            this.rbPrimerTrimestre.Name = "rbPrimerTrimestre";
+            this.rbPrimerTrimestre.Size = new System.Drawing.Size(86, 17);
+            this.rbPrimerTrimestre.TabIndex = 0;
+            this.rbPrimerTrimestre.TabStop = true;
+            this.rbPrimerTrimestre.Text = "1er Trimestre";
+            this.rbPrimerTrimestre.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -869,7 +869,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rbTercerTrimestre;
         private System.Windows.Forms.RadioButton rbSegundoTrimestre;
-        private System.Windows.Forms.RadioButton rbuPrimerTrimestre;
+        private System.Windows.Forms.RadioButton rbPrimerTrimestre;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtHistoriaClinica;
