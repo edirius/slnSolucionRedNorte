@@ -39,6 +39,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cItasPreNatalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +50,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacientesToolStripMenuItem,
             this.historiaClinicaToolStripMenuItem,
-            this.establecimientoSaludToolStripMenuItem});
+            this.establecimientoSaludToolStripMenuItem,
+            this.pruebasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
@@ -131,6 +134,21 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // pruebasToolStripMenuItem
+            // 
+            this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cItasPreNatalesToolStripMenuItem});
+            this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
+            this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.pruebasToolStripMenuItem.Text = "Pruebas";
+            // 
+            // cItasPreNatalesToolStripMenuItem
+            // 
+            this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
+            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
+            this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,5 +185,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel slNombre;
         private System.Windows.Forms.ToolStripStatusLabel slEstablecimiento;
+        private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
     }
 }

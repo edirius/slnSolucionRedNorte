@@ -93,5 +93,14 @@ namespace CapaUsuario
         {
             Application.Exit();
         }
+
+        private void cItasPreNatalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CitaPreNatal.frmCitaPreNatal fCitaPreNatal = new CitaPreNatal.frmCitaPreNatal();
+            fCitaPreNatal.Establecimiento = "E001";
+            fCitaPreNatal.HistoriaClinica = "E001H0001";
+            fCitaPreNatal.MdiParent = this;
+            fCitaPreNatal.Show();
+        }
     }
 }

@@ -19,10 +19,16 @@ namespace CapaUsuario.CitaPreNatal
             InitializeComponent();
         }
 
+        public string Establecimiento
+        { get; set; }
+
+        public string HistoriaClinica
+        { get; set; }
         public cCitaPrenatal oCitaPrenatal;
 
         private void frmCitaPreNatal_Load(object sender, EventArgs e)
         {
+            MessageBox.Show(Establecimiento);
             CargarDatos();
         }
 
