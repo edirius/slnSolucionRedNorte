@@ -44,6 +44,11 @@ namespace CapaUsuario.Paciente
 
                 if (saccion == 1)
                 {
+                    CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                    foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tpaciente", sidtestablecimientosalud).Rows)
+                    {
+                        miPaciente.idtpaciente = row[0].ToString();
+                    }
                     miPaciente.CrearPaciente(miPaciente);
                     bOk = true;
                 }

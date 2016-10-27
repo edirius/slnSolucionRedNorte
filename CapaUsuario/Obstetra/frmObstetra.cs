@@ -49,6 +49,11 @@ namespace CapaUsuario.Obstetra
 
                 if (saccion == 1)
                 {
+                    CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                    foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tobstetra", sidtestablecimientosalud).Rows)
+                    {
+                        miObstetra.idtobstetra = row[0].ToString();
+                    }
                     miObstetra.CrearObstetra(miObstetra);
                     bOk = true;
                 }
