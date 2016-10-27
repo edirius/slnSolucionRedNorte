@@ -55,5 +55,10 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional,Idthistoriaclinica );
         }
 
+        public DataTable ListarEcografiaXIdHC()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarEcografiaXIdHC", Idthistoriaclinica);
+        }
+
     }
 }
