@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             this.dtpOdontologo = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvEcografia = new System.Windows.Forms.DataGridView();
+            this.nudEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@
             this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
+            this.nupSemanas = new System.Windows.Forms.NumericUpDown();
             this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
             this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
             this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
@@ -90,17 +91,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.nupSemanas = new System.Windows.Forms.NumericUpDown();
-            this.nudEdadGestacional = new System.Windows.Forms.NumericUpDown();
+            this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).BeginInit();
@@ -108,8 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -145,8 +151,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,8 +202,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -251,8 +257,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,6 +273,23 @@
             this.dgvEcografia.Size = new System.Drawing.Size(445, 133);
             this.dgvEcografia.TabIndex = 97;
             this.dgvEcografia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcografia_CellContentClick);
+            // 
+            // nudEdadGestacional
+            // 
+            this.nudEdadGestacional.Location = new System.Drawing.Point(348, 28);
+            this.nudEdadGestacional.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudEdadGestacional.Name = "nudEdadGestacional";
+            this.nudEdadGestacional.Size = new System.Drawing.Size(41, 20);
+            this.nudEdadGestacional.TabIndex = 1;
+            this.nudEdadGestacional.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label14
             // 
@@ -409,23 +432,23 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Nº de semana:";
             // 
-            // nupEdadGestacional
+            // nupSemanas
             // 
-            this.nupEdadGestacional.Location = new System.Drawing.Point(354, 29);
-            this.nupEdadGestacional.Maximum = new decimal(new int[] {
+            this.nupSemanas.Location = new System.Drawing.Point(85, 40);
+            this.nupSemanas.Maximum = new decimal(new int[] {
             42,
             0,
             0,
             0});
-            this.nupEdadGestacional.Minimum = new decimal(new int[] {
+            this.nupSemanas.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nupEdadGestacional.Name = "nupEdadGestacional";
-            this.nupEdadGestacional.Size = new System.Drawing.Size(41, 20);
-            this.nupEdadGestacional.TabIndex = 1;
-            this.nupEdadGestacional.Value = new decimal(new int[] {
+            this.nupSemanas.Name = "nupSemanas";
+            this.nupSemanas.Size = new System.Drawing.Size(41, 20);
+            this.nupSemanas.TabIndex = 1;
+            this.nupSemanas.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -780,50 +803,94 @@
             this.label2.Text = "Apellido Paterno:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // nupSemanas
+            // nupEdadGestacional
             // 
-            this.nupSemanas.Location = new System.Drawing.Point(85, 40);
-            this.nupSemanas.Maximum = new decimal(new int[] {
+            this.nupEdadGestacional.Location = new System.Drawing.Point(354, 29);
+            this.nupEdadGestacional.Maximum = new decimal(new int[] {
             42,
             0,
             0,
             0});
-            this.nupSemanas.Minimum = new decimal(new int[] {
+            this.nupEdadGestacional.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nupSemanas.Name = "nupSemanas";
-            this.nupSemanas.Size = new System.Drawing.Size(41, 20);
-            this.nupSemanas.TabIndex = 1;
-            this.nupSemanas.Value = new decimal(new int[] {
+            this.nupEdadGestacional.Name = "nupEdadGestacional";
+            this.nupEdadGestacional.Size = new System.Drawing.Size(41, 20);
+            this.nupEdadGestacional.TabIndex = 1;
+            this.nupEdadGestacional.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // nudEdadGestacional
+            // button3
             // 
-            this.nudEdadGestacional.Location = new System.Drawing.Point(348, 28);
-            this.nudEdadGestacional.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudEdadGestacional.Name = "nudEdadGestacional";
-            this.nudEdadGestacional.Size = new System.Drawing.Size(41, 20);
-            this.nudEdadGestacional.TabIndex = 1;
-            this.nudEdadGestacional.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.button3.Location = new System.Drawing.Point(842, 305);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(90, 49);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Registro Bateria";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(842, 251);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 49);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Atención Prenatal";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(842, 360);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(90, 49);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Visita Domiciliaria";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(842, 415);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(90, 49);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Termino Gestión";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(842, 469);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(90, 49);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Control Puerperio";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(842, 524);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(90, 49);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "Atención Recien Nacido";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 767);
+            this.ClientSize = new System.Drawing.Size(944, 767);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Historia Clinica";
@@ -836,11 +903,12 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).EndInit();
@@ -850,8 +918,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -919,6 +986,12 @@
         private System.Windows.Forms.NumericUpDown nudHm;
         private System.Windows.Forms.NumericUpDown nudEdadGestacional;
         private System.Windows.Forms.NumericUpDown nupSemanas;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 

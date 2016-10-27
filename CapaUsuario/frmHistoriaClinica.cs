@@ -255,9 +255,11 @@ namespace CapaUsuario
         {
             //try{ 
 
-                CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-                
-                DataTable odtHistoriaClinica = new DataTable();
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            CapaDeNegocios.cEcografia oEcografia = new CapaDeNegocios.cEcografia();
+            CapaDeNegocios.cOdontologia oOdontologia = new CapaDeNegocios.cOdontologia();
+
+            DataTable odtHistoriaClinica = new DataTable();
                 bool completo = false;
                 string mensaje = "";
 
@@ -355,15 +357,59 @@ namespace CapaUsuario
 
                         string respuesta_historia_clinica = row[0].ToString().Trim();
 
-                        string[] words = respuesta_historia_clinica.Split('-');
+                        string[] words = respuesta_historia_clinica.Split('*');
                         
                         string exito = words[0].ToString();
                         string respuesta = words[1].ToString();
+                        string idthistoriaclinica = words[2].ToString();
+                        DataTable dtEcografia = new DataTable();
+                        DataTable dtOdontologia = new DataTable();
+                        DataTable dtEcografia2 = new DataTable();
+                        DataTable dtOdontologia2 = new DataTable();
+                        int suma_ecografia = 0;
+                        int suma_odontologia = 0;
+                        int cantidad_filas_ecografia = 0;
+                        int cantidad_filas_odontologia = 0;
+                        string[] words_ecografia;
+                        string[] words_odontologia;
+                        string respuesta_ecografia = "";
+                        string respuesta_odontologia = "";
 
-                        if (exito == "0")
+                    if (exito == "0")
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else if (exito == "1")
                         {
+                        cantidad_filas_ecografia = dgvEcografia.Rows.Count;
+                            for (int i=0; i< cantidad_filas_ecografia; i++){
+                                respuesta_ecografia = dgvEcografia[3, i].Value.ToString();
+                                
+                                oEcografia.Fecha_servicio = Convert.ToDateTime (dgvEcografia[2, i].Value.ToString() );
+                                oEcografia.Edadgestacional = dgvEcografia[3, i].Value.ToString();
+                                oEcografia.Idthistoriaclinica = idthistoriaclinica ;
+                                dtEcografia = oEcografia.CrearEcografia();
+                                foreach (DataRow row_e in dtEcografia.Rows){
+                                    respuesta_ecografia = row_e[0].ToString().Trim();
+                                    words_ecografia = respuesta_ecografia.Split('-');
+                                    suma_ecografia = suma_ecografia + Convert.ToInt16(words_ecografia[0].ToString());
+                                }
+                            }
+
+
+                        cantidad_filas_odontologia = dgvOdontologia.Rows.Count;
+                        for (int i = 0; i < cantidad_filas_odontologia; i++)
+                        {
+                            oOdontologia.Fecha_servicio = Convert.ToDateTime(dgvOdontologia[2, i].Value.ToString() );
+                            oOdontologia.Idthistoriaclinica = idthistoriaclinica;
+                            dtOdontologia = oOdontologia.CrearOdontologia();
+                            foreach (DataRow row_o in dtOdontologia.Rows)
+                            {
+                                respuesta_odontologia = row_o[0].ToString().Trim();
+                                words_odontologia = respuesta_odontologia.Split('-');
+                                suma_odontologia = suma_odontologia + Convert.ToInt16(words_odontologia[0].ToString());
+                            }
+                        }
+                          
+                        if (cantidad_filas_ecografia == suma_ecografia && suma_odontologia == cantidad_filas_odontologia)
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             nueva_historia_clinica();
                         }
@@ -435,6 +481,11 @@ namespace CapaUsuario
         {
             nupSemanas.Minimum = 29;
             nupSemanas.Maximum = 42;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bateria.frmBateria
         }
     }
 }

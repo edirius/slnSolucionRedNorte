@@ -68,7 +68,7 @@ namespace CapaUsuario
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica(IdObstetra, IdEstablecimientoSalud );
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
