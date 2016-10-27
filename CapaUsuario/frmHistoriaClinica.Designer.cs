@@ -56,7 +56,7 @@
             this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.nupSemanas = new System.Windows.Forms.NumericUpDown();
+            this.nudSemanas = new System.Windows.Forms.NumericUpDown();
             this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
             this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
             this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
@@ -107,7 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
             this.groupBox8.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).BeginInit();
@@ -414,7 +414,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.nupSemanas);
+            this.groupBox4.Controls.Add(this.nudSemanas);
             this.groupBox4.Controls.Add(this.rbTercerTrimestre);
             this.groupBox4.Controls.Add(this.rbSegundoTrimestre);
             this.groupBox4.Controls.Add(this.rbPrimerTrimestre);
@@ -434,23 +434,23 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Nº de semana:";
             // 
-            // nupSemanas
+            // nudSemanas
             // 
-            this.nupSemanas.Location = new System.Drawing.Point(85, 40);
-            this.nupSemanas.Maximum = new decimal(new int[] {
+            this.nudSemanas.Location = new System.Drawing.Point(85, 40);
+            this.nudSemanas.Maximum = new decimal(new int[] {
             42,
             0,
             0,
             0});
-            this.nupSemanas.Minimum = new decimal(new int[] {
+            this.nudSemanas.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nupSemanas.Name = "nupSemanas";
-            this.nupSemanas.Size = new System.Drawing.Size(41, 20);
-            this.nupSemanas.TabIndex = 1;
-            this.nupSemanas.Value = new decimal(new int[] {
+            this.nudSemanas.Name = "nudSemanas";
+            this.nudSemanas.Size = new System.Drawing.Size(41, 20);
+            this.nudSemanas.TabIndex = 1;
+            this.nudSemanas.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -910,7 +910,7 @@
             this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nupSemanas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).EndInit();
@@ -987,7 +987,7 @@
         private System.Windows.Forms.NumericUpDown nudHv;
         private System.Windows.Forms.NumericUpDown nudHm;
         private System.Windows.Forms.NumericUpDown nudEdadGestacional;
-        private System.Windows.Forms.NumericUpDown nupSemanas;
+        private System.Windows.Forms.NumericUpDown nudSemanas;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
