@@ -153,9 +153,9 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarPacienteXDNI" );
         }
 
-        public DataTable CrearHistoriaClinica()
+        public DataTable CrearHistoriaClinica(cHistoriaClinica miHistoriaClinica)
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Codigohistoriaclinica, Tipollegada, Tiempollegada,Edad, Gestas,Partos,Abortos,Hijosvivos,Hijosmuertos,Fur,Fpp,Trimestreapn,Diaapn,Observaciones,Idtpaciente,Idtobstetra);
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", miHistoriaClinica.Codigohistoriaclinica, miHistoriaClinica.Tipollegada, miHistoriaClinica.Tiempollegada, miHistoriaClinica.Edad, miHistoriaClinica.Gestas, miHistoriaClinica.Partos, miHistoriaClinica.Abortos, miHistoriaClinica.Hijosvivos, miHistoriaClinica.Hijosmuertos, miHistoriaClinica.Fur, miHistoriaClinica.Fpp, miHistoriaClinica.Trimestreapn, miHistoriaClinica.Diaapn, miHistoriaClinica.Observaciones, miHistoriaClinica.Idtpaciente, miHistoriaClinica.Idtobstetra);
         }
     }
 }

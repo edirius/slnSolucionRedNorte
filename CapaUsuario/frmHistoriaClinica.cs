@@ -170,15 +170,15 @@ namespace CapaUsuario
         {
             DataRow drEcografia = odtEcografia.NewRow();
 
-            if (txtEdadGestacional.Text != "") { 
+            
                 drEcografia = odtEcografia.NewRow();
                 i = odtEcografia.Rows.Count;
                 i++;
                 drEcografia[0] = i;
                 drEcografia[1] = dtpEcografia.Value.ToString("yyyy - MM - dd") ;
-                drEcografia[2] = txtEdadGestacional.Text;
+                drEcografia[2] = nudEdadGestacional.Value;
                 odtEcografia.Rows.InsertAt(drEcografia, i);
-            }
+            
         }
 
         private void dgvEcografia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -280,7 +280,7 @@ namespace CapaUsuario
                 respuesta_radiobutton = "3er Trimestre";
 
             oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
-            oHistoriaClinica.Diaapn = Convert.ToString( nupSemanas.Value );
+            oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
             oHistoriaClinica.Observaciones = txtObservaciones.Text;
             oHistoriaClinica.Idtpaciente = idtpaciente;
             oHistoriaClinica.Idtobstetra = obstetra;
@@ -347,6 +347,12 @@ namespace CapaUsuario
                 completo = true;
                 mensaje = "Porfavor seleccionar tipo de llegada.";
             }
+            
+            if (idtpaciente == "")
+            {
+                completo = true;
+                mensaje = "Porfavor seleccionar una gestante.";
+            }
 
             if (oHistoriaClinica.Codigohistoriaclinica == "") {
                 completo = true;
@@ -358,7 +364,7 @@ namespace CapaUsuario
                 MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
-                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
                 foreach (DataRow row in odtHistoriaClinica.Rows)
                 {
 
