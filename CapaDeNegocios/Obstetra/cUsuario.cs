@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaDeDatos;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace CapaDeNegocios.Obstetra
 {
@@ -24,6 +25,10 @@ namespace CapaDeNegocios.Obstetra
             for (int i = 0; i < datasha1.Length; i++)
                 sb.AppendFormat("{0:x2}", datasha1[i]);
             return sb.ToString().ToUpper();
+        }
+        public DataTable DatosUsuario(string nombre)
+        {
+            return Conexion.GDatos.TraerDataTable("spDatosUsuario", nombre);
         }
 
     }

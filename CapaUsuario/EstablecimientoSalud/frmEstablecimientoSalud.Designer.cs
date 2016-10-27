@@ -49,6 +49,8 @@
             this.cbMicrored = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtRenaes = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -104,14 +106,14 @@
             this.descripcion,
             this.direccion});
             this.dgvListarEstablecimiento.GridColor = System.Drawing.Color.White;
-            this.dgvListarEstablecimiento.Location = new System.Drawing.Point(14, 118);
+            this.dgvListarEstablecimiento.Location = new System.Drawing.Point(14, 146);
             this.dgvListarEstablecimiento.Name = "dgvListarEstablecimiento";
             this.dgvListarEstablecimiento.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListarEstablecimiento.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarEstablecimiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarEstablecimiento.Size = new System.Drawing.Size(474, 257);
+            this.dgvListarEstablecimiento.Size = new System.Drawing.Size(474, 254);
             this.dgvListarEstablecimiento.TabIndex = 66;
             this.dgvListarEstablecimiento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEstablecimiento_CellClick);
             // 
@@ -162,14 +164,14 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(474, 39);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(474, 58);
             this.tableLayoutPanel1.TabIndex = 65;
             // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(379, 3);
+            this.btnSalir.Location = new System.Drawing.Point(379, 22);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(92, 33);
             this.btnSalir.TabIndex = 47;
@@ -181,7 +183,7 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(191, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(191, 22);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 33);
             this.btnEliminar.TabIndex = 10;
@@ -193,7 +195,7 @@
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(97, 3);
+            this.btnModificar.Location = new System.Drawing.Point(97, 22);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(88, 33);
             this.btnModificar.TabIndex = 9;
@@ -205,7 +207,7 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 22);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(88, 33);
             this.btnInsertar.TabIndex = 8;
@@ -217,7 +219,7 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(285, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(285, 22);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(88, 33);
             this.btnNuevo.TabIndex = 11;
@@ -259,6 +261,7 @@
             // 
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Location = new System.Drawing.Point(111, 64);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(337, 20);
@@ -275,11 +278,33 @@
             this.label4.TabIndex = 74;
             this.label4.Text = "Descripcion:";
             // 
+            // txtRenaes
+            // 
+            this.txtRenaes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRenaes.Location = new System.Drawing.Point(111, 118);
+            this.txtRenaes.Name = "txtRenaes";
+            this.txtRenaes.Size = new System.Drawing.Size(126, 20);
+            this.txtRenaes.TabIndex = 77;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(50, 121);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Renaes:";
+            // 
             // frmEstablecimientoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 427);
+            this.ClientSize = new System.Drawing.Size(500, 446);
+            this.Controls.Add(this.txtRenaes);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cbMicrored);
@@ -292,7 +317,7 @@
             this.Controls.Add(this.label3);
             this.Name = "frmEstablecimientoSalud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmEstablecimientoSalud";
+            this.Text = "5";
             this.Load += new System.EventHandler(this.frmEstablecimientoSalud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -322,5 +347,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn microred;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.TextBox txtRenaes;
+        private System.Windows.Forms.Label label5;
     }
 }
