@@ -504,6 +504,7 @@ namespace CapaUsuario
         private void dgvHC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             IdtHistoriaClinica = dgvHC[0,e.RowIndex].Value.ToString();
+
         }
     }
 }
