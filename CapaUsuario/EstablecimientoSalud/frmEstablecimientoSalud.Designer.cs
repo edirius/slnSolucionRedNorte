@@ -231,6 +231,7 @@
             // 
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(111, 12);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(126, 20);
@@ -317,7 +318,7 @@
             this.Controls.Add(this.label3);
             this.Name = "frmEstablecimientoSalud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "5";
+            this.Text = "Mantenimiento de Establecimientos de Salud";
             this.Load += new System.EventHandler(this.frmEstablecimientoSalud_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
