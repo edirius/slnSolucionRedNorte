@@ -16,5 +16,15 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             InitializeComponent();
         }
+
+        private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMasGestante_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
