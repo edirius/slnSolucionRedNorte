@@ -54,14 +54,14 @@ namespace CapaUsuario
 
         private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente();
+            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente(IdEstablecimientoSalud);
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
         }
 
         private void mantenimientoObstetrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra();
+            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra(IdEstablecimientoSalud);
             fMantenimientoObstetra.MdiParent = this;
             fMantenimientoObstetra.Show();
         }

@@ -14,15 +14,20 @@ namespace CapaUsuario.Bateria
     public partial class frmBateria : Form
     {
         cBateria miBateria = new cBateria();
+        cSiguienteCodigo micodigo = new cSiguienteCodigo();
+        DataTable Tabla = new DataTable();
+        public string IdHistoria;
         public frmBateria(string IdtHistoriaClinica)
         {
             InitializeComponent();
             ActualizarLista();
+            IdHistoria = IdtHistoriaClinica;
+
         }
         public void ActualizarLista()
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria();
-            //Tabla = miEstablecimiento.SiguienteCodigo();
+            //Tabla = micodigo.SiguientesCodigo("tbateria", idtestablecimientosalud);
             //txtCodigo.Text = Tabla.Rows[0][0].ToString();
         }
         private void ConfiguracionInicial()
