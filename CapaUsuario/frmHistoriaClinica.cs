@@ -255,11 +255,11 @@ namespace CapaUsuario
             if (txtEdad.Text != "")
                 oHistoriaClinica.Edad = Convert.ToInt16( txtEdad.Text);
             
-            oHistoriaClinica.Gestas = nudGestas.Text;
-            oHistoriaClinica.Partos= nudPartos.Text;
-            oHistoriaClinica.Abortos = nudAbortos.Text;
-            oHistoriaClinica.Hijosvivos = nudHv.Text;
-            oHistoriaClinica.Hijosmuertos = nudHm.Text;
+            oHistoriaClinica.Gestas = Convert.ToInt16( nudGestas.Text );
+            oHistoriaClinica.Partos= Convert.ToInt16(nudPartos.Text);
+            oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
+            oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
+            oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
             oHistoriaClinica.Fur = dtpFUR.Text;
             oHistoriaClinica.Fpp = dtpFPP.Text;
 
@@ -306,36 +306,6 @@ namespace CapaUsuario
                 mensaje = "Porfavor llenar dia(s) APN.";
             }
 
-            if (oHistoriaClinica.Hijosmuertos == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar Hijos muertos de formula obstetrica.";
-            }
-
-            if (oHistoriaClinica.Hijosvivos == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar Hijos vivos de formula obstetrica.";
-            }
-
-            if (oHistoriaClinica.Abortos == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar Abortos de formula obstetrica.";
-            }
-
-            if (oHistoriaClinica.Partos == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar Partos de formula obstetrica.";
-            }
-
-            if (oHistoriaClinica.Gestas == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar gestas de formula obstetrica.";
-            }
-
             if (oHistoriaClinica.Tiempollegada == "00:00")
             {
                 completo = true;
@@ -364,7 +334,9 @@ namespace CapaUsuario
                 MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
-                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
+                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
+                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica.Codigohistoriaclinica , oHistoriaClinica.Tipollegada, oHistoriaClinica.Tiempollegada, oHistoriaClinica.Edad, oHistoriaClinica.Gestas, oHistoriaClinica.Partos, oHistoriaClinica.Abortos, oHistoriaClinica.Hijosvivos, oHistoriaClinica.Hijosmuertos,oHistoriaClinica.Fur, oHistoriaClinica.Fpp, oHistoriaClinica.Trimestreapn, oHistoriaClinica.Diaapn, oHistoriaClinica.Observaciones, oHistoriaClinica.Idtpaciente, oHistoriaClinica.Idtobstetra);
                 foreach (DataRow row in odtHistoriaClinica.Rows)
                 {
 

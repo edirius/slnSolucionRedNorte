@@ -38,6 +38,7 @@ namespace CapaUsuario
 
             dgvGestante.DataSource = oGestante.ListarPacienteTodos();
 
+            idtpaciente = dgvGestante.Rows[0].Cells[0].Value.ToString();
             nombres = dgvGestante.Rows[0].Cells[1].Value.ToString();
             app = dgvGestante.Rows[0].Cells[2].Value.ToString();
             apm = dgvGestante.Rows[0].Cells[3].Value.ToString();
