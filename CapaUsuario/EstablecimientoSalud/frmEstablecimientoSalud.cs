@@ -46,36 +46,48 @@ namespace CapaUsuario.EstablecimientoSalud
         {
             Tabla = miEstablecimiento.SiguienteCodigo();
             txtCodigo.Text = Tabla.Rows[0][0].ToString();
-            txtCodigo.Text = "";
+            //txtCodigo.Text = "";
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
+            txtRenaes.Text = "";
+            txtDescripcion.Focus();
         }
         public void Agregar()
         {
-            if (txtDescripcion.Text != "")
+            try
             {
-                miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
-                miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
-                miEstablecimiento.Descripcion = txtDescripcion.Text;
-                miEstablecimiento.Direccion = txtDireccion.Text;
-                Tabla = miEstablecimiento.AgregarEstablecimiento();
-                respuesta = Tabla.Rows[0][0].ToString();
-                mensaje = Tabla.Rows[0][1].ToString();
+                if (txtDescripcion.Text != "")
+                {
+                    miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
+                    miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
+                    miEstablecimiento.Descripcion = txtDescripcion.Text;
+                    miEstablecimiento.Direccion = txtDireccion.Text;
+                    miEstablecimiento.Renaes = txtRenaes.Text;
+                    Tabla = miEstablecimiento.AgregarEstablecimiento();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
 
-                if (respuesta == "1")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
-                    ActualizarLista();
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        ActualizarLista();
+                    }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
                 }
-                else if (respuesta == "0")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
-                }
+                else
+                    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            else
-                MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch
+            {
+                MessageBox.Show("Ya existe un establecimiento con la misma descripción", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
         public void Modificar()
@@ -86,6 +98,7 @@ namespace CapaUsuario.EstablecimientoSalud
                 miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
                 miEstablecimiento.Descripcion = txtDescripcion.Text;
                 miEstablecimiento.Direccion = txtDireccion.Text;
+                miEstablecimiento.Renaes = txtRenaes.Text;
                 Tabla = miEstablecimiento.ModificarEstablecimiento();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
@@ -139,7 +152,8 @@ namespace CapaUsuario.EstablecimientoSalud
             cbMicrored.Text = dgvListarEstablecimiento[1, Valor].Value.ToString();
             txtDescripcion.Text = dgvListarEstablecimiento[2, Valor].Value.ToString();
             txtDireccion.Text = dgvListarEstablecimiento[3, Valor].Value.ToString();
-            
+            txtRenaes.Text = dgvListarEstablecimiento[4, Valor].Value.ToString();
+
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)

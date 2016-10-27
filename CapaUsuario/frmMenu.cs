@@ -16,13 +16,29 @@ namespace CapaUsuario
     {
 
         public frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+        public CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
+        public string NombreObstetra;
+        public string IdObstetra;
+        public string NombreEstablecimientoSalud;
+        public string IdEstablecimientoSalud;
 
         public frmMenu()
         {
             InitializeComponent();
             HacerConeccion();
+            
         }
-
+        public void obtenerDatos(string LoginUsuario)
+        {
+            DataTable Tabla = new DataTable();
+            Tabla = miUsuario.DatosUsuario(LoginUsuario);
+            NombreObstetra = Tabla.Rows[0][0].ToString();
+            IdObstetra = Tabla.Rows[0][1].ToString();
+            IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
+            NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
+            slNombre.Text = "Obstetra: " + NombreObstetra;
+            slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
+        }
         public void HacerConeccion()
         {
             try
