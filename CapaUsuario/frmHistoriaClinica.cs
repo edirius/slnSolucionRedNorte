@@ -335,8 +335,8 @@ namespace CapaUsuario
             }
             else {
                 //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica );
-                //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
-                int re = oHistoriaClinica.CrearHistoriaClinica();
+                odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica();
+                //int re = oHistoriaClinica.CrearHistoriaClinica();
                 //odtHistoriaClinica = oHistoriaClinica.CrearHistoriaClinica( oHistoriaClinica.Codigohistoriaclinica , oHistoriaClinica.Tipollegada, oHistoriaClinica.Tiempollegada, oHistoriaClinica.Edad, oHistoriaClinica.Gestas, oHistoriaClinica.Partos, oHistoriaClinica.Abortos, oHistoriaClinica.Hijosvivos, oHistoriaClinica.Hijosmuertos,oHistoriaClinica.Fur, oHistoriaClinica.Fpp, oHistoriaClinica.Trimestreapn, oHistoriaClinica.Diaapn, oHistoriaClinica.Observaciones, oHistoriaClinica.Idtpaciente, oHistoriaClinica.Idtobstetra);
                 foreach (DataRow row in odtHistoriaClinica.Rows)
                 {
