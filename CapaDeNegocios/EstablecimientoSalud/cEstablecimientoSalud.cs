@@ -18,13 +18,15 @@ namespace CapaDeNegocios.EstablecimientoSalud
 
         public string Descripcion { get; set; }
 
+        public string Renaes { get; set; }
+
         public DataTable AgregarEstablecimiento()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion);
+            return Conexion.GDatos.TraerDataTable("spCrearEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion, Renaes);
         }
         public DataTable ModificarEstablecimiento()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion);
+            return Conexion.GDatos.TraerDataTable("spModificarEstablecimientoSalud", IdEstablecimientoSalud, IdMicrored, Direccion, Descripcion, Renaes);
         }
         public DataTable EliminarEstablecimiento()
         {

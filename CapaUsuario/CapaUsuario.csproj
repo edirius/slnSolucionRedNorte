@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaPreNatal\frmCitaPreNatal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitaPreNatal\frmCitaPreNatal.Designer.cs">
+      <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CitaPreNatal\usCitaPrenatal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CitaPreNatal\usCitaPrenatal.Designer.cs">
+      <DependentUpon>usCitaPrenatal.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,12 @@
     <Compile Include="Seguridad\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
+      <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
+      <DependentUpon>usCitaPrenatal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EstablecimientoSalud\frmEstablecimientoSalud.resx">
       <DependentUpon>frmEstablecimientoSalud.cs</DependentUpon>
     </EmbeddedResource>
