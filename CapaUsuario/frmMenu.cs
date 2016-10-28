@@ -65,7 +65,7 @@ namespace CapaUsuario
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica();
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica( IdObstetra, IdEstablecimientoSalud );
             frmHistoriaClinica.MdiParent = this;
             frmHistoriaClinica.Show();
         }
@@ -94,8 +94,8 @@ namespace CapaUsuario
         private void cItasPreNatalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CitaPreNatal.frmCitaPreNatal fCitaPreNatal = new CitaPreNatal.frmCitaPreNatal();
-            fCitaPreNatal.Establecimiento = "E001";
-            fCitaPreNatal.HistoriaClinica = "E001H0001";
+            fCitaPreNatal.Establecimiento = "E006";
+            fCitaPreNatal.HistoriaClinica = "E006H00001";
             fCitaPreNatal.MdiParent = this;
             fCitaPreNatal.Show();
         }
@@ -107,9 +107,12 @@ namespace CapaUsuario
             fVisitaDomiciliaria.Show();
         }
 
-        private void frmMenu_Load(object sender, EventArgs e)
+        private void alertasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
+            fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fAlerta.MdiParent = this;
+            fAlerta.Show(); 
         }
     }
 }

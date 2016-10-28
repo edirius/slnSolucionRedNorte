@@ -10,6 +10,7 @@ namespace CapaDeNegocios.CitaPreNatal
 {
     public class cCitaPrenatal
     {
+        
         string codigoCitaPrenatal;
         int numeroCita;
         DateTime fechaCitaPrenatal;
@@ -17,8 +18,13 @@ namespace CapaDeNegocios.CitaPreNatal
         string fua;
         int presionArterialS;
         int presionArterialD;
+        DateTime fechaProximaCitaPrenatal;
         cHistoriaClinica historiaClinica;
 
+        public cCitaPrenatal ()
+        {
+            historiaClinica = new cHistoriaClinica();
+        }
         public string CodigoCitaPrenatal
         {
             get
@@ -123,11 +129,24 @@ namespace CapaDeNegocios.CitaPreNatal
             }
         }
 
+        public DateTime FechaProximaCitaPrenatal
+        {
+            get
+            {
+                return fechaProximaCitaPrenatal;
+            }
+
+            set
+            {
+                fechaProximaCitaPrenatal = value;
+            }
+        }
+
         public int AgregarCita(cCitaPrenatal nuevaCitaPrenatal)
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spAgregarCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.PresionArterialD, nuevaCitaPrenatal.presionArterialS);
+                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal);
             }
             catch (Exception eCita)
             {
@@ -163,12 +182,14 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.TraerDataTable("spListarCitasPreNatal", historiaClinica.Codigohistoriaclinica);
+                return Conexion.GDatos.TraerDataTable("spListarCitasPreNatal", historiaClinica.Idthistoriaclinica);
             }
             catch (Exception eCita)
             {
                 throw new cReglaNegocioException("Error al traer la lista de Citas: Mensaje : " + eCita.Message, eCita);
             }
         }
+
+        
     }
 }

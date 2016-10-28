@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alertas\frmAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmAlerta.Designer.cs">
+      <DependentUpon>frmAlerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.Designer.cs">
+      <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\frmGestantesControlPreNatal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmGestantesControlPreNatal.Designer.cs">
+      <DependentUpon>frmGestantesControlPreNatal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bateria\frmBateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +151,15 @@
     <Compile Include="VisitaDomiciliaria\frmVisitaDomiciliaria.designer.cs">
       <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Alertas\frmAlerta.resx">
+      <DependentUpon>frmAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmGestantesConRiesgoPresionArterial.resx">
+      <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmGestantesControlPreNatal.resx">
+      <DependentUpon>frmGestantesControlPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bateria\frmBateria.resx">
       <DependentUpon>frmBateria.cs</DependentUpon>
     </EmbeddedResource>

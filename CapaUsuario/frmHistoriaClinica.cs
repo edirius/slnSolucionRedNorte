@@ -22,8 +22,8 @@ namespace CapaUsuario
 
         public string IdObstetra = "";
         public string IdEstablecimiento = "";
-        
-            int i = 0;
+        public string IdtHistoriaClinica = "";
+        int i = 0;
         string obstetra = "";
 
         public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
@@ -93,8 +93,9 @@ namespace CapaUsuario
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
- 
-            
+            oHistoriaClinica.Idtobstetra = IdObstetra;
+            dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinica();
+
 
         }
 
@@ -255,9 +256,11 @@ namespace CapaUsuario
         {
             //try{ 
 
-                CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-                
-                DataTable odtHistoriaClinica = new DataTable();
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            CapaDeNegocios.cEcografia oEcografia = new CapaDeNegocios.cEcografia();
+            CapaDeNegocios.cOdontologia oOdontologia = new CapaDeNegocios.cOdontologia();
+
+            DataTable odtHistoriaClinica = new DataTable();
                 bool completo = false;
                 string mensaje = "";
 
@@ -295,7 +298,7 @@ namespace CapaUsuario
                     respuesta_radiobutton = 3;
 
                 oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
-                oHistoriaClinica.Diaapn = Convert.ToString( nudEdadGestacional.Value );
+                oHistoriaClinica.Diaapn = Convert.ToString( nudSemanas.Value );
                 oHistoriaClinica.Observaciones = txtObservaciones.Text;
                 oHistoriaClinica.Idtpaciente = idtpaciente;
                 oHistoriaClinica.Idtobstetra = IdObstetra;
@@ -355,18 +358,65 @@ namespace CapaUsuario
 
                         string respuesta_historia_clinica = row[0].ToString().Trim();
 
-                        string[] words = respuesta_historia_clinica.Split('-');
+                        string[] words = respuesta_historia_clinica.Split('*');
                         
                         string exito = words[0].ToString();
                         string respuesta = words[1].ToString();
+                        string idthistoriaclinica = words[2].ToString();
+                        DataTable dtEcografia = new DataTable();
+                        DataTable dtOdontologia = new DataTable();
+                        DataTable dtEcografia2 = new DataTable();
+                        DataTable dtOdontologia2 = new DataTable();
+                        int suma_ecografia = 0;
+                        int suma_odontologia = 0;
+                        int cantidad_filas_ecografia = 0;
+                        int cantidad_filas_odontologia = 0;
+                        string[] words_ecografia;
+                        string[] words_odontologia;
+                        string respuesta_ecografia = "";
+                        string respuesta_odontologia = "";
 
-                        if (exito == "0")
+                    if (exito == "0")
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else if (exito == "1")
                         {
+                        cantidad_filas_ecografia = dgvEcografia.Rows.Count;
+                            for (int i=0; i< cantidad_filas_ecografia; i++){
+                                respuesta_ecografia = dgvEcografia[3, i].Value.ToString();
+                                
+                                oEcografia.Fecha_servicio = Convert.ToDateTime (dgvEcografia[2, i].Value.ToString() );
+                                oEcografia.Edadgestacional = dgvEcografia[3, i].Value.ToString();
+                                oEcografia.Idthistoriaclinica = idthistoriaclinica ;
+                                dtEcografia = oEcografia.CrearEcografia();
+                                foreach (DataRow row_e in dtEcografia.Rows){
+                                    respuesta_ecografia = row_e[0].ToString().Trim();
+                                    words_ecografia = respuesta_ecografia.Split('-');
+                                    suma_ecografia = suma_ecografia + Convert.ToInt16(words_ecografia[0].ToString());
+                                }
+                            }
+
+
+                        cantidad_filas_odontologia = dgvOdontologia.Rows.Count;
+                        for (int i = 0; i < cantidad_filas_odontologia; i++)
+                        {
+                            oOdontologia.Fecha_servicio = Convert.ToDateTime(dgvOdontologia[2, i].Value.ToString() );
+                            oOdontologia.Idthistoriaclinica = idthistoriaclinica;
+                            dtOdontologia = oOdontologia.CrearOdontologia();
+                            foreach (DataRow row_o in dtOdontologia.Rows)
+                            {
+                                respuesta_odontologia = row_o[0].ToString().Trim();
+                                words_odontologia = respuesta_odontologia.Split('-');
+                                suma_odontologia = suma_odontologia + Convert.ToInt16(words_odontologia[0].ToString());
+                            }
+                        }
+                          
+                        if (cantidad_filas_ecografia == suma_ecografia && suma_odontologia == cantidad_filas_odontologia)
                             MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             nueva_historia_clinica();
-                        }
+                            oHistoriaClinica.Idtobstetra = IdObstetra;
+                            dgvHC.DataSource= oHistoriaClinica.ListarHistoriaClinica();
+                        
+                    }
                     }
                 }
 
@@ -420,21 +470,106 @@ namespace CapaUsuario
 
         private void rbPrimerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nupSemanas.Minimum = 1;
-            nupSemanas.Maximum = 12;
+            nudSemanas.Minimum = 1;
+            nudSemanas.Maximum = 12;
 
         }
 
         private void rbSegundoTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nupSemanas.Minimum = 13;
-            nupSemanas.Maximum = 28;
+            nudSemanas.Minimum = 13;
+            nudSemanas.Maximum = 28;
         }
 
         private void rbTercerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nupSemanas.Minimum = 29;
-            nupSemanas.Maximum = 42;
+            nudSemanas.Minimum = 29;
+            nudSemanas.Maximum = 42;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (IdtHistoriaClinica != "") {
+                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento );
+                //fBateria.MdiParent = this;
+                fBateria.ShowDialog();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
+            
+        }
+
+        private void dgvHC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IdtHistoriaClinica = dgvHC[0,e.RowIndex].Value.ToString();
+
+            DataTable odtHCXIdHC = new DataTable();
+            DataTable odtEcografia = new DataTable();
+            DataTable odtOdontologia = new DataTable();
+
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            CapaDeNegocios.cEcografia oEcografia = new CapaDeNegocios.cEcografia();
+            CapaDeNegocios.cOdontologia oOdontologia = new CapaDeNegocios.cOdontologia();
+
+            oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
+            odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
+
+            txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
+            txtNombres.Text = odtHCXIdHC.Rows[0][17].ToString();
+            txtApellidoPaterno.Text = odtHCXIdHC.Rows[0][18].ToString();
+            txtApellidoMaterno.Text = odtHCXIdHC.Rows[0][19].ToString();
+
+            txtHistoriaClinica.Text = odtHCXIdHC.Rows[0][1].ToString();
+            cboTipoLlegada.Text = odtHCXIdHC.Rows[0][2].ToString();
+            dtpTiempoLlegada.Text = odtHCXIdHC.Rows[0][3].ToString(); ;
+            txtEdad.Text = odtHCXIdHC.Rows[0][4].ToString();
+
+            nudGestas.Text = odtHCXIdHC.Rows[0][5].ToString();
+            nudPartos.Text = odtHCXIdHC.Rows[0][6].ToString();
+            nudAbortos.Text = odtHCXIdHC.Rows[0][7].ToString();
+            nudHv.Text = odtHCXIdHC.Rows[0][8].ToString();
+            nudHm.Text = odtHCXIdHC.Rows[0][9].ToString();
+            dtpFUR.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
+            dtpFPP.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
+            int trimestreapn =  Convert.ToInt16(odtHCXIdHC.Rows[0][12] );
+
+            if (trimestreapn == 1) rbPrimerTrimestre.Checked = true ;
+            if (trimestreapn == 2) rbSegundoTrimestre.Checked = true;
+            if (trimestreapn == 3) rbTercerTrimestre.Checked = true;
+
+
+            nudSemanas.Text  =  odtHCXIdHC.Rows[0][13].ToString();
+            txtObservaciones.Text = odtHCXIdHC.Rows[0][14].ToString();
+
+            idtpaciente = odtHCXIdHC.Rows[0][15].ToString();
+            IdObstetra = odtHCXIdHC.Rows[0][16].ToString();
+
+            /* Llenando ecografias y odontologia */
+            oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
+            odtEcografia = oEcografia.ListarEcografiaXIdHC();
+            dgvEcografia.Rows.Clear();
+
+            for (int i = 0; i < odtEcografia.Rows.Count; i++) {
+                dgvEcografia.DataSource = odtEcografia;
+            }
+
+            /*
+            oOdontologia.Idthistoriaclinica = IdtHistoriaClinica;
+            odtEcografia = oEcografia.ListarEcografiaXIdHC();
+            dgvEcografia.Rows.Clear();
+
+
+            for (int i = 0; i < odtEcografia.Rows.Count; i++)
+            {
+                dgvEcografia.DataSource = odtEcografia;
+            }
+            */
+
         }
     }
 }

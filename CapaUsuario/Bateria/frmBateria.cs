@@ -14,26 +14,33 @@ namespace CapaUsuario.Bateria
     public partial class frmBateria : Form
     {
         cBateria miBateria = new cBateria();
-        public frmBateria()
+        cSiguienteCodigo micodigo = new cSiguienteCodigo();
+        DataTable Tabla = new DataTable();
+        public string IdHistoria = "";
+        public string IdEstablecimiento = "";
+        public frmBateria(string IdtHistoriaClinica, string IdtEstablecimiento)
         {
             InitializeComponent();
             ActualizarLista();
+            IdHistoria = IdtHistoriaClinica;
+            IdEstablecimiento = IdtEstablecimiento;
+            
         }
         public void ActualizarLista()
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria();
-            //Tabla = miEstablecimiento.SiguienteCodigo();
-            //txtCodigo.Text = Tabla.Rows[0][0].ToString();
+            Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
+            txtHemoglobina.Text = Tabla.Rows[0][0].ToString();
+
         }
         private void ConfiguracionInicial()
         {
-            //Tabla = miEstablecimiento.SiguienteCodigo();
-            //txtCodigo.Text = Tabla.Rows[0][0].ToString();
+            
             ////txtCodigo.Text = "";
-            //txtDescripcion.Text = "";
-            //txtDireccion.Text = "";
-            //txtRenaes.Text = "";
-            //txtDescripcion.Focus();
+            ////txtDescripcion.Text = "";
+            ////txtDireccion.Text = "";
+            ////txtRenaes.Text = "";
+            ////txtDescripcion.Focus();
         }
         public void Agregar()
         {
@@ -149,6 +156,11 @@ namespace CapaUsuario.Bateria
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmBateria_Load(object sender, EventArgs e)
         {
 
         }

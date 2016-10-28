@@ -33,6 +33,18 @@ namespace CapaDeNegocios
         {
             return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud ,Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra);
         }
-     }
+
+        public DataTable ListarHistoriaClinica()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica",Idtobstetra);
+        }
+
+        public DataTable ListarHistoriaClinicaLargo()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaLargo", Idthistoriaclinica);
+        }
+
+
+    }
 }
 

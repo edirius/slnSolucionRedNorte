@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using CapaDeDatos;
 
 namespace CapaDeNegocios
 {
@@ -16,9 +18,9 @@ namespace CapaDeNegocios
             set { idtecografia = value; }
         }
 
-        private string fecha_servicio;
+        private DateTime fecha_servicio;
 
-        public string Fecha_servicio
+        public DateTime Fecha_servicio
         {
             get { return fecha_servicio; }
             set { fecha_servicio = value; }
@@ -46,6 +48,16 @@ namespace CapaDeNegocios
         {
             get { return idthistoriaclinica; }
             set { idthistoriaclinica = value; }
+        }
+
+        public DataTable CrearEcografia()
+        {
+            return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional,Idthistoriaclinica );
+        }
+
+        public DataTable ListarEcografiaXIdHC()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarEcografiaXIdHC", Idthistoriaclinica);
         }
 
     }
