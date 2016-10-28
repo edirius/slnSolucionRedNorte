@@ -12,7 +12,7 @@ using System.IO;
 namespace CapaUsuario
 {
     public partial class frmHistoriaClinica : Form
-    {
+    { 
         public frmGestante frmGestanteHC = new frmGestante();
         public frmMenu frmMenuHC = new frmMenu();
         DataTable odtOdontologo = new DataTable();
@@ -302,6 +302,7 @@ namespace CapaUsuario
                 oHistoriaClinica.Observaciones = txtObservaciones.Text;
                 oHistoriaClinica.Idtpaciente = idtpaciente;
                 oHistoriaClinica.Idtobstetra = IdObstetra;
+                oHistoriaClinica.Fecha = dtpFecha.Value;
 
 
                 /*Validando datos*/
@@ -546,10 +547,15 @@ namespace CapaUsuario
             nudSemanas.Text  =  odtHCXIdHC.Rows[0][13].ToString();
             txtObservaciones.Text = odtHCXIdHC.Rows[0][14].ToString();
 
+
             idtpaciente = odtHCXIdHC.Rows[0][15].ToString();
-            IdObstetra = odtHCXIdHC.Rows[0][16].ToString();
+            IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
+            dtpFecha.Value = Convert.ToDateTime( odtHCXIdHC.Rows[0][21].ToString());
+
 
             /* Llenando ecografias y odontologia */
+            /*
+
             oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
             odtEcografia = oEcografia.ListarEcografiaXIdHC();
             dgvEcografia.Rows.Clear();
@@ -558,7 +564,7 @@ namespace CapaUsuario
                 dgvEcografia.DataSource = odtEcografia;
             }
 
-            /*
+            
             oOdontologia.Idthistoriaclinica = IdtHistoriaClinica;
             odtEcografia = oEcografia.ListarEcografiaXIdHC();
             dgvEcografia.Rows.Clear();

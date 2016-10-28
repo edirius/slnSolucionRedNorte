@@ -77,6 +77,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -98,6 +99,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -126,6 +128,7 @@
             this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.dtpFPP);
+            this.groupBox2.Controls.Add(this.dtpFecha);
             this.groupBox2.Controls.Add(this.dtpFUR);
             this.groupBox2.Controls.Add(this.groupBox8);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -136,6 +139,7 @@
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txtHistoriaClinica);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -673,6 +677,15 @@
             this.label8.Text = "FUR:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(315, 31);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Fecha:";
+            // 
             // txtHistoriaClinica
             // 
             this.txtHistoriaClinica.Location = new System.Drawing.Point(109, 28);
@@ -882,6 +895,16 @@
             this.button8.Text = "Atención Recien Nacido";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(361, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(120, 20);
+            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
+            this.dtpFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -994,6 +1017,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }
 
