@@ -215,14 +215,14 @@ namespace CapaUsuario.Bateria
             if (Convert.ToDecimal(nudHemoglobina.Value) >= Convert.ToDecimal(11.5))
             {
                 pbAlerta.Visible = true;
-                playSonidoDeAlerta();
-                MessageBox.Show("La gestante supera los límites de glucosa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante supera los límites de hemoglobina", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if(Convert.ToDecimal(nudGlucosa.Value) >= Convert.ToDecimal(130))
             {
                 pbAlerta.Visible = true;
-                playSonidoDeAlerta();
-                MessageBox.Show("La gestante supera los límites de glucosa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante supera los límites de glucosa", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -234,6 +234,11 @@ namespace CapaUsuario.Bateria
         {
             SoundPlayer Alerta = new SoundPlayer(@"C:\Users\Usuario\Desktop\Imagenes para el sistema de control de embarazo\SonidoDeAlerta.mp3");
             Alerta.Play();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

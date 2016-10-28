@@ -194,7 +194,7 @@ namespace CapaUsuario.EstablecimientoSalud
         {
             DataTable Tabla = new DataTable();
             Tabla = miEstablecimiento.ListarEstablecimiento();
-            string Campo = "descripcion";
+            string Campo = comboBox1.Text;
             Tabla.DefaultView.RowFilter = (" "+ Campo +" like '"+textBox1.Text+"%'");
             dgvListarEstablecimiento.DataSource = Tabla.DefaultView;
         }

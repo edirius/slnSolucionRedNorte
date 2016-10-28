@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,8 +73,6 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 62);
             this.label3.Name = "label3";
@@ -92,8 +90,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 94);
             this.label1.Name = "label1";
@@ -103,8 +99,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 126);
             this.label2.Name = "label2";
@@ -138,8 +132,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(295, 62);
             this.label4.Name = "label4";
@@ -149,8 +141,6 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(295, 94);
             this.label5.Name = "label5";
@@ -167,8 +157,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(295, 126);
             this.label6.Name = "label6";
@@ -178,6 +166,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.nudGlucosa);
             this.groupBox1.Controls.Add(this.nudHemoglobina);
@@ -202,6 +192,7 @@
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "...";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tableLayoutPanel1
             // 
@@ -290,8 +281,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -312,9 +303,9 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(6, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 199);
             this.dgvListaBateria.TabIndex = 97;
@@ -329,8 +320,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(15, 32);
             this.label7.Name = "label7";
@@ -340,8 +329,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(202, 32);
             this.label8.Name = "label8";
@@ -447,7 +434,7 @@
             // 
             // pbAlerta
             // 
-            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAlerta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
             this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
             this.pbAlerta.Location = new System.Drawing.Point(539, 9);

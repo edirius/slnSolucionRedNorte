@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,8 +93,8 @@
             this.dgvListarEstablecimiento.AllowUserToAddRows = false;
             this.dgvListarEstablecimiento.AllowUserToResizeColumns = false;
             this.dgvListarEstablecimiento.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListarEstablecimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListarEstablecimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListarEstablecimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -111,9 +111,9 @@
             this.dgvListarEstablecimiento.Location = new System.Drawing.Point(14, 146);
             this.dgvListarEstablecimiento.Name = "dgvListarEstablecimiento";
             this.dgvListarEstablecimiento.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarEstablecimiento.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarEstablecimiento.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListarEstablecimiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListarEstablecimiento.Size = new System.Drawing.Size(474, 254);
             this.dgvListarEstablecimiento.TabIndex = 66;
@@ -289,6 +289,11 @@
             this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "idtestablecimientosalud",
+            "microred",
+            "descripcion",
+            "direccion"});
             this.comboBox1.Location = new System.Drawing.Point(269, 118);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(118, 21);
