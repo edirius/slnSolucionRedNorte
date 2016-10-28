@@ -28,22 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
-            this.txtNumeroCita = new System.Windows.Forms.TextBox();
-            this.dtpFechaCita = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEdadGestacional = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpProximaCita = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtFUA = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnAgregarControl = new System.Windows.Forms.Button();
             this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idthistoriaclinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colnumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,12 +41,26 @@
             this.colpresionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNumeroCita = new System.Windows.Forms.TextBox();
+            this.dtpFechaCita = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpProximaCita = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFUA = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAgregarControl = new System.Windows.Forms.Button();
             this.numPresionArterialS = new System.Windows.Forms.NumericUpDown();
             this.numPresionArterialD = new System.Windows.Forms.NumericUpDown();
+            this.numEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdadGestacional)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,8 +77,8 @@
             // 
             this.dtgCitasMedicas.AllowUserToAddRows = false;
             this.dtgCitasMedicas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgCitasMedicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCitasMedicas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colidtcitaprenatal,
@@ -96,118 +97,6 @@
             this.dtgCitasMedicas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCitasMedicas.Size = new System.Drawing.Size(619, 150);
             this.dtgCitasMedicas.TabIndex = 0;
-            // 
-            // txtNumeroCita
-            // 
-            this.txtNumeroCita.Location = new System.Drawing.Point(145, 25);
-            this.txtNumeroCita.Name = "txtNumeroCita";
-            this.txtNumeroCita.Size = new System.Drawing.Size(42, 20);
-            this.txtNumeroCita.TabIndex = 1;
-            // 
-            // dtpFechaCita
-            // 
-            this.dtpFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCita.Location = new System.Drawing.Point(145, 58);
-            this.dtpFechaCita.Name = "dtpFechaCita";
-            this.dtpFechaCita.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaCita.TabIndex = 2;
-            this.dtpFechaCita.ValueChanged += new System.EventHandler(this.dtpFechaCita_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Fecha Cita:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Edad Gestacional:";
-            // 
-            // txtEdadGestacional
-            // 
-            this.txtEdadGestacional.Location = new System.Drawing.Point(145, 90);
-            this.txtEdadGestacional.Name = "txtEdadGestacional";
-            this.txtEdadGestacional.Size = new System.Drawing.Size(100, 20);
-            this.txtEdadGestacional.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Proxima Cita:";
-            // 
-            // dtpProximaCita
-            // 
-            this.dtpProximaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpProximaCita.Location = new System.Drawing.Point(399, 90);
-            this.dtpProximaCita.Name = "dtpProximaCita";
-            this.dtpProximaCita.Size = new System.Drawing.Size(100, 20);
-            this.dtpProximaCita.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(312, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "FUA:";
-            // 
-            // txtFUA
-            // 
-            this.txtFUA.Location = new System.Drawing.Point(399, 58);
-            this.txtFUA.MaxLength = 15;
-            this.txtFUA.Name = "txtFUA";
-            this.txtFUA.Size = new System.Drawing.Size(100, 20);
-            this.txtFUA.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Numero Cita:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(312, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Presion Arterial:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(439, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(12, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "/";
-            // 
-            // btnAgregarControl
-            // 
-            this.btnAgregarControl.Location = new System.Drawing.Point(37, 130);
-            this.btnAgregarControl.Name = "btnAgregarControl";
-            this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
-            this.btnAgregarControl.TabIndex = 15;
-            this.btnAgregarControl.Text = "Agregar";
-            this.btnAgregarControl.UseVisualStyleBackColor = true;
-            this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
             // 
             // colidtcitaprenatal
             // 
@@ -284,6 +173,111 @@
             this.colFechaProximaCita.Name = "colFechaProximaCita";
             this.colFechaProximaCita.ReadOnly = true;
             // 
+            // txtNumeroCita
+            // 
+            this.txtNumeroCita.Location = new System.Drawing.Point(145, 25);
+            this.txtNumeroCita.Name = "txtNumeroCita";
+            this.txtNumeroCita.Size = new System.Drawing.Size(42, 20);
+            this.txtNumeroCita.TabIndex = 1;
+            // 
+            // dtpFechaCita
+            // 
+            this.dtpFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCita.Location = new System.Drawing.Point(145, 58);
+            this.dtpFechaCita.Name = "dtpFechaCita";
+            this.dtpFechaCita.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaCita.TabIndex = 2;
+            this.dtpFechaCita.ValueChanged += new System.EventHandler(this.dtpFechaCita_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Fecha Cita:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(34, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Edad Gestacional:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(312, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Proxima Cita:";
+            // 
+            // dtpProximaCita
+            // 
+            this.dtpProximaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpProximaCita.Location = new System.Drawing.Point(399, 90);
+            this.dtpProximaCita.Name = "dtpProximaCita";
+            this.dtpProximaCita.Size = new System.Drawing.Size(100, 20);
+            this.dtpProximaCita.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(312, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "FUA:";
+            // 
+            // txtFUA
+            // 
+            this.txtFUA.Location = new System.Drawing.Point(399, 58);
+            this.txtFUA.MaxLength = 15;
+            this.txtFUA.Name = "txtFUA";
+            this.txtFUA.Size = new System.Drawing.Size(100, 20);
+            this.txtFUA.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Numero Cita:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(312, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Presion Arterial:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(439, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "/";
+            // 
+            // btnAgregarControl
+            // 
+            this.btnAgregarControl.Location = new System.Drawing.Point(37, 130);
+            this.btnAgregarControl.Name = "btnAgregarControl";
+            this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
+            this.btnAgregarControl.TabIndex = 15;
+            this.btnAgregarControl.Text = "Agregar";
+            this.btnAgregarControl.UseVisualStyleBackColor = true;
+            this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
+            // 
             // numPresionArterialS
             // 
             this.numPresionArterialS.Location = new System.Drawing.Point(398, 26);
@@ -320,12 +314,35 @@
             0});
             this.numPresionArterialD.ValueChanged += new System.EventHandler(this.numPresionArterialD_ValueChanged);
             // 
+            // numEdadGestacional
+            // 
+            this.numEdadGestacional.Location = new System.Drawing.Point(145, 90);
+            this.numEdadGestacional.Maximum = new decimal(new int[] {
+            42,
+            0,
+            0,
+            0});
+            this.numEdadGestacional.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numEdadGestacional.Name = "numEdadGestacional";
+            this.numEdadGestacional.Size = new System.Drawing.Size(41, 20);
+            this.numEdadGestacional.TabIndex = 18;
+            this.numEdadGestacional.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // frmCitaPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(668, 410);
+            this.Controls.Add(this.numEdadGestacional);
             this.Controls.Add(this.numPresionArterialD);
             this.Controls.Add(this.numPresionArterialS);
             this.Controls.Add(this.btnAgregarControl);
@@ -336,7 +353,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtpProximaCita);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEdadGestacional);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaCita);
@@ -350,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numEdadGestacional)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,7 +380,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaCita;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEdadGestacional;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpProximaCita;
         private System.Windows.Forms.Label label4;
@@ -384,5 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaProximaCita;
         private System.Windows.Forms.NumericUpDown numPresionArterialS;
         private System.Windows.Forms.NumericUpDown numPresionArterialD;
+        private System.Windows.Forms.NumericUpDown numEdadGestacional;
     }
 }

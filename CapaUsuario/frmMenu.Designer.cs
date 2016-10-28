@@ -41,6 +41,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,7 +115,8 @@
             // pruebasToolStripMenuItem
             // 
             this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cItasPreNatalesToolStripMenuItem});
+            this.cItasPreNatalesToolStripMenuItem,
+            this.alertasToolStripMenuItem});
             this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
             this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.pruebasToolStripMenuItem.Text = "Pruebas";
@@ -149,6 +151,13 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // alertasToolStripMenuItem
+            // 
+            this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.alertasToolStripMenuItem.Text = "Alertas";
+            this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +172,7 @@
             this.Text = "frmMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -187,5 +197,6 @@
         private System.Windows.Forms.ToolStripStatusLabel slEstablecimiento;
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
     }
 }

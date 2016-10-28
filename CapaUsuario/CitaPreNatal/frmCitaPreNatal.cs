@@ -70,7 +70,7 @@ namespace CapaUsuario.CitaPreNatal
                 }
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 oCitaPrenatal.NumeroCita = Convert.ToInt16(txtNumeroCita.Text);
-                oCitaPrenatal.EdadGestacional = Convert.ToInt16(txtEdadGestacional.Text);
+                oCitaPrenatal.EdadGestacional = Convert.ToInt16(numEdadGestacional.Value);
                 oCitaPrenatal.FechaCitaPrenatal = dtpFechaCita.Value;
                 oCitaPrenatal.Fua = txtFUA.Text;
                 oCitaPrenatal.PresionArterialD = Convert.ToInt16(numPresionArterialD.Value);

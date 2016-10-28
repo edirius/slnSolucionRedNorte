@@ -146,7 +146,7 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.PresionArterialD, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.FechaProximaCitaPrenatal);
+                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal);
             }
             catch (Exception eCita)
             {
