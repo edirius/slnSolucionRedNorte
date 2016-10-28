@@ -16,5 +16,32 @@ namespace CapaUsuario.Alertas
         {
             InitializeComponent();
         }
+
+        public string CodigoEstablecimiento { get; set; }
+
+        private void frmAlerta_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+
+        }
+
+        private void lnkGestantesControlPreNatal_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmGestantesControlPreNatal fGestantes = new frmGestantesControlPreNatal();
+            fGestantes.codigoEstablecimiento = CodigoEstablecimiento;
+           
+            fGestantes.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmGestantesConRiesgoPresionArterial fArterial = new frmGestantesConRiesgoPresionArterial();
+            fArterial.CodigoEstablecimiento = CodigoEstablecimiento;
+            fArterial.Show();
+        }
     }
 }

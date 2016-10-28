@@ -53,6 +53,12 @@
     <Compile Include="Alertas\frmAlerta.Designer.cs">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.Designer.cs">
+      <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\frmGestantesControlPreNatal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="Alertas\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmGestantesConRiesgoPresionArterial.resx">
+      <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmGestantesControlPreNatal.resx">
       <DependentUpon>frmGestantesControlPreNatal.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace CapaUsuario.Alertas
 {
-    partial class frmGestantesControlPreNatal
+    partial class frmGestantesConRiesgoPresionArterial
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,18 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgListaGestantes = new System.Windows.Forms.DataGridView();
-            this.colNumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigoHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterialS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFUA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIdtHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdthistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigoHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,53 +53,41 @@
             this.dtgListaGestantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgListaGestantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgListaGestantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNumerocita,
-            this.colDiferencia,
+            this.colNumero,
             this.colFechaProximaCita,
-            this.colDNI,
             this.colNombres,
             this.colApellidoPaterno,
             this.colApellidoMaterno,
-            this.colCodigoHistoriaClinica,
+            this.colDNI,
+            this.colPresionArterialS,
+            this.colPresionArterialD,
             this.colFUA,
-            this.colIdtHistoriaClinica});
-            this.dtgListaGestantes.Location = new System.Drawing.Point(12, 12);
+            this.colIdthistoriaClinica,
+            this.colCodigoHistoriaClinica,
+            this.colPresionArterial});
+            this.dtgListaGestantes.Location = new System.Drawing.Point(12, 29);
+            this.dtgListaGestantes.MultiSelect = false;
             this.dtgListaGestantes.Name = "dtgListaGestantes";
             this.dtgListaGestantes.ReadOnly = true;
             this.dtgListaGestantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgListaGestantes.Size = new System.Drawing.Size(838, 218);
+            this.dtgListaGestantes.Size = new System.Drawing.Size(872, 255);
             this.dtgListaGestantes.TabIndex = 0;
+            this.dtgListaGestantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // colNumerocita
+            // colNumero
             // 
-            this.colNumerocita.DataPropertyName = "numero";
-            this.colNumerocita.HeaderText = "Numero Cita";
-            this.colNumerocita.Name = "colNumerocita";
-            this.colNumerocita.ReadOnly = true;
-            this.colNumerocita.Width = 50;
-            // 
-            // colDiferencia
-            // 
-            this.colDiferencia.DataPropertyName = "Diferencia";
-            this.colDiferencia.HeaderText = "Diferencia Dias";
-            this.colDiferencia.Name = "colDiferencia";
-            this.colDiferencia.ReadOnly = true;
-            this.colDiferencia.Width = 60;
+            this.colNumero.DataPropertyName = "numero";
+            this.colNumero.HeaderText = "Numero Cita";
+            this.colNumero.Name = "colNumero";
+            this.colNumero.ReadOnly = true;
+            this.colNumero.Width = 50;
             // 
             // colFechaProximaCita
             // 
-            this.colFechaProximaCita.DataPropertyName = "fechaProximaCita";
-            this.colFechaProximaCita.HeaderText = "Fecha de la Cita";
+            this.colFechaProximaCita.DataPropertyName = "fechaproximacita";
+            this.colFechaProximaCita.HeaderText = "Fecha Proxima Cita";
             this.colFechaProximaCita.Name = "colFechaProximaCita";
             this.colFechaProximaCita.ReadOnly = true;
-            // 
-            // colDNI
-            // 
-            this.colDNI.DataPropertyName = "dni";
-            this.colDNI.HeaderText = "DNI";
-            this.colDNI.Name = "colDNI";
-            this.colDNI.ReadOnly = true;
-            this.colDNI.Width = 70;
             // 
             // colNombres
             // 
@@ -120,12 +110,31 @@
             this.colApellidoMaterno.Name = "colApellidoMaterno";
             this.colApellidoMaterno.ReadOnly = true;
             // 
-            // colCodigoHistoriaClinica
+            // colDNI
             // 
-            this.colCodigoHistoriaClinica.DataPropertyName = "codigohistoriaclinica";
-            this.colCodigoHistoriaClinica.HeaderText = "Historia Clinica";
-            this.colCodigoHistoriaClinica.Name = "colCodigoHistoriaClinica";
-            this.colCodigoHistoriaClinica.ReadOnly = true;
+            this.colDNI.DataPropertyName = "dni";
+            this.colDNI.HeaderText = "DNI";
+            this.colDNI.Name = "colDNI";
+            this.colDNI.ReadOnly = true;
+            this.colDNI.Width = 80;
+            // 
+            // colPresionArterialS
+            // 
+            this.colPresionArterialS.DataPropertyName = "presionarterials";
+            this.colPresionArterialS.HeaderText = "PresionArterialS";
+            this.colPresionArterialS.Name = "colPresionArterialS";
+            this.colPresionArterialS.ReadOnly = true;
+            this.colPresionArterialS.Visible = false;
+            this.colPresionArterialS.Width = 50;
+            // 
+            // colPresionArterialD
+            // 
+            this.colPresionArterialD.DataPropertyName = "presionarteriald";
+            this.colPresionArterialD.HeaderText = "Presion Arterial D";
+            this.colPresionArterialD.Name = "colPresionArterialD";
+            this.colPresionArterialD.ReadOnly = true;
+            this.colPresionArterialD.Visible = false;
+            this.colPresionArterialD.Width = 50;
             // 
             // colFUA
             // 
@@ -134,23 +143,38 @@
             this.colFUA.Name = "colFUA";
             this.colFUA.ReadOnly = true;
             // 
-            // colIdtHistoriaClinica
+            // colIdthistoriaClinica
             // 
-            this.colIdtHistoriaClinica.DataPropertyName = "idtHistoriaclinica";
-            this.colIdtHistoriaClinica.HeaderText = "Codigo Historia Clinica";
-            this.colIdtHistoriaClinica.Name = "colIdtHistoriaClinica";
-            this.colIdtHistoriaClinica.ReadOnly = true;
-            this.colIdtHistoriaClinica.Visible = false;
+            this.colIdthistoriaClinica.DataPropertyName = "idthistoriaclinica";
+            this.colIdthistoriaClinica.HeaderText = "id Historia Clinica";
+            this.colIdthistoriaClinica.Name = "colIdthistoriaClinica";
+            this.colIdthistoriaClinica.ReadOnly = true;
+            this.colIdthistoriaClinica.Visible = false;
             // 
-            // frmGestantesControlPreNatal
+            // colCodigoHistoriaClinica
+            // 
+            this.colCodigoHistoriaClinica.DataPropertyName = "codigohistoriaclinica";
+            this.colCodigoHistoriaClinica.HeaderText = "Codigo Historia Clinica";
+            this.colCodigoHistoriaClinica.Name = "colCodigoHistoriaClinica";
+            this.colCodigoHistoriaClinica.ReadOnly = true;
+            // 
+            // colPresionArterial
+            // 
+            this.colPresionArterial.DataPropertyName = "presionarterial";
+            this.colPresionArterial.HeaderText = "Presion Arterial";
+            this.colPresionArterial.Name = "colPresionArterial";
+            this.colPresionArterial.ReadOnly = true;
+            this.colPresionArterial.Width = 80;
+            // 
+            // frmGestantesConRiesgoPresionArterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 316);
+            this.ClientSize = new System.Drawing.Size(896, 358);
             this.Controls.Add(this.dtgListaGestantes);
-            this.Name = "frmGestantesControlPreNatal";
-            this.Text = "Relacion de Gestantes que no acuden a las citas.";
-            this.Load += new System.EventHandler(this.frmGestantesControlPreNatal_Load);
+            this.Name = "frmGestantesConRiesgoPresionArterial";
+            this.Text = "frmGestantesConRiesgoPresionArterial";
+            this.Load += new System.EventHandler(this.frmGestantesConRiesgoPresionArterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).EndInit();
             this.ResumeLayout(false);
 
@@ -159,15 +183,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgListaGestantes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumerocita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDiferencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumero;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaProximaCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellidoPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellidoMaterno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoHistoriaClinica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterialS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterialD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFUA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdtHistoriaClinica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdthistoriaClinica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoHistoriaClinica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterial;
     }
 }
