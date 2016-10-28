@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
+using System.Media;
 
 namespace CapaUsuario.Bateria
 {
@@ -16,13 +17,16 @@ namespace CapaUsuario.Bateria
         cBateria miBateria = new cBateria();
         cSiguienteCodigo micodigo = new cSiguienteCodigo();
         DataTable Tabla = new DataTable();
+        string respuesta = "";
+        string mensaje = "";
         public string IdHistoria = "";
         public string IdEstablecimiento = "";
         public frmBateria(string IdtHistoriaClinica, string IdtEstablecimiento)
         {
             InitializeComponent();
-            
+            ConfiguracionInicial();
             IdHistoria = IdtHistoriaClinica;
+            txtCodigoHistoria.Text = IdHistoria;
             IdEstablecimiento = IdtEstablecimiento;
             ActualizarLista(IdEstablecimiento);
 
@@ -31,12 +35,16 @@ namespace CapaUsuario.Bateria
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria();
             Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
-            txtHemoglobina.Text = Tabla.Rows[0][0].ToString();
+            txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
+            cbSifilis.Text = "REACTIVO";
+            cbVIH.Text = "REACTIVO";
+
 
         }
+
         private void ConfiguracionInicial()
         {
-            
+            pbAlerta.Visible = false;
             ////txtCodigo.Text = "";
             ////txtDescripcion.Text = "";
             ////txtDireccion.Text = "";
@@ -45,123 +53,190 @@ namespace CapaUsuario.Bateria
         }
         public void Agregar()
         {
-            //try
-            //{
-            //    if (txtDescripcion.Text != "")
-            //    {
-            //        miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
-            //        miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
-            //        miEstablecimiento.Descripcion = txtDescripcion.Text;
-            //        miEstablecimiento.Direccion = txtDireccion.Text;
-            //        miEstablecimiento.Renaes = txtRenaes.Text;
-            //        Tabla = miEstablecimiento.AgregarEstablecimiento();
-            //        respuesta = Tabla.Rows[0][0].ToString();
-            //        mensaje = Tabla.Rows[0][1].ToString();
+            try
+            {
+                if (txtCodigoBateria.Text != "")
+                {
+                    miBateria.IdBateria = txtCodigoBateria.Text;
+                    miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
+                    miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
+                    miBateria.Hemoglobina = nudHemoglobina.Text;
+                    miBateria.Vih = cbVIH.Text;
+                    miBateria.Sifilis = cbSifilis.Text;
+                    miBateria.Orina = txtOrina.Text;
+                    miBateria.Glucosa = nudGlucosa.Text;
+                    Tabla = miBateria.AgregarBateria();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
 
-            //        if (respuesta == "1")
-            //        {
-            //            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //            ConfiguracionInicial();
-            //            ActualizarLista();
-            //        }
-            //        else if (respuesta == "0")
-            //        {
-            //            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //            ConfiguracionInicial();
-            //        }
-            //    }
-            //    else
-            //        MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        dgvListaBateria.DataSource = miBateria.ListarBateria();
+                    }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
+                }
+                else
+                    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Ya existe un establecimiento con la misma descripción", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
         public void Modificar()
         {
-            //if (txtDescripcion.Text != "")
-            //{
-            //    miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
-            //    miEstablecimiento.IdMicrored = cbMicrored.SelectedValue.ToString();
-            //    miEstablecimiento.Descripcion = txtDescripcion.Text;
-            //    miEstablecimiento.Direccion = txtDireccion.Text;
-            //    miEstablecimiento.Renaes = txtRenaes.Text;
-            //    Tabla = miEstablecimiento.ModificarEstablecimiento();
-            //    respuesta = Tabla.Rows[0][0].ToString();
-            //    mensaje = Tabla.Rows[0][1].ToString();
-            //    if (respuesta == "1")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        ConfiguracionInicial();
-            //        ActualizarLista();
-            //    }
-            //    else if (respuesta == "0")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        ConfiguracionInicial();
-            //    }
-            //}
-            //else
-            //    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            try
+            {
+                if (txtCodigoBateria.Text != "")
+                {
+                    miBateria.IdBateria = txtCodigoBateria.Text;
+                    miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
+                    miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
+                    miBateria.Hemoglobina = nudHemoglobina.Text;
+                    miBateria.Vih = cbVIH.Text;
+                    miBateria.Sifilis = cbSifilis.Text;
+                    miBateria.Orina = txtOrina.Text;
+                    miBateria.Glucosa = nudGlucosa.Text;
+                    Tabla = miBateria.ModificarBateria();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
+
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        dgvListaBateria.DataSource = miBateria.ListarBateria();
+                    }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
+                }
+                else
+                    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch
+            {
+                MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void Eliminar()
         {
-            //miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
-            //miEstablecimiento.Descripcion = txtDescripcion.Text;
-            //Tabla = miEstablecimiento.EliminarEstablecimiento();
-            //respuesta = Tabla.Rows[0][0].ToString();
-            //mensaje = Tabla.Rows[0][1].ToString();
-            //if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-            //    if (respuesta == "1")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        ConfiguracionInicial();
-            //        ActualizarLista();
-            //    }
+            try
+            {
+                if (txtCodigoBateria.Text != "")
+                {
+                    miBateria.IdBateria = txtCodigoBateria.Text;
+                    Tabla = miBateria.EliminarBateria();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
 
-            //    else if (respuesta == "0")
-            //    {
-            //        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        ConfiguracionInicial();
-            //    }
-            //    else
-            //    {
-            //        /*NO HACER NADA*/
-            //    }
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        dgvListaBateria.DataSource = miBateria.ListarBateria();
+                    }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
+                }
+                else
+                    MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch
+            {
+                MessageBox.Show("Error al eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-
+            Agregar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            Modificar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            Eliminar();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            ConfiguracionInicial();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void frmBateria_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvListaBateria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int valor = dgvListaBateria.CurrentCell.RowIndex;
+            txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
+            txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
+            dtpFecha.Text = dgvListaBateria[2, valor].Value.ToString();
+            nudHemoglobina.Text = dgvListaBateria[3, valor].Value.ToString();
+            cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
+            cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
+            txtOrina.Text = dgvListaBateria[6, valor].Value.ToString();
+            nudGlucosa.Text = dgvListaBateria[7, valor].Value.ToString();
+            if (Convert.ToDecimal(nudHemoglobina.Value) >= Convert.ToDecimal(11.5))
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante supera los límites de hemoglobina", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(Convert.ToDecimal(nudGlucosa.Value) >= Convert.ToDecimal(130))
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante supera los límites de glucosa", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                pbAlerta.Visible = false;
+            }
+
+        }
+        private void playSonidoDeAlerta()
+        {
+            SoundPlayer Alerta = new SoundPlayer(@"C:\Users\Usuario\Desktop\Imagenes para el sistema de control de embarazo\SonidoDeAlerta.mp3");
+            Alerta.Play();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

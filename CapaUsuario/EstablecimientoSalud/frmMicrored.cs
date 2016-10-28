@@ -97,29 +97,38 @@ namespace CapaUsuario.EstablecimientoSalud
         }
         private void Eliminar()
         {
-            miMicrored.IdMicrored = txtCodigo.Text;
-            miMicrored.Microred = txtMicrored.Text;
-            miMicrored.Direccion = txtDireccion.Text;
-            Tabla = miMicrored.EliminarMicrored();
-            respuesta = Tabla.Rows[0][0].ToString();
-            mensaje = Tabla.Rows[0][1].ToString();
-            if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                if (respuesta == "1")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
-                    ActualizarLista();
-                }
+            try
+            {
+                miMicrored.IdMicrored = txtCodigo.Text;
+                miMicrored.Microred = txtMicrored.Text;
+                miMicrored.Direccion = txtDireccion.Text;
+                Tabla = miMicrored.EliminarMicrored();
+                respuesta = Tabla.Rows[0][0].ToString();
+                mensaje = Tabla.Rows[0][1].ToString();
+                if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        ActualizarLista();
+                    }
 
-                else if (respuesta == "0")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
-                }
-                else
-                {
-                    /*NO HACER NADA*/
-                }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
+                    else
+                    {
+                        /*NO HACER NADA*/
+                    }
+
+            }
+            catch
+            {
+                MessageBox.Show("No puede eliminar la Microred porque esta siendo usado en otro formulario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
 
         }
 

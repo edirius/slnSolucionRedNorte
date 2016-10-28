@@ -120,28 +120,36 @@ namespace CapaUsuario.EstablecimientoSalud
         }
         private void Eliminar()
         {
-            miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
-            miEstablecimiento.Descripcion = txtDescripcion.Text;
-            Tabla = miEstablecimiento.EliminarEstablecimiento();
-            respuesta = Tabla.Rows[0][0].ToString();
-            mensaje = Tabla.Rows[0][1].ToString();
-            if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                if (respuesta == "1")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
-                    ActualizarLista();
-                }
+            try
+            {
+                miEstablecimiento.IdEstablecimientoSalud = txtCodigo.Text;
+                miEstablecimiento.Descripcion = txtDescripcion.Text;
+                Tabla = miEstablecimiento.EliminarEstablecimiento();
+                respuesta = Tabla.Rows[0][0].ToString();
+                mensaje = Tabla.Rows[0][1].ToString();
+                if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ConfiguracionInicial();
+                        ActualizarLista();
+                    }
 
-                else if (respuesta == "0")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
-                }
-            else
-                {
-                    /*NO HACER NADA*/
-                }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ConfiguracionInicial();
+                    }
+                    else
+                    {
+                        /*NO HACER NADA*/
+                    }
+            }
+            catch
+            {
+                MessageBox.Show("No puede eliminar el establecimiento porque esta siendo usado en otro formulario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
                 
         }
 
@@ -180,6 +188,15 @@ namespace CapaUsuario.EstablecimientoSalud
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DataTable Tabla = new DataTable();
+            Tabla = miEstablecimiento.ListarEstablecimiento();
+            string Campo = comboBox1.Text;
+            Tabla.DefaultView.RowFilter = (" "+ Campo +" like '"+textBox1.Text+"%'");
+            dgvListarEstablecimiento.DataSource = Tabla.DefaultView;
         }
     }
 }
