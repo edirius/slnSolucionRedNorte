@@ -21,12 +21,13 @@ namespace CapaUsuario.Bateria
         public frmBateria(string IdtHistoriaClinica, string IdtEstablecimiento)
         {
             InitializeComponent();
-            ActualizarLista();
+            
             IdHistoria = IdtHistoriaClinica;
             IdEstablecimiento = IdtEstablecimiento;
-            
+            ActualizarLista(IdEstablecimiento);
+
         }
-        public void ActualizarLista()
+        public void ActualizarLista(string id)
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria();
             Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
