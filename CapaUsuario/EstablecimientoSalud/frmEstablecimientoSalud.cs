@@ -156,11 +156,11 @@ namespace CapaUsuario.EstablecimientoSalud
         private void dgvListarEstablecimiento_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int Valor = dgvListarEstablecimiento.CurrentCell.RowIndex;
-            txtCodigo.Text = dgvListarEstablecimiento[0, Valor].Value.ToString();
-            cbMicrored.Text = dgvListarEstablecimiento[1, Valor].Value.ToString();
-            txtDescripcion.Text = dgvListarEstablecimiento[2, Valor].Value.ToString();
-            txtDireccion.Text = dgvListarEstablecimiento[3, Valor].Value.ToString();
-            txtRenaes.Text = dgvListarEstablecimiento[4, Valor].Value.ToString();
+            txtCodigo.Text = dgvListarEstablecimiento[1, Valor].Value.ToString();
+            cbMicrored.Text = dgvListarEstablecimiento[2, Valor].Value.ToString();
+            txtDescripcion.Text = dgvListarEstablecimiento[3, Valor].Value.ToString();
+            txtDireccion.Text = dgvListarEstablecimiento[4, Valor].Value.ToString();
+            txtRenaes.Text = dgvListarEstablecimiento[5, Valor].Value.ToString();
 
         }
 

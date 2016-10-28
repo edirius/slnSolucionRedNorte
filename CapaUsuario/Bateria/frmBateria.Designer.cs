@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,9 +38,16 @@
             this.cbSifilis = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtOrina = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudOrina = new System.Windows.Forms.NumericUpDown();
+            this.nudGlucosa = new System.Windows.Forms.NumericUpDown();
+            this.nudHemoglobina = new System.Windows.Forms.NumericUpDown();
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCodigoHistoria = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -48,10 +55,6 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
-            this.txtCodigoBateria = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCodigoHistoria = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,21 +63,19 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nudHemoglobina = new System.Windows.Forms.NumericUpDown();
-            this.nudGlucosa = new System.Windows.Forms.NumericUpDown();
-            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 62);
+            this.label3.Location = new System.Drawing.Point(18, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 78;
@@ -83,7 +84,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(61, 60);
+            this.dtpFecha.Location = new System.Drawing.Point(61, 43);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(106, 20);
             this.dtpFecha.TabIndex = 82;
@@ -91,7 +92,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 94);
+            this.label1.Location = new System.Drawing.Point(15, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 13);
             this.label1.TabIndex = 83;
@@ -100,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 126);
+            this.label2.Location = new System.Drawing.Point(15, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 85;
@@ -113,7 +114,7 @@
             this.cbVIH.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbVIH.Location = new System.Drawing.Point(100, 122);
+            this.cbVIH.Location = new System.Drawing.Point(100, 105);
             this.cbVIH.Name = "cbVIH";
             this.cbVIH.Size = new System.Drawing.Size(138, 21);
             this.cbVIH.TabIndex = 86;
@@ -125,7 +126,7 @@
             this.cbSifilis.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbSifilis.Location = new System.Drawing.Point(392, 59);
+            this.cbSifilis.Location = new System.Drawing.Point(392, 42);
             this.cbSifilis.Name = "cbSifilis";
             this.cbSifilis.Size = new System.Drawing.Size(138, 21);
             this.cbSifilis.TabIndex = 88;
@@ -133,7 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 62);
+            this.label4.Location = new System.Drawing.Point(295, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 87;
@@ -142,23 +143,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(295, 94);
+            this.label5.Location = new System.Drawing.Point(295, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 90;
             this.label5.Text = "Examen de Orina:";
             // 
-            // txtOrina
-            // 
-            this.txtOrina.Location = new System.Drawing.Point(394, 91);
-            this.txtOrina.Name = "txtOrina";
-            this.txtOrina.Size = new System.Drawing.Size(136, 20);
-            this.txtOrina.TabIndex = 91;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(295, 126);
+            this.label6.Location = new System.Drawing.Point(295, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 92;
@@ -169,6 +163,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.nudOrina);
             this.groupBox1.Controls.Add(this.nudGlucosa);
             this.groupBox1.Controls.Add(this.nudHemoglobina);
             this.groupBox1.Controls.Add(this.pbAlerta);
@@ -180,7 +175,6 @@
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtOrina);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cbVIH);
@@ -192,7 +186,112 @@
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "...";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // nudOrina
+            // 
+            this.nudOrina.Location = new System.Drawing.Point(392, 75);
+            this.nudOrina.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nudOrina.Name = "nudOrina";
+            this.nudOrina.Size = new System.Drawing.Size(43, 20);
+            this.nudOrina.TabIndex = 102;
+            this.nudOrina.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // nudGlucosa
+            // 
+            this.nudGlucosa.DecimalPlaces = 1;
+            this.nudGlucosa.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudGlucosa.Location = new System.Drawing.Point(406, 106);
+            this.nudGlucosa.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.nudGlucosa.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudGlucosa.Name = "nudGlucosa";
+            this.nudGlucosa.Size = new System.Drawing.Size(48, 20);
+            this.nudGlucosa.TabIndex = 101;
+            this.nudGlucosa.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // nudHemoglobina
+            // 
+            this.nudHemoglobina.DecimalPlaces = 1;
+            this.nudHemoglobina.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudHemoglobina.Location = new System.Drawing.Point(149, 75);
+            this.nudHemoglobina.Name = "nudHemoglobina";
+            this.nudHemoglobina.Size = new System.Drawing.Size(48, 20);
+            this.nudHemoglobina.TabIndex = 100;
+            // 
+            // pbAlerta
+            // 
+            this.pbAlerta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
+            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
+            this.pbAlerta.Location = new System.Drawing.Point(539, 9);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(152, 152);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 99;
+            this.pbAlerta.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(202, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 97;
+            this.label8.Text = "Codigo Historia:";
+            this.label8.Visible = false;
+            // 
+            // txtCodigoHistoria
+            // 
+            this.txtCodigoHistoria.Location = new System.Drawing.Point(287, 4);
+            this.txtCodigoHistoria.Name = "txtCodigoHistoria";
+            this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
+            this.txtCodigoHistoria.TabIndex = 96;
+            this.txtCodigoHistoria.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 95;
+            this.label7.Text = "Codigo Bateria:";
+            this.label7.Visible = false;
+            // 
+            // txtCodigoBateria
+            // 
+            this.txtCodigoBateria.Location = new System.Drawing.Point(100, 4);
+            this.txtCodigoBateria.Name = "txtCodigoBateria";
+            this.txtCodigoBateria.Size = new System.Drawing.Size(82, 20);
+            this.txtCodigoBateria.TabIndex = 94;
+            this.txtCodigoBateria.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -281,8 +380,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,146 +402,70 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(6, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 199);
             this.dgvListaBateria.TabIndex = 97;
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick);
-            // 
-            // txtCodigoBateria
-            // 
-            this.txtCodigoBateria.Location = new System.Drawing.Point(100, 29);
-            this.txtCodigoBateria.Name = "txtCodigoBateria";
-            this.txtCodigoBateria.Size = new System.Drawing.Size(82, 20);
-            this.txtCodigoBateria.TabIndex = 94;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 95;
-            this.label7.Text = "Codigo Bateria:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(202, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 13);
-            this.label8.TabIndex = 97;
-            this.label8.Text = "Codigo Historia:";
-            // 
-            // txtCodigoHistoria
-            // 
-            this.txtCodigoHistoria.Location = new System.Drawing.Point(287, 29);
-            this.txtCodigoHistoria.Name = "txtCodigoHistoria";
-            this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
-            this.txtCodigoHistoria.TabIndex = 96;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "idtbateria";
             this.Column1.HeaderText = "Codigo Bateria";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "idthistoriaclinica";
             this.Column2.HeaderText = "Codigo Historia";
             this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "fecha";
             this.Column3.HeaderText = "Fecha Examen";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "hemoglobina";
             this.Column4.HeaderText = "Examen Hemoglobina";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.DataPropertyName = "vih";
             this.Column5.HeaderText = "Examen VIH";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "sifilis";
             this.Column6.HeaderText = "Examen Sifilis";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "orina";
             this.Column7.HeaderText = "Examen de Orina";
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // Column8
             // 
             this.Column8.DataPropertyName = "glucosa";
             this.Column8.HeaderText = "Examen de Glucosa";
             this.Column8.Name = "Column8";
-            // 
-            // nudHemoglobina
-            // 
-            this.nudHemoglobina.DecimalPlaces = 1;
-            this.nudHemoglobina.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nudHemoglobina.Location = new System.Drawing.Point(149, 92);
-            this.nudHemoglobina.Name = "nudHemoglobina";
-            this.nudHemoglobina.Size = new System.Drawing.Size(48, 20);
-            this.nudHemoglobina.TabIndex = 100;
-            // 
-            // nudGlucosa
-            // 
-            this.nudGlucosa.DecimalPlaces = 1;
-            this.nudGlucosa.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            65536});
-            this.nudGlucosa.Location = new System.Drawing.Point(406, 123);
-            this.nudGlucosa.Maximum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.nudGlucosa.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudGlucosa.Name = "nudGlucosa";
-            this.nudGlucosa.Size = new System.Drawing.Size(48, 20);
-            this.nudGlucosa.TabIndex = 101;
-            this.nudGlucosa.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // pbAlerta
-            // 
-            this.pbAlerta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
-            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
-            this.pbAlerta.Location = new System.Drawing.Point(539, 9);
-            this.pbAlerta.Name = "pbAlerta";
-            this.pbAlerta.Size = new System.Drawing.Size(152, 152);
-            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlerta.TabIndex = 99;
-            this.pbAlerta.TabStop = false;
+            this.Column8.ReadOnly = true;
             // 
             // frmBateria
             // 
@@ -458,11 +481,12 @@
             this.Load += new System.EventHandler(this.frmBateria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -477,7 +501,6 @@
         private System.Windows.Forms.ComboBox cbSifilis;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtOrina;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -491,6 +514,9 @@
         private System.Windows.Forms.TextBox txtCodigoBateria;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodigoHistoria;
+        private System.Windows.Forms.PictureBox pbAlerta;
+        private System.Windows.Forms.NumericUpDown nudHemoglobina;
+        private System.Windows.Forms.NumericUpDown nudGlucosa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -499,8 +525,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.PictureBox pbAlerta;
-        private System.Windows.Forms.NumericUpDown nudHemoglobina;
-        private System.Windows.Forms.NumericUpDown nudGlucosa;
+        private System.Windows.Forms.NumericUpDown nudOrina;
     }
 }

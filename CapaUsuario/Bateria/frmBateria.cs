@@ -63,7 +63,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Hemoglobina = nudHemoglobina.Text;
                     miBateria.Vih = cbVIH.Text;
                     miBateria.Sifilis = cbSifilis.Text;
-                    miBateria.Orina = txtOrina.Text;
+                    miBateria.Orina = nudOrina.Text;
                     miBateria.Glucosa = nudGlucosa.Text;
                     Tabla = miBateria.AgregarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
@@ -104,7 +104,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Hemoglobina = nudHemoglobina.Text;
                     miBateria.Vih = cbVIH.Text;
                     miBateria.Sifilis = cbSifilis.Text;
-                    miBateria.Orina = txtOrina.Text;
+                    miBateria.Orina = nudOrina.Text;
                     miBateria.Glucosa = nudGlucosa.Text;
                     Tabla = miBateria.ModificarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
@@ -134,8 +134,6 @@ namespace CapaUsuario.Bateria
         }
         private void Eliminar()
         {
-            try
-            {
                 if (txtCodigoBateria.Text != "")
                 {
                     miBateria.IdBateria = txtCodigoBateria.Text;
@@ -158,11 +156,8 @@ namespace CapaUsuario.Bateria
                 else
                     MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
-            catch
-            {
-                MessageBox.Show("Error al eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
+            
 
         }
 
@@ -210,19 +205,50 @@ namespace CapaUsuario.Bateria
             nudHemoglobina.Text = dgvListaBateria[3, valor].Value.ToString();
             cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
             cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
-            txtOrina.Text = dgvListaBateria[6, valor].Value.ToString();
+            nudOrina.Text = dgvListaBateria[6, valor].Value.ToString();
             nudGlucosa.Text = dgvListaBateria[7, valor].Value.ToString();
-            if (Convert.ToDecimal(nudHemoglobina.Value) >= Convert.ToDecimal(11.5))
+            if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
             {
                 pbAlerta.Visible = true;
                 //playSonidoDeAlerta();
-                MessageBox.Show("La gestante supera los límites de hemoglobina", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La gestante tiene anemia.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(Convert.ToDecimal(nudGlucosa.Value) >= Convert.ToDecimal(130))
+            if (cbVIH.Text == "REACTIVO")
             {
                 pbAlerta.Visible = true;
                 //playSonidoDeAlerta();
-                MessageBox.Show("La gestante supera los límites de glucosa", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La gestante tiene VIH positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (cbSifilis.Text == "REACTIVO")
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante tiene SIFILIS positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Convert.ToInt16(nudOrina.Text) > 3)
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante tiene infección urinaria", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Convert.ToInt16(nudOrina.Text) > 8)
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante tiene infección urinaria a tratar", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Convert.ToDecimal(nudGlucosa.Value) < Convert.ToDecimal(70))
+            {
+                
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante tiene hipoglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (Convert.ToDecimal(nudGlucosa.Value) < Convert.ToDecimal(130))
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("La gestante tiene hiperglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -234,11 +260,6 @@ namespace CapaUsuario.Bateria
         {
             SoundPlayer Alerta = new SoundPlayer(@"C:\Users\Usuario\Desktop\Imagenes para el sistema de control de embarazo\SonidoDeAlerta.mp3");
             Alerta.Play();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
