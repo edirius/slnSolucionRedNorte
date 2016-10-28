@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -100,6 +100,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -122,6 +128,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbMonth);
+            this.groupBox2.Controls.Add(this.cbYear);
+            this.groupBox2.Controls.Add(this.cbBuscar);
             this.groupBox2.Controls.Add(this.dgvHC);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.buGuardar);
@@ -134,7 +143,10 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.txtBuscar);
+            this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.lblBuscar);
             this.groupBox2.Controls.Add(this.txtObservaciones);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label9);
@@ -155,8 +167,8 @@
             // 
             this.dgvHC.AllowUserToAddRows = false;
             this.dgvHC.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -181,6 +193,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buGuardar
             // 
@@ -208,8 +221,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -263,8 +276,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -381,7 +394,7 @@
             this.cboTipoLlegada.Items.AddRange(new object[] {
             "A pie",
             "Bicicleta",
-            "Auto motorizado"});
+            "Vehiculo motorizado"});
             this.cboTipoLlegada.Location = new System.Drawing.Point(131, 17);
             this.cboTipoLlegada.Name = "cboTipoLlegada";
             this.cboTipoLlegada.Size = new System.Drawing.Size(128, 21);
@@ -627,19 +640,20 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(159, 549);
+            this.txtBuscar.Location = new System.Drawing.Point(227, 549);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(155, 20);
             this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
-            // label17
+            // lblBuscar
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(24, 552);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(136, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Buscar por Historia Clinica :";
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(24, 552);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(61, 13);
+            this.lblBuscar.TabIndex = 0;
+            this.lblBuscar.Text = "Buscar por ";
             // 
             // txtObservaciones
             // 
@@ -897,6 +911,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(361, 28);
             this.dtpFecha.Name = "dtpFecha";
@@ -904,6 +919,78 @@
             this.dtpFecha.TabIndex = 0;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
             this.dtpFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
+            // 
+            // cbBuscar
+            // 
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
+            "Historia Clinica",
+            "Apellido Paterno"});
+            this.cbBuscar.Location = new System.Drawing.Point(82, 548);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(128, 21);
+            this.cbBuscar.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(213, 552);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = ":";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // cbYear
+            // 
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(453, 548);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(79, 21);
+            this.cbYear.TabIndex = 2;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cbMonth.Location = new System.Drawing.Point(578, 549);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(128, 21);
+            this.cbMonth.TabIndex = 2;
+            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(418, 552);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Año:";
+            this.label17.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(544, 552);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Mes:";
+            this.label24.Click += new System.EventHandler(this.label12_Click);
             // 
             // frmHistoriaClinica
             // 
@@ -986,7 +1073,7 @@
         private System.Windows.Forms.DataGridView dgvHC;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
@@ -1019,6 +1106,12 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.ComboBox cbBuscar;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbMonth;
+        private System.Windows.Forms.ComboBox cbYear;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label17;
     }
 }
 

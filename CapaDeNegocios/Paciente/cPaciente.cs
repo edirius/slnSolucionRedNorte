@@ -39,6 +39,9 @@ namespace CapaDeNegocios.Paciente
         { get { return stelefono; } set { stelefono = value; } }
         public string idtestablecimientosalud
         { get { return sidtestablecimientosalud; } set { sidtestablecimientosalud = value; } }
+        public string año { get; set; }
+        public string mes { get; set; }
+
 
         public DataTable ListarPaciente(string idtestablecimientosalud)
         {
@@ -71,6 +74,12 @@ namespace CapaDeNegocios.Paciente
         {
             Conexion.GDatos.Ejecutar("spELiminarPaciente", idtpaciente);
             return true;
+        }
+
+        public DataTable ListarHistoriaClinicaXApellidoPaterno()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno,año,mes);
+            
         }
     }
 }
