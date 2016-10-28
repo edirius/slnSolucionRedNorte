@@ -85,5 +85,10 @@ namespace CapaUsuario.Seguridad
         {
             Close();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

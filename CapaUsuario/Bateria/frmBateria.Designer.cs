@@ -28,21 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHemoglobina = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbVIH = new System.Windows.Forms.ComboBox();
             this.cbSifilis = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtOrina = new System.Windows.Forms.TextBox();
-            this.Glucosa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudOrina = new System.Windows.Forms.NumericUpDown();
+            this.nudGlucosa = new System.Windows.Forms.NumericUpDown();
+            this.nudHemoglobina = new System.Windows.Forms.NumericUpDown();
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCodigoHistoria = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -50,54 +55,53 @@
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 35);
+            this.label3.Location = new System.Drawing.Point(18, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 78;
             this.label3.Text = "Fecha:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 20);
-            this.dateTimePicker1.TabIndex = 82;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(61, 43);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(106, 20);
+            this.dtpFecha.TabIndex = 82;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 62);
+            this.label1.Location = new System.Drawing.Point(15, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 13);
             this.label1.TabIndex = 83;
             this.label1.Text = "Examen de Hemoblobina:";
             // 
-            // txtHemoglobina
-            // 
-            this.txtHemoglobina.Location = new System.Drawing.Point(198, 59);
-            this.txtHemoglobina.Name = "txtHemoglobina";
-            this.txtHemoglobina.Size = new System.Drawing.Size(73, 20);
-            this.txtHemoglobina.TabIndex = 84;
-            // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 90);
+            this.label2.Location = new System.Drawing.Point(15, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 85;
@@ -110,7 +114,7 @@
             this.cbVIH.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbVIH.Location = new System.Drawing.Point(154, 87);
+            this.cbVIH.Location = new System.Drawing.Point(100, 105);
             this.cbVIH.Name = "cbVIH";
             this.cbVIH.Size = new System.Drawing.Size(138, 21);
             this.cbVIH.TabIndex = 86;
@@ -122,17 +126,15 @@
             this.cbSifilis.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbSifilis.Location = new System.Drawing.Point(448, 32);
+            this.cbSifilis.Location = new System.Drawing.Point(392, 42);
             this.cbSifilis.Name = "cbSifilis";
             this.cbSifilis.Size = new System.Drawing.Size(138, 21);
             this.cbSifilis.TabIndex = 88;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(353, 35);
+            this.label4.Location = new System.Drawing.Point(295, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 87;
@@ -140,35 +142,17 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(353, 67);
+            this.label5.Location = new System.Drawing.Point(295, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 90;
             this.label5.Text = "Examen de Orina:";
             // 
-            // txtOrina
-            // 
-            this.txtOrina.Location = new System.Drawing.Point(450, 64);
-            this.txtOrina.Name = "txtOrina";
-            this.txtOrina.Size = new System.Drawing.Size(74, 20);
-            this.txtOrina.TabIndex = 91;
-            // 
-            // Glucosa
-            // 
-            this.Glucosa.Location = new System.Drawing.Point(461, 95);
-            this.Glucosa.Name = "Glucosa";
-            this.Glucosa.Size = new System.Drawing.Size(70, 20);
-            this.Glucosa.TabIndex = 93;
-            // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(353, 99);
+            this.label6.Location = new System.Drawing.Point(295, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 13);
             this.label6.TabIndex = 92;
@@ -176,13 +160,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtHemoglobina);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.nudOrina);
+            this.groupBox1.Controls.Add(this.nudGlucosa);
+            this.groupBox1.Controls.Add(this.nudHemoglobina);
+            this.groupBox1.Controls.Add(this.pbAlerta);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtCodigoHistoria);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtCodigoBateria);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.Glucosa);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtOrina);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cbVIH);
@@ -190,15 +182,120 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(6, -3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(660, 130);
+            this.groupBox1.Size = new System.Drawing.Size(694, 168);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "...";
             // 
+            // nudOrina
+            // 
+            this.nudOrina.Location = new System.Drawing.Point(392, 75);
+            this.nudOrina.Maximum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.nudOrina.Name = "nudOrina";
+            this.nudOrina.Size = new System.Drawing.Size(43, 20);
+            this.nudOrina.TabIndex = 102;
+            this.nudOrina.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // nudGlucosa
+            // 
+            this.nudGlucosa.DecimalPlaces = 1;
+            this.nudGlucosa.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudGlucosa.Location = new System.Drawing.Point(406, 106);
+            this.nudGlucosa.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.nudGlucosa.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudGlucosa.Name = "nudGlucosa";
+            this.nudGlucosa.Size = new System.Drawing.Size(48, 20);
+            this.nudGlucosa.TabIndex = 101;
+            this.nudGlucosa.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // nudHemoglobina
+            // 
+            this.nudHemoglobina.DecimalPlaces = 1;
+            this.nudHemoglobina.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            65536});
+            this.nudHemoglobina.Location = new System.Drawing.Point(149, 75);
+            this.nudHemoglobina.Name = "nudHemoglobina";
+            this.nudHemoglobina.Size = new System.Drawing.Size(48, 20);
+            this.nudHemoglobina.TabIndex = 100;
+            // 
+            // pbAlerta
+            // 
+            this.pbAlerta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
+            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
+            this.pbAlerta.Location = new System.Drawing.Point(539, 9);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(152, 152);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 99;
+            this.pbAlerta.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(202, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 13);
+            this.label8.TabIndex = 97;
+            this.label8.Text = "Codigo Historia:";
+            this.label8.Visible = false;
+            // 
+            // txtCodigoHistoria
+            // 
+            this.txtCodigoHistoria.Location = new System.Drawing.Point(287, 4);
+            this.txtCodigoHistoria.Name = "txtCodigoHistoria";
+            this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
+            this.txtCodigoHistoria.TabIndex = 96;
+            this.txtCodigoHistoria.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 95;
+            this.label7.Text = "Codigo Bateria:";
+            this.label7.Visible = false;
+            // 
+            // txtCodigoBateria
+            // 
+            this.txtCodigoBateria.Location = new System.Drawing.Point(100, 4);
+            this.txtCodigoBateria.Name = "txtCodigoBateria";
+            this.txtCodigoBateria.Size = new System.Drawing.Size(82, 20);
+            this.txtCodigoBateria.TabIndex = 94;
+            this.txtCodigoBateria.Visible = false;
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -211,20 +308,20 @@
             this.tableLayoutPanel1.Controls.Add(this.btnModificar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 311);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 377);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(660, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(693, 46);
             this.tableLayoutPanel1.TabIndex = 98;
             // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(531, 5);
+            this.btnSalir.Location = new System.Drawing.Point(555, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(126, 41);
+            this.btnSalir.Size = new System.Drawing.Size(135, 40);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -234,9 +331,9 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(267, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(279, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(126, 43);
+            this.btnEliminar.Size = new System.Drawing.Size(132, 40);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -246,9 +343,9 @@
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(135, 5);
+            this.btnModificar.Location = new System.Drawing.Point(141, 3);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(126, 41);
+            this.btnModificar.Size = new System.Drawing.Size(132, 40);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -258,9 +355,9 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(3, 5);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(126, 41);
+            this.btnInsertar.Size = new System.Drawing.Size(132, 40);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -270,9 +367,9 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(399, 5);
+            this.btnNuevo.Location = new System.Drawing.Point(417, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(126, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(132, 40);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -283,8 +380,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -292,22 +389,90 @@
             this.dgvListaBateria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListaBateria.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvListaBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaBateria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
             this.dgvListaBateria.GridColor = System.Drawing.Color.White;
-            this.dgvListaBateria.Location = new System.Drawing.Point(6, 133);
+            this.dgvListaBateria.Location = new System.Drawing.Point(6, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaBateria.Size = new System.Drawing.Size(660, 172);
+            this.dgvListaBateria.Size = new System.Drawing.Size(693, 199);
             this.dgvListaBateria.TabIndex = 97;
+            this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtbateria";
+            this.Column1.HeaderText = "Codigo Bateria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fecha";
+            this.Column3.HeaderText = "Fecha Examen";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "hemoglobina";
+            this.Column4.HeaderText = "Examen Hemoglobina";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "vih";
+            this.Column5.HeaderText = "Examen VIH";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sifilis";
+            this.Column6.HeaderText = "Examen Sifilis";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "orina";
+            this.Column7.HeaderText = "Examen de Orina";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "glucosa";
+            this.Column8.HeaderText = "Examen de Glucosa";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // frmBateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 367);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(704, 430);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgvListaBateria);
             this.Controls.Add(this.groupBox1);
@@ -316,6 +481,10 @@
             this.Load += new System.EventHandler(this.frmBateria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).EndInit();
             this.ResumeLayout(false);
@@ -325,16 +494,13 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHemoglobina;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbVIH;
         private System.Windows.Forms.ComboBox cbSifilis;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtOrina;
-        private System.Windows.Forms.TextBox Glucosa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -344,5 +510,21 @@
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvListaBateria;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCodigoBateria;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCodigoHistoria;
+        private System.Windows.Forms.PictureBox pbAlerta;
+        private System.Windows.Forms.NumericUpDown nudHemoglobina;
+        private System.Windows.Forms.NumericUpDown nudGlucosa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.NumericUpDown nudOrina;
     }
 }
