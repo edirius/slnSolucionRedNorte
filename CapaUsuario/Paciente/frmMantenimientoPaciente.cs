@@ -99,17 +99,24 @@ namespace CapaUsuario.Paciente
 
         private void CargarDatos()
         {
-            //dgvPaciente.Rows.Clear();
-            //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
-            //{
-            //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
-            //}
-            dgvPacientes.DataSource = miPaciente.ListarPaciente(sidtestablecimientosalud);
-            if (dgvPacientes.Rows.Count > 0)
+            try
             {
-                dgvPacientes.Rows[0].Selected = true;
-                DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
-                dgvPacientes_CellClick(dgvPacientes, ceo);
+                //dgvPaciente.Rows.Clear();
+                //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
+                //{
+                //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
+                //}
+                dgvPacientes.DataSource = miPaciente.ListarPaciente(sidtestablecimientosalud);
+                if (dgvPacientes.Rows.Count > 0)
+                {
+                    dgvPacientes.Rows[0].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
+                    dgvPacientes_CellClick(dgvPacientes, ceo);
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
     }

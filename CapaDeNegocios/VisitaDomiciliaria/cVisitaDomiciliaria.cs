@@ -15,6 +15,7 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         DateTime sfecha;
         string smotivo;
         string sdetalle;
+        string stipo;
         string sidthistoriaclinica;
 
         public string idtvisitadomiciliaria
@@ -25,6 +26,8 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         { get { return smotivo; } set { smotivo = value; } }
         public string detalle
         { get { return sdetalle; } set { sdetalle = value; } }
+        public string tipo
+        { get { return stipo; } set { stipo = value; } }
         public string idthistoriaclinica
         { get { return sidthistoriaclinica; } set { sidthistoriaclinica = value; } }
 
@@ -35,13 +38,13 @@ namespace CapaDeNegocios.VisitaDomiciliaria
 
         public Boolean CrearVisitaDomiciliaria(cVisitaDomiciliaria miVisitaDomiciliaria)
         {
-            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliaria", miVisitaDomiciliaria.idtvisitadomiciliaria, miVisitaDomiciliaria.fecha, miVisitaDomiciliaria.motivo, miVisitaDomiciliaria.detalle, miVisitaDomiciliaria.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliaria", miVisitaDomiciliaria.idtvisitadomiciliaria, miVisitaDomiciliaria.fecha, miVisitaDomiciliaria.motivo, miVisitaDomiciliaria.detalle, miVisitaDomiciliaria.tipo, miVisitaDomiciliaria.idthistoriaclinica);
             return true;
         }
 
         public Boolean ModificarVisitaDomiciliaria(cVisitaDomiciliaria miVisitaDomiciliaria)
         {
-            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliaria", miVisitaDomiciliaria.idtvisitadomiciliaria, miVisitaDomiciliaria.fecha, miVisitaDomiciliaria.motivo, miVisitaDomiciliaria.detalle, miVisitaDomiciliaria.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliaria", miVisitaDomiciliaria.idtvisitadomiciliaria, miVisitaDomiciliaria.fecha, miVisitaDomiciliaria.motivo, miVisitaDomiciliaria.detalle, miVisitaDomiciliaria.tipo, miVisitaDomiciliaria.idthistoriaclinica);
             return true;
         }
 

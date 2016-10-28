@@ -35,6 +35,8 @@ namespace CapaUsuario
             NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
             slNombre.Text = "Obstetra: " + NombreObstetra;
             slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
+            CapaDeNegocios.cVariables miVariables = new CapaDeNegocios.cVariables();
+            miVariables.IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
         }
         public void HacerConeccion()
         {
@@ -100,19 +102,24 @@ namespace CapaUsuario
             fCitaPreNatal.Show();
         }
 
-        private void visitasDomiciliariasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VisitaDomiciliaria.frmVisitaDomiciliaria fVisitaDomiciliaria = new VisitaDomiciliaria.frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.MdiParent = this;
-            fVisitaDomiciliaria.Show();
-        }
-
         private void alertasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
             fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
             fAlerta.MdiParent = this;
             fAlerta.Show(); 
+        }
+
+        private void visitaDomiciliariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fVisitaDomiciliaria= new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdEstablecimientoSalud, NombreObstetra);
+            fVisitaDomiciliaria.MdiParent = this;
+            fVisitaDomiciliaria.Show();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
