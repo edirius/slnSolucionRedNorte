@@ -60,5 +60,10 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarEcografiaXIdHC", Idthistoriaclinica);
         }
 
+        public DataTable EliminarEcografia()
+        {
+            return Conexion.GDatos.TraerDataTable("spEliminarEcografia", Idthistoriaclinica);
+        }
+
     }
 }
