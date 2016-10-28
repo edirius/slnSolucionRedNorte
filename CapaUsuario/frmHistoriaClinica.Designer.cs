@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
@@ -48,6 +51,7 @@
             this.dtpEcografia = new System.Windows.Forms.DateTimePicker();
             this.buAgregarEcografia = new System.Windows.Forms.Button();
             this.dtpFPP = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpFUR = new System.Windows.Forms.DateTimePicker();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
@@ -72,6 +76,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -99,13 +106,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cbBuscar = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cbYear = new System.Windows.Forms.ComboBox();
-            this.cbMonth = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -163,12 +163,54 @@
             this.groupBox2.Text = "Historia Clinica";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // cbMonth
+            // 
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cbMonth.Location = new System.Drawing.Point(578, 549);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(128, 21);
+            this.cbMonth.TabIndex = 2;
+            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
+            // 
+            // cbYear
+            // 
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(453, 548);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(79, 21);
+            this.cbYear.TabIndex = 2;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
+            // cbBuscar
+            // 
+            this.cbBuscar.FormattingEnabled = true;
+            this.cbBuscar.Items.AddRange(new object[] {
+            "Historia Clinica",
+            "Apellido Paterno"});
+            this.cbBuscar.Location = new System.Drawing.Point(82, 548);
+            this.cbBuscar.Name = "cbBuscar";
+            this.cbBuscar.Size = new System.Drawing.Size(128, 21);
+            this.cbBuscar.TabIndex = 2;
+            // 
             // dgvHC
             // 
             this.dgvHC.AllowUserToAddRows = false;
             this.dgvHC.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -215,14 +257,14 @@
             this.groupBox6.Size = new System.Drawing.Size(287, 205);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Fecha de la Segunda Visita al Servicio de Odontologia:";
+            this.groupBox6.Text = "Atención en el Servicio Odontologico:";
             // 
             // dgvOdontologia
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,6 +279,8 @@
             this.dgvOdontologia.Size = new System.Drawing.Size(245, 122);
             this.dgvOdontologia.TabIndex = 96;
             this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick);
+            this.dgvOdontologia.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOdontologia_CellFormatting);
+            this.dgvOdontologia.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvOdontologia_RowPrePaint);
             // 
             // button2
             // 
@@ -270,14 +314,14 @@
             this.groupBox5.Size = new System.Drawing.Size(493, 205);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Fecha de Ecografia Obstetrica";
+            this.groupBox5.Text = "Ecografia Obstetrica de gestante";
             // 
             // dgvEcografia
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -365,6 +409,17 @@
             this.dtpFPP.Size = new System.Drawing.Size(120, 20);
             this.dtpFPP.TabIndex = 0;
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(361, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(120, 20);
+            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
+            this.dtpFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
+            // 
             // dtpFUR
             // 
             this.dtpFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -433,8 +488,8 @@
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.nudSemanas);
             this.groupBox4.Controls.Add(this.rbTercerTrimestre);
-            this.groupBox4.Controls.Add(this.rbSegundoTrimestre);
             this.groupBox4.Controls.Add(this.rbPrimerTrimestre);
+            this.groupBox4.Controls.Add(this.rbSegundoTrimestre);
             this.groupBox4.Location = new System.Drawing.Point(538, 202);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(277, 66);
@@ -445,7 +500,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 47);
+            this.label10.Location = new System.Drawing.Point(6, 20);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
             this.label10.TabIndex = 2;
@@ -453,7 +508,7 @@
             // 
             // nudSemanas
             // 
-            this.nudSemanas.Location = new System.Drawing.Point(85, 40);
+            this.nudSemanas.Location = new System.Drawing.Point(85, 16);
             this.nudSemanas.Maximum = new decimal(new int[] {
             42,
             0,
@@ -472,11 +527,12 @@
             0,
             0,
             0});
+            this.nudSemanas.ValueChanged += new System.EventHandler(this.nudSemanas_ValueChanged);
             // 
             // rbTercerTrimestre
             // 
             this.rbTercerTrimestre.AutoSize = true;
-            this.rbTercerTrimestre.Location = new System.Drawing.Point(185, 17);
+            this.rbTercerTrimestre.Location = new System.Drawing.Point(186, 42);
             this.rbTercerTrimestre.Name = "rbTercerTrimestre";
             this.rbTercerTrimestre.Size = new System.Drawing.Size(86, 17);
             this.rbTercerTrimestre.TabIndex = 0;
@@ -487,7 +543,7 @@
             // rbSegundoTrimestre
             // 
             this.rbSegundoTrimestre.AutoSize = true;
-            this.rbSegundoTrimestre.Location = new System.Drawing.Point(90, 17);
+            this.rbSegundoTrimestre.Location = new System.Drawing.Point(91, 42);
             this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
             this.rbSegundoTrimestre.Size = new System.Drawing.Size(89, 17);
             this.rbSegundoTrimestre.TabIndex = 0;
@@ -499,7 +555,7 @@
             // 
             this.rbPrimerTrimestre.AutoSize = true;
             this.rbPrimerTrimestre.Checked = true;
-            this.rbPrimerTrimestre.Location = new System.Drawing.Point(5, 17);
+            this.rbPrimerTrimestre.Location = new System.Drawing.Point(6, 42);
             this.rbPrimerTrimestre.Name = "rbPrimerTrimestre";
             this.rbPrimerTrimestre.Size = new System.Drawing.Size(86, 17);
             this.rbPrimerTrimestre.TabIndex = 0;
@@ -645,6 +701,36 @@
             this.txtBuscar.Size = new System.Drawing.Size(155, 20);
             this.txtBuscar.TabIndex = 1;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(544, 552);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Mes:";
+            this.label24.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(418, 552);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Año:";
+            this.label17.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(213, 552);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = ":";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // lblBuscar
             // 
@@ -908,89 +994,6 @@
             this.button8.TabIndex = 4;
             this.button8.Text = "Atención Recien Nacido";
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Enabled = false;
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(361, 28);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(120, 20);
-            this.dtpFecha.TabIndex = 0;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
-            this.dtpFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
-            // 
-            // cbBuscar
-            // 
-            this.cbBuscar.FormattingEnabled = true;
-            this.cbBuscar.Items.AddRange(new object[] {
-            "Historia Clinica",
-            "Apellido Paterno"});
-            this.cbBuscar.Location = new System.Drawing.Point(82, 548);
-            this.cbBuscar.Name = "cbBuscar";
-            this.cbBuscar.Size = new System.Drawing.Size(128, 21);
-            this.cbBuscar.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(213, 552);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(10, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = ":";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // cbYear
-            // 
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(453, 548);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(79, 21);
-            this.cbYear.TabIndex = 2;
-            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
-            // 
-            // cbMonth
-            // 
-            this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.cbMonth.Location = new System.Drawing.Point(578, 549);
-            this.cbMonth.Name = "cbMonth";
-            this.cbMonth.Size = new System.Drawing.Size(128, 21);
-            this.cbMonth.TabIndex = 2;
-            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(418, 552);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Año:";
-            this.label17.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(544, 552);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Mes:";
-            this.label24.Click += new System.EventHandler(this.label12_Click);
             // 
             // frmHistoriaClinica
             // 

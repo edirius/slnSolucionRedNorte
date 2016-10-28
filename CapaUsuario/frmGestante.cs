@@ -19,10 +19,15 @@ namespace CapaUsuario
         public string app = "";
         public string apm = "";
         public DateTime fn ;
+        string IdtEstablecimientoSalud="";
+        int pagina = 0;
+        int cantidad_registros = 2;
+        int cantidad_total_registros = 0;
 
-        public frmGestante()
+        public frmGestante(string idtestablecimientosalud)
         {
             InitializeComponent();
+            IdtEstablecimientoSalud = idtestablecimientosalud;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,9 +39,12 @@ namespace CapaUsuario
         {
             DataTable odtGestante = new DataTable();
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
-            string codigoestablecimiento = "E0003";
 
-            dgvGestante.DataSource = oGestante.ListarPacienteTodos();
+            frmMenu fMenu = new frmMenu();
+
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
 
             idtpaciente = dgvGestante.Rows[0].Cells[0].Value.ToString();
             nombres = dgvGestante.Rows[0].Cells[1].Value.ToString();
@@ -45,6 +53,27 @@ namespace CapaUsuario
             fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[5].Value);
             DNI = Convert.ToString(dgvGestante.Rows[0].Cells[4].Value);
 
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+            odtGestante = oGestante.ListarCantidadPacientes();
+            cantidad_total_registros = Convert.ToUInt16(odtGestante.Rows[0][0]);
+
+            /*hallando datos de barra de navegacion */
+            decimal dcantidad_registros = Convert.ToDecimal(cantidad_registros);
+            decimal dcantidad_total_registros = Convert.ToDecimal(cantidad_total_registros);
+
+            int total_registros = Convert.ToInt16( odtGestante.Rows[0][0].ToString());
+            decimal total_registros_paciente = dcantidad_total_registros / dcantidad_registros;
+            total_registros_paciente = Math.Ceiling(total_registros_paciente);
+            cantidad_total_registros = Convert.ToInt16( total_registros_paciente);
+
+            bnpiGestante.Text = "1";
+            bnctGestante.Text = "de " + total_registros_paciente;
+            bnGestante.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorMovePreviousItem.Enabled = true;
+            bindingNavigatorMoveFirstItem.Enabled = true;
+
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -52,12 +81,17 @@ namespace CapaUsuario
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             string buscar = txtBuscar.Text;
             oGestante.apellidopaterno = buscar;
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
 
             if (buscar.Length > 4)
+            {
+
                 dgvGestante.DataSource = oGestante.ListarPacienteXApellidoPaterno();
+            }
+                
 
             if (buscar.Length == 0)
-                dgvGestante.DataSource = oGestante.ListarPacienteTodos();
+                dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina ,cantidad_registros );
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,6 +129,67 @@ namespace CapaUsuario
                 DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[4].Value);
 
             }
+        }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorCountItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+            int panel_pagina = Convert.ToInt16(bnpiGestante.Text);
+
+            if ( panel_pagina  < cantidad_total_registros){
+                panel_pagina++;
+                bnpiGestante.Text = panel_pagina.ToString();
+                int pagina = (Convert.ToInt16(bnpiGestante.Text) - 1) * cantidad_registros;
+                oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+                dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
+            }
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+            bnpiGestante.Text = cantidad_total_registros.ToString();
+            int pagina = (Convert.ToInt16(bnpiGestante.Text) - 1) * cantidad_registros;
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud( pagina , cantidad_registros);
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+            if ( Convert.ToInt16(bnpiGestante.Text) > 1  && Convert.ToInt16(bnpiGestante.Text) <= cantidad_total_registros ) { 
+                int i = Convert.ToInt16(bnpiGestante.Text) ;
+                i--;
+                bnpiGestante.Text = i.ToString();
+                int pagina = (Convert.ToInt16(bnpiGestante.Text)-1) * cantidad_registros;
+                oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+                dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
+            }
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            bnpiGestante.Text = "1";
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+
+            int pagina = (Convert.ToInt16(bnpiGestante.Text)-1) * cantidad_registros;
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud( pagina, cantidad_registros);
+        }
+
+        private void bnGestante_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }

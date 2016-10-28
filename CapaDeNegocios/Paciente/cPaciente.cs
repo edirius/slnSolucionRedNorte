@@ -50,12 +50,12 @@ namespace CapaDeNegocios.Paciente
 
         public DataTable ListarPacienteXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno",apellidopaterno);
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno",apellidopaterno, idtestablecimientosalud);
         }
 
-        public DataTable ListarPacienteTodos()
+        public DataTable ListarPacienteXIdEstablecimientoSalud(int pagina_ , int numero_registros_ )
         {
-            return Conexion.GDatos.TraerDataTable("spListarPacienteTodos");
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXIdEstablecimientoSalud", idtestablecimientosalud, pagina_, numero_registros_);
         }
 
         public Boolean CrearPaciente(cPaciente miPaciente)
@@ -79,6 +79,12 @@ namespace CapaDeNegocios.Paciente
         public DataTable ListarHistoriaClinicaXApellidoPaterno()
         {
             return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno,año,mes);
+            
+        }
+
+        public DataTable ListarCantidadPacientes()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarCantidadPacientes",idtestablecimientosalud );
             
         }
     }

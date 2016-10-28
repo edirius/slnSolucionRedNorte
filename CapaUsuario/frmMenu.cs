@@ -23,7 +23,7 @@ namespace CapaUsuario
         public frmMenu()
         {
             InitializeComponent();
-            HacerConeccion();
+            //HacerConeccion();
         }
         public void obtenerDatos(string LoginUsuario)
         {
@@ -41,7 +41,7 @@ namespace CapaUsuario
             try
             {
                 Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
-                MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
+                //MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
             }
             catch (Exception ex)
             {
@@ -113,6 +113,11 @@ namespace CapaUsuario
             fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
             fAlerta.MdiParent = this;
             fAlerta.Show(); 
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
