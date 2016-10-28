@@ -13,7 +13,7 @@ namespace CapaUsuario
 {
     public partial class frmHistoriaClinica : Form
     { 
-        public frmGestante frmGestanteHC = new frmGestante();
+        
         public frmMenu frmMenuHC = new frmMenu();
         DataTable odtOdontologo = new DataTable();
         DataTable odtEcografia = new DataTable();
@@ -23,6 +23,9 @@ namespace CapaUsuario
         public string IdObstetra = "";
         public string IdEstablecimiento = "";
         public string IdtHistoriaClinica = "";
+
+        
+
         int i = 0;
         string obstetra = "";
 
@@ -31,6 +34,7 @@ namespace CapaUsuario
 
         int mes_numero = 0;
         int año_numero = 0;
+        Image backgroundimage;
 
         bool bandera_combobox_año = false;
 
@@ -131,7 +135,10 @@ namespace CapaUsuario
 
             cbBuscar.SelectedItem = cbBuscar.Items[0];
 
-            
+            string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
+            //backgroundimage = Image.FromFile(ruta + "\\odontologia.jpg");
+
 
         }
 
@@ -142,9 +149,9 @@ namespace CapaUsuario
 
         private void buAgregarOdontologia_Click(object sender, EventArgs e)
         {
-
+            frmGestante frmGestanteHC = new frmGestante( IdEstablecimiento );
             //frmGestante.MdiParent = this;
-            if (frmGestanteHC.ShowDialog() == DialogResult.OK)
+            if (frmGestanteHC.ShowDialog( ) == DialogResult.OK)
             {
                 txtDNI.Text = frmGestanteHC.DNI;
                 txtNombres.Text = frmGestanteHC.nombres;
@@ -545,6 +552,7 @@ namespace CapaUsuario
             DateTime FUR = dtpFUR.Value;
             FUR = FUR.AddDays(7);
             FUR = FUR.AddMonths(-3);
+            FUR = FUR.AddYears(1);
             dtpFPP.Value = FUR;
         }
 
@@ -736,6 +744,53 @@ namespace CapaUsuario
         private void button1_Click(object sender, EventArgs e)
         {
             nueva_historia_clinica();
+        }
+
+        private void dgvOdontologia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //DataGridViewRow row = dgvOdontologia.Rows[e.RowIndex];
+            //row.DefaultCellStyle.BackColor = Color.Transparent;
+        }
+
+        private void dgvOdontologia_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            //e.Graphics.DrawImage(backgroundimage, e.RowBounds);
+        }
+
+        private void nudSemanas_ValueChanged(object sender, EventArgs e)
+        {
+            /* 
+                nudSemanas.Minimum = 1;
+                nudSemanas.Maximum = 12;
+
+                nudSemanas.Minimum = 13;
+                nudSemanas.Maximum = 28;
+
+                nudSemanas.Minimum = 29;
+                nudSemanas.Maximum = 42; 
+              */
+
+            /*
+            int trimestre = Convert.ToInt16(nudSemanas.Value);
+
+            if (trimestre >=1 && trimestre <= 12){
+                rbTercerTrimestre.Checked = false;
+                rbSegundoTrimestre.Checked = false;
+                rbPrimerTrimestre.Checked = true;
+            }
+            if (trimestre >= 13 && trimestre <= 28) {
+                rbTercerTrimestre.Checked = false;
+                rbPrimerTrimestre.Checked = false;
+                rbSegundoTrimestre.Checked = true;
+            }
+            if (trimestre >= 29 && trimestre <= 42) {
+                rbTercerTrimestre.Checked = true;
+                rbSegundoTrimestre.Checked = false;
+                rbPrimerTrimestre.Checked = false;
+            } 
+            */
+            
+
         }
     }
 }
