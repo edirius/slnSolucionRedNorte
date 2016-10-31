@@ -32,5 +32,18 @@ namespace CapaUsuario.Alertas
         {
             dtgListaGestantes.DataSource = oAlertas.ListarGestantesQueNoAcudenCita(codigoEstablecimiento);
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            rptListaGestantesControlPreNatal rListaGestantesControlPrenatal = new rptListaGestantesControlPreNatal();
+            dsListaGestantesControlPreNatal ds = new dsListaGestantesControlPreNatal();
+            ds.Tables.Add(oAlertas.ListarGestantesQueNoAcudenCita(codigoEstablecimiento));
+            rListaGestantesControlPrenatal.SetDataSource(oAlertas.ListarGestantesQueNoAcudenCita(codigoEstablecimiento));
+
+            frmReporteListaGestantesQueNoAcudenCitaPreNatal reporteListaGestantes = new frmReporteListaGestantesQueNoAcudenCitaPreNatal();
+            reporteListaGestantes.crystalReportViewer1.ReportSource = rListaGestantesControlPrenatal;
+            reporteListaGestantes.Show();
+
+        }
     }
 }

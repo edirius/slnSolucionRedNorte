@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.cbYear = new System.Windows.Forms.ComboBox();
@@ -62,8 +62,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.nudSemanas = new System.Windows.Forms.NumericUpDown();
             this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
-            this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
             this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.nudGestas = new System.Windows.Forms.NumericUpDown();
@@ -101,7 +101,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAtencionPrenatal = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -209,8 +209,8 @@
             // 
             this.dgvHC.AllowUserToAddRows = false;
             this.dgvHC.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -263,8 +263,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -320,8 +320,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -540,17 +540,6 @@
             this.rbTercerTrimestre.UseVisualStyleBackColor = true;
             this.rbTercerTrimestre.CheckedChanged += new System.EventHandler(this.rbTercerTrimestre_CheckedChanged);
             // 
-            // rbSegundoTrimestre
-            // 
-            this.rbSegundoTrimestre.AutoSize = true;
-            this.rbSegundoTrimestre.Location = new System.Drawing.Point(91, 42);
-            this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
-            this.rbSegundoTrimestre.Size = new System.Drawing.Size(89, 17);
-            this.rbSegundoTrimestre.TabIndex = 0;
-            this.rbSegundoTrimestre.Text = "2do Trimestre";
-            this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
-            this.rbSegundoTrimestre.CheckedChanged += new System.EventHandler(this.rbSegundoTrimestre_CheckedChanged);
-            // 
             // rbPrimerTrimestre
             // 
             this.rbPrimerTrimestre.AutoSize = true;
@@ -563,6 +552,17 @@
             this.rbPrimerTrimestre.Text = "1er Trimestre";
             this.rbPrimerTrimestre.UseVisualStyleBackColor = true;
             this.rbPrimerTrimestre.CheckedChanged += new System.EventHandler(this.rbPrimerTrimestre_CheckedChanged);
+            // 
+            // rbSegundoTrimestre
+            // 
+            this.rbSegundoTrimestre.AutoSize = true;
+            this.rbSegundoTrimestre.Location = new System.Drawing.Point(91, 42);
+            this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
+            this.rbSegundoTrimestre.Size = new System.Drawing.Size(89, 17);
+            this.rbSegundoTrimestre.TabIndex = 0;
+            this.rbSegundoTrimestre.Text = "2do Trimestre";
+            this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
+            this.rbSegundoTrimestre.CheckedChanged += new System.EventHandler(this.rbSegundoTrimestre_CheckedChanged);
             // 
             // groupBox7
             // 
@@ -950,14 +950,15 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // btnAtencionPrenatal
             // 
-            this.button4.Location = new System.Drawing.Point(842, 251);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 49);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Atención Prenatal";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAtencionPrenatal.Location = new System.Drawing.Point(842, 251);
+            this.btnAtencionPrenatal.Name = "btnAtencionPrenatal";
+            this.btnAtencionPrenatal.Size = new System.Drawing.Size(90, 49);
+            this.btnAtencionPrenatal.TabIndex = 4;
+            this.btnAtencionPrenatal.Text = "Atención Prenatal";
+            this.btnAtencionPrenatal.UseVisualStyleBackColor = true;
+            this.btnAtencionPrenatal.Click += new System.EventHandler(this.btnAtencionPrenatal_Click);
             // 
             // button5
             // 
@@ -999,12 +1000,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 767);
+            this.ClientSize = new System.Drawing.Size(944, 733);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnAtencionPrenatal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmHistoriaClinica";
@@ -1102,7 +1103,7 @@
         private System.Windows.Forms.NumericUpDown nudEdadGestacional;
         private System.Windows.Forms.NumericUpDown nudSemanas;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAtencionPrenatal;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;

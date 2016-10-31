@@ -37,5 +37,15 @@ namespace CapaUsuario.Alertas
         {
 
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
