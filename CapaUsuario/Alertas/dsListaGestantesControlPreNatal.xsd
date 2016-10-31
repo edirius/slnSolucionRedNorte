@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsListaGestantesControlPreNatal" targetNamespace="http://tempuri.org/dsListaGestantesControlPreNatal.xsd" xmlns:mstns="http://tempuri.org/dsListaGestantesControlPreNatal.xsd" xmlns="http://tempuri.org/dsListaGestantesControlPreNatal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsListaGestantesControlPreNatal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsListaGestantesControlPreNatal" msprop:Generator_UserDSName="dsListaGestantesControlPreNatal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="spListarGestantesQueNoAcudenALasCitas" msprop:Generator_TableClassName="spListarGestantesQueNoAcudenALasCitasDataTable" msprop:Generator_TableVarName="tablespListarGestantesQueNoAcudenALasCitas" msprop:Generator_TablePropName="spListarGestantesQueNoAcudenALasCitas" msprop:Generator_RowDeletingName="spListarGestantesQueNoAcudenALasCitasRowDeleting" msprop:Generator_RowChangingName="spListarGestantesQueNoAcudenALasCitasRowChanging" msprop:Generator_RowEvHandlerName="spListarGestantesQueNoAcudenALasCitasRowChangeEventHandler" msprop:Generator_RowDeletedName="spListarGestantesQueNoAcudenALasCitasRowDeleted" msprop:Generator_UserTableName="spListarGestantesQueNoAcudenALasCitas" msprop:Generator_RowChangedName="spListarGestantesQueNoAcudenALasCitasRowChanged" msprop:Generator_RowEvArgName="spListarGestantesQueNoAcudenALasCitasRowChangeEvent" msprop:Generator_RowClassName="spListarGestantesQueNoAcudenALasCitasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaProximaCita" msprop:Generator_ColumnVarNameInTable="columnfechaProximaCita" msprop:Generator_ColumnPropNameInRow="fechaProximaCita" msprop:Generator_ColumnPropNameInTable="fechaProximaCitaColumn" msprop:Generator_UserColumnName="fechaProximaCita" type="xs:string" minOccurs="0" />
+              <xs:element name="diferencia" msprop:Generator_ColumnVarNameInTable="columndiferencia" msprop:Generator_ColumnPropNameInRow="diferencia" msprop:Generator_ColumnPropNameInTable="diferenciaColumn" msprop:Generator_UserColumnName="diferencia" type="xs:string" minOccurs="0" />
+              <xs:element name="nombres" msprop:Generator_ColumnVarNameInTable="columnnombres" msprop:Generator_ColumnPropNameInRow="nombres" msprop:Generator_ColumnPropNameInTable="nombresColumn" msprop:Generator_UserColumnName="nombres" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidoPaterno" msprop:Generator_ColumnVarNameInTable="columnapellidoPaterno" msprop:Generator_ColumnPropNameInRow="apellidoPaterno" msprop:Generator_ColumnPropNameInTable="apellidoPaternoColumn" msprop:Generator_UserColumnName="apellidoPaterno" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidoMaterno" msprop:Generator_ColumnVarNameInTable="columnapellidoMaterno" msprop:Generator_ColumnPropNameInRow="apellidoMaterno" msprop:Generator_ColumnPropNameInTable="apellidoMaternoColumn" msprop:Generator_UserColumnName="apellidoMaterno" type="xs:string" minOccurs="0" />
+              <xs:element name="dni" msprop:Generator_ColumnVarNameInTable="columndni" msprop:Generator_ColumnPropNameInRow="dni" msprop:Generator_ColumnPropNameInTable="dniColumn" msprop:Generator_UserColumnName="dni" type="xs:string" minOccurs="0" />
+              <xs:element name="FUA" msprop:Generator_ColumnVarNameInTable="columnFUA" msprop:Generator_ColumnPropNameInRow="FUA" msprop:Generator_ColumnPropNameInTable="FUAColumn" msprop:Generator_UserColumnName="FUA" type="xs:string" minOccurs="0" />
+              <xs:element name="idtHistoriaClinica" msprop:Generator_ColumnVarNameInTable="columnidtHistoriaClinica" msprop:Generator_ColumnPropNameInRow="idtHistoriaClinica" msprop:Generator_ColumnPropNameInTable="idtHistoriaClinicaColumn" msprop:Generator_UserColumnName="idtHistoriaClinica" type="xs:string" minOccurs="0" />
+              <xs:element name="codigoHistoriaClinica" msprop:Generator_ColumnVarNameInTable="columncodigoHistoriaClinica" msprop:Generator_ColumnPropNameInRow="codigoHistoriaClinica" msprop:Generator_ColumnPropNameInTable="codigoHistoriaClinicaColumn" msprop:Generator_UserColumnName="codigoHistoriaClinica" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

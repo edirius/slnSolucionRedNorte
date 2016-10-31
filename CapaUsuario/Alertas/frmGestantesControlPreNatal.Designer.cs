@@ -40,6 +40,8 @@
             this.colCodigoHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFUA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdtHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,11 +144,38 @@
             this.colIdtHistoriaClinica.ReadOnly = true;
             this.colIdtHistoriaClinica.Visible = false;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSalir.Location = new System.Drawing.Point(775, 248);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 56);
+            this.btnSalir.TabIndex = 4;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.MintCream;
+            this.btnImprimir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnImprimir.Location = new System.Drawing.Point(666, 248);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 56);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmGestantesControlPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 316);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgListaGestantes);
             this.Name = "frmGestantesControlPreNatal";
             this.Text = "Relacion de Gestantes que no acuden a las citas.";
@@ -169,5 +198,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoHistoriaClinica;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFUA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdtHistoriaClinica;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

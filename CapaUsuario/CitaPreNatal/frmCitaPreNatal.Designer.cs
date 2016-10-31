@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
             this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,8 +77,8 @@
             // 
             this.dtgCitasMedicas.AllowUserToAddRows = false;
             this.dtgCitasMedicas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgCitasMedicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgCitasMedicas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colidtcitaprenatal,
@@ -270,12 +270,15 @@
             // 
             // btnAgregarControl
             // 
+            this.btnAgregarControl.BackColor = System.Drawing.Color.MintCream;
+            this.btnAgregarControl.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarControl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnAgregarControl.Location = new System.Drawing.Point(37, 130);
             this.btnAgregarControl.Name = "btnAgregarControl";
             this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
             this.btnAgregarControl.TabIndex = 15;
             this.btnAgregarControl.Text = "Agregar";
-            this.btnAgregarControl.UseVisualStyleBackColor = true;
+            this.btnAgregarControl.UseVisualStyleBackColor = false;
             this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
             // 
             // numPresionArterialS
@@ -340,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(668, 410);
             this.Controls.Add(this.numEdadGestacional);
             this.Controls.Add(this.numPresionArterialD);
@@ -360,7 +363,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCitaPreNatal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Control Pre Natal";
+            this.Text = "------ Control Pre Natal -------";
             this.Load += new System.EventHandler(this.frmCitaPreNatal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).EndInit();

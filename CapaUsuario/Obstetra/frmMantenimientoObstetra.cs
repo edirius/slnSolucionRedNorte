@@ -107,17 +107,24 @@ namespace CapaUsuario.Obstetra
 
         private void CargarDatos()
         {
-            //dgvPaciente.Rows.Clear();
-            //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
-            //{
-            //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
-            //}
-            dgvObstetras.DataSource = miObstetra.ListarObstetra(sidtestablecimientosalud);
-            if (dgvObstetras.Rows.Count > 0)
+            try
             {
-                dgvObstetras.Rows[0].Selected = true;
-                DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
-                dgvObstetras_CellClick(dgvObstetras, ceo);
+                //dgvPaciente.Rows.Clear();
+                //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
+                //{
+                //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
+                //}
+                dgvObstetras.DataSource = miObstetra.ListarObstetra(sidtestablecimientosalud);
+                if (dgvObstetras.Rows.Count > 0)
+                {
+                    dgvObstetras.Rows[0].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
+                    dgvObstetras_CellClick(dgvObstetras, ceo);
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
     }

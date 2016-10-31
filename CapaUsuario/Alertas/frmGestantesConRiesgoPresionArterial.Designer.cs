@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgListaGestantes = new System.Windows.Forms.DataGridView();
             this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,8 @@
             this.colIdthistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCodigoHistoriaClinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPresionArterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,8 +51,8 @@
             // 
             this.dtgListaGestantes.AllowUserToAddRows = false;
             this.dtgListaGestantes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgListaGestantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgListaGestantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgListaGestantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgListaGestantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNumero,
@@ -166,14 +168,42 @@
             this.colPresionArterial.ReadOnly = true;
             this.colPresionArterial.Width = 80;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.MintCream;
+            this.btnImprimir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnImprimir.Location = new System.Drawing.Point(700, 290);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 56);
+            this.btnImprimir.TabIndex = 1;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSalir.Location = new System.Drawing.Point(809, 290);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 56);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmGestantesConRiesgoPresionArterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 358);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgListaGestantes);
             this.Name = "frmGestantesConRiesgoPresionArterial";
-            this.Text = "frmGestantesConRiesgoPresionArterial";
+            this.Text = "Gestantes con Riesgo  x Presion Arterial";
             this.Load += new System.EventHandler(this.frmGestantesConRiesgoPresionArterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).EndInit();
             this.ResumeLayout(false);
@@ -195,5 +225,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdthistoriaClinica;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigoHistoriaClinica;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterial;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
