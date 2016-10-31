@@ -207,12 +207,7 @@ namespace CapaUsuario.Bateria
             cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
             nudOrina.Text = dgvListaBateria[6, valor].Value.ToString();
             nudGlucosa.Text = dgvListaBateria[7, valor].Value.ToString();
-            if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
-            {
-                pbAlerta.Visible = true;
-                //playSonidoDeAlerta();
-                MessageBox.Show("La gestante tiene anemia.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
             if (cbVIH.Text == "REACTIVO")
             {
                 pbAlerta.Visible = true;
@@ -260,6 +255,17 @@ namespace CapaUsuario.Bateria
         {
             SoundPlayer Alerta = new SoundPlayer(@"C:\Users\Usuario\Desktop\Imagenes para el sistema de control de embarazo\SonidoDeAlerta.mp3");
             Alerta.Play();
+        }
+
+        private void nudHemoglobina_ValueChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
+            {
+                pbAlerta.Visible = true;
+                //playSonidoDeAlerta();
+                MessageBox.Show("Precaución: La Gestante tiene anemia.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else { pbAlerta.Visible = false; }
         }
     }
 }
