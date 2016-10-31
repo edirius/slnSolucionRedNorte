@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsListaGestantesConRiesgoPresionAltaCitaPrenatal" targetNamespace="http://tempuri.org/dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd" xmlns:mstns="http://tempuri.org/dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd" xmlns="http://tempuri.org/dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsListaGestantesConRiesgoPresionAltaCitaPrenatal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsListaGestantesConRiesgoPresionAltaCitaPrenatal" msprop:Generator_UserDSName="dsListaGestantesConRiesgoPresionAltaCitaPrenatal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="spListarGestantesConRiesgoXPresionArterial" msprop:Generator_TableClassName="spListarGestantesConRiesgoXPresionArterialDataTable" msprop:Generator_TableVarName="tablespListarGestantesConRiesgoXPresionArterial" msprop:Generator_TablePropName="spListarGestantesConRiesgoXPresionArterial" msprop:Generator_RowDeletingName="spListarGestantesConRiesgoXPresionArterialRowDeleting" msprop:Generator_RowChangingName="spListarGestantesConRiesgoXPresionArterialRowChanging" msprop:Generator_RowEvHandlerName="spListarGestantesConRiesgoXPresionArterialRowChangeEventHandler" msprop:Generator_RowDeletedName="spListarGestantesConRiesgoXPresionArterialRowDeleted" msprop:Generator_UserTableName="spListarGestantesConRiesgoXPresionArterial" msprop:Generator_RowChangedName="spListarGestantesConRiesgoXPresionArterialRowChanged" msprop:Generator_RowEvArgName="spListarGestantesConRiesgoXPresionArterialRowChangeEvent" msprop:Generator_RowClassName="spListarGestantesConRiesgoXPresionArterialRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnPropNameInTable="numeroColumn" msprop:Generator_UserColumnName="numero" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaProximaCita" msprop:Generator_ColumnVarNameInTable="columnfechaProximaCita" msprop:Generator_ColumnPropNameInRow="fechaProximaCita" msprop:Generator_ColumnPropNameInTable="fechaProximaCitaColumn" msprop:Generator_UserColumnName="fechaProximaCita" type="xs:string" minOccurs="0" />
+              <xs:element name="nombres" msprop:Generator_ColumnVarNameInTable="columnnombres" msprop:Generator_ColumnPropNameInRow="nombres" msprop:Generator_ColumnPropNameInTable="nombresColumn" msprop:Generator_UserColumnName="nombres" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidoPaterno" msprop:Generator_ColumnVarNameInTable="columnapellidoPaterno" msprop:Generator_ColumnPropNameInRow="apellidoPaterno" msprop:Generator_ColumnPropNameInTable="apellidoPaternoColumn" msprop:Generator_UserColumnName="apellidoPaterno" type="xs:string" minOccurs="0" />
+              <xs:element name="apellidoMaterno" msprop:Generator_ColumnVarNameInTable="columnapellidoMaterno" msprop:Generator_ColumnPropNameInRow="apellidoMaterno" msprop:Generator_ColumnPropNameInTable="apellidoMaternoColumn" msprop:Generator_UserColumnName="apellidoMaterno" type="xs:string" minOccurs="0" />
+              <xs:element name="dni" msprop:Generator_ColumnVarNameInTable="columndni" msprop:Generator_ColumnPropNameInRow="dni" msprop:Generator_ColumnPropNameInTable="dniColumn" msprop:Generator_UserColumnName="dni" type="xs:string" minOccurs="0" />
+              <xs:element name="presionarterial" msprop:Generator_ColumnVarNameInTable="columnpresionarterial" msprop:Generator_ColumnPropNameInRow="presionarterial" msprop:Generator_ColumnPropNameInTable="presionarterialColumn" msprop:Generator_UserColumnName="presionarterial" type="xs:string" minOccurs="0" />
+              <xs:element name="fua" msprop:Generator_ColumnVarNameInTable="columnfua" msprop:Generator_ColumnPropNameInRow="fua" msprop:Generator_ColumnPropNameInTable="fuaColumn" msprop:Generator_UserColumnName="fua" type="xs:string" minOccurs="0" />
+              <xs:element name="idthistoriaclinica" msprop:Generator_ColumnVarNameInTable="columnidthistoriaclinica" msprop:Generator_ColumnPropNameInRow="idthistoriaclinica" msprop:Generator_ColumnPropNameInTable="idthistoriaclinicaColumn" msprop:Generator_UserColumnName="idthistoriaclinica" type="xs:string" minOccurs="0" />
+              <xs:element name="historiaclinica" msprop:Generator_ColumnVarNameInTable="columnhistoriaclinica" msprop:Generator_ColumnPropNameInRow="historiaclinica" msprop:Generator_ColumnPropNameInTable="historiaclinicaColumn" msprop:Generator_UserColumnName="historiaclinica" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
