@@ -35,8 +35,6 @@ namespace CapaUsuario
             NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
             slNombre.Text = "Obstetra: " + NombreObstetra;
             slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
-            CapaDeNegocios.cVariables miVariables = new CapaDeNegocios.cVariables();
-            miVariables.IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
         }
         public void HacerConeccion()
         {
@@ -112,14 +110,45 @@ namespace CapaUsuario
 
         private void visitaDomiciliariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fVisitaDomiciliaria= new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdEstablecimientoSalud, NombreObstetra);
-            fVisitaDomiciliaria.MdiParent = this;
-            fVisitaDomiciliaria.Show();
+            VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria= new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdEstablecimientoSalud, NombreObstetra);
+            fMantenimientoVisitaDomiciliaria.MdiParent = this;
+            fMantenimientoVisitaDomiciliaria.Show();
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoMorbilidad fMantenimientoMorbilidad = new frmMantenimientoMorbilidad();
+            fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fMantenimientoMorbilidad.MdiParent = this;
+            fMantenimientoMorbilidad.Show();
+        }
+
+        private void transeunteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTranseunte fTranseunte = new frmTranseunte();
+
+            fTranseunte.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fTranseunte.MdiParent = this;
+            fTranseunte.Show();
+        }
+
+        private void controlPeuperioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
+            fMantenimientoControlPeuperio.MdiParent = this;
+            fMantenimientoControlPeuperio.Show();
+        }
+
+        private void terminoGestaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdEstablecimientoSalud, NombreObstetra);
+            fMantenimientoTerminoGestacion.MdiParent = this;
+            fMantenimientoTerminoGestacion.Show();
         }
     }
 }
