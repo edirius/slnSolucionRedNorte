@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsListaPreNatal" targetNamespace="http://tempuri.org/dsListaPreNatal.xsd" xmlns:mstns="http://tempuri.org/dsListaPreNatal.xsd" xmlns="http://tempuri.org/dsListaPreNatal.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsListaPreNatal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsListaPreNatal" msprop:Generator_UserDSName="dsListaPreNatal">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="spListarCitasPreNatal" msprop:Generator_TableClassName="spListarCitasPreNatalDataTable" msprop:Generator_TableVarName="tablespListarCitasPreNatal" msprop:Generator_TablePropName="spListarCitasPreNatal" msprop:Generator_RowDeletingName="spListarCitasPreNatalRowDeleting" msprop:Generator_RowChangingName="spListarCitasPreNatalRowChanging" msprop:Generator_RowEvHandlerName="spListarCitasPreNatalRowChangeEventHandler" msprop:Generator_RowDeletedName="spListarCitasPreNatalRowDeleted" msprop:Generator_UserTableName="spListarCitasPreNatal" msprop:Generator_RowChangedName="spListarCitasPreNatalRowChanged" msprop:Generator_RowEvArgName="spListarCitasPreNatalRowChangeEvent" msprop:Generator_RowClassName="spListarCitasPreNatalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idtcitaprenatal" msprop:Generator_ColumnVarNameInTable="columnidtcitaprenatal" msprop:Generator_ColumnPropNameInRow="idtcitaprenatal" msprop:Generator_ColumnPropNameInTable="idtcitaprenatalColumn" msprop:Generator_UserColumnName="idtcitaprenatal" type="xs:string" minOccurs="0" />
+              <xs:element name="idthistoriaclinica" msprop:Generator_ColumnVarNameInTable="columnidthistoriaclinica" msprop:Generator_ColumnPropNameInRow="idthistoriaclinica" msprop:Generator_ColumnPropNameInTable="idthistoriaclinicaColumn" msprop:Generator_UserColumnName="idthistoriaclinica" type="xs:string" minOccurs="0" />
+              <xs:element name="numerocita" msprop:Generator_ColumnVarNameInTable="columnnumerocita" msprop:Generator_ColumnPropNameInRow="numerocita" msprop:Generator_ColumnPropNameInTable="numerocitaColumn" msprop:Generator_UserColumnName="numerocita" type="xs:string" minOccurs="0" />
+              <xs:element name="fechacita" msprop:Generator_ColumnVarNameInTable="columnfechacita" msprop:Generator_ColumnPropNameInRow="fechacita" msprop:Generator_ColumnPropNameInTable="fechacitaColumn" msprop:Generator_UserColumnName="fechacita" type="xs:string" minOccurs="0" />
+              <xs:element name="edadgestacional" msprop:Generator_ColumnVarNameInTable="columnedadgestacional" msprop:Generator_ColumnPropNameInRow="edadgestacional" msprop:Generator_ColumnPropNameInTable="edadgestacionalColumn" msprop:Generator_UserColumnName="edadgestacional" type="xs:string" minOccurs="0" />
+              <xs:element name="fua" msprop:Generator_ColumnVarNameInTable="columnfua" msprop:Generator_ColumnPropNameInRow="fua" msprop:Generator_ColumnPropNameInTable="fuaColumn" msprop:Generator_UserColumnName="fua" type="xs:string" minOccurs="0" />
+              <xs:element name="presionarterials" msprop:Generator_ColumnVarNameInTable="columnpresionarterials" msprop:Generator_ColumnPropNameInRow="presionarterials" msprop:Generator_ColumnPropNameInTable="presionarterialsColumn" msprop:Generator_UserColumnName="presionarterials" type="xs:short" minOccurs="0" />
+              <xs:element name="presionarteriald" msprop:Generator_ColumnVarNameInTable="columnpresionarteriald" msprop:Generator_ColumnPropNameInRow="presionarteriald" msprop:Generator_ColumnPropNameInTable="presionarterialdColumn" msprop:Generator_UserColumnName="presionarteriald" type="xs:short" minOccurs="0" />
+              <xs:element name="presionarterial" msprop:Generator_ColumnVarNameInTable="columnpresionarterial" msprop:Generator_ColumnPropNameInRow="presionarterial" msprop:Generator_ColumnPropNameInTable="presionarterialColumn" msprop:Generator_UserColumnName="presionarterial" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaProximaCita" msprop:Generator_ColumnVarNameInTable="columnfechaProximaCita" msprop:Generator_ColumnPropNameInRow="fechaProximaCita" msprop:Generator_ColumnPropNameInTable="fechaProximaCitaColumn" msprop:Generator_UserColumnName="fechaProximaCita" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -115,11 +115,28 @@
     <Compile Include="Bateria\frmBateria.Designer.cs">
       <DependentUpon>frmBateria.cs</DependentUpon>
     </Compile>
+    <Compile Include="CitaPreNatal\dsListaPreNatal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsListaPreNatal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CitaPreNatal\frmCitaPreNatal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CitaPreNatal\frmCitaPreNatal.Designer.cs">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CitaPreNatal\frmReporteListaPreNatal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitaPreNatal\frmReporteListaPreNatal.Designer.cs">
+      <DependentUpon>frmReporteListaPreNatal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CitaPreNatal\rptListaPreNatal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListaPreNatal.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CitaPreNatal\usCitaPrenatal.cs">
       <SubType>UserControl</SubType>
@@ -236,6 +253,13 @@
     <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CitaPreNatal\frmReporteListaPreNatal.resx">
+      <DependentUpon>frmReporteListaPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaPreNatal\rptListaPreNatal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListaPreNatal.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +333,17 @@
     </None>
     <None Include="Alertas\dsListaGestantesControlPreNatal.xss">
       <DependentUpon>dsListaGestantesControlPreNatal.xsd</DependentUpon>
+    </None>
+    <None Include="CitaPreNatal\dsListaPreNatal.xsc">
+      <DependentUpon>dsListaPreNatal.xsd</DependentUpon>
+    </None>
+    <None Include="CitaPreNatal\dsListaPreNatal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsListaPreNatal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CitaPreNatal\dsListaPreNatal.xss">
+      <DependentUpon>dsListaPreNatal.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
