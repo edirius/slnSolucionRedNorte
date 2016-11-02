@@ -100,7 +100,7 @@ namespace CapaUsuario.CitaPreNatal
             }
             else
             {
-                this.BackColor = Color.Blue;
+                this.BackColor = Color.White;
             }
         }
 
@@ -112,8 +112,30 @@ namespace CapaUsuario.CitaPreNatal
             }
             else
             {
-                this.BackColor = Color.Blue;
+                this.BackColor = Color.White;
             }
+        }
+
+        private void dtgCitasMedicas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
+                {
+                    dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
+                }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            rptListaPreNatal rListaPrenatal = new rptListaPreNatal();
+
+            rListaPrenatal.SetDataSource(oCitaPrenatal.ListaCitasPreNatal());
+
+            frmReporteListaPreNatal fReporteListaPrenatal = new frmReporteListaPreNatal();
+            fReporteListaPrenatal.crystalReportViewer1.ReportSource = rListaPrenatal;
+            fReporteListaPrenatal.Show();
         }
     }
 }
