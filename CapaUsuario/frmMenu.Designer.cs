@@ -39,9 +39,11 @@
             this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cItasPreNatalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.transeunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +54,9 @@
             this.pacientesToolStripMenuItem,
             this.historiaClinicaToolStripMenuItem,
             this.establecimientoSaludToolStripMenuItem,
-            this.pruebasToolStripMenuItem});
+            this.pruebasToolStripMenuItem,
+            this.mantenimientoToolStripMenuItem,
+            this.transeunteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(746, 24);
@@ -135,6 +139,13 @@
             this.alertasToolStripMenuItem.Text = "Alertas";
             this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
             // 
+            // mantenimientoToolStripMenuItem
+            // 
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(162, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento Morbilidad";
+            this.mantenimientoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -157,6 +168,13 @@
             this.slEstablecimiento.Name = "slEstablecimiento";
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
+            // 
+            // transeunteToolStripMenuItem
+            // 
+            this.transeunteToolStripMenuItem.Name = "transeunteToolStripMenuItem";
+            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.transeunteToolStripMenuItem.Text = "Transeunte";
+            this.transeunteToolStripMenuItem.Click += new System.EventHandler(this.transeunteToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -198,5 +216,7 @@
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transeunteToolStripMenuItem;
     }
 }

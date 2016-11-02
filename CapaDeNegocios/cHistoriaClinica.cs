@@ -34,7 +34,7 @@ namespace CapaDeNegocios
 
         public DataTable CrearHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud ,Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra,Fecha);
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha);
         }
 
         public DataTable ModificarHistoriaClinica()
@@ -44,17 +44,17 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica",Idtobstetra,año,mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica", Idtobstetra, año, mes);
         }
 
         public DataTable ListarHistoriaClinicaLargo()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaLargo", Idthistoriaclinica,año,mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaLargo", Idthistoriaclinica, año, mes);
         }
 
         public DataTable ListarHistoriaClinicaXHistoriaClinica()
         {
-             return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica,año,mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica, año, mes);
         }
 
         public DataTable ListarYear()

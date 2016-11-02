@@ -119,5 +119,22 @@ namespace CapaUsuario
         {
 
         }
+
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMantenimientoMorbilidad fMantenimientoMorbilidad = new frmMantenimientoMorbilidad();
+            fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fMantenimientoMorbilidad.MdiParent = this;
+            fMantenimientoMorbilidad.Show();
+        }
+
+        private void transeunteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTranseunte fTranseunte = new frmTranseunte();
+
+            fTranseunte.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fTranseunte.MdiParent = this;
+            fTranseunte.Show();
+        }
     }
 }
