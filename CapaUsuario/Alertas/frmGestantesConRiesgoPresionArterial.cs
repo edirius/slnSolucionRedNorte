@@ -37,5 +37,20 @@ namespace CapaUsuario.Alertas
         {
 
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            rptListaGestantesConRiesgoPresionAltaPrenatal rListaGestantesConRiesgoPresionAlta = new rptListaGestantesConRiesgoPresionAltaPrenatal();
+            rListaGestantesConRiesgoPresionAlta.SetDataSource(oAlerta.ListarGestanteConRiesgoXPresionArterial(CodigoEstablecimiento, 140, 85));
+
+            frmReporteListaGestanteConPresionAlta fListaGestanteConPresionAlta = new frmReporteListaGestanteConPresionAlta();
+            fListaGestanteConPresionAlta.crystalReportViewer1.ReportSource = rListaGestantesConRiesgoPresionAlta;
+            fListaGestanteConPresionAlta.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

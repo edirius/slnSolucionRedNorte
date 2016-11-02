@@ -792,6 +792,20 @@ namespace CapaUsuario
             
 
         }
+
+        private void btnAtencionPrenatal_Click(object sender, EventArgs e)
+        {
+            if (IdtHistoriaClinica != "")
+            {
+                CitaPreNatal.frmCitaPreNatal fCitaPrenatal = new CitaPreNatal.frmCitaPreNatal();
+                fCitaPrenatal.HistoriaClinica = IdtHistoriaClinica;
+                fCitaPrenatal.Establecimiento = IdEstablecimiento;
+                fCitaPrenatal.ShowDialog();
+                
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
 
