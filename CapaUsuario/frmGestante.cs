@@ -21,7 +21,7 @@ namespace CapaUsuario
         public DateTime fn ;
         string IdtEstablecimientoSalud="";
         int pagina = 0;
-        int cantidad_registros = 2;
+        int cantidad_registros = 30;
         int cantidad_total_registros = 0;
 
         public frmGestante(string idtestablecimientosalud)

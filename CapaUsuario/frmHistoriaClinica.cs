@@ -112,7 +112,8 @@ namespace CapaUsuario
 
             odtEcografia.Columns.Add("N°", typeof(string));
             odtEcografia.Columns.Add("Fecha Ecografia", typeof(string));
-            odtEcografia.Columns.Add("Edad Gestacional", typeof(string));
+            odtEcografia.Columns.Add("Semanas edad gestacional", typeof(string));
+            odtEcografia.Columns.Add("Dias edad gestacional", typeof(string));
 
             columnIndex = 0;
 
@@ -123,7 +124,8 @@ namespace CapaUsuario
             /*datetimepicker 24 hrs format*/
 
             dtpTiempoLlegada.ShowUpDown = true;
-            dtpTiempoLlegada.CustomFormat = "hh:mm";
+            //dtpTiempoLlegada.MinDate
+            dtpTiempoLlegada.CustomFormat = "HH:mm";
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
             /*Id de obstetra*/
@@ -231,6 +233,7 @@ namespace CapaUsuario
                 drEcografia[0] = i;
                 drEcografia[1] = dtpEcografia.Value.ToString("yyyy - MM - dd") ;
                 drEcografia[2] = nudEdadGestacional.Value;
+                drEcografia[3] = nudDiasEcografia.Value;
                 odtEcografia.Rows.InsertAt(drEcografia, i);
             
         }
@@ -444,8 +447,9 @@ namespace CapaUsuario
                                 
                                 oEcografia.Fecha_servicio = Convert.ToDateTime (dgvEcografia[2, i].Value.ToString() );
                                 oEcografia.Edadgestacional = dgvEcografia[3, i].Value.ToString();
+                                oEcografia.Diagestacional = dgvEcografia[4, i].Value.ToString();
 
-                                if (IdtHistoriaClinica != "")
+                            if (IdtHistoriaClinica != "")
                                     oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
                                 else 
                                     oEcografia.Idthistoriaclinica = idthistoriaclinica ;
@@ -558,22 +562,18 @@ namespace CapaUsuario
 
         private void rbPrimerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nudSemanas.Minimum = 1;
-            nudSemanas.Maximum = 12;
+ 
 
         }
 
         private void rbSegundoTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nudSemanas.Minimum = 13;
-            nudSemanas.Maximum = 28;
+ 
         }
 
         private void rbTercerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
-            nudSemanas.Minimum = 29;
-            nudSemanas.Maximum = 42;
-        }
+         }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -770,7 +770,7 @@ namespace CapaUsuario
                 nudSemanas.Maximum = 42; 
               */
 
-            /*
+            
             int trimestre = Convert.ToInt16(nudSemanas.Value);
 
             if (trimestre >=1 && trimestre <= 12){
@@ -788,7 +788,7 @@ namespace CapaUsuario
                 rbSegundoTrimestre.Checked = false;
                 rbPrimerTrimestre.Checked = false;
             } 
-            */
+            
             
 
         }
@@ -805,6 +805,11 @@ namespace CapaUsuario
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

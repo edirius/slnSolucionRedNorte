@@ -54,6 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.cs">
+      <DependentUpon>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\dsListaGestantesControlPreNatal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,11 +85,23 @@
     <Compile Include="Alertas\frmGestantesControlPreNatal.Designer.cs">
       <DependentUpon>frmGestantesControlPreNatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\frmReporteListaGestanteConPresionAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmReporteListaGestanteConPresionAlta.Designer.cs">
+      <DependentUpon>frmReporteListaGestanteConPresionAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.Designer.cs">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListaGestantesConRiesgoPresionAltaPrenatal.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Alertas\rptListaGestantesControlPreNatal.cs">
       <AutoGen>True</AutoGen>
@@ -131,11 +151,29 @@
     <Compile Include="frmHistoriaClinica.Designer.cs">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantenimientoMorbilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimientoMorbilidad.Designer.cs">
+      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMorbilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMorbilidad.Designer.cs">
+      <DependentUpon>frmMorbilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTranseunte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTranseunte.Designer.cs">
+      <DependentUpon>frmTranseunte.cs</DependentUpon>
     </Compile>
     <Compile Include="Obstetra\frmMantenimientoObstetra.cs">
       <SubType>Form</SubType>
@@ -163,6 +201,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecienNacido\frmRecienNacido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmRecienNacido.Designer.cs">
+      <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\frmAlerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,8 +264,15 @@
     <EmbeddedResource Include="Alertas\frmGestantesControlPreNatal.resx">
       <DependentUpon>frmGestantesControlPreNatal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmReporteListaGestanteConPresionAlta.resx">
+      <DependentUpon>frmReporteListaGestanteConPresionAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.resx">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListaGestantesConRiesgoPresionAltaPrenatal.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\rptListaGestantesControlPreNatal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -248,8 +299,17 @@
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimientoMorbilidad.resx">
+      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMorbilidad.resx">
+      <DependentUpon>frmMorbilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTranseunte.resx">
+      <DependentUpon>frmTranseunte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
@@ -273,6 +333,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecienNacido\frmRecienNacido.resx">
+      <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +360,17 @@
     <EmbeddedResource Include="VisitaDomiciliaria\frmVisitaDomiciliaria.resx">
       <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsc">
+      <DependentUpon>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd</DependentUpon>
+    </None>
+    <None Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xss">
+      <DependentUpon>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd</DependentUpon>
+    </None>
     <None Include="Alertas\dsListaGestantesControlPreNatal.xsc">
       <DependentUpon>dsListaGestantesControlPreNatal.xsd</DependentUpon>
     </None>

@@ -122,11 +122,21 @@ namespace CapaUsuario
 
         }
 
-        private void controlPeuperioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ControlPeuperio.frmMantenimientoControlPeuperio fControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
-            fControlPeuperio.MdiParent = this;
-            fControlPeuperio.Show();
+            frmMantenimientoMorbilidad fMantenimientoMorbilidad = new frmMantenimientoMorbilidad();
+            fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fMantenimientoMorbilidad.MdiParent = this;
+            fMantenimientoMorbilidad.Show();
+        }
+
+        private void transeunteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTranseunte fTranseunte = new frmTranseunte();
+
+            fTranseunte.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fTranseunte.MdiParent = this;
+            fTranseunte.Show();
         }
     }
 }

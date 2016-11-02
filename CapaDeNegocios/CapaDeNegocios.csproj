@@ -46,10 +46,12 @@
     <Compile Include="cEcografia.cs" />
     <Compile Include="cHistoriaClinica.cs" />
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
-    <Compile Include="cVariables.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="cMorbilidad.cs" />
     <Compile Include="cOdontologia.cs" />
     <Compile Include="cReglaNegocioException.cs" />
     <Compile Include="cSiguienteCodigo.cs" />
+    <Compile Include="cTranseunte.cs" />
     <Compile Include="EstablecimientoSalud\cEstablecimientoSalud.cs" />
     <Compile Include="EstablecimientoSalud\cMicrored.cs" />
     <Compile Include="Obstetra\cObstetra.cs" />

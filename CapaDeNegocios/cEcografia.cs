@@ -42,6 +42,15 @@ namespace CapaDeNegocios
             set { edadgestacional = value; }
         }
 
+        private string diagestacional;
+
+        public string Diagestacional
+        {
+            get { return diagestacional; }
+            set { diagestacional = value; }
+        }
+
+
         private string idthistoriaclinica;
 
         public string Idthistoriaclinica
@@ -52,7 +61,7 @@ namespace CapaDeNegocios
 
         public DataTable CrearEcografia()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional,Idthistoriaclinica );
+            return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional, Diagestacional,Idthistoriaclinica);
         }
 
         public DataTable ListarEcografiaXIdHC()
