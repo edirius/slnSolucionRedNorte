@@ -162,18 +162,24 @@ namespace CapaUsuario.Bateria
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
 
+                if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ConfiguracionInicial();
                         dgvListaBateria.DataSource = miBateria.ListarBateria();
                     }
+
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         ConfiguracionInicial();
                     }
-                }
+                    else
+                    {
+                        /*NO HACER NADA*/
+                    }
+            }
                 else
                     MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
