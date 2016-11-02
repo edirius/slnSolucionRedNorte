@@ -806,6 +806,11 @@ namespace CapaUsuario
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
