@@ -16,10 +16,5 @@ namespace CapaUsuario.RecienNacido
         {
             InitializeComponent();
         }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
