@@ -35,8 +35,8 @@ namespace CapaUsuario
             NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
             slNombre.Text = "Obstetra: " + NombreObstetra;
             slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
-            CapaDeNegocios.cVariables miVariables = new CapaDeNegocios.cVariables();
-            miVariables.IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
+            //CapaDeNegocios.cVariables miVariables = new CapaDeNegocios.cVariables();
+            //miVariables.IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
         }
         public void HacerConeccion()
         {
