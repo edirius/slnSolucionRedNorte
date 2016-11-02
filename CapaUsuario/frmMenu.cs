@@ -121,5 +121,12 @@ namespace CapaUsuario
         {
 
         }
+
+        private void controlPeuperioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ControlPeuperio.frmMantenimientoControlPeuperio fControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
+            fControlPeuperio.MdiParent = this;
+            fControlPeuperio.Show();
+        }
     }
 }

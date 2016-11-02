@@ -39,9 +39,11 @@
             this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cItasPreNatalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitaDomiciliariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.controlPeuperioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +118,9 @@
             // 
             this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cItasPreNatalesToolStripMenuItem,
-            this.alertasToolStripMenuItem});
+            this.alertasToolStripMenuItem,
+            this.visitaDomiciliariaToolStripMenuItem,
+            this.controlPeuperioToolStripMenuItem});
             this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
             this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.pruebasToolStripMenuItem.Text = "Pruebas";
@@ -124,16 +128,23 @@
             // cItasPreNatalesToolStripMenuItem
             // 
             this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
             this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
             // 
             // alertasToolStripMenuItem
             // 
             this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
-            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.alertasToolStripMenuItem.Text = "Alertas";
             this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
+            // 
+            // visitaDomiciliariaToolStripMenuItem
+            // 
+            this.visitaDomiciliariaToolStripMenuItem.Name = "visitaDomiciliariaToolStripMenuItem";
+            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.visitaDomiciliariaToolStripMenuItem.Text = "Visita Domiciliaria";
+            this.visitaDomiciliariaToolStripMenuItem.Click += new System.EventHandler(this.visitaDomiciliariaToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -157,6 +168,13 @@
             this.slEstablecimiento.Name = "slEstablecimiento";
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
+            // 
+            // controlPeuperioToolStripMenuItem
+            // 
+            this.controlPeuperioToolStripMenuItem.Name = "controlPeuperioToolStripMenuItem";
+            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.controlPeuperioToolStripMenuItem.Text = "Control Peuperio";
+            this.controlPeuperioToolStripMenuItem.Click += new System.EventHandler(this.controlPeuperioToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -198,5 +216,7 @@
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visitaDomiciliariaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controlPeuperioToolStripMenuItem;
     }
 }

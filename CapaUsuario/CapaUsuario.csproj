@@ -175,11 +175,35 @@
     <Compile Include="Seguridad\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.designer.cs">
+      <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.designer.cs">
+      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.designer.cs">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerminoGestacion\frmTerminoGestacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerminoGestacion\frmTerminoGestacion.Designer.cs">
+      <DependentUpon>frmTerminoGestacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPuerperio\frmControlPeuperio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlPuerperio\frmControlPeuperio.Designer.cs">
+      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
     </Compile>
     <Compile Include="VisitaDomiciliaria\frmVisitaDomiciliaria.cs">
       <SubType>Form</SubType>
@@ -255,8 +279,20 @@
     <EmbeddedResource Include="Seguridad\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TerminoGestacion\frmMantenimientoTerminoGestacion.resx">
+      <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPeuperio.resx">
+      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.resx">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerminoGestacion\frmTerminoGestacion.resx">
+      <DependentUpon>frmTerminoGestacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlPuerperio\frmControlPeuperio.resx">
+      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmVisitaDomiciliaria.resx">
       <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
@@ -307,6 +343,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

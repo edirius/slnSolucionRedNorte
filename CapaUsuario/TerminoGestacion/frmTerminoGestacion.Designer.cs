@@ -1,6 +1,6 @@
-﻿namespace CapaUsuario.VisitaDomiciliaria
+﻿namespace CapaUsuario.TerminoGestacion
 {
-    partial class frmVisitaDomiciliaria
+    partial class frmTerminoGestacion
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(349, 186);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 65);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 123;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(268, 186);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 65);
-            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.TabIndex = 122;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(360, 115);
-            this.txtDetalle.TabIndex = 2;
+            this.txtDetalle.TabIndex = 118;
             // 
             // label5
             // 
@@ -108,7 +108,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(64, 13);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(105, 20);
-            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.TabIndex = 120;
             // 
             // label2
             // 
@@ -139,7 +139,7 @@
             this.cboMotivo.Location = new System.Drawing.Point(64, 38);
             this.cboMotivo.Name = "cboMotivo";
             this.cboMotivo.Size = new System.Drawing.Size(360, 21);
-            this.cboMotivo.TabIndex = 1;
+            this.cboMotivo.TabIndex = 131;
             // 
             // frmVisitaDomiciliaria
             // 
@@ -157,7 +157,7 @@
             this.Name = "frmVisitaDomiciliaria";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Visita Domiciliaria";
+            this.Text = "Visita";
             this.Load += new System.EventHandler(this.frmVisitaDomiciliaria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
