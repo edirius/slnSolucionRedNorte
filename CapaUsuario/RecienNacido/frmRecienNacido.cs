@@ -12,7 +12,7 @@ namespace CapaUsuario.RecienNacido
 {
     public partial class frmRecienNacido : Form
     {
-        public frmRecienNacido()
+        public frmRecienNacido(string IdHistoria, string IdEstablecimiento)
         {
             InitializeComponent();
         }

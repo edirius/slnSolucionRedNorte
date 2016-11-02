@@ -108,7 +108,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnRecienNacido = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -1027,14 +1027,15 @@
             this.button7.Text = "Control Puerperio";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnRecienNacido
             // 
-            this.button8.Location = new System.Drawing.Point(842, 524);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(90, 49);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Atención Recien Nacido";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnRecienNacido.Location = new System.Drawing.Point(842, 524);
+            this.btnRecienNacido.Name = "btnRecienNacido";
+            this.btnRecienNacido.Size = new System.Drawing.Size(90, 49);
+            this.btnRecienNacido.TabIndex = 4;
+            this.btnRecienNacido.Text = "Atención Recien Nacido";
+            this.btnRecienNacido.UseVisualStyleBackColor = true;
+            this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
             // 
             // button9
             // 
@@ -1058,8 +1059,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 784);
-            this.Controls.Add(this.button8);
+            this.ClientSize = new System.Drawing.Size(944, 750);
+            this.Controls.Add(this.btnRecienNacido);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -1170,7 +1171,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnRecienNacido;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ComboBox cbBuscar;
