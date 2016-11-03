@@ -21,30 +21,43 @@ namespace CapaUsuario.EstablecimientoSalud
         public frmMicrored()
         {
             InitializeComponent();
-            ActualizarLista();
+            ConfiguracionInicial();
+            //ActualizarLista();
         }
         public void ActualizarLista()
         {
             dgvListarMicrored.DataSource = miMicrored.ListarMicrored();
-            Tabla = miMicrored.SiguienteCodigo();
-            txtCodigo.Text = Tabla.Rows[0][0].ToString();
+            //Tabla = miMicrored.SiguienteCodigo();
+            //txtCodigo.Text = Tabla.Rows[0][0].ToString();
         }
         private void ConfiguracionInicial()
         {
-            Tabla = miMicrored.SiguienteCodigo();
-            txtCodigo.Text = Tabla.Rows[0][0].ToString();
+            //Tabla = miMicrored.SiguienteCodigo();
+            //txtCodigo.Text = Tabla.Rows[0][0].ToString();
+            dgvListarMicrored.DataSource = miMicrored.ListarMicrored();
+            txtDireccion.Enabled = false;
+            txtMicrored.Enabled = false;
+            txtCodigo.Text = "";
             txtMicrored.Text = "";
             txtDireccion.Text = "";
-            txtMicrored.Focus();
+            btnInsertar.Enabled = false;
         }
-        public void SiguienteCodigo()
+        public void Nuevo()
         {
-
+            txtMicrored.Enabled = true;
+            txtMicrored.Focus();
+            btnInsertar.Enabled = true;
+            txtDireccion.Enabled = true;
+            
+            
         }
+
         public void Agregar()
         {
-            if (txtMicrored.Text != "")
-            {
+            //if (txtMicrored.Text == "")
+            //{
+                Tabla = miMicrored.SiguienteCodigo();
+                txtCodigo.Text = Tabla.Rows[0][0].ToString();
                 miMicrored.IdMicrored = txtCodigo.Text;
                 miMicrored.Microred = txtMicrored.Text;
                 miMicrored.Direccion = txtDireccion.Text;
@@ -63,9 +76,9 @@ namespace CapaUsuario.EstablecimientoSalud
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ConfiguracionInicial();
                 }
-            }
-            else
-                MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else
+            //    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
         public void Modificar()
@@ -152,7 +165,7 @@ namespace CapaUsuario.EstablecimientoSalud
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            ConfiguracionInicial();
+            Nuevo();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -162,7 +175,31 @@ namespace CapaUsuario.EstablecimientoSalud
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            Agregar();
+            if (txtCodigo.Text == "")
+            {
+                Agregar();
+            }
+            else
+                Modificar();
+                
+        }
+
+        private void txtMicrored_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

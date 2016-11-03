@@ -26,7 +26,7 @@ namespace CapaDeNegocios
 
         public string Orina { get; set; }
 
-        public DateTime FechaExamenOrina { get; set; }
+        public string FechaExamenOrina { get; set; }
 
         public DataTable AgregarBateria()
         {

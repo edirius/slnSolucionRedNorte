@@ -34,11 +34,21 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtMensaje = new System.Windows.Forms.TextBox();
+            this.txtMensajePeso = new System.Windows.Forms.TextBox();
+            this.txtMensajeApgar5 = new System.Windows.Forms.TextBox();
+            this.txtMensajeApgar1 = new System.Windows.Forms.TextBox();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbSexo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.nudPeso = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,20 +64,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodigoRN = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.cbSexo = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
@@ -89,9 +90,9 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Controls.Add(this.pbAlerta);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(95, 251);
+            this.groupBox2.Location = new System.Drawing.Point(95, 326);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 168);
+            this.groupBox2.Size = new System.Drawing.Size(696, 161);
             this.groupBox2.TabIndex = 106;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuadro de precaución:";
@@ -113,33 +114,61 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.txtMensaje, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(123, 76);
+            this.tableLayoutPanel2.Controls.Add(this.txtMensajePeso, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtMensajeApgar5, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtMensajeApgar1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(119, 36);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 23);
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 83);
             this.tableLayoutPanel2.TabIndex = 102;
             // 
-            // txtMensaje
+            // txtMensajePeso
             // 
-            this.txtMensaje.BackColor = System.Drawing.Color.White;
-            this.txtMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMensaje.ForeColor = System.Drawing.Color.Red;
-            this.txtMensaje.Location = new System.Drawing.Point(3, 3);
-            this.txtMensaje.Name = "txtMensaje";
-            this.txtMensaje.Size = new System.Drawing.Size(302, 15);
-            this.txtMensaje.TabIndex = 0;
-            this.txtMensaje.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
+            this.txtMensajePeso.BackColor = System.Drawing.Color.White;
+            this.txtMensajePeso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMensajePeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMensajePeso.ForeColor = System.Drawing.Color.Red;
+            this.txtMensajePeso.Location = new System.Drawing.Point(3, 57);
+            this.txtMensajePeso.Name = "txtMensajePeso";
+            this.txtMensajePeso.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajePeso.TabIndex = 2;
+            this.txtMensajePeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMensajeApgar5
+            // 
+            this.txtMensajeApgar5.BackColor = System.Drawing.Color.White;
+            this.txtMensajeApgar5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMensajeApgar5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMensajeApgar5.ForeColor = System.Drawing.Color.Red;
+            this.txtMensajeApgar5.Location = new System.Drawing.Point(3, 30);
+            this.txtMensajeApgar5.Name = "txtMensajeApgar5";
+            this.txtMensajeApgar5.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeApgar5.TabIndex = 1;
+            this.txtMensajeApgar5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMensajeApgar1
+            // 
+            this.txtMensajeApgar1.BackColor = System.Drawing.Color.White;
+            this.txtMensajeApgar1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMensajeApgar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMensajeApgar1.ForeColor = System.Drawing.Color.Red;
+            this.txtMensajeApgar1.Location = new System.Drawing.Point(3, 3);
+            this.txtMensajeApgar1.Name = "txtMensajeApgar1";
+            this.txtMensajeApgar1.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeApgar1.TabIndex = 0;
+            this.txtMensajeApgar1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMensajeApgar1.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
             // 
             // pbAlerta
             // 
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAlerta.BackColor = System.Drawing.Color.White;
             this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
-            this.pbAlerta.Location = new System.Drawing.Point(458, 42);
+            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
             this.pbAlerta.Name = "pbAlerta";
             this.pbAlerta.Size = new System.Drawing.Size(120, 117);
             this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,9 +204,60 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecienNacido.Size = new System.Drawing.Size(559, 66);
+            this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
             this.dgvRecienNacido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecienNacido_CellClick);
+            this.dgvRecienNacido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRecienNacido_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtreciennacido";
+            this.Column1.HeaderText = "Codigo Recien Nacido";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fechaderivado";
+            this.Column3.HeaderText = "Fecha Derivado";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "apgar1";
+            this.Column4.HeaderText = "APGAR1";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "apgar5";
+            this.Column5.HeaderText = "APGAR5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "peso";
+            this.Column7.HeaderText = "Peso";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sexo";
+            this.Column6.HeaderText = "Sexo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -214,6 +294,19 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "AGPAR:";
             // 
+            // cbSexo
+            // 
+            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSexo.FormattingEnabled = true;
+            this.cbSexo.Items.AddRange(new object[] {
+            "MASCULINO",
+            "FEMENINO"});
+            this.cbSexo.Location = new System.Drawing.Point(235, 19);
+            this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cbSexo.TabIndex = 105;
+            this.cbSexo.Tag = "";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -249,6 +342,7 @@
             0,
             0,
             0});
+            this.nudPeso.ValueChanged += new System.EventHandler(this.nudPeso_ValueChanged);
             // 
             // label4
             // 
@@ -270,6 +364,7 @@
             this.nudApgar5.Name = "nudApgar5";
             this.nudApgar5.Size = new System.Drawing.Size(46, 20);
             this.nudApgar5.TabIndex = 101;
+            this.nudApgar5.ValueChanged += new System.EventHandler(this.nudApgar5_ValueChanged);
             // 
             // nudApgar1
             // 
@@ -282,6 +377,7 @@
             this.nudApgar1.Name = "nudApgar1";
             this.nudApgar1.Size = new System.Drawing.Size(46, 20);
             this.nudApgar1.TabIndex = 100;
+            this.nudApgar1.ValueChanged += new System.EventHandler(this.nudApgar1_ValueChanged);
             // 
             // label2
             // 
@@ -367,43 +463,30 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnModificar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(95, 438);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(95, 506);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(696, 46);
             this.tableLayoutPanel1.TabIndex = 107;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(559, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(134, 40);
-            this.btnSalir.TabIndex = 47;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(281, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(351, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(133, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(168, 40);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -415,9 +498,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(133, 40);
+            this.btnInsertar.Size = new System.Drawing.Size(168, 40);
             this.btnInsertar.TabIndex = 8;
-            this.btnInsertar.Text = "Agregar";
+            this.btnInsertar.Text = "Guardar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
@@ -425,103 +508,42 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(420, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(177, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(133, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(168, 40);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // btnModificar
+            // btnSalir
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(142, 3);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(133, 40);
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnSalir.Location = new System.Drawing.Point(525, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(168, 40);
+            this.btnSalir.TabIndex = 47;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // cbSexo
-            // 
-            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMENINO"});
-            this.cbSexo.Location = new System.Drawing.Point(235, 19);
-            this.cbSexo.Name = "cbSexo";
-            this.cbSexo.Size = new System.Drawing.Size(121, 21);
-            this.cbSexo.TabIndex = 105;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtreciennacido";
-            this.Column1.HeaderText = "Codigo Recien Nacido";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fechaderivado";
-            this.Column3.HeaderText = "Fecha Derivado";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "apgar1";
-            this.Column4.HeaderText = "APGAR1";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "apgar5";
-            this.Column5.HeaderText = "APGAR5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "peso";
-            this.Column7.HeaderText = "Peso";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sexo";
-            this.Column6.HeaderText = "Sexo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
             // 
             // frmRecienNacido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(886, 496);
+            this.ClientSize = new System.Drawing.Size(886, 564);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvRecienNacido);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRecienNacido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRecienNacido";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -548,7 +570,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblAlerta;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txtMensaje;
+        private System.Windows.Forms.TextBox txtMensajeApgar1;
         private System.Windows.Forms.PictureBox pbAlerta;
         private System.Windows.Forms.DataGridView dgvRecienNacido;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -570,11 +592,9 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nudPeso;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -582,5 +602,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.TextBox txtMensajeApgar5;
+        private System.Windows.Forms.ComboBox cbSexo;
+        private System.Windows.Forms.TextBox txtMensajePeso;
     }
 }

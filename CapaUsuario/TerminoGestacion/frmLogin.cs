@@ -41,7 +41,7 @@ namespace CapaUsuario.Seguridad
             try
             {
                 int numero;
-                string Contraseña = txtUsuario.Text;
+                string Contraseña = txtContraseña.Text;
                 //string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
                 numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
                 Usuario = txtUsuario.Text;
@@ -89,6 +89,23 @@ namespace CapaUsuario.Seguridad
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                IniciarSesion();
+            }
         }
     }
 }
