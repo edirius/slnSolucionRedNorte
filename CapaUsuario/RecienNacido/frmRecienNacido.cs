@@ -86,7 +86,7 @@ namespace CapaUsuario.RecienNacido
             btnInsertar.Text = "Guardar";
             btnInsertar.Enabled = true;
             btnEliminar.Enabled = true;
-            
+            dgvRecienNacido.ClearSelection();
         }
         public void Agregar()
         {
@@ -299,6 +299,17 @@ namespace CapaUsuario.RecienNacido
             {
                 txtMensajeApgar5.Text = "";
             }
+        }
+
+        private void dgvRecienNacido_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
+            //{
+            //    if ((Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
+            //    {
+            //        dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
+            //    }
+            //}
         }
     }
 }

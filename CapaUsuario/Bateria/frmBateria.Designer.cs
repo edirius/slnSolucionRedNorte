@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaOrina = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.nudOrina = new System.Windows.Forms.NumericUpDown();
             this.nudGlucosa = new System.Windows.Forms.NumericUpDown();
@@ -51,21 +52,6 @@
             this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtMensajeVIH = new System.Windows.Forms.TextBox();
-            this.txtMensajeHemo = new System.Windows.Forms.TextBox();
-            this.txtMensajeOrina = new System.Windows.Forms.TextBox();
-            this.txtMensajeSifilis = new System.Windows.Forms.TextBox();
-            this.txtMensajeGlucosa = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblAlerta = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +61,20 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtpFechaOrina = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtMensajeVIH = new System.Windows.Forms.TextBox();
+            this.txtMensajeHemo = new System.Windows.Forms.TextBox();
+            this.txtMensajeOrina = new System.Windows.Forms.TextBox();
+            this.txtMensajeSifilis = new System.Windows.Forms.TextBox();
+            this.txtMensajeGlucosa = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblAlerta = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -102,7 +101,8 @@
             this.dtpFecha.Location = new System.Drawing.Point(177, 45);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(106, 20);
-            this.dtpFecha.TabIndex = 82;
+            this.dtpFecha.TabIndex = 1;
+            this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
             // 
             // label1
             // 
@@ -132,7 +132,7 @@
             this.cbVIH.Location = new System.Drawing.Point(221, 104);
             this.cbVIH.Name = "cbVIH";
             this.cbVIH.Size = new System.Drawing.Size(138, 21);
-            this.cbVIH.TabIndex = 86;
+            this.cbVIH.TabIndex = 4;
             this.cbVIH.SelectedIndexChanged += new System.EventHandler(this.cbVIH_SelectedIndexChanged);
             // 
             // cbSifilis
@@ -145,7 +145,7 @@
             this.cbSifilis.Location = new System.Drawing.Point(226, 134);
             this.cbSifilis.Name = "cbSifilis";
             this.cbSifilis.Size = new System.Drawing.Size(138, 21);
-            this.cbSifilis.TabIndex = 88;
+            this.cbSifilis.TabIndex = 4;
             this.cbSifilis.SelectedIndexChanged += new System.EventHandler(this.cbSifilis_SelectedIndexChanged);
             // 
             // label4
@@ -205,6 +205,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "...";
             // 
+            // dtpFechaOrina
+            // 
+            this.dtpFechaOrina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaOrina.Location = new System.Drawing.Point(545, 104);
+            this.dtpFechaOrina.Name = "dtpFechaOrina";
+            this.dtpFechaOrina.Size = new System.Drawing.Size(102, 20);
+            this.dtpFechaOrina.TabIndex = 7;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -224,7 +232,7 @@
             0});
             this.nudOrina.Name = "nudOrina";
             this.nudOrina.Size = new System.Drawing.Size(43, 20);
-            this.nudOrina.TabIndex = 102;
+            this.nudOrina.TabIndex = 6;
             this.nudOrina.ValueChanged += new System.EventHandler(this.nudOrina_ValueChanged);
             // 
             // nudGlucosa
@@ -247,7 +255,7 @@
             0});
             this.nudGlucosa.Name = "nudGlucosa";
             this.nudGlucosa.Size = new System.Drawing.Size(48, 20);
-            this.nudGlucosa.TabIndex = 101;
+            this.nudGlucosa.TabIndex = 5;
             this.nudGlucosa.Value = new decimal(new int[] {
             60,
             0,
@@ -271,13 +279,14 @@
             0});
             this.nudHemoglobina.Name = "nudHemoglobina";
             this.nudHemoglobina.Size = new System.Drawing.Size(48, 20);
-            this.nudHemoglobina.TabIndex = 100;
+            this.nudHemoglobina.TabIndex = 2;
             this.nudHemoglobina.Value = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.nudHemoglobina.ValueChanged += new System.EventHandler(this.nudHemoglobina_ValueChanged);
+            this.nudHemoglobina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHemoglobina_KeyPress);
             // 
             // label8
             // 
@@ -295,6 +304,7 @@
             this.txtCodigoHistoria.Name = "txtCodigoHistoria";
             this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoHistoria.TabIndex = 96;
+            this.txtCodigoHistoria.Visible = false;
             // 
             // label7
             // 
@@ -312,6 +322,7 @@
             this.txtCodigoBateria.Name = "txtCodigoBateria";
             this.txtCodigoBateria.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoBateria.TabIndex = 94;
+            this.txtCodigoBateria.Visible = false;
             // 
             // pbAlerta
             // 
@@ -330,8 +341,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -352,29 +363,90 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(165, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 105);
             this.dgvListaBateria.TabIndex = 99;
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick_1);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtbateria";
+            this.Column1.HeaderText = "Codigo Bateria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fecha";
+            this.Column3.HeaderText = "Fecha Examen";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "hemoglobina";
+            this.Column4.HeaderText = "Examen Hemoglobina";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "vih";
+            this.Column5.HeaderText = "Examen VIH";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sifilis";
+            this.Column6.HeaderText = "Examen Sifilis";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "glucosa";
+            this.Column8.HeaderText = "Examen de Glucosa";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "orina";
+            this.Column7.HeaderText = "Examen de Orina";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "fechaexamenorina";
+            this.Column9.HeaderText = "Fecha Examen Orina";
+            this.Column9.Name = "Column9";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnModificar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(165, 460);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -386,25 +458,13 @@
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(555, 3);
+            this.btnSalir.Location = new System.Drawing.Point(522, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(135, 40);
+            this.btnSalir.Size = new System.Drawing.Size(168, 40);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(279, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(132, 40);
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnInsertar
             // 
@@ -412,7 +472,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(132, 40);
+            this.btnInsertar.Size = new System.Drawing.Size(167, 40);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -422,25 +482,13 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(417, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(176, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(132, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(167, 40);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.Location = new System.Drawing.Point(141, 3);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(132, 40);
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // timer
             // 
@@ -555,76 +603,16 @@
             this.lblAlerta.TabIndex = 103;
             this.lblAlerta.Text = "¡ALERTA!";
             // 
-            // Column1
+            // btnEliminar
             // 
-            this.Column1.DataPropertyName = "idtbateria";
-            this.Column1.HeaderText = "Codigo Bateria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fecha";
-            this.Column3.HeaderText = "Fecha Examen";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "hemoglobina";
-            this.Column4.HeaderText = "Examen Hemoglobina";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "vih";
-            this.Column5.HeaderText = "Examen VIH";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sifilis";
-            this.Column6.HeaderText = "Examen Sifilis";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "glucosa";
-            this.Column8.HeaderText = "Examen de Glucosa";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "orina";
-            this.Column7.HeaderText = "Examen de Orina";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "fechaexamenorina";
-            this.Column9.HeaderText = "Fecha Examen Orina";
-            this.Column9.Name = "Column9";
-            // 
-            // dtpFechaOrina
-            // 
-            this.dtpFechaOrina.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaOrina.Location = new System.Drawing.Point(545, 104);
-            this.dtpFechaOrina.Name = "dtpFechaOrina";
-            this.dtpFechaOrina.Size = new System.Drawing.Size(102, 20);
-            this.dtpFechaOrina.TabIndex = 107;
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Location = new System.Drawing.Point(349, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(167, 40);
+            this.btnEliminar.TabIndex = 48;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // frmBateria
             // 
@@ -679,10 +667,8 @@
         private System.Windows.Forms.DataGridView dgvListaBateria;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnInsertar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox txtMensajeGlucosa;
@@ -702,5 +688,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

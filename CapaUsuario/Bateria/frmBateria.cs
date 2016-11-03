@@ -25,7 +25,7 @@ namespace CapaUsuario.Bateria
         public frmBateria(string IdtHistoriaClinica, string IdtEstablecimiento)
         {
             InitializeComponent();
-            //ConfiguracionInicial();
+            ConfiguracionInicial();
             IdHistoria = IdtHistoriaClinica;
             txtCodigoHistoria.Text = IdHistoria;
             IdEstablecimiento = IdtEstablecimiento;
@@ -36,8 +36,6 @@ namespace CapaUsuario.Bateria
         public void ActualizarLista(string id)
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria();
-            Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
-            txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
             Alertar();
 
         }
@@ -56,14 +54,46 @@ namespace CapaUsuario.Bateria
                 timer.Stop();
             }
         }
+        private void Nuevo()
+        {
+            dtpFecha.Value = DateTime.Today;
+            dtpFecha.Enabled = true;
+            pbAlerta.Visible = true;
+            nudHemoglobina.Text = "";
+            nudHemoglobina.Enabled = true;
+            cbSifilis.Text = "gege";
+            cbSifilis.Enabled = true;
+            cbVIH.Text = "gege";
+            cbVIH.Enabled = true;
+            nudGlucosa.Enabled = true;
+            nudGlucosa.Text = "";
+            nudOrina.Text = "";
+            nudOrina.Enabled = true;
+            dtpFechaOrina.Text = "";
+            dtpFechaOrina.Enabled = true;
+            btnInsertar.Enabled = true;
+        }
         private void ConfiguracionInicial()
         {
             
-            Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
-            txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
             dtpFecha.Value = DateTime.Today;
-            dtpFechaOrina.Value = DateTime.Today;
+            dtpFecha.Enabled = false;
             pbAlerta.Visible = false;
+            nudHemoglobina.Text = "";
+            nudHemoglobina.Enabled = false;
+            cbSifilis.Text = "gege";
+            cbSifilis.Enabled = false;
+            cbVIH.Text = "gege";
+            cbVIH.Enabled = false;
+            nudGlucosa.Enabled = false;
+            nudGlucosa.Text = "";
+            nudOrina.Text = "";
+            nudOrina.Enabled = false;
+            dtpFechaOrina.Text = "";
+            dtpFechaOrina.Enabled = false;
+            btnInsertar.Enabled = false;
+
+
             ////txtCodigo.Text = "";
             ////txtDescripcion.Text = "";
             ////txtDireccion.Text = "";
@@ -72,43 +102,39 @@ namespace CapaUsuario.Bateria
         }
         public void Agregar()
         {
-            //try
-            //{
-                if (txtCodigoBateria.Text != "")
+            try
+            {
+                Tabla = micodigo.SiguientesCodigo("treciennacido", IdEstablecimiento);
+                txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
+                miBateria.IdBateria = txtCodigoBateria.Text;
+                miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
+                miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
+                miBateria.Hemoglobina = nudHemoglobina.Text;
+                miBateria.Vih = cbVIH.Text;
+                miBateria.Sifilis = cbSifilis.Text;
+                miBateria.Glucosa = nudGlucosa.Text;
+                miBateria.Orina = nudOrina.Text;
+                miBateria.FechaExamenOrina = dtpFechaOrina.Text;
+                Tabla = miBateria.AgregarBateria();
+                respuesta = Tabla.Rows[0][0].ToString();
+                mensaje = Tabla.Rows[0][1].ToString();
+
+                if (respuesta == "1")
                 {
-                    miBateria.IdBateria = txtCodigoBateria.Text;
-                    miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
-                    miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
-                    miBateria.Hemoglobina = nudHemoglobina.Text;
-                    miBateria.Vih = cbVIH.Text;
-                    miBateria.Sifilis = cbSifilis.Text;
-                    miBateria.Glucosa = nudGlucosa.Text;
-                    miBateria.Orina = nudOrina.Text;
-                    miBateria.FechaExamenOrina = Convert.ToDateTime(dtpFechaOrina.Value.ToShortDateString());
-                    Tabla = miBateria.AgregarBateria();
-                    respuesta = Tabla.Rows[0][0].ToString();
-                    mensaje = Tabla.Rows[0][1].ToString();
-
-                    if (respuesta == "1")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
-                        dgvListaBateria.DataSource = miBateria.ListarBateria();
-                    }
-                    else if (respuesta == "0")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
-                    }
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ConfiguracionInicial();
+                    dgvListaBateria.DataSource = miBateria.ListarBateria();
                 }
-                else
-                    MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                else if (respuesta == "0")
+                {
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ConfiguracionInicial();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }
@@ -126,7 +152,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Sifilis = cbSifilis.Text;
                     miBateria.Glucosa = nudGlucosa.Text;
                     miBateria.Orina = nudOrina.Text;
-                    miBateria.FechaExamenOrina = Convert.ToDateTime(dtpFechaOrina.Value.ToShortDateString());
+                    miBateria.FechaExamenOrina = dtpFechaOrina.Text;
                     Tabla = miBateria.ModificarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
@@ -253,7 +279,7 @@ namespace CapaUsuario.Bateria
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
-            ConfiguracionInicial();
+            Nuevo();
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)
@@ -263,7 +289,11 @@ namespace CapaUsuario.Bateria
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            Agregar();
+            if (txtCodigoBateria.Text == "")
+            { Agregar(); }
+            else
+                Modificar();
+            
         }
 
         private void nudGlucosa_ValueChanged(object sender, EventArgs e)
@@ -367,6 +397,24 @@ namespace CapaUsuario.Bateria
         private void txtMensajeOrina_TextChanged(object sender, EventArgs e)
         {
             Alertar();
+        }
+
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void nudHemoglobina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }
