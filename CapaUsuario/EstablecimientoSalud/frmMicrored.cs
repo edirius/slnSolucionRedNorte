@@ -41,13 +41,15 @@ namespace CapaUsuario.EstablecimientoSalud
             txtMicrored.Text = "";
             txtDireccion.Text = "";
             btnInsertar.Enabled = false;
-            txtMicrored.Focus();
         }
         public void Nuevo()
         {
+            txtMicrored.Enabled = true;
+            txtMicrored.Focus();
             btnInsertar.Enabled = true;
             txtDireccion.Enabled = true;
-            txtMicrored.Enabled = true;
+            
+            
         }
 
         public void Agregar()
@@ -180,6 +182,24 @@ namespace CapaUsuario.EstablecimientoSalud
             else
                 Modificar();
                 
+        }
+
+        private void txtMicrored_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }
