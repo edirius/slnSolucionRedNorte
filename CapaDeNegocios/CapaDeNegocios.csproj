@@ -56,8 +56,8 @@
     <Compile Include="Obstetra\cObstetra.cs" />
     <Compile Include="Obstetra\cUsuario.cs" />
     <Compile Include="ControlPeuperio\cControlPeuperio.cs" />
-    <Compile Include="RecienNacido\cRecienNacido.cs" />
-    <Compile Include="VisitaDomiciliaria\cVisitaDomiciliaria.cs" />
+    <Compile Include="VisitaDomiciliaria\cVisitaDomiciliariaPuerperaRN.cs" />
+    <Compile Include="VisitaDomiciliaria\cVisitaDomiciliariaGestante.cs" />
     <Compile Include="Paciente\cPaciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
