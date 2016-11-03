@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dgvVisitaDomiciliaria = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtDetalleGestante = new System.Windows.Forms.TextBox();
+            this.cboMotivoGestante = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpFechaGestante = new System.Windows.Forms.DateTimePicker();
+            this.txtFuaGestante = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dgvVisitaDomiciliariaGestante = new System.Windows.Forms.DataGridView();
             this.idtvisitadomiciliaria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,11 +60,14 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliaria)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliariaGestante)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,50 +80,175 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(872, 318);
+            this.tabControl1.Size = new System.Drawing.Size(855, 398);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dgvVisitaDomiciliaria);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Controls.Add(this.dgvVisitaDomiciliariaGestante);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(864, 292);
+            this.tabPage1.Size = new System.Drawing.Size(847, 372);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VISITA GESTANTE";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dgvVisitaDomiciliaria
+            // tableLayoutPanel2
             // 
-            this.dgvVisitaDomiciliaria.AllowUserToAddRows = false;
-            this.dgvVisitaDomiciliaria.AllowUserToDeleteRows = false;
-            this.dgvVisitaDomiciliaria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.txtDetalleGestante, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cboMotivoGestante, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dtpFechaGestante, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtFuaGestante, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label13, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 2);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(160, 6);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(489, 119);
+            this.tableLayoutPanel2.TabIndex = 136;
+            // 
+            // txtDetalleGestante
+            // 
+            this.txtDetalleGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVisitaDomiciliaria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVisitaDomiciliaria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txtDetalleGestante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tableLayoutPanel2.SetColumnSpan(this.txtDetalleGestante, 3);
+            this.txtDetalleGestante.Location = new System.Drawing.Point(55, 56);
+            this.txtDetalleGestante.Multiline = true;
+            this.txtDetalleGestante.Name = "txtDetalleGestante";
+            this.txtDetalleGestante.Size = new System.Drawing.Size(431, 60);
+            this.txtDetalleGestante.TabIndex = 3;
+            this.txtDetalleGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalleGestante_KeyPress);
+            // 
+            // cboMotivoGestante
+            // 
+            this.cboMotivoGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.cboMotivoGestante, 3);
+            this.cboMotivoGestante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMotivoGestante.FormattingEnabled = true;
+            this.cboMotivoGestante.Items.AddRange(new object[] {
+            "1. V.D. a gestantes atendidas, antes del segundo APN.",
+            "2. V.D. a gestantes, puerperas y/o recien nacido que no acude a cita prevista.",
+            "3. V.D. a gestantes, puerpera y/o recien nacido con signos de alarma que acude a " +
+                "cita prevista.",
+            "4. V.D. para aplicación de ficha de plan de parto.",
+            "5. V.D. a puerpera y/o recien nacido de parto domiciliario.",
+            "6. V.D. a gestantes con riesgo nutricional.",
+            "7. Gestante con fecha probable de Parto Próximo.",
+            "8. Puerpera y/o recien nacido Normal.",
+            "9. Otros."});
+            this.cboMotivoGestante.Location = new System.Drawing.Point(55, 29);
+            this.cboMotivoGestante.Name = "cboMotivoGestante";
+            this.cboMotivoGestante.Size = new System.Drawing.Size(431, 21);
+            this.cboMotivoGestante.TabIndex = 2;
+            this.cboMotivoGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboMotivoGestante_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.TabIndex = 132;
+            this.label11.Text = "Motivo :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 133;
+            this.label10.Text = "Fecha :";
+            // 
+            // dtpFechaGestante
+            // 
+            this.dtpFechaGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaGestante.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaGestante.Location = new System.Drawing.Point(55, 3);
+            this.dtpFechaGestante.Name = "dtpFechaGestante";
+            this.dtpFechaGestante.Size = new System.Drawing.Size(183, 20);
+            this.dtpFechaGestante.TabIndex = 0;
+            this.dtpFechaGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaGestante_KeyPress);
+            // 
+            // txtFuaGestante
+            // 
+            this.txtFuaGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFuaGestante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFuaGestante.Location = new System.Drawing.Point(284, 3);
+            this.txtFuaGestante.Name = "txtFuaGestante";
+            this.txtFuaGestante.Size = new System.Drawing.Size(202, 20);
+            this.txtFuaGestante.TabIndex = 1;
+            this.txtFuaGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuaGestante_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(244, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.TabIndex = 135;
+            this.label13.Text = "FUA :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 53);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 131;
+            this.label12.Text = "Detalle :";
+            // 
+            // dgvVisitaDomiciliariaGestante
+            // 
+            this.dgvVisitaDomiciliariaGestante.AllowUserToAddRows = false;
+            this.dgvVisitaDomiciliariaGestante.AllowUserToDeleteRows = false;
+            this.dgvVisitaDomiciliariaGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVisitaDomiciliariaGestante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisitaDomiciliariaGestante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtvisitadomiciliaria,
             this.fecha,
             this.motivo,
-            this.personal,
+            this.fua,
             this.detalle});
-            this.dgvVisitaDomiciliaria.Location = new System.Drawing.Point(6, 6);
-            this.dgvVisitaDomiciliaria.Name = "dgvVisitaDomiciliaria";
-            this.dgvVisitaDomiciliaria.ReadOnly = true;
-            this.dgvVisitaDomiciliaria.RowHeadersVisible = false;
-            this.dgvVisitaDomiciliaria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVisitaDomiciliaria.Size = new System.Drawing.Size(852, 280);
-            this.dgvVisitaDomiciliaria.TabIndex = 112;
-            this.dgvVisitaDomiciliaria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellClick);
-            this.dgvVisitaDomiciliaria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellContentClick);
-            this.dgvVisitaDomiciliaria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellDoubleClick);
+            this.dgvVisitaDomiciliariaGestante.Location = new System.Drawing.Point(6, 131);
+            this.dgvVisitaDomiciliariaGestante.Name = "dgvVisitaDomiciliariaGestante";
+            this.dgvVisitaDomiciliariaGestante.ReadOnly = true;
+            this.dgvVisitaDomiciliariaGestante.RowHeadersVisible = false;
+            this.dgvVisitaDomiciliariaGestante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVisitaDomiciliariaGestante.Size = new System.Drawing.Size(835, 235);
+            this.dgvVisitaDomiciliariaGestante.TabIndex = 112;
+            this.dgvVisitaDomiciliariaGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliariaGestante_CellClick);
+            this.dgvVisitaDomiciliariaGestante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliariaGestante_CellContentClick);
             // 
             // idtvisitadomiciliaria
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliaria.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtvisitadomiciliaria.DefaultCellStyle = dataGridViewCellStyle4;
             this.idtvisitadomiciliaria.HeaderText = "idtvisitadomiciliaria";
             this.idtvisitadomiciliaria.Name = "idtvisitadomiciliaria";
             this.idtvisitadomiciliaria.ReadOnly = true;
@@ -131,12 +268,12 @@
             this.motivo.ReadOnly = true;
             this.motivo.Width = 250;
             // 
-            // personal
+            // fua
             // 
-            this.personal.HeaderText = "PERSONAL QUE REALIZO VISITA";
-            this.personal.Name = "personal";
-            this.personal.ReadOnly = true;
-            this.personal.Width = 200;
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            this.fua.Width = 200;
             // 
             // detalle
             // 
@@ -150,7 +287,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(864, 292);
+            this.tabPage2.Size = new System.Drawing.Size(847, 372);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VISITA PUERPERA / RECIEN NACIDO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -177,9 +314,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 336);
+            this.groupBox1.Location = new System.Drawing.Point(12, 416);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(694, 136);
+            this.groupBox1.Size = new System.Drawing.Size(677, 136);
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
             // 
@@ -258,15 +395,17 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.MintCream;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(801, 419);
+            this.btnSalir.Location = new System.Drawing.Point(89, 71);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(83, 53);
-            this.btnSalir.TabIndex = 111;
+            this.btnSalir.Size = new System.Drawing.Size(80, 62);
+            this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -274,15 +413,17 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.BackColor = System.Drawing.Color.MintCream;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(712, 360);
+            this.btnNuevo.Location = new System.Drawing.Point(3, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(83, 53);
-            this.btnNuevo.TabIndex = 110;
+            this.btnNuevo.Size = new System.Drawing.Size(80, 62);
+            this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -290,45 +431,64 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(801, 360);
+            this.btnEliminar.Location = new System.Drawing.Point(89, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(83, 53);
-            this.btnEliminar.TabIndex = 114;
+            this.btnEliminar.Size = new System.Drawing.Size(80, 62);
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnModificar
+            // btnGuardar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.BackColor = System.Drawing.Color.MintCream;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnModificar.ImageKey = "13.png";
-            this.btnModificar.Location = new System.Drawing.Point(712, 419);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(83, 53);
-            this.btnModificar.TabIndex = 113;
-            this.btnModificar.Text = "&Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.MintCream;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGuardar.ImageKey = "13.png";
+            this.btnGuardar.Location = new System.Drawing.Point(3, 71);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(80, 62);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "&Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(695, 416);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(172, 136);
+            this.tableLayoutPanel1.TabIndex = 115;
             // 
             // frmMantenimientoVisitaDomiciliaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 484);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnSalir);
+            this.ClientSize = new System.Drawing.Size(879, 564);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmMantenimientoVisitaDomiciliaria";
@@ -338,9 +498,12 @@
             this.Load += new System.EventHandler(this.frmVisitaDomiciliaria_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliaria)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliariaGestante)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -360,15 +523,25 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvVisitaDomiciliaria;
+        private System.Windows.Forms.DataGridView dgvVisitaDomiciliariaGestante;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cboMotivoGestante;
+        private System.Windows.Forms.TextBox txtDetalleGestante;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpFechaGestante;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TextBox txtFuaGestante;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliaria;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fua;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
     }
 }

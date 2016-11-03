@@ -21,7 +21,7 @@ namespace CapaUsuario.TerminoGestacion
         string sidtestablecimientosalud = "";
         string snombreobstetra = "";
 
-        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
+        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
 
         public frmMantenimientoTerminoGestacion(string pidestablecimientosalud, string pnombreobstetra)
         {
@@ -68,7 +68,7 @@ namespace CapaUsuario.TerminoGestacion
                 return;
             }
 
-            miVisitaDomiciliaria.EliminarVisitaDomiciliaria(sidtvisitadomiciliaria);
+            miVisitaDomiciliaria.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliaria);
             CargarDatos();
         }
 
@@ -114,7 +114,7 @@ namespace CapaUsuario.TerminoGestacion
             {
                 dgvVisitaDomiciliaria.Rows.Clear();
                 DataTable oDataVisitaDomiciliaria = new DataTable();
-                oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliaria(sidthistoriaclinica);
+                oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliariaGestante(sidthistoriaclinica);
                 foreach (DataRow row in oDataVisitaDomiciliaria.Select("tipo = '" + stipo + "' "))
                 {
                     dgvVisitaDomiciliaria.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());

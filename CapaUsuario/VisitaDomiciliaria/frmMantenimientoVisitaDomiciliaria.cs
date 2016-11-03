@@ -12,16 +12,15 @@ namespace CapaUsuario.VisitaDomiciliaria
 {
     public partial class frmMantenimientoVisitaDomiciliaria : Form
     {
-        string sidtvisitadomiciliaria = "";
-        DateTime sfecha;
-        string smotivo = "";
-        string sdetalle = "";
+        int saccion = 0;
         string stipo = "";
+        string sidtvisitadomiciliariagestante = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string snombreobstetra = "";
 
-        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
+        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
+        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
 
         public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra)
         {
@@ -36,40 +35,125 @@ namespace CapaUsuario.VisitaDomiciliaria
             tabControl1_SelectedIndexChanged(sender, e);
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void dtpFechaGestante_KeyPress(object sender, KeyPressEventArgs e)
         {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos("", DateTime.Today, "", "", stipo, sidthistoriaclinica, sidtestablecimientosalud, 1);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (e.KeyChar == 13)
             {
-                CargarDatos();
+                txtFuaGestante.Focus();
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void txtFuaGestante_KeyPress(object sender, KeyPressEventArgs e)
         {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (e.KeyChar == 13)
             {
-                CargarDatos();
+                cboMotivoGestante.Focus();
+            }
+        }
+
+        private void cboMotivoGestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDetalleGestante.Focus();
+            }
+        }
+
+        private void txtDetalleGestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnGuardar.Focus();
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            saccion = 1;
+            if (stipo == "GESTANTE")
+            {
+                dtpFechaGestante.Value = DateTime.Today;
+                txtFuaGestante.Text = "";
+                cboMotivoGestante.SelectedIndex = -1;
+                txtDetalleGestante.Text = "";
+                dtpFechaGestante.Focus();
+            }
+            else if (stipo == "PUERPERIA / R.NACIDO")
+            {
+
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool bOk = false;
+                if (stipo == "GESTANTE")
+                {
+                    miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliariagestante;
+                    miVisitaDomiciliariaGestante.fecha = dtpFechaGestante.Value;
+                    miVisitaDomiciliariaGestante.motivo = cboMotivoGestante.Text;
+                    miVisitaDomiciliariaGestante.fua = txtFuaGestante.Text;
+                    miVisitaDomiciliariaGestante.detalle = txtDetalleGestante.Text;
+                    miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
+                    if (saccion == 1)
+                    {
+                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariagestante", sidtestablecimientosalud).Rows)
+                        {
+                            miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
+                        }
+                        miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        bOk = true;
+                    }
+                    if (saccion == 2)
+                    {
+                        miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        bOk = true;
+                    }
+                    if (bOk == true)
+                    {
+                        DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    CargarDatosGestante();
+                }
+                else if (stipo == "PUERPERIA / R.NACIDO") 
+                {
+
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (sidtvisitadomiciliaria == "")
+            if (stipo == "GESTANTE")
             {
-                MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
-            {
-                return;
-            }
+                if (sidtvisitadomiciliariagestante == "")
+                {
+                    MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
 
-            miVisitaDomiciliaria.EliminarVisitaDomiciliaria(sidtvisitadomiciliaria);
-            CargarDatos();
+                miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
+                CargarDatosGestante();
+            }
+            else if (stipo == "PUERPERIA / R.NACIDO")
+            {
+
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -81,59 +165,51 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             if (tabControl1.SelectedTab == tabPage1)
             {
-                this.tabPage1.Controls.Add(this.dgvVisitaDomiciliaria);
+                saccion = 0;
                 stipo = "GESTANTE";
+                CargarDatosGestante();
             }
             else
             {
-                this.tabPage2.Controls.Add(this.dgvVisitaDomiciliaria);
+                saccion = 0;
                 stipo = "PUERPERIA/R.NACIDO";
             }
-            CargarDatos();
         }
 
-        private void dgvVisitaDomiciliaria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvVisitaDomiciliariaGestante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
 
-        private void dgvVisitaDomiciliaria_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvVisitaDomiciliariaGestante_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                sidtvisitadomiciliaria = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["idtvisitadomiciliaria"].Value);
-                sfecha = Convert.ToDateTime(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["fecha"].Value);
-                smotivo = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["motivo"].Value);
-                sdetalle = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["detalle"].Value);
+                saccion = 2;
+                sidtvisitadomiciliariagestante = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliaria"].Value);
+                dtpFechaGestante.Value = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
+                cboMotivoGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
+                txtFuaGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalleGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
+                dtpFechaGestante.Focus();
             }
         }
 
-        private void dgvVisitaDomiciliaria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                CargarDatos();
-            }
-        }
-
-        private void CargarDatos()
+        private void CargarDatosGestante()
         {
             try
             {
-                dgvVisitaDomiciliaria.Rows.Clear();
-                DataTable oDataVisitaDomiciliaria = new DataTable();
-                oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliaria(sidthistoriaclinica);
-                foreach (DataRow row in oDataVisitaDomiciliaria.Select("tipo = '" + stipo + "' "))
+                dgvVisitaDomiciliariaGestante.Rows.Clear();
+                foreach (DataRow row in miVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(sidthistoriaclinica).Rows)
                 {
-                    dgvVisitaDomiciliaria.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());
+                    dgvVisitaDomiciliariaGestante.Rows.Add(row["idtvisitadomiciliariagestante"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), row["fua"].ToString(), row["detalle"].ToString());
                 }
-                if (dgvVisitaDomiciliaria.Rows.Count > 0)
+                if (dgvVisitaDomiciliariaGestante.Rows.Count > 0)
                 {
-                    dgvVisitaDomiciliaria.Rows[0].Selected = true;
-                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
-                    dgvVisitaDomiciliaria_CellClick(dgvVisitaDomiciliaria, ceo);
+                    dgvVisitaDomiciliariaGestante.ClearSelection();
+                    dgvVisitaDomiciliariaGestante.Rows[dgvVisitaDomiciliariaGestante.RowCount-1].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, dgvVisitaDomiciliariaGestante.RowCount - 1);
+                    dgvVisitaDomiciliariaGestante_CellClick(dgvVisitaDomiciliariaGestante, ceo);
                 }
             }
             catch (Exception m)
