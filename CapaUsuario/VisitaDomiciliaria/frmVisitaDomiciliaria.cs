@@ -33,27 +33,27 @@ namespace CapaUsuario.VisitaDomiciliaria
             try
             {
                 bool bOk = false;
-                CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
-                miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliaria;
-                miVisitaDomiciliariaGestante.fecha = dtpFecha.Value;
-                miVisitaDomiciliariaGestante.motivo = cboMotivo.Text;
-                miVisitaDomiciliariaGestante.fua = stipo;
-                miVisitaDomiciliariaGestante.detalle = txtDetalle.Text;
-                miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
+                CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
+                miVisitaDomiciliaria.idtvisitadomiciliaria = sidtvisitadomiciliaria;
+                miVisitaDomiciliaria.fecha = dtpFecha.Value;
+                miVisitaDomiciliaria.motivo = cboMotivo.Text;
+                miVisitaDomiciliaria.detalle = txtDetalle.Text;
+                miVisitaDomiciliaria.tipo = stipo;
+                miVisitaDomiciliaria.idthistoriaclinica = sidthistoriaclinica;
 
                 if (saccion == 1)
                 {
                     CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
                     foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliaria", sidtestablecimientosalud).Rows)
                     {
-                        miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
+                        miVisitaDomiciliaria.idtvisitadomiciliaria = row[0].ToString();
                     }
-                    miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                    miVisitaDomiciliaria.CrearVisitaDomiciliaria(miVisitaDomiciliaria);
                     bOk = true;
                 }
                 if (saccion == 2)
                 {
-                    miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                    miVisitaDomiciliaria.ModificarVisitaDomiciliaria(miVisitaDomiciliaria);
                     bOk = true;
                 }
                 if (bOk == true)

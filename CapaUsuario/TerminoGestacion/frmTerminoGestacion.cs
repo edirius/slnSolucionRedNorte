@@ -33,12 +33,12 @@ namespace CapaUsuario.TerminoGestacion
             try
             {
                 bool bOk = false;
-                CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
-                miVisitaDomiciliaria.idtvisitadomiciliariagestante = sidtvisitadomiciliaria;
+                CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
+                miVisitaDomiciliaria.idtvisitadomiciliaria = sidtvisitadomiciliaria;
                 miVisitaDomiciliaria.fecha = dtpFecha.Value;
                 miVisitaDomiciliaria.motivo = cboMotivo.Text;
                 miVisitaDomiciliaria.detalle = txtDetalle.Text;
-                miVisitaDomiciliaria.fua = stipo;
+                miVisitaDomiciliaria.tipo = stipo;
                 miVisitaDomiciliaria.idthistoriaclinica = sidthistoriaclinica;
 
                 if (saccion == 1)
@@ -46,14 +46,14 @@ namespace CapaUsuario.TerminoGestacion
                     CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
                     foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliaria", sidtestablecimientosalud).Rows)
                     {
-                        miVisitaDomiciliaria.idtvisitadomiciliariagestante = row[0].ToString();
+                        miVisitaDomiciliaria.idtvisitadomiciliaria = row[0].ToString();
                     }
-                    miVisitaDomiciliaria.CrearVisitaDomiciliariaGestante(miVisitaDomiciliaria);
+                    miVisitaDomiciliaria.CrearVisitaDomiciliaria(miVisitaDomiciliaria);
                     bOk = true;
                 }
                 if (saccion == 2)
                 {
-                    miVisitaDomiciliaria.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliaria);
+                    miVisitaDomiciliaria.ModificarVisitaDomiciliaria(miVisitaDomiciliaria);
                     bOk = true;
                 }
                 if (bOk == true)

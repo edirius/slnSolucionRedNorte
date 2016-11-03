@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaUsuario.TerminoGestacion
+namespace CapaUsuario.VisitaDomiciliaria
 {
-    public partial class frmMantenimientoTerminoGestacion : Form
+    public partial class frmMantenimientoVisitaDomiciliaria : Form
     {
         string sidtvisitadomiciliaria = "";
         DateTime sfecha;
@@ -23,7 +23,7 @@ namespace CapaUsuario.TerminoGestacion
 
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
 
-        public frmMantenimientoTerminoGestacion(string pidestablecimientosalud, string pnombreobstetra)
+        public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra)
         {
             sidtestablecimientosalud = pidestablecimientosalud;
             snombreobstetra = pnombreobstetra;
@@ -38,7 +38,7 @@ namespace CapaUsuario.TerminoGestacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmTerminoGestacion fVisitaDomiciliaria = new frmTerminoGestacion();
+            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
             fVisitaDomiciliaria.RecibirDatos("", DateTime.Today, "", "", stipo, sidthistoriaclinica, sidtestablecimientosalud, 1);
             if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -48,7 +48,7 @@ namespace CapaUsuario.TerminoGestacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmTerminoGestacion fVisitaDomiciliaria = new frmTerminoGestacion();
+            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
             fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
             if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -105,6 +105,16 @@ namespace CapaUsuario.TerminoGestacion
                 sfecha = Convert.ToDateTime(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["fecha"].Value);
                 smotivo = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["motivo"].Value);
                 sdetalle = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["detalle"].Value);
+            }
+        }
+
+        private void dgvVisitaDomiciliaria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
+            fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
+            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CargarDatos();
             }
         }
 
