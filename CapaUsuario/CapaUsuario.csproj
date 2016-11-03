@@ -266,12 +266,6 @@
     <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.designer.cs">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisitaDomiciliaria\frmVisitaDomiciliaria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VisitaDomiciliaria\frmVisitaDomiciliaria.Designer.cs">
-      <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Alertas\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,9 +374,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.resx">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VisitaDomiciliaria\frmVisitaDomiciliaria.resx">
-      <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Alertas\dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsc">
       <DependentUpon>dsListaGestantesConRiesgoPresionAltaCitaPrenatal.xsd</DependentUpon>

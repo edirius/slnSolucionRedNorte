@@ -12,16 +12,16 @@ namespace CapaUsuario.VisitaDomiciliaria
 {
     public partial class frmMantenimientoVisitaDomiciliaria : Form
     {
-        string sidtvisitadomiciliaria = "";
-        DateTime sfecha;
-        string smotivo = "";
-        string sdetalle = "";
+        int saccion = 0;
         string stipo = "";
+        string sidtvisitadomiciliariagestante = "";
+        string sidtvisitadomiciliariapuerperarn = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string snombreobstetra = "";
 
-        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliaria();
+        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
+        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
 
         public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra)
         {
@@ -38,27 +38,73 @@ namespace CapaUsuario.VisitaDomiciliaria
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos("", DateTime.Today, "", "", stipo, sidthistoriaclinica, sidtestablecimientosalud, 1);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            saccion = 1;
+            if (stipo == "GESTANTE")
             {
-                CargarDatos();
+                dtpFechaGestante.Value = DateTime.Today;
+                cboMotivoGestante.SelectedIndex = -1;
+                txtFuaGestante.Text = "";
+                txtDetalleGestante.Text = "";
+                dtpFechaGestante.Focus();
+            }
+            else if (stipo == "PUERPERIA/R.NACIDO")
+            {
+
             }
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
-                CargarDatos();
+                if (stipo == "GESTANTE")
+                {
+                    bool bOk = false;
+                    miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliariagestante;
+                    miVisitaDomiciliariaGestante.fecha = dtpFechaGestante.Value;
+                    miVisitaDomiciliariaGestante.motivo = cboMotivoGestante.Text;
+                    miVisitaDomiciliariaGestante.fua = txtFuaGestante.Text;
+                    miVisitaDomiciliariaGestante.detalle = txtDetalleGestante.Text;
+                    miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
+                    if (saccion == 1)
+                    {
+                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariagestante", sidtestablecimientosalud).Rows)
+                        {
+                            miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
+                        }
+                        miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        bOk = true;
+                    }
+                    if (saccion == 2)
+                    {
+                        miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        bOk = true;
+                    }
+                    if (bOk == true)
+                    {
+                        DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    CargarDatosGestante();
+                }
+                else if (stipo == "PUERPERIA/R.NACIDO")
+                {
+
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (sidtvisitadomiciliaria == "")
+            if (sidtvisitadomiciliariagestante == "")
             {
                 MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -67,9 +113,8 @@ namespace CapaUsuario.VisitaDomiciliaria
             {
                 return;
             }
-
-            miVisitaDomiciliaria.EliminarVisitaDomiciliaria(sidtvisitadomiciliaria);
-            CargarDatos();
+            miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
+            CargarDatosGestante();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -81,58 +126,78 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             if (tabControl1.SelectedTab == tabPage1)
             {
-                this.tabPage1.Controls.Add(this.dgvVisitaDomiciliariaGestante);
                 stipo = "GESTANTE";
+                CargarDatosGestante();
             }
             else
             {
-                this.tabPage2.Controls.Add(this.dgvVisitaDomiciliariaGestante);
                 stipo = "PUERPERIA/R.NACIDO";
+                CargarDatosPuerperaRN();
             }
-            CargarDatos();
         }
 
-        private void dgvVisitaDomiciliaria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region VisitaDomiciliariaGestante
+
+        private void dtpFechaGestante_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == 13)
+            {
+                txtFuaGestante.Focus();
+            }
+        }
+
+        private void txtFuaGestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cboMotivoGestante.Focus();
+            }
+        }
+
+        private void cboMotivoGestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDetalleGestante.Focus();
+            }
+        }
+
+        private void txtDetalleGestante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnGuardar.Focus();
+            }
         }
 
         private void dgvVisitaDomiciliaria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                sidtvisitadomiciliaria = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliaria"].Value);
-                sfecha = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
-                smotivo = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
-                sdetalle = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
+                saccion = 2;
+                sidtvisitadomiciliariagestante = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliariagestante"].Value);
+                dtpFechaGestante.Value = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
+                cboMotivoGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
+                txtFuaGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalleGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
+                dtpFechaGestante.Focus();
             }
         }
 
-        private void dgvVisitaDomiciliaria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmVisitaDomiciliaria fVisitaDomiciliaria = new frmVisitaDomiciliaria();
-            fVisitaDomiciliaria.RecibirDatos(sidtvisitadomiciliaria, sfecha, smotivo, sdetalle, stipo, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fVisitaDomiciliaria.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                CargarDatos();
-            }
-        }
-
-        private void CargarDatos()
+        private void CargarDatosGestante()
         {
             try
             {
                 dgvVisitaDomiciliariaGestante.Rows.Clear();
-                DataTable oDataVisitaDomiciliaria = new DataTable();
-                oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliaria(sidthistoriaclinica);
-                foreach (DataRow row in oDataVisitaDomiciliaria.Select("tipo = '" + stipo + "' "))
+                foreach (DataRow row in miVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(sidthistoriaclinica).Rows)
                 {
-                    dgvVisitaDomiciliariaGestante.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());
+                    dgvVisitaDomiciliariaGestante.Rows.Add(row["idtvisitadomiciliariagestante"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), row["fua"].ToString(), row["detalle"].ToString());
                 }
                 if (dgvVisitaDomiciliariaGestante.Rows.Count > 0)
                 {
-                    dgvVisitaDomiciliariaGestante.Rows[0].Selected = true;
-                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
+                    dgvVisitaDomiciliariaGestante.ClearSelection();
+                    dgvVisitaDomiciliariaGestante.Rows[dgvVisitaDomiciliariaGestante.RowCount - 1].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, dgvVisitaDomiciliariaGestante.RowCount - 1);
                     dgvVisitaDomiciliaria_CellClick(dgvVisitaDomiciliariaGestante, ceo);
                 }
             }
@@ -141,5 +206,100 @@ namespace CapaUsuario.VisitaDomiciliaria
                 MessageBox.Show(m.Message);
             }
         }
+        #endregion
+        #region VisitaDomiciliariaPuerperiaRN
+        private void dtpFechaPuerpera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtFuaPuerpera.Focus();
+            }
+        }
+
+        private void txtFuaPuerpera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cboMotivoPuerpera.Focus();
+            }
+        }
+
+        private void cboMotivoPuerpera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDetallePuerpera.Focus();
+            }
+        }
+
+        private void txtDetallePuerpera_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtFuaRN.Focus();
+            }
+        }
+
+        private void txtFuaRN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                cboMotivoRN.Focus();
+            }
+        }
+
+        private void cboMotivoRN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDetalleRN.Focus();
+            }
+        }
+
+        private void txtDetalleRN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnGuardar.Focus();
+            }
+        }
+
+        private void dgvVisitaDomiciliariaPuerperaRN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                saccion = 2;
+                sidtvisitadomiciliariagestante = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliariagestante"].Value);
+                dtpFechaGestante.Value = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
+                cboMotivoGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
+                txtFuaGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalleGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
+                dtpFechaGestante.Focus();
+            }
+        }
+
+        private void CargarDatosPuerperaRN()
+        {
+            try
+            {
+                dgvVisitaDomiciliariaPuerperaRN.Rows.Clear();
+                foreach (DataRow row in miVisitaDomiciliariaPuerperaRN.ListarVisitaDomiciliariaPuerperaRN(sidthistoriaclinica).Rows)
+                {
+                    dgvVisitaDomiciliariaPuerperaRN.Rows.Add(row["idtvisitadomiciliariagestante"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), row["fua"].ToString(), row["detalle"].ToString());
+                }
+                if (dgvVisitaDomiciliariaPuerperaRN.Rows.Count > 0)
+                {
+                    dgvVisitaDomiciliariaPuerperaRN.ClearSelection();
+                    dgvVisitaDomiciliariaPuerperaRN.Rows[dgvVisitaDomiciliariaPuerperaRN.RowCount - 1].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, dgvVisitaDomiciliariaPuerperaRN.RowCount - 1);
+                    dgvVisitaDomiciliariaPuerperaRN_CellClick(dgvVisitaDomiciliariaPuerperaRN, ceo);
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
+        #endregion
     }
 }
