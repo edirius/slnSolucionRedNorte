@@ -260,6 +260,12 @@
     <Compile Include="ControlPuerperio\frmControlPeuperio.Designer.cs">
       <DependentUpon>frmControlPeuperio.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.designer.cs">
+      <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisitaDomiciliaria\frmVisitaDomiciliaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlPuerperio\frmControlPeuperio.resx">
       <DependentUpon>frmControlPeuperio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.resx">
+      <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmVisitaDomiciliaria.resx">
       <DependentUpon>frmVisitaDomiciliaria.cs</DependentUpon>
