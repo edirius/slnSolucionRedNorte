@@ -230,10 +230,10 @@
     <Compile Include="Seguridad\frmAlerta.Designer.cs">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Seguridad\frmLogin.cs">
+    <Compile Include="TerminoGestacion\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Seguridad\frmLogin.Designer.cs">
+    <Compile Include="TerminoGestacion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.cs">
@@ -363,7 +363,7 @@
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Seguridad\frmLogin.resx">
+    <EmbeddedResource Include="TerminoGestacion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TerminoGestacion\frmMantenimientoTerminoGestacion.resx">
