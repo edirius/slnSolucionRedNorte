@@ -68,7 +68,7 @@ namespace CapaUsuario
         {
             DataTable odtHistoriaClinica = new DataTable();
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-
+            CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud oEstablecimientoSalud = new CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud();
             /*Año y mes de historia clinica*/
 
             cbYear.DataSource = oHistoriaClinica.ListarYear();
@@ -141,7 +141,16 @@ namespace CapaUsuario
 
             //backgroundimage = Image.FromFile(ruta + "\\odontologia.jpg");
 
+            //Listar establecimiento de salud
+            cbEstablecimientoSalud.DataSource = oEstablecimientoSalud.ListarEstablecimiento();
+            cbEstablecimientoSalud.DisplayMember = "Descripcion";
+            cbEstablecimientoSalud.ValueMember = "Codigo";
 
+            //seleccionando establecimiento de salud
+            cbEstablecimientoSalud.SelectedValue = IdEstablecimiento;
+
+            lblOrigenEESS.Visible = false;
+            cbEstablecimientoSalud.Visible = false;
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -156,9 +165,8 @@ namespace CapaUsuario
             if (frmGestanteHC.ShowDialog( ) == DialogResult.OK)
             {
                 txtDNI.Text = frmGestanteHC.DNI;
-                txtNombres.Text = frmGestanteHC.nombres;
-                txtApellidoPaterno.Text = frmGestanteHC.app;
-                txtApellidoMaterno.Text = frmGestanteHC.apm;
+                txtNombreCompleto.Text = frmGestanteHC.nombres + ", " + frmGestanteHC.app + " " + frmGestanteHC.apm;
+                
                 DateTime fn_ = frmGestanteHC.fn;
 
                 DateTime now = DateTime.Today;
@@ -349,20 +357,26 @@ namespace CapaUsuario
                 oHistoriaClinica.Idtpaciente = idtpaciente;
                 oHistoriaClinica.Idtobstetra = IdObstetra;
                 oHistoriaClinica.Fecha = dtpFecha.Value;
+                
+                oHistoriaClinica.OrigenEESS = cbEstablecimientoSalud.SelectedValue.ToString();
+                if (cbTranseunte.Checked == true)
+                    oHistoriaClinica.Transeunte = 1;
+                else
+                    oHistoriaClinica.Transeunte = 0;
 
 
-                /*Validando datos*/
+            /*Validando datos*/
 
-                if (dgvEcografia.Rows.Count < 1)
+            if (dgvOdontologia.Rows.Count < 1)
                 {
                     completo = true;
-                    mensaje = "Porfavor agregar fecha(s) al servicio de Odontologia.";
+                    mensaje = "Porfavor agregar fecha(s) del servicio de Odontologia.";
                 }
 
                 if (dgvEcografia.Rows.Count < 1)
                 {
                     completo = true;
-                    mensaje = "Porfavor agregar fecha(s) al servicio de Ecografia Obstetrica.";
+                    mensaje = "Porfavor agregar fecha(s) del servicio de Ecografia Obstetrica.";
                 }
 
                 if (oHistoriaClinica.Diaapn == "")
@@ -521,10 +535,7 @@ namespace CapaUsuario
             dtpTiempoLlegada.Text = "";
             txtEdad.Text = "";
             txtDNI.Text = "";
-            txtNombres.Text = "";
-            txtApellidoPaterno.Text = "";
-            txtApellidoMaterno.Text = "";
-
+            txtNombreCompleto.Text = "";
 
             nudGestas.Value = 0;
             nudPartos.Value = 0;
@@ -599,9 +610,7 @@ namespace CapaUsuario
             odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
 
             txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
-            txtNombres.Text = odtHCXIdHC.Rows[0][17].ToString();
-            txtApellidoPaterno.Text = odtHCXIdHC.Rows[0][18].ToString();
-            txtApellidoMaterno.Text = odtHCXIdHC.Rows[0][19].ToString();
+            txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
 
             txtHistoriaClinica.Text = odtHCXIdHC.Rows[0][1].ToString();
             cboTipoLlegada.Text = odtHCXIdHC.Rows[0][2].ToString();
@@ -822,6 +831,39 @@ namespace CapaUsuario
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtHistoriaClinica_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtHistoriaClinica_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            //if (e.KeyChar == (char)13)
+
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTranseunte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTranseunte.Checked == false)
+            {
+                lblOrigenEESS.Visible = false;
+                cbEstablecimientoSalud.Visible = false;
+            }
+            else {
+                lblOrigenEESS.Visible = true;
+                cbEstablecimientoSalud.Visible = true;
+            }
+
+
         }
     }
 }
