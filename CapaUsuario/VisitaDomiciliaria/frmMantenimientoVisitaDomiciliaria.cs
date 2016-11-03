@@ -81,12 +81,12 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             if (tabControl1.SelectedTab == tabPage1)
             {
-                this.tabPage1.Controls.Add(this.dgvVisitaDomiciliaria);
+                this.tabPage1.Controls.Add(this.dgvVisitaDomiciliariaGestante);
                 stipo = "GESTANTE";
             }
             else
             {
-                this.tabPage2.Controls.Add(this.dgvVisitaDomiciliaria);
+                this.tabPage2.Controls.Add(this.dgvVisitaDomiciliariaGestante);
                 stipo = "PUERPERIA/R.NACIDO";
             }
             CargarDatos();
@@ -101,10 +101,10 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             if (e.RowIndex != -1)
             {
-                sidtvisitadomiciliaria = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["idtvisitadomiciliaria"].Value);
-                sfecha = Convert.ToDateTime(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["fecha"].Value);
-                smotivo = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["motivo"].Value);
-                sdetalle = Convert.ToString(dgvVisitaDomiciliaria.Rows[e.RowIndex].Cells["detalle"].Value);
+                sidtvisitadomiciliaria = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliaria"].Value);
+                sfecha = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
+                smotivo = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
+                sdetalle = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
             }
         }
 
@@ -122,18 +122,18 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             try
             {
-                dgvVisitaDomiciliaria.Rows.Clear();
+                dgvVisitaDomiciliariaGestante.Rows.Clear();
                 DataTable oDataVisitaDomiciliaria = new DataTable();
                 oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliaria(sidthistoriaclinica);
                 foreach (DataRow row in oDataVisitaDomiciliaria.Select("tipo = '" + stipo + "' "))
                 {
-                    dgvVisitaDomiciliaria.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());
+                    dgvVisitaDomiciliariaGestante.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());
                 }
-                if (dgvVisitaDomiciliaria.Rows.Count > 0)
+                if (dgvVisitaDomiciliariaGestante.Rows.Count > 0)
                 {
-                    dgvVisitaDomiciliaria.Rows[0].Selected = true;
+                    dgvVisitaDomiciliariaGestante.Rows[0].Selected = true;
                     DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
-                    dgvVisitaDomiciliaria_CellClick(dgvVisitaDomiciliaria, ceo);
+                    dgvVisitaDomiciliaria_CellClick(dgvVisitaDomiciliariaGestante, ceo);
                 }
             }
             catch (Exception m)
