@@ -811,6 +811,18 @@ namespace CapaUsuario
         {
 
         }
+
+        private void btnRecienNacido_Click(object sender, EventArgs e)
+        {
+            if (IdtHistoriaClinica != "")
+            {
+                RecienNacido.frmRecienNacido miRecienNacido = new RecienNacido.frmRecienNacido(IdtHistoriaClinica, IdEstablecimiento);
+                //fBateria.MdiParent = this;
+                miRecienNacido.ShowDialog();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
 
