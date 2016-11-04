@@ -236,10 +236,10 @@
     <Compile Include="Seguridad\frmAlerta.Designer.cs">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </Compile>
-    <Compile Include="TerminoGestacion\frmLogin.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TerminoGestacion\frmLogin.Designer.cs">
+    <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.cs">
@@ -253,12 +253,6 @@
     </Compile>
     <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.designer.cs">
       <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TerminoGestacion\frmTerminoGestacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TerminoGestacion\frmTerminoGestacion.Designer.cs">
-      <DependentUpon>frmTerminoGestacion.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlPuerperio\frmControlPeuperio.cs">
       <SubType>Form</SubType>
@@ -366,7 +360,7 @@
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TerminoGestacion\frmLogin.resx">
+    <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TerminoGestacion\frmMantenimientoTerminoGestacion.resx">
@@ -374,9 +368,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPeuperio.resx">
       <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TerminoGestacion\frmTerminoGestacion.resx">
-      <DependentUpon>frmTerminoGestacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlPuerperio\frmControlPeuperio.resx">
       <DependentUpon>frmControlPeuperio.cs</DependentUpon>
