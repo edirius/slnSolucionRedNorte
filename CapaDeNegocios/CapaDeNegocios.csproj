@@ -48,6 +48,7 @@
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
     <Compile Include="cMorbilidad.cs" />
     <Compile Include="cOdontologia.cs" />
+    <Compile Include="TerminoGestacion\cTerminoGestacion.cs" />
     <Compile Include="cRecienNacido.cs" />
     <Compile Include="cReglaNegocioException.cs" />
     <Compile Include="cSiguienteCodigo.cs" />
@@ -68,6 +69,7 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

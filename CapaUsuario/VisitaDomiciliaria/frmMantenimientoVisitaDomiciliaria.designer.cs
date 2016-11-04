@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,11 +44,6 @@
             this.txtFuaGestante = new System.Windows.Forms.TextBox();
             this.txtDetalleGestante = new System.Windows.Forms.TextBox();
             this.dgvVisitaDomiciliariaGestante = new System.Windows.Forms.DataGridView();
-            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvVisitaDomiciliariaPuerperaRN = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -94,6 +89,11 @@
             this.motivoreciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fuareciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detallereciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -120,7 +120,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1150, 318);
+            this.tabControl1.Size = new System.Drawing.Size(971, 318);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -130,7 +130,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1142, 292);
+            this.tabPage1.Size = new System.Drawing.Size(963, 292);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VISITA GESTANTE";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1130, 280);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(951, 280);
             this.tableLayoutPanel5.TabIndex = 115;
             // 
             // groupBox4
@@ -160,7 +160,7 @@
             this.groupBox4.Controls.Add(this.tableLayoutPanel1);
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(418, 274);
+            this.groupBox4.Size = new System.Drawing.Size(350, 274);
             this.groupBox4.TabIndex = 114;
             this.groupBox4.TabStop = false;
             // 
@@ -188,7 +188,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(406, 249);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(338, 249);
             this.tableLayoutPanel1.TabIndex = 113;
             // 
             // label10
@@ -221,7 +221,7 @@
             "9. Otros."});
             this.cboMotivoGestante.Location = new System.Drawing.Point(55, 29);
             this.cboMotivoGestante.Name = "cboMotivoGestante";
-            this.cboMotivoGestante.Size = new System.Drawing.Size(348, 21);
+            this.cboMotivoGestante.Size = new System.Drawing.Size(280, 21);
             this.cboMotivoGestante.TabIndex = 2;
             this.cboMotivoGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboMotivoGestante_KeyPress);
             // 
@@ -233,7 +233,7 @@
             this.dtpFechaGestante.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaGestante.Location = new System.Drawing.Point(55, 3);
             this.dtpFechaGestante.Name = "dtpFechaGestante";
-            this.dtpFechaGestante.Size = new System.Drawing.Size(119, 20);
+            this.dtpFechaGestante.Size = new System.Drawing.Size(92, 20);
             this.dtpFechaGestante.TabIndex = 0;
             this.dtpFechaGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaGestante_KeyPress);
             // 
@@ -258,7 +258,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(180, 0);
+            this.label13.Location = new System.Drawing.Point(153, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 13);
             this.label13.TabIndex = 135;
@@ -270,9 +270,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFuaGestante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFuaGestante.Location = new System.Drawing.Point(220, 3);
+            this.txtFuaGestante.Location = new System.Drawing.Point(193, 3);
             this.txtFuaGestante.Name = "txtFuaGestante";
-            this.txtFuaGestante.Size = new System.Drawing.Size(183, 20);
+            this.txtFuaGestante.Size = new System.Drawing.Size(142, 20);
             this.txtFuaGestante.TabIndex = 1;
             this.txtFuaGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuaGestante_KeyPress);
             // 
@@ -286,7 +286,7 @@
             this.txtDetalleGestante.Location = new System.Drawing.Point(55, 56);
             this.txtDetalleGestante.Multiline = true;
             this.txtDetalleGestante.Name = "txtDetalleGestante";
-            this.txtDetalleGestante.Size = new System.Drawing.Size(348, 190);
+            this.txtDetalleGestante.Size = new System.Drawing.Size(280, 190);
             this.txtDetalleGestante.TabIndex = 3;
             this.txtDetalleGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalleGestante_KeyPress);
             // 
@@ -304,51 +304,14 @@
             this.motivo,
             this.fua,
             this.detalle});
-            this.dgvVisitaDomiciliariaGestante.Location = new System.Drawing.Point(427, 3);
+            this.dgvVisitaDomiciliariaGestante.Location = new System.Drawing.Point(359, 3);
             this.dgvVisitaDomiciliariaGestante.Name = "dgvVisitaDomiciliariaGestante";
             this.dgvVisitaDomiciliariaGestante.ReadOnly = true;
             this.dgvVisitaDomiciliariaGestante.RowHeadersVisible = false;
             this.dgvVisitaDomiciliariaGestante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVisitaDomiciliariaGestante.Size = new System.Drawing.Size(700, 274);
+            this.dgvVisitaDomiciliariaGestante.Size = new System.Drawing.Size(589, 274);
             this.dgvVisitaDomiciliariaGestante.TabIndex = 8;
             this.dgvVisitaDomiciliariaGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellClick);
-            // 
-            // idtvisitadomiciliariagestante
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idtvisitadomiciliariagestante.HeaderText = "idtvisitadomiciliariagestante";
-            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
-            this.idtvisitadomiciliariagestante.ReadOnly = true;
-            this.idtvisitadomiciliariagestante.Visible = false;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 75;
-            // 
-            // motivo
-            // 
-            this.motivo.HeaderText = "MOTIVO";
-            this.motivo.Name = "motivo";
-            this.motivo.ReadOnly = true;
-            this.motivo.Width = 150;
-            // 
-            // fua
-            // 
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            this.fua.Width = 150;
-            // 
-            // detalle
-            // 
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            this.detalle.Width = 300;
             // 
             // tabPage2
             // 
@@ -357,7 +320,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1142, 292);
+            this.tabPage2.Size = new System.Drawing.Size(963, 292);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VISITA PUERPERA / RECIEN NACIDO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -384,7 +347,7 @@
             this.dgvVisitaDomiciliariaPuerperaRN.ReadOnly = true;
             this.dgvVisitaDomiciliariaPuerperaRN.RowHeadersVisible = false;
             this.dgvVisitaDomiciliariaPuerperaRN.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVisitaDomiciliariaPuerperaRN.Size = new System.Drawing.Size(1130, 134);
+            this.dgvVisitaDomiciliariaPuerperaRN.Size = new System.Drawing.Size(951, 134);
             this.dgvVisitaDomiciliariaPuerperaRN.TabIndex = 113;
             this.dgvVisitaDomiciliariaPuerperaRN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliariaPuerperaRN_CellClick);
             // 
@@ -402,7 +365,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1130, 140);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(951, 140);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBox2
@@ -413,7 +376,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(559, 134);
+            this.groupBox2.Size = new System.Drawing.Size(469, 134);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Puerpera";
@@ -442,7 +405,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(546, 109);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(456, 109);
             this.tableLayoutPanel3.TabIndex = 114;
             // 
             // label14
@@ -475,7 +438,7 @@
             "9. Otros."});
             this.cboMotivoPuerpera.Location = new System.Drawing.Point(55, 29);
             this.cboMotivoPuerpera.Name = "cboMotivoPuerpera";
-            this.cboMotivoPuerpera.Size = new System.Drawing.Size(488, 21);
+            this.cboMotivoPuerpera.Size = new System.Drawing.Size(398, 21);
             this.cboMotivoPuerpera.TabIndex = 6;
             this.cboMotivoPuerpera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboMotivoPuerpera_KeyPress);
             // 
@@ -487,7 +450,7 @@
             this.dtpFechaPuerpera.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaPuerpera.Location = new System.Drawing.Point(55, 3);
             this.dtpFechaPuerpera.Name = "dtpFechaPuerpera";
-            this.dtpFechaPuerpera.Size = new System.Drawing.Size(175, 20);
+            this.dtpFechaPuerpera.Size = new System.Drawing.Size(139, 20);
             this.dtpFechaPuerpera.TabIndex = 4;
             this.dtpFechaPuerpera.ValueChanged += new System.EventHandler(this.dtpFechaPuerpera_ValueChanged);
             this.dtpFechaPuerpera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaPuerpera_KeyPress);
@@ -513,7 +476,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(236, 0);
+            this.label17.Location = new System.Drawing.Point(200, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(34, 13);
             this.label17.TabIndex = 135;
@@ -525,9 +488,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFuaPuerpera.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFuaPuerpera.Location = new System.Drawing.Point(276, 3);
+            this.txtFuaPuerpera.Location = new System.Drawing.Point(240, 3);
             this.txtFuaPuerpera.Name = "txtFuaPuerpera";
-            this.txtFuaPuerpera.Size = new System.Drawing.Size(267, 20);
+            this.txtFuaPuerpera.Size = new System.Drawing.Size(213, 20);
             this.txtFuaPuerpera.TabIndex = 5;
             this.txtFuaPuerpera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuaPuerpera_KeyPress);
             // 
@@ -541,7 +504,7 @@
             this.txtDetallePuerpera.Location = new System.Drawing.Point(55, 56);
             this.txtDetallePuerpera.Multiline = true;
             this.txtDetallePuerpera.Name = "txtDetallePuerpera";
-            this.txtDetallePuerpera.Size = new System.Drawing.Size(488, 50);
+            this.txtDetallePuerpera.Size = new System.Drawing.Size(398, 50);
             this.txtDetallePuerpera.TabIndex = 7;
             this.txtDetallePuerpera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetallePuerpera_KeyPress);
             // 
@@ -551,9 +514,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox3.Location = new System.Drawing.Point(568, 3);
+            this.groupBox3.Location = new System.Drawing.Point(478, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(559, 134);
+            this.groupBox3.Size = new System.Drawing.Size(470, 134);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Recien Nacido";
@@ -582,7 +545,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(545, 109);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(456, 109);
             this.tableLayoutPanel4.TabIndex = 114;
             // 
             // label18
@@ -615,7 +578,7 @@
             "9. Otros."});
             this.cboMotivoRN.Location = new System.Drawing.Point(55, 29);
             this.cboMotivoRN.Name = "cboMotivoRN";
-            this.cboMotivoRN.Size = new System.Drawing.Size(487, 21);
+            this.cboMotivoRN.Size = new System.Drawing.Size(398, 21);
             this.cboMotivoRN.TabIndex = 10;
             this.cboMotivoRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboMotivoRN_KeyPress);
             // 
@@ -628,7 +591,7 @@
             this.dtpFechaRN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRN.Location = new System.Drawing.Point(55, 3);
             this.dtpFechaRN.Name = "dtpFechaRN";
-            this.dtpFechaRN.Size = new System.Drawing.Size(175, 20);
+            this.dtpFechaRN.Size = new System.Drawing.Size(139, 20);
             this.dtpFechaRN.TabIndex = 8;
             // 
             // label19
@@ -652,7 +615,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(236, 0);
+            this.label21.Location = new System.Drawing.Point(200, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 13);
             this.label21.TabIndex = 135;
@@ -664,9 +627,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFuaRN.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtFuaRN.Location = new System.Drawing.Point(276, 3);
+            this.txtFuaRN.Location = new System.Drawing.Point(240, 3);
             this.txtFuaRN.Name = "txtFuaRN";
-            this.txtFuaRN.Size = new System.Drawing.Size(266, 20);
+            this.txtFuaRN.Size = new System.Drawing.Size(213, 20);
             this.txtFuaRN.TabIndex = 9;
             this.txtFuaRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFuaRN_KeyPress);
             // 
@@ -680,7 +643,7 @@
             this.txtDetalleRN.Location = new System.Drawing.Point(55, 56);
             this.txtDetalleRN.Multiline = true;
             this.txtDetalleRN.Name = "txtDetalleRN";
-            this.txtDetalleRN.Size = new System.Drawing.Size(487, 50);
+            this.txtDetalleRN.Size = new System.Drawing.Size(398, 50);
             this.txtDetalleRN.TabIndex = 11;
             this.txtDetalleRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalleRN_KeyPress);
             // 
@@ -708,7 +671,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 336);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(972, 136);
+            this.groupBox1.Size = new System.Drawing.Size(793, 136);
             this.groupBox1.TabIndex = 109;
             this.groupBox1.TabStop = false;
             // 
@@ -792,7 +755,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(1079, 419);
+            this.btnSalir.Location = new System.Drawing.Point(900, 419);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(83, 53);
             this.btnSalir.TabIndex = 15;
@@ -808,7 +771,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(990, 360);
+            this.btnNuevo.Location = new System.Drawing.Point(811, 360);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(83, 53);
             this.btnNuevo.TabIndex = 12;
@@ -824,7 +787,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(1079, 360);
+            this.btnEliminar.Location = new System.Drawing.Point(900, 360);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 53);
             this.btnEliminar.TabIndex = 14;
@@ -840,7 +803,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGuardar.ImageKey = "13.png";
-            this.btnGuardar.Location = new System.Drawing.Point(990, 419);
+            this.btnGuardar.Location = new System.Drawing.Point(811, 419);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 53);
             this.btnGuardar.TabIndex = 13;
@@ -860,58 +823,92 @@
             // 
             // fechapuerperarn
             // 
-            this.fechapuerperarn.HeaderText = "FECHA";
+            this.fechapuerperarn.HeaderText = "Fecha";
             this.fechapuerperarn.Name = "fechapuerperarn";
             this.fechapuerperarn.ReadOnly = true;
             this.fechapuerperarn.Width = 75;
             // 
             // motivopuerpera
             // 
-            this.motivopuerpera.HeaderText = "MOTIVO PUERPERA";
+            this.motivopuerpera.HeaderText = "Motivo Puerpera";
             this.motivopuerpera.Name = "motivopuerpera";
             this.motivopuerpera.ReadOnly = true;
             this.motivopuerpera.Width = 150;
             // 
             // fuapuerpera
             // 
-            this.fuapuerpera.HeaderText = "FUA PUERPERA";
+            this.fuapuerpera.HeaderText = "FUA Puerpera";
             this.fuapuerpera.Name = "fuapuerpera";
             this.fuapuerpera.ReadOnly = true;
-            this.fuapuerpera.Width = 150;
             // 
             // detallepuerpera
             // 
-            this.detallepuerpera.HeaderText = "DETALLE PUERPERA";
+            this.detallepuerpera.HeaderText = "Detalle Puerpera";
             this.detallepuerpera.Name = "detallepuerpera";
             this.detallepuerpera.ReadOnly = true;
-            this.detallepuerpera.Width = 200;
+            this.detallepuerpera.Width = 175;
             // 
             // motivoreciennacido
             // 
-            this.motivoreciennacido.HeaderText = "MOTIVO RECIEN NACIDO";
+            this.motivoreciennacido.HeaderText = "Motivo RN";
             this.motivoreciennacido.Name = "motivoreciennacido";
             this.motivoreciennacido.ReadOnly = true;
-            this.motivoreciennacido.Width = 175;
+            this.motivoreciennacido.Width = 150;
             // 
             // fuareciennacido
             // 
-            this.fuareciennacido.HeaderText = "FUA RECIEN NACIDO";
+            this.fuareciennacido.HeaderText = "FUA RN";
             this.fuareciennacido.Name = "fuareciennacido";
             this.fuareciennacido.ReadOnly = true;
-            this.fuareciennacido.Width = 150;
             // 
             // detallereciennacido
             // 
-            this.detallereciennacido.HeaderText = "DETALLE RECIEN NACIDO";
+            this.detallereciennacido.HeaderText = "Detalle RN";
             this.detallereciennacido.Name = "detallereciennacido";
             this.detallereciennacido.ReadOnly = true;
-            this.detallereciennacido.Width = 200;
+            this.detallereciennacido.Width = 175;
+            // 
+            // idtvisitadomiciliariagestante
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idtvisitadomiciliariagestante.HeaderText = "idtvisitadomiciliariagestante";
+            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
+            this.idtvisitadomiciliariagestante.ReadOnly = true;
+            this.idtvisitadomiciliariagestante.Visible = false;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "Fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Width = 75;
+            // 
+            // motivo
+            // 
+            this.motivo.HeaderText = "Motivo";
+            this.motivo.Name = "motivo";
+            this.motivo.ReadOnly = true;
+            this.motivo.Width = 150;
+            // 
+            // fua
+            // 
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.HeaderText = "Detalle";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Width = 250;
             // 
             // frmMantenimientoVisitaDomiciliaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 484);
+            this.ClientSize = new System.Drawing.Size(995, 484);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGuardar);
@@ -996,11 +993,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtFuaRN;
         private System.Windows.Forms.TextBox txtDetalleRN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariagestante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariapuerperarn;
@@ -1011,5 +1003,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn motivoreciennacido;
         private System.Windows.Forms.DataGridViewTextBoxColumn fuareciennacido;
         private System.Windows.Forms.DataGridViewTextBoxColumn detallereciennacido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariagestante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
     }
 }
