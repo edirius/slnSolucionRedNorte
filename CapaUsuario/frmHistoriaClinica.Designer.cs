@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbTranseunte = new System.Windows.Forms.CheckBox();
+            this.cbEstablecimientoSalud = new System.Windows.Forms.ComboBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.dtpFPP = new System.Windows.Forms.DateTimePicker();
+            this.dtpFUR = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.cbYear = new System.Windows.Forms.ComboBox();
@@ -48,40 +55,27 @@
             this.dgvOdontologia = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.dtpOdontologo = new System.Windows.Forms.DateTimePicker();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvEcografia = new System.Windows.Forms.DataGridView();
-            this.nudDiasEcografia = new System.Windows.Forms.NumericUpDown();
-            this.nudEdadGestacional = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dtpEcografia = new System.Windows.Forms.DateTimePicker();
-            this.buAgregarEcografia = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
+            this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.nudSemanas = new System.Windows.Forms.NumericUpDown();
-            this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
-            this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
-            this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.nudGestas = new System.Windows.Forms.NumericUpDown();
-            this.nudPartos = new System.Windows.Forms.NumericUpDown();
-            this.nudAbortos = new System.Windows.Forms.NumericUpDown();
-            this.nudHv = new System.Windows.Forms.NumericUpDown();
-            this.nudHm = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvEcografia = new System.Windows.Forms.DataGridView();
+            this.dtpEcografia = new System.Windows.Forms.DateTimePicker();
+            this.buAgregarEcografia = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblOrigenEESS = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
@@ -94,6 +88,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.nudGestas = new System.Windows.Forms.NumericUpDown();
+            this.nudPartos = new System.Windows.Forms.NumericUpDown();
+            this.nudAbortos = new System.Windows.Forms.NumericUpDown();
+            this.nudHv = new System.Windows.Forms.NumericUpDown();
+            this.nudHm = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -102,42 +109,34 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnRecienNacido = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dtpFPP = new System.Windows.Forms.DateTimePicker();
-            this.dtpFUR = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.cbEstablecimientoSalud = new System.Windows.Forms.ComboBox();
-            this.lblOrigenEESS = new System.Windows.Forms.Label();
-            this.cbTranseunte = new System.Windows.Forms.CheckBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.nudDiasEcografia = new System.Windows.Forms.NumericUpDown();
+            this.nudEdadGestacional = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
             this.groupBox8.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -168,6 +167,83 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Historia Clinica";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // cbTranseunte
+            // 
+            this.cbTranseunte.AutoSize = true;
+            this.cbTranseunte.Location = new System.Drawing.Point(538, 378);
+            this.cbTranseunte.Name = "cbTranseunte";
+            this.cbTranseunte.Size = new System.Drawing.Size(80, 17);
+            this.cbTranseunte.TabIndex = 21;
+            this.cbTranseunte.Text = "Transeunte";
+            this.cbTranseunte.UseVisualStyleBackColor = true;
+            this.cbTranseunte.CheckedChanged += new System.EventHandler(this.cbTranseunte_CheckedChanged);
+            this.cbTranseunte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTranseunte_KeyPress);
+            // 
+            // cbEstablecimientoSalud
+            // 
+            this.cbEstablecimientoSalud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstablecimientoSalud.FormattingEnabled = true;
+            this.cbEstablecimientoSalud.Items.AddRange(new object[] {
+            "A pie",
+            "Bicicleta",
+            "Vehiculo motorizado"});
+            this.cbEstablecimientoSalud.Location = new System.Drawing.Point(538, 428);
+            this.cbEstablecimientoSalud.Name = "cbEstablecimientoSalud";
+            this.cbEstablecimientoSalud.Size = new System.Drawing.Size(261, 21);
+            this.cbEstablecimientoSalud.TabIndex = 22;
+            this.cbEstablecimientoSalud.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbEstablecimientoSalud_KeyPress);
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.dtpFPP);
+            this.groupBox9.Controls.Add(this.dtpFUR);
+            this.groupBox9.Controls.Add(this.label9);
+            this.groupBox9.Controls.Add(this.label8);
+            this.groupBox9.Location = new System.Drawing.Point(161, 130);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(353, 41);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Fechas:";
+            // 
+            // dtpFPP
+            // 
+            this.dtpFPP.Enabled = false;
+            this.dtpFPP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFPP.Location = new System.Drawing.Point(242, 16);
+            this.dtpFPP.Name = "dtpFPP";
+            this.dtpFPP.Size = new System.Drawing.Size(99, 20);
+            this.dtpFPP.TabIndex = 1;
+            // 
+            // dtpFUR
+            // 
+            this.dtpFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFUR.Location = new System.Drawing.Point(57, 15);
+            this.dtpFUR.Name = "dtpFUR";
+            this.dtpFUR.Size = new System.Drawing.Size(99, 20);
+            this.dtpFUR.TabIndex = 8;
+            this.dtpFUR.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged_1);
+            this.dtpFUR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFUR_KeyPress);
+            this.dtpFUR.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(206, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "FPP:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "FUR:";
             // 
             // groupBox3
             // 
@@ -206,7 +282,7 @@
             this.cbMonth.Location = new System.Drawing.Point(650, 30);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(128, 21);
-            this.cbMonth.TabIndex = 2;
+            this.cbMonth.TabIndex = 28;
             this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
             // cbYear
@@ -215,8 +291,9 @@
             this.cbYear.Location = new System.Drawing.Point(529, 30);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(79, 21);
-            this.cbYear.TabIndex = 2;
+            this.cbYear.TabIndex = 27;
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            this.cbYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbYear_KeyPress);
             // 
             // cbBuscar
             // 
@@ -227,17 +304,22 @@
             this.cbBuscar.Location = new System.Drawing.Point(83, 29);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(128, 21);
-            this.cbBuscar.TabIndex = 2;
+            this.cbBuscar.TabIndex = 25;
+            this.cbBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbBuscar_KeyPress);
             // 
             // dgvHC
             // 
             this.dgvHC.AllowUserToAddRows = false;
             this.dgvHC.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHC.AllowUserToOrderColumns = true;
+            this.dgvHC.AllowUserToResizeColumns = false;
+            this.dgvHC.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvHC.Location = new System.Drawing.Point(15, 56);
@@ -247,7 +329,7 @@
             this.dgvHC.RowHeadersVisible = false;
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHC.Size = new System.Drawing.Size(765, 167);
-            this.dgvHC.TabIndex = 98;
+            this.dgvHC.TabIndex = 29;
             this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick);
             this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -256,8 +338,9 @@
             this.txtBuscar.Location = new System.Drawing.Point(225, 30);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(155, 20);
-            this.txtBuscar.TabIndex = 1;
+            this.txtBuscar.TabIndex = 26;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // label24
             // 
@@ -302,8 +385,8 @@
             // 
             this.button1.Location = new System.Drawing.Point(672, 477);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 39);
-            this.button1.TabIndex = 6;
+            this.button1.Size = new System.Drawing.Size(129, 39);
+            this.button1.TabIndex = 24;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -313,7 +396,7 @@
             this.buGuardar.Location = new System.Drawing.Point(538, 477);
             this.buGuardar.Name = "buGuardar";
             this.buGuardar.Size = new System.Drawing.Size(128, 39);
-            this.buGuardar.TabIndex = 6;
+            this.buGuardar.TabIndex = 23;
             this.buGuardar.Text = "Guardar";
             this.buGuardar.UseVisualStyleBackColor = true;
             this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click);
@@ -334,11 +417,12 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvOdontologia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOdontologia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOdontologia.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvOdontologia.Location = new System.Drawing.Point(26, 46);
@@ -348,17 +432,17 @@
             this.dgvOdontologia.RowHeadersVisible = false;
             this.dgvOdontologia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOdontologia.Size = new System.Drawing.Size(244, 111);
-            this.dgvOdontologia.TabIndex = 96;
+            this.dgvOdontologia.TabIndex = 14;
             this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick);
             this.dgvOdontologia.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvOdontologia_CellFormatting);
             this.dgvOdontologia.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvOdontologia_RowPrePaint);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(240, 13);
+            this.button2.Location = new System.Drawing.Point(242, 16);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 27);
-            this.button2.TabIndex = 3;
+            this.button2.Size = new System.Drawing.Size(28, 26);
+            this.button2.TabIndex = 13;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -366,200 +450,11 @@
             // dtpOdontologo
             // 
             this.dtpOdontologo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOdontologo.Location = new System.Drawing.Point(138, 20);
+            this.dtpOdontologo.Location = new System.Drawing.Point(135, 20);
             this.dtpOdontologo.Name = "dtpOdontologo";
             this.dtpOdontologo.Size = new System.Drawing.Size(99, 20);
-            this.dtpOdontologo.TabIndex = 1;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dgvEcografia);
-            this.groupBox5.Controls.Add(this.nudDiasEcografia);
-            this.groupBox5.Controls.Add(this.nudEdadGestacional);
-            this.groupBox5.Controls.Add(this.label25);
-            this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.dtpEcografia);
-            this.groupBox5.Controls.Add(this.buAgregarEcografia);
-            this.groupBox5.Location = new System.Drawing.Point(21, 311);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(493, 205);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Ecografia Obstetrica de gestante";
-            // 
-            // dgvEcografia
-            // 
-            this.dgvEcografia.AllowUserToAddRows = false;
-            this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEcografia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEcografia.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvEcografia.Location = new System.Drawing.Point(36, 67);
-            this.dgvEcografia.MultiSelect = false;
-            this.dgvEcografia.Name = "dgvEcografia";
-            this.dgvEcografia.ReadOnly = true;
-            this.dgvEcografia.RowHeadersVisible = false;
-            this.dgvEcografia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEcografia.Size = new System.Drawing.Size(445, 117);
-            this.dgvEcografia.TabIndex = 97;
-            this.dgvEcografia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcografia_CellContentClick);
-            // 
-            // nudDiasEcografia
-            // 
-            this.nudDiasEcografia.Location = new System.Drawing.Point(354, 30);
-            this.nudDiasEcografia.Name = "nudDiasEcografia";
-            this.nudDiasEcografia.Size = new System.Drawing.Size(41, 20);
-            this.nudDiasEcografia.TabIndex = 1;
-            this.nudDiasEcografia.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // nudEdadGestacional
-            // 
-            this.nudEdadGestacional.Location = new System.Drawing.Point(255, 30);
-            this.nudEdadGestacional.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudEdadGestacional.Name = "nudEdadGestacional";
-            this.nudEdadGestacional.Size = new System.Drawing.Size(41, 20);
-            this.nudEdadGestacional.TabIndex = 1;
-            this.nudEdadGestacional.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(399, 35);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(28, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "Dias";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(300, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(51, 13);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Semanas";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(160, 37);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 13);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "por ecografia        :";
-            this.label15.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(160, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Edad gestacional";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // dtpEcografia
-            // 
-            this.dtpEcografia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEcografia.Location = new System.Drawing.Point(44, 30);
-            this.dtpEcografia.Name = "dtpEcografia";
-            this.dtpEcografia.Size = new System.Drawing.Size(99, 20);
-            this.dtpEcografia.TabIndex = 0;
-            // 
-            // buAgregarEcografia
-            // 
-            this.buAgregarEcografia.Location = new System.Drawing.Point(453, 23);
-            this.buAgregarEcografia.Name = "buAgregarEcografia";
-            this.buAgregarEcografia.Size = new System.Drawing.Size(28, 27);
-            this.buAgregarEcografia.TabIndex = 0;
-            this.buAgregarEcografia.Text = "+";
-            this.buAgregarEcografia.UseVisualStyleBackColor = true;
-            this.buAgregarEcografia.Click += new System.EventHandler(this.buAgregarEcografia_Click);
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Enabled = false;
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(300, 28);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(120, 20);
-            this.dtpFecha.TabIndex = 0;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
-            this.dtpFecha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtpFUR_KeyUp);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.cboTipoLlegada);
-            this.groupBox8.Controls.Add(this.label26);
-            this.groupBox8.Controls.Add(this.label23);
-            this.groupBox8.Controls.Add(this.label4);
-            this.groupBox8.Controls.Add(this.label7);
-            this.groupBox8.Controls.Add(this.dtpTiempoLlegada);
-            this.groupBox8.Location = new System.Drawing.Point(161, 175);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(353, 63);
-            this.groupBox8.TabIndex = 3;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Tiempo al establecimiento:";
-            // 
-            // cboTipoLlegada
-            // 
-            this.cboTipoLlegada.FormattingEnabled = true;
-            this.cboTipoLlegada.Items.AddRange(new object[] {
-            "A pie",
-            "Bicicleta",
-            "Vehiculo motorizado"});
-            this.cboTipoLlegada.Location = new System.Drawing.Point(57, 22);
-            this.cboTipoLlegada.Name = "cboTipoLlegada";
-            this.cboTipoLlegada.Size = new System.Drawing.Size(128, 21);
-            this.cboTipoLlegada.TabIndex = 2;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(191, 20);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Tiempo de";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tipo de";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // dtpTiempoLlegada
-            // 
-            this.dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTiempoLlegada.Location = new System.Drawing.Point(260, 23);
-            this.dtpTiempoLlegada.Name = "dtpTiempoLlegada";
-            this.dtpTiempoLlegada.Size = new System.Drawing.Size(87, 20);
-            this.dtpTiempoLlegada.TabIndex = 0;
+            this.dtpOdontologo.TabIndex = 12;
+            this.dtpOdontologo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpOdontologo_KeyPress);
             // 
             // groupBox4
             // 
@@ -572,6 +467,56 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Primera atencion pre natal:";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.rbTercerTrimestre);
+            this.groupBox10.Controls.Add(this.rbSegundoTrimestre);
+            this.groupBox10.Controls.Add(this.rbPrimerTrimestre);
+            this.groupBox10.Location = new System.Drawing.Point(150, 12);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(194, 32);
+            this.groupBox10.TabIndex = 3;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Trimestre";
+            // 
+            // rbTercerTrimestre
+            // 
+            this.rbTercerTrimestre.AutoSize = true;
+            this.rbTercerTrimestre.Enabled = false;
+            this.rbTercerTrimestre.Location = new System.Drawing.Point(148, 12);
+            this.rbTercerTrimestre.Name = "rbTercerTrimestre";
+            this.rbTercerTrimestre.Size = new System.Drawing.Size(40, 17);
+            this.rbTercerTrimestre.TabIndex = 0;
+            this.rbTercerTrimestre.Text = "3er";
+            this.rbTercerTrimestre.UseVisualStyleBackColor = true;
+            this.rbTercerTrimestre.CheckedChanged += new System.EventHandler(this.rbTercerTrimestre_CheckedChanged);
+            // 
+            // rbSegundoTrimestre
+            // 
+            this.rbSegundoTrimestre.AutoSize = true;
+            this.rbSegundoTrimestre.Enabled = false;
+            this.rbSegundoTrimestre.Location = new System.Drawing.Point(78, 12);
+            this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
+            this.rbSegundoTrimestre.Size = new System.Drawing.Size(43, 17);
+            this.rbSegundoTrimestre.TabIndex = 0;
+            this.rbSegundoTrimestre.Text = "2do";
+            this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
+            this.rbSegundoTrimestre.CheckedChanged += new System.EventHandler(this.rbSegundoTrimestre_CheckedChanged);
+            // 
+            // rbPrimerTrimestre
+            // 
+            this.rbPrimerTrimestre.AutoSize = true;
+            this.rbPrimerTrimestre.Checked = true;
+            this.rbPrimerTrimestre.Enabled = false;
+            this.rbPrimerTrimestre.Location = new System.Drawing.Point(16, 13);
+            this.rbPrimerTrimestre.Name = "rbPrimerTrimestre";
+            this.rbPrimerTrimestre.Size = new System.Drawing.Size(40, 17);
+            this.rbPrimerTrimestre.TabIndex = 0;
+            this.rbPrimerTrimestre.TabStop = true;
+            this.rbPrimerTrimestre.Text = "1er";
+            this.rbPrimerTrimestre.UseVisualStyleBackColor = true;
+            this.rbPrimerTrimestre.CheckedChanged += new System.EventHandler(this.rbPrimerTrimestre_CheckedChanged);
             // 
             // label10
             // 
@@ -597,188 +542,172 @@
             0});
             this.nudSemanas.Name = "nudSemanas";
             this.nudSemanas.Size = new System.Drawing.Size(41, 20);
-            this.nudSemanas.TabIndex = 1;
+            this.nudSemanas.TabIndex = 11;
             this.nudSemanas.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudSemanas.ValueChanged += new System.EventHandler(this.nudSemanas_ValueChanged);
+            this.nudSemanas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudSemanas_KeyPress);
             // 
-            // rbTercerTrimestre
+            // groupBox5
             // 
-            this.rbTercerTrimestre.AutoSize = true;
-            this.rbTercerTrimestre.Location = new System.Drawing.Point(148, 12);
-            this.rbTercerTrimestre.Name = "rbTercerTrimestre";
-            this.rbTercerTrimestre.Size = new System.Drawing.Size(40, 17);
-            this.rbTercerTrimestre.TabIndex = 0;
-            this.rbTercerTrimestre.Text = "3er";
-            this.rbTercerTrimestre.UseVisualStyleBackColor = true;
-            this.rbTercerTrimestre.CheckedChanged += new System.EventHandler(this.rbTercerTrimestre_CheckedChanged);
+            this.groupBox5.Controls.Add(this.groupBox11);
+            this.groupBox5.Controls.Add(this.dgvEcografia);
+            this.groupBox5.Controls.Add(this.dtpEcografia);
+            this.groupBox5.Controls.Add(this.buAgregarEcografia);
+            this.groupBox5.Location = new System.Drawing.Point(21, 311);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(493, 205);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Ecografia Obstetrica de gestante";
             // 
-            // rbPrimerTrimestre
+            // dgvEcografia
             // 
-            this.rbPrimerTrimestre.AutoSize = true;
-            this.rbPrimerTrimestre.Checked = true;
-            this.rbPrimerTrimestre.Location = new System.Drawing.Point(16, 13);
-            this.rbPrimerTrimestre.Name = "rbPrimerTrimestre";
-            this.rbPrimerTrimestre.Size = new System.Drawing.Size(40, 17);
-            this.rbPrimerTrimestre.TabIndex = 0;
-            this.rbPrimerTrimestre.TabStop = true;
-            this.rbPrimerTrimestre.Text = "1er";
-            this.rbPrimerTrimestre.UseVisualStyleBackColor = true;
-            this.rbPrimerTrimestre.CheckedChanged += new System.EventHandler(this.rbPrimerTrimestre_CheckedChanged);
+            this.dgvEcografia.AllowUserToAddRows = false;
+            this.dgvEcografia.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEcografia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEcografia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEcografia.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvEcografia.Location = new System.Drawing.Point(36, 67);
+            this.dgvEcografia.MultiSelect = false;
+            this.dgvEcografia.Name = "dgvEcografia";
+            this.dgvEcografia.ReadOnly = true;
+            this.dgvEcografia.RowHeadersVisible = false;
+            this.dgvEcografia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEcografia.Size = new System.Drawing.Size(445, 117);
+            this.dgvEcografia.TabIndex = 19;
+            this.dgvEcografia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEcografia_CellContentClick);
             // 
-            // rbSegundoTrimestre
+            // dtpEcografia
             // 
-            this.rbSegundoTrimestre.AutoSize = true;
-            this.rbSegundoTrimestre.Location = new System.Drawing.Point(78, 12);
-            this.rbSegundoTrimestre.Name = "rbSegundoTrimestre";
-            this.rbSegundoTrimestre.Size = new System.Drawing.Size(43, 17);
-            this.rbSegundoTrimestre.TabIndex = 0;
-            this.rbSegundoTrimestre.Text = "2do";
-            this.rbSegundoTrimestre.UseVisualStyleBackColor = true;
-            this.rbSegundoTrimestre.CheckedChanged += new System.EventHandler(this.rbSegundoTrimestre_CheckedChanged);
+            this.dtpEcografia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEcografia.Location = new System.Drawing.Point(44, 30);
+            this.dtpEcografia.Name = "dtpEcografia";
+            this.dtpEcografia.Size = new System.Drawing.Size(99, 20);
+            this.dtpEcografia.TabIndex = 15;
+            this.dtpEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEcografia_KeyPress);
             // 
-            // groupBox7
+            // buAgregarEcografia
             // 
-            this.groupBox7.Controls.Add(this.label27);
-            this.groupBox7.Controls.Add(this.label18);
-            this.groupBox7.Controls.Add(this.nudGestas);
-            this.groupBox7.Controls.Add(this.nudPartos);
-            this.groupBox7.Controls.Add(this.nudAbortos);
-            this.groupBox7.Controls.Add(this.nudHv);
-            this.groupBox7.Controls.Add(this.nudHm);
-            this.groupBox7.Controls.Add(this.label3);
-            this.groupBox7.Controls.Add(this.label19);
-            this.groupBox7.Controls.Add(this.label20);
-            this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Location = new System.Drawing.Point(21, 130);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(134, 168);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Formula Obstetrica";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            this.buAgregarEcografia.Location = new System.Drawing.Point(450, 30);
+            this.buAgregarEcografia.Name = "buAgregarEcografia";
+            this.buAgregarEcografia.Size = new System.Drawing.Size(28, 27);
+            this.buAgregarEcografia.TabIndex = 18;
+            this.buAgregarEcografia.Text = "+";
+            this.buAgregarEcografia.UseVisualStyleBackColor = true;
+            this.buAgregarEcografia.Click += new System.EventHandler(this.buAgregarEcografia_Click);
+            this.buAgregarEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buAgregarEcografia_KeyPress);
             // 
-            // label18
+            // groupBox8
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(14, 131);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(36, 13);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Hijo(s)";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.groupBox8.Controls.Add(this.cboTipoLlegada);
+            this.groupBox8.Controls.Add(this.label26);
+            this.groupBox8.Controls.Add(this.label23);
+            this.groupBox8.Controls.Add(this.label4);
+            this.groupBox8.Controls.Add(this.label7);
+            this.groupBox8.Controls.Add(this.dtpTiempoLlegada);
+            this.groupBox8.Location = new System.Drawing.Point(161, 175);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(353, 63);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Tiempo al establecimiento:";
             // 
-            // nudGestas
+            // cboTipoLlegada
             // 
-            this.nudGestas.Location = new System.Drawing.Point(76, 22);
-            this.nudGestas.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudGestas.Name = "nudGestas";
-            this.nudGestas.Size = new System.Drawing.Size(41, 20);
-            this.nudGestas.TabIndex = 1;
+            this.cboTipoLlegada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoLlegada.FormattingEnabled = true;
+            this.cboTipoLlegada.Items.AddRange(new object[] {
+            "A pie",
+            "Bicicleta",
+            "Vehiculo motorizado"});
+            this.cboTipoLlegada.Location = new System.Drawing.Point(57, 22);
+            this.cboTipoLlegada.Name = "cboTipoLlegada";
+            this.cboTipoLlegada.Size = new System.Drawing.Size(112, 21);
+            this.cboTipoLlegada.TabIndex = 9;
+            this.cboTipoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboTipoLlegada_KeyPress);
             // 
-            // nudPartos
+            // label26
             // 
-            this.nudPartos.Location = new System.Drawing.Point(76, 46);
-            this.nudPartos.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudPartos.Name = "nudPartos";
-            this.nudPartos.Size = new System.Drawing.Size(41, 20);
-            this.nudPartos.TabIndex = 1;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(179, 35);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(47, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = " llegada:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // nudAbortos
+            // label23
             // 
-            this.nudAbortos.Location = new System.Drawing.Point(76, 71);
-            this.nudAbortos.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudAbortos.Name = "nudAbortos";
-            this.nudAbortos.Size = new System.Drawing.Size(41, 20);
-            this.nudAbortos.TabIndex = 1;
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(179, 20);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(57, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Tiempo de";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // nudHv
+            // label4
             // 
-            this.nudHv.Location = new System.Drawing.Point(76, 98);
-            this.nudHv.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudHv.Name = "nudHv";
-            this.nudHv.Size = new System.Drawing.Size(41, 20);
-            this.nudHv.TabIndex = 1;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = " llegada:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // nudHm
+            // label7
             // 
-            this.nudHm.Location = new System.Drawing.Point(76, 134);
-            this.nudHm.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudHm.Name = "nudHm";
-            this.nudHm.Size = new System.Drawing.Size(41, 20);
-            this.nudHm.TabIndex = 1;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Tipo de";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label19
+            // dtpTiempoLlegada
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(14, 95);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 13);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Hijo(a)s";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTiempoLlegada.Location = new System.Drawing.Point(242, 23);
+            this.dtpTiempoLlegada.Name = "dtpTiempoLlegada";
+            this.dtpTiempoLlegada.Size = new System.Drawing.Size(99, 20);
+            this.dtpTiempoLlegada.TabIndex = 10;
+            this.dtpTiempoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTiempoLlegada_KeyPress);
             // 
-            // label20
+            // dtpFecha
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(14, 75);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(46, 13);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Abortos:";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(14, 48);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(40, 13);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Partos:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(14, 25);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(43, 13);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Gestas:";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(300, 28);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(97, 20);
+            this.dtpFecha.TabIndex = 0;
             // 
             // txtObservaciones
             // 
             this.txtObservaciones.Location = new System.Drawing.Point(538, 348);
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(263, 20);
-            this.txtObservaciones.TabIndex = 1;
+            this.txtObservaciones.TabIndex = 20;
+            this.txtObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObservaciones_KeyPress);
+            // 
+            // lblOrigenEESS
+            // 
+            this.lblOrigenEESS.AutoSize = true;
+            this.lblOrigenEESS.Location = new System.Drawing.Point(535, 411);
+            this.lblOrigenEESS.Name = "lblOrigenEESS";
+            this.lblOrigenEESS.Size = new System.Drawing.Size(148, 13);
+            this.lblOrigenEESS.TabIndex = 0;
+            this.lblOrigenEESS.Text = "Origen Establecimiento Salud:";
             // 
             // label16
             // 
@@ -846,7 +775,7 @@
             this.buAgregarOdontologia.Location = new System.Drawing.Point(15, 26);
             this.buAgregarOdontologia.Name = "buAgregarOdontologia";
             this.buAgregarOdontologia.Size = new System.Drawing.Size(77, 27);
-            this.buAgregarOdontologia.TabIndex = 0;
+            this.buAgregarOdontologia.TabIndex = 2;
             this.buAgregarOdontologia.Text = "Buscar";
             this.buAgregarOdontologia.UseVisualStyleBackColor = true;
             this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click);
@@ -897,6 +826,164 @@
             this.label2.Text = "Nombre Completo:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label27);
+            this.groupBox7.Controls.Add(this.label18);
+            this.groupBox7.Controls.Add(this.nudGestas);
+            this.groupBox7.Controls.Add(this.nudPartos);
+            this.groupBox7.Controls.Add(this.nudAbortos);
+            this.groupBox7.Controls.Add(this.nudHv);
+            this.groupBox7.Controls.Add(this.nudHm);
+            this.groupBox7.Controls.Add(this.label3);
+            this.groupBox7.Controls.Add(this.label19);
+            this.groupBox7.Controls.Add(this.label20);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.label22);
+            this.groupBox7.Location = new System.Drawing.Point(21, 130);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(134, 168);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Formula Obstetrica";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(14, 145);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Muerto(s):";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(14, 131);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(36, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Hijo(s)";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // nudGestas
+            // 
+            this.nudGestas.Location = new System.Drawing.Point(76, 22);
+            this.nudGestas.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudGestas.Name = "nudGestas";
+            this.nudGestas.Size = new System.Drawing.Size(41, 20);
+            this.nudGestas.TabIndex = 3;
+            this.nudGestas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudGestas_KeyPress);
+            // 
+            // nudPartos
+            // 
+            this.nudPartos.Location = new System.Drawing.Point(76, 46);
+            this.nudPartos.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudPartos.Name = "nudPartos";
+            this.nudPartos.Size = new System.Drawing.Size(41, 20);
+            this.nudPartos.TabIndex = 4;
+            this.nudPartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPartos_KeyPress);
+            // 
+            // nudAbortos
+            // 
+            this.nudAbortos.Location = new System.Drawing.Point(76, 71);
+            this.nudAbortos.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudAbortos.Name = "nudAbortos";
+            this.nudAbortos.Size = new System.Drawing.Size(41, 20);
+            this.nudAbortos.TabIndex = 5;
+            this.nudAbortos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudAbortos_KeyPress);
+            // 
+            // nudHv
+            // 
+            this.nudHv.Location = new System.Drawing.Point(76, 98);
+            this.nudHv.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudHv.Name = "nudHv";
+            this.nudHv.Size = new System.Drawing.Size(41, 20);
+            this.nudHv.TabIndex = 6;
+            this.nudHv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHv_KeyPress);
+            // 
+            // nudHm
+            // 
+            this.nudHm.Location = new System.Drawing.Point(76, 134);
+            this.nudHm.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudHm.Name = "nudHm";
+            this.nudHm.Size = new System.Drawing.Size(41, 20);
+            this.nudHm.TabIndex = 7;
+            this.nudHm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHm_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = " vivo(s):";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(14, 95);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 13);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Hijo(a)s";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 75);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(46, 13);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Abortos:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(14, 48);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(40, 13);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Partos:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(14, 25);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(43, 13);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Gestas:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // nupEdadGestacional
             // 
             this.nupEdadGestacional.Location = new System.Drawing.Point(354, 29);
@@ -921,10 +1008,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(938, 141);
+            this.button3.Location = new System.Drawing.Point(842, 142);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(90, 49);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 30;
             this.button3.Text = "Registro Bateria";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -934,26 +1021,26 @@
             this.button4.Location = new System.Drawing.Point(842, 251);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(90, 49);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 32;
             this.button4.Text = "Atención Prenatal";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(938, 196);
+            this.button5.Location = new System.Drawing.Point(842, 361);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(90, 49);
-            this.button5.TabIndex = 4;
+            this.button5.TabIndex = 34;
             this.button5.Text = "Visita Domiciliaria";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(938, 251);
+            this.button6.Location = new System.Drawing.Point(842, 416);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 49);
-            this.button6.TabIndex = 4;
+            this.button6.TabIndex = 35;
             this.button6.Text = "Termino Gestación";
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -962,16 +1049,16 @@
             this.button7.Location = new System.Drawing.Point(842, 306);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(90, 49);
-            this.button7.TabIndex = 4;
+            this.button7.TabIndex = 33;
             this.button7.Text = "Control Puerperio";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // btnRecienNacido
             // 
-            this.btnRecienNacido.Location = new System.Drawing.Point(938, 306);
+            this.btnRecienNacido.Location = new System.Drawing.Point(842, 471);
             this.btnRecienNacido.Name = "btnRecienNacido";
             this.btnRecienNacido.Size = new System.Drawing.Size(90, 49);
-            this.btnRecienNacido.TabIndex = 4;
+            this.btnRecienNacido.TabIndex = 36;
             this.btnRecienNacido.Text = "Atención Recien Nacido";
             this.btnRecienNacido.UseVisualStyleBackColor = true;
             this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
@@ -981,184 +1068,109 @@
             this.button9.Location = new System.Drawing.Point(842, 197);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(90, 49);
-            this.button9.TabIndex = 4;
+            this.button9.TabIndex = 31;
             this.button9.Text = "Morbilidad Materna Extrema";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // groupBox11
             // 
-            this.button10.Location = new System.Drawing.Point(842, 143);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(90, 49);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Registro de transeunte";
-            this.button10.UseVisualStyleBackColor = true;
+            this.groupBox11.Controls.Add(this.nudDiasEcografia);
+            this.groupBox11.Controls.Add(this.nudEdadGestacional);
+            this.groupBox11.Controls.Add(this.label25);
+            this.groupBox11.Controls.Add(this.label14);
+            this.groupBox11.Location = new System.Drawing.Point(155, 19);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(256, 42);
+            this.groupBox11.TabIndex = 20;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Edad Gestacional por Ecografia";
             // 
-            // groupBox9
+            // nudDiasEcografia
             // 
-            this.groupBox9.Controls.Add(this.dtpFPP);
-            this.groupBox9.Controls.Add(this.dtpFUR);
-            this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Controls.Add(this.label8);
-            this.groupBox9.Location = new System.Drawing.Point(161, 130);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(353, 41);
-            this.groupBox9.TabIndex = 8;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Fechas:";
+            this.nudDiasEcografia.Location = new System.Drawing.Point(163, 16);
+            this.nudDiasEcografia.Name = "nudDiasEcografia";
+            this.nudDiasEcografia.Size = new System.Drawing.Size(41, 20);
+            this.nudDiasEcografia.TabIndex = 17;
+            this.nudDiasEcografia.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudDiasEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudDiasEcografia_KeyPress_1);
             // 
-            // dtpFPP
+            // nudEdadGestacional
             // 
-            this.dtpFPP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFPP.Location = new System.Drawing.Point(242, 16);
-            this.dtpFPP.Name = "dtpFPP";
-            this.dtpFPP.Size = new System.Drawing.Size(99, 20);
-            this.dtpFPP.TabIndex = 1;
+            this.nudEdadGestacional.Location = new System.Drawing.Point(27, 16);
+            this.nudEdadGestacional.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudEdadGestacional.Name = "nudEdadGestacional";
+            this.nudEdadGestacional.Size = new System.Drawing.Size(41, 20);
+            this.nudEdadGestacional.TabIndex = 16;
+            this.nudEdadGestacional.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudEdadGestacional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudEdadGestacional_KeyPress_1);
             // 
-            // dtpFUR
+            // label25
             // 
-            this.dtpFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFUR.Location = new System.Drawing.Point(57, 15);
-            this.dtpFUR.Name = "dtpFUR";
-            this.dtpFUR.Size = new System.Drawing.Size(99, 20);
-            this.dtpFUR.TabIndex = 2;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(208, 21);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 13);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Dia(s)";
             // 
-            // label9
+            // label14
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(206, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "FPP:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "FUR:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = " vivo(s):";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = " llegada:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(191, 34);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(47, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = " llegada:";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.rbTercerTrimestre);
-            this.groupBox10.Controls.Add(this.rbSegundoTrimestre);
-            this.groupBox10.Controls.Add(this.rbPrimerTrimestre);
-            this.groupBox10.Location = new System.Drawing.Point(150, 12);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(194, 32);
-            this.groupBox10.TabIndex = 3;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Trimestre";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(14, 145);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 13);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Muerto(s):";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // cbEstablecimientoSalud
-            // 
-            this.cbEstablecimientoSalud.FormattingEnabled = true;
-            this.cbEstablecimientoSalud.Items.AddRange(new object[] {
-            "A pie",
-            "Bicicleta",
-            "Vehiculo motorizado"});
-            this.cbEstablecimientoSalud.Location = new System.Drawing.Point(538, 428);
-            this.cbEstablecimientoSalud.Name = "cbEstablecimientoSalud";
-            this.cbEstablecimientoSalud.Size = new System.Drawing.Size(261, 21);
-            this.cbEstablecimientoSalud.TabIndex = 2;
-            // 
-            // lblOrigenEESS
-            // 
-            this.lblOrigenEESS.AutoSize = true;
-            this.lblOrigenEESS.Location = new System.Drawing.Point(535, 411);
-            this.lblOrigenEESS.Name = "lblOrigenEESS";
-            this.lblOrigenEESS.Size = new System.Drawing.Size(148, 13);
-            this.lblOrigenEESS.TabIndex = 0;
-            this.lblOrigenEESS.Text = "Origen Establecimiento Salud:";
-            // 
-            // cbTranseunte
-            // 
-            this.cbTranseunte.AutoSize = true;
-            this.cbTranseunte.Location = new System.Drawing.Point(538, 378);
-            this.cbTranseunte.Name = "cbTranseunte";
-            this.cbTranseunte.Size = new System.Drawing.Size(80, 17);
-            this.cbTranseunte.TabIndex = 9;
-            this.cbTranseunte.Text = "Transeunte";
-            this.cbTranseunte.UseVisualStyleBackColor = true;
-            this.cbTranseunte.CheckedChanged += new System.EventHandler(this.cbTranseunte_CheckedChanged);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(72, 21);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 13);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Semana(s)";
             // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 796);
+            this.ClientSize = new System.Drawing.Size(947, 796);
             this.Controls.Add(this.btnRecienNacido);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Historia Clinica";
+            this.Activated += new System.EventHandler(this.frmHistoriaClinica_Activated);
             this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).EndInit();
@@ -1166,13 +1178,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).EndInit();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1186,8 +1196,6 @@
         private System.Windows.Forms.DateTimePicker dtpOdontologo;
         private System.Windows.Forms.Button buAgregarOdontologia;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpEcografia;
         private System.Windows.Forms.Button buAgregarEcografia;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1209,7 +1217,6 @@
         private System.Windows.Forms.DataGridView dgvOdontologia;
         private System.Windows.Forms.DataGridView dgvEcografia;
         private System.Windows.Forms.DataGridView dgvHC;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -1230,7 +1237,6 @@
         private System.Windows.Forms.NumericUpDown nudAbortos;
         private System.Windows.Forms.NumericUpDown nudHv;
         private System.Windows.Forms.NumericUpDown nudHm;
-        private System.Windows.Forms.NumericUpDown nudEdadGestacional;
         private System.Windows.Forms.NumericUpDown nudSemanas;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -1246,10 +1252,7 @@
         private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown nudDiasEcografia;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DateTimePicker dtpFPP;
@@ -1264,6 +1267,11 @@
         private System.Windows.Forms.ComboBox cbEstablecimientoSalud;
         private System.Windows.Forms.Label lblOrigenEESS;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.NumericUpDown nudDiasEcografia;
+        private System.Windows.Forms.NumericUpDown nudEdadGestacional;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label14;
     }
 }
 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListarMicrored = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +53,8 @@
             this.dgvListarMicrored.AllowUserToAddRows = false;
             this.dgvListarMicrored.AllowUserToResizeColumns = false;
             this.dgvListarMicrored.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListarMicrored.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListarMicrored.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarMicrored.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -70,11 +70,11 @@
             this.dgvListarMicrored.Location = new System.Drawing.Point(12, 90);
             this.dgvListarMicrored.Name = "dgvListarMicrored";
             this.dgvListarMicrored.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarMicrored.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarMicrored.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarMicrored.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarMicrored.Size = new System.Drawing.Size(456, 247);
+            this.dgvListarMicrored.Size = new System.Drawing.Size(505, 318);
             this.dgvListarMicrored.TabIndex = 58;
             this.dgvListarMicrored.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarMicrored_CellClick);
             // 
@@ -117,16 +117,16 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(456, 39);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(505, 110);
             this.tableLayoutPanel1.TabIndex = 57;
             // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(307, 3);
+            this.btnSalir.Location = new System.Drawing.Point(339, 74);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(146, 33);
+            this.btnSalir.Size = new System.Drawing.Size(163, 33);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 74);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(146, 33);
+            this.btnInsertar.Size = new System.Drawing.Size(162, 33);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Guardar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -148,9 +148,9 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(155, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(171, 74);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(146, 33);
+            this.btnNuevo.Size = new System.Drawing.Size(162, 33);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -161,9 +161,9 @@
             this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(73, -9);
+            this.txtCodigo.Location = new System.Drawing.Point(77, 4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(150, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(199, 20);
             this.txtCodigo.TabIndex = 56;
             this.txtCodigo.Visible = false;
             // 
@@ -172,7 +172,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, -6);
+            this.label3.Location = new System.Drawing.Point(16, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 55;
@@ -183,9 +183,9 @@
             // 
             this.txtMicrored.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMicrored.Location = new System.Drawing.Point(73, 25);
+            this.txtMicrored.Location = new System.Drawing.Point(77, 34);
             this.txtMicrored.Name = "txtMicrored";
-            this.txtMicrored.Size = new System.Drawing.Size(292, 20);
+            this.txtMicrored.Size = new System.Drawing.Size(341, 20);
             this.txtMicrored.TabIndex = 1;
             this.txtMicrored.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMicrored_KeyPress);
             // 
@@ -194,7 +194,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 28);
+            this.label1.Location = new System.Drawing.Point(16, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 59;
@@ -204,9 +204,9 @@
             // 
             this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDireccion.Location = new System.Drawing.Point(77, 51);
+            this.txtDireccion.Location = new System.Drawing.Point(77, 64);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(288, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(341, 20);
             this.txtDireccion.TabIndex = 2;
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
@@ -215,7 +215,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 54);
+            this.label2.Location = new System.Drawing.Point(16, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 61;
@@ -225,7 +225,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 391);
+            this.ClientSize = new System.Drawing.Size(529, 462);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMicrored);

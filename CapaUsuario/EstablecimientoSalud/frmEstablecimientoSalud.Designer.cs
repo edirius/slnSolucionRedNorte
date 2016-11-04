@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDireccion.Location = new System.Drawing.Point(111, 92);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(347, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(771, 20);
             this.txtDireccion.TabIndex = 2;
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
@@ -95,8 +95,8 @@
             this.dgvListarEstablecimiento.AllowUserToAddRows = false;
             this.dgvListarEstablecimiento.AllowUserToResizeColumns = false;
             this.dgvListarEstablecimiento.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListarEstablecimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListarEstablecimiento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListarEstablecimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -115,11 +115,11 @@
             this.dgvListarEstablecimiento.Location = new System.Drawing.Point(14, 177);
             this.dgvListarEstablecimiento.Name = "dgvListarEstablecimiento";
             this.dgvListarEstablecimiento.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarEstablecimiento.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarEstablecimiento.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListarEstablecimiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarEstablecimiento.Size = new System.Drawing.Size(484, 289);
+            this.dgvListarEstablecimiento.Size = new System.Drawing.Size(908, 395);
             this.dgvListarEstablecimiento.TabIndex = 66;
             this.dgvListarEstablecimiento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEstablecimiento_CellClick);
             // 
@@ -180,20 +180,20 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 471);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(14, 514);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(484, 38);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(908, 108);
             this.tableLayoutPanel1.TabIndex = 65;
             // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(325, 3);
+            this.btnSalir.Location = new System.Drawing.Point(607, 73);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(156, 32);
+            this.btnSalir.Size = new System.Drawing.Size(298, 32);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -203,9 +203,9 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(3, 3);
+            this.btnInsertar.Location = new System.Drawing.Point(3, 73);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(155, 32);
+            this.btnInsertar.Size = new System.Drawing.Size(296, 32);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -215,9 +215,9 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(164, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(305, 73);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(155, 32);
+            this.btnNuevo.Size = new System.Drawing.Size(296, 32);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(111, 12);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(136, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(560, 20);
             this.txtCodigo.TabIndex = 64;
             // 
             // label3
@@ -252,7 +252,7 @@
             this.cbMicrored.FormattingEnabled = true;
             this.cbMicrored.Location = new System.Drawing.Point(111, 37);
             this.cbMicrored.Name = "cbMicrored";
-            this.cbMicrored.Size = new System.Drawing.Size(347, 21);
+            this.cbMicrored.Size = new System.Drawing.Size(771, 21);
             this.cbMicrored.TabIndex = 0;
             // 
             // txtDescripcion
@@ -262,7 +262,7 @@
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Location = new System.Drawing.Point(111, 64);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(347, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(771, 20);
             this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
@@ -283,7 +283,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRenaes.Location = new System.Drawing.Point(111, 118);
             this.txtRenaes.Name = "txtRenaes";
-            this.txtRenaes.Size = new System.Drawing.Size(136, 20);
+            this.txtRenaes.Size = new System.Drawing.Size(560, 20);
             this.txtRenaes.TabIndex = 3;
             this.txtRenaes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRenaes_KeyPress);
             // 
@@ -305,7 +305,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContenido.Location = new System.Drawing.Point(205, 152);
             this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(293, 20);
+            this.txtContenido.Size = new System.Drawing.Size(717, 20);
             this.txtContenido.TabIndex = 5;
             this.txtContenido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -343,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(510, 515);
+            this.ClientSize = new System.Drawing.Size(934, 621);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbCampo);
             this.Controls.Add(this.txtContenido);

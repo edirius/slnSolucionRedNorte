@@ -22,7 +22,7 @@ namespace CapaDeNegocios
 
         public DataTable ModificarMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarMantenimientoMorbilidad", Descripcion, Tipo, Idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spModificarMantenimientoMorbilidad", Idtmorbilidad, Descripcion, Tipo, Idtestablecimientosalud);
         }
 
         public DataTable EliminarMorbilidad()
@@ -33,6 +33,11 @@ namespace CapaDeNegocios
         public DataTable ListarMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spListarMantenimientoMorbilidad", Idtestablecimientosalud);
+        }
+
+        public DataTable BuscarMorbilidad()
+        {
+            return Conexion.GDatos.TraerDataTable("spBusquedaMantenimientoMorbilidad", Descripcion);
         }
 
     }
