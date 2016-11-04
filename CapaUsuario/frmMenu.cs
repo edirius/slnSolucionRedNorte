@@ -130,11 +130,7 @@ namespace CapaUsuario
 
         private void transeunteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTranseunte fTranseunte = new frmTranseunte();
-
-            fTranseunte.CodigoEstablecimiento = IdEstablecimientoSalud;
-            fTranseunte.MdiParent = this;
-            fTranseunte.Show();
+      
         }
 
         private void controlPeuperioToolStripMenuItem_Click(object sender, EventArgs e)

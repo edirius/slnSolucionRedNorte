@@ -30,6 +30,7 @@ namespace CapaUsuario.EstablecimientoSalud
             //Tabla = miMicrored.SiguienteCodigo();
             //txtCodigo.Text = Tabla.Rows[0][0].ToString();
         }
+
         private void ConfiguracionInicial()
         {
             //Tabla = miMicrored.SiguienteCodigo();
@@ -42,6 +43,7 @@ namespace CapaUsuario.EstablecimientoSalud
             txtDireccion.Text = "";
             btnInsertar.Enabled = false;
         }
+
         public void Nuevo()
         {
             txtMicrored.Enabled = true;

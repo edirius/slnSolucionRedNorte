@@ -151,6 +151,7 @@ namespace CapaUsuario
 
             lblOrigenEESS.Visible = false;
             cbEstablecimientoSalud.Visible = false;
+            txtHistoriaClinica.Focus();
         }
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
@@ -175,6 +176,8 @@ namespace CapaUsuario
 
                 txtEdad.Text = age.ToString();
                 idtpaciente = frmGestanteHC.idtpaciente;
+                nudGestas.Focus();
+                nudGestas.Select(0, nudGestas.Text.Length);
             }
         }
 
@@ -200,6 +203,7 @@ namespace CapaUsuario
             drOdontologo[1] = dtpOdontologo.Value.ToString("yyyy - MM - dd");
             //drOdontologo[2] = 
             odtOdontologo.Rows.InsertAt(drOdontologo,i);
+            dtpOdontologo.Focus();
         }
 
         private void dgvOdontologia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -233,17 +237,15 @@ namespace CapaUsuario
         private void buAgregarEcografia_Click(object sender, EventArgs e)
         {
             DataRow drEcografia = odtEcografia.NewRow();
-
-            
-                drEcografia = odtEcografia.NewRow();
-                i = odtEcografia.Rows.Count;
-                i++;
-                drEcografia[0] = i;
-                drEcografia[1] = dtpEcografia.Value.ToString("yyyy - MM - dd") ;
-                drEcografia[2] = nudEdadGestacional.Value;
-                drEcografia[3] = nudDiasEcografia.Value;
-                odtEcografia.Rows.InsertAt(drEcografia, i);
-            
+            drEcografia = odtEcografia.NewRow();
+            i = odtEcografia.Rows.Count;
+            i++;
+            drEcografia[0] = i;
+            drEcografia[1] = dtpEcografia.Value.ToString("yyyy - MM - dd") ;
+            drEcografia[2] = nudEdadGestacional.Value;
+            drEcografia[3] = nudDiasEcografia.Value;
+            odtEcografia.Rows.InsertAt(drEcografia, i);
+            dtpEcografia.Focus();
         }
 
         private void dgvEcografia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -358,12 +360,14 @@ namespace CapaUsuario
                 oHistoriaClinica.Idtobstetra = IdObstetra;
                 oHistoriaClinica.Fecha = dtpFecha.Value;
                 
-                oHistoriaClinica.OrigenEESS = cbEstablecimientoSalud.SelectedValue.ToString();
-                if (cbTranseunte.Checked == true)
+                if (cbTranseunte.Checked == true) {
                     oHistoriaClinica.Transeunte = 1;
-                else
+                    oHistoriaClinica.OrigenEESS = cbEstablecimientoSalud.SelectedValue.ToString();
+                }
+                else{
                     oHistoriaClinica.Transeunte = 0;
-
+                    oHistoriaClinica.OrigenEESS = IdEstablecimiento;
+                }
 
             /*Validando datos*/
 
@@ -441,7 +445,8 @@ namespace CapaUsuario
                         string exito = words[0].ToString();
                         string respuesta = words[1].ToString();
                         string idthistoriaclinica = words[2].ToString();
-                        
+                        string searchValue = idthistoriaclinica;
+
                         int suma_ecografia = 0;
                         int suma_odontologia = 0;
                         int cantidad_filas_ecografia = 0;
@@ -500,19 +505,41 @@ namespace CapaUsuario
                             if (cantidad_filas_ecografia == suma_ecografia && suma_odontologia == cantidad_filas_odontologia)
                             {
                                 MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                nueva_historia_clinica();
+                                
                                 año = año_numero ;
                                 mes = mes_numero ;
 
                                 establecer_combos_fecha_actual();
 
-                                oHistoriaClinica.año = año;
-                                oHistoriaClinica.mes = mes;
-                                
+                                oHistoriaClinica.año = dtpFecha.Value.Year;
+                                oHistoriaClinica.mes = dtpFecha.Value.Month;
+
+                                cbYear.SelectedValue = dtpFecha.Value.Year;
+                                cbMonth.SelectedItem = cbMonth.Items[dtpFecha.Value.Month - 1];
+
                                 oHistoriaClinica.Idtobstetra = IdObstetra;
                                 dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinica();
                                 dgvHC.Columns[0].Visible = false;
+                                nueva_historia_clinica();
+                                
+                                int rowIndex =0;
+                                string item = "";
+
+
+                            /*Buscando indice del item agregado o modificado*/
+                            for (int i=0; i < dgvHC.Rows.Count; i++)
+                            {
+                                item = dgvHC.Rows[i].Cells[0].Value.ToString();
+                                if ( item.Trim() == searchValue.Trim())
+                                {
+                                    rowIndex = i;
+                                    break;
+                                }
                             }
+
+                            dgvHC.Rows[rowIndex].Selected = true;
+
+                        }
                         }
                     }
                 }
@@ -554,22 +581,10 @@ namespace CapaUsuario
 
             txtObservaciones.Text = "";
             txtHistoriaClinica.Focus();
+            cbTranseunte.Checked = false;
         }
 
-        private void dtpFUR_ValueChanged(object sender, EventArgs e)
-        {
-
-           
-        }
-
-        private void dtpFUR_KeyUp(object sender, KeyEventArgs e)
-        {
-            DateTime FUR = dtpFUR.Value;
-            FUR = FUR.AddDays(7);
-            FUR = FUR.AddMonths(-3);
-            FUR = FUR.AddYears(1);
-            dtpFPP.Value = FUR;
-        }
+ 
 
         private void rbPrimerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
@@ -639,6 +654,14 @@ namespace CapaUsuario
             IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
             dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
 
+            if (odtHCXIdHC.Rows[0][22].ToString() == "1")
+                cbTranseunte.Checked = true;
+            else
+                cbTranseunte.Checked = false;
+
+            cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
+
+
 
             /* Llenando ecografias y odontologia */
 
@@ -705,10 +728,11 @@ namespace CapaUsuario
                 }
             }
 
-            if (buscar.Length == 0)
+            if (buscar.Length < 1)
             {
-                //oHistoriaClinica.año = cb
-                //oHistoriaClinica.mes =
+                oHistoriaClinica.Idtobstetra = IdObstetra;
+                oHistoriaClinica.mes = mes;
+                oHistoriaClinica.año = año;
                 dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinica();
                 dgvHC.Columns[0].Visible = false;
             }
@@ -840,10 +864,8 @@ namespace CapaUsuario
 
         private void txtHistoriaClinica_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            //if (e.KeyChar == (char)13)
-
-
+            if (e.KeyChar == (char)13)
+                buAgregarOdontologia.Focus();
         }
 
         private void label20_Click(object sender, EventArgs e)
@@ -864,6 +886,190 @@ namespace CapaUsuario
             }
 
 
+        }
+
+        private void dtpFUR_ValueChanged_1(object sender, EventArgs e)
+        {
+            hallar_FPP();
+        }
+
+        private void dtpFUR_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            hallar_FPP();
+        }
+
+
+        private void hallar_FPP (){
+            DateTime FUR = dtpFUR.Value;
+            FUR = FUR.AddDays(7);
+            FUR = FUR.AddMonths(-3);
+            FUR = FUR.AddYears(1);
+            dtpFPP.Value = FUR;
+        }
+
+        private void nudGestas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudPartos.Focus();
+                nudPartos.Select(0, nudPartos.Text.Length);
+            }
+        }
+
+        private void nudPartos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudAbortos.Focus();
+                nudAbortos.Select(0, nudAbortos.Text.Length);
+            }
+        }
+
+        private void nudAbortos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudHv.Focus();
+                nudHv.Select(0, nudHv.Text.Length);
+            }
+        }
+
+        private void nudHv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudHm.Focus();
+                nudHm.Select(0, nudHm.Text.Length);
+            }
+        }
+
+        private void nudHm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                dtpFUR.Focus();
+        }
+
+        private void dtpFUR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cboTipoLlegada.Focus();
+        }
+
+        private void cboTipoLlegada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                dtpTiempoLlegada.Focus();
+        }
+
+        private void dtpTiempoLlegada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudSemanas.Focus();
+                nudSemanas.Select(0, nudSemanas.Text.Length);
+            }
+        }
+
+        private void nudSemanas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                dtpOdontologo.Focus();
+        }
+
+        private void dtpOdontologo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                button2.Focus();
+        }
+
+        private void dtpEcografia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudEdadGestacional.Focus();
+                nudEdadGestacional.Select(0, nudEdadGestacional.Text.Length);
+            }
+        }
+
+        private void nudEdadGestacional_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) { 
+                nudDiasEcografia.Focus();
+                nudDiasEcografia.Select(0, nudDiasEcografia.Text.Length);
+            }
+        }
+
+        private void nudDiasEcografia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                buAgregarEcografia.Focus();
+        }
+
+        private void txtObservaciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbTranseunte.Focus();
+        }
+
+        private void cbTranseunte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                if (cbTranseunte.Checked == false)
+                {
+                    buGuardar.Focus();
+                }
+                else {
+                    cbEstablecimientoSalud.Focus();
+                }
+            }
+
+
+        }
+
+        private void cbEstablecimientoSalud_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                buGuardar.Focus();
+
+        }
+
+        private void cbBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                txtBuscar.Focus();
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbYear.Focus();
+        }
+
+        private void cbYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbMonth.Focus();    
+        }
+
+        private void frmHistoriaClinica_Activated(object sender, EventArgs e)
+        {
+            txtHistoriaClinica.Focus();
+        }
+
+        private void nudEdadGestacional_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                nudDiasEcografia.Focus();
+                nudDiasEcografia.Select(0, nudDiasEcografia.Text.Length);
+            }
+        }
+
+        private void nudDiasEcografia_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buAgregarEcografia.Focus();
+            }
+        }
+
+        private void buAgregarEcografia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }

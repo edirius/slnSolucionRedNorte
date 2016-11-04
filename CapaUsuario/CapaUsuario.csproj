@@ -156,6 +156,12 @@
     <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
       <DependentUpon>frmMicrored.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exportacion\frmExportacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exportacion\frmExportacion.Designer.cs">
+      <DependentUpon>frmExportacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,12 +191,6 @@
     </Compile>
     <Compile Include="frmMorbilidad.Designer.cs">
       <DependentUpon>frmMorbilidad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTranseunte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTranseunte.Designer.cs">
-      <DependentUpon>frmTranseunte.cs</DependentUpon>
     </Compile>
     <Compile Include="Obstetra\frmMantenimientoObstetra.cs">
       <SubType>Form</SubType>
@@ -305,6 +305,9 @@
     <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
       <DependentUpon>frmMicrored.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Exportacion\frmExportacion.resx">
+      <DependentUpon>frmExportacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestante.resx">
       <DependentUpon>frmGestante.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMorbilidad.resx">
       <DependentUpon>frmMorbilidad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTranseunte.resx">
-      <DependentUpon>frmTranseunte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>

@@ -46,12 +46,13 @@ namespace CapaUsuario
 
             dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
 
-            idtpaciente = dgvGestante.Rows[0].Cells[0].Value.ToString();
-            nombres = dgvGestante.Rows[0].Cells[1].Value.ToString();
-            app = dgvGestante.Rows[0].Cells[2].Value.ToString();
-            apm = dgvGestante.Rows[0].Cells[3].Value.ToString();
-            fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[5].Value);
-            DNI = Convert.ToString(dgvGestante.Rows[0].Cells[4].Value);
+            idtpaciente = dgvGestante.Rows[0].Cells[1].Value.ToString();
+            nombres = dgvGestante.Rows[0].Cells[2].Value.ToString();
+            app = dgvGestante.Rows[0].Cells[3].Value.ToString();
+            apm = dgvGestante.Rows[0].Cells[4].Value.ToString();
+            DNI = Convert.ToString(dgvGestante.Rows[0].Cells[5].Value);
+            fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[6].Value);
+            
 
             oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
             odtGestante = oGestante.ListarCantidadPacientes();
@@ -73,6 +74,7 @@ namespace CapaUsuario
             bindingNavigatorMoveLastItem.Enabled = true;
             bindingNavigatorMovePreviousItem.Enabled = true;
             bindingNavigatorMoveFirstItem.Enabled = true;
+            dgvGestante.Columns[1].Visible = false;
 
         }
 
@@ -85,8 +87,8 @@ namespace CapaUsuario
 
             if (buscar.Length > 4)
             {
-
                 dgvGestante.DataSource = oGestante.ListarPacienteXApellidoPaterno();
+                dgvGestante.Columns[1].Visible = false;
             }
                 
 
@@ -99,23 +101,7 @@ namespace CapaUsuario
              DialogResult = DialogResult.OK;
         }
 
-        private void dgvGestante_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
-
-            if (e.RowIndex != -1)
-            {
-                idtpaciente = dgvGestante.Rows[e.RowIndex].Cells[0].Value.ToString();
-                nombres = dgvGestante.Rows[e.RowIndex].Cells[1].Value.ToString();
-                app = dgvGestante.Rows[e.RowIndex].Cells[2].Value.ToString();
-                apm = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();
-                fn = Convert.ToDateTime( dgvGestante.Rows[e.RowIndex].Cells[5].Value);
-                DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[4].Value);
-                 
-            }
-        }
-
-        private void dgvGestante_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void llenar_datos_gestante (DataGridViewCellEventArgs e)
         {
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
 
@@ -129,6 +115,17 @@ namespace CapaUsuario
                 DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[4].Value);
 
             }
+
+        }
+
+        private void dgvGestante_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_gestante(e);
+        }
+
+        private void dgvGestante_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_gestante(e);
         }
 
         private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
@@ -190,6 +187,12 @@ namespace CapaUsuario
         private void bnGestante_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvGestante_DoubleClick(object sender, EventArgs e)
+        {
+            
+            DialogResult = DialogResult.OK;
         }
     }
 }
