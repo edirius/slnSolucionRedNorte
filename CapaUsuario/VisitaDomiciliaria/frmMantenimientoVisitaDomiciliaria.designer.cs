@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.cboMotivoGestante = new System.Windows.Forms.ComboBox();
@@ -42,6 +44,11 @@
             this.txtFuaGestante = new System.Windows.Forms.TextBox();
             this.txtDetalleGestante = new System.Windows.Forms.TextBox();
             this.dgvVisitaDomiciliariaGestante = new System.Windows.Forms.DataGridView();
+            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvVisitaDomiciliariaPuerperaRN = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,7 +86,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.idtvisitadomiciliariapuerperiarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtvisitadomiciliariapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motivopuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fuapuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,15 +94,10 @@
             this.motivoreciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fuareciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detallereciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliariaGestante)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -106,8 +108,6 @@
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,6 +134,35 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "VISITA GESTANTE";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.52345F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.47654F));
+            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dgvVisitaDomiciliariaGestante, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1130, 280);
+            this.tableLayoutPanel5.TabIndex = 115;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(418, 274);
+            this.groupBox4.TabIndex = 114;
+            this.groupBox4.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -284,6 +313,43 @@
             this.dgvVisitaDomiciliariaGestante.TabIndex = 8;
             this.dgvVisitaDomiciliariaGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellClick);
             // 
+            // idtvisitadomiciliariagestante
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle1;
+            this.idtvisitadomiciliariagestante.HeaderText = "idtvisitadomiciliariagestante";
+            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
+            this.idtvisitadomiciliariagestante.ReadOnly = true;
+            this.idtvisitadomiciliariagestante.Visible = false;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "FECHA";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            this.fecha.Width = 75;
+            // 
+            // motivo
+            // 
+            this.motivo.HeaderText = "MOTIVO";
+            this.motivo.Name = "motivo";
+            this.motivo.ReadOnly = true;
+            this.motivo.Width = 150;
+            // 
+            // fua
+            // 
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            this.fua.Width = 150;
+            // 
+            // detalle
+            // 
+            this.detalle.HeaderText = "DETALLE";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Width = 300;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvVisitaDomiciliariaPuerperaRN);
@@ -291,7 +357,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1142, 138);
+            this.tabPage2.Size = new System.Drawing.Size(1142, 292);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VISITA PUERPERA / RECIEN NACIDO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -305,7 +371,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVisitaDomiciliariaPuerperaRN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisitaDomiciliariaPuerperaRN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idtvisitadomiciliariapuerperiarn,
+            this.idtvisitadomiciliariapuerperarn,
             this.fechapuerperarn,
             this.motivopuerpera,
             this.fuapuerpera,
@@ -423,6 +489,7 @@
             this.dtpFechaPuerpera.Name = "dtpFechaPuerpera";
             this.dtpFechaPuerpera.Size = new System.Drawing.Size(175, 20);
             this.dtpFechaPuerpera.TabIndex = 4;
+            this.dtpFechaPuerpera.ValueChanged += new System.EventHandler(this.dtpFechaPuerpera_ValueChanged);
             this.dtpFechaPuerpera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaPuerpera_KeyPress);
             // 
             // label15
@@ -557,6 +624,7 @@
             this.dtpFechaRN.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpFechaRN.Enabled = false;
             this.dtpFechaRN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaRN.Location = new System.Drawing.Point(55, 3);
             this.dtpFechaRN.Name = "dtpFechaRN";
@@ -781,14 +849,14 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // idtvisitadomiciliariapuerperiarn
+            // idtvisitadomiciliariapuerperarn
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliariapuerperiarn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idtvisitadomiciliariapuerperiarn.HeaderText = "idtvisitadomiciliariapuerperiarn";
-            this.idtvisitadomiciliariapuerperiarn.Name = "idtvisitadomiciliariapuerperiarn";
-            this.idtvisitadomiciliariapuerperiarn.ReadOnly = true;
-            this.idtvisitadomiciliariapuerperiarn.Visible = false;
+            this.idtvisitadomiciliariapuerperarn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idtvisitadomiciliariapuerperarn.HeaderText = "idtvisitadomiciliariapuerperiarn";
+            this.idtvisitadomiciliariapuerperarn.Name = "idtvisitadomiciliariapuerperarn";
+            this.idtvisitadomiciliariapuerperarn.ReadOnly = true;
+            this.idtvisitadomiciliariapuerperarn.Visible = false;
             // 
             // fechapuerperarn
             // 
@@ -839,72 +907,6 @@
             this.detallereciennacido.ReadOnly = true;
             this.detallereciennacido.Width = 200;
             // 
-            // idtvisitadomiciliariagestante
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idtvisitadomiciliariagestante.HeaderText = "idtvisitadomiciliariagestante";
-            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
-            this.idtvisitadomiciliariagestante.ReadOnly = true;
-            this.idtvisitadomiciliariagestante.Visible = false;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 75;
-            // 
-            // motivo
-            // 
-            this.motivo.HeaderText = "MOTIVO";
-            this.motivo.Name = "motivo";
-            this.motivo.ReadOnly = true;
-            this.motivo.Width = 150;
-            // 
-            // fua
-            // 
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            this.fua.Width = 150;
-            // 
-            // detalle
-            // 
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            this.detalle.Width = 300;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(418, 274);
-            this.groupBox4.TabIndex = 114;
-            this.groupBox4.TabStop = false;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.52345F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.47654F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox4, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dgvVisitaDomiciliariaGestante, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1130, 280);
-            this.tableLayoutPanel5.TabIndex = 115;
-            // 
             // frmMantenimientoVisitaDomiciliaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -923,6 +925,8 @@
             this.Load += new System.EventHandler(this.frmVisitaDomiciliaria_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitaDomiciliariaGestante)).EndInit();
@@ -937,8 +941,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -994,14 +996,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtFuaRN;
         private System.Windows.Forms.TextBox txtDetalleRN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariapuerperiarn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechapuerperarn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motivopuerpera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fuapuerpera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detallepuerpera;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motivoreciennacido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fuareciennacido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detallereciennacido;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariagestante;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn motivo;
@@ -1009,5 +1003,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtvisitadomiciliariapuerperarn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechapuerperarn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motivopuerpera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fuapuerpera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detallepuerpera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motivoreciennacido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fuareciennacido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detallereciennacido;
     }
 }
