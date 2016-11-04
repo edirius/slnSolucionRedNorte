@@ -12,15 +12,10 @@ namespace CapaUsuario.ControlPeuperio
 {
     public partial class frmMantenimientoControlPeuperio : Form
     {
+        int saccion = 0;
+        int snumerocontrol = 0;
         string sidtcontrolpeuperio = "";
-        int snumero;
-        DateTime sfecha;
-        int spresionarterials;
-        int spresionarteriald;
-        int salturauterino;
-        string sfua;
-        string sdetalle;
-        string sidthistoriaclinica;
+        string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string snombreobstetra = "";
 
@@ -41,21 +36,68 @@ namespace CapaUsuario.ControlPeuperio
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmControlPeuperio fControlPeuperio = new frmControlPeuperio();
-            fControlPeuperio.RecibirDatos("", 0, DateTime.Today, 120, 80, 1, "", "", sidthistoriaclinica, sidtestablecimientosalud, 1);
-            if (fControlPeuperio.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            saccion = 1;
+            sidtcontrolpeuperio = "";
+            if (dgvControlPeuperio.Rows.Count > 0)
             {
-                CargarDatos();
+                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[dgvControlPeuperio.RowCount - 1].Cells["numero"].Value) + 1;
             }
+            else
+            {
+                snumerocontrol = 1;
+            }
+            txtNumero.Text = GenerarNumero(snumerocontrol) + " CONTROL";
+            dtpFecha.Value = DateTime.Today;
+            numPresionArterialS.Value = 120;
+            numPresionArterialD.Value = 80;
+            numAlturaUterino.Value = 0;
+            txtFUA.Text = "";
+            txtDetalle.Text = "";
+            dtpFecha.Focus();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            frmControlPeuperio fControlPeuperio = new frmControlPeuperio();
-            fControlPeuperio.RecibirDatos(sidtcontrolpeuperio, snumero, sfecha, spresionarterials, spresionarteriald, salturauterino, sfua, sdetalle, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fControlPeuperio.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            try
             {
+                bool bOk = false;
+                miControlPeuperio.idtcontrolpeuperio = sidtcontrolpeuperio;
+                miControlPeuperio.numero = snumerocontrol;
+                miControlPeuperio.fecha = dtpFecha.Value;
+                miControlPeuperio.presionarterials = Convert.ToInt32(numPresionArterialS.Value);
+                miControlPeuperio.presionarteriald = Convert.ToInt32(numPresionArterialD.Value);
+                miControlPeuperio.alturauterino = Convert.ToInt32(numAlturaUterino.Value);
+                miControlPeuperio.fua = txtFUA.Text;
+                miControlPeuperio.detalle = txtDetalle.Text;
+                miControlPeuperio.idthistoriaclinica = sidthistoriaclinica;
+                if (saccion == 1)
+                {
+                    CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                    foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcontrolpeuperio", sidtestablecimientosalud).Rows)
+                    {
+                        miControlPeuperio.idtcontrolpeuperio = row[0].ToString();
+                    }
+                    miControlPeuperio.CrearControlPeuperio(miControlPeuperio);
+                    bOk = true;
+                }
+                if (saccion == 2)
+                {
+                    miControlPeuperio.ModificarControlPeuperio(miControlPeuperio);
+                    bOk = true;
+                }
+                if (bOk == true)
+                {
+                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 CargarDatos();
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 
@@ -70,7 +112,6 @@ namespace CapaUsuario.ControlPeuperio
             {
                 return;
             }
-
             miControlPeuperio.EliminarControlPeuperio(sidtcontrolpeuperio);
             CargarDatos();
         }
@@ -80,33 +121,69 @@ namespace CapaUsuario.ControlPeuperio
             this.Close();
         }
 
-        private void dgvControlPeuperio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == 13)
+            {
+                numPresionArterialS.Focus();
+            }
+        }
+
+        private void numPresionArterialS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                numPresionArterialD.Focus();
+            }
+        }
+
+        private void numPresionArterialD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                numAlturaUterino.Focus();
+            }
+        }
+
+        private void numAlturaUterino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtFUA.Focus();
+            }
+        }
+
+        private void txtFUA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDetalle.Focus();
+            }
+        }
+
+        private void txtDetalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnGuardar.Focus();
+            }
         }
 
         private void dgvControlPeuperio_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
+                saccion = 2;
                 sidtcontrolpeuperio = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["idtcontrolpeuperio"].Value);
-                snumero = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["numero"].Value);
-                sfecha = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["fecha"].Value);
-                spresionarterials = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarterials"].Value);
-                spresionarteriald = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarteriald"].Value);
-                salturauterino = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["alturauterino"].Value);
-                sfua = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["fua"].Value);
-                sdetalle = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["detalle"].Value);
-            }
-        }
-
-        private void dgvControlPeuperio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmControlPeuperio fControlPeuperio = new frmControlPeuperio();
-            fControlPeuperio.RecibirDatos(sidtcontrolpeuperio, snumero, sfecha, spresionarterials, spresionarteriald, salturauterino, sfua, sdetalle, sidthistoriaclinica, sidtestablecimientosalud, 2);
-            if (fControlPeuperio.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                CargarDatos();
+                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["numero"].Value);
+                txtNumero.Text = GenerarNumero(snumerocontrol) + " CONTROL";
+                dtpFecha.Value = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["fecha"].Value);
+                numPresionArterialS.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarterials"].Value);
+                numPresionArterialD.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarteriald"].Value);
+                numAlturaUterino.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["alturauterino"].Value);
+                txtFUA.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalle.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["detalle"].Value);
+                dtpFecha.Focus();
             }
         }
 
@@ -114,17 +191,16 @@ namespace CapaUsuario.ControlPeuperio
         {
             try
             {
-                dgvControlPeuperio.DataSource = miControlPeuperio.ListarControlPeuperio(sidthistoriaclinica);
-                //DataTable oDataVisitaDomiciliaria = new DataTable();
-                //oDataVisitaDomiciliaria = miVisitaDomiciliaria.ListarVisitaDomiciliaria(sidthistoriaclinica);
-                //foreach (DataRow row in oDataVisitaDomiciliaria.Select("tipo = '" + stipo + "' "))
-                //{
-                //    dgvControlPeuperio.Rows.Add(row["idtvisitadomiciliaria"].ToString(), row["fecha"].ToString(), row["motivo"].ToString(), snombreobstetra, row["detalle"].ToString());
-                //}
+                dgvControlPeuperio.Rows.Clear();
+                foreach (DataRow row in miControlPeuperio.ListarControlPeuperio(sidthistoriaclinica).Rows)
+                {
+                    dgvControlPeuperio.Rows.Add(row["idtcontrolpeuperio"].ToString(), row["numero"].ToString(), row["fecha"].ToString(), row["presionarterials"].ToString()+"/"+row["presionarteriald"].ToString(), row["presionarterials"].ToString(), row["presionarteriald"].ToString(), row["alturauterino"].ToString(), row["fua"].ToString(), row["detalle"].ToString());
+                }
                 if (dgvControlPeuperio.Rows.Count > 0)
                 {
-                    dgvControlPeuperio.Rows[0].Selected = true;
-                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
+                    dgvControlPeuperio.ClearSelection();
+                    dgvControlPeuperio.Rows[dgvControlPeuperio.RowCount - 1].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, dgvControlPeuperio.RowCount - 1);
                     dgvControlPeuperio_CellClick(dgvControlPeuperio, ceo);
                 }
             }
@@ -132,6 +208,41 @@ namespace CapaUsuario.ControlPeuperio
             {
                 MessageBox.Show(m.Message);
             }
+        }
+
+        private string GenerarNumero(int N)
+        {
+            String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
+            "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
+            "NOVENO" };
+            String[] Decena = { "", "DECIMO", "VIGESIMO", "TRIGESIMO",
+            "CUADRAGESIMO", "QUINCUAGESIMO", "SEXAGESIMO",
+            "SEPTUAGESIMO", "OCTOGESIMO", "NONAGESIMO" };
+            String[] Centena = {"", "centesimo", "ducentesimo",
+            "tricentesimo", " cuadringentesimo", " quingentesimo",
+            " sexcentesimo", " septingentesimo", " octingentesimo",
+            " noningentesimo"};
+
+            string Num = "";
+            int u = N % 10;
+            int d = (N / 10) % 10;
+            int c = N / 100;
+            if (N >= 100)
+            {
+                Num = Centena[c] + " " + Decena[d] + " " + Unidad[u];
+            }
+            else
+            {
+                if (N >= 10)
+                {
+                    Num = Decena[d] + " " + Unidad[u];
+                }
+                else
+                {
+                    Num = Unidad[N];
+                }
+            }
+            return Num;
         }
     }
 }
