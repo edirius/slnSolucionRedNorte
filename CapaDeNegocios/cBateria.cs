@@ -40,9 +40,9 @@ namespace CapaDeNegocios
         {
             return Conexion.GDatos.TraerDataTable("spEliminarBateria", IdBateria);
         }
-        public DataTable ListarBateria()
+        public DataTable ListarBateria(string id)
         {
-            return Conexion.GDatos.TraerDataTable("spListarBateria");
+            return Conexion.GDatos.TraerDataTable("spListarBateria", id);
         }
 
     }

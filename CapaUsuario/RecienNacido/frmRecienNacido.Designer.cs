@@ -39,13 +39,6 @@
             this.txtMensajeApgar1 = new System.Windows.Forms.TextBox();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
@@ -69,6 +62,13 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
@@ -137,6 +137,7 @@
             this.txtMensajePeso.Size = new System.Drawing.Size(302, 15);
             this.txtMensajePeso.TabIndex = 2;
             this.txtMensajePeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMensajePeso.TextChanged += new System.EventHandler(this.txtMensajePeso_TextChanged);
             // 
             // txtMensajeApgar5
             // 
@@ -149,6 +150,7 @@
             this.txtMensajeApgar5.Size = new System.Drawing.Size(302, 15);
             this.txtMensajeApgar5.TabIndex = 1;
             this.txtMensajeApgar5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMensajeApgar5.TextChanged += new System.EventHandler(this.txtMensajeApgar5_TextChanged);
             // 
             // txtMensajeApgar1
             // 
@@ -192,9 +194,9 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7,
+            this.APGAR1,
+            this.APGAR5,
+            this.PESO,
             this.Column6});
             this.dgvRecienNacido.GridColor = System.Drawing.Color.White;
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
@@ -208,56 +210,7 @@
             this.dgvRecienNacido.TabIndex = 105;
             this.dgvRecienNacido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecienNacido_CellClick);
             this.dgvRecienNacido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRecienNacido_CellFormatting);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtreciennacido";
-            this.Column1.HeaderText = "Codigo Recien Nacido";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fechaderivado";
-            this.Column3.HeaderText = "Fecha Derivado";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "apgar1";
-            this.Column4.HeaderText = "APGAR1";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "apgar5";
-            this.Column5.HeaderText = "APGAR5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "peso";
-            this.Column7.HeaderText = "Peso";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sexo";
-            this.Column6.HeaderText = "Sexo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.dgvRecienNacido.SelectionChanged += new System.EventHandler(this.dgvRecienNacido_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -532,6 +485,56 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtreciennacido";
+            this.Column1.HeaderText = "Codigo Recien Nacido";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fechaderivado";
+            this.Column3.HeaderText = "Fecha Derivado";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // APGAR1
+            // 
+            this.APGAR1.DataPropertyName = "apgar1";
+            this.APGAR1.HeaderText = "APGAR1";
+            this.APGAR1.Name = "APGAR1";
+            this.APGAR1.ReadOnly = true;
+            // 
+            // APGAR5
+            // 
+            this.APGAR5.DataPropertyName = "apgar5";
+            this.APGAR5.HeaderText = "APGAR5";
+            this.APGAR5.Name = "APGAR5";
+            this.APGAR5.ReadOnly = true;
+            // 
+            // PESO
+            // 
+            this.PESO.DataPropertyName = "peso";
+            this.PESO.HeaderText = "Peso";
+            this.PESO.Name = "PESO";
+            this.PESO.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sexo";
+            this.Column6.HeaderText = "Sexo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // frmRecienNacido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,15 +598,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nudPeso;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox txtMensajeApgar5;
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.TextBox txtMensajePeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APGAR1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APGAR5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PESO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

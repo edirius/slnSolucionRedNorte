@@ -25,6 +25,7 @@ namespace CapaUsuario.RecienNacido
         {
             InitializeComponent();
             ConfiguracionInicial();
+            Nuevo();
             aIdHistoria = IdHistoria;
             aIdEstablecimiento = IdEstablecimiento;
             txtCodigoHistoria.Text = IdHistoria;
@@ -32,19 +33,19 @@ namespace CapaUsuario.RecienNacido
         }
         public void ActualizarLista(string id)
         {
-            dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido();
+            dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
             Alertar();
 
         }
         private void Alertar()
         {
-            if (txtMensajeApgar1.Text != "")
+            if (txtMensajeApgar1.Text != "" || txtMensajeApgar5.Text != "" || txtMensajePeso.Text !="")
             {
                 lblAlerta.Visible = true;
                 pbAlerta.Visible = true;
                 timer.Start();
             }
-            else if (txtMensajeApgar1.Text == "")
+            else if (txtMensajeApgar1.Text == "" || txtMensajeApgar5.Text == "" || txtMensajePeso.Text == "")
             {
                 pbAlerta.Visible = false;
                 lblAlerta.Visible = false;
@@ -54,23 +55,24 @@ namespace CapaUsuario.RecienNacido
         private void ConfiguracionInicial()
         {
             
-            txtCodigoRN.Text = "";
-            dtpFecha.Value = DateTime.Today;
-            dtpFecha.Enabled = false;
-            pbAlerta.Visible = false;
-            nudApgar1.Value = 0;
-            nudApgar1.Enabled = false;
-            nudApgar5.Value = 0;
-            nudApgar5.Enabled = false;
-            nudPeso.Value = 2000;
-            nudPeso.Enabled = false;
-            cbSexo.Text = "Seleccione el sexo.";
-            cbSexo.Enabled = false;
-            btnInsertar.Enabled = false;
-            btnEliminar.Enabled = false;
+            //txtCodigoRN.Text = "";
+            //dtpFecha.Value = DateTime.Today;
+            //dtpFecha.Enabled = false;
+            //pbAlerta.Visible = false;
+            //nudApgar1.Value = 0;
+            //nudApgar1.Enabled = false;
+            //nudApgar5.Value = 0;
+            //nudApgar5.Enabled = false;
+            //nudPeso.Value = 2000;
+            //nudPeso.Enabled = false;
+            //cbSexo.Text = "Seleccione el sexo.";
+            //cbSexo.Enabled = false;
+            //btnInsertar.Enabled = false;
+            //btnEliminar.Enabled = false;
         }
         private void Nuevo()
         {
+            dgvRecienNacido.ClearSelection();
             txtCodigoRN.Text = "";
             dtpFecha.Value = DateTime.Today;
             dtpFecha.Enabled = true;
@@ -83,10 +85,12 @@ namespace CapaUsuario.RecienNacido
             nudPeso.Enabled = true;
             cbSexo.Text = "Seleccione el sexo.";
             cbSexo.Enabled = true;
-            btnInsertar.Text = "Guardar";
             btnInsertar.Enabled = true;
             btnEliminar.Enabled = true;
-            dgvRecienNacido.ClearSelection();
+            txtMensajeApgar1.Text = "";
+            txtMensajeApgar5.Text = "";
+            txtMensajePeso.Text = "";
+            
         }
         public void Agregar()
         {
@@ -111,7 +115,7 @@ namespace CapaUsuario.RecienNacido
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();
-                    dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido();
+                    dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
                 }
                 else if (respuesta == "0")
                 {
@@ -151,7 +155,7 @@ namespace CapaUsuario.RecienNacido
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();
-                    dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido();
+                    dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
                 }
                 else if (respuesta == "0")
                 {
@@ -182,7 +186,7 @@ namespace CapaUsuario.RecienNacido
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ConfiguracionInicial();
-                        dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido();
+                        dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
                     }
 
                     else if (respuesta == "0")
@@ -293,23 +297,57 @@ namespace CapaUsuario.RecienNacido
         {
             if (nudPeso.Value <= 2500)
             {
-                txtMensajeApgar5.Text = "Niño Hipoactivo - No reactivo";
+                txtMensajePeso.Text = "Recien nacido con bajo de peso";
             }
             else
             {
-                txtMensajeApgar5.Text = "";
+                txtMensajePeso.Text = "";
+            }
+        }
+        
+        private void dgvRecienNacido_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvRecienNacido.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR1"].Value) >= 7))
+                {
+                    dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR1"].Style.BackColor = Color.Red;
+                }
+                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR5"].Value) >= 7))
+                {
+                    dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR5"].Style.BackColor = Color.Red;
+                }
+                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["PESO"].Value) <= 2500))
+                {
+                    dgvRecienNacido.Rows[e.RowIndex].Cells["PESO"].Style.BackColor = Color.Red;
+                }
             }
         }
 
-        private void dgvRecienNacido_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void txtMensajePeso_TextChanged(object sender, EventArgs e)
         {
-            //if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
-            //{
-            //    if ((Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
-            //    {
-            //        dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
-            //    }
-            //}
+            Alertar();
+        }
+
+        private void dgvRecienNacido_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int Valor = dgvRecienNacido.CurrentCell.RowIndex;
+                txtCodigoRN.Text = dgvRecienNacido[0, Valor].Value.ToString();
+                txtCodigoHistoria.Text = dgvRecienNacido[1, Valor].Value.ToString();
+                dtpFecha.Text = dgvRecienNacido[2, Valor].Value.ToString();
+                nudApgar1.Text = dgvRecienNacido[3, Valor].Value.ToString();
+                nudApgar5.Text = dgvRecienNacido[4, Valor].Value.ToString();
+                nudPeso.Text = dgvRecienNacido[5, Valor].Value.ToString();
+                cbSexo.Text = dgvRecienNacido[6, Valor].Value.ToString();
+            }
+            catch { }
+        }
+
+        private void txtMensajeApgar5_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
         }
     }
 }

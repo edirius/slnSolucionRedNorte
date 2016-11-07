@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,29 +52,29 @@
             this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMensajeVIH = new System.Windows.Forms.TextBox();
             this.txtMensajeHemo = new System.Windows.Forms.TextBox();
             this.txtMensajeOrina = new System.Windows.Forms.TextBox();
             this.txtMensajeSifilis = new System.Windows.Forms.TextBox();
-            this.txtMensajeGlucosa = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtFechaExamenOrina = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hemoglobina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sifilis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.glucosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -180,6 +180,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtFechaExamenOrina);
             this.groupBox1.Controls.Add(this.dtpFechaOrina);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.nudOrina);
@@ -212,6 +213,7 @@
             this.dtpFechaOrina.Name = "dtpFechaOrina";
             this.dtpFechaOrina.Size = new System.Drawing.Size(102, 20);
             this.dtpFechaOrina.TabIndex = 7;
+            this.dtpFechaOrina.ValueChanged += new System.EventHandler(this.dtpFechaOrina_ValueChanged);
             // 
             // label9
             // 
@@ -341,8 +343,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -353,86 +355,25 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column8,
-            this.Column7,
+            this.hemoglobina,
+            this.vih,
+            this.sifilis,
+            this.glucosa,
+            this.orina,
             this.Column9});
             this.dgvListaBateria.GridColor = System.Drawing.Color.White;
             this.dgvListaBateria.Location = new System.Drawing.Point(165, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 105);
             this.dgvListaBateria.TabIndex = 99;
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick_1);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtbateria";
-            this.Column1.HeaderText = "Codigo Bateria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fecha";
-            this.Column3.HeaderText = "Fecha Examen";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "hemoglobina";
-            this.Column4.HeaderText = "Examen Hemoglobina";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "vih";
-            this.Column5.HeaderText = "Examen VIH";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sifilis";
-            this.Column6.HeaderText = "Examen Sifilis";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "glucosa";
-            this.Column8.HeaderText = "Examen de Glucosa";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "orina";
-            this.Column7.HeaderText = "Examen de Orina";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "fechaexamenorina";
-            this.Column9.HeaderText = "Fecha Examen Orina";
-            this.Column9.Name = "Column9";
+            this.dgvListaBateria.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaBateria_CellFormatting);
+            this.dgvListaBateria.SelectionChanged += new System.EventHandler(this.dgvListaBateria_SelectionChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -454,18 +395,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(693, 46);
             this.tableLayoutPanel1.TabIndex = 101;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(522, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(168, 40);
-            this.btnSalir.TabIndex = 47;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
-            // 
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -477,6 +406,18 @@
             this.btnInsertar.Text = "Agregar";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(522, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(168, 40);
+            this.btnSalir.TabIndex = 47;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // btnNuevo
             // 
@@ -490,6 +431,18 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Location = new System.Drawing.Point(349, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(167, 40);
+            this.btnEliminar.TabIndex = 48;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // timer
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
@@ -501,19 +454,17 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.txtMensajeVIH, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtMensajeHemo, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtMensajeOrina, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.txtMensajeSifilis, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtMensajeGlucosa, 0, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(129, 19);
+            this.tableLayoutPanel2.Controls.Add(this.txtMensajeOrina, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(129, 31);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 141);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 129);
             this.tableLayoutPanel2.TabIndex = 102;
             // 
             // txtMensajeVIH
@@ -522,9 +473,10 @@
             this.txtMensajeVIH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeVIH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeVIH.ForeColor = System.Drawing.Color.Red;
-            this.txtMensajeVIH.Location = new System.Drawing.Point(3, 31);
+            this.txtMensajeVIH.Location = new System.Drawing.Point(3, 35);
+            this.txtMensajeVIH.Multiline = true;
             this.txtMensajeVIH.Name = "txtMensajeVIH";
-            this.txtMensajeVIH.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeVIH.Size = new System.Drawing.Size(302, 20);
             this.txtMensajeVIH.TabIndex = 104;
             this.txtMensajeVIH.TextChanged += new System.EventHandler(this.txtMensajeVIH_TextChanged);
             // 
@@ -535,8 +487,9 @@
             this.txtMensajeHemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeHemo.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeHemo.Location = new System.Drawing.Point(3, 3);
+            this.txtMensajeHemo.Multiline = true;
             this.txtMensajeHemo.Name = "txtMensajeHemo";
-            this.txtMensajeHemo.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeHemo.Size = new System.Drawing.Size(302, 20);
             this.txtMensajeHemo.TabIndex = 0;
             this.txtMensajeHemo.TextChanged += new System.EventHandler(this.txtMensajeHemo_TextChanged);
             // 
@@ -546,9 +499,10 @@
             this.txtMensajeOrina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeOrina.ForeColor = System.Drawing.Color.Red;
-            this.txtMensajeOrina.Location = new System.Drawing.Point(3, 115);
+            this.txtMensajeOrina.Location = new System.Drawing.Point(3, 99);
+            this.txtMensajeOrina.Multiline = true;
             this.txtMensajeOrina.Name = "txtMensajeOrina";
-            this.txtMensajeOrina.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeOrina.Size = new System.Drawing.Size(302, 20);
             this.txtMensajeOrina.TabIndex = 3;
             this.txtMensajeOrina.TextChanged += new System.EventHandler(this.txtMensajeOrina_TextChanged);
             // 
@@ -558,23 +512,12 @@
             this.txtMensajeSifilis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeSifilis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeSifilis.ForeColor = System.Drawing.Color.Red;
-            this.txtMensajeSifilis.Location = new System.Drawing.Point(3, 59);
+            this.txtMensajeSifilis.Location = new System.Drawing.Point(3, 67);
+            this.txtMensajeSifilis.Multiline = true;
             this.txtMensajeSifilis.Name = "txtMensajeSifilis";
-            this.txtMensajeSifilis.Size = new System.Drawing.Size(302, 15);
+            this.txtMensajeSifilis.Size = new System.Drawing.Size(302, 20);
             this.txtMensajeSifilis.TabIndex = 2;
             this.txtMensajeSifilis.TextChanged += new System.EventHandler(this.txtMensajeSifilis_TextChanged);
-            // 
-            // txtMensajeGlucosa
-            // 
-            this.txtMensajeGlucosa.BackColor = System.Drawing.Color.White;
-            this.txtMensajeGlucosa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMensajeGlucosa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMensajeGlucosa.ForeColor = System.Drawing.Color.Red;
-            this.txtMensajeGlucosa.Location = new System.Drawing.Point(3, 87);
-            this.txtMensajeGlucosa.Name = "txtMensajeGlucosa";
-            this.txtMensajeGlucosa.Size = new System.Drawing.Size(302, 15);
-            this.txtMensajeGlucosa.TabIndex = 4;
-            this.txtMensajeGlucosa.TextChanged += new System.EventHandler(this.txtMensajeGlucosa_TextChanged);
             // 
             // groupBox2
             // 
@@ -603,16 +546,75 @@
             this.lblAlerta.TabIndex = 103;
             this.lblAlerta.Text = "¡ALERTA!";
             // 
-            // btnEliminar
+            // txtFechaExamenOrina
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(349, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(167, 40);
-            this.btnEliminar.TabIndex = 48;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.txtFechaExamenOrina.Location = new System.Drawing.Point(545, 104);
+            this.txtFechaExamenOrina.Name = "txtFechaExamenOrina";
+            this.txtFechaExamenOrina.Size = new System.Drawing.Size(72, 20);
+            this.txtFechaExamenOrina.TabIndex = 105;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtbateria";
+            this.Column1.HeaderText = "Codigo Bateria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fecha";
+            this.Column3.HeaderText = "Fecha Examen";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // hemoglobina
+            // 
+            this.hemoglobina.DataPropertyName = "hemoglobina";
+            this.hemoglobina.HeaderText = "Examen Hemoglobina";
+            this.hemoglobina.Name = "hemoglobina";
+            this.hemoglobina.ReadOnly = true;
+            // 
+            // vih
+            // 
+            this.vih.DataPropertyName = "vih";
+            this.vih.HeaderText = "Examen VIH";
+            this.vih.Name = "vih";
+            this.vih.ReadOnly = true;
+            // 
+            // sifilis
+            // 
+            this.sifilis.DataPropertyName = "sifilis";
+            this.sifilis.HeaderText = "Examen Sifilis";
+            this.sifilis.Name = "sifilis";
+            this.sifilis.ReadOnly = true;
+            // 
+            // glucosa
+            // 
+            this.glucosa.DataPropertyName = "glucosa";
+            this.glucosa.HeaderText = "Examen de Glucosa";
+            this.glucosa.Name = "glucosa";
+            this.glucosa.ReadOnly = true;
+            // 
+            // orina
+            // 
+            this.orina.DataPropertyName = "orina";
+            this.orina.HeaderText = "Examen de Orina";
+            this.orina.Name = "orina";
+            this.orina.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "fechaexamenorina";
+            this.Column9.HeaderText = "Fecha Examen Orina";
+            this.Column9.Name = "Column9";
             // 
             // frmBateria
             // 
@@ -671,7 +673,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txtMensajeGlucosa;
         private System.Windows.Forms.TextBox txtMensajeOrina;
         private System.Windows.Forms.TextBox txtMensajeSifilis;
         private System.Windows.Forms.TextBox txtMensajeHemo;
@@ -679,15 +680,16 @@
         private System.Windows.Forms.TextBox txtMensajeVIH;
         private System.Windows.Forms.Label lblAlerta;
         private System.Windows.Forms.DateTimePicker dtpFechaOrina;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtFechaExamenOrina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hemoglobina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vih;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sifilis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn glucosa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }
