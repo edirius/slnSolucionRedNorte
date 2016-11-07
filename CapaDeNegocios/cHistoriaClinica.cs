@@ -33,15 +33,16 @@ namespace CapaDeNegocios
         public int mes { get; set; }
         public int Transeunte { get; set; }
         public string OrigenEESS { get; set; }
+        public int Archivado { get; set; }
 
         public DataTable CrearHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS);
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS,Archivado);
         }
 
         public DataTable ModificarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS);
+            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS,Archivado);
         }
 
         public DataTable ListarHistoriaClinica()
@@ -56,8 +57,10 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinicaXHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica, año, mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica);
         }
+
+        
 
         public DataTable ListarYear()
         {
