@@ -12,16 +12,12 @@ namespace CapaUsuario.TerminoGestacion
 {
     public partial class frmMantenimientoTerminoGestacion : Form
     {
-        string sidtvisitadomiciliaria = "";
-        DateTime sfecha;
-        string smotivo = "";
-        string sdetalle = "";
-        string stipo = "";
+        string sidtterminogestacion = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string snombreobstetra = "";
 
-        CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliaria = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
+        CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
 
         public frmMantenimientoTerminoGestacion(string pidestablecimientosalud, string pnombreobstetra)
         {
@@ -67,6 +63,73 @@ namespace CapaUsuario.TerminoGestacion
             //{
             //    MessageBox.Show(m.Message);
             //}
+        }
+
+        private void rbtInstitucional_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtInstitucional.Checked == true)
+            {
+                gbParto.Enabled = true;
+                gbEESS.Enabled = true;
+            }
+        }
+
+        private void rbtDomiciliario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtDomiciliario.Checked == true)
+            {
+                gbParto.Enabled = true;
+                gbEESS.Enabled = false;
+            }
+        }
+
+        private void rbtAborto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtAborto.Checked == true)
+            {
+                gbParto.Enabled = false;
+                gbEESS.Enabled = true;
+            }
+        }
+
+        private void rbtInstitucional_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                rbtUnico.Focus();
+            }
+        }
+
+        private void rbtDomiciliario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                rbtUnico.Focus();
+            }
+        }
+
+        private void rbtAborto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                rbtUnico.Focus();
+            }
+        }
+
+        private void rbtUnico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFecha.Focus();
+            }
+        }
+
+        private void rbtMultiple_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFecha.Focus();
+            }
         }
     }
 }
