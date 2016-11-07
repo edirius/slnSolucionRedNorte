@@ -24,7 +24,11 @@ namespace CapaUsuario
         public string IdEstablecimiento = "";
         public string IdtHistoriaClinica = "";
 
-        
+        public string Codigo_Historia_Clinica { get; set; }
+        public string Fecha { get; set; }
+        public string DNI { get; set; }
+        public string Nombre_Completo { get; set; }
+        public string Edad { get; set; }
 
         int i = 0;
         string obstetra = "";
@@ -363,6 +367,14 @@ namespace CapaUsuario
 
             oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
             odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
+
+            Codigo_Historia_Clinica = odtHCXIdHC.Rows[0][1].ToString();
+            Fecha = odtHCXIdHC.Rows[0][21].ToString();
+            DNI = odtHCXIdHC.Rows[0][16].ToString();
+            Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
+            Edad = odtHCXIdHC.Rows[0][4].ToString();
+
+
 
             txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
             txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
@@ -1302,6 +1314,20 @@ namespace CapaUsuario
 
         private void buMorbilidad_Click(object sender, EventArgs e)
         {
+            
+            if (Codigo_Historia_Clinica != null) {
+
+                frmMorbilidad fMorbilidad = new frmMorbilidad();
+                fMorbilidad.Codigo_Historia_Clinica = Codigo_Historia_Clinica;
+                fMorbilidad.Fecha = Fecha;
+                fMorbilidad.DNI = DNI;
+                fMorbilidad.Nomnbre_Completo = Nombre_Completo;
+                fMorbilidad.Edad = Edad;
+                fMorbilidad.IdEstablecimiento = IdEstablecimiento;
+
+                fMorbilidad.ShowDialog();
+            }else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
