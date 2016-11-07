@@ -29,25 +29,25 @@ namespace CapaUsuario.Bateria
             IdHistoria = IdtHistoriaClinica;
             txtCodigoHistoria.Text = IdHistoria;
             IdEstablecimiento = IdtEstablecimiento;
-            ActualizarLista(IdEstablecimiento);
+            ActualizarLista();
             
 
         }
-        public void ActualizarLista(string id)
+        public void ActualizarLista()
         {
-            dgvListaBateria.DataSource = miBateria.ListarBateria();
+            dgvListaBateria.DataSource = miBateria.ListarBateria(txtCodigoHistoria.Text);
             Alertar();
 
         }
         private void Alertar()
         {
-            if (txtMensajeGlucosa.Text != "" || txtMensajeHemo.Text != "" || txtMensajeOrina.Text != "" || txtMensajeSifilis.Text != "" || txtMensajeVIH.Text != "")
+            if (txtMensajeHemo.Text != "" || txtMensajeOrina.Text != "" || txtMensajeSifilis.Text != "" || txtMensajeVIH.Text != "")
             {
                 lblAlerta.Visible = true;
                 pbAlerta.Visible = true;
                 timer.Start();
             }
-            else if (txtMensajeGlucosa.Text == "" || txtMensajeHemo.Text == "" || txtMensajeOrina.Text == "" || txtMensajeSifilis.Text == "" || txtMensajeVIH.Text == "")
+            else if ( txtMensajeHemo.Text == "" || txtMensajeOrina.Text == "" || txtMensajeSifilis.Text == "" || txtMensajeVIH.Text == "")
             {
                 pbAlerta.Visible = false;
                 lblAlerta.Visible = false;
@@ -56,42 +56,56 @@ namespace CapaUsuario.Bateria
         }
         private void Nuevo()
         {
+            //dgvListaBateria.Enabled = true;
+            dgvListaBateria.ClearSelection();
+            txtCodigoBateria.Text = "";
+            txtFechaExamenOrina.Enabled = true;
             dtpFecha.Value = DateTime.Today;
             dtpFecha.Enabled = true;
-            pbAlerta.Visible = true;
+            pbAlerta.Visible = false;
             nudHemoglobina.Text = "";
             nudHemoglobina.Enabled = true;
-            cbSifilis.Text = "gege";
+            cbSifilis.Text = "NO REACTIVO";
             cbSifilis.Enabled = true;
-            cbVIH.Text = "gege";
+            cbVIH.Text = "NO REACTIVO";
             cbVIH.Enabled = true;
             nudGlucosa.Enabled = true;
             nudGlucosa.Text = "";
             nudOrina.Text = "";
             nudOrina.Enabled = true;
-            dtpFechaOrina.Text = "";
             dtpFechaOrina.Enabled = true;
             btnInsertar.Enabled = true;
+            txtFechaExamenOrina.Text = "";
+            txtFechaTratamiento.Text = "";
+            txtMensajeHemo.Text = "";
+            txtMensajeOrina.Text = "";
+            txtMensajeSifilis.Text = "";
+            txtMensajeVIH.Text = "";
+            timer.Stop();
         }
         private void ConfiguracionInicial()
         {
-            
-            dtpFecha.Value = DateTime.Today;
-            dtpFecha.Enabled = false;
-            pbAlerta.Visible = false;
-            nudHemoglobina.Text = "";
-            nudHemoglobina.Enabled = false;
-            cbSifilis.Text = "gege";
-            cbSifilis.Enabled = false;
-            cbVIH.Text = "gege";
-            cbVIH.Enabled = false;
-            nudGlucosa.Enabled = false;
-            nudGlucosa.Text = "";
-            nudOrina.Text = "";
-            nudOrina.Enabled = false;
-            dtpFechaOrina.Text = "";
-            dtpFechaOrina.Enabled = false;
-            btnInsertar.Enabled = false;
+            //dgvListaBateria.ClearSelection();
+            ////dgvListaBateria.Enabled = false;
+            //txtCodigoBateria.Text = "";
+            //txtFechaExamenOrina.Enabled = false;
+            //txtFechaExamenOrina.Text = "";
+            //dtpFecha.Value = DateTime.Today;
+            //dtpFecha.Enabled = false;
+            //pbAlerta.Visible = false;
+            //nudHemoglobina.Text = "";
+            //nudHemoglobina.Enabled = false;
+            //cbSifilis.Text = "gege";
+            //cbSifilis.Enabled = false;
+            //cbVIH.Text = "gege";
+            //cbVIH.Enabled = false;
+            //nudGlucosa.Enabled = false;
+            //nudGlucosa.Text = "";
+            //nudOrina.Text = "";
+            //nudOrina.Enabled = false;
+            //dtpFechaOrina.Text = "";
+            //dtpFechaOrina.Enabled = false;
+            //btnInsertar.Enabled = false;
 
 
             ////txtCodigo.Text = "";
@@ -102,9 +116,11 @@ namespace CapaUsuario.Bateria
         }
         public void Agregar()
         {
-            try
+            //try
+            //{
+            if (txtCodigoBateria.Text == "")
             {
-                Tabla = micodigo.SiguientesCodigo("treciennacido", IdEstablecimiento);
+                Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
                 txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
                 miBateria.IdBateria = txtCodigoBateria.Text;
                 miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
@@ -114,7 +130,8 @@ namespace CapaUsuario.Bateria
                 miBateria.Sifilis = cbSifilis.Text;
                 miBateria.Glucosa = nudGlucosa.Text;
                 miBateria.Orina = nudOrina.Text;
-                miBateria.FechaExamenOrina = dtpFechaOrina.Text;
+                miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                miBateria.FechaTratamiento = txtFechaTratamiento.Text;
                 Tabla = miBateria.AgregarBateria();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
@@ -123,18 +140,22 @@ namespace CapaUsuario.Bateria
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();
-                    dgvListaBateria.DataSource = miBateria.ListarBateria();
+                    ActualizarLista();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
+
             }
-            catch
-            {
-                MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else { }
+                
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
 
         }
@@ -152,7 +173,8 @@ namespace CapaUsuario.Bateria
                     miBateria.Sifilis = cbSifilis.Text;
                     miBateria.Glucosa = nudGlucosa.Text;
                     miBateria.Orina = nudOrina.Text;
-                    miBateria.FechaExamenOrina = dtpFechaOrina.Text;
+                    miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                    miBateria.FechaTratamiento = txtFechaTratamiento.Text;
                     Tabla = miBateria.ModificarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
@@ -160,13 +182,13 @@ namespace CapaUsuario.Bateria
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
-                        dgvListaBateria.DataSource = miBateria.ListarBateria();
+                        ActualizarLista();
+                        Nuevo();
                     }
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
+                        Nuevo();
                     }
                 }
                 else
@@ -192,14 +214,14 @@ namespace CapaUsuario.Bateria
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
-                        dgvListaBateria.DataSource = miBateria.ListarBateria();
+                        ActualizarLista();
+                        Nuevo();
                     }
 
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
+                        Nuevo();
                     }
                     else
                     {
@@ -254,16 +276,21 @@ namespace CapaUsuario.Bateria
 
         private void dgvListaBateria_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            int valor = dgvListaBateria.CurrentCell.RowIndex;
-            txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
-            txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
-            dtpFecha.Text = dgvListaBateria[2, valor].Value.ToString();
-            nudHemoglobina.Text = dgvListaBateria[3, valor].Value.ToString();
-            cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
-            cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
-            nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
-            nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
-            dtpFechaOrina.Text = dgvListaBateria[8, valor].Value.ToString();
+            try {
+                int valor = dgvListaBateria.CurrentCell.RowIndex;
+                txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
+                txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
+                dtpFecha.Text = dgvListaBateria[2, valor].Value.ToString();
+                nudHemoglobina.Text = dgvListaBateria[3, valor].Value.ToString();
+                cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
+                cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
+                nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
+                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
+                txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
+                txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
+            }
+            catch { }
+            
             
         }
 
@@ -298,28 +325,28 @@ namespace CapaUsuario.Bateria
 
         private void nudGlucosa_ValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (Convert.ToDecimal(nudGlucosa.Value) < Convert.ToDecimal(60))
-                {
+            //try
+            //{
+            //    if (Convert.ToDecimal(nudGlucosa.Value) < Convert.ToDecimal(60))
+            //    {
 
-                    txtMensajeGlucosa.Text = "Alerta: La gestante tiene hipoglicemia";
-                    //playSonidoDeAlerta();
-                    //MessageBox.Show("La gestante tiene hipoglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (Convert.ToDecimal(nudGlucosa.Value) >= Convert.ToDecimal(60) && Convert.ToDecimal(nudGlucosa.Value) <= Convert.ToDecimal(130))
-                {
-                    txtMensajeGlucosa.Text = "";
-                }
-                else if (Convert.ToDecimal(nudGlucosa.Value) > Convert.ToDecimal(130))
-                {
+            //        txtMensajeGlucosa.Text = "Alerta: La gestante tiene hipoglicemia";
+            //        //playSonidoDeAlerta();
+            //        //MessageBox.Show("La gestante tiene hipoglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //    else if (Convert.ToDecimal(nudGlucosa.Value) >= Convert.ToDecimal(60) && Convert.ToDecimal(nudGlucosa.Value) <= Convert.ToDecimal(130))
+            //    {
+            //        txtMensajeGlucosa.Text = "";
+            //    }
+            //    else if (Convert.ToDecimal(nudGlucosa.Value) > Convert.ToDecimal(130))
+            //    {
 
-                    //playSonidoDeAlerta();
-                    txtMensajeGlucosa.Text = "Alerta: La gestante tiene hiperglucemia";
-                    //MessageBox.Show("La gestante tiene hiperglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
+            //        //playSonidoDeAlerta();
+            //        txtMensajeGlucosa.Text = "Alerta: La gestante tiene hiperglucemia";
+            //        //MessageBox.Show("La gestante tiene hiperglucemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            //catch { }
             
         }
 
@@ -328,7 +355,7 @@ namespace CapaUsuario.Bateria
             if (cbSifilis.Text == "REACTIVO")
             {
                 
-                txtMensajeSifilis.Text = "Alerta: LA GESTANTE TIENE SIFILIS POSITIVO";
+                txtMensajeSifilis.Text = "Alerta: La gestante tiene Sifilis positivo";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("La gestante tiene SIFILIS positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -361,7 +388,7 @@ namespace CapaUsuario.Bateria
         {
             if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
             {
-                txtMensajeHemo.Text = "Alerta: La Gestante tiene anemia";
+                txtMensajeHemo.Text = "Alerta: La gestante tiene anemia";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("Precaución: La Gestante tiene anemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -415,6 +442,69 @@ namespace CapaUsuario.Bateria
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void dtpFechaOrina_ValueChanged(object sender, EventArgs e)
+        {
+            txtFechaExamenOrina.Text = dtpFechaOrina.Text;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void dgvListaBateria_SelectionChanged(object sender, EventArgs e)
+        {
+            try {
+                int valor = dgvListaBateria.CurrentCell.RowIndex;
+                txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
+                txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
+                dtpFecha.Text = dgvListaBateria[2, valor].Value.ToString();
+                nudHemoglobina.Text = dgvListaBateria[3, valor].Value.ToString();
+                cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
+                cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
+                nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
+                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
+                txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
+                txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
+            }
+            catch { }
+            
+        }
+
+        private void dgvListaBateria_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                if (dgvListaBateria.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    if ((Convert.ToDecimal(dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Value) <= Convert.ToDecimal(11.5)))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToString(dgvListaBateria.Rows[e.RowIndex].Cells["vih"].Value) == "REACTIVO"))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["vih"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToString(dgvListaBateria.Rows[e.RowIndex].Cells["sifilis"].Value) == "REACTIVO"))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["sifilis"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToInt16(dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Value) >= 8 ))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Style.BackColor = Color.Red;
+                    }
+
+                }
+            }
+            catch { }
+
+        }
+
+        private void dtpFechaTratamiento_ValueChanged(object sender, EventArgs e)
+        {
+            txtFechaTratamiento.Text = dtpFechaTratamiento.Text;
         }
     }
 }

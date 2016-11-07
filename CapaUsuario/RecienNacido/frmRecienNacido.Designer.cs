@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMensajePeso = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar5 = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar1 = new System.Windows.Forms.TextBox();
-            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -69,9 +68,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -137,6 +137,7 @@
             this.txtMensajePeso.Size = new System.Drawing.Size(302, 15);
             this.txtMensajePeso.TabIndex = 2;
             this.txtMensajePeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMensajePeso.TextChanged += new System.EventHandler(this.txtMensajePeso_TextChanged);
             // 
             // txtMensajeApgar5
             // 
@@ -149,6 +150,7 @@
             this.txtMensajeApgar5.Size = new System.Drawing.Size(302, 15);
             this.txtMensajeApgar5.TabIndex = 1;
             this.txtMensajeApgar5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMensajeApgar5.TextChanged += new System.EventHandler(this.txtMensajeApgar5_TextChanged);
             // 
             // txtMensajeApgar1
             // 
@@ -163,25 +165,13 @@
             this.txtMensajeApgar1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMensajeApgar1.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
             // 
-            // pbAlerta
-            // 
-            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAlerta.BackColor = System.Drawing.Color.White;
-            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
-            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
-            this.pbAlerta.Name = "pbAlerta";
-            this.pbAlerta.Size = new System.Drawing.Size(120, 117);
-            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlerta.TabIndex = 99;
-            this.pbAlerta.TabStop = false;
-            // 
             // dgvRecienNacido
             // 
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToResizeColumns = false;
             this.dgvRecienNacido.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecienNacido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -192,22 +182,23 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column7,
+            this.APGAR1,
+            this.APGAR5,
+            this.PESO,
             this.Column6});
             this.dgvRecienNacido.GridColor = System.Drawing.Color.White;
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
             this.dgvRecienNacido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecienNacido_CellClick);
             this.dgvRecienNacido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRecienNacido_CellFormatting);
+            this.dgvRecienNacido.SelectionChanged += new System.EventHandler(this.dgvRecienNacido_SelectionChanged);
             // 
             // Column1
             // 
@@ -231,26 +222,26 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // Column4
+            // APGAR1
             // 
-            this.Column4.DataPropertyName = "apgar1";
-            this.Column4.HeaderText = "APGAR1";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.APGAR1.DataPropertyName = "apgar1";
+            this.APGAR1.HeaderText = "APGAR1";
+            this.APGAR1.Name = "APGAR1";
+            this.APGAR1.ReadOnly = true;
             // 
-            // Column5
+            // APGAR5
             // 
-            this.Column5.DataPropertyName = "apgar5";
-            this.Column5.HeaderText = "APGAR5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.APGAR5.DataPropertyName = "apgar5";
+            this.APGAR5.HeaderText = "APGAR5";
+            this.APGAR5.Name = "APGAR5";
+            this.APGAR5.ReadOnly = true;
             // 
-            // Column7
+            // PESO
             // 
-            this.Column7.DataPropertyName = "peso";
-            this.Column7.HeaderText = "Peso";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
+            this.PESO.DataPropertyName = "peso";
+            this.PESO.HeaderText = "Peso";
+            this.PESO.Name = "PESO";
+            this.PESO.ReadOnly = true;
             // 
             // Column6
             // 
@@ -532,6 +523,17 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // pbAlerta
+            // 
+            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(120, 117);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 99;
+            this.pbAlerta.TabStop = false;
+            // 
             // frmRecienNacido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,7 +551,6 @@
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -561,6 +562,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,15 +597,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nudPeso;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox txtMensajeApgar5;
         private System.Windows.Forms.ComboBox cbSexo;
         private System.Windows.Forms.TextBox txtMensajePeso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APGAR1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn APGAR5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PESO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

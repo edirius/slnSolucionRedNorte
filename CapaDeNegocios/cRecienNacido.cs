@@ -35,9 +35,9 @@ namespace CapaDeNegocios.RecienNacido
         {
             return Conexion.GDatos.TraerDataTable("spEliminarRecienNacido", IdRecienNacido);
         }
-        public DataTable ListarRecienNacido()
+        public DataTable ListarRecienNacido(string id)
         {
-            return Conexion.GDatos.TraerDataTable("spListarRecienNacido");
+            return Conexion.GDatos.TraerDataTable("spListarRecienNacido", id);
         }
 
 
