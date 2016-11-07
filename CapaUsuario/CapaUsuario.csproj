@@ -429,6 +429,12 @@
     <None Include="Resources\433cca0dd88ef63c7c362799956c5b33.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\bebe_dibujo.jpg" />
+    <None Include="img\embarazo.jpg" />
+    <None Include="img\odontologia.jpg" />
+    <None Include="img\gestante.jpg" />
+    <None Include="img\gestante2.jpg" />
+    <None Include="img\sexto_mes_embarazo.jpg" />
     <Content Include="Resources\SonidoDeAlerta.mp3" />
   </ItemGroup>
   <ItemGroup>
