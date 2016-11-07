@@ -262,6 +262,12 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             dtpFechaRN.Value = dtpFechaPuerpera.Value;
         }
+
+        private void cboMotivoPuerpera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboMotivoRN.Text = cboMotivoPuerpera.Text;
+        }
+
         private void dtpFechaPuerpera_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
