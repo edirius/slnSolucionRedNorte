@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMensajePeso = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar5 = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar1 = new System.Windows.Forms.TextBox();
-            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
@@ -62,16 +68,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -165,25 +165,13 @@
             this.txtMensajeApgar1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMensajeApgar1.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
             // 
-            // pbAlerta
-            // 
-            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAlerta.BackColor = System.Drawing.Color.White;
-            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
-            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
-            this.pbAlerta.Name = "pbAlerta";
-            this.pbAlerta.Size = new System.Drawing.Size(120, 117);
-            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlerta.TabIndex = 99;
-            this.pbAlerta.TabStop = false;
-            // 
             // dgvRecienNacido
             // 
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToResizeColumns = false;
             this.dgvRecienNacido.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecienNacido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -202,15 +190,65 @@
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
             this.dgvRecienNacido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecienNacido_CellClick);
             this.dgvRecienNacido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRecienNacido_CellFormatting);
             this.dgvRecienNacido.SelectionChanged += new System.EventHandler(this.dgvRecienNacido_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtreciennacido";
+            this.Column1.HeaderText = "Codigo Recien Nacido";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "fechaderivado";
+            this.Column3.HeaderText = "Fecha Derivado";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // APGAR1
+            // 
+            this.APGAR1.DataPropertyName = "apgar1";
+            this.APGAR1.HeaderText = "APGAR1";
+            this.APGAR1.Name = "APGAR1";
+            this.APGAR1.ReadOnly = true;
+            // 
+            // APGAR5
+            // 
+            this.APGAR5.DataPropertyName = "apgar5";
+            this.APGAR5.HeaderText = "APGAR5";
+            this.APGAR5.Name = "APGAR5";
+            this.APGAR5.ReadOnly = true;
+            // 
+            // PESO
+            // 
+            this.PESO.DataPropertyName = "peso";
+            this.PESO.HeaderText = "Peso";
+            this.PESO.Name = "PESO";
+            this.PESO.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "sexo";
+            this.Column6.HeaderText = "Sexo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -485,55 +523,16 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // Column1
+            // pbAlerta
             // 
-            this.Column1.DataPropertyName = "idtreciennacido";
-            this.Column1.HeaderText = "Codigo Recien Nacido";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fechaderivado";
-            this.Column3.HeaderText = "Fecha Derivado";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // APGAR1
-            // 
-            this.APGAR1.DataPropertyName = "apgar1";
-            this.APGAR1.HeaderText = "APGAR1";
-            this.APGAR1.Name = "APGAR1";
-            this.APGAR1.ReadOnly = true;
-            // 
-            // APGAR5
-            // 
-            this.APGAR5.DataPropertyName = "apgar5";
-            this.APGAR5.HeaderText = "APGAR5";
-            this.APGAR5.Name = "APGAR5";
-            this.APGAR5.ReadOnly = true;
-            // 
-            // PESO
-            // 
-            this.PESO.DataPropertyName = "peso";
-            this.PESO.HeaderText = "Peso";
-            this.PESO.Name = "PESO";
-            this.PESO.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "sexo";
-            this.Column6.HeaderText = "Sexo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(120, 117);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 99;
+            this.pbAlerta.TabStop = false;
             // 
             // frmRecienNacido
             // 
@@ -552,7 +551,6 @@
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -564,6 +562,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -28,13 +28,15 @@ namespace CapaDeNegocios
 
         public string FechaExamenOrina { get; set; }
 
+        public string FechaTratamiento { get; set; }
+
         public DataTable AgregarBateria()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina);
+            return Conexion.GDatos.TraerDataTable("spCrearBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina, FechaTratamiento);
         }
         public DataTable ModificarBateria()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina);
+            return Conexion.GDatos.TraerDataTable("spModificarBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina, FechaTratamiento);
         }
         public DataTable EliminarBateria()
         {

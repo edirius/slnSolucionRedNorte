@@ -29,11 +29,11 @@ namespace CapaUsuario.Bateria
             IdHistoria = IdtHistoriaClinica;
             txtCodigoHistoria.Text = IdHistoria;
             IdEstablecimiento = IdtEstablecimiento;
-            ActualizarLista(IdEstablecimiento);
+            ActualizarLista();
             
 
         }
-        public void ActualizarLista(string id)
+        public void ActualizarLista()
         {
             dgvListaBateria.DataSource = miBateria.ListarBateria(txtCodigoHistoria.Text);
             Alertar();
@@ -76,6 +76,7 @@ namespace CapaUsuario.Bateria
             dtpFechaOrina.Enabled = true;
             btnInsertar.Enabled = true;
             txtFechaExamenOrina.Text = "";
+            txtFechaTratamiento.Text = "";
             txtMensajeHemo.Text = "";
             txtMensajeOrina.Text = "";
             txtMensajeSifilis.Text = "";
@@ -130,6 +131,7 @@ namespace CapaUsuario.Bateria
                 miBateria.Glucosa = nudGlucosa.Text;
                 miBateria.Orina = nudOrina.Text;
                 miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                miBateria.FechaTratamiento = txtFechaTratamiento.Text;
                 Tabla = miBateria.AgregarBateria();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
@@ -138,12 +140,12 @@ namespace CapaUsuario.Bateria
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ConfiguracionInicial();
-                    dgvListaBateria.DataSource = miBateria.ListarBateria(txtCodigoHistoria.Text);
+                    ActualizarLista();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
 
             }
@@ -172,6 +174,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Glucosa = nudGlucosa.Text;
                     miBateria.Orina = nudOrina.Text;
                     miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                    miBateria.FechaTratamiento = txtFechaTratamiento.Text;
                     Tabla = miBateria.ModificarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
@@ -179,13 +182,13 @@ namespace CapaUsuario.Bateria
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
-                        dgvListaBateria.DataSource = miBateria.ListarBateria(txtCodigoHistoria.Text);
+                        ActualizarLista();
+                        Nuevo();
                     }
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
+                        Nuevo();
                     }
                 }
                 else
@@ -211,14 +214,14 @@ namespace CapaUsuario.Bateria
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
-                        dgvListaBateria.DataSource = miBateria.ListarBateria(txtCodigoHistoria.Text);
+                        ActualizarLista();
+                        Nuevo();
                     }
 
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
+                        Nuevo();
                     }
                     else
                     {
@@ -284,6 +287,7 @@ namespace CapaUsuario.Bateria
                 nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
+                txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
             }
             catch { }
             
@@ -463,6 +467,7 @@ namespace CapaUsuario.Bateria
                 nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
+                txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
             }
             catch { }
             
@@ -470,13 +475,36 @@ namespace CapaUsuario.Bateria
 
         private void dgvListaBateria_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //if (dgvListaBateria.Rows[e.RowIndex].Cells[0].Value != null)
-            //{
-            //    if ((Convert.ToInt16(dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Value) <= 11))
-            //    {
-            //        dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Style.BackColor = Color.Red;
-            //    }
-            //}
+            try
+            {
+                if (dgvListaBateria.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    if ((Convert.ToDecimal(dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Value) <= Convert.ToDecimal(11.5)))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["hemoglobina"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToString(dgvListaBateria.Rows[e.RowIndex].Cells["vih"].Value) == "REACTIVO"))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["vih"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToString(dgvListaBateria.Rows[e.RowIndex].Cells["sifilis"].Value) == "REACTIVO"))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["sifilis"].Style.BackColor = Color.Red;
+                    }
+                    if ((Convert.ToInt16(dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Value) >= 8 ))
+                    {
+                        dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Style.BackColor = Color.Red;
+                    }
+
+                }
+            }
+            catch { }
+
+        }
+
+        private void dtpFechaTratamiento_ValueChanged(object sender, EventArgs e)
+        {
+            txtFechaTratamiento.Text = dtpFechaTratamiento.Text;
         }
     }
 }
