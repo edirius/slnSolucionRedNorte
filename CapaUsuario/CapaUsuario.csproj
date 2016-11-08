@@ -38,6 +38,8 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,11 +111,29 @@
       <DependentUpon>rptListaGestantesControlPreNatal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Bateria\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmAlertaGestanteBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmAlertaGestanteBateria.Designer.cs">
+      <DependentUpon>frmAlertaGestanteBateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bateria\frmBateria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bateria\frmBateria.Designer.cs">
       <DependentUpon>frmBateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bateria\frmReporteGestantesSinBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmReporteGestantesSinBateria.Designer.cs">
+      <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
     </Compile>
     <Compile Include="CitaPreNatal\dsListaPreNatal.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -282,8 +302,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListaGestantesControlPreNatal.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\frmAlertaGestanteBateria.resx">
+      <DependentUpon>frmAlertaGestanteBateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bateria\frmBateria.resx">
       <DependentUpon>frmBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\frmReporteGestantesSinBateria.resx">
+      <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>

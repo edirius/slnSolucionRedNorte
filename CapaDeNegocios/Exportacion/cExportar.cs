@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using CapaDeDatos;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 
 namespace CapaDeNegocios.Exportacion
 {
