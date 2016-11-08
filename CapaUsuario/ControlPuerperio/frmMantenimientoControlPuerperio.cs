@@ -21,10 +21,11 @@ namespace CapaUsuario.ControlPeuperio
 
         CapaDeNegocios.ControlPeuperio.cControlPeuperio miControlPeuperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
 
-        public frmMantenimientoControlPeuperio(string pidestablecimientosalud, string pnombreobstetra, string pidthistoriaclinica)
+        public frmMantenimientoControlPeuperio(string pidthistoriaclinica)
         {
-            sidtestablecimientosalud = pidestablecimientosalud;
-            snombreobstetra = pnombreobstetra;
+            //string pidestablecimientosalud, string pnombreobstetra,
+            //sidtestablecimientosalud = pidestablecimientosalud;
+            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }

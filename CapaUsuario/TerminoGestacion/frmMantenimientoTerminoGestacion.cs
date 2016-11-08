@@ -20,10 +20,10 @@ namespace CapaUsuario.TerminoGestacion
 
         CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
 
-        public frmMantenimientoTerminoGestacion(string pidestablecimientosalud, string pnombreobstetra, string pidthistoriaclinica)
+        public frmMantenimientoTerminoGestacion(string pidthistoriaclinica)
         {
-            sidtestablecimientosalud = pidestablecimientosalud;
-            snombreobstetra = pnombreobstetra;
+            //sidtestablecimientosalud = pidestablecimientosalud;
+            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }

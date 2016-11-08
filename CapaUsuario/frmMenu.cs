@@ -110,7 +110,7 @@ namespace CapaUsuario
 
         private void visitaDomiciliariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria= new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdEstablecimientoSalud, NombreObstetra, "E006H00001");
+            VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria= new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria("E006H00001");
             fMantenimientoVisitaDomiciliaria.MdiParent = this;
             fMantenimientoVisitaDomiciliaria.Show();
         }
@@ -135,14 +135,14 @@ namespace CapaUsuario
 
         private void controlPeuperioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra, "E006H00001");
+            ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio("E006H00001");
             fMantenimientoControlPeuperio.MdiParent = this;
             fMantenimientoControlPeuperio.Show();
         }
 
         private void terminoGestaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdEstablecimientoSalud, NombreObstetra, "E006H00001");
+            TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion("E006H00001");
             fMantenimientoTerminoGestacion.MdiParent = this;
             fMantenimientoTerminoGestacion.Show();
         }

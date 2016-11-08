@@ -23,10 +23,10 @@ namespace CapaUsuario.VisitaDomiciliaria
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
 
-        public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra, string pidthistoriaclinica)
+        public frmMantenimientoVisitaDomiciliaria(string pidthistoriaclinica)
         {
-            sidtestablecimientosalud = pidestablecimientosalud;
-            snombreobstetra = pnombreobstetra;
+            //sidtestablecimientosalud = pidestablecimientosalud;
+            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
