@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -373,8 +373,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -396,9 +396,9 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(165, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 105);
             this.dgvListaBateria.TabIndex = 99;
@@ -485,10 +485,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbGuardar, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(165, 462);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -500,7 +497,7 @@
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.Location = new System.Drawing.Point(522, 62);
+            this.btnSalir.Location = new System.Drawing.Point(874, 437);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(168, 40);
             this.btnSalir.TabIndex = 47;
@@ -512,7 +509,7 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Location = new System.Drawing.Point(349, 62);
+            this.btnEliminar.Location = new System.Drawing.Point(875, 380);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(167, 40);
             this.btnEliminar.TabIndex = 48;
@@ -524,7 +521,7 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(176, 62);
+            this.btnNuevo.Location = new System.Drawing.Point(875, 324);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(167, 40);
             this.btnNuevo.TabIndex = 11;
@@ -536,7 +533,7 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(3, 62);
+            this.btnInsertar.Location = new System.Drawing.Point(864, 245);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(167, 40);
             this.btnInsertar.TabIndex = 8;
@@ -663,9 +660,9 @@
             this.pbGuardar.BackColor = System.Drawing.Color.Transparent;
             this.pbGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("pbGuardar.Image")));
-            this.pbGuardar.Location = new System.Drawing.Point(12, 135);
+            this.pbGuardar.Location = new System.Drawing.Point(176, 3);
             this.pbGuardar.Name = "pbGuardar";
-            this.pbGuardar.Size = new System.Drawing.Size(130, 130);
+            this.pbGuardar.Size = new System.Drawing.Size(107, 99);
             this.pbGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbGuardar.TabIndex = 104;
             this.pbGuardar.TabStop = false;
@@ -676,9 +673,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1041, 579);
-            this.Controls.Add(this.pbGuardar);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.dgvListaBateria);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBateria";

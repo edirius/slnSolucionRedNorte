@@ -147,14 +147,11 @@
   <metadata name="fechatratamiento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pbGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAEcBSURBVHhe7b17zG3bVdh3z+Oe
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsIAAA7CARUoSoAAAEcBSURBVHhe7b17zG3bVdh3z+Oe
         c+659zzuNcY2bRw1dRUV6ti9xLVDSFNQqoKcACEiIiaNVGIUGUj/SKOUQNQCIjyi4vBIPjuoUUAgQwgE
         JdSNWgIqLRhjTEJs/MDmYRMCCTbGxviFr03H+L49vznWPGPtvebe6zHmWr+f9NM3v73XYz7GWmPutfde
         +6Hf//3fR0RExI3pPoiIiIjrNhfAoh2COLcAVdiTOWKtubBN7MkXMZIAB7Enc8Rac2Eb2BMsYisCuNiT
@@ -460,6 +457,9 @@
         oibs94llIlf1cX1el/slUdfT9XU7uj3drm5f96P70/1CEzz00P8P4i993EclQ7UAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
