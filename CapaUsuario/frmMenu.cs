@@ -35,6 +35,7 @@ namespace CapaUsuario
             NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
             slNombre.Text = "Obstetra: " + NombreObstetra;
             slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
+            PasarDatos();
         }
         public void HacerConeccion()
         {
@@ -145,6 +146,14 @@ namespace CapaUsuario
             TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion("E006H00001");
             fMantenimientoTerminoGestacion.MdiParent = this;
             fMantenimientoTerminoGestacion.Show();
+        }
+
+        private void PasarDatos()
+        {
+            cVariables.v_idobstetra = IdObstetra;
+            cVariables.v_nombreobstetra = NombreObstetra;
+            cVariables.v_idestablecimientosalud = IdEstablecimientoSalud;
+            cVariables.v_nombreestablecimientosalud = NombreEstablecimientoSalud;
         }
     }
 }

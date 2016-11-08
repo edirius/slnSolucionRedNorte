@@ -22,15 +22,15 @@ namespace CapaUsuario.TerminoGestacion
 
         public frmMantenimientoTerminoGestacion(string pidthistoriaclinica)
         {
-            //sidtestablecimientosalud = pidestablecimientosalud;
-            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-
+            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
+            CargarDatos();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -47,11 +47,21 @@ namespace CapaUsuario.TerminoGestacion
                 else if (rbtMultiple.Checked == true) { miTerminoGestacion.reciennacido = rbtMultiple.Text; }
                 miTerminoGestacion.fecha = dtpFecha.Value;
                 miTerminoGestacion.persona = txtPersona.Text;
-                if (rbtEutosico.Checked == true) { miTerminoGestacion.tipoparto = rbtEutosico.Text; }
-                else if (rbtDistocico.Checked == true) { miTerminoGestacion.tipoparto = rbtDistocico.Text; }
+                if (rbtEutosico.Checked == false && rbtDistocico.Checked == false)
+                { miTerminoGestacion.tipoparto = ""; }
+                else
+                {
+                    if (rbtEutosico.Checked == true) { miTerminoGestacion.tipoparto = rbtEutosico.Text; }
+                    else if (rbtDistocico.Checked == true) { miTerminoGestacion.tipoparto = rbtDistocico.Text; }
+                }
                 miTerminoGestacion.modoparto = cboTipoParto.Text;
-                if (rbtAlumbramientoSI.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoSI.Text; }
-                else if (rbtAlumbramientoNO.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoNO.Text; }
+                if (rbtAlumbramientoSI.Checked == false && rbtAlumbramientoNO.Checked == false)
+                { miTerminoGestacion.manejoalumbramiento = ""; }
+                else
+                {
+                    if (rbtAlumbramientoSI.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoSI.Text; }
+                    else if (rbtAlumbramientoNO.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoNO.Text; }
+                }
                 miTerminoGestacion.tipoinstitucion = cboHospital.Text;
                 miTerminoGestacion.nombreinstitucion = txtHospital.Text;
                 miTerminoGestacion.idthistoriaclinica = sidthistoriaclinica;
@@ -93,25 +103,80 @@ namespace CapaUsuario.TerminoGestacion
 
         private void CargarDatos()
         {
+            try
+            {
+                int contador = 0;
+                foreach (DataRow row in miTerminoGestacion.ListarTerminoGestacion(sidthistoriaclinica).Rows)
+                {
+                    contador += 1;
+                    saccion = 2;
+                    sidtterminogestacion = row["idtterminogestacion"].ToString();
+                    if (row["gestacion"].ToString() == "Normal") { rbtNormal.Checked = true; }
+                    else if (row["gestacion"].ToString() == "Aborto") { rbtAborto.Checked = true; }
+                    if (row["lugar"].ToString() == "Institucion") { rbtInstitucion.Checked = true; }
+                    else if (row["lugar"].ToString() == "Domicilio") { rbtDomicilio.Checked = true; }
+                    if (row["reciennacido"].ToString() == "Unico") { rbtUnico.Checked = true; }
+                    else if (row["reciennacido"].ToString() == "Multiple") { rbtMultiple.Checked = true; }
+                    dtpFecha.Value = Convert.ToDateTime(row["fecha"]);
+                    txtPersona.Text = row["persona"].ToString();
+                    if (row["tipoparto"].ToString() == "") { rbtEutosico.Checked = false; rbtDistocico.Checked = false; }
+                    else if (row["tipoparto"].ToString() == "EUTOCICO") { rbtEutosico.Checked = true; }
+                    else if (row["tipoparto"].ToString() == "DISTOCICO") { rbtDistocico.Checked = true; }
+                    if (row["modoparto"].ToString() == "") { cboTipoParto.SelectedIndex = -1; }
+                    else { cboTipoParto.Text = row["modoparto"].ToString(); }
+                    if (row["manejoalumbramiento"].ToString() == "") { rbtAlumbramientoSI.Checked = false; rbtAlumbramientoNO.Checked = false; }
+                    else if (row["manejoalumbramiento"].ToString() == "SI") { rbtAlumbramientoSI.Checked = true; }
+                    else if (row["manejoalumbramiento"].ToString() == "NO") { rbtAlumbramientoNO.Checked = true; }
+                    if (row["tipoinstitucion"].ToString() == "") { cboHospital.SelectedIndex = -1; }
+                    else { cboHospital.Text = row["tipoinstitucion"].ToString(); }
+                    txtHospital.Text = row["nombreinstitucion"].ToString();
+                    sidthistoriaclinica = row["idthistoriaclinica"].ToString();
+                }
+                if (contador == 0)
+                {
+                    saccion = 1;
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
         }
 
         private void Habilitar()
         {
             if (rbtNormal.Checked == true)
             {
+                txtPersona.Enabled = true;
+                rbtDistocico.Checked = false;
+                cboTipoParto.SelectedIndex = -1;
+                rbtAlumbramientoNO.Checked = false;
                 if (rbtInstitucion.Checked == true)
                 {
+                    rbtEutosico.Checked = true;
+                    rbtAlumbramientoSI.Checked = true;
                     gbParto.Enabled = true;
                     gbEESS.Enabled = true;
                 }
                 if (rbtDomicilio.Checked == true)
                 {
+                    rbtEutosico.Checked = false;
+                    rbtAlumbramientoSI.Checked = false;
+                    cboHospital.SelectedIndex = -1;
+                    txtHospital.Text = "";
                     gbParto.Enabled = false;
                     gbEESS.Enabled = false;
                 }
             }
             else if (rbtAborto.Checked == true)
             {
+                txtPersona.Text = "";
+                txtPersona.Enabled = false;
+                rbtEutosico.Checked = false;
+                rbtDistocico.Checked = false;
+                cboTipoParto.SelectedIndex = -1;
+                rbtAlumbramientoSI.Checked = false;
+                rbtAlumbramientoNO.Checked = false;
                 if (rbtInstitucion.Checked == true)
                 {
                     gbParto.Enabled = false;
@@ -119,6 +184,8 @@ namespace CapaUsuario.TerminoGestacion
                 }
                 if (rbtDomicilio.Checked == true)
                 {
+                    cboHospital.SelectedIndex = -1;
+                    txtHospital.Text = "";
                     gbParto.Enabled = false;
                     gbEESS.Enabled = false;
                 }

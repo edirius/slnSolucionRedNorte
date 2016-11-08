@@ -25,15 +25,15 @@ namespace CapaUsuario.VisitaDomiciliaria
 
         public frmMantenimientoVisitaDomiciliaria(string pidthistoriaclinica)
         {
-            //sidtestablecimientosalud = pidestablecimientosalud;
-            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            tabControl1_SelectedIndexChanged(sender, e);
+            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
+            VerificarTerminoGestacion();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -139,23 +139,27 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             try
             {
-                if (sidtvisitadomiciliariagestante == "" || sidtvisitadomiciliariapuerperarn == "")
-                {
-                    MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
                 if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
                 {
                     return;
                 }
-
                 if (stipo == "GESTANTE")
                 {
+                    if (sidtvisitadomiciliariagestante == "")
+                    {
+                        MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
                     CargarDatosGestante();
                 }
                 else if (stipo == "PUERPERIA/R.NACIDO")
                 {
+                    if (sidtvisitadomiciliariapuerperarn == "")
+                    {
+                        MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     miVisitaDomiciliariaPuerperaRN.EliminarVisitaDomiciliariaPuerperaRN(sidtvisitadomiciliariapuerperarn);
                     CargarDatosPuerperaRN();
                 }
@@ -175,13 +179,49 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             if (tabControl1.SelectedTab == tabPage1)
             {
+                if (tabPage1.Enabled == false)
+                {
+                    MessageBox.Show("No puede registrar Visitas Domiciliarias para Gestantes.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tabControl1.SelectedIndex = 1;
+                    return;
+                }
                 stipo = "GESTANTE";
                 CargarDatosGestante();
             }
             else
             {
+                if (tabPage2.Enabled == false)
+                {
+                    MessageBox.Show("No puede registrar Visitas Domiciliarias para Puerpera/Recien Nacido.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tabControl1.SelectedIndex = 0;
+                    return;
+                }
                 stipo = "PUERPERIA/R.NACIDO";
                 CargarDatosPuerperaRN();
+            }
+        }
+
+        private void VerificarTerminoGestacion()
+        {
+            try
+            {
+                CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
+                if (miTerminoGestacion.ListarTerminoGestacion(sidthistoriaclinica).Rows.Count == 0)
+                {
+                    tabPage1.Enabled = true;
+                    tabPage2.Enabled = false;
+                    tabControl1.SelectedIndex = 0;
+                }
+                else
+                {
+                    tabPage1.Enabled = false;
+                    tabPage2.Enabled = true;
+                    tabControl1.SelectedIndex = 1;
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
             }
         }
 
