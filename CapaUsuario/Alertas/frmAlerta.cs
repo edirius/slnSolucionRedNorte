@@ -43,5 +43,11 @@ namespace CapaUsuario.Alertas
             fArterial.CodigoEstablecimiento = CodigoEstablecimiento;
             fArterial.Show();
         }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria(CodigoEstablecimiento);
+            frmAlertaGestanteSinBateria.Show();
+        }
     }
 }
