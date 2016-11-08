@@ -1334,6 +1334,22 @@ namespace CapaUsuario
         private void buControlPuerperio_Click(object sender, EventArgs e)
         {
 
+            if (Codigo_Historia_Clinica != null)
+            {
+                /*
+                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
+
+                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
+                fMantenimientoControlPeuperio.MdiParent = this;
+                fMantenimientoControlPeuperio.Show();     
+
+                fMorbilidad.ShowDialog();
+                */
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            
         }
 
         private void buVisitaDomiciliaria_Click(object sender, EventArgs e)
