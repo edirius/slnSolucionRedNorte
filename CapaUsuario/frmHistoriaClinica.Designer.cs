@@ -1311,7 +1311,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.embarazo;
+            //this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.embarazo;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(9, 317);
@@ -1324,7 +1324,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestante;
+            //this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestante;
             this.pictureBox4.Location = new System.Drawing.Point(1198, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(10, 317);
@@ -1336,7 +1336,7 @@
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.odontologia;
+            //this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.odontologia;
             this.pictureBox3.Location = new System.Drawing.Point(799, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(193, 48);
@@ -1348,7 +1348,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.bebe_dibujo;
+            //this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.bebe_dibujo;
             this.pictureBox1.Location = new System.Drawing.Point(202, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 48);
@@ -1360,7 +1360,7 @@
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.gestante2;
+            //this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.gestante2;
             this.pictureBox5.Location = new System.Drawing.Point(3, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(193, 48);
@@ -1372,7 +1372,7 @@
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Image = global::CapaUsuario.Properties.Resources.sexto_mes_embarazo;
+            //this.pictureBox6.Image = global::CapaUsuario.Properties.Resources.sexto_mes_embarazo;
             this.pictureBox6.Location = new System.Drawing.Point(998, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(198, 48);
