@@ -247,17 +247,11 @@
     <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.designer.cs">
       <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.cs">
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPuerperio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.designer.cs">
-      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlPuerperio\frmControlPeuperio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlPuerperio\frmControlPeuperio.Designer.cs">
-      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPuerperio.designer.cs">
+      <DependentUpon>frmMantenimientoControlPuerperio.cs</DependentUpon>
     </Compile>
     <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.cs">
       <SubType>Form</SubType>
@@ -357,11 +351,8 @@
     <EmbeddedResource Include="TerminoGestacion\frmMantenimientoTerminoGestacion.resx">
       <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPeuperio.resx">
-      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlPuerperio\frmControlPeuperio.resx">
-      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
+    <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPuerperio.resx">
+      <DependentUpon>frmMantenimientoControlPuerperio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.resx">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>

@@ -23,16 +23,16 @@ namespace CapaUsuario.VisitaDomiciliaria
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
 
-        public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra)
+        public frmMantenimientoVisitaDomiciliaria(string pidestablecimientosalud, string pnombreobstetra, string pidthistoriaclinica)
         {
             sidtestablecimientosalud = pidestablecimientosalud;
             snombreobstetra = pnombreobstetra;
+            sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            sidthistoriaclinica = "E006H00002";
             tabControl1_SelectedIndexChanged(sender, e);
         }
 
@@ -262,6 +262,12 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             dtpFechaRN.Value = dtpFechaPuerpera.Value;
         }
+
+        private void cboMotivoPuerpera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboMotivoRN.Text = cboMotivoPuerpera.Text;
+        }
+
         private void dtpFechaPuerpera_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
