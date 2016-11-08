@@ -34,38 +34,40 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPersona = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.rbtDomiciliario = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.rbtAborto = new System.Windows.Forms.RadioButton();
-            this.rbtInstitucional = new System.Windows.Forms.RadioButton();
+            this.rbtNormal = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.rbtMultiple = new System.Windows.Forms.RadioButton();
             this.rbtUnico = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.rbtDomicilio = new System.Windows.Forms.RadioButton();
+            this.rbtInstitucion = new System.Windows.Forms.RadioButton();
+            this.txtHospital = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.rbtAlumbramientoSI = new System.Windows.Forms.RadioButton();
+            this.rbtAlumbramientoNO = new System.Windows.Forms.RadioButton();
+            this.rbtEutosico = new System.Windows.Forms.RadioButton();
+            this.rbtDistocico = new System.Windows.Forms.RadioButton();
             this.gbParto = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTipoParto = new System.Windows.Forms.ComboBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.gbEESS = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboHospital = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -73,10 +75,12 @@
             this.gbGeneral.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.gbParto.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -147,7 +151,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dtpFecha, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtPersona, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 19);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -176,24 +180,24 @@
             this.dtpFecha.Size = new System.Drawing.Size(116, 20);
             this.dtpFecha.TabIndex = 118;
             // 
-            // textBox2
+            // txtPersona
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(296, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 20);
-            this.textBox2.TabIndex = 139;
+            this.txtPersona.Location = new System.Drawing.Point(296, 3);
+            this.txtPersona.Name = "txtPersona";
+            this.txtPersona.Size = new System.Drawing.Size(191, 20);
+            this.txtPersona.TabIndex = 139;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(174, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 26);
+            this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 141;
-            this.label5.Text = "Personal que Atendio el Parto :";
+            this.label5.Text = "Personal que Atendio :";
             // 
             // tableLayoutPanel1
             // 
@@ -202,62 +206,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(154, 292);
             this.tableLayoutPanel1.TabIndex = 115;
             // 
-            // groupBox2
+            // groupBox1
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(148, 169);
-            this.groupBox2.TabIndex = 115;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Parto";
+            this.groupBox1.Controls.Add(this.tableLayoutPanel11);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(148, 91);
+            this.groupBox1.TabIndex = 123;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gestación";
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel11
             // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.rbtDomiciliario, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rbtAborto, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rbtInstitucional, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(136, 144);
-            this.tableLayoutPanel3.TabIndex = 117;
-            // 
-            // rbtDomiciliario
-            // 
-            this.rbtDomiciliario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtDomiciliario.AutoSize = true;
-            this.rbtDomiciliario.Location = new System.Drawing.Point(3, 51);
-            this.rbtDomiciliario.Name = "rbtDomiciliario";
-            this.rbtDomiciliario.Size = new System.Drawing.Size(130, 42);
-            this.rbtDomiciliario.TabIndex = 1;
-            this.rbtDomiciliario.Text = "Domiciliario";
-            this.rbtDomiciliario.UseVisualStyleBackColor = true;
-            this.rbtDomiciliario.CheckedChanged += new System.EventHandler(this.rbtDomiciliario_CheckedChanged);
-            this.rbtDomiciliario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtDomiciliario_KeyPress);
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel11.Controls.Add(this.rbtAborto, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.rbtNormal, 0, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(136, 66);
+            this.tableLayoutPanel11.TabIndex = 117;
             // 
             // rbtAborto
             // 
@@ -265,31 +255,31 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtAborto.AutoSize = true;
-            this.rbtAborto.Location = new System.Drawing.Point(3, 99);
+            this.rbtAborto.Location = new System.Drawing.Point(3, 36);
             this.rbtAborto.Name = "rbtAborto";
-            this.rbtAborto.Size = new System.Drawing.Size(130, 42);
-            this.rbtAborto.TabIndex = 2;
+            this.rbtAborto.Size = new System.Drawing.Size(130, 27);
+            this.rbtAborto.TabIndex = 1;
             this.rbtAborto.Text = "Aborto";
             this.rbtAborto.UseVisualStyleBackColor = true;
             this.rbtAborto.CheckedChanged += new System.EventHandler(this.rbtAborto_CheckedChanged);
             this.rbtAborto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtAborto_KeyPress);
             // 
-            // rbtInstitucional
+            // rbtNormal
             // 
-            this.rbtInstitucional.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbtInstitucional.AutoSize = true;
-            this.rbtInstitucional.Checked = true;
-            this.rbtInstitucional.Location = new System.Drawing.Point(3, 3);
-            this.rbtInstitucional.Name = "rbtInstitucional";
-            this.rbtInstitucional.Size = new System.Drawing.Size(130, 42);
-            this.rbtInstitucional.TabIndex = 0;
-            this.rbtInstitucional.TabStop = true;
-            this.rbtInstitucional.Text = "Institucional";
-            this.rbtInstitucional.UseVisualStyleBackColor = true;
-            this.rbtInstitucional.CheckedChanged += new System.EventHandler(this.rbtInstitucional_CheckedChanged);
-            this.rbtInstitucional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtInstitucional_KeyPress);
+            this.rbtNormal.AutoSize = true;
+            this.rbtNormal.Checked = true;
+            this.rbtNormal.Location = new System.Drawing.Point(3, 3);
+            this.rbtNormal.Name = "rbtNormal";
+            this.rbtNormal.Size = new System.Drawing.Size(130, 27);
+            this.rbtNormal.TabIndex = 0;
+            this.rbtNormal.TabStop = true;
+            this.rbtNormal.Text = "Normal";
+            this.rbtNormal.UseVisualStyleBackColor = true;
+            this.rbtNormal.CheckedChanged += new System.EventHandler(this.rbtNormal_CheckedChanged);
+            this.rbtNormal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtNormal_KeyPress);
             // 
             // groupBox3
             // 
@@ -297,9 +287,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox3.Location = new System.Drawing.Point(3, 178);
+            this.groupBox3.Location = new System.Drawing.Point(3, 197);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(148, 111);
+            this.groupBox3.Size = new System.Drawing.Size(148, 92);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Recien Nacido";
@@ -318,7 +308,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(136, 86);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(136, 67);
             this.tableLayoutPanel4.TabIndex = 138;
             // 
             // rbtMultiple
@@ -327,9 +317,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rbtMultiple.AutoSize = true;
-            this.rbtMultiple.Location = new System.Drawing.Point(3, 46);
+            this.rbtMultiple.Location = new System.Drawing.Point(3, 36);
             this.rbtMultiple.Name = "rbtMultiple";
-            this.rbtMultiple.Size = new System.Drawing.Size(130, 37);
+            this.rbtMultiple.Size = new System.Drawing.Size(130, 28);
             this.rbtMultiple.TabIndex = 1;
             this.rbtMultiple.Text = "Multiple";
             this.rbtMultiple.UseVisualStyleBackColor = true;
@@ -344,22 +334,85 @@
             this.rbtUnico.Checked = true;
             this.rbtUnico.Location = new System.Drawing.Point(3, 3);
             this.rbtUnico.Name = "rbtUnico";
-            this.rbtUnico.Size = new System.Drawing.Size(130, 37);
+            this.rbtUnico.Size = new System.Drawing.Size(130, 27);
             this.rbtUnico.TabIndex = 0;
             this.rbtUnico.TabStop = true;
             this.rbtUnico.Text = "Unico";
             this.rbtUnico.UseVisualStyleBackColor = true;
             this.rbtUnico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtUnico_KeyPress);
             // 
-            // textBox1
+            // groupBox2
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(174, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 20);
-            this.textBox1.TabIndex = 137;
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 100);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(148, 91);
+            this.groupBox2.TabIndex = 115;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lugar";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.rbtDomicilio, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.rbtInstitucion, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(136, 66);
+            this.tableLayoutPanel3.TabIndex = 117;
+            // 
+            // rbtDomicilio
+            // 
+            this.rbtDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtDomicilio.AutoSize = true;
+            this.rbtDomicilio.Location = new System.Drawing.Point(3, 36);
+            this.rbtDomicilio.Name = "rbtDomicilio";
+            this.rbtDomicilio.Size = new System.Drawing.Size(130, 27);
+            this.rbtDomicilio.TabIndex = 1;
+            this.rbtDomicilio.Text = "Domicilio";
+            this.rbtDomicilio.UseVisualStyleBackColor = true;
+            this.rbtDomicilio.CheckedChanged += new System.EventHandler(this.rbtDomiciliario_CheckedChanged);
+            this.rbtDomicilio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtDomiciliario_KeyPress);
+            // 
+            // rbtInstitucion
+            // 
+            this.rbtInstitucion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbtInstitucion.AutoSize = true;
+            this.rbtInstitucion.Checked = true;
+            this.rbtInstitucion.Location = new System.Drawing.Point(3, 3);
+            this.rbtInstitucion.Name = "rbtInstitucion";
+            this.rbtInstitucion.Size = new System.Drawing.Size(130, 27);
+            this.rbtInstitucion.TabIndex = 0;
+            this.rbtInstitucion.TabStop = true;
+            this.rbtInstitucion.Text = "Institucion";
+            this.rbtInstitucion.UseVisualStyleBackColor = true;
+            this.rbtInstitucion.CheckedChanged += new System.EventHandler(this.rbtInstitucional_CheckedChanged);
+            this.rbtInstitucion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtInstitucional_KeyPress);
+            // 
+            // txtHospital
+            // 
+            this.txtHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHospital.Location = new System.Drawing.Point(174, 31);
+            this.txtHospital.Name = "txtHospital";
+            this.txtHospital.Size = new System.Drawing.Size(313, 20);
+            this.txtHospital.TabIndex = 137;
             // 
             // label3
             // 
@@ -397,61 +450,63 @@
             this.label4.TabIndex = 140;
             this.label4.Text = "Manejo de Alumbramiento :";
             // 
-            // radioButton7
+            // rbtAlumbramientoSI
             // 
-            this.radioButton7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtAlumbramientoSI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Checked = true;
-            this.radioButton7.Location = new System.Drawing.Point(3, 3);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(144, 16);
-            this.radioButton7.TabIndex = 116;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "SI";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.rbtAlumbramientoSI.AutoSize = true;
+            this.rbtAlumbramientoSI.Checked = true;
+            this.rbtAlumbramientoSI.Location = new System.Drawing.Point(3, 3);
+            this.rbtAlumbramientoSI.Name = "rbtAlumbramientoSI";
+            this.rbtAlumbramientoSI.Size = new System.Drawing.Size(144, 16);
+            this.rbtAlumbramientoSI.TabIndex = 116;
+            this.rbtAlumbramientoSI.TabStop = true;
+            this.rbtAlumbramientoSI.Text = "SI";
+            this.rbtAlumbramientoSI.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // rbtAlumbramientoNO
             // 
-            this.radioButton8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtAlumbramientoNO.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(153, 3);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(145, 16);
-            this.radioButton8.TabIndex = 117;
-            this.radioButton8.Text = "NO";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.rbtAlumbramientoNO.AutoSize = true;
+            this.rbtAlumbramientoNO.Location = new System.Drawing.Point(153, 3);
+            this.rbtAlumbramientoNO.Name = "rbtAlumbramientoNO";
+            this.rbtAlumbramientoNO.Size = new System.Drawing.Size(145, 16);
+            this.rbtAlumbramientoNO.TabIndex = 117;
+            this.rbtAlumbramientoNO.Text = "NO";
+            this.rbtAlumbramientoNO.UseVisualStyleBackColor = true;
             // 
-            // radioButton9
+            // rbtEutosico
             // 
-            this.radioButton9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtEutosico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Checked = true;
-            this.radioButton9.Location = new System.Drawing.Point(3, 3);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(144, 15);
-            this.radioButton9.TabIndex = 117;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "EUTOSICO";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.rbtEutosico.AutoSize = true;
+            this.rbtEutosico.Checked = true;
+            this.rbtEutosico.Location = new System.Drawing.Point(3, 3);
+            this.rbtEutosico.Name = "rbtEutosico";
+            this.rbtEutosico.Size = new System.Drawing.Size(144, 15);
+            this.rbtEutosico.TabIndex = 117;
+            this.rbtEutosico.TabStop = true;
+            this.rbtEutosico.Text = "EUTOSICO";
+            this.rbtEutosico.UseVisualStyleBackColor = true;
+            this.rbtEutosico.CheckedChanged += new System.EventHandler(this.rbtEutosico_CheckedChanged);
             // 
-            // radioButton10
+            // rbtDistocico
             // 
-            this.radioButton10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rbtDistocico.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(153, 3);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(145, 15);
-            this.radioButton10.TabIndex = 142;
-            this.radioButton10.Text = "DISTOCICO";
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.rbtDistocico.AutoSize = true;
+            this.rbtDistocico.Location = new System.Drawing.Point(153, 3);
+            this.rbtDistocico.Name = "rbtDistocico";
+            this.rbtDistocico.Size = new System.Drawing.Size(145, 15);
+            this.rbtDistocico.TabIndex = 142;
+            this.rbtDistocico.Text = "DISTOCICO";
+            this.rbtDistocico.UseVisualStyleBackColor = true;
+            this.rbtDistocico.CheckedChanged += new System.EventHandler(this.rbtDistocico_CheckedChanged);
             // 
             // gbParto
             // 
@@ -473,10 +528,9 @@
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel6.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.comboBox2, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.cboTipoParto, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.groupBox5, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.groupBox4, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(6, 13);
@@ -489,29 +543,20 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(490, 121);
             this.tableLayoutPanel6.TabIndex = 145;
             // 
-            // label6
+            // cboTipoParto
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
-            this.label6.TabIndex = 138;
-            this.label6.Text = "Modo Parto :";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cboTipoParto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cboTipoParto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoParto.FormattingEnabled = true;
+            this.cboTipoParto.Items.AddRange(new object[] {
             "VERTICAL",
             "HORIZONTAL"});
-            this.comboBox2.Location = new System.Drawing.Point(174, 48);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(313, 21);
-            this.comboBox2.TabIndex = 120;
+            this.cboTipoParto.Location = new System.Drawing.Point(174, 48);
+            this.cboTipoParto.Name = "cboTipoParto";
+            this.cboTipoParto.Size = new System.Drawing.Size(313, 21);
+            this.cboTipoParto.TabIndex = 120;
             // 
             // groupBox5
             // 
@@ -533,8 +578,8 @@
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Controls.Add(this.radioButton7, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.radioButton8, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.rbtAlumbramientoSI, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.rbtAlumbramientoNO, 1, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
@@ -562,8 +607,8 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.radioButton9, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.radioButton10, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.rbtEutosico, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.rbtDistocico, 1, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -593,8 +638,8 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel7.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.textBox1, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txtHospital, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.cboHospital, 1, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(6, 13);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
@@ -604,20 +649,21 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(490, 56);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // comboBox1
+            // cboHospital
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cboHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboHospital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHospital.FormattingEnabled = true;
+            this.cboHospital.Items.AddRange(new object[] {
             "HOSPITAL",
             "ESTABLECIMIENTO DE SALUD"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(313, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cboHospital.Location = new System.Drawing.Point(174, 3);
+            this.cboHospital.Name = "cboHospital";
+            this.cboHospital.Size = new System.Drawing.Size(313, 21);
+            this.cboHospital.TabIndex = 0;
+            this.cboHospital.SelectedIndexChanged += new System.EventHandler(this.cboHospital_SelectedIndexChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -696,12 +742,15 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.gbParto.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
@@ -730,22 +779,21 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHospital;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPersona;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton rbtAlumbramientoSI;
+        private System.Windows.Forms.RadioButton rbtAlumbramientoNO;
+        private System.Windows.Forms.RadioButton rbtEutosico;
+        private System.Windows.Forms.RadioButton rbtDistocico;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.RadioButton rbtDomiciliario;
-        private System.Windows.Forms.RadioButton rbtAborto;
-        private System.Windows.Forms.RadioButton rbtInstitucional;
+        private System.Windows.Forms.RadioButton rbtDomicilio;
+        private System.Windows.Forms.RadioButton rbtInstitucion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.RadioButton rbtMultiple;
@@ -762,8 +810,11 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboHospital;
+        private System.Windows.Forms.ComboBox cboTipoParto;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private System.Windows.Forms.RadioButton rbtAborto;
+        private System.Windows.Forms.RadioButton rbtNormal;
     }
 }

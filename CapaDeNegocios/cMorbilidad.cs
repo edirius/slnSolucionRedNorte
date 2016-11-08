@@ -35,6 +35,11 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarMantenimientoMorbilidad", Idtestablecimientosalud);
         }
 
+        public DataTable ListarMorbilidadXTipo()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarMorbilidadXTipo", Idtestablecimientosalud,Tipo);
+        }
+
         public DataTable BuscarMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spBusquedaMantenimientoMorbilidad", Descripcion);

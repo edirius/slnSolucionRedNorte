@@ -21,16 +21,17 @@ namespace CapaUsuario.ControlPeuperio
 
         CapaDeNegocios.ControlPeuperio.cControlPeuperio miControlPeuperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
 
-        public frmMantenimientoControlPeuperio(string pidestablecimientosalud, string pnombreobstetra)
+        public frmMantenimientoControlPeuperio(string pidthistoriaclinica)
         {
-            sidtestablecimientosalud = pidestablecimientosalud;
-            snombreobstetra = pnombreobstetra;
+            //string pidestablecimientosalud, string pnombreobstetra,
+            //sidtestablecimientosalud = pidestablecimientosalud;
+            //snombreobstetra = pnombreobstetra;
+            sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            sidthistoriaclinica = "E006H00002";
             CargarDatos();
         }
 

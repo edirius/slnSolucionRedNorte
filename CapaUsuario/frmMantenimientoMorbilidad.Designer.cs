@@ -134,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(158, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 61);
+            this.button1.Size = new System.Drawing.Size(149, 42);
             this.button1.TabIndex = 4;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(468, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 61);
+            this.button2.Size = new System.Drawing.Size(149, 42);
             this.button2.TabIndex = 6;
             this.button2.Text = "Nuevo";
             this.button2.UseVisualStyleBackColor = true;
@@ -223,11 +223,11 @@
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.buEliminar, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 107);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 116);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 76);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 48);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // buEliminar
@@ -236,7 +236,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buEliminar.Location = new System.Drawing.Point(313, 3);
             this.buEliminar.Name = "buEliminar";
-            this.buEliminar.Size = new System.Drawing.Size(149, 61);
+            this.buEliminar.Size = new System.Drawing.Size(149, 42);
             this.buEliminar.TabIndex = 5;
             this.buEliminar.Text = "Eliminar";
             this.buEliminar.UseVisualStyleBackColor = true;

@@ -36,7 +36,7 @@
             // 
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
-            this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
+            //this.pbAlerta.Image = global::CapaUsuario.Properties.Resources._433cca0dd88ef63c7c362799956c5b33;
             this.pbAlerta.Location = new System.Drawing.Point(12, 12);
             this.pbAlerta.Name = "pbAlerta";
             this.pbAlerta.Size = new System.Drawing.Size(372, 305);
