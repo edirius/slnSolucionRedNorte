@@ -1336,30 +1336,38 @@ namespace CapaUsuario
 
             if (Codigo_Historia_Clinica != null)
             {
-                /*
-                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
-
-                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPeuperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdEstablecimientoSalud, NombreObstetra);
-                fMantenimientoControlPeuperio.MdiParent = this;
-                fMantenimientoControlPeuperio.Show();     
-
-                fMorbilidad.ShowDialog();
-                */
+                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPuerperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdtHistoriaClinica);
+                fMantenimientoControlPuerperio.Show();
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             
         }
 
         private void buVisitaDomiciliaria_Click(object sender, EventArgs e)
         {
 
+            if (Codigo_Historia_Clinica != null)
+            {
+                VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria = new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdtHistoriaClinica);
+                fMantenimientoVisitaDomiciliaria.Show();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            
 
+            if (Codigo_Historia_Clinica != null)
+            {
+                TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdtHistoriaClinica);
+                fMantenimientoTerminoGestacion.Show();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
