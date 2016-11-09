@@ -22,7 +22,7 @@ namespace CapaUsuario.Alertas
 
         private void frmAlerta_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            AlertaControlPuerperio();
         }
 
         private void CargarDatos()
@@ -34,7 +34,6 @@ namespace CapaUsuario.Alertas
         {
             frmGestantesControlPreNatal fGestantes = new frmGestantesControlPreNatal();
             fGestantes.codigoEstablecimiento = CodigoEstablecimiento;
-           
             fGestantes.Show();
         }
 
@@ -62,6 +61,15 @@ namespace CapaUsuario.Alertas
         {
             frmAlertaControlPuerperio frmAlertaControlPuerperio = new frmAlertaControlPuerperio();
             frmAlertaControlPuerperio.Show();
+        }
+
+        private void AlertaControlPuerperio()
+        {
+            CapaDeNegocios.Alertas.cAlertaControlPuerperio miAlertaControlPuerperio = new CapaDeNegocios.Alertas.cAlertaControlPuerperio();
+            if (miAlertaControlPuerperio.ListarAlertaControlPuerperio(cVariables.v_idobstetra, cVariables.v_idestablecimientosalud).Rows.Count == 0)
+            { pictureBox5.Visible = false; }
+            else
+            { pictureBox5.Visible = true; }
         }
     }
 }

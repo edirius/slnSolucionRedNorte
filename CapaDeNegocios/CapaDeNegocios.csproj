@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador\cAdministrador.cs" />
+    <Compile Include="Alertas\cAlertaControlPuerperio.cs" />
     <Compile Include="Alertas\cAlertas.cs" />
     <Compile Include="cBateria.cs" />
     <Compile Include="cEcografia.cs" />
