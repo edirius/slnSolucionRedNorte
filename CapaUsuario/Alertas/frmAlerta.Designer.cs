@@ -89,7 +89,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.Advertencia_Negro_84733;
-            this.pictureBox3.Location = new System.Drawing.Point(131, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(136, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(210, 102);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
