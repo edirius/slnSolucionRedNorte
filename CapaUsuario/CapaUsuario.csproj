@@ -164,6 +164,12 @@
     <Compile Include="CitaPreNatal\usCitaPrenatal.Designer.cs">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="crCantidadGestantes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCantidadGestantes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="cVariables.cs" />
     <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.cs">
       <SubType>Form</SubType>
@@ -250,6 +256,18 @@
     <Compile Include="RecienNacido\frmRecienNacido.Designer.cs">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\fCantidadGestantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fCantidadGestantes.Designer.cs">
+      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\fControlGestantesEntreFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fControlGestantesEntreFechas.Designer.cs">
+      <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\frmAlerta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +347,10 @@
     <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="crCantidadGestantes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCantidadGestantes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="EstablecimientoSalud\frmEstablecimientoSalud.resx">
       <DependentUpon>frmEstablecimientoSalud.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +394,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecienNacido\frmRecienNacido.resx">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
+      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fControlGestantesEntreFechas.resx">
+      <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
