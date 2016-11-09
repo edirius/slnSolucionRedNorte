@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +67,10 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pbEliminar = new System.Windows.Forms.PictureBox();
+            this.pbGuardar = new System.Windows.Forms.PictureBox();
+            this.pbNuevo = new System.Windows.Forms.PictureBox();
+            this.pbSalir = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -80,17 +84,19 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
-            this.pbGuardar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNuevo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -230,7 +236,7 @@
             this.dtpFechaTratamiento.Name = "dtpFechaTratamiento";
             this.dtpFechaTratamiento.Size = new System.Drawing.Size(102, 20);
             this.dtpFechaTratamiento.TabIndex = 106;
-            this.dtpFechaTratamiento.ValueChanged += new System.EventHandler(this.dtpFechaTratamiento_ValueChanged);
+            this.dtpFechaTratamiento.ValueChanged += new System.EventHandler(this.dtpFechaTratamiento_ValueChanged_1);
             // 
             // label10
             // 
@@ -373,8 +379,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -396,11 +402,11 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(165, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaBateria.Size = new System.Drawing.Size(693, 105);
+            this.dgvListaBateria.Size = new System.Drawing.Size(693, 114);
             this.dgvListaBateria.TabIndex = 99;
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick_1);
             this.dgvListaBateria.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaBateria_CellFormatting);
@@ -485,13 +491,67 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
-            this.tableLayoutPanel1.Controls.Add(this.pbGuardar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbEliminar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbGuardar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbNuevo, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbSalir, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(165, 462);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(693, 105);
             this.tableLayoutPanel1.TabIndex = 101;
+            // 
+            // pbEliminar
+            // 
+            this.pbEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.pbEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEliminar.Image = ((System.Drawing.Image)(resources.GetObject("pbEliminar.Image")));
+            this.pbEliminar.Location = new System.Drawing.Point(349, 3);
+            this.pbEliminar.Name = "pbEliminar";
+            this.pbEliminar.Size = new System.Drawing.Size(107, 99);
+            this.pbEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbEliminar.TabIndex = 107;
+            this.pbEliminar.TabStop = false;
+            this.pbEliminar.Click += new System.EventHandler(this.pbEliminar_Click);
+            // 
+            // pbGuardar
+            // 
+            this.pbGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.pbGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("pbGuardar.Image")));
+            this.pbGuardar.Location = new System.Drawing.Point(176, 3);
+            this.pbGuardar.Name = "pbGuardar";
+            this.pbGuardar.Size = new System.Drawing.Size(107, 99);
+            this.pbGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbGuardar.TabIndex = 106;
+            this.pbGuardar.TabStop = false;
+            this.pbGuardar.Click += new System.EventHandler(this.pbGuardar_Click);
+            // 
+            // pbNuevo
+            // 
+            this.pbNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.pbNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("pbNuevo.Image")));
+            this.pbNuevo.Location = new System.Drawing.Point(3, 3);
+            this.pbNuevo.Name = "pbNuevo";
+            this.pbNuevo.Size = new System.Drawing.Size(107, 99);
+            this.pbNuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbNuevo.TabIndex = 105;
+            this.pbNuevo.TabStop = false;
+            this.pbNuevo.Click += new System.EventHandler(this.pbNuevo_Click);
+            // 
+            // pbSalir
+            // 
+            this.pbSalir.BackColor = System.Drawing.Color.Transparent;
+            this.pbSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSalir.Location = new System.Drawing.Point(522, 3);
+            this.pbSalir.Name = "pbSalir";
+            this.pbSalir.Size = new System.Drawing.Size(107, 99);
+            this.pbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSalir.TabIndex = 104;
+            this.pbSalir.TabStop = false;
+            this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
             // 
             // btnSalir
             // 
@@ -503,6 +563,7 @@
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Visible = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // btnEliminar
@@ -515,6 +576,7 @@
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
@@ -527,18 +589,20 @@
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Visible = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.Location = new System.Drawing.Point(864, 245);
+            this.btnInsertar.Location = new System.Drawing.Point(874, 277);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(167, 40);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Guardar";
             this.btnInsertar.UseVisualStyleBackColor = true;
+            this.btnInsertar.Visible = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // timer
@@ -625,7 +689,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Controls.Add(this.pbAlerta);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(165, 282);
+            this.groupBox2.Location = new System.Drawing.Point(165, 286);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(693, 174);
             this.groupBox2.TabIndex = 103;
@@ -648,24 +712,13 @@
             // 
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
             this.pbAlerta.Location = new System.Drawing.Point(455, 42);
             this.pbAlerta.Name = "pbAlerta";
             this.pbAlerta.Size = new System.Drawing.Size(120, 117);
             this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAlerta.TabIndex = 99;
             this.pbAlerta.TabStop = false;
-            // 
-            // pbGuardar
-            // 
-            this.pbGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.pbGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("pbGuardar.Image")));
-            this.pbGuardar.Location = new System.Drawing.Point(176, 3);
-            this.pbGuardar.Name = "pbGuardar";
-            this.pbGuardar.Size = new System.Drawing.Size(107, 99);
-            this.pbGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbGuardar.TabIndex = 104;
-            this.pbGuardar.TabStop = false;
             // 
             // frmBateria
             // 
@@ -691,12 +744,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHemoglobina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNuevo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -751,6 +807,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechatratamiento;
+        private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.PictureBox pbEliminar;
         private System.Windows.Forms.PictureBox pbGuardar;
+        private System.Windows.Forms.PictureBox pbNuevo;
     }
 }

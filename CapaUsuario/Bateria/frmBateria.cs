@@ -491,7 +491,7 @@ namespace CapaUsuario.Bateria
                     {
                         dgvListaBateria.Rows[e.RowIndex].Cells["sifilis"].Style.BackColor = Color.Red;
                     }
-                    if ((Convert.ToInt16(dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Value) >= 8 ))
+                    if ((Convert.ToInt16(dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Value) >= 8))
                     {
                         dgvListaBateria.Rows[e.RowIndex].Cells["orina"].Style.BackColor = Color.Red;
                     }
@@ -502,7 +502,30 @@ namespace CapaUsuario.Bateria
 
         }
 
-        private void dtpFechaTratamiento_ValueChanged(object sender, EventArgs e)
+        private void pbNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void pbGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoBateria.Text == "")
+            { Agregar(); }
+            else
+                Modificar();
+        }
+
+        private void pbEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void pbSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dtpFechaTratamiento_ValueChanged_1(object sender, EventArgs e)
         {
             txtFechaTratamiento.Text = dtpFechaTratamiento.Text;
         }

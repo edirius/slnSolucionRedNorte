@@ -35,13 +35,15 @@
             this.lblObstetra = new System.Windows.Forms.Label();
             this.dlgGuardar = new System.Windows.Forms.SaveFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnImportar = new System.Windows.Forms.Button();
+            this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(367, 27);
+            this.btnExportar.Location = new System.Drawing.Point(67, 160);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(213, 170);
+            this.btnExportar.Size = new System.Drawing.Size(116, 69);
             this.btnExportar.TabIndex = 0;
             this.btnExportar.Text = "EXPORTAR";
             this.btnExportar.UseVisualStyleBackColor = true;
@@ -91,11 +93,26 @@
             this.textBox1.Size = new System.Drawing.Size(652, 146);
             this.textBox1.TabIndex = 5;
             // 
+            // btnImportar
+            // 
+            this.btnImportar.Location = new System.Drawing.Point(462, 160);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Size = new System.Drawing.Size(133, 69);
+            this.btnImportar.TabIndex = 6;
+            this.btnImportar.Text = "IMPORTAR";
+            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
+            // 
+            // dlgAbrir
+            // 
+            this.dlgAbrir.FileName = "openFileDialog1";
+            // 
             // frmExportacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 471);
+            this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObstetra);
             this.Controls.Add(this.label2);
@@ -120,5 +137,7 @@
         private System.Windows.Forms.Label lblObstetra;
         private System.Windows.Forms.SaveFileDialog dlgGuardar;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnImportar;
+        private System.Windows.Forms.OpenFileDialog dlgAbrir;
     }
 }
