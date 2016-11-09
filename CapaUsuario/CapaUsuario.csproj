@@ -164,6 +164,7 @@
     <Compile Include="CitaPreNatal\usCitaPrenatal.Designer.cs">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="cVariables.cs" />
     <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,6 +469,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nuevo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Advertencia-Negro-84733.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\margen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlertaRoja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alerta_Roja.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
