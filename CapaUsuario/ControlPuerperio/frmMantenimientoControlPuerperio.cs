@@ -23,15 +23,15 @@ namespace CapaUsuario.ControlPeuperio
 
         public frmMantenimientoControlPeuperio(string pidthistoriaclinica)
         {
-            //string pidestablecimientosalud, string pnombreobstetra,
-            //sidtestablecimientosalud = pidestablecimientosalud;
-            //snombreobstetra = pnombreobstetra;
             sidthistoriaclinica = pidthistoriaclinica;
             InitializeComponent();
         }
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
+            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
+            VerificarTerminoGestacion();
             CargarDatos();
         }
 
@@ -203,6 +203,23 @@ namespace CapaUsuario.ControlPeuperio
                     dgvControlPeuperio.Rows[dgvControlPeuperio.RowCount - 1].Selected = true;
                     DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, dgvControlPeuperio.RowCount - 1);
                     dgvControlPeuperio_CellClick(dgvControlPeuperio, ceo);
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
+
+        private void VerificarTerminoGestacion()
+        {
+            try
+            {
+                CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
+                if (miTerminoGestacion.ListarTerminoGestacion(sidthistoriaclinica).Rows.Count == 0)
+                {
+                    MessageBox.Show("La paciente no tiene registro de Termino de Gestación.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
                 }
             }
             catch (Exception m)

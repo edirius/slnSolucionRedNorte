@@ -11,7 +11,6 @@ namespace CapaDeNegocios
 {
     public class cSiguienteCodigo
     {
-
         public DataTable SiguientesCodigo(string tabla, string idtestablecimientosalud)
         {
             return Conexion.GDatos.TraerDataTable("spSiguienteCodigo", tabla, idtestablecimientosalud);
