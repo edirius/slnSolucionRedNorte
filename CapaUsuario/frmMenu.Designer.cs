@@ -64,7 +64,7 @@
             this.transeunteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(746, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(949, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,35 +136,35 @@
             // cItasPreNatalesToolStripMenuItem
             // 
             this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
             this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
             // 
             // alertasToolStripMenuItem
             // 
             this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
-            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.alertasToolStripMenuItem.Text = "Alertas";
             this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
             // 
             // visitaDomiciliariaToolStripMenuItem
             // 
             this.visitaDomiciliariaToolStripMenuItem.Name = "visitaDomiciliariaToolStripMenuItem";
-            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.visitaDomiciliariaToolStripMenuItem.Text = "Visita Domiciliaria";
             this.visitaDomiciliariaToolStripMenuItem.Click += new System.EventHandler(this.visitaDomiciliariaToolStripMenuItem_Click);
             // 
             // controlPeuperioToolStripMenuItem
             // 
             this.controlPeuperioToolStripMenuItem.Name = "controlPeuperioToolStripMenuItem";
-            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.controlPeuperioToolStripMenuItem.Text = "Control Peuperio";
             this.controlPeuperioToolStripMenuItem.Click += new System.EventHandler(this.controlPeuperioToolStripMenuItem_Click);
             // 
             // terminoGestaciónToolStripMenuItem
             // 
             this.terminoGestaciónToolStripMenuItem.Name = "terminoGestaciónToolStripMenuItem";
-            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.terminoGestaciónToolStripMenuItem.Text = "Termino Gestación";
             this.terminoGestaciónToolStripMenuItem.Click += new System.EventHandler(this.terminoGestaciónToolStripMenuItem_Click);
             // 
@@ -178,7 +178,7 @@
             // transeunteToolStripMenuItem
             // 
             this.transeunteToolStripMenuItem.Name = "transeunteToolStripMenuItem";
-            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.transeunteToolStripMenuItem.Text = "Transeunte";
             this.transeunteToolStripMenuItem.Click += new System.EventHandler(this.transeunteToolStripMenuItem_Click);
             // 
@@ -189,7 +189,7 @@
             this.slEstablecimiento});
             this.statusStrip1.Location = new System.Drawing.Point(0, 400);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(746, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(949, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -212,9 +212,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 27);
+            this.pictureBox4.Location = new System.Drawing.Point(886, 52);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(653, 280);
+            this.pictureBox4.Size = new System.Drawing.Size(38, 280);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 113;
             this.pictureBox4.TabStop = false;
@@ -224,10 +224,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(746, 422);
-            this.Controls.Add(this.pictureBox4);
+            this.ClientSize = new System.Drawing.Size(949, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pictureBox4);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";

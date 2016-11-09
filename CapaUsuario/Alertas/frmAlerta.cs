@@ -57,5 +57,11 @@ namespace CapaUsuario.Alertas
         {
             Close();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAlertaControlPuerperio frmAlertaControlPuerperio = new frmAlertaControlPuerperio();
+            frmAlertaControlPuerperio.Show();
+        }
     }
 }
