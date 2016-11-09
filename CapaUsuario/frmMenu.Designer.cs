@@ -208,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoNorte;
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.Fondo2;
             this.ClientSize = new System.Drawing.Size(949, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
