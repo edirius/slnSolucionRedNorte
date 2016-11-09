@@ -36,6 +36,7 @@ namespace CapaUsuario
         {
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
 
             rbExtrema.Checked = true;
             //DataGridViewButtonColumn dgvbEcografia = new DataGridViewButtonColumn();
@@ -47,14 +48,14 @@ namespace CapaUsuario
             //int columnIndex = 0;
 
             oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
-            odtMorbilidad = oMorbilidad.ListarMorbilidad();
+            //odtMorbilidad = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad());
 
             //odtMorbilidad.Columns.Add("N°", typeof(string));
             //odtMorbilidad.Columns.Add("Id Morbilidad", typeof(string));
             //odtMorbilidad.Columns.Add("Descripción", typeof(string));
             //odtMorbilidad.Columns.Add("Tipo", typeof(string));
 
-            dgvMorbilidad.DataSource = odtMorbilidad;
+            dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
             /*
             dgvMorbilidad.Columns[0].Width = 22;
             dgvMorbilidad.Columns[1].Width = 30;
@@ -68,19 +69,23 @@ namespace CapaUsuario
                 //col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
             }
 
-            if (dgvMorbilidad.Rows.Count > 0)
-                CodigoMantenimientoMorbilidad = dgvMorbilidad.Rows[0].Cells[0].ToString();
+            if (dgvMorbilidad.Rows.Count > 0) { 
+                CodigoMantenimientoMorbilidad = dgvMorbilidad.Rows[0].Cells[0].Value.ToString();
+                indice = dgvMorbilidad.Rows[0].Cells[1].Value.ToString();
+            }
 
-            dgvMorbilidad.Columns[1].Visible = false;
+            dgvMorbilidad.Columns[0].Visible = false;
+            cbFiltrar.SelectedItem = cbFiltrar.Items[0];
             //dgvMorbilidad.Columns.Insert(columnIndex, dgvbEcografia);
             txtDescripcion.Focus();
-            CodigoMantenimientoMorbilidad = "";
+            //CodigoMantenimientoMorbilidad = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
             DataTable odtMorbilidad = new DataTable();
+            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
             string tipo = "";
 
             if (txtDescripcion.Text != "")
@@ -94,9 +99,9 @@ namespace CapaUsuario
                 oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
 
                 if (CodigoMantenimientoMorbilidad == "")
-                    odtMorbilidad = oMorbilidad.CrearMorbilidad();
+                    odtMorbilidad = oMorbilidad.CrearMantenimientoMorbilidad();
                 else
-                    odtMorbilidad = oMorbilidad.ModificarMorbilidad();
+                    odtMorbilidad = oMorbilidad.ModificarMantenimientoMorbilidad();
 
                 foreach (DataRow row in odtMorbilidad.Rows)
                 {
@@ -111,8 +116,9 @@ namespace CapaUsuario
                         MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
-                        odtMorbilidad = oMorbilidad.ListarMorbilidad();
-                        dgvMorbilidad.DataSource = odtMorbilidad;
+                        //odtMorbilidad = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad());
+                        dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                        dgvMorbilidad.Columns[0].Visible = false;
                         nuevo();
                         /*Buscando indice del item agregado o modificado*/
                         string item = "";
@@ -121,7 +127,7 @@ namespace CapaUsuario
 
                         for (int i = 0; i < dgvMorbilidad.Rows.Count; i++)
                         {
-                            item = dgvMorbilidad.Rows[i].Cells[1].Value.ToString();
+                            item = dgvMorbilidad.Rows[i].Cells[0].Value.ToString();
                             if (item.Trim() == searchValue.Trim())
                             {
                                 rowIndex = i;
@@ -129,7 +135,24 @@ namespace CapaUsuario
                             }
                         }
 
+                        cbFiltrar.SelectedItem = cbFiltrar.Items[0];
+
+                        dgvMorbilidad.CurrentCell = dgvMorbilidad.Rows[rowIndex].Cells[1];
                         dgvMorbilidad.Rows[rowIndex].Selected = true;
+
+                        DataGridViewCellEventArgs x = new DataGridViewCellEventArgs(1, rowIndex);
+                        cargar_datos_morbilidad(x);
+                        
+                        
+                    }
+
+                    if (exito == "0")
+                    {
+                        MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtDescripcion.Focus();
+                        txtDescripcion.SelectionStart = 0;
+                        txtDescripcion.SelectionLength = txtDescripcion.Text.Length;
+
                     }
                 }
 
@@ -161,8 +184,8 @@ namespace CapaUsuario
                     rbPotencial.Checked = true;
                 }
 
-                CodigoMantenimientoMorbilidad = dgvMorbilidad[1, e.RowIndex].Value.ToString();
-                indice = dgvMorbilidad.Rows[e.RowIndex].Cells[0].Value.ToString();
+                CodigoMantenimientoMorbilidad = dgvMorbilidad[0, e.RowIndex].Value.ToString();
+                indice = dgvMorbilidad.Rows[e.RowIndex].Cells[1].Value.ToString();
 
             }
 
@@ -183,32 +206,37 @@ namespace CapaUsuario
             
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("","");
 
-            if (MessageBox.Show("Está seguro que desea eliminar la Morbilidad Nº " + indice, "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
+            if (Convert.ToInt16(indice) > 0)
             {
-                oMorbilidad.Idtmorbilidad = CodigoMantenimientoMorbilidad;
-                odtMorbilidad = oMorbilidad.EliminarMorbilidad();
- 
+                if (MessageBox.Show("Está seguro que desea eliminar la Morbilidad Nº " + indice, "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    oMorbilidad.Idtmorbilidad = CodigoMantenimientoMorbilidad;
+                    odtMorbilidad = oMorbilidad.EliminarMantenimientoMorbilidad();
 
-                string respuesta_historia_clinica = odtMorbilidad.Rows[0][0].ToString().Trim();
 
-                string[] words = respuesta_historia_clinica.Split('*');
+                    string respuesta_historia_clinica = odtMorbilidad.Rows[0][0].ToString().Trim();
 
-                string exito = words[0].ToString();
-                string respuesta = words[1].ToString();
+                    string[] words = respuesta_historia_clinica.Split('*');
 
-                if (exito == "1") {
-                    MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
-                    odtMorbilidad = oMorbilidad.ListarMorbilidad();
-                    dgvMorbilidad.DataSource = odtMorbilidad;
+                    string exito = words[0].ToString();
+                    string respuesta = words[1].ToString();
+
+                    if (exito == "1")
+                    {
+                        MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
+                        //odtMorbilidad = oMorbilidad.ListarMantenimientoMorbilidad();
+                        dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                        dgvMorbilidad.Columns[0].Visible = false;
+                        DataGridViewCellEventArgs x = new DataGridViewCellEventArgs(1, 0);
+                        cargar_datos_morbilidad(x);
+                    }
                 }
-                       
-
-
-                
-
             }
+            else
+                MessageBox.Show("No hay datos que eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dgvMorbilidad_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -220,6 +248,8 @@ namespace CapaUsuario
         {
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+
             string buscar = txtBuscar.Text;
             if (buscar.Length > 0) { 
                 oMorbilidad.Descripcion = buscar;
@@ -227,11 +257,12 @@ namespace CapaUsuario
             }
             else{
                 oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
-                odtMorbilidad = oMorbilidad.ListarMorbilidad();
+                odtMorbilidad = oMorbilidad.ListarMantenimientoMorbilidad();
                 
             }
 
-            dgvMorbilidad.DataSource = odtMorbilidad;
+            dgvMorbilidad.DataSource = fHC.enumerar_datatable(odtMorbilidad,1);
+            dgvMorbilidad.Columns[0].Visible = false;
 
         }
 
@@ -245,6 +276,36 @@ namespace CapaUsuario
         {
             if (e.KeyChar == (char)13)
                 button1.Focus();
+        }
+
+        private void cbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            string seleccionado = this.cbFiltrar.GetItemText(this.cbFiltrar.SelectedItem);
+            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+
+            if (seleccionado == "Todo")
+            {
+                //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
+                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                dgvMorbilidad.Columns[0].Visible = false;
+            }
+
+            if (seleccionado == "Extrema")
+            {
+                //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
+                oMorbilidad.Tipo = seleccionado;
+                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
+                dgvMorbilidad.Columns[0].Visible = false;
+            }
+
+            if (seleccionado == "Potencial")
+            {
+                //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
+                oMorbilidad.Tipo = seleccionado;
+                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
+                dgvMorbilidad.Columns[0].Visible = false;
+            }
         }
     }
 }

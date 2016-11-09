@@ -15,34 +15,39 @@ namespace CapaDeNegocios
         public string Tipo { get; set; }
         public string Idtestablecimientosalud { get; set; }
 
-        public DataTable CrearMorbilidad()
+        public DataTable CrearMantenimientoMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spCrearMantenimientoMorbilidad", Descripcion, Tipo, Idtestablecimientosalud);
         }
 
-        public DataTable ModificarMorbilidad()
+        public DataTable ModificarMantenimientoMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spModificarMantenimientoMorbilidad", Idtmorbilidad, Descripcion, Tipo, Idtestablecimientosalud);
         }
 
-        public DataTable EliminarMorbilidad()
+        public DataTable EliminarMantenimientoMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spEliminarMantenimientoMorbilidad", Idtmorbilidad);
         }
 
-        public DataTable ListarMorbilidad()
+        public DataTable ListarMantenimientoMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spListarMantenimientoMorbilidad", Idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spListarMantenimientoMorbilidad");
         }
 
         public DataTable ListarMorbilidadXTipo()
         {
-            return Conexion.GDatos.TraerDataTable("spListarMorbilidadXTipo", Idtestablecimientosalud,Tipo);
+            return Conexion.GDatos.TraerDataTable("spListarMorbilidadXTipo", Tipo);
         }
 
         public DataTable BuscarMorbilidad()
         {
             return Conexion.GDatos.TraerDataTable("spBusquedaMantenimientoMorbilidad", Descripcion);
+        }
+
+        public DataTable CrearMorbilidad()
+        {
+            return Conexion.GDatos.TraerDataTable("spCrearMorbilidad", Descripcion, Tipo, Idtestablecimientosalud);
         }
 
     }

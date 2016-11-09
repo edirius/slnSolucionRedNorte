@@ -44,6 +44,7 @@
     <Compile Include="Alertas\cAlertas.cs" />
     <Compile Include="cBateria.cs" />
     <Compile Include="cEcografia.cs" />
+    <Compile Include="cGestanteMorbilidad.cs" />
     <Compile Include="cHistoriaClinica.cs" />
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
     <Compile Include="cMorbilidad.cs" />
