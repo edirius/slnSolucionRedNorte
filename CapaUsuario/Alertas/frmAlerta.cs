@@ -49,5 +49,10 @@ namespace CapaUsuario.Alertas
             Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria(CodigoEstablecimiento);
             frmAlertaGestanteSinBateria.Show();
         }
+
+        private void lbleliminar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

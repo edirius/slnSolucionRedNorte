@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using CapaDeDatos;
-using MySql.Data.MySqlClient;
 using System.IO;
 
 

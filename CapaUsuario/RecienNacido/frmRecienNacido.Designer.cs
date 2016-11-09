@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecienNacido));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMensajePeso = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar5 = new System.Windows.Forms.TextBox();
             this.txtMensajeApgar1 = new System.Windows.Forms.TextBox();
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,9 +70,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -79,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -103,7 +104,7 @@
             this.lblAlerta.BackColor = System.Drawing.Color.Transparent;
             this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlerta.ForeColor = System.Drawing.Color.White;
-            this.lblAlerta.Location = new System.Drawing.Point(471, 15);
+            this.lblAlerta.Location = new System.Drawing.Point(475, 14);
             this.lblAlerta.Name = "lblAlerta";
             this.lblAlerta.Size = new System.Drawing.Size(88, 20);
             this.lblAlerta.TabIndex = 103;
@@ -165,13 +166,25 @@
             this.txtMensajeApgar1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMensajeApgar1.TextChanged += new System.EventHandler(this.txtMensaje_TextChanged);
             // 
+            // pbAlerta
+            // 
+            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
+            this.pbAlerta.Location = new System.Drawing.Point(433, 37);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(170, 97);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 99;
+            this.pbAlerta.TabStop = false;
+            // 
             // dgvRecienNacido
             // 
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToResizeColumns = false;
             this.dgvRecienNacido.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecienNacido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -190,9 +203,9 @@
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
@@ -432,6 +445,7 @@
             this.txtCodigoHistoria.Name = "txtCodigoHistoria";
             this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoHistoria.TabIndex = 96;
+            this.txtCodigoHistoria.Visible = false;
             // 
             // label7
             // 
@@ -449,6 +463,7 @@
             this.txtCodigoRN.Name = "txtCodigoRN";
             this.txtCodigoRN.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoRN.TabIndex = 94;
+            this.txtCodigoRN.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -523,17 +538,6 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
-            // pbAlerta
-            // 
-            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAlerta.BackColor = System.Drawing.Color.White;
-            this.pbAlerta.Location = new System.Drawing.Point(458, 37);
-            this.pbAlerta.Name = "pbAlerta";
-            this.pbAlerta.Size = new System.Drawing.Size(120, 117);
-            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbAlerta.TabIndex = 99;
-            this.pbAlerta.TabStop = false;
-            // 
             // frmRecienNacido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,6 +555,7 @@
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -562,7 +567,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.ResumeLayout(false);
 
         }
