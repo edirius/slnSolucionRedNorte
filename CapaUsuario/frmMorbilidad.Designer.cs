@@ -57,7 +57,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.dgvGestanteMorbildad = new System.Windows.Forms.DataGridView();
+            this.dgvGM = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -71,7 +72,7 @@
             this.groupBox10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestanteMorbildad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGM)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox13
@@ -332,13 +333,15 @@
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnCount = 5;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel4.Controls.Add(this.btnGuardar, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnNuevo, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnEliminar, 3, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 392);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -350,9 +353,9 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(181, 3);
+            this.btnGuardar.Location = new System.Drawing.Point(145, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(172, 48);
+            this.btnGuardar.Size = new System.Drawing.Size(136, 48);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -362,9 +365,9 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Location = new System.Drawing.Point(359, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(287, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(172, 48);
+            this.btnNuevo.Size = new System.Drawing.Size(136, 48);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -375,7 +378,7 @@
             this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox15.Controls.Add(this.dgvGestanteMorbildad);
+            this.groupBox15.Controls.Add(this.dgvGM);
             this.groupBox15.Location = new System.Drawing.Point(23, 452);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(714, 230);
@@ -383,30 +386,40 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Gestante con Morbilidad(es)";
             // 
-            // dgvGestanteMorbildad
+            // dgvGM
             // 
-            this.dgvGestanteMorbildad.AllowUserToAddRows = false;
-            this.dgvGestanteMorbildad.AllowUserToDeleteRows = false;
-            this.dgvGestanteMorbildad.AllowUserToOrderColumns = true;
-            this.dgvGestanteMorbildad.AllowUserToResizeColumns = false;
-            this.dgvGestanteMorbildad.AllowUserToResizeRows = false;
+            this.dgvGM.AllowUserToAddRows = false;
+            this.dgvGM.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvGestanteMorbildad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvGestanteMorbildad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvGM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvGM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGestanteMorbildad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGestanteMorbildad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGestanteMorbildad.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvGestanteMorbildad.Location = new System.Drawing.Point(7, 19);
-            this.dgvGestanteMorbildad.MultiSelect = false;
-            this.dgvGestanteMorbildad.Name = "dgvGestanteMorbildad";
-            this.dgvGestanteMorbildad.ReadOnly = true;
-            this.dgvGestanteMorbildad.RowHeadersVisible = false;
-            this.dgvGestanteMorbildad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestanteMorbildad.Size = new System.Drawing.Size(702, 205);
-            this.dgvGestanteMorbildad.TabIndex = 30;
-            this.dgvGestanteMorbildad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestanteMorbildad_CellContentClick);
+            this.dgvGM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGM.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvGM.Location = new System.Drawing.Point(6, 19);
+            this.dgvGM.MultiSelect = false;
+            this.dgvGM.Name = "dgvGM";
+            this.dgvGM.ReadOnly = true;
+            this.dgvGM.RowHeadersVisible = false;
+            this.dgvGM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGM.Size = new System.Drawing.Size(703, 205);
+            this.dgvGM.TabIndex = 20;
+            this.dgvGM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellClick);
+            this.dgvGM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellContentClick);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Location = new System.Drawing.Point(429, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(136, 48);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmMorbilidad
             // 
@@ -434,7 +447,7 @@
             this.groupBox10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestanteMorbildad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,11 +502,12 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.DataGridView dgvGestanteMorbildad;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.DateTimePicker dtpFechaHistoriaClinica;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.DateTimePicker dtpFechaMorbilidad;
         private System.Windows.Forms.DataGridView dgvMorbilidad_;
+        private System.Windows.Forms.DataGridView dgvGM;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

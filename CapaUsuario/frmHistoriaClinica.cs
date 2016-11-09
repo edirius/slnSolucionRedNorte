@@ -331,6 +331,7 @@ namespace CapaUsuario
             txtObservaciones.Text = "";
             txtHistoriaClinica.Focus();
             cbTranseunte.Checked = false;
+            cbArchivado.Checked = false;
             explorando_hc = false;
         }
 
@@ -418,11 +419,13 @@ namespace CapaUsuario
             else
                 cbTranseunte.Checked = false;
 
-            explorando_hc = true;
+            
 
             //cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
 
             txtOrigenEESS.Text = odtHCXIdHC.Rows[0][23].ToString();
+
+            explorando_hc = true;
 
             if (odtHCXIdHC.Rows[0][24].ToString() == "1")
             {
@@ -434,6 +437,8 @@ namespace CapaUsuario
                 cbArchivado.Checked = false;
                 Archivado = false;
             }
+
+            explorando_hc = false;
 
 
             /* Llenando ecografias y odontologia */
@@ -955,6 +960,13 @@ namespace CapaUsuario
             DataTable dtOdontologia2 = new DataTable();
 
 
+            if (Archivado) { 
+                if (cbArchivado.Checked)
+                    Archivado = true;
+                else
+                    Archivado = false;
+            }
+
             if (completo)
             {
                 MessageBox.Show(mensaje, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -967,6 +979,9 @@ namespace CapaUsuario
                 }
                 else
                 {
+                    
+
+
                     if (IdtHistoriaClinica != "")
                     {
                         oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
@@ -1353,6 +1368,7 @@ namespace CapaUsuario
                 fMorbilidad.Nomnbre_Completo = Nombre_Completo;
                 fMorbilidad.Edad = Edad;
                 fMorbilidad.IdEstablecimiento = IdEstablecimiento;
+                fMorbilidad.Archivado = Archivado;
 
                 fMorbilidad.ShowDialog();
             }else
@@ -1427,6 +1443,30 @@ namespace CapaUsuario
 
         }
 
+        private void bloquear_hc(bool bandera){
+
+            txtHistoriaClinica.Enabled = bandera;
+            cboTipoLlegada.Enabled = bandera;
+            dtpTiempoLlegada.Enabled = bandera;
+            txtEdad.Enabled = bandera;
+            nudGestas.Enabled = bandera;
+            nudPartos.Enabled = bandera;
+            nudAbortos.Enabled = bandera;
+            nudHv.Enabled = bandera;
+            nudHm.Enabled = bandera;
+            dtpFUR.Enabled = bandera;
+            dtpFPP.Enabled = bandera;
+            nudSemanas.Enabled = bandera;
+            txtObservaciones.Enabled = bandera;
+            cbTranseunte.Enabled = bandera;
+            txtOrigenEESS.Enabled = bandera;
+            dtpFecha.Enabled = bandera;
+            buAgregarEcografia.Enabled = bandera;
+            button2.Enabled = bandera;
+            dgvEcografia.Enabled = bandera;
+            dgvOdontologia.Enabled = bandera;
+        }
+
         private void cbArchivado_CheckedChanged(object sender, EventArgs e)
         {
             if (!explorando_hc)
@@ -1438,10 +1478,12 @@ namespace CapaUsuario
                         lblArchivado.Text = "ARCHIVADO";
                         lblArchivado.BackColor = Color.Green;
                         cbArchivado.Checked = true;
+                        bloquear_hc(false);
                     }
                     else
                     {
                         cbArchivado.Checked = false;
+                        bloquear_hc(true);
                     }
                 }
 
@@ -1449,6 +1491,7 @@ namespace CapaUsuario
                 {
                     lblArchivado.Text = "SIN ARCHIVAR";
                     lblArchivado.BackColor = Color.Red;
+                    bloquear_hc(true);
                 }
             }
             else {
@@ -1457,12 +1500,14 @@ namespace CapaUsuario
                     lblArchivado.Text = "ARCHIVADO";
                     lblArchivado.BackColor = Color.Green;
                     cbArchivado.Checked = true;
+                    bloquear_hc(false);
                 }
 
                 if (cbArchivado.Checked == false)
                 {
                     lblArchivado.Text = "SIN ARCHIVAR";
                     lblArchivado.BackColor = Color.Red;
+                    bloquear_hc(true);
                 }
             }
 

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.buRegistroBateria = new System.Windows.Forms.Button();
             this.buAtencionPrenatal = new System.Windows.Forms.Button();
@@ -473,8 +473,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -644,11 +644,6 @@
             // nudEdadGestacional
             // 
             this.nudEdadGestacional.Location = new System.Drawing.Point(74, 16);
-            this.nudEdadGestacional.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudEdadGestacional.Name = "nudEdadGestacional";
             this.nudEdadGestacional.Size = new System.Drawing.Size(41, 20);
             this.nudEdadGestacional.TabIndex = 16;
@@ -681,8 +676,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -743,14 +738,14 @@
             "Vehiculo motorizado"});
             this.cboTipoLlegada.Location = new System.Drawing.Point(57, 22);
             this.cboTipoLlegada.Name = "cboTipoLlegada";
-            this.cboTipoLlegada.Size = new System.Drawing.Size(112, 21);
+            this.cboTipoLlegada.Size = new System.Drawing.Size(141, 21);
             this.cboTipoLlegada.TabIndex = 9;
             this.cboTipoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboTipoLlegada_KeyPress_1);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(179, 35);
+            this.label26.Location = new System.Drawing.Point(204, 35);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(47, 13);
             this.label26.TabIndex = 0;
@@ -760,7 +755,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(179, 20);
+            this.label23.Location = new System.Drawing.Point(204, 20);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(57, 13);
             this.label23.TabIndex = 0;
@@ -790,9 +785,9 @@
             // dtpTiempoLlegada
             // 
             this.dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTiempoLlegada.Location = new System.Drawing.Point(242, 23);
+            this.dtpTiempoLlegada.Location = new System.Drawing.Point(265, 23);
             this.dtpTiempoLlegada.Name = "dtpTiempoLlegada";
-            this.dtpTiempoLlegada.Size = new System.Drawing.Size(99, 20);
+            this.dtpTiempoLlegada.Size = new System.Drawing.Size(76, 20);
             this.dtpTiempoLlegada.TabIndex = 10;
             this.dtpTiempoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTiempoLlegada_KeyPress_1);
             // 
@@ -1356,8 +1351,8 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
