@@ -44,9 +44,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buEliminar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFiltrar = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,7 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(158, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 42);
+            this.button1.Size = new System.Drawing.Size(149, 48);
             this.button1.TabIndex = 4;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(468, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 42);
+            this.button2.Size = new System.Drawing.Size(149, 48);
             this.button2.TabIndex = 6;
             this.button2.Text = "Nuevo";
             this.button2.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             this.dgvMorbilidad.ReadOnly = true;
             this.dgvMorbilidad.RowHeadersVisible = false;
             this.dgvMorbilidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMorbilidad.Size = new System.Drawing.Size(747, 181);
+            this.dgvMorbilidad.Size = new System.Drawing.Size(757, 181);
             this.dgvMorbilidad.TabIndex = 8;
             this.dgvMorbilidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMorbilidad_CellClick);
             this.dgvMorbilidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMorbilidad_CellContentClick);
@@ -202,7 +202,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(80, 3);
+            this.txtBuscar.Location = new System.Drawing.Point(79, 3);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(178, 20);
             this.txtBuscar.TabIndex = 7;
@@ -222,11 +222,11 @@
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.buEliminar, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 116);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 109);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 48);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 54);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // buEliminar
@@ -235,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buEliminar.Location = new System.Drawing.Point(313, 3);
             this.buEliminar.Name = "buEliminar";
-            this.buEliminar.Size = new System.Drawing.Size(149, 42);
+            this.buEliminar.Size = new System.Drawing.Size(149, 48);
             this.buEliminar.TabIndex = 5;
             this.buEliminar.Text = "Eliminar";
             this.buEliminar.UseVisualStyleBackColor = true;
@@ -250,7 +250,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.50191F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.49809F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 453F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 454F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtBuscar, 1, 0);
@@ -262,6 +262,29 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(776, 35);
             this.tableLayoutPanel3.TabIndex = 9;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(263, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 100;
+            this.label3.Text = "Filtrar por:";
+            // 
+            // cbFiltrar
+            // 
+            this.cbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltrar.FormattingEnabled = true;
+            this.cbFiltrar.Items.AddRange(new object[] {
+            "Todo",
+            "Extrema",
+            "Potencial"});
+            this.cbFiltrar.Location = new System.Drawing.Point(324, 3);
+            this.cbFiltrar.Name = "cbFiltrar";
+            this.cbFiltrar.Size = new System.Drawing.Size(162, 21);
+            this.cbFiltrar.TabIndex = 101;
+            this.cbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cbFiltrar_SelectedIndexChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -277,29 +300,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(776, 212);
             this.tableLayoutPanel4.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(264, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 100;
-            this.label3.Text = "Filtrar por:";
-            // 
-            // cbFiltrar
-            // 
-            this.cbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFiltrar.FormattingEnabled = true;
-            this.cbFiltrar.Items.AddRange(new object[] {
-            "Todo",
-            "Extrema",
-            "Potencial"});
-            this.cbFiltrar.Location = new System.Drawing.Point(325, 3);
-            this.cbFiltrar.Name = "cbFiltrar";
-            this.cbFiltrar.Size = new System.Drawing.Size(162, 21);
-            this.cbFiltrar.TabIndex = 101;
-            this.cbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cbFiltrar_SelectedIndexChanged);
             // 
             // frmMantenimientoMorbilidad
             // 
