@@ -81,7 +81,12 @@ namespace CapaUsuario
             DataTable odtHistoriaClinica = new DataTable();
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
             CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud oEstablecimientoSalud = new CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud();
+
+            /*Maximizar ventana*/
+            this.WindowState = FormWindowState.Maximized;
             /*Año y mes de historia clinica*/
+
+
 
             cbYear.DataSource = oHistoriaClinica.ListarYear();
             cbYear.ValueMember = "yyyy";
@@ -366,6 +371,7 @@ namespace CapaUsuario
             oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
             odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
 
+            IdtHistoriaClinica = odtHCXIdHC.Rows[0][0].ToString();
             Codigo_Historia_Clinica = odtHCXIdHC.Rows[0][1].ToString();
             Fecha = odtHCXIdHC.Rows[0][21].ToString();
             DNI = odtHCXIdHC.Rows[0][16].ToString();
@@ -457,6 +463,7 @@ namespace CapaUsuario
 
                 if (buscar.Length > 1) {
                     oHistoriaClinica.Codigohistoriaclinica = buscar;
+                    oHistoriaClinica.Idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(),1);
                     dgvHC.Columns[0].Visible = false;
                 }
@@ -467,6 +474,7 @@ namespace CapaUsuario
                 if (buscar.Length > 1)
                 {
                     oPaciente.apellidopaterno = buscar;
+                    oPaciente.idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(),1);
                     dgvHC.Columns[0].Visible = false;
                 }
@@ -477,6 +485,7 @@ namespace CapaUsuario
                 if (buscar.Length > 1)
                 {
                     oPaciente.apellidomaterno = buscar;
+                    oPaciente.idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(),1);
                     dgvHC.Columns[0].Visible = false;
                 }
@@ -487,6 +496,7 @@ namespace CapaUsuario
                 if (buscar.Length > 1)
                 {
                     oPaciente.nombres = buscar;
+                    oPaciente.idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(),1);
                     dgvHC.Columns[0].Visible = false;
                 }
@@ -497,6 +507,7 @@ namespace CapaUsuario
                 if (buscar.Length > 1)
                 {
                     oPaciente.dni = buscar;
+                    oPaciente.idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(),1);
                     dgvHC.Columns[0].Visible = false;
                 }
@@ -1318,6 +1329,7 @@ namespace CapaUsuario
 
                 frmMorbilidad fMorbilidad = new frmMorbilidad();
                 fMorbilidad.Codigo_Historia_Clinica = Codigo_Historia_Clinica;
+                fMorbilidad.Id_Historia_Clinica = IdtHistoriaClinica;
                 fMorbilidad.Fecha = Fecha;
                 fMorbilidad.DNI = DNI;
                 fMorbilidad.Nomnbre_Completo = Nombre_Completo;
@@ -1392,7 +1404,10 @@ namespace CapaUsuario
             }
         }
 
-    
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

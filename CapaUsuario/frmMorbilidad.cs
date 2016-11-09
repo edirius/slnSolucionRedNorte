@@ -18,6 +18,7 @@ namespace CapaUsuario
         }
 
         public string Codigo_Historia_Clinica { get; set; }
+        public string Id_Historia_Clinica { get; set; }
         public string Fecha { get; set; }
         public string DNI { get; set; }
         public string Nomnbre_Completo { get; set; }
@@ -50,10 +51,11 @@ namespace CapaUsuario
             DataGridViewButtonColumn dgvbMorbilidad = new DataGridViewButtonColumn();
             DataGridViewButtonColumn dgvbGestanteMorbilidad = new DataGridViewButtonColumn();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            CapaDeNegocios.cGestanteMorbilidad oGestanteMorbilidad = new CapaDeNegocios.cGestanteMorbilidad();
             DataTable odtMorbilidad = new DataTable();
 
             txtHistoriaClinica.Text = Codigo_Historia_Clinica;
-            dtpFecha.Value = Convert.ToDateTime(Fecha);
+            dtpFechaHistoriaClinica.Value = Convert.ToDateTime(Fecha);
             txt_DNI.Text = DNI;
             txt_NombreCompleto.Text = Nomnbre_Completo;
             txt_Edad.Text = Edad;
@@ -96,9 +98,17 @@ namespace CapaUsuario
 
             
             int columnIndex2 = 4;
+
+            oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
+            odtGM = fHC.enumerar_datatable( oGestanteMorbilidad.ListarGestanteMorbilidad(),0);
+
             dgvGestanteMorbildad.DataSource = odtGM;
             dgvGestanteMorbildad.Columns.Insert(columnIndex2, dgvbGestanteMorbilidad);
-            
+            i = dgvGestanteMorbildad.Rows.Count;
+            dgvGestanteMorbildad.Columns[1].Visible = false;
+
+
+
         }
 
         private void cbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
@@ -242,32 +252,34 @@ namespace CapaUsuario
             CapaDeNegocios.cGestanteMorbilidad oGestanteMorbilidad = new CapaDeNegocios.cGestanteMorbilidad();
             DataTable odtGestanteMorbilidad = new DataTable();
 
-            oGestanteMorbilidad.idthistoriaclinica = Codigo_Historia_Clinica;
+            oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
             oGestanteMorbilidad.EliminarGestanteMorbilidad();
 
             for (int i = 0; i < dgvGestanteMorbildad.Rows.Count; i++)
             {
                 oGestanteMorbilidad.idtestablecimientosalud = IdEstablecimiento;
                 oGestanteMorbilidad.idtmorbilidad = dgvGestanteMorbildad.Rows[i].Cells[1].Value.ToString();
-                oGestanteMorbilidad.idthistoriaclinica = Codigo_Historia_Clinica;
+                oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
                 oGestanteMorbilidad.fecha = Convert.ToDateTime(dgvGestanteMorbildad.Rows[i].Cells[2].Value.ToString() );
                 odtGestanteMorbilidad = oGestanteMorbilidad.CrearGestanteMorbilidad();
 
-                foreach (DataRow row in odtGestanteMorbilidad.Rows)
-                {
+                if (i == dgvGestanteMorbildad.Rows.Count - 1) { 
+                    foreach (DataRow row in odtGestanteMorbilidad.Rows)
+                    {
+                        string respuesta_historia_clinica = row[0].ToString().Trim();
+                        string[] words = respuesta_historia_clinica.Split('*');
+                        string exito = words[0].ToString();
+                        string respuesta = words[1].ToString();
+                        //string idthistoriaclinica = words[2].ToString();
 
-                    string respuesta_historia_clinica = row[0].ToString().Trim();
-
-                    string[] words = respuesta_historia_clinica.Split('*');
-
-                    string exito = words[0].ToString();
-                    string respuesta = words[1].ToString();
-                    //string idthistoriaclinica = words[2].ToString();
-
-                    if (exito == "1")
-                        MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (exito == "1") { 
+                            MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
+                            dgvGestanteMorbildad.DataSource = fHC.enumerar_datatable(oGestanteMorbilidad.ListarGestanteMorbilidad(),0);
+                            dgvGestanteMorbildad.Columns[1].Visible = true;
+                        }
+                    }
                 }
-
             }
         }
 

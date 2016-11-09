@@ -46,9 +46,9 @@ namespace CapaDeNegocios
         {
             return Conexion.GDatos.TraerDataTable("spListarBateria", id);
         }
-        public DataTable ListarGestantesQueNoTienenBateria(string id)
+        public DataTable ListarGestantesQueNoTienenBateria(string id, string id2, string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria", id);
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria", id, id2, mes, año);
         }
 
 
