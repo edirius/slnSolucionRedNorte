@@ -156,5 +156,19 @@ namespace CapaUsuario
             cVariables.v_idestablecimientosalud = IdEstablecimientoSalud;
             cVariables.v_nombreestablecimientosalud = NombreEstablecimientoSalud;
         }
+
+        private void historiaClinicaEntreFechasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapaUsuario.Reportes.fControlGestantesEntreFechas fControlGestantesEntreFechas = new CapaUsuario.Reportes.fControlGestantesEntreFechas();
+            fControlGestantesEntreFechas.MdiParent = this;
+            fControlGestantesEntreFechas.Show();
+        }
+
+        private void rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapaUsuario.Reportes.fCantidadGestantes frmCantidadGestantes = new CapaUsuario.Reportes.fCantidadGestantes();
+            frmCantidadGestantes.MdiParent = this;
+            frmCantidadGestantes.Show();
+        }
     }
 }
