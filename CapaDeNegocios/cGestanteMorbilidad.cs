@@ -18,12 +18,17 @@ namespace CapaDeNegocios
 
         public DataTable CrearGestanteMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearGestanteMorbilidad", idthistoriaclinica, idtmorbilidad, fecha ,idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spCrearGestanteMorbilidad", idthistoriaclinica, idtmorbilidad, fecha, idtestablecimientosalud);
+        }
+
+        public DataTable ListarGestanteMorbilidad()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarGestanteMorbilidad", idthistoriaclinica);
         }
 
         public DataTable EliminarGestanteMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spEliminarGestanteMorbilidad", idtgestantemorbilidad );
+            return Conexion.GDatos.TraerDataTable("spEliminarGestanteMorbilidad", idthistoriaclinica);
         }
 
     }

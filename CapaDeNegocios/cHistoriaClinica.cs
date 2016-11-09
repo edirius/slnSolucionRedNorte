@@ -57,7 +57,7 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinicaXHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica,Idtobstetra);
         }
 
         
