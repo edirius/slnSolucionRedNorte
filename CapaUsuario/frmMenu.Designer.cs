@@ -47,8 +47,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -134,35 +136,35 @@
             // cItasPreNatalesToolStripMenuItem
             // 
             this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
             this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
             // 
             // alertasToolStripMenuItem
             // 
             this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
-            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.alertasToolStripMenuItem.Text = "Alertas";
             this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
             // 
             // visitaDomiciliariaToolStripMenuItem
             // 
             this.visitaDomiciliariaToolStripMenuItem.Name = "visitaDomiciliariaToolStripMenuItem";
-            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.visitaDomiciliariaToolStripMenuItem.Text = "Visita Domiciliaria";
             this.visitaDomiciliariaToolStripMenuItem.Click += new System.EventHandler(this.visitaDomiciliariaToolStripMenuItem_Click);
             // 
             // controlPeuperioToolStripMenuItem
             // 
             this.controlPeuperioToolStripMenuItem.Name = "controlPeuperioToolStripMenuItem";
-            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.controlPeuperioToolStripMenuItem.Text = "Control Peuperio";
             this.controlPeuperioToolStripMenuItem.Click += new System.EventHandler(this.controlPeuperioToolStripMenuItem_Click);
             // 
             // terminoGestaciónToolStripMenuItem
             // 
             this.terminoGestaciónToolStripMenuItem.Name = "terminoGestaciónToolStripMenuItem";
-            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.terminoGestaciónToolStripMenuItem.Text = "Termino Gestación";
             this.terminoGestaciónToolStripMenuItem.Click += new System.EventHandler(this.terminoGestaciónToolStripMenuItem_Click);
             // 
@@ -176,7 +178,7 @@
             // transeunteToolStripMenuItem
             // 
             this.transeunteToolStripMenuItem.Name = "transeunteToolStripMenuItem";
-            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.transeunteToolStripMenuItem.Text = "Transeunte";
             this.transeunteToolStripMenuItem.Click += new System.EventHandler(this.transeunteToolStripMenuItem_Click);
             // 
@@ -203,14 +205,29 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 41);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(746, 356);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 113;
+            this.pictureBox4.TabStop = false;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(746, 422);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -222,6 +239,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +266,6 @@
         private System.Windows.Forms.ToolStripMenuItem visitaDomiciliariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controlPeuperioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminoGestaciónToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

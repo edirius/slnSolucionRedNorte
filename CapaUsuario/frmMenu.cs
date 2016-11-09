@@ -105,6 +105,7 @@ namespace CapaUsuario
         {
             Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
             fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fAlerta.CodigoObstetra = IdObstetra;
             fAlerta.MdiParent = this;
             fAlerta.Show(); 
         }

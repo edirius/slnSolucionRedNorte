@@ -18,6 +18,7 @@ namespace CapaUsuario.Alertas
         }
 
         public string CodigoEstablecimiento { get; set; }
+        public string CodigoObstetra { get; set; }
 
         private void frmAlerta_Load(object sender, EventArgs e)
         {
@@ -46,7 +47,9 @@ namespace CapaUsuario.Alertas
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria(CodigoEstablecimiento);
+            Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria();
+            frmAlertaGestanteSinBateria.CodigoEstablecimiento = CodigoEstablecimiento;
+            frmAlertaGestanteSinBateria.CodigoObstetra = CodigoObstetra;
             frmAlertaGestanteSinBateria.Show();
         }
 

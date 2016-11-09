@@ -151,7 +151,7 @@
   <data name="pbEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsEAAA7BAbiRa+0AADsBSURBVHhe7Z157G5bWZjvOXdA
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsAAAA7AAWrWiQkAADsBSURBVHhe7Z157G5bWZjvOXdA
         uBcBERlaMW1pTKF66cFbroqxGptKnDEatcakijE49A9rrFNaIE6YigOOpEaJBhGnKKWmVUltAa9XVASZ
         4cJFRGVGZrhA3/f8fvusd6/z7u/ba397eNfaz5M8Oev8vj2s4d1rvd+0v2s++tGPIiIi4s50/4iIiIht
         mwpg0Q5BXFuAIuxkjlhqKuwTO/kiRhLgKHYyRyw1FfaBnWARaxHAxU7miKWmQrvYiRSxdgGuYCdzxFJT
@@ -409,7 +409,7 @@
   <data name="pbGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr4AAA6+AepCscAAAEcBSURBVHhe7b17zG3bVdh3z+Oe
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADr0AAA69AUf7kK0AAEcBSURBVHhe7b17zG3bVdh3z+Oe
         c+659zzuNcY2bRw1dRUV6ti9xLVDSFNQqoKcACEiIiaNVGIUGUj/SKOUQNQCIjyi4vBIPjuoUUAgQwgE
         JdSNWgIqLRhjTEJs/MDmYRMCCTbGxviFr03H+L49vznWPGPtvebe6zHmWr+f9NM3v73XYz7GWmPutfde
         +6Hf//3fR0RExI3pPoiIiIjrNhfAoh2COLcAVdiTOWKtubBN7MkXMZIAB7Enc8Rac2Eb2BMsYisCuNiT
@@ -718,7 +718,7 @@
   <data name="pbNuevo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsEAAA7BAbiRa+0AAEG8SURBVHhe7Z15zHVdVdi/9xtA
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAADsAAAA7AAWrWiQkAAEG8SURBVHhe7Z15zHVdVdi/9xtA
         4EMmEbCtpi2NqVShr1JQMVbTphpnjUatMaliDA79wxrrlFaME6biPKZGjQZnjVJqWofUVhERFUFm5QNF
         VGZkhg/sWu9z9z3r7Hede88+9wxr7/P7Jb+8+33umfbe6+y17r3Pc+8tf//3f4+IiIg70/0hIiIitm3X
         AIsOCOLaAhRhF3PEUrvGPrGLL2IkAc5iF3PEUrvGPrALLGItArjYxRyx1K7RLnYhRaxdgCN2MUcstWu0
