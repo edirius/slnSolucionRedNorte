@@ -41,6 +41,7 @@ namespace CapaDeNegocios.Paciente
         { get { return sidtestablecimientosalud; } set { sidtestablecimientosalud = value; } }
         public string año { get; set; }
         public string mes { get; set; }
+        public string idtobstetra { get; set; }
 
 
         public DataTable ListarPaciente(string idtestablecimientosalud)
@@ -92,22 +93,22 @@ namespace CapaDeNegocios.Paciente
 
         public DataTable ListarHistoriaClinicaXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno );
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno, idtobstetra );
         }
 
         public DataTable ListarHistoriaClinicaXApellidoMaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoMaterno", apellidomaterno);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoMaterno", apellidomaterno, idtobstetra);
         }
 
         public DataTable ListarHistoriaClinicaXNombres()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXNombres", nombres);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXNombres", nombres, idtobstetra);
         }
 
         public DataTable ListarHistoriaClinicaXDNI()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXDNI", dni);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXDNI", dni, idtobstetra);
         }
 
         public DataTable ListarCantidadPacientes()

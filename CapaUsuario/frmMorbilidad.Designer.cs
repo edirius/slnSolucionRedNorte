@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -43,9 +43,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaHistoriaClinica = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.dgvMorbilidad_ = new System.Windows.Forms.DataGridView();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaMorbilidad = new System.Windows.Forms.DateTimePicker();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.cbFiltrar = new System.Windows.Forms.ComboBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -55,9 +58,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgvGestanteMorbildad = new System.Windows.Forms.DataGridView();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.dtpFechaMorbilidad = new System.Windows.Forms.DateTimePicker();
-            this.dgvMorbilidad_ = new System.Windows.Forms.DataGridView();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -65,13 +65,13 @@
             this.groupBox16.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad_)).BeginInit();
+            this.groupBox17.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestanteMorbildad)).BeginInit();
-            this.groupBox17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad_)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox13
@@ -193,7 +193,7 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.dateTimePicker1);
+            this.groupBox16.Controls.Add(this.dtpFechaHistoriaClinica);
             this.groupBox16.Location = new System.Drawing.Point(216, 19);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(143, 47);
@@ -201,14 +201,14 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // dtpFechaHistoriaClinica
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(23, 17);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpFechaHistoriaClinica.Enabled = false;
+            this.dtpFechaHistoriaClinica.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaHistoriaClinica.Location = new System.Drawing.Point(23, 17);
+            this.dtpFechaHistoriaClinica.Name = "dtpFechaHistoriaClinica";
+            this.dtpFechaHistoriaClinica.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaHistoriaClinica.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -240,6 +240,50 @@
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Morbilidad(es)";
+            // 
+            // dgvMorbilidad_
+            // 
+            this.dgvMorbilidad_.AllowUserToAddRows = false;
+            this.dgvMorbilidad_.AllowUserToDeleteRows = false;
+            this.dgvMorbilidad_.AllowUserToOrderColumns = true;
+            this.dgvMorbilidad_.AllowUserToResizeColumns = false;
+            this.dgvMorbilidad_.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvMorbilidad_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMorbilidad_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMorbilidad_.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMorbilidad_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMorbilidad_.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvMorbilidad_.Location = new System.Drawing.Point(7, 65);
+            this.dgvMorbilidad_.MultiSelect = false;
+            this.dgvMorbilidad_.Name = "dgvMorbilidad_";
+            this.dgvMorbilidad_.ReadOnly = true;
+            this.dgvMorbilidad_.RowHeadersVisible = false;
+            this.dgvMorbilidad_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMorbilidad_.Size = new System.Drawing.Size(702, 148);
+            this.dgvMorbilidad_.TabIndex = 30;
+            this.dgvMorbilidad_.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMorbilidad__CellContentClick_1);
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.dtpFechaMorbilidad);
+            this.groupBox17.Location = new System.Drawing.Point(403, 19);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(111, 40);
+            this.groupBox17.TabIndex = 0;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Fecha:";
+            // 
+            // dtpFechaMorbilidad
+            // 
+            this.dtpFechaMorbilidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaMorbilidad.Location = new System.Drawing.Point(6, 15);
+            this.dtpFechaMorbilidad.Name = "dtpFechaMorbilidad";
+            this.dtpFechaMorbilidad.Size = new System.Drawing.Size(97, 20);
+            this.dtpFechaMorbilidad.TabIndex = 0;
+            this.dtpFechaMorbilidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaMorbilidad_KeyPress);
             // 
             // groupBox11
             // 
@@ -364,50 +408,6 @@
             this.dgvGestanteMorbildad.TabIndex = 30;
             this.dgvGestanteMorbildad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestanteMorbildad_CellContentClick);
             // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.dtpFechaMorbilidad);
-            this.groupBox17.Location = new System.Drawing.Point(403, 19);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(111, 40);
-            this.groupBox17.TabIndex = 0;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Fecha:";
-            // 
-            // dtpFechaMorbilidad
-            // 
-            this.dtpFechaMorbilidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaMorbilidad.Location = new System.Drawing.Point(6, 15);
-            this.dtpFechaMorbilidad.Name = "dtpFechaMorbilidad";
-            this.dtpFechaMorbilidad.Size = new System.Drawing.Size(97, 20);
-            this.dtpFechaMorbilidad.TabIndex = 0;
-            this.dtpFechaMorbilidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaMorbilidad_KeyPress);
-            // 
-            // dgvMorbilidad_
-            // 
-            this.dgvMorbilidad_.AllowUserToAddRows = false;
-            this.dgvMorbilidad_.AllowUserToDeleteRows = false;
-            this.dgvMorbilidad_.AllowUserToOrderColumns = true;
-            this.dgvMorbilidad_.AllowUserToResizeColumns = false;
-            this.dgvMorbilidad_.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvMorbilidad_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMorbilidad_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMorbilidad_.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMorbilidad_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMorbilidad_.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvMorbilidad_.Location = new System.Drawing.Point(7, 65);
-            this.dgvMorbilidad_.MultiSelect = false;
-            this.dgvMorbilidad_.Name = "dgvMorbilidad_";
-            this.dgvMorbilidad_.ReadOnly = true;
-            this.dgvMorbilidad_.RowHeadersVisible = false;
-            this.dgvMorbilidad_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMorbilidad_.Size = new System.Drawing.Size(702, 148);
-            this.dgvMorbilidad_.TabIndex = 30;
-            this.dgvMorbilidad_.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMorbilidad__CellContentClick_1);
-            // 
             // frmMorbilidad
             // 
             this.ClientSize = new System.Drawing.Size(766, 694);
@@ -427,14 +427,14 @@
             this.groupBox16.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad_)).EndInit();
+            this.groupBox17.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestanteMorbildad)).EndInit();
-            this.groupBox17.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad_)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,7 +491,7 @@
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.DataGridView dgvGestanteMorbildad;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaHistoriaClinica;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.DateTimePicker dtpFechaMorbilidad;
         private System.Windows.Forms.DataGridView dgvMorbilidad_;
