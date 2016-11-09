@@ -212,9 +212,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 41);
+            this.pictureBox4.Location = new System.Drawing.Point(47, 61);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(746, 356);
+            this.pictureBox4.Size = new System.Drawing.Size(653, 280);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 113;
             this.pictureBox4.TabStop = false;
@@ -228,6 +228,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
