@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.buRegistroBateria = new System.Windows.Forms.Button();
             this.buAtencionPrenatal = new System.Windows.Forms.Button();
@@ -124,14 +124,15 @@
             this.cbYear = new System.Windows.Forms.ComboBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblArchivado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -316,6 +317,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblArchivado);
             this.groupBox4.Controls.Add(this.txtOrigenEESS);
             this.groupBox4.Controls.Add(this.groupBox13);
             this.groupBox4.Controls.Add(this.groupBox12);
@@ -390,6 +392,7 @@
             this.cbArchivado.TabIndex = 38;
             this.cbArchivado.Text = "Archivado";
             this.cbArchivado.UseVisualStyleBackColor = true;
+            this.cbArchivado.CheckedChanged += new System.EventHandler(this.cbArchivado_CheckedChanged);
             this.cbArchivado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbArchivado_KeyPress);
             // 
             // cbTranseunte
@@ -470,8 +473,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -678,8 +681,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1293,6 +1296,24 @@
             this.lblBuscar.TabIndex = 0;
             this.lblBuscar.Text = "Buscar por ";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(397, 26);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(123, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "los registros del obstetra.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(397, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "La busqueda es en todos";
+            // 
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(223, 14);
@@ -1335,8 +1356,8 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1382,23 +1403,17 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // label1
+            // lblArchivado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(397, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "La busqueda es en todos";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(397, 26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(123, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "los registros del obstetra.";
+            this.lblArchivado.AutoSize = true;
+            this.lblArchivado.BackColor = System.Drawing.Color.Red;
+            this.lblArchivado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblArchivado.ForeColor = System.Drawing.Color.White;
+            this.lblArchivado.Location = new System.Drawing.Point(199, 294);
+            this.lblArchivado.Name = "lblArchivado";
+            this.lblArchivado.Size = new System.Drawing.Size(85, 15);
+            this.lblArchivado.TabIndex = 43;
+            this.lblArchivado.Text = "SIN ARCHIVAR";
             // 
             // frmHistoriaClinica
             // 
@@ -1407,7 +1422,7 @@
             this.ClientSize = new System.Drawing.Size(1351, 697);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmHistoriaClinica";
-            this.Text = "Control de Gestantes";
+            this.Text = "Control de Gestante";
             this.Activated += new System.EventHandler(this.frmHistoriaClinica_Activated);
             this.Load += new System.EventHandler(this.frmHistoriaClinica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).EndInit();
@@ -1566,6 +1581,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblArchivado;
     }
 }
 
