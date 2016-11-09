@@ -75,6 +75,12 @@
     <Compile Include="Alertas\frmAlerta.Designer.cs">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\frmAlertaControlPuerperio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmAlertaControlPuerperio.Designer.cs">
+      <DependentUpon>frmAlertaControlPuerperio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.Designer.cs">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\rptAlertaControlPuerperio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAlertaControlPuerperio.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.cs">
       <AutoGen>True</AutoGen>
@@ -301,6 +313,9 @@
     <EmbeddedResource Include="Alertas\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmAlertaControlPuerperio.resx">
+      <DependentUpon>frmAlertaControlPuerperio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmGestantesConRiesgoPresionArterial.resx">
       <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +327,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.resx">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\rptAlertaControlPuerperio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAlertaControlPuerperio.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -509,6 +528,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Alerta_Roja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sirena-041.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoNorte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

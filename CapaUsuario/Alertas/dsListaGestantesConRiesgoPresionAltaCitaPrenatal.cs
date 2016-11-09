@@ -6,6 +6,6 @@
     {
         partial class spListarGestantesConRiesgoXPresionArterialDataTable
         {
-       }
+        }
     }
 }

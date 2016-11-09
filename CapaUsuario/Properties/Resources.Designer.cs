@@ -93,9 +93,29 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoNorte {
+            get {
+                object obj = ResourceManager.GetObject("FondoNorte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap margen {
             get {
                 object obj = ResourceManager.GetObject("margen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sirena_04 {
+            get {
+                object obj = ResourceManager.GetObject("sirena-04", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
