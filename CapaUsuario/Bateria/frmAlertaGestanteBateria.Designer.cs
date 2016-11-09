@@ -49,21 +49,22 @@
             this.dgvListaBateria.BackgroundColor = System.Drawing.Color.White;
             this.dgvListaBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaBateria.GridColor = System.Drawing.Color.White;
-            this.dgvListaBateria.Location = new System.Drawing.Point(7, 9);
+            this.dgvListaBateria.Location = new System.Drawing.Point(7, 49);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaBateria.Size = new System.Drawing.Size(504, 278);
+            this.dgvListaBateria.Size = new System.Drawing.Size(556, 286);
             this.dgvListaBateria.TabIndex = 100;
             // 
             // btnGenerarReporte
             // 
-            this.btnGenerarReporte.Location = new System.Drawing.Point(438, 293);
+            this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarReporte.Location = new System.Drawing.Point(449, 341);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(74, 42);
+            this.btnGenerarReporte.Size = new System.Drawing.Size(115, 42);
             this.btnGenerarReporte.TabIndex = 101;
             this.btnGenerarReporte.Text = "Generar Reporte";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
@@ -74,10 +75,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(523, 341);
+            this.ClientSize = new System.Drawing.Size(575, 389);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.dgvListaBateria);
             this.Name = "frmAlertaGestanteBateria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAlertaGestanteBateria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaBateria)).EndInit();
             this.ResumeLayout(false);
