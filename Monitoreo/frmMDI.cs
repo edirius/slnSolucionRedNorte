@@ -26,5 +26,12 @@ namespace Monitoreo
         {
             Application.Exit();
         }
+
+        private void administradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Administrador.frmMantenimientoAdministrador fMantenimientoAdministrador = new Administrador.frmMantenimientoAdministrador();
+            fMantenimientoAdministrador.MdiParent = this;
+            fMantenimientoAdministrador.Show();
+        }
     }
 }
