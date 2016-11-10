@@ -64,10 +64,10 @@
             // 
             this.cbVer.AutoSize = true;
             this.cbVer.BackColor = System.Drawing.Color.Transparent;
-            this.cbVer.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbVer.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVer.Location = new System.Drawing.Point(135, 291);
             this.cbVer.Name = "cbVer";
-            this.cbVer.Size = new System.Drawing.Size(135, 19);
+            this.cbVer.Size = new System.Drawing.Size(146, 19);
             this.cbVer.TabIndex = 2;
             this.cbVer.Text = "Ver contraseña";
             this.cbVer.UseVisualStyleBackColor = false;
