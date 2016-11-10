@@ -547,6 +547,15 @@
   <ItemGroup>
     <None Include="Resources\Fondo6.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoLogin.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
