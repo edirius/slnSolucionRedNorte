@@ -39,6 +39,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +54,7 @@
             this.lnkGestantesControlPreNatal.BackColor = System.Drawing.Color.Transparent;
             this.lnkGestantesControlPreNatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkGestantesControlPreNatal.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lnkGestantesControlPreNatal.Location = new System.Drawing.Point(85, 184);
+            this.lnkGestantesControlPreNatal.Location = new System.Drawing.Point(23, 184);
             this.lnkGestantesControlPreNatal.Name = "lnkGestantesControlPreNatal";
             this.lnkGestantesControlPreNatal.Size = new System.Drawing.Size(332, 16);
             this.lnkGestantesControlPreNatal.TabIndex = 1;
@@ -66,7 +67,7 @@
             this.lnkGestantesConRiesgoPresionArterial.AutoSize = true;
             this.lnkGestantesConRiesgoPresionArterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkGestantesConRiesgoPresionArterial.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lnkGestantesConRiesgoPresionArterial.Location = new System.Drawing.Point(23, 222);
+            this.lnkGestantesConRiesgoPresionArterial.Location = new System.Drawing.Point(23, 207);
             this.lnkGestantesConRiesgoPresionArterial.Name = "lnkGestantesConRiesgoPresionArterial";
             this.lnkGestantesConRiesgoPresionArterial.Size = new System.Drawing.Size(455, 16);
             this.lnkGestantesConRiesgoPresionArterial.TabIndex = 2;
@@ -79,7 +80,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel1.Location = new System.Drawing.Point(148, 256);
+            this.linkLabel1.Location = new System.Drawing.Point(23, 230);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(198, 16);
             this.linkLabel1.TabIndex = 3;
@@ -167,7 +168,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.linkLabel2.Location = new System.Drawing.Point(150, 292);
+            this.linkLabel2.Location = new System.Drawing.Point(23, 251);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(172, 16);
             this.linkLabel2.TabIndex = 114;
@@ -180,12 +181,25 @@
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.sirena_04;
-            this.pictureBox5.Location = new System.Drawing.Point(328, 275);
+            this.pictureBox5.Location = new System.Drawing.Point(360, 230);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 66);
+            this.pictureBox5.Size = new System.Drawing.Size(118, 66);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 115;
             this.pictureBox5.TabStop = false;
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.linkLabel3.Location = new System.Drawing.Point(23, 272);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(259, 16);
+            this.linkLabel3.TabIndex = 116;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "RECIEN NACIDOS CON BAJO PESO";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // frmAlerta
             // 
@@ -193,6 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(499, 601);
+            this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.pictureBox1);
@@ -232,5 +247,6 @@
         private System.Windows.Forms.Label lbleliminar;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.LinkLabel linkLabel3;
     }
 }
