@@ -27,6 +27,7 @@ namespace Monitoreo
             try
             {
                 Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
+                txtUsuario.Focus();
             }
             catch (Exception ex)
             {
@@ -36,21 +37,17 @@ namespace Monitoreo
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            string existe = "@a";
-            string user = "@b";
             try
             {
-                int numero;
-                string Contraseña = txtContraseña.Text;
-                //numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
-                //
-                if (numero == 1)
+                DataView objDataView = new DataView();
+                objDataView.Table = miAdministrador.ListarAdministrador();
+                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + txtContraseña.Text + "'";
+                if (objDataView.Count > 0)
                 {
                     frmMDI Menu = new frmMDI();
-                    MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + txtUsuario.Text + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bienvenido al Sistema de Monitoreo Control de Gestantes usuario " + txtUsuario.Text + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Menu.Show();
                     this.Hide();
-                    //Menu.obtenerDatos(Usuario);
                 }
                 else
                 {
