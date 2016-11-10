@@ -271,7 +271,7 @@ namespace CapaUsuario.RecienNacido
 
         private void nudApgar1_ValueChanged(object sender, EventArgs e)
         {
-            if (nudApgar1.Value >= 7)
+            if (nudApgar1.Value <= 7)
             {
                 txtMensajeApgar1.Text = "¡¡¡¡Alerta!!!!";
             }
@@ -283,7 +283,7 @@ namespace CapaUsuario.RecienNacido
 
         private void nudApgar5_ValueChanged(object sender, EventArgs e)
         {
-            if (nudApgar5.Value >= 7)
+            if (nudApgar5.Value <= 7)
             {
                 txtMensajeApgar5.Text = "Niño Hipoactivo - No reactivo";
             }

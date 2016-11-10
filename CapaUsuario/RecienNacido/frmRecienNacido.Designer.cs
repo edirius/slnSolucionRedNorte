@@ -57,7 +57,6 @@
             this.nudApgar1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
@@ -79,8 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -401,17 +401,6 @@
             this.label1.TabIndex = 98;
             this.label1.Text = "1er minuto:";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dtpFecha);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(18, 43);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(257, 58);
-            this.groupBox3.TabIndex = 99;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Derivado a enfermeria:";
-            // 
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -558,6 +547,17 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dtpFecha);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Location = new System.Drawing.Point(18, 43);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(257, 58);
+            this.groupBox3.TabIndex = 99;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Derivado a enfermeria:";
+            // 
             // frmRecienNacido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,9 +586,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -614,7 +614,6 @@
         private System.Windows.Forms.NumericUpDown nudApgar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
@@ -633,5 +632,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn APGAR5;
         private System.Windows.Forms.DataGridViewTextBoxColumn PESO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

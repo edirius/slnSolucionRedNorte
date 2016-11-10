@@ -71,5 +71,13 @@ namespace CapaUsuario.Alertas
             else
             { pictureBox5.Visible = true; }
         }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RecienNacido.frmAlertaRNBajoPeso frmRNBajoPeso = new RecienNacido.frmAlertaRNBajoPeso();
+            frmRNBajoPeso.CodigoEstablecimiento = CodigoEstablecimiento;
+            frmRNBajoPeso.CodigoObstetra = CodigoObstetra;
+            frmRNBajoPeso.Show();
+        }
     }
 }

@@ -262,11 +262,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RecienNacido\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmAlertaRNBajoPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmAlertaRNBajoPeso.Designer.cs">
+      <DependentUpon>frmAlertaRNBajoPeso.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecienNacido\frmRecienNacido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecienNacido\frmRecienNacido.Designer.cs">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecienNacido\frmReporteRNBajoPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmReporteRNBajoPeso.Designer.cs">
+      <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\fCantidadGestantes.cs">
       <SubType>Form</SubType>
@@ -411,8 +429,18 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="RecienNacido\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecienNacido\frmAlertaRNBajoPeso.resx">
+      <DependentUpon>frmAlertaRNBajoPeso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecienNacido\frmRecienNacido.resx">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecienNacido\frmReporteRNBajoPeso.resx">
+      <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
       <DependentUpon>fCantidadGestantes.cs</DependentUpon>
