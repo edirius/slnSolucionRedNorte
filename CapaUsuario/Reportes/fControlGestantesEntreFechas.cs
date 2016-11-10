@@ -145,6 +145,10 @@ namespace CapaUsuario.Reportes
 
 
             /*              Llenar datagrids            */
+
+            fecha_fin = dtpFechaFin.Value;
+            fecha_inicio = dtpFechaInicio.Value;
+
             oHistoriaClinica.Idtobstetra = Idtobstetra;
             oHistoriaClinica.fecha_inicio = fecha_inicio;
             oHistoriaClinica.fecha_fin = fecha_fin;
@@ -483,6 +487,13 @@ namespace CapaUsuario.Reportes
 
             dgvVisitasPuerpera.DataSource = oVisitaDomiciliariaPuerpera.ListarVisitaDomiciliariaPuerperaRN(IdtHistoriaClinica);
 
+            dgvTerminoGestacion.DataSource = oTerminoGestacion.ListarTerminoGestacion(IdtHistoriaClinica);
+
+            dgvControlPuerperio.DataSource = oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica);
+
+            dgvRecienNacido.DataSource = oRecienNacido.ListarRecienNacido(IdtHistoriaClinica);
+
+
         }
 
         private PdfPTable pdf_hc_1(int alineacion, int ancho)
@@ -519,7 +530,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -531,7 +542,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -543,57 +554,58 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvHCParte1[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                        if (j == 4)
-                        {
-                            cell.BorderColorLeft = CMYKColor.BLACK;
-                            cell.BorderColorRight = CMYKColor.BLACK;
-                            cell.BorderColorTop = CMYKColor.WHITE;
-                            cell.BorderColorBottom = CMYKColor.WHITE;
-                            cell.BorderWidthLeft = 1f;
-                            cell.BorderWidthRight = 1f;
-                            cell.BorderWidthTop = 0f;
-                            cell.BorderWidthBottom = 0f;
-                            cell.BackgroundColor = CMYKColor.WHITE;
-                        }
-
                         /*
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
-                        {
-                            iindice_a_empleador_i = i;
-                            iindice_a_empleador_j = j;
-                            fAportacionesEmpleador = true;
+                       if (j == 4)
+                       {
+                           cell.BorderColorLeft = CMYKColor.BLACK;
+                           cell.BorderColorRight = CMYKColor.BLACK;
+                           cell.BorderColorTop = CMYKColor.WHITE;
+                           cell.BorderColorBottom = CMYKColor.WHITE;
+                           cell.BorderWidthLeft = 1f;
+                           cell.BorderWidthRight = 1f;
+                           cell.BorderWidthTop = 0f;
+                           cell.BorderWidthBottom = 0f;
+                           cell.BackgroundColor = CMYKColor.WHITE;
+                       }
 
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
-                        {
-                            cell.HorizontalAlignment = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
-                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 0 || j == 5)
-                            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        */
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
+                       {
+                           iindice_a_empleador_i = i;
+                           iindice_a_empleador_j = j;
+                           fAportacionesEmpleador = true;
+
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
+                       {
+                           cell.HorizontalAlignment = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       //Alineando a la derecha la columna de ingresos, egresos y neto
+                       if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
+                           cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+                       //Alineando a la derecha la columna de ingresos, egresos y neto
+                       if (j == 0 || j == 5)
+                           cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                       */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -649,7 +661,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -661,7 +673,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -672,58 +684,58 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvHCParte2.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
-                        if (j == 4)
-                        {
-                            cell.BorderColorLeft = CMYKColor.BLACK;
-                            cell.BorderColorRight = CMYKColor.BLACK;
-                            cell.BorderColorTop = CMYKColor.WHITE;
-                            cell.BorderColorBottom = CMYKColor.WHITE;
-                            cell.BorderWidthLeft = 1f;
-                            cell.BorderWidthRight = 1f;
-                            cell.BorderWidthTop = 0f;
-                            cell.BorderWidthBottom = 0f;
-                            cell.BackgroundColor = CMYKColor.WHITE;
-                        }
-
                         /*
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
-                        {
-                            iindice_a_empleador_i = i;
-                            iindice_a_empleador_j = j;
-                            fAportacionesEmpleador = true;
+                       if (j == 4)
+                       {
+                           cell.BorderColorLeft = CMYKColor.BLACK;
+                           cell.BorderColorRight = CMYKColor.BLACK;
+                           cell.BorderColorTop = CMYKColor.WHITE;
+                           cell.BorderColorBottom = CMYKColor.WHITE;
+                           cell.BorderWidthLeft = 1f;
+                           cell.BorderWidthRight = 1f;
+                           cell.BorderWidthTop = 0f;
+                           cell.BorderWidthBottom = 0f;
+                           cell.BackgroundColor = CMYKColor.WHITE;
+                       }
 
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
-                        {
-                            cell.HorizontalAlignment = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
-                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 0 || j == 5)
-                            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        */
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
+                       {
+                           iindice_a_empleador_i = i;
+                           iindice_a_empleador_j = j;
+                           fAportacionesEmpleador = true;
+
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
+                       {
+                           cell.Colspan = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
+                       {
+                           cell.HorizontalAlignment = 1;
+                           cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                       }
+                       //Alineando a la derecha la columna de ingresos, egresos y neto
+                       if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
+                           cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+                       //Alineando a la derecha la columna de ingresos, egresos y neto
+                       if (j == 0 || j == 5)
+                           cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                       */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -780,7 +792,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -792,7 +804,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -804,6 +816,7 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvHCParte3[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -817,7 +830,7 @@ namespace CapaUsuario.Reportes
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
 
-                        /*
+                        
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
                         {
                             iindice_a_empleador_i = i;
@@ -910,7 +923,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -922,7 +935,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -934,6 +947,8 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvEcografico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -947,7 +962,7 @@ namespace CapaUsuario.Reportes
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
 
-                        /*
+                        
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
                         {
                             iindice_a_empleador_i = i;
@@ -1040,7 +1055,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1052,7 +1067,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1064,6 +1079,7 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1076,6 +1092,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
+                        */
 
                         /*
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
@@ -1170,7 +1187,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1182,7 +1199,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1193,7 +1210,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvMorbilidad.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1207,7 +1224,7 @@ namespace CapaUsuario.Reportes
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
 
-                        /*
+                        
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
                         {
                             iindice_a_empleador_i = i;
@@ -1300,7 +1317,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1312,7 +1329,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1323,7 +1340,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvAtencionPreNatal.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1337,7 +1354,7 @@ namespace CapaUsuario.Reportes
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
 
-                        /*
+                        
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
                         {
                             iindice_a_empleador_i = i;
@@ -1430,7 +1447,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1442,7 +1459,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1454,6 +1471,7 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvRegBateria[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1467,7 +1485,7 @@ namespace CapaUsuario.Reportes
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
 
-                        /*
+                        
                         if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
                         {
                             iindice_a_empleador_i = i;
@@ -1560,7 +1578,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1572,7 +1590,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1584,6 +1602,7 @@ namespace CapaUsuario.Reportes
                     {
                         cell = new PdfPCell((new Phrase(dgvVisitasG[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1596,7 +1615,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
-
+                        */
  
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1652,7 +1671,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1664,7 +1683,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1675,7 +1694,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvVisitasPuerpera.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1688,7 +1707,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
-
+                        */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1744,7 +1763,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1757,6 +1776,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
                     }
+                    */
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1767,7 +1787,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvTerminoGestacion.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvTerminoGestacion[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1780,7 +1800,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
-
+                        */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1836,7 +1856,7 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1849,6 +1869,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
                     }
+                    */
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1859,7 +1880,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvControlPuerperio.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvControlPuerperio[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1872,7 +1893,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
-
+                        */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1928,7 +1949,8 @@ namespace CapaUsuario.Reportes
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-
+                    
+                    /*
                     if (k == 4)
                     {
                         cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1940,7 +1962,7 @@ namespace CapaUsuario.Reportes
                         cell.BorderWidthTop = 0f;
                         cell.BorderWidthBottom = 0f;
                         cell.BackgroundColor = CMYKColor.WHITE;
-                    }
+                    }*/
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -1951,7 +1973,7 @@ namespace CapaUsuario.Reportes
                     for (int j = 0; j < dgvRecienNacido.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvRecienNacido[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-
+                        /*
                         if (j == 4)
                         {
                             cell.BorderColorLeft = CMYKColor.BLACK;
@@ -1964,7 +1986,7 @@ namespace CapaUsuario.Reportes
                             cell.BorderWidthBottom = 0f;
                             cell.BackgroundColor = CMYKColor.WHITE;
                         }
-
+                        */
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);

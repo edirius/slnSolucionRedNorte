@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
@@ -107,7 +107,6 @@
             // 
             // dtpFechaFin
             // 
-            this.dtpFechaFin.Enabled = false;
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaFin.Location = new System.Drawing.Point(196, 15);
             this.dtpFechaFin.Name = "dtpFechaFin";
@@ -116,7 +115,6 @@
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Enabled = false;
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaInicio.Location = new System.Drawing.Point(57, 15);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
@@ -176,8 +174,8 @@
             // 
             this.dgvHCParte1.AllowUserToAddRows = false;
             this.dgvHCParte1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHCParte1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -190,13 +188,14 @@
             this.dgvHCParte1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHCParte1.Size = new System.Drawing.Size(171, 81);
             this.dgvHCParte1.TabIndex = 14;
+            this.dgvHCParte1.Visible = false;
             // 
             // dgvHCParte2
             // 
             this.dgvHCParte2.AllowUserToAddRows = false;
             this.dgvHCParte2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHCParte2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -209,13 +208,14 @@
             this.dgvHCParte2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHCParte2.Size = new System.Drawing.Size(171, 81);
             this.dgvHCParte2.TabIndex = 14;
+            this.dgvHCParte2.Visible = false;
             // 
             // dgvHCParte3
             // 
             this.dgvHCParte3.AllowUserToAddRows = false;
             this.dgvHCParte3.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHCParte3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -228,13 +228,14 @@
             this.dgvHCParte3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHCParte3.Size = new System.Drawing.Size(171, 81);
             this.dgvHCParte3.TabIndex = 14;
+            this.dgvHCParte3.Visible = false;
             // 
             // dgvHCEntreFechas
             // 
             this.dgvHCEntreFechas.AllowUserToAddRows = false;
             this.dgvHCEntreFechas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCEntreFechas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCEntreFechas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHCEntreFechas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCEntreFechas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCEntreFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -247,13 +248,14 @@
             this.dgvHCEntreFechas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHCEntreFechas.Size = new System.Drawing.Size(171, 81);
             this.dgvHCEntreFechas.TabIndex = 14;
+            this.dgvHCEntreFechas.Visible = false;
             // 
             // dgvOdontologico
             // 
             this.dgvOdontologico.AllowUserToAddRows = false;
             this.dgvOdontologico.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOdontologico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOdontologico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvOdontologico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -266,13 +268,14 @@
             this.dgvOdontologico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOdontologico.Size = new System.Drawing.Size(171, 81);
             this.dgvOdontologico.TabIndex = 14;
+            this.dgvOdontologico.Visible = false;
             // 
             // dgvEcografico
             // 
             this.dgvEcografico.AllowUserToAddRows = false;
             this.dgvEcografico.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEcografico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEcografico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEcografico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -285,13 +288,14 @@
             this.dgvEcografico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEcografico.Size = new System.Drawing.Size(171, 81);
             this.dgvEcografico.TabIndex = 14;
+            this.dgvEcografico.Visible = false;
             // 
             // dgvMorbilidad
             // 
             this.dgvMorbilidad.AllowUserToAddRows = false;
             this.dgvMorbilidad.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvMorbilidad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMorbilidad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvMorbilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -304,13 +308,14 @@
             this.dgvMorbilidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMorbilidad.Size = new System.Drawing.Size(171, 81);
             this.dgvMorbilidad.TabIndex = 14;
+            this.dgvMorbilidad.Visible = false;
             // 
             // dgvAtencionPreNatal
             // 
             this.dgvAtencionPreNatal.AllowUserToAddRows = false;
             this.dgvAtencionPreNatal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvAtencionPreNatal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -323,13 +328,14 @@
             this.dgvAtencionPreNatal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAtencionPreNatal.Size = new System.Drawing.Size(171, 81);
             this.dgvAtencionPreNatal.TabIndex = 14;
+            this.dgvAtencionPreNatal.Visible = false;
             // 
             // dgvRegBateria
             // 
             this.dgvRegBateria.AllowUserToAddRows = false;
             this.dgvRegBateria.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvRegBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvRegBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvRegBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRegBateria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRegBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -342,13 +348,14 @@
             this.dgvRegBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegBateria.Size = new System.Drawing.Size(171, 81);
             this.dgvRegBateria.TabIndex = 14;
+            this.dgvRegBateria.Visible = false;
             // 
             // dgvVisitasG
             // 
             this.dgvVisitasG.AllowUserToAddRows = false;
             this.dgvVisitasG.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvVisitasG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvVisitasG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvVisitasG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisitasG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -361,13 +368,14 @@
             this.dgvVisitasG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVisitasG.Size = new System.Drawing.Size(171, 81);
             this.dgvVisitasG.TabIndex = 14;
+            this.dgvVisitasG.Visible = false;
             // 
             // dgvVisitasPuerpera
             // 
             this.dgvVisitasPuerpera.AllowUserToAddRows = false;
             this.dgvVisitasPuerpera.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvVisitasPuerpera.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvVisitasPuerpera.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvVisitasPuerpera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisitasPuerpera.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasPuerpera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -380,13 +388,14 @@
             this.dgvVisitasPuerpera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVisitasPuerpera.Size = new System.Drawing.Size(171, 81);
             this.dgvVisitasPuerpera.TabIndex = 14;
+            this.dgvVisitasPuerpera.Visible = false;
             // 
             // dgvTerminoGestacion
             // 
             this.dgvTerminoGestacion.AllowUserToAddRows = false;
             this.dgvTerminoGestacion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvTerminoGestacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvTerminoGestacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvTerminoGestacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTerminoGestacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvTerminoGestacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -399,13 +408,14 @@
             this.dgvTerminoGestacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTerminoGestacion.Size = new System.Drawing.Size(171, 81);
             this.dgvTerminoGestacion.TabIndex = 14;
+            this.dgvTerminoGestacion.Visible = false;
             // 
             // dgvControlPuerperio
             // 
             this.dgvControlPuerperio.AllowUserToAddRows = false;
             this.dgvControlPuerperio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvControlPuerperio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvControlPuerperio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvControlPuerperio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvControlPuerperio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvControlPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -418,13 +428,14 @@
             this.dgvControlPuerperio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvControlPuerperio.Size = new System.Drawing.Size(171, 81);
             this.dgvControlPuerperio.TabIndex = 14;
+            this.dgvControlPuerperio.Visible = false;
             // 
             // dgvRecienNacido
             // 
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecienNacido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRecienNacido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -437,6 +448,7 @@
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(171, 81);
             this.dgvRecienNacido.TabIndex = 14;
+            this.dgvRecienNacido.Visible = false;
             // 
             // fControlGestantesEntreFechas
             // 
