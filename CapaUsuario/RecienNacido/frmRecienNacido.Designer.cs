@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecienNacido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -86,7 +86,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.lblAlerta);
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Controls.Add(this.pbAlerta);
@@ -169,7 +169,7 @@
             // pbAlerta
             // 
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
             this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
             this.pbAlerta.Location = new System.Drawing.Point(433, 37);
             this.pbAlerta.Name = "pbAlerta";
@@ -183,8 +183,8 @@
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToResizeColumns = false;
             this.dgvRecienNacido.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecienNacido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -203,9 +203,9 @@
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
@@ -490,11 +490,16 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(351, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(168, 40);
             this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -502,11 +507,16 @@
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertar.BackgroundImage")));
+            this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsertar.ForeColor = System.Drawing.Color.White;
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(168, 40);
             this.btnInsertar.TabIndex = 8;
-            this.btnInsertar.Text = "Guardar";
+            this.btnInsertar.Text = "GUARDAR";
             this.btnInsertar.UseVisualStyleBackColor = true;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
@@ -514,11 +524,16 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Location = new System.Drawing.Point(177, 3);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(168, 40);
             this.btnNuevo.TabIndex = 11;
-            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -526,11 +541,16 @@
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Location = new System.Drawing.Point(525, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(168, 40);
             this.btnSalir.TabIndex = 47;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -543,11 +563,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(886, 564);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvRecienNacido);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "frmRecienNacido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRecienNacido";

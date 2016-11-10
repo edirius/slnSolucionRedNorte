@@ -37,12 +37,7 @@
             this.microredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.establecimientoSaludToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cItasPreNatalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitaDomiciliariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlPeuperioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.terminoGestaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transeunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaPorPaciwinwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaEntreFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +58,8 @@
             this.pacientesToolStripMenuItem,
             this.historiaClinicaToolStripMenuItem,
             this.establecimientoSaludToolStripMenuItem,
-            this.pruebasToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
-            this.transeunteToolStripMenuItem,
+            this.pruebasToolStripMenuItem,
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -129,56 +123,17 @@
             // pruebasToolStripMenuItem
             // 
             this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cItasPreNatalesToolStripMenuItem,
-            this.alertasToolStripMenuItem,
-            this.visitaDomiciliariaToolStripMenuItem,
-            this.controlPeuperioToolStripMenuItem,
-            this.terminoGestaciónToolStripMenuItem});
+            this.alertasToolStripMenuItem});
             this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
-            this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.pruebasToolStripMenuItem.Text = "Pruebas";
-            // 
-            // cItasPreNatalesToolStripMenuItem
-            // 
-            this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
-            this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
+            this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.pruebasToolStripMenuItem.Text = "Alertas";
             // 
             // alertasToolStripMenuItem
             // 
             this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
-            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alertasToolStripMenuItem.Text = "Alertas";
             this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
-            // 
-            // visitaDomiciliariaToolStripMenuItem
-            // 
-            this.visitaDomiciliariaToolStripMenuItem.Name = "visitaDomiciliariaToolStripMenuItem";
-            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.visitaDomiciliariaToolStripMenuItem.Text = "Visita Domiciliaria";
-            this.visitaDomiciliariaToolStripMenuItem.Click += new System.EventHandler(this.visitaDomiciliariaToolStripMenuItem_Click);
-            // 
-            // controlPeuperioToolStripMenuItem
-            // 
-            this.controlPeuperioToolStripMenuItem.Name = "controlPeuperioToolStripMenuItem";
-            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.controlPeuperioToolStripMenuItem.Text = "Control Peuperio";
-            this.controlPeuperioToolStripMenuItem.Click += new System.EventHandler(this.controlPeuperioToolStripMenuItem_Click);
-            // 
-            // terminoGestaciónToolStripMenuItem
-            // 
-            this.terminoGestaciónToolStripMenuItem.Name = "terminoGestaciónToolStripMenuItem";
-            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.terminoGestaciónToolStripMenuItem.Text = "Termino Gestación";
-            this.terminoGestaciónToolStripMenuItem.Click += new System.EventHandler(this.terminoGestaciónToolStripMenuItem_Click);
-            // 
-            // transeunteToolStripMenuItem
-            // 
-            this.transeunteToolStripMenuItem.Name = "transeunteToolStripMenuItem";
-            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.transeunteToolStripMenuItem.Text = "Transeunte";
-            this.transeunteToolStripMenuItem.Click += new System.EventHandler(this.transeunteToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -295,12 +250,7 @@
         private System.Windows.Forms.ToolStripStatusLabel slNombre;
         private System.Windows.Forms.ToolStripStatusLabel slEstablecimiento;
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transeunteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visitaDomiciliariaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem controlPeuperioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem terminoGestaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaPorPaciwinwToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaEntreFechasToolStripMenuItem;
