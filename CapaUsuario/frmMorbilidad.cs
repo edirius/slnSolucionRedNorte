@@ -175,30 +175,35 @@ namespace CapaUsuario
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            odtGM.Rows.Clear();
-            dgvGM.DataSource = odtGM;
 
-            dgvGM.Columns[1].Visible = false;
-            dgvGM.Columns[0].Width = 60;
-            dgvGM.Columns[2].Width = 120;
-            txtBuscar_.Text = "";
-            i = 0;
+            if (!Archivado){ 
+                odtGM.Rows.Clear();
+                dgvGM.DataSource = odtGM;
 
-            /*
-            DataGridViewButtonColumn dgvbGestanteMorbilidad = new DataGridViewButtonColumn();
+                dgvGM.Columns[1].Visible = false;
+                dgvGM.Columns[0].Width = 60;
+                dgvGM.Columns[2].Width = 120;
+                txtBuscar_.Text = "";
+                i = 0;
 
-            dgvbGestanteMorbilidad.Name = "Acción";
-            dgvbGestanteMorbilidad.Text = "Eliminar";
-            dgvbGestanteMorbilidad.HeaderText = "Acción";
-            dgvbGestanteMorbilidad.UseColumnTextForButtonValue = true;
+                /*
+                DataGridViewButtonColumn dgvbGestanteMorbilidad = new DataGridViewButtonColumn();
+
+                dgvbGestanteMorbilidad.Name = "Acción";
+                dgvbGestanteMorbilidad.Text = "Eliminar";
+                dgvbGestanteMorbilidad.HeaderText = "Acción";
+                dgvbGestanteMorbilidad.UseColumnTextForButtonValue = true;
 
 
-            int columnIndex2 = 4;
+                int columnIndex2 = 4;
 
-            dgvGestanteMorbildad.Columns.Insert(columnIndex2, dgvbGestanteMorbilidad);
-            */
+                dgvGestanteMorbildad.Columns.Insert(columnIndex2, dgvbGestanteMorbilidad);
+                */
 
-            dtpFechaMorbilidad.Focus();
+                dtpFechaMorbilidad.Focus();
+            }
+            else
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void agregar_gestante_morbilidad(DataGridView dgvGM, DataGridView dgvM, int posicion ) {
