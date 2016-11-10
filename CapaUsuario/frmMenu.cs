@@ -161,6 +161,7 @@ namespace CapaUsuario
         {
             CapaUsuario.Reportes.fControlGestantesEntreFechas fControlGestantesEntreFechas = new CapaUsuario.Reportes.fControlGestantesEntreFechas();
             fControlGestantesEntreFechas.MdiParent = this;
+            fControlGestantesEntreFechas.Idtobstetra = IdObstetra;
             fControlGestantesEntreFechas.Show();
         }
 
