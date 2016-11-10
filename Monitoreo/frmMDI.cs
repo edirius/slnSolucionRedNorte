@@ -36,7 +36,9 @@ namespace Monitoreo
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Reportes.frmReporteObstetras fReporteObstetras = new Reportes.frmReporteObstetras();
+            fReporteObstetras.MdiParent = this;
+            fReporteObstetras.Show();
         }
     }
 }
