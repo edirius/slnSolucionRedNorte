@@ -16,6 +16,7 @@ namespace Monitoreo
     public partial class frmLogin : Form
     {
         CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
+        CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
 
         public frmLogin()
         {
@@ -33,15 +34,15 @@ namespace Monitoreo
             {
                 MessageBox.Show(ex.Message);
             }
+        
         }
-
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private void btnIniciar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 DataView objDataView = new DataView();
                 objDataView.Table = miAdministrador.ListarAdministrador();
-                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + txtContraseña.Text + "'";
+                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + miUsuario.ObtenerSHA1(txtContraseña.Text) + "'";
                 if (objDataView.Count > 0)
                 {
                     frmMDI Menu = new frmMDI();
@@ -63,12 +64,12 @@ namespace Monitoreo
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
         }
-        
-        private void cbVer_CheckedChanged(object sender, EventArgs e)
+
+        private void cbVer_CheckedChanged_1(object sender, EventArgs e)
         {
             if (cbVer.Checked)
             {
@@ -80,19 +81,19 @@ namespace Monitoreo
             }
         }
 
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtContraseña_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnIniciar_Click_1(sender, e);
+            }
+        }
+
+        private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 txtContraseña.Focus();
-            }
-        }
-
-        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                btnIniciar_Click(sender, e);
             }
         }
     }

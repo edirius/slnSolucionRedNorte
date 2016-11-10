@@ -32,10 +32,12 @@
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitoreoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microRedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.establecimientosDeSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +76,23 @@
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // monitoreoToolStripMenuItem
+            // 
+            this.monitoreoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.microRedToolStripMenuItem,
+            this.establecimientosDeSaludToolStripMenuItem,
+            this.reportesToolStripMenuItem});
+            this.monitoreoToolStripMenuItem.Name = "monitoreoToolStripMenuItem";
+            this.monitoreoToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.monitoreoToolStripMenuItem.Text = "Reportes";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportesToolStripMenuItem.Text = "Obstetras";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
             // mantenimientoToolStripMenuItem
             // 
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,20 +108,17 @@
             this.administradoresToolStripMenuItem.Text = "Administradores";
             this.administradoresToolStripMenuItem.Click += new System.EventHandler(this.administradoresToolStripMenuItem_Click);
             // 
-            // monitoreoToolStripMenuItem
+            // microRedToolStripMenuItem
             // 
-            this.monitoreoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportesToolStripMenuItem});
-            this.monitoreoToolStripMenuItem.Name = "monitoreoToolStripMenuItem";
-            this.monitoreoToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.monitoreoToolStripMenuItem.Text = "Monitoreo";
+            this.microRedToolStripMenuItem.Name = "microRedToolStripMenuItem";
+            this.microRedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.microRedToolStripMenuItem.Text = "MicroRed";
             // 
-            // reportesToolStripMenuItem
+            // establecimientosDeSaludToolStripMenuItem
             // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            this.establecimientosDeSaludToolStripMenuItem.Name = "establecimientosDeSaludToolStripMenuItem";
+            this.establecimientosDeSaludToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.establecimientosDeSaludToolStripMenuItem.Text = "Establecimientos de Salud";
             // 
             // frmMDI
             // 
@@ -137,6 +153,8 @@
         private System.Windows.Forms.ToolStripMenuItem administradoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monitoreoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microRedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem establecimientosDeSaludToolStripMenuItem;
     }
 }
 

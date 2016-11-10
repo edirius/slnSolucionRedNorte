@@ -14,7 +14,7 @@ namespace Monitoreo.Administrador
     {
         int saccion;
         string sidtadministrador= "";
-
+        CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         public frmAdministrador()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Monitoreo.Administrador
                 miAdministrador.direccion = txtDireccion.Text ;
                 miAdministrador.telefono = txtCelular.Text;
                 miAdministrador.usuario = txtUsuario.Text;
-                miAdministrador.password = txtPassword.Text;
+                miAdministrador.password = miUsuario.ObtenerSHA1(txtPassword.Text);
 
                 if (saccion == 1)
                 {

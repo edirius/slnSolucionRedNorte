@@ -30,6 +30,7 @@ namespace CapaUsuario.CitaPreNatal
         private int limitePresionArterialS = 140;
         private int limitePresionArterialD = 85;
 
+        private string estado = "nuevo";
 
         private void frmCitaPreNatal_Load(object sender, EventArgs e)
         {
@@ -45,12 +46,8 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 dtpProximaCita.MinDate = dtpFechaCita.Value; 
                 dtgCitasMedicas.DataSource = oCitaPrenatal.ListaCitasPreNatal();
-                txtNumeroCita.Text = (dtgCitasMedicas.Rows.Count + 1).ToString();
-                if (dtgCitasMedicas.Rows.Count > 0)
-                {
-                    dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells["colFechaProximaCita"].Value);
-                    dtpFechaCita.Enabled = false;
-                }
+               
+                
             }
             catch (Exception e)
             {
@@ -61,29 +58,14 @@ namespace CapaUsuario.CitaPreNatal
 
         private void btnAgregarControl_Click(object sender, EventArgs e)
         {
-            try
+            txtNumeroCita.Text = "";
+            txtFUA.Text = "";
+            txtNumeroCita.Text = (dtgCitasMedicas.Rows.Count + 1).ToString();
+            if (dtgCitasMedicas.Rows.Count > 0)
             {
-                cSiguienteCodigo miSiguienteCodigo = new cSiguienteCodigo();
-                foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcitaprenatal", Establecimiento).Rows)
-                {
-                    oCitaPrenatal.CodigoCitaPrenatal = row[0].ToString();
-                }
-                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
-                oCitaPrenatal.NumeroCita = Convert.ToInt16(txtNumeroCita.Text);
-                oCitaPrenatal.EdadGestacional = Convert.ToInt16(numEdadGestacional.Value);
-                oCitaPrenatal.FechaCitaPrenatal = dtpFechaCita.Value;
-                oCitaPrenatal.Fua = txtFUA.Text;
-                oCitaPrenatal.PresionArterialD = Convert.ToInt16(numPresionArterialD.Value);
-                oCitaPrenatal.PresionArterialS = Convert.ToInt16(numPresionArterialS.Value);
-                oCitaPrenatal.FechaProximaCitaPrenatal = dtpProximaCita.Value;
-                oCitaPrenatal.AgregarCita(oCitaPrenatal);
-                CargarDatos();
+                dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells["colFechaProximaCita"].Value);
+                
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
 
         }
 
@@ -136,6 +118,59 @@ namespace CapaUsuario.CitaPreNatal
             frmReporteListaPreNatal fReporteListaPrenatal = new frmReporteListaPreNatal();
             fReporteListaPrenatal.crystalReportViewer1.ReportSource = rListaPrenatal;
             fReporteListaPrenatal.Show();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                oCitaPrenatal.NumeroCita = Convert.ToInt16(txtNumeroCita.Text);
+                oCitaPrenatal.EdadGestacional = Convert.ToInt16(numEdadGestacional.Value);
+                oCitaPrenatal.FechaCitaPrenatal = dtpFechaCita.Value;
+                oCitaPrenatal.Fua = txtFUA.Text;
+                oCitaPrenatal.PresionArterialD = Convert.ToInt16(numPresionArterialD.Value);
+                oCitaPrenatal.PresionArterialS = Convert.ToInt16(numPresionArterialS.Value);
+                oCitaPrenatal.FechaProximaCitaPrenatal = dtpProximaCita.Value;
+                
+
+                switch (estado)
+                {
+                    case "nuevo":
+                        cSiguienteCodigo miSiguienteCodigo = new cSiguienteCodigo();
+                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcitaprenatal", Establecimiento).Rows)
+                        {
+                            oCitaPrenatal.CodigoCitaPrenatal = row[0].ToString();
+                        }
+                        oCitaPrenatal.AgregarCita(oCitaPrenatal);
+                        break;
+                    case "modificar":
+                        oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString(); 
+                        oCitaPrenatal.ModificarCita(oCitaPrenatal);
+                        break;
+                    default:
+                        break;
+                }
+
+                
+                CargarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgCitasMedicas_SelectionChanged(object sender, EventArgs e)
+        {
+            estado = "modificar";
+            txtNumeroCita.Text = dtgCitasMedicas.SelectedRows[0].Cells["colnumerocita"].Value.ToString();
+            dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colfechacita"].Value);
+            numEdadGestacional.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["coledadgestacional"].Value);
+            numPresionArterialD.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colPresionArterialD"].Value);
+            numPresionArterialS.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colpresionalarterials"].Value);
+            txtFUA.Text = dtgCitasMedicas.SelectedRows[0].Cells["colFUA"].Value.ToString();
+            dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
         }
     }
 }

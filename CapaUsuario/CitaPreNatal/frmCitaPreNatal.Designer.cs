@@ -57,6 +57,7 @@
             this.numPresionArterialD = new System.Windows.Forms.NumericUpDown();
             this.numEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).BeginInit();
@@ -99,6 +100,7 @@
             this.dtgCitasMedicas.Size = new System.Drawing.Size(619, 150);
             this.dtgCitasMedicas.TabIndex = 0;
             this.dtgCitasMedicas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgCitasMedicas_CellFormatting);
+            this.dtgCitasMedicas.SelectionChanged += new System.EventHandler(this.dtgCitasMedicas_SelectionChanged);
             // 
             // colidtcitaprenatal
             // 
@@ -279,7 +281,7 @@
             this.btnAgregarControl.Name = "btnAgregarControl";
             this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
             this.btnAgregarControl.TabIndex = 15;
-            this.btnAgregarControl.Text = "Agregar";
+            this.btnAgregarControl.Text = "Nuevo";
             this.btnAgregarControl.UseVisualStyleBackColor = false;
             this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
             // 
@@ -354,12 +356,26 @@
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.MintCream;
+            this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGuardar.Location = new System.Drawing.Point(257, 130);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 45);
+            this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // frmCitaPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(668, 410);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.numEdadGestacional);
             this.Controls.Add(this.numPresionArterialD);
@@ -421,5 +437,6 @@
         private System.Windows.Forms.NumericUpDown numPresionArterialD;
         private System.Windows.Forms.NumericUpDown numEdadGestacional;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }
