@@ -34,6 +34,8 @@ namespace CapaDeNegocios
         public int Transeunte { get; set; }
         public string OrigenEESS { get; set; }
         public int Archivado { get; set; }
+        public DateTime fecha_inicio{ get; set; }
+        public DateTime fecha_fin { get; set; }
 
         public DataTable CrearHistoriaClinica()
         {
@@ -60,7 +62,25 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica,Idtobstetra);
         }
 
-        
+        public DataTable ReporteHistoriaClinicaXObstetraXFechas()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaXObstetraXFechas", Idtobstetra, fecha_inicio, fecha_fin );
+        }
+
+        public DataTable ReporteHistoriaClinicaParte1()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte1", Idthistoriaclinica);
+        }
+
+        public DataTable ReporteHistoriaClinicaParte2()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte2", Idthistoriaclinica);
+        }
+
+        public DataTable ReporteHistoriaClinicaParte3()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte3", Idthistoriaclinica);
+        }
 
         public DataTable ListarYear()
         {
