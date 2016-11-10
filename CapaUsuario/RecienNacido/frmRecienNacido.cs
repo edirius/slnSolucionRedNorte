@@ -54,21 +54,21 @@ namespace CapaUsuario.RecienNacido
         }
         private void ConfiguracionInicial()
         {
-            
-            //txtCodigoRN.Text = "";
-            //dtpFecha.Value = DateTime.Today;
-            //dtpFecha.Enabled = false;
-            //pbAlerta.Visible = false;
-            //nudApgar1.Value = 0;
-            //nudApgar1.Enabled = false;
-            //nudApgar5.Value = 0;
-            //nudApgar5.Enabled = false;
-            //nudPeso.Value = 2000;
-            //nudPeso.Enabled = false;
-            //cbSexo.Text = "Seleccione el sexo.";
-            //cbSexo.Enabled = false;
-            //btnInsertar.Enabled = false;
-            //btnEliminar.Enabled = false;
+
+            txtCodigoRN.Text = "";
+            dtpFecha.Value = DateTime.Today;
+            dtpFecha.Enabled = false;
+            pbAlerta.Visible = false;
+            nudApgar1.Value = 0;
+            nudApgar1.Enabled = false;
+            nudApgar5.Value = 0;
+            nudApgar5.Enabled = false;
+            nudPeso.Value = 2000;
+            nudPeso.Enabled = false;
+            cbSexo.Text = "Seleccione el sexo.";
+            cbSexo.Enabled = false;
+            btnInsertar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
         private void Nuevo()
         {

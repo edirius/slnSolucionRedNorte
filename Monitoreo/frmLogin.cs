@@ -34,9 +34,9 @@ namespace Monitoreo
             {
                 MessageBox.Show(ex.Message);
             }
+        
         }
-
-        private void btnIniciar_Click(object sender, EventArgs e)
+        private void btnIniciar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -64,12 +64,12 @@ namespace Monitoreo
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
         }
-        
-        private void cbVer_CheckedChanged(object sender, EventArgs e)
+
+        private void cbVer_CheckedChanged_1(object sender, EventArgs e)
         {
             if (cbVer.Checked)
             {
@@ -81,19 +81,19 @@ namespace Monitoreo
             }
         }
 
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtContraseña_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnIniciar_Click_1(sender, e);
+            }
+        }
+
+        private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
                 txtContraseña.Focus();
-            }
-        }
-
-        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                btnIniciar_Click(sender, e);
             }
         }
     }
