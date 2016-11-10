@@ -34,6 +34,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monitoreoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +66,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.monitoreoToolStripMenuItem,
             this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -85,6 +88,21 @@
             this.administradoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.administradoresToolStripMenuItem.Text = "Administradores";
             this.administradoresToolStripMenuItem.Click += new System.EventHandler(this.administradoresToolStripMenuItem_Click);
+            // 
+            // monitoreoToolStripMenuItem
+            // 
+            this.monitoreoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportesToolStripMenuItem});
+            this.monitoreoToolStripMenuItem.Name = "monitoreoToolStripMenuItem";
+            this.monitoreoToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.monitoreoToolStripMenuItem.Text = "Monitoreo";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // frmMDI
             // 
@@ -117,6 +135,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administradoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monitoreoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }
 
