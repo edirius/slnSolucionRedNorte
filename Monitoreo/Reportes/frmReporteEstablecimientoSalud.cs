@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace Monitoreo.Reportes
 {
-    public partial class frmReporteObstetras : Form
+    public partial class frmReporteEstablecimientoSalud : Form
     {
         string sidtmicrored = "";
         string sidtestablecimientosalud = "";
 
-        public frmReporteObstetras()
+        public frmReporteEstablecimientoSalud()
         {
             InitializeComponent();
         }
 
-        private void frmReporteObstetras_Load(object sender, EventArgs e)
+        private void frmReporteEstablecimientoSalud_Load(object sender, EventArgs e)
         {
+            cboMes.Text = Convert.ToString(DateTime.Now.ToString("MMMM"));
+            CargarAños();
             CargarMicroRED();
         }
 
@@ -34,23 +36,12 @@ namespace Monitoreo.Reportes
             }
         }
 
-        private void cboEstablecimientoSalud_SelectedIndexChanged(object sender, EventArgs e)
+        private void dgvEstablecimientoSalud_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (cboEstablecimientoSalud.Text != "System.Data.DataRowView" && cboEstablecimientoSalud.ValueMember != "")
+            if (e.RowIndex != -1)
             {
-                sidtestablecimientosalud = cboEstablecimientoSalud.SelectedValue.ToString();
-                CargarObstetras();
+                sidtestablecimientosalud = Convert.ToString(dgvEstablecimientoSalud.Rows[e.RowIndex].Cells["idtestablecimientosalud"].Value);
             }
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void CargarMicroRED()
@@ -75,10 +66,21 @@ namespace Monitoreo.Reportes
                 CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud miEstablecimiento = new CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud();
                 DataTable oDataEstablecimientoSalud = new DataTable();
                 oDataEstablecimientoSalud = miEstablecimiento.ListarEstablecimiento();
-                oDataEstablecimientoSalud.DefaultView.RowFilter = ("Microred = '" + cboMicroRED.Text + "'");
-                cboEstablecimientoSalud.DataSource = oDataEstablecimientoSalud.DefaultView;
-                cboEstablecimientoSalud.ValueMember = "Codigo";
-                cboEstablecimientoSalud.DisplayMember = "Descripcion";
+                //oDataEstablecimientoSalud.DefaultView.RowFilter = ("Microred = '" + cboMicroRED.Text + "'");
+                //dgvEstablecimientoSalud.DataSource = oDataEstablecimientoSalud.DefaultView;
+
+                dgvEstablecimientoSalud.Rows.Clear();
+                foreach (DataRow row in oDataEstablecimientoSalud.Select("microred = '" + cboMicroRED.Text + "'"))
+                {
+                    dgvEstablecimientoSalud.Rows.Add(row["codigo"].ToString(), row["descripcion"].ToString(), row["direccion"].ToString());
+                }
+                if (dgvEstablecimientoSalud.Rows.Count > 0)
+                {
+                    dgvEstablecimientoSalud.ClearSelection();
+                    dgvEstablecimientoSalud.Rows[0].Selected = true;
+                    DataGridViewCellEventArgs ceo = new DataGridViewCellEventArgs(0, 0);
+                    dgvEstablecimientoSalud_CellClick(dgvEstablecimientoSalud, ceo);
+                }
             }
             catch (Exception m)
             {
@@ -86,20 +88,13 @@ namespace Monitoreo.Reportes
             }
         }
 
-        private void CargarObstetras()
+        private void CargarAños()
         {
-            try
+            for (int i = DateTime.Now.Year; i >= 2000; i--)
             {
-                CapaDeNegocios.Reportes.cReporteObstetra miObstetra = new CapaDeNegocios.Reportes.cReporteObstetra();
-                DataTable oDataObstetra= new DataTable();
-                oDataObstetra = miObstetra.ReporteObstetra();
-                oDataObstetra.DefaultView.RowFilter = ("idtestablecimientosalud = '" + sidtestablecimientosalud + "'");
-                dgvObstetra.DataSource = oDataObstetra.DefaultView;
+                cboAño.Items.Add(i);
             }
-            catch (Exception m)
-            {
-                MessageBox.Show(m.Message);
-            }
+            cboAño.Text = Convert.ToString(DateTime.Now.Year);
         }
     }
 }
