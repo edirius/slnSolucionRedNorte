@@ -15,6 +15,7 @@ namespace CapaUsuario.Obstetra
         int saccion;
         string sidtobstetra= "";
         string sidtestablecimientosalud = "";
+        CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
 
         public frmObstetra()
         {
@@ -45,7 +46,7 @@ namespace CapaUsuario.Obstetra
                 miObstetra.tituloprofesional = txtTituloProfesional.Text;
                 miObstetra.idtestablecimientosalud = sidtestablecimientosalud;
                 miObstetra.usuario = txtUsuario.Text;
-                miObstetra.password = txtPassword.Text;
+                miObstetra.password = miUsuario.ObtenerSHA1(txtPassword.Text);
 
                 if (saccion == 1)
                 {
@@ -90,7 +91,7 @@ namespace CapaUsuario.Obstetra
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
                 {
-                    MessageBox.Show("El DNI ingresado ya pertenece a otro Obrero.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El DNI ingresado ya pertenece a otro Obstetra.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtDNI.Text = "";
                     return;
                 }
