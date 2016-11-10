@@ -294,6 +294,7 @@
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPassword.Location = new System.Drawing.Point(117, 243);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(218, 20);
             this.txtPassword.TabIndex = 121;
             // 
