@@ -34,11 +34,18 @@ namespace Monitoreo
             fMantenimientoAdministrador.Show();
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void microRedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.frmReporteObstetras fReporteObstetras = new Reportes.frmReporteObstetras();
-            fReporteObstetras.MdiParent = this;
-            fReporteObstetras.Show();
+            Reportes.frmReporteMicroRED fReporteMicroRED = new Reportes.frmReporteMicroRED();
+            fReporteMicroRED.MdiParent = this;
+            fReporteMicroRED.Show();
+        }
+
+        private void establecimientosDeSaludToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmReporteEstablecimientoSalud fReporteEstablecimientoSalud = new Reportes.frmReporteEstablecimientoSalud();
+            fReporteEstablecimientoSalud.MdiParent = this;
+            fReporteEstablecimientoSalud.Show();
         }
     }
 }
