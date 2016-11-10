@@ -1104,6 +1104,7 @@ namespace CapaUsuario
 
                                 dgvHC.Rows[rowIndex].Selected = true;
                                 dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
+                                Codigo_Historia_Clinica = null;
 
                             }
                         }
