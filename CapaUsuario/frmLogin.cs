@@ -41,8 +41,8 @@ namespace CapaUsuario.Seguridad
             try
             {
                 int numero;
-                string Contraseña = txtContraseña.Text;
-                //string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
+                //string Contraseña = txtContraseña.Text;
+                string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
                 numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
                 Usuario = txtUsuario.Text;
                 //

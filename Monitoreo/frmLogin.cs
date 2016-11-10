@@ -16,6 +16,7 @@ namespace Monitoreo
     public partial class frmLogin : Form
     {
         CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
+        CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
 
         public frmLogin()
         {
@@ -41,7 +42,7 @@ namespace Monitoreo
             {
                 DataView objDataView = new DataView();
                 objDataView.Table = miAdministrador.ListarAdministrador();
-                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + txtContraseña.Text + "'";
+                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + miUsuario.ObtenerSHA1(txtContraseña.Text) + "'";
                 if (objDataView.Count > 0)
                 {
                     frmMDI Menu = new frmMDI();
