@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecienNacido));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -93,7 +93,7 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(95, 326);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(696, 161);
+            this.groupBox2.Size = new System.Drawing.Size(696, 127);
             this.groupBox2.TabIndex = 106;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuadro de precaución:";
@@ -104,7 +104,7 @@
             this.lblAlerta.BackColor = System.Drawing.Color.Transparent;
             this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlerta.ForeColor = System.Drawing.Color.White;
-            this.lblAlerta.Location = new System.Drawing.Point(475, 14);
+            this.lblAlerta.Location = new System.Drawing.Point(477, 6);
             this.lblAlerta.Name = "lblAlerta";
             this.lblAlerta.Size = new System.Drawing.Size(88, 20);
             this.lblAlerta.TabIndex = 103;
@@ -118,7 +118,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtMensajePeso, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.txtMensajeApgar5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtMensajeApgar1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(119, 36);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(121, 28);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -171,7 +171,7 @@
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
             this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
-            this.pbAlerta.Location = new System.Drawing.Point(433, 37);
+            this.pbAlerta.Location = new System.Drawing.Point(435, 29);
             this.pbAlerta.Name = "pbAlerta";
             this.pbAlerta.Size = new System.Drawing.Size(170, 97);
             this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,8 +183,8 @@
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToResizeColumns = false;
             this.dgvRecienNacido.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRecienNacido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -203,9 +203,9 @@
             this.dgvRecienNacido.Location = new System.Drawing.Point(164, 179);
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacido.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecienNacido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRecienNacido.Size = new System.Drawing.Size(559, 141);
             this.dgvRecienNacido.TabIndex = 105;
@@ -477,9 +477,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(95, 506);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(95, 456);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -564,7 +564,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(886, 564);
+            this.ClientSize = new System.Drawing.Size(886, 505);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvRecienNacido);
@@ -572,7 +572,7 @@
             this.DoubleBuffered = true;
             this.Name = "frmRecienNacido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmRecienNacido";
+            this.Text = "Atencion al Recien Nacido";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -614,7 +614,6 @@
         private System.Windows.Forms.NumericUpDown nudApgar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnEliminar;
@@ -633,5 +632,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn APGAR5;
         private System.Windows.Forms.DataGridViewTextBoxColumn PESO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

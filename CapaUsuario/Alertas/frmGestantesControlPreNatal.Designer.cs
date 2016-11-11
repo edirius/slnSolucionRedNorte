@@ -178,6 +178,7 @@
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgListaGestantes);
             this.Name = "frmGestantesControlPreNatal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relacion de Gestantes que no acuden a las citas.";
             this.Load += new System.EventHandler(this.frmGestantesControlPreNatal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).EndInit();

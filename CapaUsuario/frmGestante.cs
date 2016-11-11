@@ -254,5 +254,14 @@ namespace CapaUsuario
         {
             DialogResult = DialogResult.OK;
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente(IdtEstablecimientoSalud);
+            fMantenimientoPaciente.ShowDialog();
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, 50);
+        }
     }
 }

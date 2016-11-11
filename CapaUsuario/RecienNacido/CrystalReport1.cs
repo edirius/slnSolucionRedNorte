@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaUsuario {
+namespace CapaUsuario.RecienNacido {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CapaUsuario {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crCantidadGestantes : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public crCantidadGestantes() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "crCantidadGestantes.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaUsuario {
         
         public override string FullResourceName {
             get {
-                return "CapaUsuario.crCantidadGestantes.rpt";
+                return "CapaUsuario.RecienNacido.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,41 @@ namespace CapaUsuario {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageFooterSection1 {
+        public CrystalDecisions.Shared.IParameterField Parameter_pestablecimiento {
             get {
-                return this.ReportDefinition.Sections[5];
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pobstetra {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pmes {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_paño {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrCantidadGestantes : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedcrCantidadGestantes() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -137,7 +161,7 @@ namespace CapaUsuario {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crCantidadGestantes rpt = new crCantidadGestantes();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

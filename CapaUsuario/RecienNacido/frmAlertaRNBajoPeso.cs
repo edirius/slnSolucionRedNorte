@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDeNegocios;
-using CrystalDecisions.CrystalReports.Engine;
 
-namespace CapaUsuario.Bateria
+namespace CapaUsuario.RecienNacido
 {
-    public partial class frmAlertaGestanteBateria : Form
+    public partial class frmAlertaRNBajoPeso : Form
     {
-        CapaDeNegocios.cBateria miBateria = new cBateria();
+        CapaDeNegocios.RecienNacido.cRecienNacido miRN = new CapaDeNegocios.RecienNacido.cRecienNacido();
         public string CodigoEstablecimiento { get; set; }
         public string CodigoObstetra { get; set; }
-        public frmAlertaGestanteBateria()
+        string FechaTexto = "";
+        public frmAlertaRNBajoPeso()
         {
             InitializeComponent();
             CargarAños();
@@ -25,16 +24,10 @@ namespace CapaUsuario.Bateria
             CargarMes(Ahora);
             cbMes.Text = FechaTexto;
         }
-
-        private void btnGenerarReporte_Click(object sender, EventArgs e)
+        private void CargarGrid()
         {
-            Bateria.CrystalReport1 RpGestanteSinBateria = new CrystalReport1();
-            RpGestanteSinBateria.SetDataSource(miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
-            Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
-            miFrmReporte.crystalReportViewer1.ReportSource = RpGestanteSinBateria;
-            miFrmReporte.Show();
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
         }
-        string FechaTexto = "";
         private void CargarMes(DateTime FechaActual)
         {
             string Ahora = Convert.ToString(FechaActual.Date.Month);
@@ -116,17 +109,26 @@ namespace CapaUsuario.Bateria
 
         private void cbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra,cbMes.Text, cbAños.Text);
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
         }
 
         private void cbAños_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
         }
 
-        private void frmAlertaGestanteBateria_Load(object sender, EventArgs e)
+        private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            RecienNacido.CrystalReport1 RpRNBajoPeso = new CrystalReport1();
+            RpRNBajoPeso.SetDataSource(miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+            RecienNacido.frmReporteRNBajoPeso miFrmReporte = new frmReporteRNBajoPeso();
+            miFrmReporte.crystalReportViewer1.ReportSource = RpRNBajoPeso;
+            miFrmReporte.Show();
+        }
+
+        private void frmAlertaRNBajoPeso_Load(object sender, EventArgs e)
+        {
+            CargarGrid();
         }
     }
 }
