@@ -274,19 +274,20 @@ namespace CapaUsuario.Reportes
             float[] values = new float[dg.ColumnCount];
             for (int i = 0; i < dg.ColumnCount; i++)
             {
+                
                 values[i] = (float)dg.Columns[i].Width;
             }
             return values;
         }
 
-        public float[] GetTamañoColumnas2(DataGridView dg)
+        public float[] GetTamañoColumnasMorbilidad(DataGridView dg)
         {
-            float[] values = new float[dg.ColumnCount];
-            for (int i = 0; i < dg.ColumnCount; i++)
+            float[] values = new float[dg.ColumnCount-1];
+            for (int i = 0; i < dg.ColumnCount-1; i++)
             {
-                values[i] = (float)dg.Columns[i].Width;
-                /*if (i == 0) values[i] = 50;
-                if (i == 1) values[i] = 200;*/
+                if (i!=1)
+                    values[i] = (float)dg.Columns[i].Width;
+                
             }
             return values;
         }
@@ -467,6 +468,7 @@ namespace CapaUsuario.Reportes
             oHistoriaClinica.Idthistoriaclinica = this.IdtHistoriaClinica;
 
             dgvHCParte1.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte1();
+            dgvHCParte1.Columns[0].Visible = false;
             dgvHCParte2.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte2();
             dgvHCParte3.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte3();
 
@@ -477,21 +479,37 @@ namespace CapaUsuario.Reportes
             dgvOdontologico.DataSource = oOdontologia.ListarOdontologiaXIdHC();
 
             oGestanteMorbilidad.idthistoriaclinica = IdtHistoriaClinica;
-            dgvMorbilidad.DataSource = oGestanteMorbilidad.ListarGestanteMorbilidad();
 
-            dgvAtencionPreNatal.DataSource = oCitaPrenatal.ListaCitasPreNatal();
+            dgvMorbilidad.DataSource = oHC.enumerar_datatable( oGestanteMorbilidad.ListarGestanteMorbilidad(),0);
+            dgvHCParte1.Columns[1].Visible = false;
 
-            dgvRegBateria.DataSource = oBateria.ListarBateria(IdtHistoriaClinica);
+            dgvAtencionPreNatal.DataSource = oHC.enumerar_datatable( oCitaPrenatal.ListaCitasPreNatal(),0);
+            dgvAtencionPreNatal.Columns[1].Visible = false;
+            dgvAtencionPreNatal.Columns[2].Visible = false;
 
-            dgvVisitasG.DataSource = oVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(IdtHistoriaClinica);
+            dgvRegBateria.DataSource = oHC.enumerar_datatable(oBateria.ListarBateria(IdtHistoriaClinica),0);
+            dgvRegBateria.Columns[1].Visible = false;
+            dgvRegBateria.Columns[2].Visible = false;
 
-            dgvVisitasPuerpera.DataSource = oVisitaDomiciliariaPuerpera.ListarVisitaDomiciliariaPuerperaRN(IdtHistoriaClinica);
+            dgvVisitasG.DataSource = oHC.enumerar_datatable( oVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(IdtHistoriaClinica),0);
+            dgvVisitasG.Columns[1].Visible = false;
+            dgvVisitasG.Columns[6].Visible = false;
 
-            dgvTerminoGestacion.DataSource = oTerminoGestacion.ListarTerminoGestacion(IdtHistoriaClinica);
+            dgvVisitasPuerpera.DataSource = oHC.enumerar_datatable(oVisitaDomiciliariaPuerpera.ListarVisitaDomiciliariaPuerperaRN(IdtHistoriaClinica),0);
+            dgvVisitasPuerpera.Columns[1].Visible = false;
+            dgvVisitasPuerpera.Columns[9].Visible = false;
 
-            dgvControlPuerperio.DataSource = oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica);
+            dgvTerminoGestacion.DataSource = oHC.enumerar_datatable( oTerminoGestacion.ListarTerminoGestacion(IdtHistoriaClinica),0);
+            dgvTerminoGestacion.Columns[1].Visible = false;
+            dgvTerminoGestacion.Columns[12].Visible = false;
 
-            dgvRecienNacido.DataSource = oRecienNacido.ListarRecienNacido(IdtHistoriaClinica);
+            dgvControlPuerperio.DataSource = oHC.enumerar_datatable( oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica),0);
+            dgvControlPuerperio.Columns[1].Visible = false;
+            dgvControlPuerperio.Columns[9].Visible = false;
+
+            dgvRecienNacido.DataSource = oHC.enumerar_datatable( oRecienNacido.ListarRecienNacido(IdtHistoriaClinica),0);
+            dgvRecienNacido.Columns[1].Visible = false;
+            dgvRecienNacido.Columns[2].Visible = false;
 
 
         }
@@ -548,7 +566,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvHCParte1.RowCount - 1; i++)
+                for (int i = 0; i < dgvHCParte1.RowCount; i++)
                 {
                     for (int j = 0; j < dgvHCParte1.ColumnCount; j++)
                     {
@@ -679,7 +697,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvHCParte2.RowCount - 1; i++)
+                for (int i = 0; i < dgvHCParte2.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvHCParte2.ColumnCount; j++)
                     {
@@ -810,7 +828,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvHCParte3.RowCount - 1; i++)
+                for (int i = 0; i < dgvHCParte3.RowCount; i++)
                 {
                     for (int j = 0; j < dgvHCParte3.ColumnCount; j++)
                     {
@@ -919,29 +937,30 @@ namespace CapaUsuario.Reportes
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
+
+                cell = new PdfPCell((new Phrase("ECOGRAFIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = 4;
+                cell.Rowspan = 1;
+                cell.HorizontalAlignment = 1;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTableE.AddCell(cell);
+
                 foreach (DataGridViewColumn column in dgvEcografico.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+
+                     
+
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
                 }
 
-                for (int i = 0; i < dgvEcografico.RowCount - 1; i++)
+                
+
+                for (int i = 0; i < dgvEcografico.RowCount; i++)
                 {
                     for (int j = 0; j < dgvEcografico.ColumnCount; j++)
                     {
@@ -1051,87 +1070,32 @@ namespace CapaUsuario.Reportes
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
+
+                cell = new PdfPCell((new Phrase("ODONTOLOGIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = 2;
+                cell.Rowspan = 1;
+                cell.HorizontalAlignment = 1;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTableE.AddCell(cell);
+
                 foreach (DataGridViewColumn column in dgvOdontologico.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+ 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
                 }
 
-                for (int i = 0; i < dgvOdontologico.RowCount - 1; i++)
+                for (int i = 0; i < dgvOdontologico.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvOdontologico.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                        /*
-                        if (j == 4)
-                        {
-                            cell.BorderColorLeft = CMYKColor.BLACK;
-                            cell.BorderColorRight = CMYKColor.BLACK;
-                            cell.BorderColorTop = CMYKColor.WHITE;
-                            cell.BorderColorBottom = CMYKColor.WHITE;
-                            cell.BorderWidthLeft = 1f;
-                            cell.BorderWidthRight = 1f;
-                            cell.BorderWidthTop = 0f;
-                            cell.BorderWidthBottom = 0f;
-                            cell.BackgroundColor = CMYKColor.WHITE;
-                        }
-                        */
-
-                        /*
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
-                        {
-                            iindice_a_empleador_i = i;
-                            iindice_a_empleador_j = j;
-                            fAportacionesEmpleador = true;
-
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
-                        {
-                            cell.HorizontalAlignment = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
-                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
-
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 0 || j == 5)
-                            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        */
+                       
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1166,106 +1130,45 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvMorbilidad);
+                float[] headerwidths_E = GetTamañoColumnasMorbilidad(dgvMorbilidad);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-                int iindice_ingresos = 0;
-                int iindice_descuentos = 0;
-                int iindice_a_empleador_i = 0;
-                int iindice_a_empleador_j = 0;
-                int iindice_a_trabajador = 0;
-
-                bool fAportacionesEmpleador = false;
-
-
+ 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
+
+                cell = new PdfPCell((new Phrase("MORBILIDAD", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = 3;
+                cell.Rowspan = 1;
+                cell.HorizontalAlignment = 1;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTableE.AddCell(cell);
+
                 foreach (DataGridViewColumn column in dgvMorbilidad.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+                
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                    pdfTableE.AddCell(cell);
+                    //if (k != 1)
+                        pdfTableE.AddCell(cell);
+
                     k++;
                 }
 
-                for (int i = 0; i < dgvMorbilidad.RowCount - 1; i++)
+                for (int i = 0; i < dgvMorbilidad.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvMorbilidad.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-                        /*
-                        if (j == 4)
-                        {
-                            cell.BorderColorLeft = CMYKColor.BLACK;
-                            cell.BorderColorRight = CMYKColor.BLACK;
-                            cell.BorderColorTop = CMYKColor.WHITE;
-                            cell.BorderColorBottom = CMYKColor.WHITE;
-                            cell.BorderWidthLeft = 1f;
-                            cell.BorderWidthRight = 1f;
-                            cell.BorderWidthTop = 0f;
-                            cell.BorderWidthBottom = 0f;
-                            cell.BackgroundColor = CMYKColor.WHITE;
-                        }
 
+                        //if (j != 1) 
+                            pdfTableE.AddCell(cell);
                         
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
-                        {
-                            iindice_a_empleador_i = i;
-                            iindice_a_empleador_j = j;
-                            fAportacionesEmpleador = true;
-
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
-                        {
-                            cell.HorizontalAlignment = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
-                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
-
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 0 || j == 5)
-                            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        */
-
-                        //cell.FixedHeight = 25f;
-                        pdfTableE.AddCell(cell);
-
 
                     }
                     //float total_altura = pdfTableE.CalculateHeights(true);
@@ -1313,88 +1216,37 @@ namespace CapaUsuario.Reportes
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
+
+                cell = new PdfPCell((new Phrase("ATENCION PRE NATAL", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = 9;
+                cell.Rowspan = 1;
+                cell.HorizontalAlignment = 1;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTableE.AddCell(cell);
+
                 foreach (DataGridViewColumn column in dgvAtencionPreNatal.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+                     
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
-                    pdfTableE.AddCell(cell);
+
+                    if (k!=1 && k!=2)
+                        pdfTableE.AddCell(cell);
                     k++;
                 }
 
-                for (int i = 0; i < dgvAtencionPreNatal.RowCount - 1; i++)
+                for (int i = 0; i < dgvAtencionPreNatal.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvAtencionPreNatal.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-                        /*
-                        if (j == 4)
-                        {
-                            cell.BorderColorLeft = CMYKColor.BLACK;
-                            cell.BorderColorRight = CMYKColor.BLACK;
-                            cell.BorderColorTop = CMYKColor.WHITE;
-                            cell.BorderColorBottom = CMYKColor.WHITE;
-                            cell.BorderWidthLeft = 1f;
-                            cell.BorderWidthRight = 1f;
-                            cell.BorderWidthTop = 0f;
-                            cell.BorderWidthBottom = 0f;
-                            cell.BackgroundColor = CMYKColor.WHITE;
-                        }
 
-                        
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Empleador")
-                        {
-                            iindice_a_empleador_i = i;
-                            iindice_a_empleador_j = j;
-                            fAportacionesEmpleador = true;
-
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Aportaciones de Trabajador")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Descuentos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Ingresos")
-                        {
-                            cell.Colspan = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        if (dgvBoletaPago_E[j, i].Value.ToString() == "Neto a Pagar")
-                        {
-                            cell.HorizontalAlignment = 1;
-                            cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                        }
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 1 || j == 2 || j == 3 || j == 5 || j == 6 || j == 7)
-                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
-
-                        //Alineando a la derecha la columna de ingresos, egresos y neto
-                        if (j == 0 || j == 5)
-                            cell.HorizontalAlignment = Element.ALIGN_LEFT;
-                        */
 
                         //cell.FixedHeight = 25f;
-                        pdfTableE.AddCell(cell);
+                        if (j != 1 && j != 2)
+                            pdfTableE.AddCell(cell);
 
 
                     }
@@ -1465,7 +1317,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvRegBateria.RowCount - 1; i++)
+                for (int i = 0; i < dgvRegBateria.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvRegBateria.ColumnCount; j++)
                     {
@@ -1596,7 +1448,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvVisitasG.RowCount - 1; i++)
+                for (int i = 0; i < dgvVisitasG.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvVisitasG.ColumnCount; j++)
                     {
@@ -1637,6 +1489,7 @@ namespace CapaUsuario.Reportes
             return pdfTableE;
         }
 
+
         private PdfPTable pdf_vis_pue(int alineacion, int ancho)
         {
             PdfPTable pdfTableE = new PdfPTable(dgvVisitasPuerpera.ColumnCount);
@@ -1656,18 +1509,14 @@ namespace CapaUsuario.Reportes
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-                int iindice_ingresos = 0;
-                int iindice_descuentos = 0;
-                int iindice_a_empleador_i = 0;
-                int iindice_a_empleador_j = 0;
-                int iindice_a_trabajador = 0;
+ 
 
                 bool fAportacionesEmpleador = false;
 
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
-                foreach (DataGridViewColumn column in dgvVisitasG.Columns)
+                foreach (DataGridViewColumn column in dgvVisitasPuerpera.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
@@ -1689,11 +1538,12 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvVisitasPuerpera.RowCount - 1; i++)
+                for (int i = 0; i < dgvVisitasPuerpera.RowCount; i++)
                 {
                     for (int j = 0; j < dgvVisitasPuerpera.ColumnCount; j++)
                     {
                         cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
                         /*
                         if (j == 4)
                         {
@@ -1728,6 +1578,7 @@ namespace CapaUsuario.Reportes
 
             return pdfTableE;
         }
+
 
         private PdfPTable pdf_ter_ges(int alineacion, int ancho)
         {
@@ -1782,7 +1633,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvTerminoGestacion.RowCount - 1; i++)
+                for (int i = 0; i < dgvTerminoGestacion.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvTerminoGestacion.ColumnCount; j++)
                     {
@@ -1875,7 +1726,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvControlPuerperio.RowCount - 1; i++)
+                for (int i = 0; i < dgvControlPuerperio.RowCount; i++)
                 {
                     for (int j = 0; j < dgvControlPuerperio.ColumnCount; j++)
                     {
@@ -1968,7 +1819,7 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                for (int i = 0; i < dgvRecienNacido.RowCount - 1; i++)
+                for (int i = 0; i < dgvRecienNacido.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvRecienNacido.ColumnCount; j++)
                     {
