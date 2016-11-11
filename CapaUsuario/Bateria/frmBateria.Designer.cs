@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -56,16 +56,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hemoglobina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sifilis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.glucosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -85,6 +75,16 @@
             this.lblAlerta = new System.Windows.Forms.Label();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hemoglobina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sifilis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.glucosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -381,8 +381,8 @@
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaBateria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -404,85 +404,16 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(165, 171);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(693, 114);
             this.dgvListaBateria.TabIndex = 99;
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick_1);
+            this.dgvListaBateria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellContentClick);
             this.dgvListaBateria.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaBateria_CellFormatting);
             this.dgvListaBateria.SelectionChanged += new System.EventHandler(this.dgvListaBateria_SelectionChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtbateria";
-            this.Column1.HeaderText = "Codigo Bateria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "fecha";
-            this.Column3.HeaderText = "Fecha Examen";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // hemoglobina
-            // 
-            this.hemoglobina.DataPropertyName = "hemoglobina";
-            this.hemoglobina.HeaderText = "Examen Hemoglobina";
-            this.hemoglobina.Name = "hemoglobina";
-            this.hemoglobina.ReadOnly = true;
-            // 
-            // vih
-            // 
-            this.vih.DataPropertyName = "vih";
-            this.vih.HeaderText = "Examen VIH";
-            this.vih.Name = "vih";
-            this.vih.ReadOnly = true;
-            // 
-            // sifilis
-            // 
-            this.sifilis.DataPropertyName = "sifilis";
-            this.sifilis.HeaderText = "Examen Sifilis";
-            this.sifilis.Name = "sifilis";
-            this.sifilis.ReadOnly = true;
-            // 
-            // glucosa
-            // 
-            this.glucosa.DataPropertyName = "glucosa";
-            this.glucosa.HeaderText = "Examen de Glucosa";
-            this.glucosa.Name = "glucosa";
-            this.glucosa.ReadOnly = true;
-            // 
-            // orina
-            // 
-            this.orina.DataPropertyName = "orina";
-            this.orina.HeaderText = "Examen de Orina";
-            this.orina.Name = "orina";
-            this.orina.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "fechaexamenorina";
-            this.Column9.HeaderText = "Fecha Examen Orina";
-            this.Column9.Name = "Column9";
-            // 
-            // fechatratamiento
-            // 
-            this.fechatratamiento.DataPropertyName = "fechatratamiento";
-            this.fechatratamiento.HeaderText = "Fecha de Tratamiento";
-            this.fechatratamiento.Name = "fechatratamiento";
-            this.fechatratamiento.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -735,6 +666,76 @@
             this.pictureBox4.TabIndex = 108;
             this.pictureBox4.TabStop = false;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID BATERIA";
+            this.Column1.HeaderText = "Codigo Bateria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ID HISTORIA CLINICA";
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "FECHA EXAMEN";
+            this.Column3.HeaderText = "Fecha Examen";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // hemoglobina
+            // 
+            this.hemoglobina.DataPropertyName = "HEMOGLOBINA";
+            this.hemoglobina.HeaderText = "Examen Hemoglobina";
+            this.hemoglobina.Name = "hemoglobina";
+            this.hemoglobina.ReadOnly = true;
+            // 
+            // vih
+            // 
+            this.vih.DataPropertyName = "VIH";
+            this.vih.HeaderText = "Examen VIH";
+            this.vih.Name = "vih";
+            this.vih.ReadOnly = true;
+            // 
+            // sifilis
+            // 
+            this.sifilis.DataPropertyName = "SIFILIS";
+            this.sifilis.HeaderText = "Examen Sifilis";
+            this.sifilis.Name = "sifilis";
+            this.sifilis.ReadOnly = true;
+            // 
+            // glucosa
+            // 
+            this.glucosa.DataPropertyName = "GLUCOSA";
+            this.glucosa.HeaderText = "Examen de Glucosa";
+            this.glucosa.Name = "glucosa";
+            this.glucosa.ReadOnly = true;
+            // 
+            // orina
+            // 
+            this.orina.DataPropertyName = "ORINA";
+            this.orina.HeaderText = "Examen de Orina";
+            this.orina.Name = "orina";
+            this.orina.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "FECHA EXAMEN ORINA";
+            this.Column9.HeaderText = "Fecha Examen Orina";
+            this.Column9.Name = "Column9";
+            // 
+            // fechatratamiento
+            // 
+            this.fechatratamiento.DataPropertyName = "FECHA TRATAMIENTO";
+            this.fechatratamiento.HeaderText = "Fecha de Tratamiento";
+            this.fechatratamiento.Name = "fechatratamiento";
+            this.fechatratamiento.ReadOnly = true;
+            // 
             // frmBateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -814,6 +815,11 @@
         private System.Windows.Forms.TextBox txtFechaTratamiento;
         private System.Windows.Forms.DateTimePicker dtpFechaTratamiento;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.PictureBox pbEliminar;
+        private System.Windows.Forms.PictureBox pbGuardar;
+        private System.Windows.Forms.PictureBox pbNuevo;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -824,10 +830,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechatratamiento;
-        private System.Windows.Forms.PictureBox pbSalir;
-        private System.Windows.Forms.PictureBox pbEliminar;
-        private System.Windows.Forms.PictureBox pbGuardar;
-        private System.Windows.Forms.PictureBox pbNuevo;
-        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

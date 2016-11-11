@@ -349,5 +349,10 @@ namespace CapaUsuario.RecienNacido
         {
             Alertar();
         }
+
+        private void dgvRecienNacido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
