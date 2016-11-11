@@ -36,6 +36,14 @@ namespace CapaUsuario.CitaPreNatal
         {
             //MessageBox.Show(Establecimiento);
             CargarDatos();
+            if (dtgCitasMedicas.Rows.Count > 0)
+            {
+                btnGuardar.Enabled = true;
+            }
+            else
+            {
+                btnGuardar.Enabled = false;
+            }
             
         }
 
@@ -61,12 +69,14 @@ namespace CapaUsuario.CitaPreNatal
             txtNumeroCita.Text = "";
             txtFUA.Text = "";
             txtNumeroCita.Text = (dtgCitasMedicas.Rows.Count + 1).ToString();
+            btnGuardar.Enabled = true;
             if (dtgCitasMedicas.Rows.Count > 0)
             {
                 dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells["colFechaProximaCita"].Value);
                 
             }
             estado = "nuevo";
+            dtpFechaCita.Focus();
         }
 
         private void dtpFechaCita_ValueChanged(object sender, EventArgs e)
@@ -78,10 +88,15 @@ namespace CapaUsuario.CitaPreNatal
         {
             if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
             {
-                this.BackColor = Color.DarkRed;
+                pbAlerta.Visible = true;
+                txtAlerta.Visible = true;
+                txtAlerta.Text = "Presion Arterial Alta";
+                //this.BackColor = Color.DarkRed;
             }
             else
             {
+                pbAlerta.Visible = false;
+                txtAlerta.Visible = false;
                 this.BackColor = Color.White;
             }
         }
@@ -90,10 +105,16 @@ namespace CapaUsuario.CitaPreNatal
         {
             if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
             {
-                this.BackColor = Color.DarkRed;
+                pbAlerta.Visible = true;
+                txtAlerta.Visible = true;
+                txtAlerta.Text = "Presion Arterial Alta";
+                //this.BackColor = Color.DarkRed;
             }
             else
             {
+                pbAlerta.Visible = false;
+                txtAlerta.Visible = false;
+                
                 this.BackColor = Color.White;
             }
         }
@@ -177,6 +198,31 @@ namespace CapaUsuario.CitaPreNatal
                 dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
             }
             
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dtgCitasMedicas.SelectedRows.Count > 0)
+            {
+                if (estado == "modificar")
+                {
+                    if (MessageBox.Show("Eliminar", "¿Desea eliminar?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString();
+                        oCitaPrenatal.EliminarCita(oCitaPrenatal);
+                        MessageBox.Show("Se elimino la Cita Pre Natal");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona una Cita Pre Natal");
+                }
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

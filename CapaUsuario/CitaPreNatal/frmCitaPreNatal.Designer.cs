@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitaPreNatal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
             this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,17 +59,22 @@
             this.numEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.pbAlerta = new System.Windows.Forms.PictureBox();
+            this.txtAlerta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEdadGestacional)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtgCitasMedicas);
-            this.groupBox1.Location = new System.Drawing.Point(25, 181);
+            this.groupBox1.Location = new System.Drawing.Point(28, 227);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(631, 187);
             this.groupBox1.TabIndex = 0;
@@ -181,6 +187,7 @@
             // 
             this.txtNumeroCita.Location = new System.Drawing.Point(145, 25);
             this.txtNumeroCita.Name = "txtNumeroCita";
+            this.txtNumeroCita.ReadOnly = true;
             this.txtNumeroCita.Size = new System.Drawing.Size(42, 20);
             this.txtNumeroCita.TabIndex = 1;
             // 
@@ -214,7 +221,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 97);
+            this.label3.Location = new System.Drawing.Point(311, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 6;
@@ -223,7 +230,7 @@
             // dtpProximaCita
             // 
             this.dtpProximaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpProximaCita.Location = new System.Drawing.Point(399, 90);
+            this.dtpProximaCita.Location = new System.Drawing.Point(398, 59);
             this.dtpProximaCita.Name = "dtpProximaCita";
             this.dtpProximaCita.Size = new System.Drawing.Size(100, 20);
             this.dtpProximaCita.TabIndex = 7;
@@ -231,7 +238,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(312, 65);
+            this.label4.Location = new System.Drawing.Point(312, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 8;
@@ -239,7 +246,7 @@
             // 
             // txtFUA
             // 
-            this.txtFUA.Location = new System.Drawing.Point(399, 58);
+            this.txtFUA.Location = new System.Drawing.Point(399, 90);
             this.txtFUA.MaxLength = 15;
             this.txtFUA.Name = "txtFUA";
             this.txtFUA.Size = new System.Drawing.Size(100, 20);
@@ -277,7 +284,7 @@
             this.btnAgregarControl.BackColor = System.Drawing.Color.MintCream;
             this.btnAgregarControl.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarControl.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAgregarControl.Location = new System.Drawing.Point(37, 130);
+            this.btnAgregarControl.Location = new System.Drawing.Point(37, 163);
             this.btnAgregarControl.Name = "btnAgregarControl";
             this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
             this.btnAgregarControl.TabIndex = 15;
@@ -348,7 +355,7 @@
             this.btnImprimir.BackColor = System.Drawing.Color.MintCream;
             this.btnImprimir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnImprimir.Location = new System.Drawing.Point(575, 130);
+            this.btnImprimir.Location = new System.Drawing.Point(439, 163);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 45);
             this.btnImprimir.TabIndex = 19;
@@ -361,7 +368,7 @@
             this.btnGuardar.BackColor = System.Drawing.Color.MintCream;
             this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGuardar.Location = new System.Drawing.Point(257, 130);
+            this.btnGuardar.Location = new System.Drawing.Point(171, 163);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 45);
             this.btnGuardar.TabIndex = 20;
@@ -369,12 +376,64 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
+            this.btnEliminar.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEliminar.Location = new System.Drawing.Point(305, 163);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 45);
+            this.btnEliminar.TabIndex = 21;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSalir.Location = new System.Drawing.Point(573, 163);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 45);
+            this.btnSalir.TabIndex = 22;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pbAlerta
+            // 
+            this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
+            this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
+            this.pbAlerta.Location = new System.Drawing.Point(505, 12);
+            this.pbAlerta.Name = "pbAlerta";
+            this.pbAlerta.Size = new System.Drawing.Size(170, 97);
+            this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAlerta.TabIndex = 100;
+            this.pbAlerta.TabStop = false;
+            this.pbAlerta.Visible = false;
+            // 
+            // txtAlerta
+            // 
+            this.txtAlerta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlerta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtAlerta.Location = new System.Drawing.Point(505, 128);
+            this.txtAlerta.Name = "txtAlerta";
+            this.txtAlerta.Size = new System.Drawing.Size(100, 13);
+            this.txtAlerta.TabIndex = 101;
+            // 
             // frmCitaPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(668, 410);
+            this.ClientSize = new System.Drawing.Size(685, 426);
+            this.Controls.Add(this.txtAlerta);
+            this.Controls.Add(this.pbAlerta);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.numEdadGestacional);
@@ -395,13 +454,14 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmCitaPreNatal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "------ Control Pre Natal -------";
+            this.Text = "------ Cita Pre Natal -----";
             this.Load += new System.EventHandler(this.frmCitaPreNatal_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numEdadGestacional)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,5 +498,9 @@
         private System.Windows.Forms.NumericUpDown numEdadGestacional;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.PictureBox pbAlerta;
+        private System.Windows.Forms.TextBox txtAlerta;
     }
 }

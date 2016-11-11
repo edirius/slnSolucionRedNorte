@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
@@ -56,9 +56,9 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgvGM = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -249,8 +249,8 @@
             this.dgvMorbilidad_.AllowUserToOrderColumns = true;
             this.dgvMorbilidad_.AllowUserToResizeColumns = false;
             this.dgvMorbilidad_.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvMorbilidad_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvMorbilidad_.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMorbilidad_.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -373,42 +373,6 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // groupBox15
-            // 
-            this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox15.Controls.Add(this.dgvGM);
-            this.groupBox15.Location = new System.Drawing.Point(23, 452);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(714, 230);
-            this.groupBox15.TabIndex = 49;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Gestante con Morbilidad(es)";
-            // 
-            // dgvGM
-            // 
-            this.dgvGM.AllowUserToAddRows = false;
-            this.dgvGM.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvGM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvGM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGM.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvGM.Location = new System.Drawing.Point(6, 19);
-            this.dgvGM.MultiSelect = false;
-            this.dgvGM.Name = "dgvGM";
-            this.dgvGM.ReadOnly = true;
-            this.dgvGM.RowHeadersVisible = false;
-            this.dgvGM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGM.Size = new System.Drawing.Size(703, 205);
-            this.dgvGM.TabIndex = 20;
-            this.dgvGM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellClick);
-            this.dgvGM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellContentClick);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -421,14 +385,52 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox15.Controls.Add(this.dgvGM);
+            this.groupBox15.Location = new System.Drawing.Point(23, 452);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(714, 142);
+            this.groupBox15.TabIndex = 49;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Gestante con Morbilidad(es)";
+            // 
+            // dgvGM
+            // 
+            this.dgvGM.AllowUserToAddRows = false;
+            this.dgvGM.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvGM.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvGM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGM.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvGM.Location = new System.Drawing.Point(6, 19);
+            this.dgvGM.MultiSelect = false;
+            this.dgvGM.Name = "dgvGM";
+            this.dgvGM.ReadOnly = true;
+            this.dgvGM.RowHeadersVisible = false;
+            this.dgvGM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGM.Size = new System.Drawing.Size(703, 117);
+            this.dgvGM.TabIndex = 20;
+            this.dgvGM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellClick);
+            this.dgvGM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellContentClick);
+            // 
             // frmMorbilidad
             // 
-            this.ClientSize = new System.Drawing.Size(766, 694);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(766, 606);
             this.Controls.Add(this.groupBox15);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Name = "frmMorbilidad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Morbilidad";
             this.Load += new System.EventHandler(this.frmMorbilidad_Load_1);
             this.groupBox13.ResumeLayout(false);
