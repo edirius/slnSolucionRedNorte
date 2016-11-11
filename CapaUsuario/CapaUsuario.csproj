@@ -39,7 +39,7 @@
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="iTextSharp">
-      <HintPath>\\USUARIO-PC\Instaladores\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
+      <HintPath>H:\Instaladores\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -131,6 +131,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\CuadroDeAlertasBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\CuadroDeAlertasBateria.Designer.cs">
+      <DependentUpon>CuadroDeAlertasBateria.cs</DependentUpon>
     </Compile>
     <Compile Include="Bateria\frmAlertaGestanteBateria.cs">
       <SubType>Form</SubType>
@@ -364,6 +370,9 @@
     <EmbeddedResource Include="Bateria\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\CuadroDeAlertasBateria.resx">
+      <DependentUpon>CuadroDeAlertasBateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bateria\frmAlertaGestanteBateria.resx">
       <DependentUpon>frmAlertaGestanteBateria.cs</DependentUpon>
