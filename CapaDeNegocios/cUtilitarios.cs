@@ -51,5 +51,20 @@ namespace CapaDeNegocios
                 pE.Handled = true;
             }
         }
+
+        //Devuelve false cuando abriste mas de una ventana
+        public bool verificarventanaabierta(string windowName)
+        {
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i].Name.Equals(windowName))
+                {
+                    Application.OpenForms[i].BringToFront();
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

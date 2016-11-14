@@ -340,6 +340,7 @@ namespace CapaUsuario
             {
                 txtDNI.Text = fGestante.DNI;
                 txtNombreCompleto.Text = fGestante.nombres + ", " + fGestante.app + " " + fGestante.apm;
+                txtHistoriaClinica.Text = fGestante.codigohistoriaclinica;
 
                 DateTime fn_ = fGestante.fn;
 
@@ -349,7 +350,7 @@ namespace CapaUsuario
 
                 txtEdad.Text = age.ToString();
                 idtpaciente = fGestante.idtpaciente;
-
+                
                 //nudGestas.Focus();
                 dtpFecha.Focus();
 
@@ -1103,7 +1104,7 @@ namespace CapaUsuario
                                 dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
                                 dgvHC.Columns[0].Visible = false;
                                 //nueva_historia_clinica();
-
+                                
                                 int rowIndex = 0;
                                 string item = "";
 
@@ -1121,9 +1122,15 @@ namespace CapaUsuario
 
                                 dgvHC.Rows[rowIndex].Selected = true;
                                 dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
-                                Codigo_Historia_Clinica = null;
+                                IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
+                                Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
 
-                            }
+                                    if (cbArchivado.Checked)
+                                        Archivado = true;
+                                    else
+                                        Archivado = false;
+
+                                }
                         }
                     }
                 }

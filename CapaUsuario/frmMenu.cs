@@ -64,11 +64,20 @@ namespace CapaUsuario
             fMantenimientoObstetra.Show();
         }
 
+        
+
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica( IdObstetra, IdEstablecimientoSalud );
-            frmHistoriaClinica.MdiParent = this;
-            frmHistoriaClinica.Show();
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            if (oUtilitarios.verificarventanaabierta("frmHistoriaClinica"))
+            {
+                frmHistoriaClinica.MdiParent = this;
+                frmHistoriaClinica.Show();
+            }
+
+            
         }
         
 
@@ -125,9 +134,16 @@ namespace CapaUsuario
         private void mantenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmMantenimientoMorbilidad fMantenimientoMorbilidad = new frmMantenimientoMorbilidad();
-            fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
-            fMantenimientoMorbilidad.MdiParent = this;
-            fMantenimientoMorbilidad.Show();
+
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            if (oUtilitarios.verificarventanaabierta("frmMantenimientoMorbilidad"))
+            {
+                fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+                fMantenimientoMorbilidad.MdiParent = this;
+                fMantenimientoMorbilidad.Show();
+            }
+            
         }
 
         private void transeunteToolStripMenuItem_Click(object sender, EventArgs e)
