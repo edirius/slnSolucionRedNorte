@@ -383,7 +383,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(202, 7);
+            this.label8.Location = new System.Drawing.Point(208, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 97;
@@ -392,7 +392,7 @@
             // 
             // txtCodigoHistoria
             // 
-            this.txtCodigoHistoria.Location = new System.Drawing.Point(287, 4);
+            this.txtCodigoHistoria.Location = new System.Drawing.Point(293, 19);
             this.txtCodigoHistoria.Name = "txtCodigoHistoria";
             this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoHistoria.TabIndex = 96;
@@ -401,7 +401,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 7);
+            this.label7.Location = new System.Drawing.Point(21, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 95;
@@ -410,7 +410,7 @@
             // 
             // txtCodigoRN
             // 
-            this.txtCodigoRN.Location = new System.Drawing.Point(100, 4);
+            this.txtCodigoRN.Location = new System.Drawing.Point(106, 19);
             this.txtCodigoRN.Name = "txtCodigoRN";
             this.txtCodigoRN.Size = new System.Drawing.Size(82, 20);
             this.txtCodigoRN.TabIndex = 94;
@@ -512,7 +512,7 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "ID RECIEN NACIDO";
-            this.Column1.HeaderText = "Codigo Recien Nacido";
+            this.Column1.HeaderText = "ID RECIEN NACIDO";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
@@ -520,14 +520,14 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "HISTORIA CLINICA";
-            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.HeaderText = "HISTORIA CLINICA";
             this.Column2.Name = "Column2";
             this.Column2.Visible = false;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "FECHA DERIVADO";
-            this.Column3.HeaderText = "Fecha Derivado";
+            this.Column3.HeaderText = "FECHA DERIVADO";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
@@ -548,14 +548,14 @@
             // PESO
             // 
             this.PESO.DataPropertyName = "PESO";
-            this.PESO.HeaderText = "Peso";
+            this.PESO.HeaderText = "PESO";
             this.PESO.Name = "PESO";
             this.PESO.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "SEXO";
-            this.Column6.HeaderText = "Sexo";
+            this.Column6.HeaderText = "SEXO";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
@@ -574,6 +574,7 @@
             this.Name = "frmRecienNacido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atencion al Recien Nacido";
+            this.Load += new System.EventHandler(this.frmRecienNacido_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

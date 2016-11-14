@@ -438,7 +438,6 @@ namespace CapaUsuario.Reportes
             DataTable odtCP = new DataTable();
             DataTable odtRN = new DataTable();
 
-
             DataRow drFilaHC1 = odtHC1.NewRow();
             DataRow drFilaHC2 = odtHC2.NewRow();
             DataRow drFilaHC3 = odtHC3.NewRow();
@@ -478,10 +477,14 @@ namespace CapaUsuario.Reportes
             dgvHCParte3.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte3();
 
             oEcografia.Idthistoriaclinica = this.IdtHistoriaClinica;
-            dgvEcografico.DataSource = oEcografia.ListarEcografiaXIdHC();
+            odtEC = oEcografia.ListarEcografiaXIdHC();
+            
+            
+            dgvEcografico.DataSource = odtEC;
 
             oOdontologia.Idthistoriaclinica = this.IdtHistoriaClinica;
-            dgvOdontologico.DataSource = oOdontologia.ListarOdontologiaXIdHC();
+            odtOD = oOdontologia.ListarOdontologiaXIdHC();
+            dgvOdontologico.DataSource = odtOD;
 
             oGestanteMorbilidad.idthistoriaclinica = IdtHistoriaClinica;
 
@@ -829,7 +832,15 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
-                
+                if (dgvEcografico.RowCount==0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 4;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    //cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
 
                 for (int i = 0; i < dgvEcografico.RowCount; i++)
                 {
@@ -909,6 +920,16 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvOdontologico.RowCount == 0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 2;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
+
                 for (int i = 0; i < dgvOdontologico.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvOdontologico.ColumnCount; j++)
@@ -980,6 +1001,15 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvMorbilidad.RowCount == 0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 3;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
                 for (int i = 0; i < dgvMorbilidad.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvMorbilidad.ColumnCount; j++)
@@ -1025,13 +1055,7 @@ namespace CapaUsuario.Reportes
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-                int iindice_ingresos = 0;
-                int iindice_descuentos = 0;
-                int iindice_a_empleador_i = 0;
-                int iindice_a_empleador_j = 0;
-                int iindice_a_trabajador = 0;
-
-                bool fAportacionesEmpleador = false;
+ 
 
 
                 /* -------------------------------INICIO DGVBOLETA_E */
@@ -1055,6 +1079,15 @@ namespace CapaUsuario.Reportes
                     //if (k!=1 && k!=2)
                         pdfTableE.AddCell(cell);
                     k++;
+                }
+
+                if (dgvAtencionPreNatal.RowCount == 0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 9;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
                 }
 
                 for (int i = 0; i < dgvAtencionPreNatal.RowCount ; i++)
@@ -1134,6 +1167,15 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvRegBateria.RowCount==0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 9;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
                 for (int i = 0; i < dgvRegBateria.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvRegBateria.ColumnCount; j++)
@@ -1202,6 +1244,15 @@ namespace CapaUsuario.Reportes
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
+                }
+
+                if (dgvVisitasG.RowCount==0) {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 5;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
                 }
 
                 for (int i = 0; i < dgvVisitasG.RowCount ; i++)

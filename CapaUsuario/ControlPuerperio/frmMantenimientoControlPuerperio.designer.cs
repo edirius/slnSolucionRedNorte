@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvControlPeuperio = new System.Windows.Forms.DataGridView();
-            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -57,6 +48,15 @@
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPeuperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAlturaUterino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).BeginInit();
@@ -71,6 +71,7 @@
             this.dgvControlPeuperio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvControlPeuperio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvControlPeuperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvControlPeuperio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtcontrolpeuperio,
@@ -91,67 +92,6 @@
             this.dgvControlPeuperio.Size = new System.Drawing.Size(625, 233);
             this.dgvControlPeuperio.TabIndex = 11;
             this.dgvControlPeuperio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlPeuperio_CellClick);
-            // 
-            // idtcontrolpeuperio
-            // 
-            this.idtcontrolpeuperio.HeaderText = "idtcontrolpeuperio";
-            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
-            this.idtcontrolpeuperio.ReadOnly = true;
-            this.idtcontrolpeuperio.Visible = false;
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "Nro.";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            this.numero.Width = 30;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            this.fecha.Width = 75;
-            // 
-            // presionarterial
-            // 
-            this.presionarterial.HeaderText = "Presión Arterial";
-            this.presionarterial.Name = "presionarterial";
-            this.presionarterial.ReadOnly = true;
-            // 
-            // presionarterials
-            // 
-            this.presionarterials.HeaderText = "presionarterials";
-            this.presionarterials.Name = "presionarterials";
-            this.presionarterials.ReadOnly = true;
-            this.presionarterials.Visible = false;
-            // 
-            // presionarteriald
-            // 
-            this.presionarteriald.HeaderText = "presionarteriald";
-            this.presionarteriald.Name = "presionarteriald";
-            this.presionarteriald.ReadOnly = true;
-            this.presionarteriald.Visible = false;
-            // 
-            // alturauterino
-            // 
-            this.alturauterino.HeaderText = "Altura Uterino";
-            this.alturauterino.Name = "alturauterino";
-            this.alturauterino.ReadOnly = true;
-            this.alturauterino.Width = 95;
-            // 
-            // fua
-            // 
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.HeaderText = "Detalle";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            this.detalle.Width = 200;
             // 
             // btnSalir
             // 
@@ -432,6 +372,63 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(631, 390);
             this.tableLayoutPanel1.TabIndex = 153;
+            // 
+            // idtcontrolpeuperio
+            // 
+            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PEUPERIO";
+            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
+            this.idtcontrolpeuperio.ReadOnly = true;
+            this.idtcontrolpeuperio.Visible = false;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "NUMERO";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "FECHA";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // presionarterial
+            // 
+            this.presionarterial.HeaderText = "PRESION ARTERIAL";
+            this.presionarterial.Name = "presionarterial";
+            this.presionarterial.ReadOnly = true;
+            // 
+            // presionarterials
+            // 
+            this.presionarterials.HeaderText = "PRESION ARTERIAL S";
+            this.presionarterials.Name = "presionarterials";
+            this.presionarterials.ReadOnly = true;
+            this.presionarterials.Visible = false;
+            // 
+            // presionarteriald
+            // 
+            this.presionarteriald.HeaderText = "PRESION ARTERIAL D";
+            this.presionarteriald.Name = "presionarteriald";
+            this.presionarteriald.ReadOnly = true;
+            this.presionarteriald.Visible = false;
+            // 
+            // alturauterino
+            // 
+            this.alturauterino.HeaderText = "ALTURA UTERINO";
+            this.alturauterino.Name = "alturauterino";
+            this.alturauterino.ReadOnly = true;
+            // 
+            // fua
+            // 
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.HeaderText = "DETALLE";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
             // 
             // frmMantenimientoControlPeuperio
             // 

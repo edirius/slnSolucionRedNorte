@@ -354,5 +354,10 @@ namespace CapaUsuario.RecienNacido
         {
 
         }
+
+        private void frmRecienNacido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

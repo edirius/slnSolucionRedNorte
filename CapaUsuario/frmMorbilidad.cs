@@ -234,7 +234,7 @@ namespace CapaUsuario
                     i++;
                     drGM[0] = i;
                     drGM[1] = dgvM[2, posicion].Value.ToString();
-                    drGM[2] = dtpFechaMorbilidad.Value;
+                    drGM[2] = dtpFechaMorbilidad.Value.Date;
                     drGM[3] = dgvM[3, posicion].Value.ToString();
 
 
