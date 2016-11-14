@@ -336,7 +336,25 @@ namespace CapaUsuario
             explorando_hc = false;
             dtpFecha.Focus();
 
-            fGestante.ShowDialog();
+            if (fGestante.ShowDialog() == DialogResult.OK)
+            {
+                txtDNI.Text = fGestante.DNI;
+                txtNombreCompleto.Text = fGestante.nombres + ", " + fGestante.app + " " + fGestante.apm;
+
+                DateTime fn_ = fGestante.fn;
+
+                DateTime now = DateTime.Today;
+                int age = now.Year - fn_.Year;
+                if (now < fn_.AddYears(age)) age--;
+
+                txtEdad.Text = age.ToString();
+                idtpaciente = fGestante.idtpaciente;
+
+                //nudGestas.Focus();
+                dtpFecha.Focus();
+
+                
+            }
 
         }
 
@@ -1521,6 +1539,14 @@ namespace CapaUsuario
             odtOdontologo.Rows.InsertAt(drOdontologo, i);
             //dtpOdontologo.Focus();
             dtpEcografia.Focus();
+        }
+
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                nudGestas.Focus();
+                nudGestas.Select(0, nudGestas.Text.Length);
+            }
         }
     }
 }
