@@ -44,22 +44,24 @@
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtCodigoHistoriaClinica = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCelular
             // 
             this.txtCelular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCelular.Location = new System.Drawing.Point(324, 116);
+            this.txtCelular.Location = new System.Drawing.Point(346, 116);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(182, 20);
+            this.txtCelular.Size = new System.Drawing.Size(160, 20);
             this.txtCelular.TabIndex = 92;
             // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(273, 119);
+            this.label9.Location = new System.Drawing.Point(295, 119);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 114;
@@ -148,7 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 122);
+            this.label5.Location = new System.Drawing.Point(12, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 13);
             this.label5.TabIndex = 109;
@@ -168,7 +170,7 @@
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(117, 116);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(150, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(138, 20);
             this.dtpFechaNacimiento.TabIndex = 98;
             // 
             // txtNombre
@@ -188,7 +190,7 @@
             this.txtDNI.Location = new System.Drawing.Point(117, 12);
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(150, 20);
+            this.txtDNI.Size = new System.Drawing.Size(138, 20);
             this.txtDNI.TabIndex = 91;
             // 
             // label2
@@ -209,11 +211,31 @@
             this.label1.TabIndex = 106;
             this.label1.Text = "DNI :";
             // 
+            // txtCodigoHistoriaClinica
+            // 
+            this.txtCodigoHistoriaClinica.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCodigoHistoriaClinica.Location = new System.Drawing.Point(346, 12);
+            this.txtCodigoHistoriaClinica.MaxLength = 8;
+            this.txtCodigoHistoriaClinica.Name = "txtCodigoHistoriaClinica";
+            this.txtCodigoHistoriaClinica.Size = new System.Drawing.Size(160, 20);
+            this.txtCodigoHistoriaClinica.TabIndex = 115;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 13);
+            this.label7.TabIndex = 116;
+            this.label7.Text = "Historia Clinica:";
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 245);
+            this.Controls.Add(this.txtCodigoHistoriaClinica);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
@@ -258,5 +280,7 @@
         private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCodigoHistoriaClinica;
+        private System.Windows.Forms.Label label7;
     }
 }

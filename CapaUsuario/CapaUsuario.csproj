@@ -247,10 +247,10 @@
     <Compile Include="Exportacion\frmExportacion.Designer.cs">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestante.cs">
+    <Compile Include="Paciente\frmGestante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestante.Designer.cs">
+    <Compile Include="Paciente\frmGestante.Designer.cs">
       <DependentUpon>frmGestante.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistoriaClinica.cs">
@@ -282,12 +282,6 @@
     </Compile>
     <Compile Include="Obstetra\frmMantenimientoObstetra.Designer.cs">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Paciente\frmMantenimientoPaciente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Paciente\frmMantenimientoPaciente.Designer.cs">
-      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Obstetra\frmObstetra.cs">
       <SubType>Form</SubType>
@@ -470,7 +464,7 @@
     <EmbeddedResource Include="Exportacion\frmExportacion.resx">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestante.resx">
+    <EmbeddedResource Include="Paciente\frmGestante.resx">
       <DependentUpon>frmGestante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaClinica.resx">
@@ -487,9 +481,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Paciente\frmMantenimientoPaciente.resx">
-      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmObstetra.resx">
       <DependentUpon>frmObstetra.cs</DependentUpon>

@@ -306,8 +306,9 @@ namespace CapaUsuario
         }
 
         private void nueva_historia_clinica() {
-            txtHistoriaClinica.Text = "";
+            CapaUsuario.frmGestante fGestante = new CapaUsuario.frmGestante(IdEstablecimiento);
 
+            txtHistoriaClinica.Text = "";
             dtpTiempoLlegada.Text = "";
             txtEdad.Text = "";
             txtDNI.Text = "";
@@ -333,6 +334,28 @@ namespace CapaUsuario
             cbTranseunte.Checked = false;
             cbArchivado.Checked = false;
             explorando_hc = false;
+            dtpFecha.Focus();
+
+            if (fGestante.ShowDialog() == DialogResult.OK)
+            {
+                txtDNI.Text = fGestante.DNI;
+                txtNombreCompleto.Text = fGestante.nombres + ", " + fGestante.app + " " + fGestante.apm;
+
+                DateTime fn_ = fGestante.fn;
+
+                DateTime now = DateTime.Today;
+                int age = now.Year - fn_.Year;
+                if (now < fn_.AddYears(age)) age--;
+
+                txtEdad.Text = age.ToString();
+                idtpaciente = fGestante.idtpaciente;
+
+                //nudGestas.Focus();
+                dtpFecha.Focus();
+
+                
+            }
+
         }
 
  
@@ -476,9 +499,8 @@ namespace CapaUsuario
             
 
             if (seleccionado == "Historia Clinica") { 
-
                 if (buscar.Length > 1) {
-                    oHistoriaClinica.Codigohistoriaclinica = buscar;
+                    oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
                     oHistoriaClinica.Idtobstetra = IdObstetra;
                     dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(),1);
                     dgvHC.Columns[0].Visible = false;
@@ -841,7 +863,7 @@ namespace CapaUsuario
 
         private void buGuardar_Click_1(object sender, EventArgs e)
         {
-            //try{ 
+            try{ 
 
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
             CapaDeNegocios.cEcografia oEcografia = new CapaDeNegocios.cEcografia();
@@ -854,7 +876,6 @@ namespace CapaUsuario
 
 
             oHistoriaClinica.Idtestablecimientosalud = IdEstablecimiento;
-            oHistoriaClinica.Codigohistoriaclinica = txtHistoriaClinica.Text;
             oHistoriaClinica.Tipollegada = cboTipoLlegada.Text;
             oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text;
             if (txtEdad.Text != "")
@@ -885,7 +906,7 @@ namespace CapaUsuario
                 respuesta_radiobutton = 3;
 
             oHistoriaClinica.Trimestreapn = respuesta_radiobutton;
-            oHistoriaClinica.Diaapn = Convert.ToString(nudSemanas.Value);
+            oHistoriaClinica.Semanaapn = Convert.ToString(nudSemanas.Value);
             oHistoriaClinica.Observaciones = txtObservaciones.Text;
             oHistoriaClinica.Idtpaciente = idtpaciente;
             oHistoriaClinica.Idtobstetra = IdObstetra;
@@ -924,10 +945,10 @@ namespace CapaUsuario
                 mensaje = "Porfavor agregar fecha(s) del servicio de Ecografia Obstetrica.";
             }
 
-            if (oHistoriaClinica.Diaapn == "")
+            if (oHistoriaClinica.Semanaapn == "")
             {
                 completo = true;
-                mensaje = "Porfavor llenar dia(s) APN.";
+                mensaje = "Porfavor llenar Semana(s) APN.";
             }
 
             if (oHistoriaClinica.Tiempollegada == "00:00")
@@ -948,11 +969,7 @@ namespace CapaUsuario
                 mensaje = "Porfavor seleccionar una gestante.";
             }
 
-            if (oHistoriaClinica.Codigohistoriaclinica == "")
-            {
-                completo = true;
-                mensaje = "Porfavor llenar Codigo de Historia Clinica";
-            }
+ 
 
             DataTable dtEcografia = new DataTable();
             DataTable dtOdontologia = new DataTable();
@@ -1085,7 +1102,7 @@ namespace CapaUsuario
                                 oHistoriaClinica.Idtobstetra = IdObstetra;
                                 dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
                                 dgvHC.Columns[0].Visible = false;
-                                nueva_historia_clinica();
+                                //nueva_historia_clinica();
 
                                 int rowIndex = 0;
                                 string item = "";
@@ -1112,14 +1129,14 @@ namespace CapaUsuario
                 }
             }
 
-            /*
+            
         }
         catch (Exception ex)
         {
             MessageBox.Show( ex.StackTrace +' ' + ex.Source +' '+ ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-        */
+        
         }
 
         private void txtHistoriaClinica_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -1226,23 +1243,10 @@ namespace CapaUsuario
         private void dtpOdontologo_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
-                button2.Focus();
+                buAgregarOdontologia.Focus();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            DataRow drOdontologo = odtOdontologo.NewRow();
-
-
-            drOdontologo = odtOdontologo.NewRow();
-            i = odtOdontologo.Rows.Count;
-            i++;
-            drOdontologo[0] = i;
-            drOdontologo[1] = dtpOdontologo.Value.ToString("yyyy - MM - dd");
-            //drOdontologo[2] = 
-            odtOdontologo.Rows.InsertAt(drOdontologo, i);
-            dtpOdontologo.Focus();
-        }
+ 
 
         private void dtpEcografia_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -1279,7 +1283,8 @@ namespace CapaUsuario
             drEcografia[2] = nudEdadGestacional.Value;
             drEcografia[3] = nudDiasEcografia.Value;
             odtEcografia.Rows.InsertAt(drEcografia, i);
-            dtpEcografia.Focus();
+            //dtpEcografia.Focus();
+            txtObservaciones.Focus();
         }
 
         private void txtObservaciones_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -1344,6 +1349,7 @@ namespace CapaUsuario
         private void button1_Click_1(object sender, EventArgs e)
         {
             nueva_historia_clinica();
+
         }
 
         private void cbYear_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1463,7 +1469,7 @@ namespace CapaUsuario
             txtOrigenEESS.Enabled = bandera;
             dtpFecha.Enabled = bandera;
             buAgregarEcografia.Enabled = bandera;
-            button2.Enabled = bandera;
+            buAgregarOdontologia.Enabled = bandera;
             dgvEcografia.Enabled = bandera;
             dgvOdontologia.Enabled = bandera;
         }
@@ -1517,6 +1523,30 @@ namespace CapaUsuario
         private void groupBox2_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void buAgregarOdontologia_Click_2(object sender, EventArgs e)
+        {
+            DataRow drOdontologo = odtOdontologo.NewRow();
+
+
+            drOdontologo = odtOdontologo.NewRow();
+            i = odtOdontologo.Rows.Count;
+            i++;
+            drOdontologo[0] = i;
+            drOdontologo[1] = dtpOdontologo.Value.ToString("yyyy - MM - dd");
+            //drOdontologo[2] = 
+            odtOdontologo.Rows.InsertAt(drOdontologo, i);
+            //dtpOdontologo.Focus();
+            dtpEcografia.Focus();
+        }
+
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                nudGestas.Focus();
+                nudGestas.Select(0, nudGestas.Text.Length);
+            }
         }
     }
 }

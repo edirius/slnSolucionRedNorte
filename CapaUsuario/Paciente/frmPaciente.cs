@@ -33,6 +33,7 @@ namespace CapaUsuario.Paciente
                 bool bOk = false;
                 CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
                 miPaciente.idtpaciente = sidtpaciente;
+                miPaciente.codigohistoriaclinica = txtCodigoHistoriaClinica.Text;
                 miPaciente.nombres = txtNombre.Text ;
                 miPaciente.apellidopaterno = txtApePaterno.Text ;
                 miPaciente.apellidomaterno = txtApeMaterno.Text ;
@@ -59,6 +60,14 @@ namespace CapaUsuario.Paciente
                 }
                 if (bOk == true)
                 {
+                    if (saccion == 1)
+                    {
+                        MessageBox.Show("Gestante agregado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    if (saccion == 2)
+                    {
+                        MessageBox.Show("Datos Gestante modificados correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else
@@ -92,9 +101,10 @@ namespace CapaUsuario.Paciente
             }
         }
 
-        public void RecibirDatos(string pidtpaciente, string pnombres, string papellidopaterno, string papellidomaterno, string pdni, DateTime pfechanacimiento, string pdireccion, string ptelefono, string pidtestablecimientosalud, int paccion)
+        public void RecibirDatos(string pidtpaciente, string scodigohistoriaclinica, string pnombres, string papellidopaterno, string papellidomaterno, string pdni, DateTime pfechanacimiento, string pdireccion, string ptelefono, string pidtestablecimientosalud, int paccion)
         {
             sidtpaciente = pidtpaciente;
+            txtCodigoHistoriaClinica.Text = scodigohistoriaclinica;
             txtNombre.Text = pnombres;
             txtApePaterno.Text = papellidopaterno;
             txtApeMaterno.Text = papellidomaterno;

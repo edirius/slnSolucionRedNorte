@@ -280,7 +280,7 @@
             this.dgvEcografico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEcografico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEcografico.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvEcografico.Location = new System.Drawing.Point(202, 173);
+            this.dgvEcografico.Location = new System.Drawing.Point(188, 173);
             this.dgvEcografico.MultiSelect = false;
             this.dgvEcografico.Name = "dgvEcografico";
             this.dgvEcografico.ReadOnly = true;
@@ -300,7 +300,7 @@
             this.dgvMorbilidad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvMorbilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMorbilidad.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvMorbilidad.Location = new System.Drawing.Point(202, 272);
+            this.dgvMorbilidad.Location = new System.Drawing.Point(188, 272);
             this.dgvMorbilidad.MultiSelect = false;
             this.dgvMorbilidad.Name = "dgvMorbilidad";
             this.dgvMorbilidad.ReadOnly = true;
@@ -320,7 +320,7 @@
             this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAtencionPreNatal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(202, 371);
+            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(188, 371);
             this.dgvAtencionPreNatal.MultiSelect = false;
             this.dgvAtencionPreNatal.Name = "dgvAtencionPreNatal";
             this.dgvAtencionPreNatal.ReadOnly = true;
@@ -340,7 +340,7 @@
             this.dgvRegBateria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRegBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegBateria.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvRegBateria.Location = new System.Drawing.Point(202, 470);
+            this.dgvRegBateria.Location = new System.Drawing.Point(188, 470);
             this.dgvRegBateria.MultiSelect = false;
             this.dgvRegBateria.Name = "dgvRegBateria";
             this.dgvRegBateria.ReadOnly = true;
@@ -360,7 +360,7 @@
             this.dgvVisitasG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisitasG.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvVisitasG.Location = new System.Drawing.Point(202, 569);
+            this.dgvVisitasG.Location = new System.Drawing.Point(188, 569);
             this.dgvVisitasG.MultiSelect = false;
             this.dgvVisitasG.Name = "dgvVisitasG";
             this.dgvVisitasG.ReadOnly = true;
@@ -380,7 +380,7 @@
             this.dgvVisitasPuerpera.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasPuerpera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisitasPuerpera.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvVisitasPuerpera.Location = new System.Drawing.Point(402, 173);
+            this.dgvVisitasPuerpera.Location = new System.Drawing.Point(365, 173);
             this.dgvVisitasPuerpera.MultiSelect = false;
             this.dgvVisitasPuerpera.Name = "dgvVisitasPuerpera";
             this.dgvVisitasPuerpera.ReadOnly = true;
@@ -400,7 +400,7 @@
             this.dgvTerminoGestacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvTerminoGestacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTerminoGestacion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvTerminoGestacion.Location = new System.Drawing.Point(402, 272);
+            this.dgvTerminoGestacion.Location = new System.Drawing.Point(365, 272);
             this.dgvTerminoGestacion.MultiSelect = false;
             this.dgvTerminoGestacion.Name = "dgvTerminoGestacion";
             this.dgvTerminoGestacion.ReadOnly = true;
@@ -420,7 +420,7 @@
             this.dgvControlPuerperio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvControlPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvControlPuerperio.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvControlPuerperio.Location = new System.Drawing.Point(402, 371);
+            this.dgvControlPuerperio.Location = new System.Drawing.Point(365, 371);
             this.dgvControlPuerperio.MultiSelect = false;
             this.dgvControlPuerperio.Name = "dgvControlPuerperio";
             this.dgvControlPuerperio.ReadOnly = true;
@@ -440,7 +440,7 @@
             this.dgvRecienNacido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRecienNacido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecienNacido.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvRecienNacido.Location = new System.Drawing.Point(402, 481);
+            this.dgvRecienNacido.Location = new System.Drawing.Point(365, 470);
             this.dgvRecienNacido.MultiSelect = false;
             this.dgvRecienNacido.Name = "dgvRecienNacido";
             this.dgvRecienNacido.ReadOnly = true;

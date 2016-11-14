@@ -78,5 +78,12 @@ namespace Monitoreo.Reportes
             frmVistaReportes.ReporteObstetra("ReporteObstetra");
             frmVistaReportes.Show();
         }
+
+        private void btnNominalGestante_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.ReporteNominalGestante("ReporteNominalGestante");
+            frmVistaReportes.Show();
+        }
     }
 }
