@@ -276,7 +276,7 @@ namespace CapaUsuario.Bateria
 
         private void dgvListaBateria_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            try {
+            /*try {*/
                 int valor = dgvListaBateria.CurrentCell.RowIndex;
                 txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
                 txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
@@ -288,8 +288,9 @@ namespace CapaUsuario.Bateria
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
-            }
+            /*}
             catch { }
+            */
             
             
         }
@@ -528,6 +529,11 @@ namespace CapaUsuario.Bateria
         private void dtpFechaTratamiento_ValueChanged_1(object sender, EventArgs e)
         {
             txtFechaTratamiento.Text = dtpFechaTratamiento.Text;
+        }
+
+        private void dgvListaBateria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.buRegistroBateria = new System.Windows.Forms.Button();
             this.buAtencionPrenatal = new System.Windows.Forms.Button();
@@ -107,15 +107,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -133,6 +126,13 @@
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.buGuardar = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,19 +159,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -287,8 +287,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1348, 692);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 692F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1341, 692);
             this.tableLayoutPanel2.TabIndex = 37;
             // 
             // groupBox2
@@ -301,7 +301,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1229, 686);
+            this.groupBox2.Size = new System.Drawing.Size(1222, 686);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -321,7 +321,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1222, 323);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1215, 323);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox4
@@ -342,7 +342,7 @@
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.groupBox14);
             this.groupBox4.Controls.Add(this.groupBox15);
-            this.groupBox4.Location = new System.Drawing.Point(24, 3);
+            this.groupBox4.Location = new System.Drawing.Point(20, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1174, 317);
             this.groupBox4.TabIndex = 29;
@@ -494,8 +494,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -697,8 +697,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1075,32 +1075,6 @@
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(15, 317);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
-            this.pictureBox4.Location = new System.Drawing.Point(1204, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(15, 317);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1122,76 +1096,23 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1210, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1203, 54);
             this.tableLayoutPanel1.TabIndex = 28;
-            // 
-            // buGuardar
-            // 
-            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buGuardar.Location = new System.Drawing.Point(405, 3);
-            this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(195, 48);
-            this.buGuardar.TabIndex = 23;
-            this.buGuardar.Text = "Guardar";
-            this.buGuardar.UseVisualStyleBackColor = true;
-            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(606, 3);
+            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(603, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 48);
+            this.button1.Size = new System.Drawing.Size(194, 48);
             this.button1.TabIndex = 24;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Location = new System.Drawing.Point(807, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(195, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(204, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(195, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 28;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Location = new System.Drawing.Point(1008, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(199, 48);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 29;
-            this.pictureBox6.TabStop = false;
             // 
             // groupBox3
             // 
@@ -1202,7 +1123,7 @@
             this.groupBox3.Controls.Add(this.dgvHC);
             this.groupBox3.Location = new System.Drawing.Point(7, 413);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1216, 267);
+            this.groupBox3.Size = new System.Drawing.Size(1209, 267);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Explorar Control de Gestantes";
@@ -1221,7 +1142,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1191, 53);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1184, 53);
             this.tableLayoutPanel4.TabIndex = 30;
             // 
             // groupBox17
@@ -1374,8 +1295,8 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1388,7 +1309,7 @@
             this.dgvHC.ReadOnly = true;
             this.dgvHC.RowHeadersVisible = false;
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1191, 174);
+            this.dgvHC.Size = new System.Drawing.Size(1184, 174);
             this.dgvHC.TabIndex = 29;
             this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick_1);
             this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
@@ -1403,7 +1324,7 @@
             this.groupBox1.Controls.Add(this.buControlPuerperio);
             this.groupBox1.Controls.Add(this.buVisitaDomiciliaria);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Location = new System.Drawing.Point(1238, 3);
+            this.groupBox1.Location = new System.Drawing.Point(1231, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(104, 454);
             this.groupBox1.TabIndex = 38;
@@ -1421,12 +1342,97 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(11, 317);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
+            this.pictureBox4.Location = new System.Drawing.Point(1200, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(12, 317);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // buGuardar
+            // 
+            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buGuardar.ForeColor = System.Drawing.Color.White;
+            this.buGuardar.Location = new System.Drawing.Point(403, 3);
+            this.buGuardar.Name = "buGuardar";
+            this.buGuardar.Size = new System.Drawing.Size(194, 48);
+            this.buGuardar.TabIndex = 23;
+            this.buGuardar.Text = "Guardar";
+            this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Location = new System.Drawing.Point(803, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(203, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 28;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Location = new System.Drawing.Point(1003, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(197, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 29;
+            this.pictureBox6.TabStop = false;
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1362, 697);
+            this.ClientSize = new System.Drawing.Size(1355, 697);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Control de Gestante";
@@ -1467,13 +1473,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -1482,6 +1482,12 @@
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -42,7 +42,7 @@ namespace CapaUsuario.ControlPeuperio
             sidtcontrolpeuperio = "";
             if (dgvControlPeuperio.Rows.Count > 0)
             {
-                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[dgvControlPeuperio.RowCount - 1].Cells["numero"].Value) + 1;
+                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[dgvControlPeuperio.RowCount - 1].Cells["NUMERO"].Value) + 1;
             }
             else
             {
@@ -176,15 +176,15 @@ namespace CapaUsuario.ControlPeuperio
             if (e.RowIndex != -1)
             {
                 saccion = 2;
-                sidtcontrolpeuperio = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["idtcontrolpeuperio"].Value);
-                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["numero"].Value);
+                sidtcontrolpeuperio = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[0].Value);
+                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["NUMERO"].Value);
                 txtNumero.Text = GenerarNumero(snumerocontrol) + " CONTROL";
-                dtpFecha.Value = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["fecha"].Value);
-                numPresionArterialS.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarterials"].Value);
-                numPresionArterialD.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarteriald"].Value);
-                numAlturaUterino.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["alturauterino"].Value);
-                txtFUA.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["fua"].Value);
-                txtDetalle.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["detalle"].Value);
+                dtpFecha.Value = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["FECHA"].Value);
+                numPresionArterialS.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[4].Value);
+                numPresionArterialD.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[5].Value);
+                numAlturaUterino.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[6].Value);
+                txtFUA.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[7].Value);
+                txtDetalle.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[8].Value);
                 dtpFecha.Focus();
             }
         }
@@ -196,7 +196,7 @@ namespace CapaUsuario.ControlPeuperio
                 dgvControlPeuperio.Rows.Clear();
                 foreach (DataRow row in miControlPeuperio.ListarControlPeuperio(sidthistoriaclinica).Rows)
                 {
-                    dgvControlPeuperio.Rows.Add(row["idtcontrolpeuperio"].ToString(), row["numero"].ToString(), row["fecha"].ToString(), row["presionarterials"].ToString()+"/"+row["presionarteriald"].ToString(), row["presionarterials"].ToString(), row["presionarteriald"].ToString(), row["alturauterino"].ToString(), row["fua"].ToString(), row["detalle"].ToString());
+                    dgvControlPeuperio.Rows.Add(row["ID CONTROL PEUPERIO"].ToString(), row["NUMERO"].ToString(), row["FECHA"].ToString(), row["PRESION ARTERIAL S"].ToString()+"/"+row["PRESION ARTERIAL D"].ToString(), row["PRESION ARTERIAL S"].ToString(), row["PRESION ARTERIAL D"].ToString(), row["ALTURA UTERINO"].ToString(), row["FUA"].ToString(), row["DETALLE"].ToString());
                 }
                 if (dgvControlPeuperio.Rows.Count > 0)
                 {
