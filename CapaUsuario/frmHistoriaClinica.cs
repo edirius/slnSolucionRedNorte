@@ -336,7 +336,26 @@ namespace CapaUsuario
             explorando_hc = false;
             dtpFecha.Focus();
 
-            fGestante.ShowDialog();
+            if (fGestante.ShowDialog() == DialogResult.OK)
+            {
+                txtDNI.Text = fGestante.DNI;
+                txtNombreCompleto.Text = fGestante.nombres + ", " + fGestante.app + " " + fGestante.apm;
+                txtHistoriaClinica.Text = fGestante.codigohistoriaclinica;
+
+                DateTime fn_ = fGestante.fn;
+
+                DateTime now = DateTime.Today;
+                int age = now.Year - fn_.Year;
+                if (now < fn_.AddYears(age)) age--;
+
+                txtEdad.Text = age.ToString();
+                idtpaciente = fGestante.idtpaciente;
+                
+                //nudGestas.Focus();
+                dtpFecha.Focus();
+
+                
+            }
 
         }
 
@@ -1085,7 +1104,7 @@ namespace CapaUsuario
                                 dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
                                 dgvHC.Columns[0].Visible = false;
                                 //nueva_historia_clinica();
-
+                                
                                 int rowIndex = 0;
                                 string item = "";
 
@@ -1103,9 +1122,15 @@ namespace CapaUsuario
 
                                 dgvHC.Rows[rowIndex].Selected = true;
                                 dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
-                                Codigo_Historia_Clinica = null;
+                                IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
+                                Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
 
-                            }
+                                    if (cbArchivado.Checked)
+                                        Archivado = true;
+                                    else
+                                        Archivado = false;
+
+                                }
                         }
                     }
                 }
@@ -1521,6 +1546,14 @@ namespace CapaUsuario
             odtOdontologo.Rows.InsertAt(drOdontologo, i);
             //dtpOdontologo.Focus();
             dtpEcografia.Focus();
+        }
+
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                nudGestas.Focus();
+                nudGestas.Select(0, nudGestas.Text.Length);
+            }
         }
     }
 }

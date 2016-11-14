@@ -46,6 +46,9 @@ namespace CapaUsuario.EstablecimientoSalud
 
         public void Nuevo()
         {
+            txtCodigo.Text = "";
+            txtMicrored.Text = "";
+            txtDireccion.Text = "";
             txtMicrored.Enabled = true;
             txtMicrored.Focus();
             btnInsertar.Enabled = true;
@@ -70,13 +73,13 @@ namespace CapaUsuario.EstablecimientoSalud
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    Nuevo();
                     ActualizarLista();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             //}
             //else
@@ -96,13 +99,13 @@ namespace CapaUsuario.EstablecimientoSalud
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    Nuevo();
                     ActualizarLista();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             }
             else
@@ -124,14 +127,14 @@ namespace CapaUsuario.EstablecimientoSalud
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
+                        Nuevo();
                         ActualizarLista();
                     }
 
                     else if (respuesta == "0")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
+                        Nuevo();
                     }
                     else
                     {
