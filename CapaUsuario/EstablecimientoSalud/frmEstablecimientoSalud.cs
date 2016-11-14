@@ -22,12 +22,12 @@ namespace CapaUsuario.EstablecimientoSalud
         public frmEstablecimientoSalud()
         {
             InitializeComponent();
-            ConfiguracionInicial();
+            
         }
 
         private void frmEstablecimientoSalud_Load(object sender, EventArgs e)
         {
-
+            ConfiguracionInicial();
         }
         public void CargarCombo()
         {
@@ -37,6 +37,7 @@ namespace CapaUsuario.EstablecimientoSalud
         }
         public void Nuevo()
         {
+            dgvListarEstablecimiento.DataSource = miEstablecimiento.ListarEstablecimiento();
             txtCodigo.Text = "";
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
@@ -87,12 +88,12 @@ namespace CapaUsuario.EstablecimientoSalud
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             }
             catch
@@ -117,12 +118,12 @@ namespace CapaUsuario.EstablecimientoSalud
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             }
             else

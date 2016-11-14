@@ -17,6 +17,7 @@ namespace CapaUsuario.Bateria
     {
         cBateria miBateria = new cBateria();
         cSiguienteCodigo micodigo = new cSiguienteCodigo();
+        cUtilitarios miUtilitario = new cUtilitarios();
         DataTable Tabla = new DataTable();
         string respuesta = "";
         string mensaje = "";
@@ -81,6 +82,8 @@ namespace CapaUsuario.Bateria
             txtMensajeOrina.Text = "";
             txtMensajeSifilis.Text = "";
             txtMensajeVIH.Text = "";
+            dtpFecha.Focus();
+            txtFechaExamenOrina.Enabled = false;
             timer.Stop();
         }
         private void ConfiguracionInicial()
@@ -139,7 +142,7 @@ namespace CapaUsuario.Bateria
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    Nuevo();
                     ActualizarLista();
                 }
                 else if (respuesta == "0")
@@ -165,31 +168,39 @@ namespace CapaUsuario.Bateria
             {
                 if (txtCodigoBateria.Text != "")
                 {
-                    miBateria.IdBateria = txtCodigoBateria.Text;
-                    miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
-                    miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
-                    miBateria.Hemoglobina = nudHemoglobina.Text;
-                    miBateria.Vih = cbVIH.Text;
-                    miBateria.Sifilis = cbSifilis.Text;
-                    miBateria.Glucosa = nudGlucosa.Text;
-                    miBateria.Orina = nudOrina.Text;
-                    miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
-                    miBateria.FechaTratamiento = txtFechaTratamiento.Text;
-                    Tabla = miBateria.ModificarBateria();
-                    respuesta = Tabla.Rows[0][0].ToString();
-                    mensaje = Tabla.Rows[0][1].ToString();
+                    if (Convert.ToDateTime(dtpFecha.Value.ToShortDateString()) >= Convert.ToDateTime(DateTime.Now.ToShortDateString()))
+                    {
+                        miBateria.IdBateria = txtCodigoBateria.Text;
+                        miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
+                        miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
+                        miBateria.Hemoglobina = nudHemoglobina.Text;
+                        miBateria.Vih = cbVIH.Text;
+                        miBateria.Sifilis = cbSifilis.Text;
+                        miBateria.Glucosa = nudGlucosa.Text;
+                        miBateria.Orina = nudOrina.Text;
+                        miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                        miBateria.FechaTratamiento = txtFechaTratamiento.Text;
+                        Tabla = miBateria.ModificarBateria();
+                        respuesta = Tabla.Rows[0][0].ToString();
+                        mensaje = Tabla.Rows[0][1].ToString();
 
-                    if (respuesta == "1")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ActualizarLista();
-                        Nuevo();
+                        if (respuesta == "1")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ActualizarLista();
+                            Nuevo();
+                        }
+                        else if (respuesta == "0")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Nuevo();
+                        }
                     }
-                    else if (respuesta == "0")
+                    else
                     {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Nuevo();
+                        MessageBox.Show("No puede modificar una bateria con fecha menor a la fecha actual. Contáctese con el administrador del Sistema.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    
                 }
                 else
                     MessageBox.Show("Por favor llene los campos necesarios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -203,33 +214,41 @@ namespace CapaUsuario.Bateria
         }
         private void Eliminar()
         {
-                if (txtCodigoBateria.Text != "")
+            if (txtCodigoBateria.Text != "")
+            {
+                if (Convert.ToDateTime(dtpFecha.Value.ToShortDateString()) >= Convert.ToDateTime(DateTime.Now.ToShortDateString()))
                 {
                     miBateria.IdBateria = txtCodigoBateria.Text;
                     Tabla = miBateria.EliminarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
 
-                if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                    if (respuesta == "1")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ActualizarLista();
-                        Nuevo();
-                    }
+                    if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                        if (respuesta == "1")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ActualizarLista();
+                            Nuevo();
+                        }
 
-                    else if (respuesta == "0")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Nuevo();
-                    }
-                    else
-                    {
-                        /*NO HACER NADA*/
-                    }
-            }
+                        else if (respuesta == "0")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Nuevo();
+                        }
+                        else
+                        {
+                            /*NO HACER NADA*/
+                        }
+                }
                 else
-                    MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    MessageBox.Show("No puede eliminar una bateria antigua", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            else
+                MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
         private void playSonidoDeAlerta()
@@ -325,6 +344,7 @@ namespace CapaUsuario.Bateria
 
         private void nudGlucosa_ValueChanged(object sender, EventArgs e)
         {
+            
             //try
             //{
             //    if (Convert.ToDecimal(nudGlucosa.Value) < Convert.ToDecimal(60))
@@ -347,7 +367,7 @@ namespace CapaUsuario.Bateria
             //    }
             //}
             //catch { }
-            
+
         }
 
         private void cbSifilis_SelectedIndexChanged(object sender, EventArgs e)
@@ -437,6 +457,8 @@ namespace CapaUsuario.Bateria
 
         private void nudHemoglobina_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //al precionar enter
+            miUtilitario.SoloNumeros(e);
             if (e.KeyChar == (char)(Keys.Enter))
             {
                 e.Handled = true;
@@ -528,6 +550,12 @@ namespace CapaUsuario.Bateria
         private void dtpFechaTratamiento_ValueChanged_1(object sender, EventArgs e)
         {
             txtFechaTratamiento.Text = dtpFechaTratamiento.Text;
+        }
+
+        private void frmBateria_Load(object sender, EventArgs e)
+        {
+            //dgvListaBateria.ClearSelection();
+            Nuevo();
         }
     }
 }

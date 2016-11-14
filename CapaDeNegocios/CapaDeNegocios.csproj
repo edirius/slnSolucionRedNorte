@@ -33,6 +33,7 @@
     <Reference Include="MySql.Data, Version=7.0.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,7 @@
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
     <Compile Include="cMorbilidad.cs" />
     <Compile Include="cOdontologia.cs" />
+    <Compile Include="cUtilitarios.cs" />
     <Compile Include="Reportes\cReporteObstetra.cs" />
     <Compile Include="TerminoGestacion\cTerminoGestacion.cs" />
     <Compile Include="cRecienNacido.cs" />
