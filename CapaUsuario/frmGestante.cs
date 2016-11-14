@@ -46,13 +46,20 @@ namespace CapaUsuario
 
             dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
 
-            idtpaciente = dgvGestante.Rows[0].Cells[1].Value.ToString();
-            nombres = dgvGestante.Rows[0].Cells[2].Value.ToString();
-            app = dgvGestante.Rows[0].Cells[3].Value.ToString();
-            apm = dgvGestante.Rows[0].Cells[4].Value.ToString();
-            DNI = Convert.ToString(dgvGestante.Rows[0].Cells[5].Value);
-            fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[6].Value);
-            
+            if (dgvGestante.Rows.Count > 0)
+            {
+
+                idtpaciente = dgvGestante.Rows[0].Cells[1].Value.ToString();
+                nombres = dgvGestante.Rows[0].Cells[2].Value.ToString();
+                app = dgvGestante.Rows[0].Cells[3].Value.ToString();
+                apm = dgvGestante.Rows[0].Cells[4].Value.ToString();
+                DNI = Convert.ToString(dgvGestante.Rows[0].Cells[5].Value);
+                fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[6].Value);
+            }
+            else {
+                MessageBox.Show("No hay registros de gestantes.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
 
             oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
             odtGestante = oGestante.ListarCantidadPacientes();
@@ -76,21 +83,44 @@ namespace CapaUsuario
             bindingNavigatorMoveFirstItem.Enabled = true;
             dgvGestante.Columns[1].Visible = false;
 
+            cbBuscar.SelectedItem = cbBuscar.Items[0];
+
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             string buscar = txtBuscar.Text;
+            string seleccionado = this.cbBuscar.GetItemText(this.cbBuscar.SelectedItem);
             oGestante.apellidopaterno = buscar;
             oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
 
-            if (buscar.Length > 4)
-            {
-                dgvGestante.DataSource = oGestante.ListarPacienteXApellidoPaterno();
-                dgvGestante.Columns[1].Visible = false;
+            switch (seleccionado) {
+                case "Apellido Paterno" :
+                    oGestante.apellidopaterno = buscar;
+                    dgvGestante.DataSource = oGestante.ListarPacienteXApellidoPaterno();
+                    dgvGestante.Columns[1].Visible = false;
+                    break; 
+
+                case "Apellido Materno":
+                    oGestante.apellidomaterno = buscar;
+                    dgvGestante.DataSource = oGestante.ListarPacienteXApellidoMaterno();
+                    dgvGestante.Columns[1].Visible = false;
+                    break;
+
+                case "Nombres":
+                    oGestante.nombres = buscar;
+                    dgvGestante.DataSource = oGestante.ListarPacienteXNombres();
+                    dgvGestante.Columns[1].Visible = false;
+                    break;
+
+                case "DNI":
+                    oGestante.dni = buscar;
+                    dgvGestante.DataSource = oGestante.ListarPacienteXDNI();
+                    dgvGestante.Columns[1].Visible = false;
+                    break;
             }
-                
+
 
             if (buscar.Length == 0)
                 dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina ,cantidad_registros );
@@ -107,12 +137,12 @@ namespace CapaUsuario
 
             if (e.RowIndex != -1)
             {
-                idtpaciente = dgvGestante.Rows[e.RowIndex].Cells[0].Value.ToString();
-                nombres = dgvGestante.Rows[e.RowIndex].Cells[1].Value.ToString();
-                app = dgvGestante.Rows[e.RowIndex].Cells[2].Value.ToString();
-                apm = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();
-                fn = Convert.ToDateTime(dgvGestante.Rows[e.RowIndex].Cells[5].Value);
-                DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[4].Value);
+                idtpaciente = dgvGestante.Rows[e.RowIndex].Cells[1].Value.ToString();
+                nombres = dgvGestante.Rows[e.RowIndex].Cells[2].Value.ToString();
+                app = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();
+                apm = dgvGestante.Rows[e.RowIndex].Cells[4].Value.ToString();
+                DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[5].Value);
+                fn = Convert.ToDateTime(dgvGestante.Rows[e.RowIndex].Cells[6].Value);
 
             }
 
@@ -120,12 +150,12 @@ namespace CapaUsuario
 
         private void dgvGestante_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            llenar_datos_gestante(e);
+           
         }
 
         private void dgvGestante_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            llenar_datos_gestante(e);
+           
         }
 
         private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
@@ -192,6 +222,36 @@ namespace CapaUsuario
         private void dgvGestante_DoubleClick(object sender, EventArgs e)
         {
             
+            
+        }
+
+        private void dgvGestante_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvGestante_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvGestante_DoubleClick_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvGestante_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_gestante(e);
+        }
+
+        private void dgvGestante_CellClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_gestante(e);
+        }
+
+        private void dgvGestante_DoubleClick_2(object sender, EventArgs e)
+        {
             DialogResult = DialogResult.OK;
         }
     }

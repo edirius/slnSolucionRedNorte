@@ -141,6 +141,7 @@ namespace CapaUsuario
 
             //backgroundimage = Image.FromFile(ruta + "\\odontologia.jpg");
 
+            /*            
             //Listar establecimiento de salud
             cbEstablecimientoSalud.DataSource = oEstablecimientoSalud.ListarEstablecimiento();
             cbEstablecimientoSalud.DisplayMember = "Descripcion";
@@ -148,9 +149,11 @@ namespace CapaUsuario
 
             //seleccionando establecimiento de salud
             cbEstablecimientoSalud.SelectedValue = IdEstablecimiento;
+            cbEstablecimientoSalud.Visible = false;
+            */
 
             lblOrigenEESS.Visible = false;
-            cbEstablecimientoSalud.Visible = false;
+            txtOrigenEESS.Visible = false;
             txtHistoriaClinica.Focus();
         }
 
@@ -362,7 +365,7 @@ namespace CapaUsuario
                 
                 if (cbTranseunte.Checked == true) {
                     oHistoriaClinica.Transeunte = 1;
-                    oHistoriaClinica.OrigenEESS = cbEstablecimientoSalud.SelectedValue.ToString();
+                    oHistoriaClinica.OrigenEESS = txtOrigenEESS.Text.ToString();
                 }
                 else{
                     oHistoriaClinica.Transeunte = 0;
@@ -659,9 +662,10 @@ namespace CapaUsuario
             else
                 cbTranseunte.Checked = false;
 
-            cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
+            //cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
 
-
+            txtOrigenEESS.Text = odtHCXIdHC.Rows[0][23].ToString();
+            
 
             /* Llenando ecografias y odontologia */
 
@@ -710,7 +714,7 @@ namespace CapaUsuario
 
             if (seleccionado == "Historia Clinica") { 
 
-                if (buscar.Length > 4) {
+                if (buscar.Length > 1) {
                     oHistoriaClinica.Codigohistoriaclinica = buscar;
                     dgvHC.DataSource = oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica();
                     dgvHC.Columns[0].Visible = false;
@@ -720,7 +724,7 @@ namespace CapaUsuario
             if (seleccionado == "Apellido Paterno")
             {
 
-                if (buscar.Length > 4)
+                if (buscar.Length > 1)
                 {
                     oPaciente.apellidopaterno = buscar;
                     dgvHC.DataSource = oPaciente.ListarHistoriaClinicaXApellidoPaterno();
@@ -878,11 +882,13 @@ namespace CapaUsuario
             if (cbTranseunte.Checked == false)
             {
                 lblOrigenEESS.Visible = false;
-                cbEstablecimientoSalud.Visible = false;
+                //cbEstablecimientoSalud.Visible = false;
+                txtOrigenEESS.Visible = false;
             }
             else {
                 lblOrigenEESS.Visible = true;
-                cbEstablecimientoSalud.Visible = true;
+                //cbEstablecimientoSalud.Visible = true;
+                txtOrigenEESS.Visible = false;
             }
 
 
@@ -1013,7 +1019,8 @@ namespace CapaUsuario
                     buGuardar.Focus();
                 }
                 else {
-                    cbEstablecimientoSalud.Focus();
+                    //cbEstablecimientoSalud.Focus();
+                    txtOrigenEESS.Focus();
                 }
             }
 
@@ -1070,6 +1077,11 @@ namespace CapaUsuario
         private void buAgregarEcografia_KeyPress(object sender, KeyPressEventArgs e)
         {
            
+        }
+
+        private void buGuardar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

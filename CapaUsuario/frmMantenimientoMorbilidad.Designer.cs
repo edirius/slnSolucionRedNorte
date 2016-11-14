@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbPotencial = new System.Windows.Forms.RadioButton();
             this.rbExtrema = new System.Windows.Forms.RadioButton();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -42,9 +42,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.buEliminar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.buEliminar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -169,8 +169,8 @@
             // 
             this.dgvMorbilidad.AllowUserToAddRows = false;
             this.dgvMorbilidad.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMorbilidad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -230,6 +230,18 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(776, 76);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
+            // buEliminar
+            // 
+            this.buEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buEliminar.Location = new System.Drawing.Point(313, 3);
+            this.buEliminar.Name = "buEliminar";
+            this.buEliminar.Size = new System.Drawing.Size(149, 61);
+            this.buEliminar.TabIndex = 5;
+            this.buEliminar.Text = "Eliminar";
+            this.buEliminar.UseVisualStyleBackColor = true;
+            this.buEliminar.Click += new System.EventHandler(this.buEliminar_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -262,18 +274,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(776, 212);
             this.tableLayoutPanel4.TabIndex = 10;
-            // 
-            // buEliminar
-            // 
-            this.buEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buEliminar.Location = new System.Drawing.Point(313, 3);
-            this.buEliminar.Name = "buEliminar";
-            this.buEliminar.Size = new System.Drawing.Size(149, 61);
-            this.buEliminar.TabIndex = 5;
-            this.buEliminar.Text = "Eliminar";
-            this.buEliminar.UseVisualStyleBackColor = true;
-            this.buEliminar.Click += new System.EventHandler(this.buEliminar_Click);
             // 
             // frmMantenimientoMorbilidad
             // 

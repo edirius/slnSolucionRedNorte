@@ -53,6 +53,20 @@ namespace CapaDeNegocios.Paciente
             return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno",apellidopaterno, idtestablecimientosalud);
         }
 
+        public DataTable ListarPacienteXApellidoMaterno()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoMaterno", apellidomaterno, idtestablecimientosalud);
+        }
+        public DataTable ListarPacienteXNombres()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXNombres", nombres, idtestablecimientosalud);
+        }
+
+        public DataTable ListarPacienteXDNI()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXDNI", dni, idtestablecimientosalud);
+        }
+
         public DataTable ListarPacienteXIdEstablecimientoSalud(int pagina_ , int numero_registros_ )
         {
             return Conexion.GDatos.TraerDataTable("spListarPacienteXIdEstablecimientoSalud", idtestablecimientosalud, pagina_, numero_registros_);
@@ -78,8 +92,22 @@ namespace CapaDeNegocios.Paciente
 
         public DataTable ListarHistoriaClinicaXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno,año,mes);
-            
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno );
+        }
+
+        public DataTable ListarHistoriaClinicaXApellidoMaterno()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoMaterno", apellidomaterno);
+        }
+
+        public DataTable ListarHistoriaClinicaXNombres()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXNombres", nombres);
+        }
+
+        public DataTable ListarHistoriaClinicaXDNI()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXDNI", dni);
         }
 
         public DataTable ListarCantidadPacientes()
