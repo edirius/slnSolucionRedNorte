@@ -92,7 +92,7 @@ namespace CapaUsuario.Paciente
             }
         }
 
-        public void RecibirDatos(string pidtpaciente, string pnombres, string papellidopaterno, string papellidomaterno, string pdni, DateTime pfechanacimiento, string pdireccion, string ptelefono, string pidtestablecimientosalud, int paccion)
+        public void RecibirDatos(string pidtpaciente, string scodigohistoriaclinica, string pnombres, string papellidopaterno, string papellidomaterno, string pdni, DateTime pfechanacimiento, string pdireccion, string ptelefono, string pidtestablecimientosalud, int paccion)
         {
             sidtpaciente = pidtpaciente;
             txtNombre.Text = pnombres;
