@@ -113,6 +113,12 @@
     <Compile Include="Reportes\frmVistaReportes.Designer.cs">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\rptNominalGestanteMicroRED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptNominalGestanteMicroRED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\rptReportesObstetras.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +158,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmVistaReportes.resx">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptNominalGestanteMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptNominalGestanteMicroRED.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReportesObstetras.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

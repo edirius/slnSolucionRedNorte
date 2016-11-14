@@ -33,6 +33,7 @@ namespace CapaUsuario.ControlPeuperio
             sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
             VerificarTerminoGestacion();
             CargarDatos();
+            btnNuevo_Click(sender, e);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

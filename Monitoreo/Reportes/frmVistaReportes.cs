@@ -61,6 +61,25 @@ namespace Monitoreo.Reportes
                     crystalReportViewer1.ReportSource = rptAlertaControlPeuperio;
                     crystalReportViewer1.Refresh();
                 }
+                else if (Reporte == "ReporteNominalGestante")
+                {
+                    Reportes.rptReportesObstetras rptAlertaControlPeuperio = new Reportes.rptReportesObstetras();
+
+                    //crParameterDiscreteValue.Value = cVariables.v_idobstetra;
+                    //crParameterFieldDefinitions = rptAlertaControlPeuperio.DataDefinition.ParameterFields;
+                    //crParameterFieldDefinition = crParameterFieldDefinitions["pidtobstetra"];
+                    //crParameterValues.Add(crParameterDiscreteValue);
+                    //crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                    //crParameterDiscreteValue.Value = cVariables.v_idestablecimientosalud;
+                    //crParameterFieldDefinitions = rptAlertaControlPeuperio.DataDefinition.ParameterFields;
+                    //crParameterFieldDefinition = crParameterFieldDefinitions["pidtestablecimientosalud"];
+                    //crParameterValues.Add(crParameterDiscreteValue);
+                    //crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                    crystalReportViewer1.ReportSource = rptAlertaControlPeuperio;
+                    crystalReportViewer1.Refresh();
+                }
             }
             catch (Exception m)
             {
@@ -69,6 +88,11 @@ namespace Monitoreo.Reportes
         }
 
         public void ReporteObstetra(string tipo)
+        {
+            Reporte = tipo;
+        }
+
+        public void ReporteNominalGestante(string tipo)
         {
             Reporte = tipo;
         }
