@@ -50,11 +50,11 @@ namespace CapaUsuario
             {
 
                 idtpaciente = dgvGestante.Rows[0].Cells[1].Value.ToString();
-                nombres = dgvGestante.Rows[0].Cells[2].Value.ToString();
-                app = dgvGestante.Rows[0].Cells[3].Value.ToString();
-                apm = dgvGestante.Rows[0].Cells[4].Value.ToString();
-                DNI = Convert.ToString(dgvGestante.Rows[0].Cells[5].Value);
-                fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[6].Value);
+                nombres = dgvGestante.Rows[0].Cells[3].Value.ToString();
+                app = dgvGestante.Rows[0].Cells[4].Value.ToString();
+                apm = dgvGestante.Rows[0].Cells[5].Value.ToString();
+                DNI = Convert.ToString(dgvGestante.Rows[0].Cells[6].Value);
+                fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[7].Value);
             }
             else {
                 MessageBox.Show("No hay registros de gestantes.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -138,12 +138,11 @@ namespace CapaUsuario
             if (e.RowIndex != -1)
             {
                 idtpaciente = dgvGestante.Rows[e.RowIndex].Cells[1].Value.ToString();
-                nombres = dgvGestante.Rows[e.RowIndex].Cells[2].Value.ToString();
-                app = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();
-                apm = dgvGestante.Rows[e.RowIndex].Cells[4].Value.ToString();
-                DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[5].Value);
-                fn = Convert.ToDateTime(dgvGestante.Rows[e.RowIndex].Cells[6].Value);
-
+                nombres = dgvGestante.Rows[e.RowIndex].Cells[3].Value.ToString();
+                app = dgvGestante.Rows[e.RowIndex].Cells[4].Value.ToString();
+                apm = dgvGestante.Rows[e.RowIndex].Cells[5].Value.ToString();
+                DNI = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[6].Value);
+                fn = Convert.ToDateTime(dgvGestante.Rows[e.RowIndex].Cells[7].Value);
             }
 
         }

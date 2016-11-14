@@ -42,7 +42,7 @@ namespace CapaDeNegocios.Paciente
         public string año { get; set; }
         public string mes { get; set; }
         public string idtobstetra { get; set; }
-
+        public string codigohistoriaclinica { get; set; }
 
         public DataTable ListarPaciente(string idtestablecimientosalud)
         {

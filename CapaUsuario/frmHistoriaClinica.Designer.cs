@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.buRegistroBateria = new System.Windows.Forms.Button();
             this.buAtencionPrenatal = new System.Windows.Forms.Button();
@@ -45,8 +45,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblArchivado = new System.Windows.Forms.Label();
             this.txtOrigenEESS = new System.Windows.Forms.TextBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cbArchivado = new System.Windows.Forms.CheckBox();
@@ -58,7 +56,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvOdontologia = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buAgregarOdontologia = new System.Windows.Forms.Button();
             this.dtpOdontologo = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -87,11 +85,12 @@
             this.lblOrigenEESS = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
-            this.buAgregarOdontologia = new System.Windows.Forms.Button();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtNombreCompleto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -107,8 +106,15 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -126,19 +132,11 @@
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.buGuardar = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -159,19 +157,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -328,7 +326,6 @@
             // 
             this.groupBox4.Controls.Add(this.lblArchivado);
             this.groupBox4.Controls.Add(this.txtOrigenEESS);
-            this.groupBox4.Controls.Add(this.groupBox13);
             this.groupBox4.Controls.Add(this.groupBox12);
             this.groupBox4.Controls.Add(this.cbArchivado);
             this.groupBox4.Controls.Add(this.cbTranseunte);
@@ -368,24 +365,6 @@
             this.txtOrigenEESS.TabIndex = 42;
             this.txtOrigenEESS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrigenEESS_KeyPress);
             // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.txtHistoriaClinica);
-            this.groupBox13.Location = new System.Drawing.Point(3, 13);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(220, 45);
-            this.groupBox13.TabIndex = 41;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Historia Clinica";
-            // 
-            // txtHistoriaClinica
-            // 
-            this.txtHistoriaClinica.Location = new System.Drawing.Point(44, 17);
-            this.txtHistoriaClinica.Name = "txtHistoriaClinica";
-            this.txtHistoriaClinica.Size = new System.Drawing.Size(128, 20);
-            this.txtHistoriaClinica.TabIndex = 1;
-            this.txtHistoriaClinica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHistoriaClinica_KeyPress_1);
-            // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.dtpFecha);
@@ -394,7 +373,7 @@
             this.groupBox12.Size = new System.Drawing.Size(143, 47);
             this.groupBox12.TabIndex = 40;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Fecha";
+            this.groupBox12.Text = "Fecha:";
             // 
             // dtpFecha
             // 
@@ -481,7 +460,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dgvOdontologia);
-            this.groupBox6.Controls.Add(this.button2);
+            this.groupBox6.Controls.Add(this.buAgregarOdontologia);
             this.groupBox6.Controls.Add(this.dtpOdontologo);
             this.groupBox6.Location = new System.Drawing.Point(501, 66);
             this.groupBox6.Name = "groupBox6";
@@ -494,8 +473,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -512,15 +491,15 @@
             this.dgvOdontologia.TabIndex = 14;
             this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick_1);
             // 
-            // button2
+            // buAgregarOdontologia
             // 
-            this.button2.Location = new System.Drawing.Point(220, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 26);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.buAgregarOdontologia.Location = new System.Drawing.Point(220, 16);
+            this.buAgregarOdontologia.Name = "buAgregarOdontologia";
+            this.buAgregarOdontologia.Size = new System.Drawing.Size(28, 26);
+            this.buAgregarOdontologia.TabIndex = 13;
+            this.buAgregarOdontologia.Text = "+";
+            this.buAgregarOdontologia.UseVisualStyleBackColor = true;
+            this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click_2);
             // 
             // dtpOdontologo
             // 
@@ -553,7 +532,7 @@
             this.groupBox10.Size = new System.Drawing.Size(194, 32);
             this.groupBox10.TabIndex = 3;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Trimestre";
+            this.groupBox10.Text = "Trimestre:";
             // 
             // rbTercerTrimestre
             // 
@@ -634,7 +613,7 @@
             this.groupBox7.Size = new System.Drawing.Size(408, 205);
             this.groupBox7.TabIndex = 34;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Ecografia Obstetrica de gestante";
+            this.groupBox7.Text = "Ecografia Obstetrica de gestante:";
             // 
             // groupBox11
             // 
@@ -697,8 +676,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -840,42 +819,41 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.txtHistoriaClinica);
             this.groupBox14.Controls.Add(this.txtDNI);
-            this.groupBox14.Controls.Add(this.buAgregarOdontologia);
             this.groupBox14.Controls.Add(this.txtEdad);
             this.groupBox14.Controls.Add(this.txtNombreCompleto);
             this.groupBox14.Controls.Add(this.label6);
+            this.groupBox14.Controls.Add(this.label13);
             this.groupBox14.Controls.Add(this.label5);
             this.groupBox14.Controls.Add(this.label2);
-            this.groupBox14.Location = new System.Drawing.Point(230, 11);
+            this.groupBox14.Location = new System.Drawing.Point(3, 11);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(784, 47);
+            this.groupBox14.Size = new System.Drawing.Size(1011, 47);
             this.groupBox14.TabIndex = 30;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Gestante";
+            this.groupBox14.Text = "Gestante:";
+            // 
+            // txtHistoriaClinica
+            // 
+            this.txtHistoriaClinica.Enabled = false;
+            this.txtHistoriaClinica.Location = new System.Drawing.Point(94, 19);
+            this.txtHistoriaClinica.Name = "txtHistoriaClinica";
+            this.txtHistoriaClinica.Size = new System.Drawing.Size(128, 20);
+            this.txtHistoriaClinica.TabIndex = 3;
             // 
             // txtDNI
             // 
             this.txtDNI.Enabled = false;
-            this.txtDNI.Location = new System.Drawing.Point(137, 21);
+            this.txtDNI.Location = new System.Drawing.Point(289, 19);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(66, 20);
             this.txtDNI.TabIndex = 2;
             // 
-            // buAgregarOdontologia
-            // 
-            this.buAgregarOdontologia.Location = new System.Drawing.Point(15, 16);
-            this.buAgregarOdontologia.Name = "buAgregarOdontologia";
-            this.buAgregarOdontologia.Size = new System.Drawing.Size(77, 27);
-            this.buAgregarOdontologia.TabIndex = 2;
-            this.buAgregarOdontologia.Text = "Buscar";
-            this.buAgregarOdontologia.UseVisualStyleBackColor = true;
-            this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click_1);
-            // 
             // txtEdad
             // 
             this.txtEdad.Enabled = false;
-            this.txtEdad.Location = new System.Drawing.Point(720, 21);
+            this.txtEdad.Location = new System.Drawing.Point(921, 18);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(49, 20);
             this.txtEdad.TabIndex = 1;
@@ -883,7 +861,7 @@
             // txtNombreCompleto
             // 
             this.txtNombreCompleto.Enabled = false;
-            this.txtNombreCompleto.Location = new System.Drawing.Point(314, 21);
+            this.txtNombreCompleto.Location = new System.Drawing.Point(488, 19);
             this.txtNombreCompleto.Name = "txtNombreCompleto";
             this.txtNombreCompleto.Size = new System.Drawing.Size(360, 20);
             this.txtNombreCompleto.TabIndex = 1;
@@ -891,17 +869,27 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(681, 25);
+            this.label6.Location = new System.Drawing.Point(885, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Edad:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Historia Clinica:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 25);
+            this.label5.Location = new System.Drawing.Point(260, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 0;
@@ -911,7 +899,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(215, 25);
+            this.label2.Location = new System.Drawing.Point(393, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 0;
@@ -937,7 +925,7 @@
             this.groupBox15.Size = new System.Drawing.Size(132, 168);
             this.groupBox15.TabIndex = 31;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Formula Obstetrica";
+            this.groupBox15.Text = "Formula Obstetrica:";
             // 
             // label27
             // 
@@ -1075,6 +1063,32 @@
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(11, 317);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
+            this.pictureBox4.Location = new System.Drawing.Point(1200, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(12, 317);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1099,6 +1113,21 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1203, 54);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
+            // buGuardar
+            // 
+            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buGuardar.ForeColor = System.Drawing.Color.White;
+            this.buGuardar.Location = new System.Drawing.Point(403, 3);
+            this.buGuardar.Name = "buGuardar";
+            this.buGuardar.Size = new System.Drawing.Size(194, 48);
+            this.buGuardar.TabIndex = 23;
+            this.buGuardar.Text = "Guardar";
+            this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1114,6 +1143,50 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Location = new System.Drawing.Point(803, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(203, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(194, 48);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 28;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.Location = new System.Drawing.Point(1003, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(197, 48);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 29;
+            this.pictureBox6.TabStop = false;
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1126,7 +1199,7 @@
             this.groupBox3.Size = new System.Drawing.Size(1209, 267);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Explorar Control de Gestantes";
+            this.groupBox3.Text = "Explorar Control de Gestantes:";
             // 
             // tableLayoutPanel4
             // 
@@ -1295,8 +1368,8 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1342,91 +1415,6 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(11, 317);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
-            this.pictureBox4.Location = new System.Drawing.Point(1200, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(12, 317);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // buGuardar
-            // 
-            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
-            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buGuardar.ForeColor = System.Drawing.Color.White;
-            this.buGuardar.Location = new System.Drawing.Point(403, 3);
-            this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(194, 48);
-            this.buGuardar.TabIndex = 23;
-            this.buGuardar.Text = "Guardar";
-            this.buGuardar.UseVisualStyleBackColor = true;
-            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Location = new System.Drawing.Point(803, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(194, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 27;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(203, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(194, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 28;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.Location = new System.Drawing.Point(1003, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(197, 48);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 29;
-            this.pictureBox6.TabStop = false;
-            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1444,8 +1432,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -1473,7 +1459,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -1482,12 +1474,6 @@
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1520,8 +1506,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtOrigenEESS;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox txtHistoriaClinica;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.CheckBox cbArchivado;
@@ -1533,7 +1517,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dgvOdontologia;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buAgregarOdontologia;
         private System.Windows.Forms.DateTimePicker dtpOdontologo;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox10;
@@ -1563,7 +1547,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Button buAgregarOdontologia;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.TextBox txtNombreCompleto;
         private System.Windows.Forms.Label label6;
@@ -1595,6 +1578,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblArchivado;
+        private System.Windows.Forms.TextBox txtHistoriaClinica;
+        private System.Windows.Forms.Label label13;
     }
 }
 
