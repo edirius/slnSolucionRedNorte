@@ -80,11 +80,13 @@ namespace CapaUsuario.ControlPeuperio
                         miControlPeuperio.idtcontrolpeuperio = row[0].ToString();
                     }
                     miControlPeuperio.CrearControlPeuperio(miControlPeuperio);
+                    MessageBox.Show("Control Puerperio registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bOk = true;
                 }
                 if (saccion == 2)
                 {
                     miControlPeuperio.ModificarControlPeuperio(miControlPeuperio);
+                    MessageBox.Show("Control Puerperio modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bOk = true;
                 }
                 if (bOk == true)
@@ -116,6 +118,10 @@ namespace CapaUsuario.ControlPeuperio
             }
             miControlPeuperio.EliminarControlPeuperio(sidtcontrolpeuperio);
             CargarDatos();
+            if (dgvControlPeuperio.Rows.Count == 0)
+            {
+                btnNuevo_Click(sender, e);
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -176,15 +182,15 @@ namespace CapaUsuario.ControlPeuperio
             if (e.RowIndex != -1)
             {
                 saccion = 2;
-                sidtcontrolpeuperio = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[0].Value);
-                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["NUMERO"].Value);
+                sidtcontrolpeuperio = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["idtcontrolpeuperio"].Value);
+                snumerocontrol = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["numero"].Value);
                 txtNumero.Text = GenerarNumero(snumerocontrol) + " CONTROL";
-                dtpFecha.Value = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["FECHA"].Value);
-                numPresionArterialS.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[4].Value);
-                numPresionArterialD.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[5].Value);
+                dtpFecha.Value = Convert.ToDateTime(dgvControlPeuperio.Rows[e.RowIndex].Cells["fecha"].Value);
+                numPresionArterialS.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarterials"].Value);
+                numPresionArterialD.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells["presionarteriald"].Value);
                 numAlturaUterino.Value = Convert.ToInt32(dgvControlPeuperio.Rows[e.RowIndex].Cells[6].Value);
-                txtFUA.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[7].Value);
-                txtDetalle.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells[8].Value);
+                txtFUA.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalle.Text = Convert.ToString(dgvControlPeuperio.Rows[e.RowIndex].Cells["detalle"].Value);
                 dtpFecha.Focus();
             }
         }
@@ -196,7 +202,7 @@ namespace CapaUsuario.ControlPeuperio
                 dgvControlPeuperio.Rows.Clear();
                 foreach (DataRow row in miControlPeuperio.ListarControlPeuperio(sidthistoriaclinica).Rows)
                 {
-                    dgvControlPeuperio.Rows.Add(row["ID CONTROL PEUPERIO"].ToString(), row["NUMERO"].ToString(), row["FECHA"].ToString(), row["PRESION ARTERIAL S"].ToString()+"/"+row["PRESION ARTERIAL D"].ToString(), row["PRESION ARTERIAL S"].ToString(), row["PRESION ARTERIAL D"].ToString(), row["ALTURA UTERINO"].ToString(), row["FUA"].ToString(), row["DETALLE"].ToString());
+                    dgvControlPeuperio.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[5].ToString(), row[3].ToString(), row[4].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString());
                 }
                 if (dgvControlPeuperio.Rows.Count > 0)
                 {

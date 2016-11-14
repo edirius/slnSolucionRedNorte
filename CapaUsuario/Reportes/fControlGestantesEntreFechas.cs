@@ -527,10 +527,10 @@ namespace CapaUsuario.Reportes
             
 
             odtCP = oHC.enumerar_datatable(oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica), 0);
-            dgvControlPuerperio.DataSource = odtCP;
             odtCP.Columns.RemoveAt(1);
-            odtCP.Columns.RemoveAt(8);
-            
+            odtCP.Columns.RemoveAt(9);
+            dgvControlPuerperio.DataSource = odtCP;
+
 
             odtRN = oHC.enumerar_datatable(oRecienNacido.ListarRecienNacido(IdtHistoriaClinica), 0);
             odtRN.Columns.RemoveAt(1);
@@ -573,7 +573,7 @@ namespace CapaUsuario.Reportes
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte1.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                     /*
                     if (k == 4)
@@ -597,7 +597,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte1.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte1[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvHCParte1[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
                       
 
@@ -653,7 +653,7 @@ namespace CapaUsuario.Reportes
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte2.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                     /*
                     if (k == 4)
@@ -677,7 +677,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte2.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
  
 
                         //cell.FixedHeight = 25f;
@@ -733,7 +733,7 @@ namespace CapaUsuario.Reportes
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte3.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                     /*
                     if (k == 4)
@@ -757,7 +757,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte3.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte3[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvHCParte3[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
  
 
@@ -812,7 +812,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ECOGRAFIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ECOGRAFIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 4;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -822,7 +822,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvEcografico.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
 
                      
@@ -833,7 +833,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvEcografico.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 4;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -846,7 +846,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvEcografico.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvEcografico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvEcografico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
 
  
@@ -902,7 +902,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ODONTOLOGIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ODONTOLOGIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 2;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -912,7 +912,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvOdontologico.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -921,7 +921,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvOdontologico.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 2;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -934,7 +934,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvOdontologico.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
                        
 
@@ -981,7 +981,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("MORBILIDAD", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("MORBILIDAD", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 3;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -991,7 +991,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvMorbilidad.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1002,7 +1002,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvMorbilidad.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 3;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1014,7 +1014,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvMorbilidad.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
                         //if (j != 1) 
                             pdfTableE.AddCell(cell);
@@ -1061,7 +1061,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ATENCION PRE NATAL", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ATENCION PRE NATAL", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1071,7 +1071,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvAtencionPreNatal.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                      
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1082,7 +1082,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvAtencionPreNatal.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 9;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1094,7 +1094,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvAtencionPreNatal.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
 
                         //cell.FixedHeight = 25f;
@@ -1149,7 +1149,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("REGISTRO DE EXAMENES DE BATERIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("REGISTRO DE EXAMENES DE BATERIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1159,7 +1159,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvRegBateria.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                     
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1168,7 +1168,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvRegBateria.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 9;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1180,7 +1180,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvRegBateria.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvRegBateria[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvRegBateria[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
  
 
                         //cell.FixedHeight = 25f;
@@ -1228,7 +1228,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("VISITA DOMICILIARIA GESTANTE", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("VISITA DOMICILIARIA GESTANTE", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 5;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1238,7 +1238,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvVisitasG.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1247,7 +1247,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvVisitasG.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 5;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1259,7 +1259,7 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvVisitasG.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvVisitasG[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvVisitasG[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
  
  
@@ -1311,7 +1311,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("VISITA PUERPERA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("VISITA PUERPERA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 8;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1321,7 +1321,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvVisitasPuerpera.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1329,11 +1329,21 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvVisitasPuerpera.RowCount == 0)
+                {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 8;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
                 for (int i = 0; i < dgvVisitasPuerpera.RowCount; i++)
                 {
                     for (int j = 0; j < dgvVisitasPuerpera.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
  
 
                         //cell.FixedHeight = 25f;
@@ -1376,19 +1386,13 @@ namespace CapaUsuario.Reportes
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-                int iindice_ingresos = 0;
-                int iindice_descuentos = 0;
-                int iindice_a_empleador_i = 0;
-                int iindice_a_empleador_j = 0;
-                int iindice_a_trabajador = 0;
-
-                bool fAportacionesEmpleador = false;
+ 
 
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("TERMINO GESTACION", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("TERMINO GESTACION", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 11;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1398,7 +1402,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvTerminoGestacion.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1406,11 +1410,21 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvTerminoGestacion.RowCount == 0)
+                {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 11;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
                 for (int i = 0; i < dgvTerminoGestacion.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvTerminoGestacion.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvTerminoGestacion[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvTerminoGestacion[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
  
 
                         //cell.FixedHeight = 25f;
@@ -1454,11 +1468,12 @@ namespace CapaUsuario.Reportes
                 pdfTableE.WidthPercentage = ancho;
  
 
+
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("CONTROL PUERPERIO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
-                cell.Colspan = 8;
+                cell = new PdfPCell((new Phrase("CONTROL PUERPERIO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
                 cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
@@ -1467,20 +1482,30 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvControlPuerperio.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
- 
+
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
+                }
+
+                if (dgvControlPuerperio.RowCount == 0)
+                {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 9;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
                 }
 
                 for (int i = 0; i < dgvControlPuerperio.RowCount; i++)
                 {
                     for (int j = 0; j < dgvControlPuerperio.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvControlPuerperio[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvControlPuerperio[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1501,6 +1526,8 @@ namespace CapaUsuario.Reportes
 
             return pdfTableE;
         }
+
+         
 
         private PdfPTable pdf_rec_nac(int alineacion, int ancho)
         {
@@ -1526,7 +1553,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("RECIEN NACIDO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("RECIEN NACIDO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 6;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1536,7 +1563,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvRecienNacido.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1544,11 +1571,21 @@ namespace CapaUsuario.Reportes
                     k++;
                 }
 
+                if (dgvRecienNacido.RowCount == 0)
+                {
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.Colspan = 6;
+                    cell.Rowspan = 1;
+                    cell.HorizontalAlignment = 1;
+                    cell.HorizontalAlignment = Element.ALIGN_LEFT;
+                    pdfTableE.AddCell(cell);
+                }
+
                 for (int i = 0; i < dgvRecienNacido.RowCount ; i++)
                 {
                     for (int j = 0; j < dgvRecienNacido.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvRecienNacido[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 7f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvRecienNacido[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
  
 
                         //cell.FixedHeight = 25f;
