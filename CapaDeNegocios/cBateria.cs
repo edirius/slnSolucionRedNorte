@@ -28,22 +28,57 @@ namespace CapaDeNegocios
 
         public string FechaExamenOrina { get; set; }
 
+        public string FechaTratamiento { get; set; }
+
         public DataTable AgregarBateria()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina);
+            return Conexion.GDatos.TraerDataTable("spCrearBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina, FechaTratamiento);
         }
         public DataTable ModificarBateria()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina);
+            return Conexion.GDatos.TraerDataTable("spModificarBateria", IdBateria, IdHistoriaClinica, Fecha, Hemoglobina, Vih, Sifilis, Glucosa, Orina, FechaExamenOrina, FechaTratamiento);
         }
         public DataTable EliminarBateria()
         {
             return Conexion.GDatos.TraerDataTable("spEliminarBateria", IdBateria);
         }
-        public DataTable ListarBateria()
+        public DataTable ListarBateria(string id)
         {
-            return Conexion.GDatos.TraerDataTable("spListarBateria");
+            return Conexion.GDatos.TraerDataTable("spListarBateria2", id);
         }
+        public DataTable ListadeAlertasenBateria(string tipo, string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertasBateria", tipo, id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteAnemia(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteAnemia", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteVIH(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteVIH", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteSifilis(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSifilis", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteOrina(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteOrina", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteSinFechaTratamiento(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSinFechaTratamiento", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteSinExamenOrina(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSinExamenOrina", id, id2, mes, año);
+        }
+        public DataTable AlertaGestanteSinBateria(string id, string id2, string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria", id, id2, mes, año);
+        }
+
 
     }
 }

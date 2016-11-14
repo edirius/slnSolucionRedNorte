@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgListaGestantes = new System.Windows.Forms.DataGridView();
             this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,8 +51,8 @@
             // 
             this.dtgListaGestantes.AllowUserToAddRows = false;
             this.dtgListaGestantes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgListaGestantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgListaGestantes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgListaGestantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgListaGestantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNumero,
@@ -203,6 +203,7 @@
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dtgListaGestantes);
             this.Name = "frmGestantesConRiesgoPresionArterial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestantes con Riesgo  x Presion Arterial";
             this.Load += new System.EventHandler(this.frmGestantesConRiesgoPresionArterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaGestantes)).EndInit();

@@ -38,6 +38,12 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="iTextSharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -73,6 +79,12 @@
     <Compile Include="Alertas\frmAlerta.Designer.cs">
       <DependentUpon>frmAlerta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\frmAlertaControlPuerperio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\frmAlertaControlPuerperio.Designer.cs">
+      <DependentUpon>frmAlertaControlPuerperio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\frmGestantesConRiesgoPresionArterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,12 @@
     <Compile Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.Designer.cs">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\rptAlertaControlPuerperio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAlertaControlPuerperio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,11 +127,71 @@
       <DependentUpon>rptListaGestantesControlPreNatal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Bateria\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\CuadroDeAlertasBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\CuadroDeAlertasBateria.Designer.cs">
+      <DependentUpon>CuadroDeAlertasBateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bateria\frmAlertaGestanteBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmAlertaGestanteBateria.Designer.cs">
+      <DependentUpon>frmAlertaGestanteBateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bateria\frmBateria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bateria\frmBateria.Designer.cs">
       <DependentUpon>frmBateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bateria\frmReporteGestantesSinBateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bateria\frmReporteGestantesSinBateria.Designer.cs">
+      <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bateria\GestanteConAnemia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConAnemia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteConSifilis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConSifilis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteConVIH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConVIH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteInfeccionUrinaria.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteInfeccionUrinaria.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteSinExamenOrina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteSinExamenOrina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteSinTratamiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteSinTratamiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="CitaPreNatal\dsListaPreNatal.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -144,6 +222,13 @@
     <Compile Include="CitaPreNatal\usCitaPrenatal.Designer.cs">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="crCantidadGestantes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crCantidadGestantes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cVariables.cs" />
     <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,10 +247,10 @@
     <Compile Include="Exportacion\frmExportacion.Designer.cs">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestante.cs">
+    <Compile Include="Paciente\frmGestante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestante.Designer.cs">
+    <Compile Include="Paciente\frmGestante.Designer.cs">
       <DependentUpon>frmGestante.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHistoriaClinica.cs">
@@ -198,12 +283,6 @@
     <Compile Include="Obstetra\frmMantenimientoObstetra.Designer.cs">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Paciente\frmMantenimientoPaciente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Paciente\frmMantenimientoPaciente.Designer.cs">
-      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
-    </Compile>
     <Compile Include="Obstetra\frmObstetra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,11 +297,46 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecienNacido\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmAlertaRNBajoPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmAlertaRNBajoPeso.Designer.cs">
+      <DependentUpon>frmAlertaRNBajoPeso.cs</DependentUpon>
+    </Compile>
     <Compile Include="RecienNacido\frmRecienNacido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RecienNacido\frmRecienNacido.Designer.cs">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecienNacido\frmReporteRNBajoPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecienNacido\frmReporteRNBajoPeso.Designer.cs">
+      <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\fCantidadGestantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fCantidadGestantes.Designer.cs">
+      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\fControlGestantesEntreFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fControlGestantesEntreFechas.Designer.cs">
+      <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\frmAlerta.cs">
       <SubType>Form</SubType>
@@ -242,17 +356,11 @@
     <Compile Include="TerminoGestacion\frmMantenimientoTerminoGestacion.designer.cs">
       <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.cs">
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPuerperio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlPuerperio\frmMantenimientoControlPeuperio.designer.cs">
-      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ControlPuerperio\frmControlPeuperio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlPuerperio\frmControlPeuperio.Designer.cs">
-      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
+    <Compile Include="ControlPuerperio\frmMantenimientoControlPuerperio.designer.cs">
+      <DependentUpon>frmMantenimientoControlPuerperio.cs</DependentUpon>
     </Compile>
     <Compile Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.cs">
       <SubType>Form</SubType>
@@ -262,6 +370,9 @@
     </Compile>
     <EmbeddedResource Include="Alertas\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\frmAlertaControlPuerperio.resx">
+      <DependentUpon>frmAlertaControlPuerperio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmGestantesConRiesgoPresionArterial.resx">
       <DependentUpon>frmGestantesConRiesgoPresionArterial.cs</DependentUpon>
@@ -275,6 +386,10 @@
     <EmbeddedResource Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.resx">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\rptAlertaControlPuerperio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAlertaControlPuerperio.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alertas\rptListaGestantesConRiesgoPresionAltaPrenatal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListaGestantesConRiesgoPresionAltaPrenatal.cs</LastGenOutput>
@@ -283,8 +398,45 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListaGestantesControlPreNatal.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\CuadroDeAlertasBateria.resx">
+      <DependentUpon>CuadroDeAlertasBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\frmAlertaGestanteBateria.resx">
+      <DependentUpon>frmAlertaGestanteBateria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bateria\frmBateria.resx">
       <DependentUpon>frmBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\frmReporteGestantesSinBateria.resx">
+      <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConAnemia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConAnemia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConSifilis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConSifilis.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConVIH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConVIH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteInfeccionUrinaria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteInfeccionUrinaria.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteSinExamenOrina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteSinExamenOrina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteSinTratamiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteSinTratamiento.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>
@@ -299,6 +451,10 @@
     <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="crCantidadGestantes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crCantidadGestantes.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="EstablecimientoSalud\frmEstablecimientoSalud.resx">
       <DependentUpon>frmEstablecimientoSalud.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,7 +464,7 @@
     <EmbeddedResource Include="Exportacion\frmExportacion.resx">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestante.resx">
+    <EmbeddedResource Include="Paciente\frmGestante.resx">
       <DependentUpon>frmGestante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHistoriaClinica.resx">
@@ -326,9 +482,6 @@
     <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Paciente\frmMantenimientoPaciente.resx">
-      <DependentUpon>frmMantenimientoPaciente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmObstetra.resx">
       <DependentUpon>frmObstetra.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,16 +490,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="RecienNacido\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecienNacido\frmAlertaRNBajoPeso.resx">
+      <DependentUpon>frmAlertaRNBajoPeso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecienNacido\frmRecienNacido.resx">
       <DependentUpon>frmRecienNacido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecienNacido\frmReporteRNBajoPeso.resx">
+      <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
+      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fControlGestantesEntreFechas.resx">
+      <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
@@ -357,11 +521,8 @@
     <EmbeddedResource Include="TerminoGestacion\frmMantenimientoTerminoGestacion.resx">
       <DependentUpon>frmMantenimientoTerminoGestacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPeuperio.resx">
-      <DependentUpon>frmMantenimientoControlPeuperio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlPuerperio\frmControlPeuperio.resx">
-      <DependentUpon>frmControlPeuperio.cs</DependentUpon>
+    <EmbeddedResource Include="ControlPuerperio\frmMantenimientoControlPuerperio.resx">
+      <DependentUpon>frmMantenimientoControlPuerperio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisitaDomiciliaria\frmMantenimientoVisitaDomiciliaria.resx">
       <DependentUpon>frmMantenimientoVisitaDomiciliaria.cs</DependentUpon>
@@ -429,12 +590,85 @@
     <None Include="Resources\433cca0dd88ef63c7c362799956c5b33.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\SonidoDeAlerta.mp3" />
+    <None Include="img\bebe_dibujo.jpg" />
+    <None Include="img\embarazo.jpg" />
+    <None Include="img\odontologia.jpg" />
+    <None Include="img\gestante.jpg" />
+    <None Include="img\gestante2.jpg" />
+    <None Include="img\sexto_mes_embarazo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Advertencia-Negro-84733.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\margen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlertaRoja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alerta_Roja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sirena-041.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FondoNorte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BOTON2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lineas-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\parto_termino gestacion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\recien_nacido.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\rn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\gestantecusco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icono %281%29.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -12,7 +12,7 @@ namespace CapaDeNegocios
     {
         public string Idthistoriaclinica { get; set; }
         public string Idtestablecimientosalud { get; set; }
-        public string Codigohistoriaclinica { get; set; }
+        
         public string Tipollegada { get; set; }
         public string Tiempollegada { get; set; }
         public int Edad { get; set; }
@@ -24,7 +24,7 @@ namespace CapaDeNegocios
         public DateTime Fur { get; set; }
         public DateTime Fpp { get; set; }
         public int Trimestreapn { get; set; }
-        public string Diaapn { get; set; }
+        public string Semanaapn { get; set; }
         public string Observaciones { get; set; }
         public string Idtpaciente { get; set; }
         public string Idtobstetra { get; set; }
@@ -33,15 +33,25 @@ namespace CapaDeNegocios
         public int mes { get; set; }
         public int Transeunte { get; set; }
         public string OrigenEESS { get; set; }
+        public int Archivado { get; set; }
+        public DateTime fecha_inicio{ get; set; }
+        public DateTime fecha_fin { get; set; }
+
+        public CapaDeNegocios.Paciente.cPaciente oPaciente;
+
+        public cHistoriaClinica()
+        {
+            oPaciente = new CapaDeNegocios.Paciente.cPaciente();
+        }
 
         public DataTable CrearHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS);
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS,Archivado);
         }
 
         public DataTable ModificarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica, Codigohistoriaclinica, Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Diaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS);
+            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS,Archivado);
         }
 
         public DataTable ListarHistoriaClinica()
@@ -56,7 +66,27 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinicaXHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", Codigohistoriaclinica, año, mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", oPaciente.codigohistoriaclinica,Idtobstetra);
+        }
+
+        public DataTable ReporteHistoriaClinicaXObstetraXFechas()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaXObstetraXFechas", Idtobstetra, fecha_inicio, fecha_fin );
+        }
+
+        public DataTable ReporteHistoriaClinicaParte1()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte1", Idthistoriaclinica);
+        }
+
+        public DataTable ReporteHistoriaClinicaParte2()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte2", Idthistoriaclinica);
+        }
+
+        public DataTable ReporteHistoriaClinicaParte3()
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaParte3", Idthistoriaclinica);
         }
 
         public DataTable ListarYear()

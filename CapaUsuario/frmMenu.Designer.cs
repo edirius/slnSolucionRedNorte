@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoPacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,14 +37,15 @@
             this.establecimientoSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.microredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.establecimientoSaludToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cItasPreNatalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitaDomiciliariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlPeuperioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.terminoGestaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transeunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pruebasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaPorPaciwinwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaEntreFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaTranseunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiaClinicaArchivadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,12 +59,12 @@
             this.pacientesToolStripMenuItem,
             this.historiaClinicaToolStripMenuItem,
             this.establecimientoSaludToolStripMenuItem,
-            this.pruebasToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
-            this.transeunteToolStripMenuItem});
+            this.pruebasToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(746, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(949, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,53 +121,6 @@
             this.establecimientoSaludToolStripMenuItem1.Text = "Establecimiento Salud";
             this.establecimientoSaludToolStripMenuItem1.Click += new System.EventHandler(this.establecimientoSaludToolStripMenuItem1_Click);
             // 
-            // pruebasToolStripMenuItem
-            // 
-            this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cItasPreNatalesToolStripMenuItem,
-            this.alertasToolStripMenuItem,
-            this.visitaDomiciliariaToolStripMenuItem,
-            this.controlPeuperioToolStripMenuItem,
-            this.terminoGestaciónToolStripMenuItem});
-            this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
-            this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.pruebasToolStripMenuItem.Text = "Pruebas";
-            // 
-            // cItasPreNatalesToolStripMenuItem
-            // 
-            this.cItasPreNatalesToolStripMenuItem.Name = "cItasPreNatalesToolStripMenuItem";
-            this.cItasPreNatalesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.cItasPreNatalesToolStripMenuItem.Text = "CItasPreNatales";
-            this.cItasPreNatalesToolStripMenuItem.Click += new System.EventHandler(this.cItasPreNatalesToolStripMenuItem_Click);
-            // 
-            // alertasToolStripMenuItem
-            // 
-            this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
-            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.alertasToolStripMenuItem.Text = "Alertas";
-            this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
-            // 
-            // visitaDomiciliariaToolStripMenuItem
-            // 
-            this.visitaDomiciliariaToolStripMenuItem.Name = "visitaDomiciliariaToolStripMenuItem";
-            this.visitaDomiciliariaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.visitaDomiciliariaToolStripMenuItem.Text = "Visita Domiciliaria";
-            this.visitaDomiciliariaToolStripMenuItem.Click += new System.EventHandler(this.visitaDomiciliariaToolStripMenuItem_Click);
-            // 
-            // controlPeuperioToolStripMenuItem
-            // 
-            this.controlPeuperioToolStripMenuItem.Name = "controlPeuperioToolStripMenuItem";
-            this.controlPeuperioToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.controlPeuperioToolStripMenuItem.Text = "Control Peuperio";
-            this.controlPeuperioToolStripMenuItem.Click += new System.EventHandler(this.controlPeuperioToolStripMenuItem_Click);
-            // 
-            // terminoGestaciónToolStripMenuItem
-            // 
-            this.terminoGestaciónToolStripMenuItem.Name = "terminoGestaciónToolStripMenuItem";
-            this.terminoGestaciónToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.terminoGestaciónToolStripMenuItem.Text = "Termino Gestación";
-            this.terminoGestaciónToolStripMenuItem.Click += new System.EventHandler(this.terminoGestaciónToolStripMenuItem_Click);
-            // 
             // mantenimientoToolStripMenuItem
             // 
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
@@ -173,12 +128,64 @@
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento Morbilidad";
             this.mantenimientoToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoToolStripMenuItem_Click);
             // 
-            // transeunteToolStripMenuItem
+            // pruebasToolStripMenuItem
             // 
-            this.transeunteToolStripMenuItem.Name = "transeunteToolStripMenuItem";
-            this.transeunteToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.transeunteToolStripMenuItem.Text = "Transeunte";
-            this.transeunteToolStripMenuItem.Click += new System.EventHandler(this.transeunteToolStripMenuItem_Click);
+            this.pruebasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alertasToolStripMenuItem});
+            this.pruebasToolStripMenuItem.Name = "pruebasToolStripMenuItem";
+            this.pruebasToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.pruebasToolStripMenuItem.Text = "Alertas";
+            // 
+            // alertasToolStripMenuItem
+            // 
+            this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.alertasToolStripMenuItem.Text = "Alertas";
+            this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historiaClinicaPorPaciwinwToolStripMenuItem,
+            this.historiaClinicaEntreFechasToolStripMenuItem,
+            this.historiaClinicaTranseunteToolStripMenuItem,
+            this.historiaClinicaArchivadoToolStripMenuItem,
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // historiaClinicaPorPaciwinwToolStripMenuItem
+            // 
+            this.historiaClinicaPorPaciwinwToolStripMenuItem.Name = "historiaClinicaPorPaciwinwToolStripMenuItem";
+            this.historiaClinicaPorPaciwinwToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaPorPaciwinwToolStripMenuItem.Text = "Monitor Gestante Por Paciente";
+            // 
+            // historiaClinicaEntreFechasToolStripMenuItem
+            // 
+            this.historiaClinicaEntreFechasToolStripMenuItem.Name = "historiaClinicaEntreFechasToolStripMenuItem";
+            this.historiaClinicaEntreFechasToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaEntreFechasToolStripMenuItem.Text = "Monitor Gestante Entre Fechas";
+            this.historiaClinicaEntreFechasToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaEntreFechasToolStripMenuItem_Click);
+            // 
+            // historiaClinicaTranseunteToolStripMenuItem
+            // 
+            this.historiaClinicaTranseunteToolStripMenuItem.Name = "historiaClinicaTranseunteToolStripMenuItem";
+            this.historiaClinicaTranseunteToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaTranseunteToolStripMenuItem.Text = "Monitor Gestante Transeunte";
+            // 
+            // historiaClinicaArchivadoToolStripMenuItem
+            // 
+            this.historiaClinicaArchivadoToolStripMenuItem.Name = "historiaClinicaArchivadoToolStripMenuItem";
+            this.historiaClinicaArchivadoToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaArchivadoToolStripMenuItem.Text = "Monitor Gestante Archivado";
+            // 
+            // rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem
+            // 
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Name = "rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem";
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Text = "Resumen Cantidad De Gestantes Por Microred/EE.SS.";
+            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Click += new System.EventHandler(this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -187,7 +194,7 @@
             this.slEstablecimiento});
             this.statusStrip1.Location = new System.Drawing.Point(0, 400);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(746, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(949, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -207,14 +214,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 422);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.Fondo6;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(949, 422);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMenu";
+            this.Text = "Sistema de Control  y Seguimiento de Gestantes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMenu_Load);
@@ -241,12 +252,13 @@
         private System.Windows.Forms.ToolStripStatusLabel slNombre;
         private System.Windows.Forms.ToolStripStatusLabel slEstablecimiento;
         private System.Windows.Forms.ToolStripMenuItem pruebasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cItasPreNatalesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiaClinicaPorPaciwinwToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiaClinicaEntreFechasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiaClinicaTranseunteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiaClinicaArchivadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem transeunteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visitaDomiciliariaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem controlPeuperioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem terminoGestaciónToolStripMenuItem;
     }
 }

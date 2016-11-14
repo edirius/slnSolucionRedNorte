@@ -45,18 +45,21 @@ namespace CapaUsuario.Exportacion
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            //dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
-            //dlgGuardar.DefaultExt = ".gsys";
-            //dlgGuardar.ShowDialog();
-            //MessageBox.Show(dlgGuardar.FileName);
+            dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
+            dlgGuardar.DefaultExt = ".gsys";
+            dlgGuardar.ShowDialog();
+            MessageBox.Show(dlgGuardar.FileName);
+            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "thistoriaclinica", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","tmorbilidad","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
 
-            List<string> Caracteres = new List<string>();
-            Caracteres = oExportar.TraerDatosTabla("tobstetra");
-            for (int i = 0; i < Caracteres.Count; i++)
-            {
-                textBox1.Text = textBox1.Text + Caracteres[i] + System.Environment.NewLine;
-            }
+           
             
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
+            dlgAbrir.ShowDialog();
+            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
         }
     }
 }

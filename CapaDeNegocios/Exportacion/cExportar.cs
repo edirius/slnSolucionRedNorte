@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using CapaDeDatos;
-using MySql.Data.MySqlClient;
+using System.IO;
+
 
 namespace CapaDeNegocios.Exportacion
 {
@@ -36,47 +37,215 @@ namespace CapaDeNegocios.Exportacion
             return true;
         }
 
-        public List<string> TraerDatosTabla(string nombreTabla)
+        public bool BorrarDatosTabla(string codigoEstablecimiento)
         {
-            List<string>  filasTabla = new List<string>();
-            DataTable tablaAuxiliar;
-            string lineaInsert= "";
-            string lineaInsertCabeza = "Insert into " + nombreTabla + "(";
-
-            tablaAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + nombreTabla);
-            foreach (DataColumn col in tablaAuxiliar.Columns)
+            try
             {
-                lineaInsertCabeza = lineaInsertCabeza + col.ColumnName + "," ;
-                
-                
+                Conexion.GDatos.Ejecutar("spBorrarDatosTabla",codigoEstablecimiento);
+                return true;
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public bool InsertarDatosTabla(string nombreTabla, string[] datosTabla)
+        {
+          
+            DataTable tablaAuxiliar;
+          
+            string lineaInsertCabeza = "Insert into " + nombreTabla + "(";
+            string lineaSQL = "";
+            tablaAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + nombreTabla);
+            for (int i = 0; i < tablaAuxiliar.Columns.Count; i++)
+            {
+                lineaInsertCabeza = lineaInsertCabeza + tablaAuxiliar.Columns[i].ColumnName;
+                if (i < tablaAuxiliar.Columns.Count -1 )
+                {
+                    lineaInsertCabeza = lineaInsertCabeza + ",";
+                }
+            }
+           
 
             lineaInsertCabeza = lineaInsertCabeza + ") values (";
+            
+            string[] columnas = null;
 
-            foreach (DataRow fila in tablaAuxiliar.Rows)
+            for (int i = 0; i < datosTabla.Length; i++)
             {
-                lineaInsert = lineaInsertCabeza;
-                for (int i = 0; i < tablaAuxiliar.Columns.Count; i++)
+                lineaSQL = lineaInsertCabeza;
+
+                columnas = datosTabla[i].Split(',');
+                for (int j = 0; j < columnas.Length; j++)
                 {
-                    if ( tablaAuxiliar.Columns[i].DataType.Name == "String" )
+
+                    switch (tablaAuxiliar.Columns[j].DataType.ToString())
                     {
-                        lineaInsert = lineaInsert + "'" + (fila[i]).ToString() + "'" + ",";
+                        case "System.String":
+                            lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            break;
+                        case "System.DateTime":
+                            DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+
+                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
+                            break;
+                        default:
+                            lineaSQL = lineaSQL + columnas[j];
+                            break;
+                    }
+                    
+                    
+                    if (j < columnas.Length - 1)
+                    {
+                        lineaSQL = lineaSQL + ",";
                     }
                     else
                     {
-                        //(MySql.Data.MySqlClient.MySqlDbType)fila[i];
-                        lineaInsert = lineaInsert + (fila[i]).ToString() + ",";
+                        lineaSQL = lineaSQL + ")";
                     }
+
                     
-                    
+
                 }
                 
+                Conexion.GDatos.EjecutarSql(lineaSQL);
             }
-            lineaInsert = lineaInsert + ");";
-            filasTabla.Add(lineaInsert);
+
             
-            return filasTabla;
+
+
+
+            return true;
         }
         //insert into tObstetra(idObstetra, nombre, apellido, fecha) values(
+
+        public bool InsertarDatosTablaAarchivo(string nombreArchivo,params string[] nombresTablas)
+        {
+            DataTable tAuxiliar;
+            try
+            {
+
+                using (System.IO.StreamWriter Output = new System.IO.StreamWriter(nombreArchivo))
+                {
+                    foreach (string iTablas in nombresTablas)
+                    {
+                        tAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + iTablas);
+                        if (tAuxiliar.Rows.Count > 0)
+                        {
+                            Output.WriteLine("@@" + iTablas + "@@");
+                            for (int i = 0; i < tAuxiliar.Rows.Count; i++)
+                            {
+
+                                foreach (DataColumn col in tAuxiliar.Columns)
+                                {
+                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    if (col.Ordinal < tAuxiliar.Columns.Count - 1)
+                                    {
+                                        Output.Write(",");
+                                    }
+                                    else
+                                    {
+                                        Output.WriteLine();
+                                    }
+                                }
+
+                            }
+                        }
+                       
+                    }
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new cReglaNegocioException ("Error al insertar datos al backup: " + e.Message );
+            }
+        } 
+
+        public bool ImportarDatosArchivoABaseDeDatos(string nombreArchivo)
+        {
+            try
+            {
+                string[] archivos;
+                
+                using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
+                {
+                    string FileText = ReadFile.ReadToEnd();
+                    string[] delimiters = new string[] { "@@" };
+                    archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                }
+                string nombreTablaAuxiliar= "";
+                string[] contenidoAuxiliar = null;
+                string[] camposAuxiliar = null;
+                for (int i = 0; i < archivos.Length; i=i+2)
+                {
+                    nombreTablaAuxiliar = archivos[i];
+                    string[] delimiters2 = new string[] { "\r\n" };
+                    contenidoAuxiliar = archivos[i + 1].Split(delimiters2,StringSplitOptions.RemoveEmptyEntries);
+                    InsertarDatosTabla(nombreTablaAuxiliar, contenidoAuxiliar);
+                    //for (int j = 0; j < contenidoAuxiliar.Length; j++)
+                    //{
+                    //    camposAuxiliar = contenidoAuxiliar[j].Split(',');
+                    //    switch (nombreTablaAuxiliar)
+                    //    {
+                    //        case "tobstetra":
+                    //            Obstetra.cObstetra oObstetra = new Obstetra.cObstetra();
+                    //            oObstetra.idtobstetra = camposAuxiliar[0];
+                    //            oObstetra.nombres = camposAuxiliar[1];
+                    //            oObstetra.apellidopaterno = camposAuxiliar[2];
+                    //            oObstetra.apellidomaterno = camposAuxiliar[3];
+                    //            oObstetra.sexo = camposAuxiliar[4];
+                    //            oObstetra.dni = camposAuxiliar[5];
+                    //            oObstetra.fechanacimiento = Convert.ToDateTime(camposAuxiliar[6]);
+                    //            oObstetra.direccion = camposAuxiliar[7];
+                    //            oObstetra.telefono = camposAuxiliar[8];
+                    //            oObstetra.tituloprofesional = camposAuxiliar[9];
+                    //            oObstetra.idtestablecimientosalud = camposAuxiliar[10];
+                    //            oObstetra.usuario = camposAuxiliar[11];
+                    //            oObstetra.password = camposAuxiliar[12];
+                    //            oObstetra.CrearObstetra(oObstetra);
+                    //            break;
+                    //        case "thistoriaclinica":
+                    //            cHistoriaClinica oHistoriaClinica = new cHistoriaClinica();
+                    //            oHistoriaClinica.Idtestablecimientosalud = camposAuxiliar[0];
+                    //            oHistoriaClinica.Codigohistoriaclinica = camposAuxiliar[0];
+                    //            oHistoriaClinica.Tipollegada = camposAuxiliar[0];
+                    //            oHistoriaClinica.Tiempollegada = camposAuxiliar[0];
+                    //            oHistoriaClinica.Edad =  Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Gestas = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Partos = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Abortos = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Hijosvivos = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Hijosmuertos = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Fur = Convert.ToDateTime ( camposAuxiliar[0]);
+                    //            oHistoriaClinica.Fpp = Convert.ToDateTime( camposAuxiliar[0]);
+
+                    //            oHistoriaClinica.Trimestreapn =Convert.ToInt16( camposAuxiliar[0]);
+                    //            oHistoriaClinica.Diaapn = camposAuxiliar[0];
+                    //            oHistoriaClinica.Observaciones = camposAuxiliar[0];
+                    //            oHistoriaClinica.Idtpaciente = camposAuxiliar[0];
+                    //            oHistoriaClinica.Idtobstetra = camposAuxiliar[0];
+                    //            oHistoriaClinica.Fecha = Convert.ToDateTime(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Transeunte = Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.OrigenEESS = camposAuxiliar[0];
+                    //            break;
+
+                    //        default:
+                    //            break;
+                    //    }
+                    //}
+
+                }
+                
+                return true;
+            }
+            catch ( Exception ex)
+            {
+
+                throw new cReglaNegocioException ("Error al importar Datos: " + ex.Message);
+            }
+        }
     }
 }

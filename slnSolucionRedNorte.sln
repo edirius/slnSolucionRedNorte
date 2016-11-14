@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaUsuario", "CapaUsuario\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{63B96A0E-BCC5-4B29-9E2A-9AAD5F6C6E93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitoreo", "Monitoreo\Monitoreo.csproj", "{6F7447F5-C632-465A-8D78-C97FDCA76D02}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SistemaControlGestantes", "SistemaControlGestantes\SistemaControlGestantes.vdproj", "{6FC68D8B-14E9-4BA7-91AD-9245422B71C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,12 @@ Global
 		{63B96A0E-BCC5-4B29-9E2A-9AAD5F6C6E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63B96A0E-BCC5-4B29-9E2A-9AAD5F6C6E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63B96A0E-BCC5-4B29-9E2A-9AAD5F6C6E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7447F5-C632-465A-8D78-C97FDCA76D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7447F5-C632-465A-8D78-C97FDCA76D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7447F5-C632-465A-8D78-C97FDCA76D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7447F5-C632-465A-8D78-C97FDCA76D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC68D8B-14E9-4BA7-91AD-9245422B71C7}.Debug|Any CPU.ActiveCfg = Debug
+		{6FC68D8B-14E9-4BA7-91AD-9245422B71C7}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
