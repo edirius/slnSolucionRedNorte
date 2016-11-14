@@ -86,6 +86,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox2.Location = new System.Drawing.Point(14, 17);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(776, 71);
@@ -98,9 +99,9 @@
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(7, 19);
+            this.groupBox1.Location = new System.Drawing.Point(7, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 42);
+            this.groupBox1.Size = new System.Drawing.Size(312, 55);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas";
@@ -108,34 +109,34 @@
             // dtpFechaFin
             // 
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(196, 15);
+            this.dtpFechaFin.Location = new System.Drawing.Point(196, 22);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(99, 20);
+            this.dtpFechaFin.Size = new System.Drawing.Size(99, 24);
             this.dtpFechaFin.TabIndex = 14;
             // 
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(57, 15);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(57, 22);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(99, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(99, 24);
             this.dtpFechaInicio.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(164, 19);
+            this.label2.Location = new System.Drawing.Point(164, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 13);
+            this.label2.Size = new System.Drawing.Size(32, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "Fin:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 19);
+            this.label1.Location = new System.Drawing.Point(14, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio:";
             // 
@@ -162,6 +163,7 @@
             // 
             this.buImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buImprimir.Location = new System.Drawing.Point(3, 3);
             this.buImprimir.Name = "buImprimir";
             this.buImprimir.Size = new System.Drawing.Size(149, 48);

@@ -140,6 +140,8 @@ namespace CapaUsuario
 
             dgvEcografia.DataSource = odtEcografia;
             dgvEcografia.Columns[0].Width = 30;
+            dgvEcografia.Columns[2].Width = 110;
+            dgvEcografia.Columns[3].Width = 110;
             dgvEcografia.Columns.Insert(columnIndex, dgvbEcografia);
 
             /*datetimepicker 24 hrs format*/
@@ -1555,7 +1557,23 @@ namespace CapaUsuario
                 nudGestas.Select(0, nudGestas.Text.Length);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbPrimerTrimestre_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
 
 
