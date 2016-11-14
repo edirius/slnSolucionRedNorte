@@ -375,25 +375,28 @@
             // 
             // idtcontrolpeuperio
             // 
-            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PEUPERIO";
+            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PUERPERIO";
             this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
             this.idtcontrolpeuperio.ReadOnly = true;
             this.idtcontrolpeuperio.Visible = false;
             // 
             // numero
             // 
+            this.numero.FillWeight = 60.9137F;
             this.numero.HeaderText = "NUMERO";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
             // 
             // fecha
             // 
+            this.fecha.FillWeight = 107.8173F;
             this.fecha.HeaderText = "FECHA";
             this.fecha.Name = "fecha";
             this.fecha.ReadOnly = true;
             // 
             // presionarterial
             // 
+            this.presionarterial.FillWeight = 107.8173F;
             this.presionarterial.HeaderText = "PRESION ARTERIAL";
             this.presionarterial.Name = "presionarterial";
             this.presionarterial.ReadOnly = true;
@@ -414,18 +417,21 @@
             // 
             // alturauterino
             // 
+            this.alturauterino.FillWeight = 107.8173F;
             this.alturauterino.HeaderText = "ALTURA UTERINO";
             this.alturauterino.Name = "alturauterino";
             this.alturauterino.ReadOnly = true;
             // 
             // fua
             // 
+            this.fua.FillWeight = 107.8173F;
             this.fua.HeaderText = "FUA";
             this.fua.Name = "fua";
             this.fua.ReadOnly = true;
             // 
             // detalle
             // 
+            this.detalle.FillWeight = 107.8173F;
             this.detalle.HeaderText = "DETALLE";
             this.detalle.Name = "detalle";
             this.detalle.ReadOnly = true;
