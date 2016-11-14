@@ -16,14 +16,14 @@ namespace CapaUsuario.Bateria {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class GestanteOrina : ReportClass {
+    public class GestanteInfeccionUrinaria : ReportClass {
         
-        public GestanteOrina() {
+        public GestanteInfeccionUrinaria() {
         }
         
         public override string ResourceName {
             get {
-                return "GestanteOrina.rpt";
+                return "GestanteInfeccionUrinaria.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaUsuario.Bateria {
         
         public override string FullResourceName {
             get {
-                return "CapaUsuario.Bateria.GestanteOrina.rpt";
+                return "CapaUsuario.Bateria.GestanteInfeccionUrinaria.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,44 @@ namespace CapaUsuario.Bateria {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pestablecimiento {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pobstetra {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pmes {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_paño {
+            get {
+                return this.DataDefinition.ParameterFields[3];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedGestanteOrina : Component, ICachedReport {
+    public class CachedGestanteInfeccionUrinaria : Component, ICachedReport {
         
-        public CachedGestanteOrina() {
+        public CachedGestanteInfeccionUrinaria() {
         }
         
         [Browsable(false)]
@@ -129,7 +161,7 @@ namespace CapaUsuario.Bateria {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            GestanteOrina rpt = new GestanteOrina();
+            GestanteInfeccionUrinaria rpt = new GestanteInfeccionUrinaria();
             rpt.Site = this.Site;
             return rpt;
         }

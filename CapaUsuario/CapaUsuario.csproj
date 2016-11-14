@@ -175,10 +175,10 @@
       <DependentUpon>GestanteConVIH.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Bateria\GestanteOrina.cs">
+    <Compile Include="Bateria\GestanteInfeccionUrinaria.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GestanteOrina.rpt</DependentUpon>
+      <DependentUpon>GestanteInfeccionUrinaria.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Bateria\GestanteSinExamenOrina.cs">
@@ -426,9 +426,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GestanteConVIH.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bateria\GestanteOrina.rpt">
+    <EmbeddedResource Include="Bateria\GestanteInfeccionUrinaria.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>GestanteOrina.cs</LastGenOutput>
+      <LastGenOutput>GestanteInfeccionUrinaria.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Bateria\GestanteSinExamenOrina.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

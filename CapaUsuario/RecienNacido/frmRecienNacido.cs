@@ -25,7 +25,6 @@ namespace CapaUsuario.RecienNacido
         {
             InitializeComponent();
             ConfiguracionInicial();
-            Nuevo();
             aIdHistoria = IdHistoria;
             aIdEstablecimiento = IdEstablecimiento;
             txtCodigoHistoria.Text = IdHistoria;
@@ -114,13 +113,14 @@ namespace CapaUsuario.RecienNacido
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    
                     dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
+                    Nuevo();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             }
             else
@@ -154,13 +154,14 @@ namespace CapaUsuario.RecienNacido
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ConfiguracionInicial();
+                    
                     dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
+                    Nuevo();
                 }
                 else if (respuesta == "0")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    ConfiguracionInicial();
+                    Nuevo();
                 }
             }
             else
@@ -185,7 +186,7 @@ namespace CapaUsuario.RecienNacido
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ConfiguracionInicial();
+                        Nuevo();
                         dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
                     }
 
@@ -309,11 +310,11 @@ namespace CapaUsuario.RecienNacido
         {
             if (dgvRecienNacido.Rows[e.RowIndex].Cells[0].Value != null)
             {
-                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR1"].Value) >= 7))
+                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR1"].Value) <= 7))
                 {
                     dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR1"].Style.BackColor = Color.Red;
                 }
-                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR5"].Value) >= 7))
+                if ((Convert.ToInt16(dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR5"].Value) <= 7))
                 {
                     dgvRecienNacido.Rows[e.RowIndex].Cells["APGAR5"].Style.BackColor = Color.Red;
                 }
@@ -357,7 +358,37 @@ namespace CapaUsuario.RecienNacido
 
         private void frmRecienNacido_Load(object sender, EventArgs e)
         {
+            Nuevo();
+        }
+        cUtilitarios miUtilitario = new cUtilitarios();
+        private void nudApgar1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
 
+        private void nudApgar5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void nudPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void txtMensajeApgar1_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void txtMensajeApgar5_TextChanged_1(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void txtMensajePeso_TextChanged_1(object sender, EventArgs e)
+        {
+            Alertar();
         }
     }
 }

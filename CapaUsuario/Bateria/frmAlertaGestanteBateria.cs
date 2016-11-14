@@ -76,13 +76,20 @@ namespace CapaUsuario.Bateria
             }
             if (cbTipoAlerta.Text == "GESTANTES CON INFECCION URINARIA A TRATAR")
             {
-                Bateria.GestanteSinTratamiento RPGestanteSinFechaTratamiento = new GestanteSinTratamiento();
-                RPGestanteSinFechaTratamiento.SetDataSource(miBateria.AlertaGestanteSinExamenOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.GestanteInfeccionUrinaria RPGestanteInfeccionUrinaria = new GestanteInfeccionUrinaria();
+                RPGestanteInfeccionUrinaria.SetDataSource(miBateria.AlertaGestanteOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
                 Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
-                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinFechaTratamiento;
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteInfeccionUrinaria;
                 miFrmReporte.Show();
             }
-
+            if (cbTipoAlerta.Text == "GESTANTES SIN BATERIA")
+            {
+                Bateria.CrystalReport1 RPGestanteSinBateria = new CrystalReport1();
+                RPGestanteSinBateria.SetDataSource(miBateria.AlertaGestanteSinBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinBateria;
+                miFrmReporte.Show();
+            }
 
 
         }
