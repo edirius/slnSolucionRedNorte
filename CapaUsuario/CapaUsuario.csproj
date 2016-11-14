@@ -156,6 +156,42 @@
     <Compile Include="Bateria\frmReporteGestantesSinBateria.Designer.cs">
       <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bateria\GestanteConAnemia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConAnemia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteConSifilis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConSifilis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteConVIH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteConVIH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteOrina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteOrina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteSinExamenOrina.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteSinExamenOrina.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Bateria\GestanteSinTratamiento.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GestanteSinTratamiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CitaPreNatal\dsListaPreNatal.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -382,6 +418,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bateria\frmReporteGestantesSinBateria.resx">
       <DependentUpon>frmReporteGestantesSinBateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConAnemia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConAnemia.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConSifilis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConSifilis.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteConVIH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteConVIH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteOrina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteOrina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteSinExamenOrina.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteSinExamenOrina.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bateria\GestanteSinTratamiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GestanteSinTratamiento.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\frmCitaPreNatal.resx">
       <DependentUpon>frmCitaPreNatal.cs</DependentUpon>

@@ -17,24 +17,76 @@ namespace CapaUsuario.Bateria
         CapaDeNegocios.cBateria miBateria = new cBateria();
         public string CodigoEstablecimiento { get; set; }
         public string CodigoObstetra { get; set; }
+        string FechaTexto = "";
         public frmAlertaGestanteBateria()
         {
             InitializeComponent();
             CargarAños();
             DateTime Ahora = DateTime.Today;
             CargarMes(Ahora);
-            cbMes.Text = FechaTexto;
         }
+        private void frmAlertaGestanteBateria_Load(object sender, EventArgs e)
+        {
+            cbMes.Text = FechaTexto;
+            cbTipoAlerta.Text = "GESTANTES SIN BATERIA";
+            dgvListaBateria.DataSource = miBateria.ListadeAlertasenBateria(cbTipoAlerta.Text, CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
 
+        }
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
-            Bateria.CrystalReport1 RpGestanteSinBateria = new CrystalReport1();
-            RpGestanteSinBateria.SetDataSource(miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
-            Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
-            miFrmReporte.crystalReportViewer1.ReportSource = RpGestanteSinBateria;
-            miFrmReporte.Show();
+            if (cbTipoAlerta.Text == "GESTANTES CON ANEMIA")
+            {
+                Bateria.GestanteConAnemia RPGestanteConAnemia = new GestanteConAnemia();
+                RPGestanteConAnemia.SetDataSource(miBateria.AlertaGestanteAnemia(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteConAnemia;
+                miFrmReporte.Show();
+            }
+            if (cbTipoAlerta.Text == "GESTANTES CON VIH REACTIVO")
+            {
+                Bateria.GestanteConVIH RPGestanteConVIH = new GestanteConVIH();
+                RPGestanteConVIH.SetDataSource(miBateria.AlertaGestanteVIH(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteConVIH;
+                miFrmReporte.Show();
+            }
+            if (cbTipoAlerta.Text == "GESTANTES CON SIFILIS REACTIVO")
+            {
+                Bateria.GestanteConSifilis RPGestanteConSifilis = new GestanteConSifilis();
+                RPGestanteConSifilis.SetDataSource(miBateria.AlertaGestanteSifilis(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteConSifilis;
+                miFrmReporte.Show();
+            }
+            if (cbTipoAlerta.Text == "GESTANTES SIN EXAMEN DE ORINA")
+            {
+                Bateria.GestanteSinExamenOrina RPGestanteSinExamenOrina = new GestanteSinExamenOrina();
+                RPGestanteSinExamenOrina.SetDataSource(miBateria.AlertaGestanteSinExamenOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinExamenOrina;
+                miFrmReporte.Show();
+            }
+            if (cbTipoAlerta.Text == "GESTANTES SIN FECHA DE TRATAMIENTO")
+            {
+                Bateria.GestanteSinTratamiento RPGestanteSinFechaTratamiento = new GestanteSinTratamiento();
+                RPGestanteSinFechaTratamiento.SetDataSource(miBateria.AlertaGestanteSinExamenOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinFechaTratamiento;
+                miFrmReporte.Show();
+            }
+            if (cbTipoAlerta.Text == "GESTANTES CON INFECCION URINARIA A TRATAR")
+            {
+                Bateria.GestanteSinTratamiento RPGestanteSinFechaTratamiento = new GestanteSinTratamiento();
+                RPGestanteSinFechaTratamiento.SetDataSource(miBateria.AlertaGestanteSinExamenOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
+                miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinFechaTratamiento;
+                miFrmReporte.Show();
+            }
+
+
+
         }
-        string FechaTexto = "";
+        
         private void CargarMes(DateTime FechaActual)
         {
             string Ahora = Convert.ToString(FechaActual.Date.Month);
@@ -116,17 +168,30 @@ namespace CapaUsuario.Bateria
 
         private void cbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra,cbMes.Text, cbAños.Text);
+            try
+            {
+                dgvListaBateria.DataSource = miBateria.ListadeAlertasenBateria(cbTipoAlerta.Text, CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            }
+            catch { }
+            
         }
 
         private void cbAños_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            try
+            {
+                dgvListaBateria.DataSource = miBateria.ListadeAlertasenBateria(cbTipoAlerta.Text, CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            }
+            catch { }
         }
 
-        private void frmAlertaGestanteBateria_Load(object sender, EventArgs e)
+        private void cbTipoAlerta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaBateria.DataSource = miBateria.ListarGestantesQueNoTienenBateria(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            try
+            {
+                dgvListaBateria.DataSource = miBateria.ListadeAlertasenBateria(cbTipoAlerta.Text, CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            }
+            catch { }
         }
     }
 }
