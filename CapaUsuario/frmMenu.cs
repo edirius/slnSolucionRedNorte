@@ -52,7 +52,7 @@ namespace CapaUsuario
 
         private void mantenimientoPacientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Paciente.frmMantenimientoPaciente fMantenimientoPaciente = new Paciente.frmMantenimientoPaciente(IdEstablecimientoSalud);
+            frmGestante fMantenimientoPaciente = new frmGestante(IdEstablecimientoSalud);
             fMantenimientoPaciente.MdiParent = this;
             fMantenimientoPaciente.Show();
         }

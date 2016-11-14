@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestante));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.bnGestante = new System.Windows.Forms.BindingNavigator(this.components);
             this.bnctGestante = new System.Windows.Forms.ToolStripLabel();
@@ -43,13 +43,16 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvGestante = new System.Windows.Forms.DataGridView();
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bnGestante)).BeginInit();
             this.bnGestante.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,11 +64,12 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 39);
+            this.button1.Size = new System.Drawing.Size(82, 52);
             this.button1.TabIndex = 3;
             this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = true;
@@ -95,13 +99,12 @@
             this.bnGestante.Size = new System.Drawing.Size(670, 25);
             this.bnGestante.TabIndex = 96;
             this.bnGestante.Text = "bindingNavigator1";
-            this.bnGestante.RefreshItems += new System.EventHandler(this.bnGestante_RefreshItems);
             // 
             // bnctGestante
             // 
             this.bnctGestante.Name = "bnctGestante";
-            this.bnctGestante.Size = new System.Drawing.Size(35, 22);
-            this.bnctGestante.Text = "of {0}";
+            this.bnctGestante.Size = new System.Drawing.Size(37, 22);
+            this.bnctGestante.Text = "de {0}";
             this.bnctGestante.ToolTipText = "Total number of items";
             this.bnctGestante.Click += new System.EventHandler(this.bindingNavigatorCountItem_Click);
             // 
@@ -180,14 +183,89 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAgregar, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 396);
+            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnModificar, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(218, 387);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(643, 45);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 58);
             this.tableLayoutPanel1.TabIndex = 97;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSalir.ImageKey = "ssss.png";
+            this.btnSalir.Location = new System.Drawing.Point(355, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(82, 52);
+            this.btnSalir.TabIndex = 104;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEliminar.ImageKey = "118.png";
+            this.btnEliminar.Location = new System.Drawing.Point(267, 3);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(82, 52);
+            this.btnEliminar.TabIndex = 103;
+            this.btnEliminar.Text = "&Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackColor = System.Drawing.Color.MintCream;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNuevo.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNuevo.ImageIndex = 1;
+            this.btnNuevo.Location = new System.Drawing.Point(91, 3);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(82, 52);
+            this.btnNuevo.TabIndex = 101;
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnModificar.BackColor = System.Drawing.Color.MintCream;
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnModificar.ImageKey = "13.png";
+            this.btnModificar.Location = new System.Drawing.Point(179, 3);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(82, 52);
+            this.btnModificar.TabIndex = 102;
+            this.btnModificar.Text = "&Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -198,11 +276,11 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 74);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 74);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(642, 316);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 307);
             this.tableLayoutPanel2.TabIndex = 98;
             // 
             // groupBox2
@@ -213,7 +291,7 @@
             this.groupBox2.Controls.Add(this.dgvGestante);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(636, 310);
+            this.groupBox2.Size = new System.Drawing.Size(640, 301);
             this.groupBox2.TabIndex = 101;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Explorar Gestantes";
@@ -222,8 +300,8 @@
             // 
             this.dgvGestante.AllowUserToAddRows = false;
             this.dgvGestante.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -236,11 +314,11 @@
             this.dgvGestante.ReadOnly = true;
             this.dgvGestante.RowHeadersVisible = false;
             this.dgvGestante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestante.Size = new System.Drawing.Size(622, 285);
+            this.dgvGestante.Size = new System.Drawing.Size(626, 276);
             this.dgvGestante.TabIndex = 97;
-            this.dgvGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestante_CellClick_2);
-            this.dgvGestante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestante_CellContentClick_2);
-            this.dgvGestante.DoubleClick += new System.EventHandler(this.dgvGestante_DoubleClick_2);
+            this.dgvGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestante_CellClick);
+            this.dgvGestante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestante_CellContentClick);
+            this.dgvGestante.DoubleClick += new System.EventHandler(this.dgvGestante_DoubleClick);
             // 
             // cbBuscar
             // 
@@ -250,7 +328,8 @@
             "Apellido Paterno",
             "Apellido Materno",
             "Nombres",
-            "DNI"});
+            "DNI",
+            "Codigo Historia Clinica"});
             this.cbBuscar.Location = new System.Drawing.Point(9, 13);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(188, 21);
@@ -274,16 +353,6 @@
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar por:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(131, 3);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(122, 39);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmGestante
             // 
@@ -331,6 +400,9 @@
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

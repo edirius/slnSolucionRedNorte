@@ -12,6 +12,7 @@ namespace CapaDeNegocios.Paciente
     public class cPaciente
     {
         string sidtpaciente;
+        string scodigohistoriaclinica;
         string snombres;
         string sapellidopaterno;
         string sapellidomaterno;
@@ -23,6 +24,8 @@ namespace CapaDeNegocios.Paciente
 
         public string idtpaciente
         { get { return sidtpaciente; } set { sidtpaciente = value; } }
+        public string codigohistoriaclinica
+        { get { return scodigohistoriaclinica; } set { scodigohistoriaclinica = value; } }
         public string nombres
         { get { return snombres; } set { snombres = value; } }
         public string apellidopaterno
@@ -42,16 +45,34 @@ namespace CapaDeNegocios.Paciente
         public string año { get; set; }
         public string mes { get; set; }
         public string idtobstetra { get; set; }
-        public string codigohistoriaclinica { get; set; }
 
         public DataTable ListarPaciente(string idtestablecimientosalud)
         {
             return Conexion.GDatos.TraerDataTable("spListarPaciente", idtestablecimientosalud);
         }
 
+        public Boolean CrearPaciente(cPaciente miPaciente)
+        {
+            Conexion.GDatos.Ejecutar("spCrearPaciente", miPaciente.idtpaciente, miPaciente.codigohistoriaclinica, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
+            return true;
+        }
+
+        public Boolean ModificarPaciente(cPaciente miPaciente)
+        {
+            Conexion.GDatos.Ejecutar("spModificarPaciente", miPaciente.idtpaciente, miPaciente.codigohistoriaclinica, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
+            return true;
+        }
+
+        public Boolean EliminarPaciente(string idtpaciente)
+        {
+            Conexion.GDatos.Ejecutar("spELiminarPaciente", idtpaciente);
+            return true;
+        }
+
+
         public DataTable ListarPacienteXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno",apellidopaterno, idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXApellidoPaterno", apellidopaterno, idtestablecimientosalud);
         }
 
         public DataTable ListarPacienteXApellidoMaterno()
@@ -68,27 +89,14 @@ namespace CapaDeNegocios.Paciente
             return Conexion.GDatos.TraerDataTable("spListarPacienteXDNI", dni, idtestablecimientosalud);
         }
 
+        public DataTable ListarPacienteXCodigoHistoriaClinica()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarPacienteXCodigoHistoriaClinica", codigohistoriaclinica, idtestablecimientosalud);
+        }
+
         public DataTable ListarPacienteXIdEstablecimientoSalud(int pagina_ , int numero_registros_ )
         {
             return Conexion.GDatos.TraerDataTable("spListarPacienteXIdEstablecimientoSalud", idtestablecimientosalud, pagina_, numero_registros_);
-        }
-
-        public Boolean CrearPaciente(cPaciente miPaciente)
-        {
-            Conexion.GDatos.Ejecutar("spCrearPaciente", miPaciente.idtpaciente, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
-            return true;
-        }
-
-        public Boolean ModificarPaciente(cPaciente miPaciente)
-        {
-            Conexion.GDatos.Ejecutar("spModificarPaciente", miPaciente.idtpaciente, miPaciente.nombres, miPaciente.apellidopaterno, miPaciente.apellidomaterno, miPaciente.dni, miPaciente.fechanacimiento, miPaciente.direccion, miPaciente.telefono, miPaciente.idtestablecimientosalud);
-            return true;
-        }
-
-        public Boolean EliminarPaciente(string idtpaciente)
-        {
-            Conexion.GDatos.Ejecutar("spELiminarPaciente", idtpaciente);
-            return true;
         }
 
         public DataTable ListarHistoriaClinicaXApellidoPaterno()
