@@ -82,6 +82,14 @@ namespace CapaUsuario.TerminoGestacion
                 }
                 if (bOk == true)
                 {
+                    if (saccion == 1)
+                    {
+                        MessageBox.Show("Termino de Gestación registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    if (saccion == 2)
+                    {
+                        MessageBox.Show("Termino de Gestación modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else

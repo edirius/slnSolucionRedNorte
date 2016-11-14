@@ -85,11 +85,13 @@ namespace CapaUsuario.VisitaDomiciliaria
                             miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
                         }
                         miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        MessageBox.Show("Visita Domiciliaria Durante el Embarazo registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         bOk = true;
                     }
                     if (saccion == 2)
                     {
                         miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                        MessageBox.Show("Visita Domiciliaria Durante el Embarazo modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         bOk = true;
                     }
                 }
@@ -112,11 +114,14 @@ namespace CapaUsuario.VisitaDomiciliaria
                             miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = row[0].ToString();
                         }
                         miVisitaDomiciliariaPuerperaRN.CrearVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
+                        MessageBox.Show("Visita a la Madre y Recien Nacido registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         bOk = true;
                     }
                     if (saccion == 2)
                     {
                         miVisitaDomiciliariaPuerperaRN.ModificarVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
+                        MessageBox.Show("Visita a la Madre y Recien Nacido modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         bOk = true;
                     }
                 }
@@ -154,6 +159,10 @@ namespace CapaUsuario.VisitaDomiciliaria
                     }
                     miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
                     CargarDatosGestante();
+                    if (dgvVisitaDomiciliariaGestante.Rows.Count == 0)
+                    {
+                        btnNuevo_Click(sender, e);
+                    }
                 }
                 else if (stipo == "PUERPERIA/R.NACIDO")
                 {
@@ -164,6 +173,10 @@ namespace CapaUsuario.VisitaDomiciliaria
                     }
                     miVisitaDomiciliariaPuerperaRN.EliminarVisitaDomiciliariaPuerperaRN(sidtvisitadomiciliariapuerperarn);
                     CargarDatosPuerperaRN();
+                    if (dgvVisitaDomiciliariaPuerperaRN.Rows.Count == 0)
+                    {
+                        btnNuevo_Click(sender, e);
+                    }
                 }
             }
             catch (Exception m)
@@ -266,11 +279,11 @@ namespace CapaUsuario.VisitaDomiciliaria
             if (e.RowIndex != -1)
             {
                 saccion = 2;
-                sidtvisitadomiciliariagestante = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells[0].Value);
-                dtpFechaGestante.Value = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells[1].Value);
-                cboMotivoGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells[2].Value);
-                txtFuaGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells[3].Value);
-                txtDetalleGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells[4].Value);
+                sidtvisitadomiciliariagestante = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["idtvisitadomiciliariagestante"].Value);
+                dtpFechaGestante.Value = Convert.ToDateTime(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fecha"].Value);
+                cboMotivoGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["motivo"].Value);
+                txtFuaGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["fua"].Value);
+                txtDetalleGestante.Text = Convert.ToString(dgvVisitaDomiciliariaGestante.Rows[e.RowIndex].Cells["detalle"].Value);
                 dtpFechaGestante.Focus();
             }
         }
@@ -371,14 +384,14 @@ namespace CapaUsuario.VisitaDomiciliaria
             if (e.RowIndex != -1)
             {
                 saccion = 2;
-                sidtvisitadomiciliariapuerperarn = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[0].Value);
-                dtpFechaPuerpera.Value = Convert.ToDateTime(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[1].Value);
-                cboMotivoPuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[2].Value);
-                txtFuaPuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[3].Value);
-                txtDetallePuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[4].Value);
-                cboMotivoRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[5].Value);
-                txtFuaRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[6].Value);
-                txtDetalleRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells[7].Value);
+                sidtvisitadomiciliariapuerperarn = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["idtvisitadomiciliariapuerperarn"].Value);
+                dtpFechaPuerpera.Value = Convert.ToDateTime(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["fechapuerperarn"].Value);
+                cboMotivoPuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["motivopuerpera"].Value);
+                txtFuaPuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["fuapuerpera"].Value);
+                txtDetallePuerpera.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["detallepuerpera"].Value);
+                cboMotivoRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["motivoreciennacido"].Value);
+                txtFuaRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["fuareciennacido"].Value);
+                txtDetalleRN.Text = Convert.ToString(dgvVisitaDomiciliariaPuerperaRN.Rows[e.RowIndex].Cells["detallereciennacido"].Value);
                 dtpFechaPuerpera.Focus();
             }
         }
