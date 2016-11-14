@@ -35,6 +35,7 @@ namespace CapaUsuario.VisitaDomiciliaria
             sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
             VerificarTerminoGestacion();
             tabControl1_SelectedIndexChanged(sender, e);
+            btnNuevo_Click(sender, e);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

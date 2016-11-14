@@ -34,13 +34,13 @@
             this.btnReporObstetras = new System.Windows.Forms.Button();
             this.cboMes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNominalGestante = new System.Windows.Forms.Button();
             this.dgvMicroRED = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.idtmicrored = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMicroRED)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -131,20 +131,21 @@
             this.label2.TabIndex = 108;
             this.label2.Text = "Año";
             // 
-            // button1
+            // btnNominalGestante
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.MintCream;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.ImageKey = "NetByte Design Studio - 0849.png";
-            this.button1.Location = new System.Drawing.Point(340, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 65);
-            this.button1.TabIndex = 110;
-            this.button1.Text = "Gestantes";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnNominalGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNominalGestante.BackColor = System.Drawing.Color.MintCream;
+            this.btnNominalGestante.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNominalGestante.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnNominalGestante.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnNominalGestante.Location = new System.Drawing.Point(340, 336);
+            this.btnNominalGestante.Name = "btnNominalGestante";
+            this.btnNominalGestante.Size = new System.Drawing.Size(81, 65);
+            this.btnNominalGestante.TabIndex = 110;
+            this.btnNominalGestante.Text = "Nominal Gestantes";
+            this.btnNominalGestante.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNominalGestante.UseVisualStyleBackColor = false;
+            this.btnNominalGestante.Click += new System.EventHandler(this.btnNominalGestante_Click);
             // 
             // dgvMicroRED
             // 
@@ -165,6 +166,27 @@
             this.dgvMicroRED.Size = new System.Drawing.Size(478, 256);
             this.dgvMicroRED.TabIndex = 111;
             this.dgvMicroRED.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellClick);
+            // 
+            // idtmicrored
+            // 
+            this.idtmicrored.HeaderText = "idtmicrored";
+            this.idtmicrored.Name = "idtmicrored";
+            this.idtmicrored.ReadOnly = true;
+            this.idtmicrored.Visible = false;
+            // 
+            // microred
+            // 
+            this.microred.HeaderText = "Micro RED";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            this.microred.Width = 150;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 300;
             // 
             // groupBox1
             // 
@@ -199,27 +221,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(490, 31);
             this.tableLayoutPanel1.TabIndex = 113;
             // 
-            // idtmicrored
-            // 
-            this.idtmicrored.HeaderText = "idtmicrored";
-            this.idtmicrored.Name = "idtmicrored";
-            this.idtmicrored.ReadOnly = true;
-            this.idtmicrored.Visible = false;
-            // 
-            // microred
-            // 
-            this.microred.HeaderText = "Micro RED";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            this.microred.Width = 150;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 300;
-            // 
             // frmReporteMicroRED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +228,7 @@
             this.ClientSize = new System.Drawing.Size(514, 413);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNominalGestante);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReporObstetras);
             this.Name = "frmReporteMicroRED";
@@ -250,7 +251,7 @@
         private System.Windows.Forms.Button btnReporObstetras;
         private System.Windows.Forms.ComboBox cboMes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNominalGestante;
         private System.Windows.Forms.DataGridView dgvMicroRED;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
