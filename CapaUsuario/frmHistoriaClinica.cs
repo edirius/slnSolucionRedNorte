@@ -1572,6 +1572,11 @@ namespace CapaUsuario
         {
 
         }
+
+        private void buCronograma_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
