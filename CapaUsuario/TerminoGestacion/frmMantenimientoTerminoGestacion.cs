@@ -118,27 +118,27 @@ namespace CapaUsuario.TerminoGestacion
                 {
                     contador += 1;
                     saccion = 2;
-                    sidtterminogestacion = row["idtterminogestacion"].ToString();
-                    if (row["gestacion"].ToString() == "Normal") { rbtNormal.Checked = true; }
-                    else if (row["gestacion"].ToString() == "Aborto") { rbtAborto.Checked = true; }
-                    if (row["lugar"].ToString() == "Institucion") { rbtInstitucion.Checked = true; }
-                    else if (row["lugar"].ToString() == "Domicilio") { rbtDomicilio.Checked = true; }
-                    if (row["reciennacido"].ToString() == "Unico") { rbtUnico.Checked = true; }
-                    else if (row["reciennacido"].ToString() == "Multiple") { rbtMultiple.Checked = true; }
-                    dtpFecha.Value = Convert.ToDateTime(row["fecha"]);
-                    txtPersona.Text = row["persona"].ToString();
-                    if (row["tipoparto"].ToString() == "") { rbtEutosico.Checked = false; rbtDistocico.Checked = false; }
-                    else if (row["tipoparto"].ToString() == "EUTOCICO") { rbtEutosico.Checked = true; }
-                    else if (row["tipoparto"].ToString() == "DISTOCICO") { rbtDistocico.Checked = true; }
-                    if (row["modoparto"].ToString() == "") { cboTipoParto.SelectedIndex = -1; }
-                    else { cboTipoParto.Text = row["modoparto"].ToString(); }
-                    if (row["manejoalumbramiento"].ToString() == "") { rbtAlumbramientoSI.Checked = false; rbtAlumbramientoNO.Checked = false; }
-                    else if (row["manejoalumbramiento"].ToString() == "SI") { rbtAlumbramientoSI.Checked = true; }
-                    else if (row["manejoalumbramiento"].ToString() == "NO") { rbtAlumbramientoNO.Checked = true; }
-                    if (row["tipoinstitucion"].ToString() == "") { cboHospital.SelectedIndex = -1; }
-                    else { cboHospital.Text = row["tipoinstitucion"].ToString(); }
-                    txtHospital.Text = row["nombreinstitucion"].ToString();
-                    sidthistoriaclinica = row["idthistoriaclinica"].ToString();
+                    sidtterminogestacion = row["ID TERMINO GESTACION"].ToString();
+                    if (row["GESTACION"].ToString() == "Normal") { rbtNormal.Checked = true; }
+                    else if (row["GESTACION"].ToString() == "Aborto") { rbtAborto.Checked = true; }
+                    if (row["LUGAR"].ToString() == "Institucion") { rbtInstitucion.Checked = true; }
+                    else if (row["LUGAR"].ToString() == "Domicilio") { rbtDomicilio.Checked = true; }
+                    if (row["RECIEN NACIDO"].ToString() == "Unico") { rbtUnico.Checked = true; }
+                    else if (row["RECIEN NACIDO"].ToString() == "Multiple") { rbtMultiple.Checked = true; }
+                    dtpFecha.Value = Convert.ToDateTime(row["FECHA"]);
+                    txtPersona.Text = row["PERSONA"].ToString();
+                    if (row["TIPO PARTO"].ToString() == "") { rbtEutosico.Checked = false; rbtDistocico.Checked = false; }
+                    else if (row["TIPO PARTO"].ToString() == "EUTOCICO") { rbtEutosico.Checked = true; }
+                    else if (row["TIPO PARTO"].ToString() == "DISTOCICO") { rbtDistocico.Checked = true; }
+                    if (row["MODO PARTO"].ToString() == "") { cboTipoParto.SelectedIndex = -1; }
+                    else { cboTipoParto.Text = row["MODO PARTO"].ToString(); }
+                    if (row["MANEJO ALUMBRAMIENTO"].ToString() == "") { rbtAlumbramientoSI.Checked = false; rbtAlumbramientoNO.Checked = false; }
+                    else if (row["MANEJO ALUMBRAMIENTO"].ToString() == "SI") { rbtAlumbramientoSI.Checked = true; }
+                    else if (row["MANEJO ALUMBRAMIENTO"].ToString() == "NO") { rbtAlumbramientoNO.Checked = true; }
+                    if (row["TIPO INSTITUCION"].ToString() == "") { cboHospital.SelectedIndex = -1; }
+                    else { cboHospital.Text = row["TIPO INSTITUCION"].ToString(); }
+                    txtHospital.Text = row["NOMBRE INSTITUCION"].ToString();
+                    sidthistoriaclinica = row["ID HISTORIA CLINICA"].ToString();
                 }
                 if (contador == 0)
                 {
