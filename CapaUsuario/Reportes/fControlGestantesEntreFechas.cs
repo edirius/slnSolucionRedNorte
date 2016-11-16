@@ -125,28 +125,25 @@ namespace CapaUsuario.Reportes
             // Add a new page to the pdf file
             //pdfDoc.NewPage();
             Document pdfDoc = new Document(PageSize.A4, 9, 9, 10, 10);
-            
+
             //pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+
+            fecha_inicio = dtpFechaInicio.Value;
+            fecha_fin = dtpFechaFin.Value;
 
             pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4);
 
             paragraph.Alignment = Element.ALIGN_CENTER;
-            paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 10 );
-            paragraph.Add(" REPORTE DE CONTROL DE GESTANTES ENTRE "+ fecha_inicio.Date + " Y " + fecha_fin.Date  +  "\n\n");
-
- 
- 
+            paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14 );
+            paragraph.Add("REPORTE DE CONTROL DE GESTANTES \n ENTRE "+ fecha_inicio.Date.ToString("MM/dd/yyyy") + " Y " + fecha_fin.Date.ToString("MM/dd/yyyy") + "\n\n\n");
+            
             /*              Llenar datagrids            */
-
             fecha_fin = dtpFechaFin.Value;
             fecha_inicio = dtpFechaInicio.Value;
-
             oHistoriaClinica.Idtobstetra = Idtobstetra;
             oHistoriaClinica.fecha_inicio = fecha_inicio;
             oHistoriaClinica.fecha_fin = fecha_fin;
-
             odtHC = oHistoriaClinica.ReporteHistoriaClinicaXObstetraXFechas();
-
 
 
             if (odtHC.Rows.Count > 0)
@@ -215,15 +212,53 @@ namespace CapaUsuario.Reportes
                     string ruta_imagen = ruta + "\\logo.jpg";
 
                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
-                    logo.ScalePercent(64f);
-                    logo.SetAbsolutePosition(12f, pdfDoc.PageSize.Height - 36f - 100f);
+                    logo.ScalePercent(24f);
+                    logo.SetAbsolutePosition(35f, pdfDoc.PageSize.Height - 70f );
 
                     //tabla que ecografia y odontologia
-                    PdfPTable tabla_cabecera = new PdfPTable(3);
-                    tabla_cabecera.DefaultCell.BorderWidth = 0;
+                    PdfPTable tabla_PN = new PdfPTable(1);
+                    tabla_PN.DefaultCell.BorderWidth = 0;
+                    tabla_PN.WidthPercentage = 100;
+                    tabla_PN.AddCell(pdfTable_PN);
+
+                    PdfPTable tabla_RB = new PdfPTable(1);
+                    tabla_RB.DefaultCell.BorderWidth = 0;
+                    tabla_RB.WidthPercentage = 100;
+                    tabla_RB.AddCell(pdfTable_RB);
+
+                    PdfPTable Tabla_VG = new PdfPTable(1);
+                    Tabla_VG.DefaultCell.BorderWidth = 0;
+                    Tabla_VG.WidthPercentage = 100;
+                    Tabla_VG.AddCell(pdfTable_VG);
+
+                    PdfPTable Tabla_VP = new PdfPTable(1);
+                    Tabla_VP.DefaultCell.BorderWidth = 0;
+                    Tabla_VP.WidthPercentage = 100;
+                    Tabla_VP.AddCell(pdfTable_VP);
+
+                    PdfPTable Tabla_TG = new PdfPTable(1);
+                    Tabla_TG.DefaultCell.BorderWidth = 0;
+                    Tabla_TG.WidthPercentage = 100;
+                    Tabla_TG.AddCell(pdfTable_TG);
+
+                    PdfPTable Tabla_CP = new PdfPTable(1);
+                    Tabla_CP.DefaultCell.BorderWidth = 0;
+                    Tabla_CP.WidthPercentage = 100;
+                    Tabla_CP.AddCell(pdfTable_CP);
+
+                    PdfPTable Tabla_RN = new PdfPTable(1);
+                    Tabla_RN.DefaultCell.BorderWidth = 0;
+                    Tabla_RN.WidthPercentage = 100;
+                    Tabla_RN.AddCell(pdfTable_RN);
 
                     //tabla que ecografia y odontologia
                     PdfPTable tabla_eco_odo = new PdfPTable(3);
+                    //pdfTableE.WidthPercentage = ancho;
+                    var colWidthPercentages = new[] { 45f, 25f, 30f };
+                    tabla_eco_odo.SetWidths(colWidthPercentages);
+
+                    tabla_eco_odo.WidthPercentage = 100;
+                    
                     tabla_eco_odo.DefaultCell.BorderWidth = 0;
 
                     //Agrupando tabla titular
@@ -242,14 +277,15 @@ namespace CapaUsuario.Reportes
                     columns.AddElement(pdfTable_HC_3);
                     columns.AddElement(tabla_eco_odo);
                     
-                    columns.AddElement(pdfTable_PN);
-                    columns.AddElement(pdfTable_RB);
-                    columns.AddElement(pdfTable_VG);
-                    columns.AddElement(pdfTable_VP);
-                    columns.AddElement(pdfTable_TG);
-                    columns.AddElement(pdfTable_CP);
-                    columns.AddElement(pdfTable_RN);
+                    columns.AddElement(tabla_PN);
+                    columns.AddElement(tabla_RB);
+                    columns.AddElement(Tabla_VG);
+                    columns.AddElement(Tabla_VP);
+                    columns.AddElement(Tabla_TG);
+                    columns.AddElement(Tabla_CP);
+                    columns.AddElement(Tabla_RN);
 
+                    pdfDoc.Add(logo);
                     pdfDoc.Add(columns);
 
                 }
@@ -406,7 +442,7 @@ namespace CapaUsuario.Reportes
         public void CreateHeaderFooter(ref Document _document)
         {
             var headerfooter = FontFactory.GetFont("Arial", 8);
-            HeaderFooter header = (new HeaderFooter(new Phrase("Control de gestantes entre " + fecha_inicio.Date + " y " + fecha_fin.Date , headerfooter), false));
+            HeaderFooter header = (new HeaderFooter(new Phrase("Control de gestantes entre " + fecha_inicio.Date.ToString("MM/dd/yyyy") + " y " + fecha_fin.Date.ToString("MM/dd/yyyy"), headerfooter), false));
             header.BorderColorTop = new iTextSharp.text.Color(System.Drawing.Color.Red);
             header.BorderWidthTop = 0f;
             _document.Header = header;
@@ -471,7 +507,10 @@ namespace CapaUsuario.Reportes
 
             oHistoriaClinica.Idthistoriaclinica = this.IdtHistoriaClinica;
 
-            dgvHCParte1.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte1();
+
+            odtHC1 = oHistoriaClinica.ReporteHistoriaClinicaParte1();
+            odtHC1.Columns.RemoveAt(0);
+            dgvHCParte1.DataSource = odtHC1;
             dgvHCParte1.Columns[0].Visible = false;
             dgvHCParte2.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte2();
             dgvHCParte3.DataSource = oHistoriaClinica.ReporteHistoriaClinicaParte3();
@@ -502,7 +541,7 @@ namespace CapaUsuario.Reportes
             dgvAtencionPreNatal.DataSource = odtPN;
             
 
-            odtRB = oHC.enumerar_datatable(oBateria.ListarBateria(IdtHistoriaClinica), 0);
+            odtRB = oHC.enumerar_datatable(oBateria.ReporteBateria(IdtHistoriaClinica), 0);
             odtRB.Columns.RemoveAt(1);
             odtRB.Columns.RemoveAt(1);
             dgvRegBateria.DataSource = odtRB;
@@ -529,6 +568,7 @@ namespace CapaUsuario.Reportes
             odtCP = oHC.enumerar_datatable(oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica), 0);
             odtCP.Columns.RemoveAt(1);
             odtCP.Columns.RemoveAt(9);
+            odtCP.Columns.RemoveAt(1);
             dgvControlPuerperio.DataSource = odtCP;
 
 
@@ -560,34 +600,14 @@ namespace CapaUsuario.Reportes
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-                int iindice_ingresos = 0;
-                int iindice_descuentos = 0;
-                int iindice_a_empleador_i = 0;
-                int iindice_a_empleador_j = 0;
-                int iindice_a_trabajador = 0;
-
-                bool fAportacionesEmpleador = false;
-
-
+ 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte1.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+ 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -597,14 +617,22 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte1.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte1[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvHCParte1[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                      
+                        
+                        if ( j == 0)
+                        {
+                            string fecha = Convert.ToDateTime(dgvHCParte1[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+                        
+
+                        if (j==2 || j==6 || j == 0)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
-
-
+ 
                     }
                     //float total_altura = pdfTableE.CalculateHeights(true);
                     //ftotal_lineas_hoja += cell.GetMaxHeight();
@@ -653,21 +681,9 @@ namespace CapaUsuario.Reportes
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte2.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -677,13 +693,18 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte2.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        
+
+                        if (j == 6 || j == 7) {
+                            string fecha = Convert.ToDateTime(dgvHCParte2[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+                        
+                        cell.HorizontalAlignment = Element.ALIGN_RIGHT;
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
-
-
                     }
                     //float total_altura = pdfTableE.CalculateHeights(true);
                     //ftotal_lineas_hoja += cell.GetMaxHeight();
@@ -733,21 +754,9 @@ namespace CapaUsuario.Reportes
                 int k = 0;
                 foreach (DataGridViewColumn column in dgvHCParte3.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                    /*
-                    if (k == 4)
-                    {
-                        cell.BorderColorLeft = CMYKColor.BLACK;
-                        cell.BorderColorRight = CMYKColor.BLACK;
-                        cell.BorderColorTop = CMYKColor.WHITE;
-                        cell.BorderColorBottom = CMYKColor.WHITE;
-                        cell.BorderWidthLeft = 1f;
-                        cell.BorderWidthRight = 1f;
-                        cell.BorderWidthTop = 0f;
-                        cell.BorderWidthBottom = 0f;
-                        cell.BackgroundColor = CMYKColor.WHITE;
-                    }*/
+ 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     pdfTableE.AddCell(cell);
                     k++;
@@ -757,10 +766,11 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvHCParte3.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte3[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvHCParte3[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
- 
 
+                        if (j == 0 || j == 1)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
 
@@ -812,7 +822,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ECOGRAFIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ECOGRAFIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 4;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -822,7 +832,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvEcografico.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
 
                      
@@ -833,7 +843,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvEcografico.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 4;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -846,10 +856,16 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvEcografico.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvEcografico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvEcografico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
 
- 
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvEcografico[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -902,7 +918,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ODONTOLOGIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ODONTOLOGIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 2;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -912,7 +928,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvOdontologico.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -921,7 +937,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvOdontologico.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s)", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 2;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -934,9 +950,16 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvOdontologico.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvOdontologico[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                       
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvOdontologico[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        
+                        cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -981,7 +1004,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("MORBILIDAD", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("MORBILIDAD", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 3;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -991,7 +1014,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvMorbilidad.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1002,7 +1025,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvMorbilidad.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 3;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1014,10 +1037,18 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvMorbilidad.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvMorbilidad[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                        //if (j != 1) 
-                            pdfTableE.AddCell(cell);
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvMorbilidad[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+                        pdfTableE.AddCell(cell);
                         
 
                     }
@@ -1061,7 +1092,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("ATENCION PRE NATAL", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("ATENCION PRE NATAL", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1071,18 +1102,20 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvAtencionPreNatal.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                      
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
 
+                    
+
                     //if (k!=1 && k!=2)
-                        pdfTableE.AddCell(cell);
+                    pdfTableE.AddCell(cell);
                     k++;
                 }
 
                 if (dgvAtencionPreNatal.RowCount == 0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 9;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1094,12 +1127,20 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvAtencionPreNatal.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvAtencionPreNatal[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
+                        if (j == 2 || j ==6)
+                        {
+                            string fecha = Convert.ToDateTime(dgvAtencionPreNatal[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 || j == 2 || j == 3 || j == 5 || j == 6)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
                         //cell.FixedHeight = 25f;
                         //if (j != 1 && j != 2)
-                            pdfTableE.AddCell(cell);
+                        pdfTableE.AddCell(cell);
 
 
                     }
@@ -1149,7 +1190,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("REGISTRO DE EXAMENES DE BATERIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("REGISTRO DE EXAMENES DE BATERIA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1159,7 +1200,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvRegBateria.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
                     
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1168,7 +1209,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvRegBateria.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 9;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1180,8 +1221,17 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvRegBateria.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvRegBateria[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvRegBateria[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
+                        if (j == 7 || j == 8 || j ==1 )  
+                        {
+                            string fecha = Convert.ToDateTime(dgvRegBateria[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 || j == 2 || j == 5 || j == 6 || j == 7 || j == 8)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1228,7 +1278,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("VISITA DOMICILIARIA GESTANTE", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("VISITA DOMICILIARIA GESTANTE", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 5;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1238,7 +1288,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvVisitasG.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1247,7 +1297,7 @@ namespace CapaUsuario.Reportes
                 }
 
                 if (dgvVisitasG.RowCount==0) {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 5;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1259,10 +1309,19 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvVisitasG.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvVisitasG[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvVisitasG[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
- 
- 
+
+                        if (j == 1 )
+                        {
+                            string fecha = Convert.ToDateTime(dgvVisitasG[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 || j == 3 )
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
+
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
 
@@ -1275,8 +1334,6 @@ namespace CapaUsuario.Reportes
                     //total_lineas_hoja++;
                 }
                 /* -------------------------------FIN DGVBOLETA_E */
-
-
 
             }
 
@@ -1311,7 +1368,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("VISITA PUERPERA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("VISITA PUERPERA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 8;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1321,7 +1378,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvVisitasPuerpera.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1331,7 +1388,7 @@ namespace CapaUsuario.Reportes
 
                 if (dgvVisitasPuerpera.RowCount == 0)
                 {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 8;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1343,8 +1400,17 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvVisitasPuerpera.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvVisitasPuerpera[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvVisitasPuerpera[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 )
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
@@ -1392,7 +1458,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("TERMINO GESTACION", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("TERMINO GESTACION", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 11;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1402,7 +1468,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvTerminoGestacion.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1412,7 +1478,7 @@ namespace CapaUsuario.Reportes
 
                 if (dgvTerminoGestacion.RowCount == 0)
                 {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 11;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1424,13 +1490,20 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvTerminoGestacion.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvTerminoGestacion[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvTerminoGestacion[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
+                        if (j == 4)
+                        {
+                            string fecha = Convert.ToDateTime(dgvTerminoGestacion[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 4)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);
-
-
                     }
                     //float total_altura = pdfTableE.CalculateHeights(true);
                     //ftotal_lineas_hoja += cell.GetMaxHeight();
@@ -1472,7 +1545,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("CONTROL PUERPERIO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("CONTROL PUERPERIO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 9;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1482,7 +1555,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvControlPuerperio.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
 
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1492,7 +1565,7 @@ namespace CapaUsuario.Reportes
 
                 if (dgvControlPuerperio.RowCount == 0)
                 {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 9;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1504,7 +1577,16 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvControlPuerperio.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvControlPuerperio[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell = new PdfPCell((new Phrase(dgvControlPuerperio[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvControlPuerperio[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 || j == 2 || j == 3 || j == 4 || j == 5|| j == 6)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
 
                         //cell.FixedHeight = 25f;
@@ -1553,7 +1635,7 @@ namespace CapaUsuario.Reportes
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
 
-                cell = new PdfPCell((new Phrase("RECIEN NACIDO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell = new PdfPCell((new Phrase("RECIEN NACIDO", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                 cell.Colspan = 6;
                 cell.Rowspan = 1;
                 cell.HorizontalAlignment = 1;
@@ -1563,7 +1645,7 @@ namespace CapaUsuario.Reportes
 
                 foreach (DataGridViewColumn column in dgvRecienNacido.Columns)
                 {
-                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
  
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
@@ -1573,7 +1655,7 @@ namespace CapaUsuario.Reportes
 
                 if (dgvRecienNacido.RowCount == 0)
                 {
-                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell = new PdfPCell((new Phrase("No hay registro(s).", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.Colspan = 6;
                     cell.Rowspan = 1;
                     cell.HorizontalAlignment = 1;
@@ -1585,8 +1667,17 @@ namespace CapaUsuario.Reportes
                 {
                     for (int j = 0; j < dgvRecienNacido.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvRecienNacido[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 11f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
- 
+                        cell = new PdfPCell((new Phrase(dgvRecienNacido[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+
+                        if (j == 1)
+                        {
+                            string fecha = Convert.ToDateTime(dgvRecienNacido[j, i].Value).ToString("MM/dd/yyyy");
+                            cell = new PdfPCell((new Phrase(fecha, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        }
+
+                        if (j == 0 || j == 1 || j == 2 || j == 3 || j == 4)
+                            cell.HorizontalAlignment = Element.ALIGN_RIGHT;
+
 
                         //cell.FixedHeight = 25f;
                         pdfTableE.AddCell(cell);

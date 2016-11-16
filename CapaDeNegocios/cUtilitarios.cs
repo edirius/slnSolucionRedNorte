@@ -66,5 +66,75 @@ namespace CapaDeNegocios
             return true;
         }
 
+        public string GenerarNumero(int N)
+        {
+            String[] Unidad = { "", "PRIMERA", "SEGUNDA", "TERCERA",
+            "CUARTA", "QUINTA", "SEXTA", "SEPTIMA", "OCTAVA",
+            "NOVENA" };
+            String[] Decena = { "", "DECIMA", "VIGESIMA", "TRIGESIMA",
+            "CUADRAGESIMA", "QUINCUAGESIMA", "SEXAGESIMA",
+            "SEPTUAGESIMA", "OCTOGESIMA", "NONAGESIMA" };
+            String[] Centena = {"", "centesimo", "ducentesimo",
+            "tricentesimo", " cuadringentesimo", " quingentesimo",
+            " sexcentesimo", " septingentesimo", " octingentesimo",
+            " noningentesimo"};
+
+            string Num = "";
+            int u = N % 10;
+            int d = (N / 10) % 10;
+            int c = N / 100;
+            if (N >= 100)
+            {
+                Num = Centena[c] + " " + Decena[d] + " " + Unidad[u];
+            }
+            else
+            {
+                if (N >= 10)
+                {
+                    Num = Decena[d] + " " + Unidad[u];
+                }
+                else
+                {
+                    Num = Unidad[N];
+                }
+            }
+            return Num;
+        }
+
+        public string GenerarNumeroMasculino(int N)
+        {
+            String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
+            "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
+            "NOVENO" };
+            String[] Decena = { "", "DECIMO", "VIGESIMO", "TRIGESIMO",
+            "CUADRAGESIMO", "QUINCUAGESIMO", "SEXAGESIMO",
+            "SEPTUAGESIMO", "OCTOGESIMO", "NONAGESIMO" };
+            String[] Centena = {"", "centesimo", "ducentesimo",
+            "tricentesimo", " cuadringentesimo", " quingentesimo",
+            " sexcentesimo", " septingentesimo", " octingentesimo",
+            " noningentesimo"};
+
+            string Num = "";
+            int u = N % 10;
+            int d = (N / 10) % 10;
+            int c = N / 100;
+            if (N >= 100)
+            {
+                Num = Centena[c] + " " + Decena[d] + " " + Unidad[u];
+            }
+            else
+            {
+                if (N >= 10)
+                {
+                    Num = Decena[d] + " " + Unidad[u];
+                }
+                else
+                {
+                    Num = Unidad[N];
+                }
+            }
+            return Num;
+        }
+
     }
 }
