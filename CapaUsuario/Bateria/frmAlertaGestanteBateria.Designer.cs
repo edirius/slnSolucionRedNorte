@@ -48,11 +48,15 @@
             // btnGenerarReporte
             // 
             this.btnGenerarReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerarReporte.Location = new System.Drawing.Point(446, 418);
+            this.btnGenerarReporte.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON2;
+            this.btnGenerarReporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporte.Location = new System.Drawing.Point(439, 580);
+            this.btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(115, 42);
+            this.btnGenerarReporte.Size = new System.Drawing.Size(205, 58);
             this.btnGenerarReporte.TabIndex = 101;
-            this.btnGenerarReporte.Text = "Generar Reporte";
+            this.btnGenerarReporte.Text = "GENERAR REPORTES";
             this.btnGenerarReporte.UseVisualStyleBackColor = true;
             this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
@@ -60,27 +64,30 @@
             // 
             this.cbAños.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAños.FormattingEnabled = true;
-            this.cbAños.Location = new System.Drawing.Point(337, 72);
+            this.cbAños.Location = new System.Drawing.Point(398, 94);
+            this.cbAños.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbAños.Name = "cbAños";
-            this.cbAños.Size = new System.Drawing.Size(74, 21);
+            this.cbAños.Size = new System.Drawing.Size(93, 26);
             this.cbAños.TabIndex = 105;
             this.cbAños.SelectedIndexChanged += new System.EventHandler(this.cbAños_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(112, 75);
+            this.label1.Location = new System.Drawing.Point(30, 93);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(41, 18);
             this.label1.TabIndex = 106;
             this.label1.Text = "Mes:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 75);
+            this.label3.Location = new System.Drawing.Point(352, 97);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(38, 18);
             this.label3.TabIndex = 107;
             this.label3.Text = "Año:";
             // 
@@ -101,9 +108,10 @@
             "OCTUBRE",
             "NOVIEMBRE",
             "DICIEMBRE"});
-            this.cbMes.Location = new System.Drawing.Point(148, 72);
+            this.cbMes.Location = new System.Drawing.Point(140, 90);
+            this.cbMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMes.Name = "cbMes";
-            this.cbMes.Size = new System.Drawing.Size(93, 21);
+            this.cbMes.Size = new System.Drawing.Size(156, 26);
             this.cbMes.TabIndex = 104;
             this.cbMes.SelectedIndexChanged += new System.EventHandler(this.cbMes_SelectedIndexChanged);
             // 
@@ -120,9 +128,10 @@
             "GESTANTES CON INFECCION URINARIA A TRATAR",
             "GESTANTES SIN EXAMEN DE ORINA",
             "GESTANTES SIN BATERIA"});
-            this.cbTipoAlerta.Location = new System.Drawing.Point(148, 36);
+            this.cbTipoAlerta.Location = new System.Drawing.Point(140, 39);
+            this.cbTipoAlerta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbTipoAlerta.Name = "cbTipoAlerta";
-            this.cbTipoAlerta.Size = new System.Drawing.Size(279, 21);
+            this.cbTipoAlerta.Size = new System.Drawing.Size(212, 26);
             this.cbTipoAlerta.TabIndex = 115;
             this.cbTipoAlerta.SelectedIndexChanged += new System.EventHandler(this.cbTipoAlerta_SelectedIndexChanged);
             // 
@@ -130,9 +139,10 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(64, 39);
+            this.label7.Location = new System.Drawing.Point(30, 42);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(102, 18);
             this.label7.TabIndex = 116;
             this.label7.Text = "Tipo de Alerta:";
             // 
@@ -146,9 +156,11 @@
             this.groupBox1.Controls.Add(this.cbMes);
             this.groupBox1.Controls.Add(this.cbTipoAlerta);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Location = new System.Drawing.Point(18, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(553, 120);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(626, 166);
             this.groupBox1.TabIndex = 117;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "...";
@@ -171,14 +183,15 @@
             this.dgvListaBateria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
             this.dgvListaBateria.GridColor = System.Drawing.Color.White;
-            this.dgvListaBateria.Location = new System.Drawing.Point(12, 127);
+            this.dgvListaBateria.Location = new System.Drawing.Point(18, 176);
+            this.dgvListaBateria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaBateria.Size = new System.Drawing.Size(553, 286);
+            this.dgvListaBateria.Size = new System.Drawing.Size(626, 396);
             this.dgvListaBateria.TabIndex = 100;
             // 
             // Column1
@@ -194,13 +207,15 @@
             // 
             // frmAlertaGestanteBateria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(572, 467);
+            this.ClientSize = new System.Drawing.Size(654, 647);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.dgvListaBateria);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAlertaGestanteBateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAlertaGestanteBateria";

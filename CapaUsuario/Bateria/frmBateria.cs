@@ -42,13 +42,13 @@ namespace CapaUsuario.Bateria
         }
         private void Alertar()
         {
-            if (txtMensajeHemo.Text != "" || txtMensajeOrina.Text != "" || txtMensajeSifilis.Text != "" || txtMensajeVIH.Text != "")
+            if (txtMensajeHemo.Text != "" || txtMensajeOrina.Text != "" || txtMensajeSifilis.Text != "" || txtMensajeVIH.Text != "" || txtMensajeTratamiento.Text != "")
             {
                 lblAlerta.Visible = true;
                 pbAlerta.Visible = true;
                 timer.Start();
             }
-            else if ( txtMensajeHemo.Text == "" || txtMensajeOrina.Text == "" || txtMensajeSifilis.Text == "" || txtMensajeVIH.Text == "")
+            else if ( txtMensajeHemo.Text == "" || txtMensajeOrina.Text == "" || txtMensajeSifilis.Text == "" || txtMensajeVIH.Text == "" || txtMensajeTratamiento.Text != "")
             {
                 pbAlerta.Visible = false;
                 lblAlerta.Visible = false;
@@ -60,30 +60,21 @@ namespace CapaUsuario.Bateria
             //dgvListaBateria.Enabled = true;
             dgvListaBateria.ClearSelection();
             txtCodigoBateria.Text = "";
-            txtFechaExamenOrina.Enabled = true;
             dtpFecha.Value = DateTime.Today;
-            dtpFecha.Enabled = true;
             pbAlerta.Visible = false;
             nudHemoglobina.Text = "";
-            nudHemoglobina.Enabled = true;
             cbSifilis.Text = "NO REACTIVO";
-            cbSifilis.Enabled = true;
             cbVIH.Text = "NO REACTIVO";
-            cbVIH.Enabled = true;
-            nudGlucosa.Enabled = true;
             nudGlucosa.Text = "";
             nudOrina.Text = "";
-            nudOrina.Enabled = true;
-            dtpFechaOrina.Enabled = true;
-            btnInsertar.Enabled = true;
             txtFechaExamenOrina.Text = "";
             txtFechaTratamiento.Text = "";
             txtMensajeHemo.Text = "";
             txtMensajeOrina.Text = "";
             txtMensajeSifilis.Text = "";
             txtMensajeVIH.Text = "";
+            txtMensajeTratamiento.Text = "";
             dtpFecha.Focus();
-            txtFechaExamenOrina.Enabled = false;
             timer.Stop();
         }
         private void ConfiguracionInicial()
@@ -143,7 +134,6 @@ namespace CapaUsuario.Bateria
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Nuevo();
-                    ActualizarLista();
                 }
                 else if (respuesta == "0")
                 {
@@ -187,7 +177,6 @@ namespace CapaUsuario.Bateria
                         if (respuesta == "1")
                         {
                             MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ActualizarLista();
                             Nuevo();
                         }
                         else if (respuesta == "0")
@@ -307,6 +296,14 @@ namespace CapaUsuario.Bateria
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
+                if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
+                {
+                    txtMensajeTratamiento.Text = "Alerta, La paciente no tiene fecha de tratamiento";
+                }
+                if (txtFechaTratamiento.Text != "")
+                {
+                    txtMensajeTratamiento.Text = "";
+                }
             }
             catch { }
             
@@ -556,6 +553,44 @@ namespace CapaUsuario.Bateria
         {
             //dgvListaBateria.ClearSelection();
             Nuevo();
+        }
+
+        private void nudGlucosa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void nudOrina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void txtFechaExamenOrina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void txtFechaTratamiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            miUtilitario.SoloNumeros(e);
+        }
+
+        private void txtMensajeTratamiento_TextChanged(object sender, EventArgs e)
+        {
+
+            Alertar();
+        }
+
+        private void txtFechaTratamiento_TextChanged(object sender, EventArgs e)
+        {
+            if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
+            {
+                txtMensajeTratamiento.Text = "Alerta, La paciente no tiene fecha de tratamiento";
+            }
+            if(txtFechaTratamiento.Text != "")
+            {
+                txtMensajeTratamiento.Text = "";
+            }
         }
     }
 }

@@ -82,10 +82,10 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.linkLabel1.Location = new System.Drawing.Point(23, 230);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(198, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(326, 16);
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "GESTANTES SIN BATERIA";
+            this.linkLabel1.Text = "GESTANTES CON PROBLEMAS EN BATERIA";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
             // 
             // lbleliminar
