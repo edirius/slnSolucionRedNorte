@@ -113,6 +113,7 @@
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(99, 24);
             this.dtpFechaFin.TabIndex = 14;
+            this.dtpFechaFin.Value = new System.DateTime(2015, 10, 28, 8, 6, 0, 0);
             // 
             // dtpFechaInicio
             // 
@@ -121,6 +122,7 @@
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(99, 24);
             this.dtpFechaInicio.TabIndex = 14;
+            this.dtpFechaInicio.Value = new System.DateTime(2015, 10, 27, 8, 6, 0, 0);
             // 
             // label2
             // 
