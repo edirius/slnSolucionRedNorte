@@ -133,6 +133,7 @@ namespace CapaUsuario.Bateria
                 if (respuesta == "1")
                 {
                     MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ActualizarLista();
                     Nuevo();
                 }
                 else if (respuesta == "0")
@@ -585,7 +586,7 @@ namespace CapaUsuario.Bateria
         {
             if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
             {
-                txtMensajeTratamiento.Text = "Alerta, La paciente no tiene fecha de tratamiento";
+                txtMensajeTratamiento.Text = "Alerta: La gestante no tiene fecha de tratamiento";
             }
             if(txtFechaTratamiento.Text != "")
             {

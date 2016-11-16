@@ -23,7 +23,7 @@ namespace CapaUsuario
         public frmMenu()
         {
             InitializeComponent();
-            HacerConeccion();
+            //HacerConeccion();
         }
         public void obtenerDatos(string LoginUsuario)
         {
@@ -41,7 +41,7 @@ namespace CapaUsuario
         {
             try
             {
-                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
+                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes2", "root", "root");
                 //MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
             }
             catch (Exception ex)
@@ -194,6 +194,12 @@ namespace CapaUsuario
             Exportar.IdEstablecimientoSalud = IdEstablecimientoSalud;
             Exportar.IdObstetra = IdObstetra;
             Exportar.Show();
+        }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPruebaExportar frmPrueba = new frmPruebaExportar();
+            frmPrueba.Show();
         }
     }
 }

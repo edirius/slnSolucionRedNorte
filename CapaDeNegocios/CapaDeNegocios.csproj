@@ -52,6 +52,8 @@
     <Compile Include="CitaPreNatal\cCitaPrenatal.cs" />
     <Compile Include="cMorbilidad.cs" />
     <Compile Include="cOdontologia.cs" />
+    <Compile Include="cPruebaExportar.cs" />
+    <Compile Include="cSeguridad.cs" />
     <Compile Include="cUtilitarios.cs" />
     <Compile Include="Reportes\cReporteObstetra.cs" />
     <Compile Include="TerminoGestacion\cTerminoGestacion.cs" />
