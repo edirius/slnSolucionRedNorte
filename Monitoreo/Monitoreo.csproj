@@ -113,10 +113,22 @@
     <Compile Include="Reportes\frmVistaReportes.Designer.cs">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\rptNominalGestanteMicroRED.cs">
+    <Compile Include="Reportes\rptReporteGestanteDadoPartoMicroRED.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptNominalGestanteMicroRED.rpt</DependentUpon>
+      <DependentUpon>rptReporteGestanteDadoPartoMicroRED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesFechaPPMicroRED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteGestantesFechaPPMicroRED.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteNominalGestanteMicroRED.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteNominalGestanteMicroRED.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptReportesObstetras.cs">
@@ -159,9 +171,17 @@
     <EmbeddedResource Include="Reportes\frmVistaReportes.resx">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rptNominalGestanteMicroRED.rpt">
+    <EmbeddedResource Include="Reportes\rptReporteGestanteDadoPartoMicroRED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptNominalGestanteMicroRED.cs</LastGenOutput>
+      <LastGenOutput>rptReporteGestanteDadoPartoMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesFechaPPMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesFechaPPMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteNominalGestanteMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteNominalGestanteMicroRED.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReportesObstetras.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

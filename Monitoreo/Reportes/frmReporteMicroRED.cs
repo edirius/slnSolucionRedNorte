@@ -21,9 +21,24 @@ namespace Monitoreo.Reportes
 
         private void frmReporteObstetras_Load(object sender, EventArgs e)
         {
-            cboMes.Text = Convert.ToString(DateTime.Now.ToString("MMMM"));
             CargarAños();
+            cboMes.Text = Convert.ToString(DateTime.Now.ToString("MMMM"));
             CargarMicroRED();
+        }
+
+        private void cboAño_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboMes.SelectedIndex = 0;
+        }
+
+        private void cboMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvMicroRED_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dgvMicroRED_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -67,6 +82,54 @@ namespace Monitoreo.Reportes
             cboAño.Text = Convert.ToString(DateTime.Now.Year);
         }
 
+        string Mes(string pmes)
+        {
+            string x = "";
+            switch (pmes)
+            {
+                case "TODOS":
+                    x = "TODOS";
+                    break;
+                case "ENERO":
+                    x = "01";
+                    break;
+                case "FEBRERO":
+                    x = "02";
+                    break;
+                case "MARZO":
+                    x = "03";
+                    break;
+                case "ABRIL":
+                    x = "04";
+                    break;
+                case "MAYO":
+                    x = "05";
+                    break;
+                case "JUNIO":
+                    x = "06";
+                    break;
+                case "JULIO":
+                    x = "07";
+                    break;
+                case "AGOSTO":
+                    x = "08";
+                    break;
+                case "SETIEMBRE":
+                    x = "09";
+                    break;
+                case "OCTUBRE":
+                    x = "10";
+                    break;
+                case "NOVIEMBRE":
+                    x = "11";
+                    break;
+                case "DICIEMBRE":
+                    x = "12";
+                    break;
+            }
+            return x;
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -75,14 +138,32 @@ namespace Monitoreo.Reportes
         private void btnReporObstetras_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteObstetra("ReporteObstetra");
+            frmVistaReportes.ReporteObstetra("rptReportesObstetras");
+            frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }
 
         private void btnNominalGestante_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteNominalGestante("ReporteNominalGestante");
+            frmVistaReportes.ReporteNominalGestanteMicroRED("rptReporteNominalGestanteMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesFechaPP_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.ReporteGestantesFechaPPMicroRED("rptReporteGestantesFechaPPMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesDadoParto_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.ReporteGestanteDadoPartoMicroRED("rptReporteGestanteDadoPartoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }
     }
