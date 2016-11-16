@@ -358,6 +358,7 @@ namespace CapaUsuario.RecienNacido
 
         private void frmRecienNacido_Load(object sender, EventArgs e)
         {
+            VerificarTerminoGestacion();
             Nuevo();
         }
         cUtilitarios miUtilitario = new cUtilitarios();
@@ -389,6 +390,40 @@ namespace CapaUsuario.RecienNacido
         private void txtMensajePeso_TextChanged_1(object sender, EventArgs e)
         {
             Alertar();
+        }
+
+        private void VerificarTerminoGestacion()
+        {
+            try
+            {
+                CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
+                if (miTerminoGestacion.ListarTerminoGestacion(aIdHistoria).Rows.Count == 0)
+                {
+                    frmRecienNacido miRN = new frmRecienNacido(aIdEstablecimiento, aIdHistoria);
+                    miRN.Enabled = false;
+                    btnInsertar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnNuevo.Visible = false;
+                    MessageBox.Show("Modo Visualización. No puede agregar un Recien Nacido porque la gestante no tiene registros en el Formulario de Termino de Gestación", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    frmRecienNacido miRN = new frmRecienNacido(aIdEstablecimiento, aIdHistoria);
+                    miRN.Enabled = true;
+                    btnInsertar.Enabled = true  ;
+                    btnEliminar.Enabled = true;
+                    btnNuevo.Enabled = true;
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
+
+        private void lblAlerta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

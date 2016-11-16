@@ -187,5 +187,13 @@ namespace CapaUsuario
             frmCantidadGestantes.MdiParent = this;
             frmCantidadGestantes.Show();
         }
+
+        private void exportarEImportarDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exportacion.frmExportacion Exportar = new Exportacion.frmExportacion();
+            Exportar.IdEstablecimientoSalud = IdEstablecimientoSalud;
+            Exportar.IdObstetra = IdObstetra;
+            Exportar.Show();
+        }
     }
 }
