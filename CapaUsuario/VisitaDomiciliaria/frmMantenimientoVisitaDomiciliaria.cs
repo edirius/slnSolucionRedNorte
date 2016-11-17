@@ -232,6 +232,10 @@ namespace CapaUsuario.VisitaDomiciliaria
                     tabPage1.Enabled = false;
                     tabPage2.Enabled = true;
                     tabControl1.SelectedIndex = 1;
+                    foreach (DataRow row in miTerminoGestacion.ListarTerminoGestacion(sidthistoriaclinica).Rows)
+                    {
+                        dtpFechaPuerpera.MinDate = Convert.ToDateTime(row[4]);
+                    }
                 }
             }
             catch (Exception m)
