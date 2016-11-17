@@ -34,6 +34,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void frmCitaPreNatal_Load(object sender, EventArgs e)
         {
+            VerificarTerminoGestacion();
             //MessageBox.Show(Establecimiento);
             CargarDatos();
             //if (dtgCitasMedicas.Rows.Count > 0)
@@ -47,6 +48,37 @@ namespace CapaUsuario.CitaPreNatal
             estado = "nuevo";
         }
 
+        private void VerificarTerminoGestacion()
+        {
+            try
+            {
+                CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
+                if (miTerminoGestacion.ListarTerminoGestacion(HistoriaClinica).Rows.Count == 0)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("No se puede añadir mas Citas Prenatales porque la gestante tiene Termino de Gestacion, ");
+                    txtNumeroCita.Enabled = false;
+                    dtpFechaCita.Enabled = false;
+                    numEdadGestacional.Enabled = false;
+                    numPresionArterialD.Enabled = false;
+                    numPresionArterialS.Enabled = false;
+                    dtpProximaCita.Enabled = false;
+                    txtFUA.Enabled = false;
+                    dtgCitasMedicas.Enabled = false;
+                    btnAgregarControl.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnGuardar.Enabled = false;
+
+                }
+            }
+            catch (Exception m)
+            {
+                MessageBox.Show(m.Message);
+            }
+        }
         private void CargarDatos()
         {
             try
