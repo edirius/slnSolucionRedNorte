@@ -31,41 +31,35 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
-            this.buRegistroBateria = new System.Windows.Forms.Button();
-            this.buAtencionPrenatal = new System.Windows.Forms.Button();
-            this.buVisitaDomiciliaria = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.buControlPuerperio = new System.Windows.Forms.Button();
-            this.btnRecienNacido = new System.Windows.Forms.Button();
-            this.buMorbilidad = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblArchivado = new System.Windows.Forms.Label();
             this.txtOrigenEESS = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.gbFecha = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cbArchivado = new System.Windows.Forms.CheckBox();
             this.cbTranseunte = new System.Windows.Forms.CheckBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.gbFechas = new System.Windows.Forms.GroupBox();
             this.dtpFPP = new System.Windows.Forms.DateTimePicker();
             this.dtpFUR = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gbOdontologico = new System.Windows.Forms.GroupBox();
             this.dgvOdontologia = new System.Windows.Forms.DataGridView();
             this.buAgregarOdontologia = new System.Windows.Forms.Button();
             this.dtpOdontologo = new System.Windows.Forms.DateTimePicker();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gbPrenatal = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.rbTercerTrimestre = new System.Windows.Forms.RadioButton();
             this.rbSegundoTrimestre = new System.Windows.Forms.RadioButton();
             this.rbPrimerTrimestre = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.nudSemanas = new System.Windows.Forms.NumericUpDown();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gbEcografia = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.nudDiasEcografia = new System.Windows.Forms.NumericUpDown();
             this.nudEdadGestacional = new System.Windows.Forms.NumericUpDown();
@@ -74,12 +68,12 @@
             this.dgvEcografia = new System.Windows.Forms.DataGridView();
             this.dtpEcografia = new System.Windows.Forms.DateTimePicker();
             this.buAgregarEcografia = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.gbEESS = new System.Windows.Forms.GroupBox();
             this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblOrigenEESS = new System.Windows.Forms.Label();
@@ -93,7 +87,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.gbFormula = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.nudGestas = new System.Windows.Forms.NumericUpDown();
@@ -106,19 +100,17 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.dgvCronograma = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.cbYear = new System.Windows.Forms.ComboBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -131,44 +123,53 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.buGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buCronograma = new System.Windows.Forms.Button();
-            this.dgvCronograma = new System.Windows.Forms.DataGridView();
+            this.buRegistroBateria = new System.Windows.Forms.Button();
+            this.buAtencionPrenatal = new System.Windows.Forms.Button();
+            this.btnRecienNacido = new System.Windows.Forms.Button();
+            this.buMorbilidad = new System.Windows.Forms.Button();
+            this.buControlPuerperio = new System.Windows.Forms.Button();
+            this.buVisitaDomiciliaria = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.gbFecha.SuspendLayout();
+            this.gbFechas.SuspendLayout();
+            this.gbOdontologico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).BeginInit();
-            this.groupBox5.SuspendLayout();
+            this.gbPrenatal.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.gbEcografia.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).BeginInit();
-            this.groupBox8.SuspendLayout();
+            this.gbEESS.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
+            this.gbFormula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox16.SuspendLayout();
+            this.gbFiltrar.SuspendLayout();
+            this.gbBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -193,90 +194,6 @@
             0,
             0});
             // 
-            // buRegistroBateria
-            // 
-            this.buRegistroBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buRegistroBateria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buRegistroBateria.Location = new System.Drawing.Point(8, 179);
-            this.buRegistroBateria.Name = "buRegistroBateria";
-            this.buRegistroBateria.Size = new System.Drawing.Size(106, 78);
-            this.buRegistroBateria.TabIndex = 30;
-            this.buRegistroBateria.Text = "Registro Bateria";
-            this.buRegistroBateria.UseVisualStyleBackColor = true;
-            this.buRegistroBateria.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // buAtencionPrenatal
-            // 
-            this.buAtencionPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buAtencionPrenatal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.buAtencionPrenatal.Location = new System.Drawing.Point(8, 99);
-            this.buAtencionPrenatal.Name = "buAtencionPrenatal";
-            this.buAtencionPrenatal.Size = new System.Drawing.Size(106, 78);
-            this.buAtencionPrenatal.TabIndex = 32;
-            this.buAtencionPrenatal.Text = "Atención Prenatal";
-            this.buAtencionPrenatal.UseVisualStyleBackColor = true;
-            this.buAtencionPrenatal.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // buVisitaDomiciliaria
-            // 
-            this.buVisitaDomiciliaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buVisitaDomiciliaria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(8, 259);
-            this.buVisitaDomiciliaria.Name = "buVisitaDomiciliaria";
-            this.buVisitaDomiciliaria.Size = new System.Drawing.Size(106, 78);
-            this.buVisitaDomiciliaria.TabIndex = 34;
-            this.buVisitaDomiciliaria.Text = "Visita Domiciliaria";
-            this.buVisitaDomiciliaria.UseVisualStyleBackColor = true;
-            this.buVisitaDomiciliaria.Click += new System.EventHandler(this.buVisitaDomiciliaria_Click);
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button6.Location = new System.Drawing.Point(8, 339);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(106, 78);
-            this.button6.TabIndex = 35;
-            this.button6.Text = "Termino Gestación";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // buControlPuerperio
-            // 
-            this.buControlPuerperio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buControlPuerperio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buControlPuerperio.Location = new System.Drawing.Point(8, 419);
-            this.buControlPuerperio.Name = "buControlPuerperio";
-            this.buControlPuerperio.Size = new System.Drawing.Size(106, 78);
-            this.buControlPuerperio.TabIndex = 33;
-            this.buControlPuerperio.Text = "Control Puerperio";
-            this.buControlPuerperio.UseVisualStyleBackColor = true;
-            this.buControlPuerperio.Click += new System.EventHandler(this.buControlPuerperio_Click);
-            // 
-            // btnRecienNacido
-            // 
-            this.btnRecienNacido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnRecienNacido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnRecienNacido.Location = new System.Drawing.Point(8, 499);
-            this.btnRecienNacido.Name = "btnRecienNacido";
-            this.btnRecienNacido.Size = new System.Drawing.Size(106, 78);
-            this.btnRecienNacido.TabIndex = 36;
-            this.btnRecienNacido.Text = "Atención Recien Nacido";
-            this.btnRecienNacido.UseVisualStyleBackColor = true;
-            this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
-            // 
-            // buMorbilidad
-            // 
-            this.buMorbilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buMorbilidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buMorbilidad.Location = new System.Drawing.Point(8, 19);
-            this.buMorbilidad.Name = "buMorbilidad";
-            this.buMorbilidad.Size = new System.Drawing.Size(106, 78);
-            this.buMorbilidad.TabIndex = 31;
-            this.buMorbilidad.Text = "Morbilidad Materna Extrema";
-            this.buMorbilidad.UseVisualStyleBackColor = true;
-            this.buMorbilidad.Click += new System.EventHandler(this.buMorbilidad_Click);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -291,7 +208,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1341, 692);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1337, 692);
             this.tableLayoutPanel2.TabIndex = 37;
             // 
             // groupBox2
@@ -304,7 +221,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1209, 686);
+            this.groupBox2.Size = new System.Drawing.Size(1205, 686);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -324,28 +241,28 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1202, 323);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1198, 323);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.lblArchivado);
             this.groupBox4.Controls.Add(this.txtOrigenEESS);
-            this.groupBox4.Controls.Add(this.groupBox12);
+            this.groupBox4.Controls.Add(this.gbFecha);
             this.groupBox4.Controls.Add(this.cbArchivado);
             this.groupBox4.Controls.Add(this.cbTranseunte);
-            this.groupBox4.Controls.Add(this.groupBox9);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.groupBox7);
-            this.groupBox4.Controls.Add(this.groupBox8);
+            this.groupBox4.Controls.Add(this.gbFechas);
+            this.groupBox4.Controls.Add(this.gbOdontologico);
+            this.groupBox4.Controls.Add(this.gbPrenatal);
+            this.groupBox4.Controls.Add(this.gbEcografia);
+            this.groupBox4.Controls.Add(this.gbEESS);
             this.groupBox4.Controls.Add(this.txtObservaciones);
             this.groupBox4.Controls.Add(this.lblOrigenEESS);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.groupBox14);
-            this.groupBox4.Controls.Add(this.groupBox15);
+            this.groupBox4.Controls.Add(this.gbFormula);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox4.Location = new System.Drawing.Point(14, 3);
+            this.groupBox4.Location = new System.Drawing.Point(12, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1174, 317);
             this.groupBox4.TabIndex = 29;
@@ -369,27 +286,33 @@
             this.txtOrigenEESS.Name = "txtOrigenEESS";
             this.txtOrigenEESS.Size = new System.Drawing.Size(302, 24);
             this.txtOrigenEESS.TabIndex = 42;
+            this.txtOrigenEESS.Enter += new System.EventHandler(this.txtOrigenEESS_Enter);
             this.txtOrigenEESS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrigenEESS_KeyPress);
+            this.txtOrigenEESS.Leave += new System.EventHandler(this.txtOrigenEESS_Leave);
             // 
-            // groupBox12
+            // gbFecha
             // 
-            this.groupBox12.Controls.Add(this.dtpFecha);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox12.Location = new System.Drawing.Point(1020, 11);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(143, 47);
-            this.groupBox12.TabIndex = 40;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Fecha:";
+            this.gbFecha.Controls.Add(this.dtpFecha);
+            this.gbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbFecha.Location = new System.Drawing.Point(1020, 11);
+            this.gbFecha.Name = "gbFecha";
+            this.gbFecha.Size = new System.Drawing.Size(143, 47);
+            this.gbFecha.TabIndex = 40;
+            this.gbFecha.TabStop = false;
+            this.gbFecha.Text = "Fecha:";
             // 
             // dtpFecha
             // 
+            this.dtpFecha.CalendarMonthBackground = System.Drawing.SystemColors.Highlight;
+            this.dtpFecha.CalendarTitleBackColor = System.Drawing.Color.LightSkyBlue;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(23, 18);
+            this.dtpFecha.Location = new System.Drawing.Point(27, 19);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 24);
             this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.Enter += new System.EventHandler(this.dtpFecha_Enter);
             this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
+            this.dtpFecha.Leave += new System.EventHandler(this.dtpFecha_Leave);
             // 
             // cbArchivado
             // 
@@ -401,7 +324,9 @@
             this.cbArchivado.Text = "Archivado";
             this.cbArchivado.UseVisualStyleBackColor = true;
             this.cbArchivado.CheckedChanged += new System.EventHandler(this.cbArchivado_CheckedChanged);
+            this.cbArchivado.Enter += new System.EventHandler(this.cbArchivado_Enter);
             this.cbArchivado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbArchivado_KeyPress);
+            this.cbArchivado.Leave += new System.EventHandler(this.cbArchivado_Leave);
             // 
             // cbTranseunte
             // 
@@ -413,21 +338,24 @@
             this.cbTranseunte.Text = "Transeunte";
             this.cbTranseunte.UseVisualStyleBackColor = true;
             this.cbTranseunte.CheckedChanged += new System.EventHandler(this.cbTranseunte_CheckedChanged_1);
+            this.cbTranseunte.Enter += new System.EventHandler(this.cbTranseunte_Enter);
             this.cbTranseunte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTranseunte_KeyPress_1);
+            this.cbTranseunte.Leave += new System.EventHandler(this.cbTranseunte_Leave);
             // 
-            // groupBox9
+            // gbFechas
             // 
-            this.groupBox9.Controls.Add(this.dtpFPP);
-            this.groupBox9.Controls.Add(this.dtpFUR);
-            this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Controls.Add(this.label8);
-            this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox9.Location = new System.Drawing.Point(138, 64);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(379, 46);
-            this.groupBox9.TabIndex = 36;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Fechas:";
+            this.gbFechas.Controls.Add(this.dtpFPP);
+            this.gbFechas.Controls.Add(this.dtpFUR);
+            this.gbFechas.Controls.Add(this.label9);
+            this.gbFechas.Controls.Add(this.label8);
+            this.gbFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbFechas.Location = new System.Drawing.Point(138, 64);
+            this.gbFechas.Name = "gbFechas";
+            this.gbFechas.Size = new System.Drawing.Size(379, 46);
+            this.gbFechas.TabIndex = 36;
+            this.gbFechas.TabStop = false;
+            this.gbFechas.Text = "Fechas:";
+            this.gbFechas.Enter += new System.EventHandler(this.gbFechas_Enter);
             // 
             // dtpFPP
             // 
@@ -447,6 +375,7 @@
             this.dtpFUR.TabIndex = 8;
             this.dtpFUR.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
             this.dtpFUR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFUR_KeyPress_1);
+            this.dtpFUR.Leave += new System.EventHandler(this.dtpFUR_Leave);
             // 
             // label9
             // 
@@ -467,18 +396,18 @@
             this.label8.Text = "FUR:";
             this.label8.Click += new System.EventHandler(this.label8_Click_1);
             // 
-            // groupBox6
+            // gbOdontologico
             // 
-            this.groupBox6.Controls.Add(this.dgvOdontologia);
-            this.groupBox6.Controls.Add(this.buAgregarOdontologia);
-            this.groupBox6.Controls.Add(this.dtpOdontologo);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox6.Location = new System.Drawing.Point(523, 66);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(235, 166);
-            this.groupBox6.TabIndex = 35;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Atención en el Servicio Odontologico:";
+            this.gbOdontologico.Controls.Add(this.dgvOdontologia);
+            this.gbOdontologico.Controls.Add(this.buAgregarOdontologia);
+            this.gbOdontologico.Controls.Add(this.dtpOdontologo);
+            this.gbOdontologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbOdontologico.Location = new System.Drawing.Point(523, 66);
+            this.gbOdontologico.Name = "gbOdontologico";
+            this.gbOdontologico.Size = new System.Drawing.Size(235, 166);
+            this.gbOdontologico.TabIndex = 35;
+            this.gbOdontologico.TabStop = false;
+            this.gbOdontologico.Text = "Atención en el Servicio Odontologico:";
             // 
             // dgvOdontologia
             // 
@@ -511,6 +440,8 @@
             this.buAgregarOdontologia.Text = "+";
             this.buAgregarOdontologia.UseVisualStyleBackColor = true;
             this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click_2);
+            this.buAgregarOdontologia.Enter += new System.EventHandler(this.buAgregarOdontologia_Enter);
+            this.buAgregarOdontologia.Leave += new System.EventHandler(this.buAgregarOdontologia_Leave);
             // 
             // dtpOdontologo
             // 
@@ -519,20 +450,22 @@
             this.dtpOdontologo.Name = "dtpOdontologo";
             this.dtpOdontologo.Size = new System.Drawing.Size(99, 24);
             this.dtpOdontologo.TabIndex = 12;
+            this.dtpOdontologo.Enter += new System.EventHandler(this.dtpOdontologo_Enter);
             this.dtpOdontologo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpOdontologo_KeyPress_1);
+            this.dtpOdontologo.Leave += new System.EventHandler(this.dtpOdontologo_Leave);
             // 
-            // groupBox5
+            // gbPrenatal
             // 
-            this.groupBox5.Controls.Add(this.groupBox10);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.nudSemanas);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox5.Location = new System.Drawing.Point(138, 180);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(379, 52);
-            this.groupBox5.TabIndex = 32;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Primera atencion pre natal:";
+            this.gbPrenatal.Controls.Add(this.groupBox10);
+            this.gbPrenatal.Controls.Add(this.label10);
+            this.gbPrenatal.Controls.Add(this.nudSemanas);
+            this.gbPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbPrenatal.Location = new System.Drawing.Point(138, 180);
+            this.gbPrenatal.Name = "gbPrenatal";
+            this.gbPrenatal.Size = new System.Drawing.Size(379, 52);
+            this.gbPrenatal.TabIndex = 32;
+            this.gbPrenatal.TabStop = false;
+            this.gbPrenatal.Text = "Primera atencion pre natal:";
             // 
             // groupBox10
             // 
@@ -617,21 +550,23 @@
             0,
             0});
             this.nudSemanas.ValueChanged += new System.EventHandler(this.nudSemanas_ValueChanged_1);
+            this.nudSemanas.Enter += new System.EventHandler(this.nudSemanas_Enter);
             this.nudSemanas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudSemanas_KeyPress_1);
+            this.nudSemanas.Leave += new System.EventHandler(this.nudSemanas_Leave);
             // 
-            // groupBox7
+            // gbEcografia
             // 
-            this.groupBox7.Controls.Add(this.groupBox11);
-            this.groupBox7.Controls.Add(this.dgvEcografia);
-            this.groupBox7.Controls.Add(this.dtpEcografia);
-            this.groupBox7.Controls.Add(this.buAgregarEcografia);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox7.Location = new System.Drawing.Point(764, 66);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(408, 220);
-            this.groupBox7.TabIndex = 34;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Ecografia Obstetrica de gestante:";
+            this.gbEcografia.Controls.Add(this.groupBox11);
+            this.gbEcografia.Controls.Add(this.dgvEcografia);
+            this.gbEcografia.Controls.Add(this.dtpEcografia);
+            this.gbEcografia.Controls.Add(this.buAgregarEcografia);
+            this.gbEcografia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbEcografia.Location = new System.Drawing.Point(764, 66);
+            this.gbEcografia.Name = "gbEcografia";
+            this.gbEcografia.Size = new System.Drawing.Size(408, 220);
+            this.gbEcografia.TabIndex = 34;
+            this.gbEcografia.TabStop = false;
+            this.gbEcografia.Text = "Ecografia Obstetrica de gestante:";
             // 
             // groupBox11
             // 
@@ -657,7 +592,9 @@
             0,
             0,
             0});
+            this.nudDiasEcografia.Enter += new System.EventHandler(this.nudDiasEcografia_Enter);
             this.nudDiasEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudDiasEcografia_KeyPress_2);
+            this.nudDiasEcografia.Leave += new System.EventHandler(this.nudDiasEcografia_Leave);
             // 
             // nudEdadGestacional
             // 
@@ -670,7 +607,9 @@
             0,
             0,
             0});
+            this.nudEdadGestacional.Enter += new System.EventHandler(this.nudEdadGestacional_Enter);
             this.nudEdadGestacional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudEdadGestacional_KeyPress_2);
+            this.nudEdadGestacional.Leave += new System.EventHandler(this.nudEdadGestacional_Leave);
             // 
             // label25
             // 
@@ -719,7 +658,9 @@
             this.dtpEcografia.Name = "dtpEcografia";
             this.dtpEcografia.Size = new System.Drawing.Size(99, 24);
             this.dtpEcografia.TabIndex = 15;
+            this.dtpEcografia.Enter += new System.EventHandler(this.dtpEcografia_Enter);
             this.dtpEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEcografia_KeyPress_1);
+            this.dtpEcografia.Leave += new System.EventHandler(this.dtpEcografia_Leave);
             // 
             // buAgregarEcografia
             // 
@@ -730,25 +671,28 @@
             this.buAgregarEcografia.Text = "+";
             this.buAgregarEcografia.UseVisualStyleBackColor = true;
             this.buAgregarEcografia.Click += new System.EventHandler(this.buAgregarEcografia_Click_1);
+            this.buAgregarEcografia.Enter += new System.EventHandler(this.buAgregarEcografia_Enter);
+            this.buAgregarEcografia.Leave += new System.EventHandler(this.buAgregarEcografia_Leave);
             // 
-            // groupBox8
+            // gbEESS
             // 
-            this.groupBox8.Controls.Add(this.cboTipoLlegada);
-            this.groupBox8.Controls.Add(this.label26);
-            this.groupBox8.Controls.Add(this.label23);
-            this.groupBox8.Controls.Add(this.label4);
-            this.groupBox8.Controls.Add(this.label7);
-            this.groupBox8.Controls.Add(this.dtpTiempoLlegada);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox8.Location = new System.Drawing.Point(138, 109);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(379, 63);
-            this.groupBox8.TabIndex = 33;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Tiempo al establecimiento:";
+            this.gbEESS.Controls.Add(this.cboTipoLlegada);
+            this.gbEESS.Controls.Add(this.label4);
+            this.gbEESS.Controls.Add(this.label7);
+            this.gbEESS.Controls.Add(this.label26);
+            this.gbEESS.Controls.Add(this.label23);
+            this.gbEESS.Controls.Add(this.dtpTiempoLlegada);
+            this.gbEESS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbEESS.Location = new System.Drawing.Point(138, 109);
+            this.gbEESS.Name = "gbEESS";
+            this.gbEESS.Size = new System.Drawing.Size(379, 63);
+            this.gbEESS.TabIndex = 33;
+            this.gbEESS.TabStop = false;
+            this.gbEESS.Text = "Tiempo al establecimiento:";
             // 
             // cboTipoLlegada
             // 
+            this.cboTipoLlegada.BackColor = System.Drawing.Color.White;
             this.cboTipoLlegada.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipoLlegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cboTipoLlegada.FormattingEnabled = true;
@@ -756,11 +700,33 @@
             "A pie",
             "Bicicleta",
             "Vehiculo motorizado"});
-            this.cboTipoLlegada.Location = new System.Drawing.Point(63, 27);
+            this.cboTipoLlegada.Location = new System.Drawing.Point(64, 26);
             this.cboTipoLlegada.Name = "cboTipoLlegada";
             this.cboTipoLlegada.Size = new System.Drawing.Size(162, 26);
-            this.cboTipoLlegada.TabIndex = 9;
-            this.cboTipoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboTipoLlegada_KeyPress_1);
+            this.cboTipoLlegada.TabIndex = 13;
+            this.cboTipoLlegada.Enter += new System.EventHandler(this.cboTipoLlegada_Enter_1);
+            this.cboTipoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboTipoLlegada_KeyPress_2);
+            this.cboTipoLlegada.Leave += new System.EventHandler(this.cboTipoLlegada_Leave_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 18);
+            this.label4.TabIndex = 11;
+            this.label4.Text = " llegada:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 18);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Tipo de";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label26
             // 
@@ -782,26 +748,6 @@
             this.label23.Text = "Tiempo de";
             this.label23.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 18);
-            this.label4.TabIndex = 0;
-            this.label4.Text = " llegada:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 18);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tipo de";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // dtpTiempoLlegada
             // 
             this.dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -809,7 +755,9 @@
             this.dtpTiempoLlegada.Name = "dtpTiempoLlegada";
             this.dtpTiempoLlegada.Size = new System.Drawing.Size(58, 24);
             this.dtpTiempoLlegada.TabIndex = 10;
+            this.dtpTiempoLlegada.Enter += new System.EventHandler(this.dtpTiempoLlegada_Enter);
             this.dtpTiempoLlegada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTiempoLlegada_KeyPress_1);
+            this.dtpTiempoLlegada.Leave += new System.EventHandler(this.dtpTiempoLlegada_Leave);
             // 
             // txtObservaciones
             // 
@@ -817,7 +765,9 @@
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(619, 24);
             this.txtObservaciones.TabIndex = 37;
+            this.txtObservaciones.Enter += new System.EventHandler(this.txtObservaciones_Enter);
             this.txtObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObservaciones_KeyPress_1);
+            this.txtObservaciones.Leave += new System.EventHandler(this.txtObservaciones_Leave);
             // 
             // lblOrigenEESS
             // 
@@ -858,7 +808,7 @@
             // txtHistoriaClinica
             // 
             this.txtHistoriaClinica.Enabled = false;
-            this.txtHistoriaClinica.Location = new System.Drawing.Point(128, 19);
+            this.txtHistoriaClinica.Location = new System.Drawing.Point(124, 18);
             this.txtHistoriaClinica.Name = "txtHistoriaClinica";
             this.txtHistoriaClinica.Size = new System.Drawing.Size(117, 24);
             this.txtHistoriaClinica.TabIndex = 3;
@@ -873,11 +823,13 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Enabled = false;
             this.txtEdad.Location = new System.Drawing.Point(916, 18);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(49, 24);
             this.txtEdad.TabIndex = 1;
+            this.txtEdad.Enter += new System.EventHandler(this.txtEdad_Enter);
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
+            this.txtEdad.Leave += new System.EventHandler(this.txtEdad_Leave);
             // 
             // txtNombreCompleto
             // 
@@ -927,27 +879,27 @@
             this.label2.Text = "Nombre Completo:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // groupBox15
+            // gbFormula
             // 
-            this.groupBox15.Controls.Add(this.label27);
-            this.groupBox15.Controls.Add(this.label18);
-            this.groupBox15.Controls.Add(this.nudGestas);
-            this.groupBox15.Controls.Add(this.nudPartos);
-            this.groupBox15.Controls.Add(this.nudAbortos);
-            this.groupBox15.Controls.Add(this.nudHv);
-            this.groupBox15.Controls.Add(this.nudHm);
-            this.groupBox15.Controls.Add(this.label3);
-            this.groupBox15.Controls.Add(this.label19);
-            this.groupBox15.Controls.Add(this.label20);
-            this.groupBox15.Controls.Add(this.label21);
-            this.groupBox15.Controls.Add(this.label22);
-            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox15.Location = new System.Drawing.Point(3, 64);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(132, 168);
-            this.groupBox15.TabIndex = 31;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "F. Obstetrica:";
+            this.gbFormula.Controls.Add(this.label27);
+            this.gbFormula.Controls.Add(this.label18);
+            this.gbFormula.Controls.Add(this.nudGestas);
+            this.gbFormula.Controls.Add(this.nudPartos);
+            this.gbFormula.Controls.Add(this.nudAbortos);
+            this.gbFormula.Controls.Add(this.nudHv);
+            this.gbFormula.Controls.Add(this.nudHm);
+            this.gbFormula.Controls.Add(this.label3);
+            this.gbFormula.Controls.Add(this.label19);
+            this.gbFormula.Controls.Add(this.label20);
+            this.gbFormula.Controls.Add(this.label21);
+            this.gbFormula.Controls.Add(this.label22);
+            this.gbFormula.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbFormula.Location = new System.Drawing.Point(3, 64);
+            this.gbFormula.Name = "gbFormula";
+            this.gbFormula.Size = new System.Drawing.Size(132, 168);
+            this.gbFormula.TabIndex = 31;
+            this.gbFormula.TabStop = false;
+            this.gbFormula.Text = "F. Obstetrica:";
             // 
             // label27
             // 
@@ -982,7 +934,9 @@
             this.nudGestas.Name = "nudGestas";
             this.nudGestas.Size = new System.Drawing.Size(41, 24);
             this.nudGestas.TabIndex = 3;
+            this.nudGestas.Enter += new System.EventHandler(this.nudGestas_Enter);
             this.nudGestas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudGestas_KeyPress_1);
+            this.nudGestas.Leave += new System.EventHandler(this.nudGestas_Leave);
             // 
             // nudPartos
             // 
@@ -995,7 +949,9 @@
             this.nudPartos.Name = "nudPartos";
             this.nudPartos.Size = new System.Drawing.Size(41, 24);
             this.nudPartos.TabIndex = 4;
+            this.nudPartos.Enter += new System.EventHandler(this.nudPartos_Enter);
             this.nudPartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPartos_KeyPress_1);
+            this.nudPartos.Leave += new System.EventHandler(this.nudPartos_Leave);
             // 
             // nudAbortos
             // 
@@ -1008,7 +964,9 @@
             this.nudAbortos.Name = "nudAbortos";
             this.nudAbortos.Size = new System.Drawing.Size(41, 24);
             this.nudAbortos.TabIndex = 5;
+            this.nudAbortos.Enter += new System.EventHandler(this.nudAbortos_Enter);
             this.nudAbortos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudAbortos_KeyPress_1);
+            this.nudAbortos.Leave += new System.EventHandler(this.nudAbortos_Leave);
             // 
             // nudHv
             // 
@@ -1021,7 +979,9 @@
             this.nudHv.Name = "nudHv";
             this.nudHv.Size = new System.Drawing.Size(41, 24);
             this.nudHv.TabIndex = 6;
+            this.nudHv.Enter += new System.EventHandler(this.nudHv_Enter);
             this.nudHv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHv_KeyPress_1);
+            this.nudHv.Leave += new System.EventHandler(this.nudHv_Leave);
             // 
             // nudHm
             // 
@@ -1035,7 +995,9 @@
             this.nudHm.Size = new System.Drawing.Size(41, 24);
             this.nudHm.TabIndex = 7;
             this.nudHm.ValueChanged += new System.EventHandler(this.nudHm_ValueChanged);
+            this.nudHm.Enter += new System.EventHandler(this.nudHm_Enter);
             this.nudHm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHm_KeyPress_1);
+            this.nudHm.Leave += new System.EventHandler(this.nudHm_Leave);
             // 
             // label3
             // 
@@ -1087,32 +1049,6 @@
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(5, 317);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
-            this.pictureBox4.Location = new System.Drawing.Point(1194, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(5, 317);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1132,40 +1068,32 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1190, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1186, 54);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
-            // buGuardar
+            // btnSalir
             // 
-            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
-            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buGuardar.ForeColor = System.Drawing.Color.White;
-            this.buGuardar.Location = new System.Drawing.Point(399, 3);
-            this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(192, 48);
-            this.buGuardar.TabIndex = 23;
-            this.buGuardar.Text = "Guardar";
-            this.buGuardar.UseVisualStyleBackColor = true;
-            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(791, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(191, 48);
+            this.btnSalir.TabIndex = 37;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button1
+            // dgvCronograma
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(597, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 48);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.dgvCronograma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCronograma.Location = new System.Drawing.Point(988, 3);
+            this.dgvCronograma.Name = "dgvCronograma";
+            this.dgvCronograma.Size = new System.Drawing.Size(194, 48);
+            this.dgvCronograma.TabIndex = 38;
+            this.dgvCronograma.Visible = false;
             // 
             // groupBox3
             // 
@@ -1177,7 +1105,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox3.Location = new System.Drawing.Point(7, 413);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1196, 267);
+            this.groupBox3.Size = new System.Drawing.Size(1192, 267);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Explorar Control de Gestantes:";
@@ -1190,31 +1118,34 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 628F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 863F));
-            this.tableLayoutPanel4.Controls.Add(this.groupBox17, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.groupBox16, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gbFiltrar, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.gbBuscar, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 19);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1171, 60);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1167, 60);
             this.tableLayoutPanel4.TabIndex = 30;
             // 
-            // groupBox17
+            // gbFiltrar
             // 
-            this.groupBox17.Controls.Add(this.cbMonth);
-            this.groupBox17.Controls.Add(this.label17);
-            this.groupBox17.Controls.Add(this.label24);
-            this.groupBox17.Controls.Add(this.cbYear);
-            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox17.Location = new System.Drawing.Point(631, 3);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(347, 54);
-            this.groupBox17.TabIndex = 32;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Filtrar por:";
+            this.gbFiltrar.Controls.Add(this.cbMonth);
+            this.gbFiltrar.Controls.Add(this.label17);
+            this.gbFiltrar.Controls.Add(this.label24);
+            this.gbFiltrar.Controls.Add(this.cbYear);
+            this.gbFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbFiltrar.Location = new System.Drawing.Point(631, 3);
+            this.gbFiltrar.Name = "gbFiltrar";
+            this.gbFiltrar.Size = new System.Drawing.Size(347, 54);
+            this.gbFiltrar.TabIndex = 32;
+            this.gbFiltrar.TabStop = false;
+            this.gbFiltrar.Text = "Filtrar por:";
+            this.gbFiltrar.Enter += new System.EventHandler(this.gbFiltrar_Enter);
+            this.gbFiltrar.Leave += new System.EventHandler(this.gbFiltrar_Leave);
             // 
             // cbMonth
             // 
+            this.cbMonth.BackColor = System.Drawing.Color.White;
             this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbMonth.FormattingEnabled = true;
@@ -1260,6 +1191,7 @@
             // 
             // cbYear
             // 
+            this.cbYear.BackColor = System.Drawing.Color.White;
             this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbYear.FormattingEnabled = true;
@@ -1270,24 +1202,26 @@
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged_1);
             this.cbYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbYear_KeyPress_1);
             // 
-            // groupBox16
+            // gbBuscar
             // 
-            this.groupBox16.Controls.Add(this.comboBox2);
-            this.groupBox16.Controls.Add(this.label28);
-            this.groupBox16.Controls.Add(this.lblBuscar);
-            this.groupBox16.Controls.Add(this.label15);
-            this.groupBox16.Controls.Add(this.label11);
-            this.groupBox16.Controls.Add(this.comboBox1);
-            this.groupBox16.Controls.Add(this.label1);
-            this.groupBox16.Controls.Add(this.txtBuscar);
-            this.groupBox16.Controls.Add(this.cbBuscar);
-            this.groupBox16.Controls.Add(this.label12);
-            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox16.Location = new System.Drawing.Point(3, 3);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(622, 54);
-            this.groupBox16.TabIndex = 31;
-            this.groupBox16.TabStop = false;
+            this.gbBuscar.Controls.Add(this.comboBox2);
+            this.gbBuscar.Controls.Add(this.label28);
+            this.gbBuscar.Controls.Add(this.lblBuscar);
+            this.gbBuscar.Controls.Add(this.label15);
+            this.gbBuscar.Controls.Add(this.label11);
+            this.gbBuscar.Controls.Add(this.comboBox1);
+            this.gbBuscar.Controls.Add(this.label1);
+            this.gbBuscar.Controls.Add(this.txtBuscar);
+            this.gbBuscar.Controls.Add(this.cbBuscar);
+            this.gbBuscar.Controls.Add(this.label12);
+            this.gbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbBuscar.Location = new System.Drawing.Point(3, 3);
+            this.gbBuscar.Name = "gbBuscar";
+            this.gbBuscar.Size = new System.Drawing.Size(622, 54);
+            this.gbBuscar.TabIndex = 31;
+            this.gbBuscar.TabStop = false;
+            this.gbBuscar.Enter += new System.EventHandler(this.gbBuscar_Enter);
+            this.gbBuscar.Leave += new System.EventHandler(this.gbBuscar_Leave);
             // 
             // comboBox2
             // 
@@ -1388,6 +1322,7 @@
             // 
             // cbBuscar
             // 
+            this.cbBuscar.BackColor = System.Drawing.Color.White;
             this.cbBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbBuscar.FormattingEnabled = true;
@@ -1435,7 +1370,7 @@
             this.dgvHC.ReadOnly = true;
             this.dgvHC.RowHeadersVisible = false;
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1171, 174);
+            this.dgvHC.Size = new System.Drawing.Size(1167, 174);
             this.dgvHC.TabIndex = 29;
             this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick_1);
             this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
@@ -1451,29 +1386,77 @@
             this.groupBox1.Controls.Add(this.buVisitaDomiciliaria);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox1.Location = new System.Drawing.Point(1218, 3);
+            this.groupBox1.Location = new System.Drawing.Point(1214, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(120, 680);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
-            // btnSalir
+            // pictureBox2
             // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(795, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(192, 48);
-            this.btnSalir.TabIndex = 37;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(3, 317);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
+            this.pictureBox4.Location = new System.Drawing.Point(1192, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(3, 317);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
+            // buGuardar
+            // 
+            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buGuardar.ForeColor = System.Drawing.Color.White;
+            this.buGuardar.Location = new System.Drawing.Point(397, 3);
+            this.buGuardar.Name = "buGuardar";
+            this.buGuardar.Size = new System.Drawing.Size(191, 48);
+            this.buGuardar.TabIndex = 23;
+            this.buGuardar.Text = "Guardar";
+            this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(594, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 48);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Nuevo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // buCronograma
             // 
+            this.buCronograma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buCronograma.BackgroundImage")));
+            this.buCronograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buCronograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buCronograma.ForeColor = System.Drawing.Color.White;
+            this.buCronograma.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.buCronograma.Location = new System.Drawing.Point(8, 579);
             this.buCronograma.Name = "buCronograma";
             this.buCronograma.Size = new System.Drawing.Size(106, 78);
@@ -1482,21 +1465,124 @@
             this.buCronograma.UseVisualStyleBackColor = true;
             this.buCronograma.Click += new System.EventHandler(this.buCronograma_Click);
             // 
-            // dgvCronograma
+            // buRegistroBateria
             // 
-            this.dgvCronograma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCronograma.Location = new System.Drawing.Point(993, 3);
-            this.dgvCronograma.Name = "dgvCronograma";
-            this.dgvCronograma.Size = new System.Drawing.Size(194, 48);
-            this.dgvCronograma.TabIndex = 38;
-            this.dgvCronograma.Visible = false;
+            this.buRegistroBateria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buRegistroBateria.BackgroundImage")));
+            this.buRegistroBateria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buRegistroBateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buRegistroBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buRegistroBateria.ForeColor = System.Drawing.Color.White;
+            this.buRegistroBateria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buRegistroBateria.Location = new System.Drawing.Point(8, 179);
+            this.buRegistroBateria.Name = "buRegistroBateria";
+            this.buRegistroBateria.Size = new System.Drawing.Size(106, 78);
+            this.buRegistroBateria.TabIndex = 32;
+            this.buRegistroBateria.Text = "Registro Bateria";
+            this.buRegistroBateria.UseVisualStyleBackColor = true;
+            this.buRegistroBateria.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // buAtencionPrenatal
+            // 
+            this.buAtencionPrenatal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buAtencionPrenatal.BackgroundImage")));
+            this.buAtencionPrenatal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buAtencionPrenatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buAtencionPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buAtencionPrenatal.ForeColor = System.Drawing.Color.White;
+            this.buAtencionPrenatal.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buAtencionPrenatal.Location = new System.Drawing.Point(8, 99);
+            this.buAtencionPrenatal.Name = "buAtencionPrenatal";
+            this.buAtencionPrenatal.Size = new System.Drawing.Size(106, 78);
+            this.buAtencionPrenatal.TabIndex = 31;
+            this.buAtencionPrenatal.Text = "Atención Prenatal";
+            this.buAtencionPrenatal.UseVisualStyleBackColor = true;
+            this.buAtencionPrenatal.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnRecienNacido
+            // 
+            this.btnRecienNacido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRecienNacido.BackgroundImage")));
+            this.btnRecienNacido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRecienNacido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecienNacido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnRecienNacido.ForeColor = System.Drawing.Color.White;
+            this.btnRecienNacido.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnRecienNacido.Location = new System.Drawing.Point(8, 499);
+            this.btnRecienNacido.Name = "btnRecienNacido";
+            this.btnRecienNacido.Size = new System.Drawing.Size(106, 78);
+            this.btnRecienNacido.TabIndex = 36;
+            this.btnRecienNacido.Text = "Atención Recien Nacido";
+            this.btnRecienNacido.UseVisualStyleBackColor = true;
+            this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
+            // 
+            // buMorbilidad
+            // 
+            this.buMorbilidad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buMorbilidad.BackgroundImage")));
+            this.buMorbilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buMorbilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buMorbilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buMorbilidad.ForeColor = System.Drawing.Color.White;
+            this.buMorbilidad.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buMorbilidad.Location = new System.Drawing.Point(8, 19);
+            this.buMorbilidad.Name = "buMorbilidad";
+            this.buMorbilidad.Size = new System.Drawing.Size(106, 78);
+            this.buMorbilidad.TabIndex = 30;
+            this.buMorbilidad.Text = "Morbilidad Materna Extrema";
+            this.buMorbilidad.UseVisualStyleBackColor = true;
+            this.buMorbilidad.Click += new System.EventHandler(this.buMorbilidad_Click);
+            // 
+            // buControlPuerperio
+            // 
+            this.buControlPuerperio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buControlPuerperio.BackgroundImage")));
+            this.buControlPuerperio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buControlPuerperio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buControlPuerperio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buControlPuerperio.ForeColor = System.Drawing.Color.White;
+            this.buControlPuerperio.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buControlPuerperio.Location = new System.Drawing.Point(8, 419);
+            this.buControlPuerperio.Name = "buControlPuerperio";
+            this.buControlPuerperio.Size = new System.Drawing.Size(106, 78);
+            this.buControlPuerperio.TabIndex = 35;
+            this.buControlPuerperio.Text = "Control Puerperio";
+            this.buControlPuerperio.UseVisualStyleBackColor = true;
+            this.buControlPuerperio.Click += new System.EventHandler(this.buControlPuerperio_Click);
+            // 
+            // buVisitaDomiciliaria
+            // 
+            this.buVisitaDomiciliaria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buVisitaDomiciliaria.BackgroundImage")));
+            this.buVisitaDomiciliaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buVisitaDomiciliaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buVisitaDomiciliaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buVisitaDomiciliaria.ForeColor = System.Drawing.Color.White;
+            this.buVisitaDomiciliaria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(8, 259);
+            this.buVisitaDomiciliaria.Name = "buVisitaDomiciliaria";
+            this.buVisitaDomiciliaria.Size = new System.Drawing.Size(106, 78);
+            this.buVisitaDomiciliaria.TabIndex = 33;
+            this.buVisitaDomiciliaria.Text = "Visita Domiciliaria";
+            this.buVisitaDomiciliaria.UseVisualStyleBackColor = true;
+            this.buVisitaDomiciliaria.Click += new System.EventHandler(this.buVisitaDomiciliaria_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button6.Location = new System.Drawing.Point(8, 339);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(106, 78);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "Termino Gestación";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 697);
+            this.ClientSize = new System.Drawing.Size(1351, 697);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Control de Gestante";
@@ -1508,45 +1594,45 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
+            this.gbFecha.ResumeLayout(false);
+            this.gbFechas.ResumeLayout(false);
+            this.gbFechas.PerformLayout();
+            this.gbOdontologico.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologia)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.gbPrenatal.ResumeLayout(false);
+            this.gbPrenatal.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSemanas)).EndInit();
-            this.groupBox7.ResumeLayout(false);
+            this.gbEcografia.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDiasEcografia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEdadGestacional)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografia)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            this.gbEESS.ResumeLayout(false);
+            this.gbEESS.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
+            this.gbFormula.ResumeLayout(false);
+            this.gbFormula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGestas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPartos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
+            this.gbFiltrar.ResumeLayout(false);
+            this.gbFiltrar.PerformLayout();
+            this.gbBuscar.ResumeLayout(false);
+            this.gbBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1579,27 +1665,27 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox txtOrigenEESS;
-        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.GroupBox gbFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.CheckBox cbArchivado;
         private System.Windows.Forms.CheckBox cbTranseunte;
-        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox gbFechas;
         private System.Windows.Forms.DateTimePicker dtpFPP;
         private System.Windows.Forms.DateTimePicker dtpFUR;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbOdontologico;
         private System.Windows.Forms.DataGridView dgvOdontologia;
         private System.Windows.Forms.Button buAgregarOdontologia;
         private System.Windows.Forms.DateTimePicker dtpOdontologo;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbPrenatal;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.RadioButton rbTercerTrimestre;
         private System.Windows.Forms.RadioButton rbSegundoTrimestre;
         private System.Windows.Forms.RadioButton rbPrimerTrimestre;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown nudSemanas;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gbEcografia;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.NumericUpDown nudDiasEcografia;
         private System.Windows.Forms.NumericUpDown nudEdadGestacional;
@@ -1608,12 +1694,9 @@
         private System.Windows.Forms.DataGridView dgvEcografia;
         private System.Windows.Forms.DateTimePicker dtpEcografia;
         private System.Windows.Forms.Button buAgregarEcografia;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ComboBox cboTipoLlegada;
+        private System.Windows.Forms.GroupBox gbEESS;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpTiempoLlegada;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblOrigenEESS;
@@ -1625,7 +1708,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox gbFormula;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown nudGestas;
@@ -1639,8 +1722,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.GroupBox gbFiltrar;
+        private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -1655,6 +1738,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buCronograma;
         private System.Windows.Forms.DataGridView dgvCronograma;
+        private System.Windows.Forms.ComboBox cboTipoLlegada;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
     }
 }
 

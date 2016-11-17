@@ -72,7 +72,7 @@ namespace CapaUsuario.CitaPreNatal
             btnGuardar.Enabled = true;
             if (dtgCitasMedicas.Rows.Count > 0)
             {
-                dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells[3].Value);
+                dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells[9].Value);
             }
             estado = "nuevo";
             dtpFechaCita.Focus();
