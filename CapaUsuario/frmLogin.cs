@@ -49,8 +49,10 @@ namespace CapaUsuario.Seguridad
                 if (numero == 1)
                 {
                     frmMenu Menu = new frmMenu();
+                    Alertas.frmAlerta Alerta = new Alertas.frmAlerta();
                     MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Menu.Show();
+                    Alerta.Show();
                     this.Hide();
                     Menu.obtenerDatos(Usuario);
                 }
