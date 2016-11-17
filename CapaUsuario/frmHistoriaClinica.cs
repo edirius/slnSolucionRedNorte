@@ -53,7 +53,9 @@ namespace CapaUsuario
         //Image backgroundimage;
         int mitad_cantidad_cronograma = 0;
 
+        
         bool bandera_combobox_año = false;
+
 
         public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
         {
@@ -107,7 +109,7 @@ namespace CapaUsuario
             /*Año y mes de historia clinica*/
 
             /*datetimepicker property*/
-            this.SetStyle(ControlStyles.UserPaint, true);
+            //this.SetStyle(ControlStyles.UserPaint, true);
 
 
             cbYear.DataSource = oHistoriaClinica.ListarYear();

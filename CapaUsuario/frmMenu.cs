@@ -124,5 +124,20 @@ namespace CapaUsuario
             Exportar.IdObstetra = IdObstetra;
             Exportar.Show();
         }
+
+        private void historiaClinicaPorPaciwinwToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CapaUsuario.Reportes.fControlGestanteporPaciente fControlGestanteporPaciente = new CapaUsuario.Reportes.fControlGestanteporPaciente();
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            if (oUtilitarios.verificarventanaabierta("fControlGestanteporPaciente"))
+            {
+
+                fControlGestanteporPaciente.MdiParent = this;
+                fControlGestanteporPaciente.IdObstetra = IdObstetra;
+                fControlGestanteporPaciente.Show();
+                
+            }
+        }
     }
 }

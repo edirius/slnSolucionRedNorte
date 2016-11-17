@@ -36,8 +36,6 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaPorPaciwinwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaEntreFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiaClinicaTranseunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historiaClinicaArchivadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarEImportarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -87,8 +85,6 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.historiaClinicaPorPaciwinwToolStripMenuItem,
             this.historiaClinicaEntreFechasToolStripMenuItem,
-            this.historiaClinicaTranseunteToolStripMenuItem,
-            this.historiaClinicaArchivadoToolStripMenuItem,
             this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
@@ -99,6 +95,7 @@
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Name = "historiaClinicaPorPaciwinwToolStripMenuItem";
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Text = "Monitor Gestante Por Paciente";
+            this.historiaClinicaPorPaciwinwToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaPorPaciwinwToolStripMenuItem_Click);
             // 
             // historiaClinicaEntreFechasToolStripMenuItem
             // 
@@ -106,18 +103,6 @@
             this.historiaClinicaEntreFechasToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
             this.historiaClinicaEntreFechasToolStripMenuItem.Text = "Monitor Gestante Entre Fechas";
             this.historiaClinicaEntreFechasToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaEntreFechasToolStripMenuItem_Click);
-            // 
-            // historiaClinicaTranseunteToolStripMenuItem
-            // 
-            this.historiaClinicaTranseunteToolStripMenuItem.Name = "historiaClinicaTranseunteToolStripMenuItem";
-            this.historiaClinicaTranseunteToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
-            this.historiaClinicaTranseunteToolStripMenuItem.Text = "Monitor Gestante Transeunte";
-            // 
-            // historiaClinicaArchivadoToolStripMenuItem
-            // 
-            this.historiaClinicaArchivadoToolStripMenuItem.Name = "historiaClinicaArchivadoToolStripMenuItem";
-            this.historiaClinicaArchivadoToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
-            this.historiaClinicaArchivadoToolStripMenuItem.Text = "Monitor Gestante Archivado";
             // 
             // rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem
             // 
@@ -196,8 +181,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaPorPaciwinwToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaEntreFechasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historiaClinicaTranseunteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historiaClinicaArchivadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
     }
