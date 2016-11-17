@@ -653,6 +653,8 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Nuevo %282%291.png" />
+    <None Include="Resources\Nuevo %282%29.png" />
     <None Include="Resources\EMBARAZADA.png" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>

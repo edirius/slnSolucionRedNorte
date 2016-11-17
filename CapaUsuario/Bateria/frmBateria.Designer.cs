@@ -88,10 +88,11 @@
             this.lblAlerta = new System.Windows.Forms.Label();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -102,6 +103,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -542,15 +544,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
-            this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(606, 541);
+            this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(516, 541);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 48);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(516, 48);
             this.tableLayoutPanel1.TabIndex = 101;
             // 
             // timer
@@ -642,6 +644,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.pictureBox4);
             this.groupBox2.Controls.Add(this.lblAlerta);
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
@@ -649,7 +652,7 @@
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Location = new System.Drawing.Point(30, 286);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(985, 249);
+            this.groupBox2.Size = new System.Drawing.Size(938, 239);
             this.groupBox2.TabIndex = 103;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuadro de precaución:";
@@ -660,7 +663,7 @@
             this.lblAlerta.BackColor = System.Drawing.Color.Transparent;
             this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlerta.ForeColor = System.Drawing.Color.White;
-            this.lblAlerta.Location = new System.Drawing.Point(814, 12);
+            this.lblAlerta.Location = new System.Drawing.Point(743, 23);
             this.lblAlerta.Name = "lblAlerta";
             this.lblAlerta.Size = new System.Drawing.Size(88, 20);
             this.lblAlerta.TabIndex = 103;
@@ -677,7 +680,7 @@
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(100, 42);
+            this.btnInsertar.Size = new System.Drawing.Size(123, 42);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Guardar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -692,30 +695,13 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(321, 3);
+            this.btnSalir.Location = new System.Drawing.Point(390, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(102, 42);
+            this.btnSalir.Size = new System.Drawing.Size(123, 42);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
-            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(109, 3);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(100, 42);
-            this.btnNuevo.TabIndex = 11;
-            this.btnNuevo.Text = "Limpiar";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // btnEliminar
             // 
@@ -726,20 +712,36 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(215, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(261, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(100, 42);
+            this.btnEliminar.Size = new System.Drawing.Size(123, 42);
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.BackgroundImage = global::CapaUsuario.Properties.Resources.Nuevo__2_1;
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(132, 3);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(123, 42);
+            this.btnNuevo.TabIndex = 11;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
             this.pictureBox4.Location = new System.Drawing.Point(21, 24);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(222, 200);
+            this.pictureBox4.Size = new System.Drawing.Size(105, 106);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 108;
             this.pictureBox4.TabStop = false;
@@ -749,12 +751,22 @@
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
             this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
-            this.pbAlerta.Location = new System.Drawing.Point(732, 46);
+            this.pbAlerta.Location = new System.Drawing.Point(685, 46);
             this.pbAlerta.Name = "pbAlerta";
             this.pbAlerta.Size = new System.Drawing.Size(216, 178);
             this.pbAlerta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbAlerta.TabIndex = 99;
             this.pbAlerta.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.Nuevo__2_1;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 73);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 109;
+            this.pictureBox1.TabStop = false;
             // 
             // frmBateria
             // 
@@ -783,6 +795,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -839,5 +852,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechatratamiento;
         private System.Windows.Forms.TextBox txtMensajeTratamiento;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
