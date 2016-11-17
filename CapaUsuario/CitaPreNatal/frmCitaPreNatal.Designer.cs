@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitaPreNatal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
@@ -76,6 +76,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.dtgCitasMedicas);
             this.groupBox1.Location = new System.Drawing.Point(28, 227);
             this.groupBox1.Name = "groupBox1";
@@ -88,8 +89,8 @@
             // 
             this.dtgCitasMedicas.AllowUserToAddRows = false;
             this.dtgCitasMedicas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgCitasMedicas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -109,7 +110,7 @@
             this.dtgCitasMedicas.Name = "dtgCitasMedicas";
             this.dtgCitasMedicas.ReadOnly = true;
             this.dtgCitasMedicas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCitasMedicas.Size = new System.Drawing.Size(619, 150);
+            this.dtgCitasMedicas.Size = new System.Drawing.Size(619, 162);
             this.dtgCitasMedicas.TabIndex = 0;
             this.dtgCitasMedicas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgCitasMedicas_CellFormatting);
             this.dtgCitasMedicas.SelectionChanged += new System.EventHandler(this.dtgCitasMedicas_SelectionChanged);
@@ -289,11 +290,14 @@
             // btnAgregarControl
             // 
             this.btnAgregarControl.BackColor = System.Drawing.Color.MintCream;
+            this.btnAgregarControl.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculento;
+            this.btnAgregarControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregarControl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarControl.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarControl.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnAgregarControl.Location = new System.Drawing.Point(37, 163);
+            this.btnAgregarControl.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarControl.Location = new System.Drawing.Point(24, 163);
             this.btnAgregarControl.Name = "btnAgregarControl";
-            this.btnAgregarControl.Size = new System.Drawing.Size(75, 45);
+            this.btnAgregarControl.Size = new System.Drawing.Size(88, 45);
             this.btnAgregarControl.TabIndex = 15;
             this.btnAgregarControl.Text = "Nuevo";
             this.btnAgregarControl.UseVisualStyleBackColor = false;
@@ -360,11 +364,14 @@
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.MintCream;
+            this.btnImprimir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculento;
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnImprimir.Location = new System.Drawing.Point(439, 163);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.Location = new System.Drawing.Point(426, 163);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(75, 45);
+            this.btnImprimir.Size = new System.Drawing.Size(88, 45);
             this.btnImprimir.TabIndex = 19;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -373,11 +380,14 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.MintCream;
+            this.btnGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculento;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGuardar.Location = new System.Drawing.Point(171, 163);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(158, 163);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 45);
+            this.btnGuardar.Size = new System.Drawing.Size(88, 45);
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -386,11 +396,14 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.MintCream;
+            this.btnEliminar.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculento;
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnEliminar.Location = new System.Drawing.Point(305, 163);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(292, 163);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 45);
+            this.btnEliminar.Size = new System.Drawing.Size(88, 45);
             this.btnEliminar.TabIndex = 21;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -399,11 +412,14 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculento;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSalir.Location = new System.Drawing.Point(573, 163);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(560, 163);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 45);
+            this.btnSalir.Size = new System.Drawing.Size(88, 45);
             this.btnSalir.TabIndex = 22;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -436,6 +452,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(685, 426);
             this.Controls.Add(this.txtAlerta);
             this.Controls.Add(this.pbAlerta);
@@ -459,6 +477,7 @@
             this.Controls.Add(this.dtpFechaCita);
             this.Controls.Add(this.txtNumeroCita);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCitaPreNatal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "------ Cita Pre Natal -----";

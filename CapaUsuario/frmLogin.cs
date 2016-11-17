@@ -53,6 +53,7 @@ namespace CapaUsuario.Seguridad
                     Menu.obtenerDatos(Usuario);
                     Menu.Show();
                     this.Hide();
+                   
                 }
                 else
                 {
