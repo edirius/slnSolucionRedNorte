@@ -46,10 +46,11 @@
             this.historiaClinicaTranseunteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaArchivadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarEImportarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
-            this.exportarEImportarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pruebaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,8 @@
             this.mantenimientoToolStripMenuItem,
             this.pruebasToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.exportarEImportarDatosToolStripMenuItem});
+            this.exportarEImportarDatosToolStripMenuItem,
+            this.pruebaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(949, 24);
@@ -189,6 +191,13 @@
             this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Text = "Resumen Cantidad De Gestantes Por Microred/EE.SS.";
             this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Click += new System.EventHandler(this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem_Click);
             // 
+            // exportarEImportarDatosToolStripMenuItem
+            // 
+            this.exportarEImportarDatosToolStripMenuItem.Name = "exportarEImportarDatosToolStripMenuItem";
+            this.exportarEImportarDatosToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
+            this.exportarEImportarDatosToolStripMenuItem.Text = "Exportar e Importar Datos";
+            this.exportarEImportarDatosToolStripMenuItem.Click += new System.EventHandler(this.exportarEImportarDatosToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -212,12 +221,12 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
-            // exportarEImportarDatosToolStripMenuItem
+            // pruebaToolStripMenuItem
             // 
-            this.exportarEImportarDatosToolStripMenuItem.Name = "exportarEImportarDatosToolStripMenuItem";
-            this.exportarEImportarDatosToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
-            this.exportarEImportarDatosToolStripMenuItem.Text = "Exportar e Importar Datos";
-            this.exportarEImportarDatosToolStripMenuItem.Click += new System.EventHandler(this.exportarEImportarDatosToolStripMenuItem_Click);
+            this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.pruebaToolStripMenuItem.Text = "Prueba";
+            this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -270,5 +279,6 @@
         private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pruebaToolStripMenuItem;
     }
 }

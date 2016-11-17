@@ -49,7 +49,8 @@ namespace CapaUsuario.Exportacion
             dlgGuardar.DefaultExt = ".gsys";
             dlgGuardar.ShowDialog();
             MessageBox.Show(dlgGuardar.FileName);
-            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "thistoriaclinica", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","tmorbilidad","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+            oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
+            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","tmorbilidad","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
 
            
             
@@ -57,9 +58,13 @@ namespace CapaUsuario.Exportacion
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
+            
             dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
             dlgAbrir.ShowDialog();
+            oExportar.BorrarDatosTabla(IdEstablecimientoSalud);
+            MessageBox.Show(IdEstablecimientoSalud);
             oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+
         }
     }
 }

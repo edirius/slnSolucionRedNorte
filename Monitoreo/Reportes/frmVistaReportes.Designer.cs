@@ -46,7 +46,7 @@
             this.crystalReportViewer1.ShowLogo = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
             this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(952, 487);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1284, 609);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -54,12 +54,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 487);
+            this.ClientSize = new System.Drawing.Size(1284, 609);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "frmVistaReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmVistaReportes_Load);
             this.ResumeLayout(false);
 
