@@ -28,7 +28,9 @@ namespace CapaUsuario
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-
+            Alertas.frmAlerta Alerta = new Alertas.frmAlerta();
+            Alerta.MdiParent = this;
+            Alerta.Show();
         }
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
