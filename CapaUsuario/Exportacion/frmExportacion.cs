@@ -50,7 +50,7 @@ namespace CapaUsuario.Exportacion
             dlgGuardar.ShowDialog();
             MessageBox.Show(dlgGuardar.FileName);
             oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","tmorbilidad","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
+            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
 
            
             

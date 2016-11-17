@@ -133,6 +133,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botonNuevo {
+            get {
+                object obj = ResourceManager.GetObject("botonNuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap embarazo {
             get {
                 object obj = ResourceManager.GetObject("embarazo", resourceCulture);
