@@ -268,7 +268,7 @@ namespace CapaUsuario.Bateria
                 if (Convert.ToInt16(nudOrina.Value) >= 8)
                 {
 
-                    txtMensajeOrina.Text = "Alerta: La gestante tiene infección urinaria a tratar";
+                    txtMensajeOrina.Text = "LA GESTANTE TIENE INFECCIÓN URINARIA A TRATAR";
                     //playSonidoDeAlerta();
                     //MessageBox.Show("La gestante tiene infección urinaria a tratar", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -299,7 +299,7 @@ namespace CapaUsuario.Bateria
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
                 if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
                 {
-                    txtMensajeTratamiento.Text = "Alerta, La paciente no tiene fecha de tratamiento";
+                    txtMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
                 }
                 if (txtFechaTratamiento.Text != "")
                 {
@@ -373,7 +373,7 @@ namespace CapaUsuario.Bateria
             if (cbSifilis.Text == "REACTIVO")
             {
                 
-                txtMensajeSifilis.Text = "Alerta: La gestante tiene Sifilis positivo";
+                txtMensajeSifilis.Text = "LA GESTANTE TIENE SIFILIS POSITIVO";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("La gestante tiene SIFILIS positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -389,7 +389,7 @@ namespace CapaUsuario.Bateria
             if (cbVIH.Text == "REACTIVO")
             {
                 
-                txtMensajeVIH.Text = "Alerta: La gestante tiene VIH positivo";
+                txtMensajeVIH.Text = "LA GESTANTE TIENE VIH POSITIVO";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("La gestante tiene VIH positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -406,7 +406,7 @@ namespace CapaUsuario.Bateria
         {
             if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
             {
-                txtMensajeHemo.Text = "Alerta: La gestante tiene anemia";
+                txtMensajeHemo.Text = "LA GESTANTE TIENE ANEMIA";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("Precaución: La Gestante tiene anemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -586,12 +586,35 @@ namespace CapaUsuario.Bateria
         {
             if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
             {
-                txtMensajeTratamiento.Text = "Alerta: La gestante no tiene fecha de tratamiento";
+                txtMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
             }
             if(txtFechaTratamiento.Text != "")
             {
                 txtMensajeTratamiento.Text = "";
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtCodigoBateria.Text == "")
+            { Agregar(); }
+            else
+                Modificar();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
+        }
+
+        private void btnEliminar_Click_2(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
