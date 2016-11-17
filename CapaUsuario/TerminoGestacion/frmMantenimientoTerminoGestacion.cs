@@ -144,6 +144,10 @@ namespace CapaUsuario.TerminoGestacion
                 {
                     saccion = 1;
                 }
+                else
+                {
+                    Inhabilitar();
+                }
             }
             catch (Exception m)
             {
@@ -198,6 +202,26 @@ namespace CapaUsuario.TerminoGestacion
                     gbEESS.Enabled = false;
                 }
             }
+        }
+
+        private void Inhabilitar()
+        {
+            rbtNormal.Enabled = false;
+            rbtAborto.Enabled = false;
+            rbtInstitucion.Enabled = false;
+            rbtDomicilio.Enabled = false;
+            rbtUnico.Enabled = false;
+            rbtMultiple.Enabled = false;
+            dtpFecha.Enabled = false;
+            txtPersona.Enabled = false;
+            rbtEutosico.Enabled = false;
+            rbtDistocico.Enabled = false;
+            cboTipoParto.Enabled = false;
+            rbtAlumbramientoSI.Enabled = false;
+            rbtAlumbramientoNO.Enabled = false;
+            cboHospital.Enabled = false;
+            txtHospital.Enabled = false;
+            btnGuardar.Enabled = false;
         }
 
         private void rbtNormal_CheckedChanged(object sender, EventArgs e)
