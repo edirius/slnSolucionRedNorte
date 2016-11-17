@@ -109,10 +109,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvCronograma = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
@@ -133,7 +131,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.buCronograma = new System.Windows.Forms.Button();
+            this.dgvCronograma = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -162,13 +162,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -291,7 +291,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1340, 692);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1341, 692);
             this.tableLayoutPanel2.TabIndex = 37;
             // 
             // groupBox2
@@ -304,7 +304,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1208, 686);
+            this.groupBox2.Size = new System.Drawing.Size(1209, 686);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -324,7 +324,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1201, 323);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1202, 323);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox4
@@ -345,7 +345,7 @@
             this.groupBox4.Controls.Add(this.groupBox14);
             this.groupBox4.Controls.Add(this.groupBox15);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox4.Location = new System.Drawing.Point(13, 3);
+            this.groupBox4.Location = new System.Drawing.Point(14, 3);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1174, 317);
             this.groupBox4.TabIndex = 29;
@@ -1095,7 +1095,7 @@
             this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(4, 317);
+            this.pictureBox2.Size = new System.Drawing.Size(5, 317);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
@@ -1106,7 +1106,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
-            this.pictureBox4.Location = new System.Drawing.Point(1193, 3);
+            this.pictureBox4.Location = new System.Drawing.Point(1194, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(5, 317);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1117,14 +1117,13 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.buGuardar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
@@ -1133,23 +1132,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1189, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1190, 54);
             this.tableLayoutPanel1.TabIndex = 28;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(679, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(163, 48);
-            this.btnSalir.TabIndex = 37;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // buGuardar
             // 
@@ -1159,9 +1143,9 @@
             this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buGuardar.ForeColor = System.Drawing.Color.White;
-            this.buGuardar.Location = new System.Drawing.Point(341, 3);
+            this.buGuardar.Location = new System.Drawing.Point(399, 3);
             this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(163, 48);
+            this.buGuardar.Size = new System.Drawing.Size(192, 48);
             this.buGuardar.TabIndex = 23;
             this.buGuardar.Text = "Guardar";
             this.buGuardar.UseVisualStyleBackColor = true;
@@ -1175,22 +1159,13 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(510, 3);
+            this.button1.Location = new System.Drawing.Point(597, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 48);
+            this.button1.Size = new System.Drawing.Size(192, 48);
             this.button1.TabIndex = 24;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // dgvCronograma
-            // 
-            this.dgvCronograma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCronograma.Location = new System.Drawing.Point(848, 3);
-            this.dgvCronograma.Name = "dgvCronograma";
-            this.dgvCronograma.Size = new System.Drawing.Size(163, 48);
-            this.dgvCronograma.TabIndex = 38;
-            this.dgvCronograma.Visible = false;
             // 
             // groupBox3
             // 
@@ -1202,7 +1177,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox3.Location = new System.Drawing.Point(7, 413);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1195, 267);
+            this.groupBox3.Size = new System.Drawing.Size(1196, 267);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Explorar Control de Gestantes:";
@@ -1221,7 +1196,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1170, 60);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1171, 60);
             this.tableLayoutPanel4.TabIndex = 30;
             // 
             // groupBox17
@@ -1460,7 +1435,7 @@
             this.dgvHC.ReadOnly = true;
             this.dgvHC.RowHeadersVisible = false;
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1170, 174);
+            this.dgvHC.Size = new System.Drawing.Size(1171, 174);
             this.dgvHC.TabIndex = 29;
             this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick_1);
             this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
@@ -1476,11 +1451,26 @@
             this.groupBox1.Controls.Add(this.buVisitaDomiciliaria);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox1.Location = new System.Drawing.Point(1217, 3);
+            this.groupBox1.Location = new System.Drawing.Point(1218, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(120, 680);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(795, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(192, 48);
+            this.btnSalir.TabIndex = 37;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // buCronograma
             // 
@@ -1492,12 +1482,21 @@
             this.buCronograma.UseVisualStyleBackColor = true;
             this.buCronograma.Click += new System.EventHandler(this.buCronograma_Click);
             // 
+            // dgvCronograma
+            // 
+            this.dgvCronograma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCronograma.Location = new System.Drawing.Point(993, 3);
+            this.dgvCronograma.Name = "dgvCronograma";
+            this.dgvCronograma.Size = new System.Drawing.Size(194, 48);
+            this.dgvCronograma.TabIndex = 38;
+            this.dgvCronograma.Visible = false;
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1354, 697);
+            this.ClientSize = new System.Drawing.Size(1355, 697);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmHistoriaClinica";
             this.Text = "Control de Gestante";
@@ -1539,7 +1538,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -1548,6 +1546,7 @@
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1642,6 +1641,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label11;
@@ -1653,7 +1653,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button buCronograma;
         private System.Windows.Forms.DataGridView dgvCronograma;
     }

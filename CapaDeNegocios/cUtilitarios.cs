@@ -66,40 +66,6 @@ namespace CapaDeNegocios
             return true;
         }
 
-        /*devuelve true cuando el archivo esta en uso en el S.O.*/
-        public virtual bool archivoenuso(FileInfo file, string path)
-        {
-            FileStream stream = null;
-
-            if (!File.Exists(path))
-            {
-                return false;
-            }
-            else
-            {
-                try
-                {
-                    stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
-
-                }
-                catch (IOException)
-                {
-                    //the file is unavailable because it is:
-                    //still being written to
-                    //or being processed by another thread
-                    //or does not exist (has already been processed)
-                    return true;
-
-                }
-                finally
-                {
-                    if (stream != null)
-                        stream.Close();
-                }
-                return false;
-            }
-        }
-
         public string GenerarNumero(int N)
         {
             String[] Unidad = { "", "PRIMERA", "SEGUNDA", "TERCERA",
@@ -133,6 +99,74 @@ namespace CapaDeNegocios
                 }
             }
             return Num;
+        }
+
+        public string GenerarNumeroMasculino(int N)
+        {
+            String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
+            "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
+            "NOVENO" };
+            String[] Decena = { "", "DECIMO", "VIGESIMO", "TRIGESIMO",
+            "CUADRAGESIMO", "QUINCUAGESIMO", "SEXAGESIMO",
+            "SEPTUAGESIMO", "OCTOGESIMO", "NONAGESIMO" };
+            String[] Centena = {"", "centesimo", "ducentesimo",
+            "tricentesimo", " cuadringentesimo", " quingentesimo",
+            " sexcentesimo", " septingentesimo", " octingentesimo",
+            " noningentesimo"};
+
+            string Num = "";
+            int u = N % 10;
+            int d = (N / 10) % 10;
+            int c = N / 100;
+            if (N >= 100)
+            {
+                Num = Centena[c] + " " + Decena[d] + " " + Unidad[u];
+            }
+            else
+            {
+                if (N >= 10)
+                {
+                    Num = Decena[d] + " " + Unidad[u];
+                }
+                else
+                {
+                    Num = Unidad[N];
+                }
+            }
+            return Num;
+        }
+
+        public virtual bool esta_en_uso(FileInfo file, string path)
+        {
+            FileStream stream = null;
+
+            if (!File.Exists(path))
+            {
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+
+                }
+                catch (IOException)
+                {
+                    //the file is unavailable because it is:
+                    //still being written to
+                    //or being processed by another thread
+                    //or does not exist (has already been processed)
+                    return true;
+
+                }
+                finally
+                {
+                    if (stream != null)
+                        stream.Close();
+                }
+                return false;
+            }
         }
 
     }
