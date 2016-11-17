@@ -41,6 +41,8 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGestantesFechaPP = new System.Windows.Forms.Button();
+            this.btnGestantesDadoParto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMicroRED)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -65,6 +67,7 @@
             this.cboAño.Name = "cboAño";
             this.cboAño.Size = new System.Drawing.Size(165, 21);
             this.cboAño.TabIndex = 1;
+            this.cboAño.SelectedIndexChanged += new System.EventHandler(this.cboAño_SelectedIndexChanged);
             // 
             // btnSalir
             // 
@@ -89,7 +92,7 @@
             this.btnReporObstetras.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnReporObstetras.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnReporObstetras.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnReporObstetras.Location = new System.Drawing.Point(252, 336);
+            this.btnReporObstetras.Location = new System.Drawing.Point(12, 336);
             this.btnReporObstetras.Name = "btnReporObstetras";
             this.btnReporObstetras.Size = new System.Drawing.Size(82, 65);
             this.btnReporObstetras.TabIndex = 106;
@@ -105,6 +108,7 @@
             this.cboMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMes.FormattingEnabled = true;
             this.cboMes.Items.AddRange(new object[] {
+            "TODOS",
             "ENERO",
             "FEBRERO",
             "MARZO",
@@ -121,6 +125,7 @@
             this.cboMes.Name = "cboMes";
             this.cboMes.Size = new System.Drawing.Size(215, 21);
             this.cboMes.TabIndex = 109;
+            this.cboMes.SelectedIndexChanged += new System.EventHandler(this.cboMes_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -154,6 +159,7 @@
             this.dgvMicroRED.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMicroRED.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMicroRED.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMicroRED.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtmicrored,
@@ -166,6 +172,7 @@
             this.dgvMicroRED.Size = new System.Drawing.Size(478, 256);
             this.dgvMicroRED.TabIndex = 111;
             this.dgvMicroRED.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellClick);
+            this.dgvMicroRED.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellContentClick);
             // 
             // idtmicrored
             // 
@@ -179,14 +186,12 @@
             this.microred.HeaderText = "Micro RED";
             this.microred.Name = "microred";
             this.microred.ReadOnly = true;
-            this.microred.Width = 150;
             // 
             // direccion
             // 
             this.direccion.HeaderText = "Direccion";
             this.direccion.Name = "direccion";
             this.direccion.ReadOnly = true;
-            this.direccion.Width = 300;
             // 
             // groupBox1
             // 
@@ -221,11 +226,45 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(490, 31);
             this.tableLayoutPanel1.TabIndex = 113;
             // 
+            // btnGestantesFechaPP
+            // 
+            this.btnGestantesFechaPP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesFechaPP.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesFechaPP.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesFechaPP.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesFechaPP.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesFechaPP.Location = new System.Drawing.Point(253, 336);
+            this.btnGestantesFechaPP.Name = "btnGestantesFechaPP";
+            this.btnGestantesFechaPP.Size = new System.Drawing.Size(81, 65);
+            this.btnGestantesFechaPP.TabIndex = 114;
+            this.btnGestantesFechaPP.Text = "Gestantes Fecha P.P.";
+            this.btnGestantesFechaPP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesFechaPP.UseVisualStyleBackColor = false;
+            this.btnGestantesFechaPP.Click += new System.EventHandler(this.btnGestantesFechaPP_Click);
+            // 
+            // btnGestantesDadoParto
+            // 
+            this.btnGestantesDadoParto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesDadoParto.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesDadoParto.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesDadoParto.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesDadoParto.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesDadoParto.Location = new System.Drawing.Point(166, 336);
+            this.btnGestantesDadoParto.Name = "btnGestantesDadoParto";
+            this.btnGestantesDadoParto.Size = new System.Drawing.Size(81, 65);
+            this.btnGestantesDadoParto.TabIndex = 115;
+            this.btnGestantesDadoParto.Text = "Gestantes Dado Parto";
+            this.btnGestantesDadoParto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesDadoParto.UseVisualStyleBackColor = false;
+            this.btnGestantesDadoParto.Click += new System.EventHandler(this.btnGestantesDadoParto_Click);
+            // 
             // frmReporteMicroRED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 413);
+            this.Controls.Add(this.btnGestantesDadoParto);
+            this.Controls.Add(this.btnGestantesFechaPP);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNominalGestante);
@@ -258,5 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idtmicrored;
         private System.Windows.Forms.DataGridViewTextBoxColumn microred;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.Button btnGestantesFechaPP;
+        private System.Windows.Forms.Button btnGestantesDadoParto;
     }
 }

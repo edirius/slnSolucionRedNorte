@@ -39,16 +39,16 @@ namespace CapaDeNegocios.Exportacion
 
         public bool BorrarDatosTabla(string codigoEstablecimiento)
         {
-            try
-            {
-                Conexion.GDatos.Ejecutar("spBorrarDatosTabla",codigoEstablecimiento);
-                return true;
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    Conexion.GDatos.Ejecutar("spBorrarDatosTabla",codigoEstablecimiento);
+            return true;
+            //}
+            //catch (Exception)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
         }
 
         public bool InsertarDatosTabla(string nombreTabla, string[] datosTabla)
@@ -243,7 +243,6 @@ namespace CapaDeNegocios.Exportacion
             }
             catch ( Exception ex)
             {
-
                 throw new cReglaNegocioException ("Error al importar Datos: " + ex.Message);
             }
         }

@@ -49,6 +49,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.exportarEImportarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,8 @@
             this.establecimientoSaludToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
             this.pruebasToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.exportarEImportarDatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(949, 24);
@@ -210,6 +212,13 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // exportarEImportarDatosToolStripMenuItem
+            // 
+            this.exportarEImportarDatosToolStripMenuItem.Name = "exportarEImportarDatosToolStripMenuItem";
+            this.exportarEImportarDatosToolStripMenuItem.Size = new System.Drawing.Size(153, 20);
+            this.exportarEImportarDatosToolStripMenuItem.Text = "Exportar e Importar Datos";
+            this.exportarEImportarDatosToolStripMenuItem.Click += new System.EventHandler(this.exportarEImportarDatosToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,5 +269,6 @@
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaArchivadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
     }
 }
