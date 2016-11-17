@@ -242,7 +242,7 @@
             this.txtFechaTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaTratamiento.Location = new System.Drawing.Point(643, 119);
             this.txtFechaTratamiento.Name = "txtFechaTratamiento";
-            this.txtFechaTratamiento.Size = new System.Drawing.Size(89, 24);
+            this.txtFechaTratamiento.Size = new System.Drawing.Size(100, 24);
             this.txtFechaTratamiento.TabIndex = 108;
             this.txtFechaTratamiento.TextChanged += new System.EventHandler(this.txtFechaTratamiento_TextChanged);
             this.txtFechaTratamiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechaTratamiento_KeyPress);
@@ -273,7 +273,7 @@
             this.txtFechaExamenOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFechaExamenOrina.Location = new System.Drawing.Point(684, 89);
             this.txtFechaExamenOrina.Name = "txtFechaExamenOrina";
-            this.txtFechaExamenOrina.Size = new System.Drawing.Size(84, 24);
+            this.txtFechaExamenOrina.Size = new System.Drawing.Size(93, 24);
             this.txtFechaExamenOrina.TabIndex = 105;
             this.txtFechaExamenOrina.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFechaExamenOrina_KeyPress);
             // 
@@ -537,6 +537,7 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
@@ -550,7 +551,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 57);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(748, 48);
             this.tableLayoutPanel1.TabIndex = 101;
             // 
             // btnInsertar
@@ -559,11 +560,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsertar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertar.BackgroundImage")));
             this.btnInsertar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
             this.btnInsertar.Location = new System.Drawing.Point(3, 3);
             this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(185, 51);
+            this.btnInsertar.Size = new System.Drawing.Size(181, 42);
             this.btnInsertar.TabIndex = 8;
             this.btnInsertar.Text = "Guardar";
             this.btnInsertar.UseVisualStyleBackColor = true;
@@ -575,11 +577,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(576, 3);
+            this.btnSalir.Location = new System.Drawing.Point(564, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(185, 51);
+            this.btnSalir.Size = new System.Drawing.Size(181, 42);
             this.btnSalir.TabIndex = 47;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -591,11 +594,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
             this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(194, 3);
+            this.btnNuevo.Location = new System.Drawing.Point(190, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(185, 51);
+            this.btnNuevo.Size = new System.Drawing.Size(181, 42);
             this.btnNuevo.TabIndex = 11;
             this.btnNuevo.Text = "Limpiar";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -607,11 +611,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(385, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(377, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(185, 51);
+            this.btnEliminar.Size = new System.Drawing.Size(181, 42);
             this.btnEliminar.TabIndex = 48;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -645,7 +650,6 @@
             // txtMensajeTratamiento
             // 
             this.txtMensajeTratamiento.BackColor = System.Drawing.Color.White;
-            this.txtMensajeTratamiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeTratamiento.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeTratamiento.Location = new System.Drawing.Point(3, 139);
@@ -658,7 +662,6 @@
             // txtMensajeVIH
             // 
             this.txtMensajeVIH.BackColor = System.Drawing.Color.White;
-            this.txtMensajeVIH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeVIH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeVIH.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeVIH.Location = new System.Drawing.Point(3, 37);
@@ -671,7 +674,6 @@
             // txtMensajeHemo
             // 
             this.txtMensajeHemo.BackColor = System.Drawing.Color.White;
-            this.txtMensajeHemo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeHemo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeHemo.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeHemo.Location = new System.Drawing.Point(3, 3);
@@ -684,7 +686,6 @@
             // txtMensajeSifilis
             // 
             this.txtMensajeSifilis.BackColor = System.Drawing.Color.White;
-            this.txtMensajeSifilis.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeSifilis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeSifilis.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeSifilis.Location = new System.Drawing.Point(3, 71);
@@ -697,7 +698,6 @@
             // txtMensajeOrina
             // 
             this.txtMensajeOrina.BackColor = System.Drawing.Color.White;
-            this.txtMensajeOrina.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensajeOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensajeOrina.ForeColor = System.Drawing.Color.Red;
             this.txtMensajeOrina.Location = new System.Drawing.Point(3, 105);
@@ -748,7 +748,7 @@
             // pbAlerta
             // 
             this.pbAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbAlerta.BackColor = System.Drawing.Color.White;
+            this.pbAlerta.BackColor = System.Drawing.Color.Transparent;
             this.pbAlerta.Image = ((System.Drawing.Image)(resources.GetObject("pbAlerta.Image")));
             this.pbAlerta.Location = new System.Drawing.Point(732, 35);
             this.pbAlerta.Name = "pbAlerta";
@@ -762,12 +762,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CapaUsuario.Properties.Resources.embarazo;
             this.ClientSize = new System.Drawing.Size(1024, 591);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgvListaBateria);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "frmBateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Bateria";

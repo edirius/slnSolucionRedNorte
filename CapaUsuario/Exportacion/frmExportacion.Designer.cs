@@ -41,7 +41,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(67, 160);
+            this.btnExportar.Location = new System.Drawing.Point(22, 132);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(116, 69);
             this.btnExportar.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 47);
+            this.label1.Location = new System.Drawing.Point(33, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblEstablecimiento
             // 
             this.lblEstablecimiento.AutoSize = true;
-            this.lblEstablecimiento.Location = new System.Drawing.Point(239, 46);
+            this.lblEstablecimiento.Location = new System.Drawing.Point(226, 41);
             this.lblEstablecimiento.Name = "lblEstablecimiento";
             this.lblEstablecimiento.Size = new System.Drawing.Size(35, 13);
             this.lblEstablecimiento.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 87);
+            this.label2.Location = new System.Drawing.Point(36, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 3;
@@ -79,7 +79,7 @@
             // lblObstetra
             // 
             this.lblObstetra.AutoSize = true;
-            this.lblObstetra.Location = new System.Drawing.Point(242, 86);
+            this.lblObstetra.Location = new System.Drawing.Point(226, 81);
             this.lblObstetra.Name = "lblObstetra";
             this.lblObstetra.Size = new System.Drawing.Size(35, 13);
             this.lblObstetra.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(462, 160);
+            this.btnImportar.Location = new System.Drawing.Point(541, 121);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(133, 69);
             this.btnImportar.TabIndex = 6;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 471);
+            this.ClientSize = new System.Drawing.Size(686, 416);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObstetra);
