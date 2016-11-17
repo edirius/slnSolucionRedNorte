@@ -228,7 +228,7 @@
             this.groupBox1.Size = new System.Drawing.Size(107, 107);
             this.groupBox1.TabIndex = 123;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gestación";
+            this.groupBox1.Text = "Parto";
             // 
             // tableLayoutPanel11
             // 

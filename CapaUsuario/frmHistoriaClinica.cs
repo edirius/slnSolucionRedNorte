@@ -1584,325 +1584,320 @@ namespace CapaUsuario
 
         private void buCronograma_Click(object sender, EventArgs e)
         {
-            //CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
-            //CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-            //CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
-            //CapaDeNegocios.TerminoGestacion.cTerminoGestacion oTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
-            //CapaDeNegocios.ControlPeuperio.cControlPeuperio oControlPuerperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
-            
+            //    CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+            //    CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            //    CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
+            //    CapaDeNegocios.TerminoGestacion.cTerminoGestacion oTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
+            //    CapaDeNegocios.ControlPeuperio.cControlPeuperio oControlPuerperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
 
-            //FileInfo file = new FileInfo(@"C:\PDFs\Cronograma.pdf");
-            //bool estaAbierto = false;
-            //estaAbierto = oUtilitarios.archivoenuso(file, @"C:\PDFs\Cronograma.pdf");
 
-            ///*Instanciamos datatable cronograma*/
-            //DataTable odtCronograma = new DataTable();
-            //DataTable odt = new DataTable();
-            //DataRow drFilaCronograma = odtCronograma.NewRow();
-            //string fecha_prox_cita = "";
-            //DateTime dtfecha_prox_cita;
-            //DateTime dtfecha_prox_cita_siguiente_registro;
-            //DateTime dtFUR;
-            //DateTime dtFPP;
-            //DateTime dtfecha_prox_cita_anterior_registro;
+            //    FileInfo file = new FileInfo(@"C:\PDFs\Cronograma.pdf");
+            //    bool estaAbierto = false;
+            //    estaAbierto = oUtilitarios.archivoenuso(file, @"C:\PDFs\Cronograma.pdf");
 
-            //DateTime dtfecha_prox_cita_cronogramada;
-            //DateTime dtfecha_prox_cita_asistida;
+            //    /*Instanciamos datatable cronograma*/
+            //    DataTable odtCronograma = new DataTable();
+            //    DataTable odt = new DataTable();
+            //    DataRow drFilaCronograma = odtCronograma.NewRow();
+            //    string fecha_prox_cita = "";
+            //    DateTime dtfecha_prox_cita;
+            //    DateTime dtfecha_prox_cita_siguiente_registro;
+            //    DateTime dtFUR;
+            //    DateTime dtFPP;
+            //    DateTime dtfecha_prox_cita_anterior_registro;
 
-            //DateTime dtfecha_cita_siguiente_registro;
-            //DateTime dtfecha_cita;
-            //bool bandera_cita_igual_prox_cita_anterior = false;
-            //int cantidad_columnas_cronograma = 0;
-            //bool bandera_iguales = false;
-            ////odtCronograma.Rows.InsertAt(drFilaCronograma, i);
-            ////drFila = odtPrueba.NewRow();
+            //    DateTime dtfecha_prox_cita_cronogramada;
+            //    DateTime dtfecha_prox_cita_asistida;
 
-            //if (!estaAbierto)
-            //{
-            //    if (IdtHistoriaClinica == "")
+            //    DateTime dtfecha_cita_siguiente_registro;
+            //    DateTime dtfecha_cita;
+            //    bool bandera_cita_igual_prox_cita_anterior = false;
+            //    int cantidad_columnas_cronograma = 0;
+            //    bool bandera_iguales = false;
+            //    //odtCronograma.Rows.InsertAt(drFilaCronograma, i);
+            //    //drFila = odtPrueba.NewRow();
+
+            //    if (!estaAbierto)
             //    {
-            //        MessageBox.Show("Seleccionar una historia clinica porfavor.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //    else { 
-            //        /* Primero consultamos la FUR y FPP y las añadimos como columnas al cronograma */
-            //        oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
-            //        odt = oHistoriaClinica.ListarHistoriaClinicaLargo();
+            //        if (IdtHistoriaClinica == "")
+            //        {
+            //            MessageBox.Show("Seleccionar una historia clinica porfavor.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //        else { 
+            //            /* Primero consultamos la FUR y FPP y las añadimos como columnas al cronograma */
+            //            oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
+            //            odt = oHistoriaClinica.ListarHistoriaClinicaLargo();
 
-            //        odtCronograma.Columns.Add("", typeof(string));
-            //        odtCronograma.Columns.Add("", typeof(string));
+            //            odtCronograma.Columns.Add("", typeof(string));
+            //            odtCronograma.Columns.Add("", typeof(string));
 
-            //        drFilaCronograma = odtCronograma.NewRow();
-            //        odtCronograma.Rows.InsertAt(drFilaCronograma, 0);
+            //            drFilaCronograma = odtCronograma.NewRow();
+            //            odtCronograma.Rows.InsertAt(drFilaCronograma, 0);
 
-            //        drFilaCronograma = odtCronograma.NewRow();
-            //        drFilaCronograma[0] = "FUR";
-            //        drFilaCronograma[1] = "FPP";
-            //        odtCronograma.Rows.InsertAt(drFilaCronograma, 1);
+            //            drFilaCronograma = odtCronograma.NewRow();
+            //            drFilaCronograma[0] = "FUR";
+            //            drFilaCronograma[1] = "FPP";
+            //            odtCronograma.Rows.InsertAt(drFilaCronograma, 1);
 
-            //        drFilaCronograma = odtCronograma.NewRow();
+            //            drFilaCronograma = odtCronograma.NewRow();
 
-            //        dtFUR = Convert.ToDateTime( odt.Rows[0]["FUR"].ToString());
-            //        dtFPP = Convert.ToDateTime(odt.Rows[0]["FPP"].ToString());
+            //            dtFUR = Convert.ToDateTime( odt.Rows[0]["FUR"].ToString());
+            //            dtFPP = Convert.ToDateTime(odt.Rows[0]["FPP"].ToString());
 
-            //        drFilaCronograma[0] = dtFUR.ToString("dd/MM/yyyy");
-            //        drFilaCronograma[1] = dtFPP.ToString("dd/MM/yyyy");
-            //        odtCronograma.Rows.InsertAt(drFilaCronograma, 2);
+            //            drFilaCronograma[0] = dtFUR.ToString("dd/MM/yyyy");
+            //            drFilaCronograma[1] = dtFPP.ToString("dd/MM/yyyy");
+            //            odtCronograma.Rows.InsertAt(drFilaCronograma, 2);
 
-            //        drFilaCronograma = odtCronograma.NewRow();
-            //        odtCronograma.Rows.InsertAt(drFilaCronograma, 3);
+            //            drFilaCronograma = odtCronograma.NewRow();
+            //            odtCronograma.Rows.InsertAt(drFilaCronograma, 3);
 
-            //        /* Segundo consultamos las citas prenatales y las añadimos como columnas al cronograma  */
-            //        oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
-            //        odt = oCitaPrenatal.ListaCitasPreNatal();
+            //            /* Segundo consultamos las citas prenatales y las añadimos como columnas al cronograma  */
+            //            oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
+            //            odt = oCitaPrenatal.ListaCitasPreNatal();
 
-            //        for (int i = 0 ; i > odt.Rows.Count - 1; i++) {
+            //            for (int i = 0 ; i > odt.Rows.Count - 1; i++) {
 
-            //            /*Cuando solo tiene una cita prenatal*/
-            //            if (odt.Rows.Count == 1) 
-            //            {
-            //                odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-            //                odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-
-            //                dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i + 1]["FECHA PROXIMA CITA"].ToString());
-
-            //                odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-
-            //                odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
-            //            }
-            //            else {
-
-            //                if (i==0) {
-            //                    /*Cuando se navega la primera citan prenatal*/
-
-            //                    /* 2da Cita y proxima 2da cita son iguales */
-            //                    dtfecha_prox_cita_cronogramada = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-            //                    dtfecha_prox_cita_asistida = Convert.ToDateTime(odt.Rows[i+1]["FECHA CITA"].ToString());
-
-            //                    if (dtfecha_prox_cita_cronogramada.ToString("dd/MM/yyyy") == dtfecha_prox_cita_asistida.ToString("dd/MM/yyyy"))
-            //                        bandera_iguales = true;
-
-            //                    if (bandera_iguales) {
-            //                        /*
-            //                                      2da cita programada
-            //                        1era cita     2da cita     
-            //                         */
-
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma-1);
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma-1);
-
-            //                        dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                        dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
-
-            //                        odtCronograma.Rows[0][cantidad_columnas_cronograma-1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma-1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma-1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    }
-
-            //                    /* 2da Cita y proxima 2da cita no son iguales */
-            //                    if (!bandera_iguales)
-            //                    {
-            //                        /*
-                                      
-            //                       1era cita    2da cita programada
-            //                        */
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-
-            //                        dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                        dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    }
-            //                }
-
-            //                /*Cuando no es la primera ni ultima cita prenatal*/
-
-            //                if (i > 0 && i < odt.Rows.Count - 1)
-            //                {
-
-            //                    /* prox Cita programada y proxima cita asistida son iguales */
-            //                    dtfecha_prox_cita_cronogramada = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-            //                    dtfecha_prox_cita_asistida = Convert.ToDateTime(odt.Rows[i + 1]["FECHA CITA"].ToString());
-
-            //                    if (dtfecha_prox_cita_cronogramada.ToString("dd/MM/yyyy") == dtfecha_prox_cita_asistida.ToString("dd/MM/yyyy"))
-            //                        bandera_iguales = true;
-
-            //                    if (bandera_iguales)
-            //                    {
-            //                        /* x>0
-            //                                   x+1 cita programada
-            //                                   x+1 cita     
-            //                         */
-
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-
-            //                        dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                        dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
-
-            //                        odtCronograma.Rows[0][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    }
-
-            //                    /* prox Cita programada y proxima cita asistida no son iguales */
-            //                    if (!bandera_iguales)
-            //                    {
-            //                        /* x>0
-            //                                   x+1 cita programada   x+2 cita programada
-            //                                   x+1 cita              x+2 cita      
-            //                         */
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-            //                        cantidad_columnas_cronograma = odt.Rows.Count;
-            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-
-            //                        dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                        dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
-
-            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    }
-            //                }
-
-            //                /*Cuando estamos navegando la ultima cita prenatal*/
-            //                if (i == odt.Rows.Count - 1)
-            //                {
-            //                    cantidad_columnas_cronograma = odt.Rows.Count;
-            //                    odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
-
-            //                    dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
-
-            //                    odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA PROGRAMADA";
-            //                    odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    bandera_cita_igual_prox_cita_anterior = false;
-            //                }
-
-                            
-
-            //            }
-
-            //            if (odt.Rows.Count > 1 && i < odt.Rows.Count - 1)
-            //            {
-
-            //                //odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-
-            //                //dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-            //                //dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i+1]["FECHA PROXIMA CITA"].ToString());
-
-
-            //                //dtfecha_prox_cita_anterior_registro = Convert.ToDateTime(odt.Rows[i - 1]["FECHA PROXIMA CITA"].ToString());
-            //                //dtfecha_cita_registro = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
-
-            //                //if (dtfecha_prox_cita_anterior_registro.ToString("dd/MM/yyyy") == dtfecha_cita_registro.ToString("dd/MM/yyyy"))
-            //                //{
-            //                //    bandera_cita_igual_prox_cita_anterior = true;
-            //                //}
-            //            }
-
-            //            if (!bandera_cita_igual_prox_cita_anterior)
-            //            {
-            //                if (i == 0)
-            //                {
-            //                    dtfecha_prox_cita_anterior_registro = Convert.ToDateTime(odt.Rows[0]["FECHA PROXIMA CITA"].ToString());
-            //                    //dtfecha_cita_registro = Convert.ToDateTime(odt.Rows[1]["FECHA CITA"].ToString());
-
-            //                    //if (dtfecha_prox_cita_anterior_registro.ToString("dd/MM/yyyy") == dtfecha_cita_registro.ToString("dd/MM/yyyy"))
-            //                    //{
-            //                    //    odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-            //                    //    odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
-            //                    //    odtCronograma.Rows[0][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                    //    //odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-
-            //                    //    odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                    //    //odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
-
-            //                }
-            //                else
+            //                /*Cuando solo tiene una cita prenatal*/
+            //                if (odt.Rows.Count == 1) 
             //                {
             //                    odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-            //                    odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                    odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
+            //                    odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
+
+            //                    dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                    dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i + 1]["FECHA PROXIMA CITA"].ToString());
 
             //                    odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
             //                    odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
 
+            //                    odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                    odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
             //                }
+            //                else {
+
+            //                    if (i==0) {
+            //                        /*Cuando se navega la primera citan prenatal*/
+
+            //                        /* 2da Cita y proxima 2da cita son iguales */
+            //                        dtfecha_prox_cita_cronogramada = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+            //                        dtfecha_prox_cita_asistida = Convert.ToDateTime(odt.Rows[i+1]["FECHA CITA"].ToString());
+
+            //                        if (dtfecha_prox_cita_cronogramada.ToString("dd/MM/yyyy") == dtfecha_prox_cita_asistida.ToString("dd/MM/yyyy"))
+            //                            bandera_iguales = true;
+
+            //                        if (bandera_iguales) {
+            //                            /*
+            //                                          2da cita programada
+            //                            1era cita     2da cita     
+            //                             */
+
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma-1);
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma-1);
+
+            //                            dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                            dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[0][cantidad_columnas_cronograma-1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma-1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma-1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        }
+
+            //                        /* 2da Cita y proxima 2da cita no son iguales */
+            //                        if (!bandera_iguales)
+            //                        {
+            //                            /*
+
+            //                           1era cita    2da cita programada
+            //                            */
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+
+            //                            dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                            dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        }
+            //                    }
+
+            //                    /*Cuando no es la primera ni ultima cita prenatal*/
+
+            //                    if (i > 0 && i < odt.Rows.Count - 1)
+            //                    {
+
+            //                        /* prox Cita programada y proxima cita asistida son iguales */
+            //                        dtfecha_prox_cita_cronogramada = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+            //                        dtfecha_prox_cita_asistida = Convert.ToDateTime(odt.Rows[i + 1]["FECHA CITA"].ToString());
+
+            //                        if (dtfecha_prox_cita_cronogramada.ToString("dd/MM/yyyy") == dtfecha_prox_cita_asistida.ToString("dd/MM/yyyy"))
+            //                            bandera_iguales = true;
+
+            //                        if (bandera_iguales)
+            //                        {
+            //                            /* x>0
+            //                                       x+1 cita programada
+            //                                       x+1 cita     
+            //                             */
+
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+
+            //                            dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                            dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[0][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        }
+
+            //                        /* prox Cita programada y proxima cita asistida no son iguales */
+            //                        if (!bandera_iguales)
+            //                        {
+            //                            /* x>0
+            //                                       x+1 cita programada   x+2 cita programada
+            //                                       x+1 cita              x+2 cita      
+            //                             */
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+            //                            cantidad_columnas_cronograma = odt.Rows.Count;
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+
+            //                            dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                            dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 2] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        }
+            //                    }
+
+            //                    /*Cuando estamos navegando la ultima cita prenatal*/
+            //                    if (i == odt.Rows.Count - 1)
+            //                    {
+            //                        cantidad_columnas_cronograma = odt.Rows.Count;
+            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma - 1);
+
+            //                        dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i]["FECHA PROXIMA CITA"].ToString());
+
+            //                        odtCronograma.Rows[1][cantidad_columnas_cronograma - 1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA PROGRAMADA";
+            //                        odtCronograma.Rows[2][cantidad_columnas_cronograma - 1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        bandera_cita_igual_prox_cita_anterior = false;
+            //                    }
+
+
+
+            //                }
+
+            //                if (odt.Rows.Count > 1 && i < odt.Rows.Count - 1)
+            //                {
+
+            //                    odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
+
+            //                    dtfecha_cita = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+            //                    dtfecha_prox_cita = Convert.ToDateTime(odt.Rows[i+1]["FECHA PROXIMA CITA"].ToString());
+
+
+            //                    dtfecha_prox_cita_anterior_registro = Convert.ToDateTime(odt.Rows[i - 1]["FECHA PROXIMA CITA"].ToString());
+            //                    dtfecha_cita_registro = Convert.ToDateTime(odt.Rows[i]["FECHA CITA"].ToString());
+
+            //                    if (dtfecha_prox_cita_anterior_registro.ToString("dd/MM/yyyy") == dtfecha_cita_registro.ToString("dd/MM/yyyy"))
+            //                    {
+            //                        bandera_cita_igual_prox_cita_anterior = true;
+            //                    }
+            //                }
+
+            //                if (!bandera_cita_igual_prox_cita_anterior)
+            //                {
+            //                    if (i == 0)
+            //                    {
+            //                        dtfecha_prox_cita_anterior_registro = Convert.ToDateTime(odt.Rows[0]["FECHA PROXIMA CITA"].ToString());
+            //                        dtfecha_cita_registro = Convert.ToDateTime(odt.Rows[1]["FECHA CITA"].ToString());
+
+            //                        if (dtfecha_prox_cita_anterior_registro.ToString("dd/MM/yyyy") == dtfecha_cita_registro.ToString("dd/MM/yyyy"))
+            //                        {
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
+            //                            odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
+            //                            odtCronograma.Rows[0][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                        }
+            //                        else {
+            //                            odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
+            //                            odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                            odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
+
+            //                            odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA PROGRAMADA";
+            //                            odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+
+            //                        }
+            //                    }
+            //                    else { 
+            //                        odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
+            //                        odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
+            //                        odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
+            //                        odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA PROGRAMADA";
+            //                        odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                    }
+            //                }
+
+            //                if (bandera_cita_igual_prox_cita_anterior) {
+            //                    if (i == odt.Rows.Count - 1) {
+            //                        odtCronograma.Rows[2][1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA PROGRAMADA";
+            //                    }
+            //                    else {
+            //                        odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA";
+            //                        odtCronograma.Rows[2][1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
+            //                        odtCronograma.Rows[0][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA PROGRAMADA";
+            //                        bandera_cita_igual_prox_cita_anterior = false;
+            //                    }
+
+
+            //                }
+
+
+
             //            }
-            //            else
-            //            {
-            //                odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(1);
-            //                odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])) + " CITA";
-            //                odtCronograma.Rows[2][1] = dtfecha_cita.ToString("dd/MM/yyyy");
-            //                odtCronograma.Rows[1][2] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                odtCronograma.Rows[2][2] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //            }
+
+            //            dgvCronograma.DataSource = odtCronograma;
+
+            //            /* Tercero consultamos la fecha de termino de gestacion como columnas al cronograma */
+
+            //            /* Cuarto consultamos el control puerperio y las añadimos como columnas al cronograma */
+
+            //            /* Quinto programamos 7 dias despues y 30 dias despues de control puerperio y las añadimos como columnas al cronograma */
+
+            //            /* Ubicamos la fecha de hoy en el cronograma */
+
+            //            /* Sexto añadimos la fecha de hoy en una tercera fila en la columna respectiva al cronograma */
             //        }
 
-            //            if (bandera_cita_igual_prox_cita_anterior)
-            //            {
-            //                if (i == odt.Rows.Count - 1)
-            //                {
-            //                    odtCronograma.Rows[2][1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                }
-            //                else
-            //                {
-            //                    odtCronograma.Rows[1][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA";
-            //                    odtCronograma.Rows[2][1] = dtfecha_prox_cita.ToString("dd/MM/yyyy");
-            //                    odtCronograma.Rows[0][1] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1) + " CITA PROGRAMADA";
-            //                    bandera_cita_igual_prox_cita_anterior = false;
-            //                }
-
-
-            //            }
-
-
-
-            //        }
-
-            //        dgvCronograma.DataSource = odtCronograma;
-
-            //        /* Tercero consultamos la fecha de termino de gestacion como columnas al cronograma */
-
-            //        /* Cuarto consultamos el control puerperio y las añadimos como columnas al cronograma */
-
-            //        /* Quinto programamos 7 dias despues y 30 dias despues de control puerperio y las añadimos como columnas al cronograma */
-
-            //        /* Ubicamos la fecha de hoy en el cronograma */
-
-            //        /* Sexto añadimos la fecha de hoy en una tercera fila en la columna respectiva al cronograma */
             //    }
-                    
-            //}
-            ////else
-            ////{
-            ////    MessageBox.Show("Por favor cerrar Cronograma.pdf", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    else
+            //    {
+            //        MessageBox.Show("Por favor cerrar Cronograma.pdf", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            ////}
+            //    }
 
 
-            
+
 
         }
     }
