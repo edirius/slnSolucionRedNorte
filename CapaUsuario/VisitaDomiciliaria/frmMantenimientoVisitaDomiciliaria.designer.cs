@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -44,8 +44,21 @@
             this.txtFuaGestante = new System.Windows.Forms.TextBox();
             this.txtDetalleGestante = new System.Windows.Forms.TextBox();
             this.dgvVisitaDomiciliariaGestante = new System.Windows.Forms.DataGridView();
+            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvVisitaDomiciliariaPuerperaRN = new System.Windows.Forms.DataGridView();
+            this.idtvisitadomiciliariapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivopuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fuapuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detallepuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivoreciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fuareciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detallereciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -81,19 +94,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.idtvisitadomiciliariagestante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtvisitadomiciliariapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechapuerperarn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivopuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fuapuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detallepuerpera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivoreciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fuareciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detallereciennacido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -314,6 +314,39 @@
             this.dgvVisitaDomiciliariaGestante.TabIndex = 8;
             this.dgvVisitaDomiciliariaGestante.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliaria_CellClick);
             // 
+            // idtvisitadomiciliariagestante
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle3;
+            this.idtvisitadomiciliariagestante.HeaderText = "ID VISITA DOMICILIARIA GESTANTE";
+            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
+            this.idtvisitadomiciliariagestante.ReadOnly = true;
+            this.idtvisitadomiciliariagestante.Visible = false;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "FECHA";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // motivo
+            // 
+            this.motivo.HeaderText = "MOTIVO";
+            this.motivo.Name = "motivo";
+            this.motivo.ReadOnly = true;
+            // 
+            // fua
+            // 
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.HeaderText = "DETALLE";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvVisitaDomiciliariaPuerperaRN);
@@ -352,6 +385,57 @@
             this.dgvVisitaDomiciliariaPuerperaRN.Size = new System.Drawing.Size(951, 134);
             this.dgvVisitaDomiciliariaPuerperaRN.TabIndex = 113;
             this.dgvVisitaDomiciliariaPuerperaRN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitaDomiciliariaPuerperaRN_CellClick);
+            // 
+            // idtvisitadomiciliariapuerperarn
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idtvisitadomiciliariapuerperarn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.idtvisitadomiciliariapuerperarn.HeaderText = "ID VISITA DOMICILIARIA PUERPERA";
+            this.idtvisitadomiciliariapuerperarn.Name = "idtvisitadomiciliariapuerperarn";
+            this.idtvisitadomiciliariapuerperarn.ReadOnly = true;
+            this.idtvisitadomiciliariapuerperarn.Visible = false;
+            // 
+            // fechapuerperarn
+            // 
+            this.fechapuerperarn.HeaderText = "FECHA";
+            this.fechapuerperarn.Name = "fechapuerperarn";
+            this.fechapuerperarn.ReadOnly = true;
+            // 
+            // motivopuerpera
+            // 
+            this.motivopuerpera.HeaderText = "MOTIVO PUERPERA";
+            this.motivopuerpera.Name = "motivopuerpera";
+            this.motivopuerpera.ReadOnly = true;
+            // 
+            // fuapuerpera
+            // 
+            this.fuapuerpera.HeaderText = "FUA PUERPERA";
+            this.fuapuerpera.Name = "fuapuerpera";
+            this.fuapuerpera.ReadOnly = true;
+            // 
+            // detallepuerpera
+            // 
+            this.detallepuerpera.HeaderText = "DETALLE PUERPERA";
+            this.detallepuerpera.Name = "detallepuerpera";
+            this.detallepuerpera.ReadOnly = true;
+            // 
+            // motivoreciennacido
+            // 
+            this.motivoreciennacido.HeaderText = "MOTIVO RECIEN NACIDO";
+            this.motivoreciennacido.Name = "motivoreciennacido";
+            this.motivoreciennacido.ReadOnly = true;
+            // 
+            // fuareciennacido
+            // 
+            this.fuareciennacido.HeaderText = "FUA RECIEN NACIDO";
+            this.fuareciennacido.Name = "fuareciennacido";
+            this.fuareciennacido.ReadOnly = true;
+            // 
+            // detallereciennacido
+            // 
+            this.detallereciennacido.HeaderText = "DETALLE RECIEN NACIDO";
+            this.detallereciennacido.Name = "detallereciennacido";
+            this.detallereciennacido.ReadOnly = true;
             // 
             // tableLayoutPanel2
             // 
@@ -811,90 +895,6 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // idtvisitadomiciliariagestante
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliariagestante.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idtvisitadomiciliariagestante.HeaderText = "ID VISITA DOMICILIARIA GESTANTE";
-            this.idtvisitadomiciliariagestante.Name = "idtvisitadomiciliariagestante";
-            this.idtvisitadomiciliariagestante.ReadOnly = true;
-            this.idtvisitadomiciliariagestante.Visible = false;
-            // 
-            // fecha
-            // 
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // motivo
-            // 
-            this.motivo.HeaderText = "MOTIVO";
-            this.motivo.Name = "motivo";
-            this.motivo.ReadOnly = true;
-            // 
-            // fua
-            // 
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            // 
-            // idtvisitadomiciliariapuerperarn
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idtvisitadomiciliariapuerperarn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idtvisitadomiciliariapuerperarn.HeaderText = "ID VISITA DOMICILIARIA PUERPERA";
-            this.idtvisitadomiciliariapuerperarn.Name = "idtvisitadomiciliariapuerperarn";
-            this.idtvisitadomiciliariapuerperarn.ReadOnly = true;
-            this.idtvisitadomiciliariapuerperarn.Visible = false;
-            // 
-            // fechapuerperarn
-            // 
-            this.fechapuerperarn.HeaderText = "FECHA";
-            this.fechapuerperarn.Name = "fechapuerperarn";
-            this.fechapuerperarn.ReadOnly = true;
-            // 
-            // motivopuerpera
-            // 
-            this.motivopuerpera.HeaderText = "MOTIVO PUERPERA";
-            this.motivopuerpera.Name = "motivopuerpera";
-            this.motivopuerpera.ReadOnly = true;
-            // 
-            // fuapuerpera
-            // 
-            this.fuapuerpera.HeaderText = "FUA PUERPERA";
-            this.fuapuerpera.Name = "fuapuerpera";
-            this.fuapuerpera.ReadOnly = true;
-            // 
-            // detallepuerpera
-            // 
-            this.detallepuerpera.HeaderText = "DETALLE PUERPERA";
-            this.detallepuerpera.Name = "detallepuerpera";
-            this.detallepuerpera.ReadOnly = true;
-            // 
-            // motivoreciennacido
-            // 
-            this.motivoreciennacido.HeaderText = "MOTIVO RECIEN NACIDO";
-            this.motivoreciennacido.Name = "motivoreciennacido";
-            this.motivoreciennacido.ReadOnly = true;
-            // 
-            // fuareciennacido
-            // 
-            this.fuareciennacido.HeaderText = "FUA RECIEN NACIDO";
-            this.fuareciennacido.Name = "fuareciennacido";
-            this.fuareciennacido.ReadOnly = true;
-            // 
-            // detallereciennacido
-            // 
-            this.detallereciennacido.HeaderText = "DETALLE RECIEN NACIDO";
-            this.detallereciennacido.Name = "detallereciennacido";
-            this.detallereciennacido.ReadOnly = true;
             // 
             // frmMantenimientoVisitaDomiciliaria
             // 
