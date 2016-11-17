@@ -36,26 +36,32 @@ namespace CapaUsuario.CitaPreNatal
         {
             //MessageBox.Show(Establecimiento);
             CargarDatos();
-            if (dtgCitasMedicas.Rows.Count > 0)
-            {
-                btnGuardar.Enabled = true;
-            }
-            else
-            {
-                btnGuardar.Enabled = false;
-            }
-            
+            //if (dtgCitasMedicas.Rows.Count > 0)
+            //{
+            //    btnGuardar.Enabled = true;
+            //}
+            //else
+            //{
+            //    btnGuardar.Enabled = false;
+            //}
+            estado = "nuevo";
         }
 
         private void CargarDatos()
         {
             try
             {
+                
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 dtpProximaCita.MinDate = dtpFechaCita.Value; 
                 dtgCitasMedicas.DataSource = oCitaPrenatal.ListaCitasPreNatal();
-               
-                
+
+                txtNumeroCita.Text = (dtgCitasMedicas.Rows.Count + 1).ToString();
+                if (dtgCitasMedicas.Rows.Count > 0)
+                {
+                    dtpFechaCita.Value = Convert.ToDateTime( dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells["colFechaProximaCita"].Value) ;
+                }
+                estado = "nuevo";
             }
             catch (Exception e)
             {
@@ -69,7 +75,7 @@ namespace CapaUsuario.CitaPreNatal
             txtNumeroCita.Text = "";
             txtFUA.Text = "";
             txtNumeroCita.Text = (dtgCitasMedicas.Rows.Count + 1).ToString();
-            btnGuardar.Enabled = true;
+            //btnGuardar.Enabled = true;
             if (dtgCitasMedicas.Rows.Count > 0)
             {
                 dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells[9].Value);
@@ -205,11 +211,12 @@ namespace CapaUsuario.CitaPreNatal
             {
                 if (estado == "modificar")
                 {
-                    if (MessageBox.Show("Eliminar", "¿Desea eliminar?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Desea Eliminar la Cita Prenatal", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString();
                         oCitaPrenatal.EliminarCita(oCitaPrenatal);
                         MessageBox.Show("Se elimino la Cita Pre Natal");
+                        CargarDatos();
                     }
                 }
                 else
@@ -222,6 +229,21 @@ namespace CapaUsuario.CitaPreNatal
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtgCitasMedicas_Click(object sender, EventArgs e)
+        {
+            if (dtgCitasMedicas.Rows.Count > 0)
+            {
+                txtNumeroCita.Text = Convert.ToString(dtgCitasMedicas.SelectedRows[0].Cells["colnumerocita"].Value);
+                dtpFechaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colfechacita"].Value);
+                numEdadGestacional.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["coledadgestacional"].Value);
+                numPresionArterialD.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colPresionArterialD"].Value);
+                numPresionArterialS.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colpresionarterials"].Value);
+                dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
+                txtFUA.Text = Convert.ToString(dtgCitasMedicas.SelectedRows[0].Cells["colFUA"].Value);
+                estado = "modificar";
+            }
         }
     }
 }

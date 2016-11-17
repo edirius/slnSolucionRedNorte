@@ -10,15 +10,15 @@ namespace CapaDeDatos
 
     public class cBaseDeDatos
     {
-       MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder(); 
-        
-        public void Conectar()
-        {
-            builder.Server = "localhost";
-            builder.UserID = "root";
-            builder.Password = "root";
-            builder.Database = "bdcontrolgestantes";
-        }
-        
+        //MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+
+        //public void Conectar()
+        //{
+        //    builder.Server = "localhost";
+        //    builder.UserID = "root";
+        //    builder.Password = "root";
+        //    builder.Database = "bdcontrolgestantes2";
+        //}
+
     }
 }

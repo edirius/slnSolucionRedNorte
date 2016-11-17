@@ -228,6 +228,13 @@ namespace CapaUsuario.ControlPeuperio
                     MessageBox.Show("La paciente no tiene registro de Termino de Gestación.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Close();
                 }
+                else
+                {
+                    foreach (DataRow row in miTerminoGestacion.ListarTerminoGestacion(sidthistoriaclinica).Rows)
+                    {
+                        dtpFecha.MinDate = Convert.ToDateTime(row[4]);
+                    }
+                }
             }
             catch (Exception m)
             {

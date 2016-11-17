@@ -43,6 +43,7 @@ namespace CapaUsuario
         {
             Paciente.frmPaciente fPaciente = new Paciente.frmPaciente();
             fPaciente.RecibirDatos("", "", "", "", "", "", DateTime.Today, "", "", IdtEstablecimientoSalud, 1);
+            fPaciente.MdiParent = this.MdiParent;
             if (fPaciente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CargarDatos();

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
 
-namespace CapaUsuario.EstablecimientoSalud
+namespace Monitoreo.EstablecimientoSalud
 {
     public partial class frmMicrored : Form
     {
@@ -205,6 +205,11 @@ namespace CapaUsuario.EstablecimientoSalud
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void frmMicrored_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

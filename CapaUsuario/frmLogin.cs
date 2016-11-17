@@ -50,9 +50,10 @@ namespace CapaUsuario.Seguridad
                 {
                     frmMenu Menu = new frmMenu();
                     MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu.obtenerDatos(Usuario);
                     Menu.Show();
                     this.Hide();
-                    Menu.obtenerDatos(Usuario);
+                   
                 }
                 else
                 {

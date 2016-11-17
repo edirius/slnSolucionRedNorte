@@ -34,18 +34,39 @@ namespace Monitoreo
             fMantenimientoAdministrador.Show();
         }
 
-        private void microRedToolStripMenuItem_Click(object sender, EventArgs e)
+        private void microRedToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmMicrored miMicrored = new EstablecimientoSalud.frmMicrored();
+            miMicrored.MdiParent = this;
+            miMicrored.Show();
+        }
+
+        private void establecimientoSaludToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmEstablecimientoSalud frmEstable = new EstablecimientoSalud.frmEstablecimientoSalud();
+            frmEstable.MdiParent = this;
+            frmEstable.Show();
+        }
+
+        private void morbilidadToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //Morbilidad.frmMantenimientoMorbilidad fMantenimientoMorbilidad = new Morbilidad.frmMantenimientoMorbilidad();
+
+            //CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            //if (oUtilitarios.verificarventanaabierta("frmMantenimientoMorbilidad"))
+            //{
+            //    //fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+            //    fMantenimientoMorbilidad.MdiParent = this;
+            //    fMantenimientoMorbilidad.Show();
+            //}
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reportes.frmReporteMicroRED fReporteMicroRED = new Reportes.frmReporteMicroRED();
             fReporteMicroRED.MdiParent = this;
             fReporteMicroRED.Show();
-        }
-
-        private void establecimientosDeSaludToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Reportes.frmReporteEstablecimientoSalud fReporteEstablecimientoSalud = new Reportes.frmReporteEstablecimientoSalud();
-            fReporteEstablecimientoSalud.MdiParent = this;
-            fReporteEstablecimientoSalud.Show();
         }
     }
 }

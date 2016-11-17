@@ -16,6 +16,8 @@ namespace CapaUsuario.Paciente
         string sidtpaciente = "";
         string sidtestablecimientosalud = "";
 
+        CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
+
         public frmPaciente()
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace CapaUsuario.Paciente
 
         private void frmPaciente_Load(object sender, EventArgs e)
         {
-
+            txtDNI.Select();
+            txtDNI.Focus();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -31,7 +34,6 @@ namespace CapaUsuario.Paciente
             try
             {
                 bool bOk = false;
-                CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
                 miPaciente.idtpaciente = sidtpaciente;
                 miPaciente.codigohistoriaclinica = txtCodigoHistoriaClinica.Text;
                 miPaciente.nombres = txtNombre.Text ;
@@ -62,11 +64,11 @@ namespace CapaUsuario.Paciente
                 {
                     if (saccion == 1)
                     {
-                        MessageBox.Show("Gestante agregado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Gestante agregado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     if (saccion == 2)
                     {
-                        MessageBox.Show("Datos Gestante modificados correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Datos Gestante modificados correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
@@ -89,12 +91,13 @@ namespace CapaUsuario.Paciente
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
             DataTable oDataPaciente = new DataTable();
+            oDataPaciente = miPaciente.ListarPaciente(sidtestablecimientosalud);
 
             if (txtDNI.Text.Length == 8)
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
                 {
-                    MessageBox.Show("El DNI ingresado ya pertenece a otro Obrero.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El DNI ingresado ya pertenece a otra Gestante.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtDNI.Text = "";
                     return;
                 }
@@ -114,6 +117,86 @@ namespace CapaUsuario.Paciente
             txtCelular.Text = ptelefono;
             sidtestablecimientosalud = pidtestablecimientosalud;
             saccion = paccion;
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                txtCodigoHistoriaClinica.Focus();
+            }
+        }
+
+        private void txtCodigoHistoriaClinica_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtNombre.Focus();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApePaterno.Focus();
+            }
+        }
+
+        private void txtApePaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApeMaterno.Focus();
+            }
+        }
+
+        private void txtApeMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFechaNacimiento.Focus();
+            }
+        }
+
+        private void dtpFechaNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCelular.Focus();
+            }
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDireccion.Focus();
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnAceptar.Focus();
+            }
         }
     }
 }

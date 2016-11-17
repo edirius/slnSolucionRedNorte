@@ -13,6 +13,7 @@ namespace CapaDeNegocios.Exportacion
     public class cExportar
     {
         string rutaArchivo;
+        public string CodigoEstablecimiento { get; set; }
 
         string[] tablas;
 
@@ -39,16 +40,16 @@ namespace CapaDeNegocios.Exportacion
 
         public bool BorrarDatosTabla(string codigoEstablecimiento)
         {
-            //try
-            //{
-            //    Conexion.GDatos.Ejecutar("spBorrarDatosTabla",codigoEstablecimiento);
-            return true;
-            //}
-            //catch (Exception)
-            //{
+            try
+            {
+                Conexion.GDatos.Ejecutar("spBorrarDatosTabla", codigoEstablecimiento);
+                return true;
+            }
+            catch (Exception)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
         }
 
         public bool InsertarDatosTabla(string nombreTabla, string[] datosTabla)
@@ -84,15 +85,15 @@ namespace CapaDeNegocios.Exportacion
                     switch (tablaAuxiliar.Columns[j].DataType.ToString())
                     {
                         case "System.String":
-                            lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            lineaSQL = lineaSQL + "'" + cSeguridad.DesEncriptar(columnas[j]) + "'";
                             break;
                         case "System.DateTime":
-                            DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
 
                             lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
                             break;
                         default:
-                            lineaSQL = lineaSQL + columnas[j];
+                            lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
                             break;
                     }
                     
@@ -132,6 +133,7 @@ namespace CapaDeNegocios.Exportacion
                     foreach (string iTablas in nombresTablas)
                     {
                         tAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + iTablas);
+                        tAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + iTablas + " where left(" + tAuxiliar.Columns[0].ColumnName + ", 4) = '" + CodigoEstablecimiento + "'");
                         if (tAuxiliar.Rows.Count > 0)
                         {
                             Output.WriteLine("@@" + iTablas + "@@");
@@ -140,7 +142,7 @@ namespace CapaDeNegocios.Exportacion
 
                                 foreach (DataColumn col in tAuxiliar.Columns)
                                 {
-                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write(",");
@@ -213,16 +215,16 @@ namespace CapaDeNegocios.Exportacion
                     //            oHistoriaClinica.Codigohistoriaclinica = camposAuxiliar[0];
                     //            oHistoriaClinica.Tipollegada = camposAuxiliar[0];
                     //            oHistoriaClinica.Tiempollegada = camposAuxiliar[0];
-                    //            oHistoriaClinica.Edad =  Convert.ToInt16(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Edad = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Gestas = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Partos = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Abortos = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Hijosvivos = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Hijosmuertos = Convert.ToInt16(camposAuxiliar[0]);
-                    //            oHistoriaClinica.Fur = Convert.ToDateTime ( camposAuxiliar[0]);
-                    //            oHistoriaClinica.Fpp = Convert.ToDateTime( camposAuxiliar[0]);
+                    //            oHistoriaClinica.Fur = Convert.ToDateTime(camposAuxiliar[0]);
+                    //            oHistoriaClinica.Fpp = Convert.ToDateTime(camposAuxiliar[0]);
 
-                    //            oHistoriaClinica.Trimestreapn =Convert.ToInt16( camposAuxiliar[0]);
+                    //            oHistoriaClinica.Trimestreapn = Convert.ToInt16(camposAuxiliar[0]);
                     //            oHistoriaClinica.Diaapn = camposAuxiliar[0];
                     //            oHistoriaClinica.Observaciones = camposAuxiliar[0];
                     //            oHistoriaClinica.Idtpaciente = camposAuxiliar[0];
@@ -238,7 +240,7 @@ namespace CapaDeNegocios.Exportacion
                     //}
 
                 }
-                
+
                 return true;
             }
             catch ( Exception ex)

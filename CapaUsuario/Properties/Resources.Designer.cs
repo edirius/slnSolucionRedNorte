@@ -123,9 +123,29 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BOTON22 {
+        internal static System.Drawing.Bitmap btnSuculento {
             get {
-                object obj = ResourceManager.GetObject("BOTON22", resourceCulture);
+                object obj = ResourceManager.GetObject("btnSuculento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EMBARAZADA {
+            get {
+                object obj = ResourceManager.GetObject("EMBARAZADA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +196,26 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap Fondo6 {
             get {
                 object obj = ResourceManager.GetObject("Fondo6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoFormularios {
+            get {
+                object obj = ResourceManager.GetObject("FondoFormularios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoFormularios2 {
+            get {
+                object obj = ResourceManager.GetObject("FondoFormularios2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +316,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap sirena_04 {
             get {
                 object obj = ResourceManager.GetObject("sirena-04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VisitaDuranteEmbarazo {
+            get {
+                object obj = ResourceManager.GetObject("VisitaDuranteEmbarazo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

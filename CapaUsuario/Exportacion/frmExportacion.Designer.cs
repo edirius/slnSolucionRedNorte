@@ -37,11 +37,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnImportar = new System.Windows.Forms.Button();
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(67, 160);
+            this.btnExportar.Location = new System.Drawing.Point(84, 143);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(116, 69);
             this.btnExportar.TabIndex = 0;
@@ -52,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 47);
+            this.label1.Location = new System.Drawing.Point(33, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 13);
             this.label1.TabIndex = 1;
@@ -61,7 +63,7 @@
             // lblEstablecimiento
             // 
             this.lblEstablecimiento.AutoSize = true;
-            this.lblEstablecimiento.Location = new System.Drawing.Point(239, 46);
+            this.lblEstablecimiento.Location = new System.Drawing.Point(226, 41);
             this.lblEstablecimiento.Name = "lblEstablecimiento";
             this.lblEstablecimiento.Size = new System.Drawing.Size(35, 13);
             this.lblEstablecimiento.TabIndex = 2;
@@ -70,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 87);
+            this.label2.Location = new System.Drawing.Point(36, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 3;
@@ -79,7 +81,7 @@
             // lblObstetra
             // 
             this.lblObstetra.AutoSize = true;
-            this.lblObstetra.Location = new System.Drawing.Point(242, 86);
+            this.lblObstetra.Location = new System.Drawing.Point(226, 81);
             this.lblObstetra.Name = "lblObstetra";
             this.lblObstetra.Size = new System.Drawing.Size(35, 13);
             this.lblObstetra.TabIndex = 4;
@@ -95,9 +97,9 @@
             // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(462, 160);
+            this.btnImportar.Location = new System.Drawing.Point(251, 143);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(133, 69);
+            this.btnImportar.Size = new System.Drawing.Size(108, 75);
             this.btnImportar.TabIndex = 6;
             this.btnImportar.Text = "IMPORTAR";
             this.btnImportar.UseVisualStyleBackColor = true;
@@ -107,11 +109,23 @@
             // 
             this.dlgAbrir.FileName = "openFileDialog1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            //this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.botonNuevo;
+            this.pictureBox1.Location = new System.Drawing.Point(564, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(105, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 110;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmExportacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 471);
+            this.ClientSize = new System.Drawing.Size(681, 414);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObstetra);
@@ -123,6 +137,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exportar Datos";
             this.Load += new System.EventHandler(this.frmExportacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +154,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.OpenFileDialog dlgAbrir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
