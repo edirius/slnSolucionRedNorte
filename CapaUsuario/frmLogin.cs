@@ -25,7 +25,7 @@ namespace CapaUsuario.Seguridad
         {
             try
             {
-                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes2", "root", "root");
+                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
                 //MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
             }
             catch (Exception ex)
@@ -49,8 +49,10 @@ namespace CapaUsuario.Seguridad
                 if (numero == 1)
                 {
                     frmMenu Menu = new frmMenu();
+                    Alertas.frmAlerta Alerta = new Alertas.frmAlerta();
                     MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Menu.Show();
+                    Alerta.Show();
                     this.Hide();
                     Menu.obtenerDatos(Usuario);
                 }

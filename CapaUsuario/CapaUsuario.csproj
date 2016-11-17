@@ -653,6 +653,7 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\botonNuevo.png" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
