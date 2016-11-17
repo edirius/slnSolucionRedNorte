@@ -233,29 +233,23 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="cVariables.cs" />
-    <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EstablecimientoSalud\frmEstablecimientoSalud.Designer.cs">
-      <DependentUpon>frmEstablecimientoSalud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EstablecimientoSalud\frmMicrored.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EstablecimientoSalud\frmMicrored.Designer.cs">
-      <DependentUpon>frmMicrored.cs</DependentUpon>
-    </Compile>
     <Compile Include="Exportacion\frmExportacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Exportacion\frmExportacion.Designer.cs">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPruebaExportar.cs">
+    <Compile Include="frmMantenimientoMorbilidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPruebaExportar.Designer.cs">
-      <DependentUpon>frmPruebaExportar.cs</DependentUpon>
+    <Compile Include="frmMantenimientoMorbilidad.Designer.cs">
+      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMorbilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMorbilidad.Designer.cs">
+      <DependentUpon>frmMorbilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Paciente\frmGestante.cs">
       <SubType>Form</SubType>
@@ -269,23 +263,11 @@
     <Compile Include="frmHistoriaClinica.Designer.cs">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMantenimientoMorbilidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMantenimientoMorbilidad.Designer.cs">
-      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMorbilidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMorbilidad.Designer.cs">
-      <DependentUpon>frmMorbilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Obstetra\frmMantenimientoObstetra.cs">
       <SubType>Form</SubType>
@@ -465,17 +447,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crCantidadGestantes.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="EstablecimientoSalud\frmEstablecimientoSalud.resx">
-      <DependentUpon>frmEstablecimientoSalud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EstablecimientoSalud\frmMicrored.resx">
-      <DependentUpon>frmMicrored.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Exportacion\frmExportacion.resx">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPruebaExportar.resx">
-      <DependentUpon>frmPruebaExportar.cs</DependentUpon>
+    <EmbeddedResource Include="frmMantenimientoMorbilidad.resx">
+      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMorbilidad.resx">
+      <DependentUpon>frmMorbilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmGestante.resx">
       <DependentUpon>frmGestante.cs</DependentUpon>
@@ -483,14 +462,8 @@
     <EmbeddedResource Include="frmHistoriaClinica.resx">
       <DependentUpon>frmHistoriaClinica.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMantenimientoMorbilidad.resx">
-      <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMorbilidad.resx">
-      <DependentUpon>frmMorbilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obstetra\frmMantenimientoObstetra.resx">
       <DependentUpon>frmMantenimientoObstetra.cs</DependentUpon>

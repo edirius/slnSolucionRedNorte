@@ -47,5 +47,33 @@ namespace Monitoreo
             fReporteEstablecimientoSalud.MdiParent = this;
             fReporteEstablecimientoSalud.Show();
         }
+
+        private void morbilidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Morbilidad.frmMantenimientoMorbilidad fMantenimientoMorbilidad = new Morbilidad.frmMantenimientoMorbilidad();
+
+            //CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            //if (oUtilitarios.verificarventanaabierta("frmMantenimientoMorbilidad"))
+            //{
+            //    //fMantenimientoMorbilidad.CodigoEstablecimiento = IdEstablecimientoSalud;
+            //    fMantenimientoMorbilidad.MdiParent = this;
+            //    fMantenimientoMorbilidad.Show();
+            //}
+        }
+
+        private void microRedToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmMicrored miMicrored = new EstablecimientoSalud.frmMicrored();
+            miMicrored.MdiParent = this;
+            miMicrored.Show();
+        }
+
+        private void establecimientoSaludToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstablecimientoSalud.frmEstablecimientoSalud frmEstable = new EstablecimientoSalud.frmEstablecimientoSalud();
+            frmEstable.MdiParent = this;
+            frmEstable.Show();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace CapaUsuario.EstablecimientoSalud
+﻿namespace Monitoreo.EstablecimientoSalud
 {
     partial class frmEstablecimientoSalud
     {

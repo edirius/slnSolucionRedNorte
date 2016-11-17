@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDeNegocios;
 
-namespace CapaUsuario.EstablecimientoSalud
+namespace Monitoreo.EstablecimientoSalud
 {
     public partial class frmEstablecimientoSalud : Form
     {

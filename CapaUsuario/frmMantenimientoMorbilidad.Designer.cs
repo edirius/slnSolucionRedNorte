@@ -86,9 +86,9 @@
             this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtDescripcion.Location = new System.Drawing.Point(102, 3);
+            this.txtDescripcion.Location = new System.Drawing.Point(103, 3);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(671, 24);
+            this.txtDescripcion.Size = new System.Drawing.Size(670, 24);
             this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
@@ -128,9 +128,9 @@
             this.groupBox3.Controls.Add(this.rbPotencial);
             this.groupBox3.Controls.Add(this.rbExtrema);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox3.Location = new System.Drawing.Point(102, 31);
+            this.groupBox3.Location = new System.Drawing.Point(103, 31);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(671, 55);
+            this.groupBox3.Size = new System.Drawing.Size(670, 55);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Morbilidad";
@@ -212,9 +212,9 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtBuscar.Location = new System.Drawing.Point(79, 3);
+            this.txtBuscar.Location = new System.Drawing.Point(77, 3);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(177, 24);
+            this.txtBuscar.Size = new System.Drawing.Size(173, 24);
             this.txtBuscar.TabIndex = 7;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -261,7 +261,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.50191F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.49809F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 455F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 461F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtBuscar, 1, 0);
@@ -278,7 +278,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(262, 0);
+            this.label3.Location = new System.Drawing.Point(256, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 35);
             this.label3.TabIndex = 100;
@@ -293,7 +293,7 @@
             "Todo",
             "Extrema",
             "Potencial"});
-            this.cbFiltrar.Location = new System.Drawing.Point(323, 3);
+            this.cbFiltrar.Location = new System.Drawing.Point(317, 3);
             this.cbFiltrar.Name = "cbFiltrar";
             this.cbFiltrar.Size = new System.Drawing.Size(162, 26);
             this.cbFiltrar.TabIndex = 101;

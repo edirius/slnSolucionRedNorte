@@ -37,6 +37,11 @@
             this.establecimientosDeSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.morbilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.microRedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.establecimientoSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,8 +72,10 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mantenimientoToolStripMenuItem,
             this.monitoreoToolStripMenuItem,
-            this.mantenimientoToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem1,
+            this.redToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(859, 24);
@@ -103,8 +110,8 @@
             this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administradoresToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.mantenimientoToolStripMenuItem.Text = "Personal";
             // 
             // administradoresToolStripMenuItem
             // 
@@ -112,6 +119,44 @@
             this.administradoresToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.administradoresToolStripMenuItem.Text = "Administradores";
             this.administradoresToolStripMenuItem.Click += new System.EventHandler(this.administradoresToolStripMenuItem_Click);
+            // 
+            // mantenimientoToolStripMenuItem1
+            // 
+            this.mantenimientoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.morbilidadToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem1.Name = "mantenimientoToolStripMenuItem1";
+            this.mantenimientoToolStripMenuItem1.Size = new System.Drawing.Size(101, 20);
+            this.mantenimientoToolStripMenuItem1.Text = "Mantenimiento";
+            // 
+            // morbilidadToolStripMenuItem
+            // 
+            this.morbilidadToolStripMenuItem.Name = "morbilidadToolStripMenuItem";
+            this.morbilidadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.morbilidadToolStripMenuItem.Text = "Morbilidad";
+            this.morbilidadToolStripMenuItem.Click += new System.EventHandler(this.morbilidadToolStripMenuItem_Click);
+            // 
+            // redToolStripMenuItem
+            // 
+            this.redToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.microRedToolStripMenuItem1,
+            this.establecimientoSaludToolStripMenuItem});
+            this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+            this.redToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.redToolStripMenuItem.Text = "RED NORTE";
+            // 
+            // microRedToolStripMenuItem1
+            // 
+            this.microRedToolStripMenuItem1.Name = "microRedToolStripMenuItem1";
+            this.microRedToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.microRedToolStripMenuItem1.Text = "Micro Red";
+            this.microRedToolStripMenuItem1.Click += new System.EventHandler(this.microRedToolStripMenuItem1_Click);
+            // 
+            // establecimientoSaludToolStripMenuItem
+            // 
+            this.establecimientoSaludToolStripMenuItem.Name = "establecimientoSaludToolStripMenuItem";
+            this.establecimientoSaludToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.establecimientoSaludToolStripMenuItem.Text = "Establecimiento Salud";
+            this.establecimientoSaludToolStripMenuItem.Click += new System.EventHandler(this.establecimientoSaludToolStripMenuItem_Click);
             // 
             // frmMDI
             // 
@@ -147,6 +192,11 @@
         private System.Windows.Forms.ToolStripMenuItem monitoreoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem microRedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem establecimientosDeSaludToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem morbilidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem microRedToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem establecimientoSaludToolStripMenuItem;
     }
 }
 
