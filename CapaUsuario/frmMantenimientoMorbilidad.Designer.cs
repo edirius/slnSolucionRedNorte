@@ -212,7 +212,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtBuscar.Location = new System.Drawing.Point(79, 3);
+            this.txtBuscar.Location = new System.Drawing.Point(78, 3);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(175, 24);
             this.txtBuscar.TabIndex = 7;
@@ -261,7 +261,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.50191F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.49809F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 457F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 458F));
             this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtBuscar, 1, 0);
@@ -278,7 +278,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(260, 0);
+            this.label3.Location = new System.Drawing.Point(259, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 35);
             this.label3.TabIndex = 100;
@@ -293,7 +293,7 @@
             "Todo",
             "Extrema",
             "Potencial"});
-            this.cbFiltrar.Location = new System.Drawing.Point(321, 3);
+            this.cbFiltrar.Location = new System.Drawing.Point(320, 3);
             this.cbFiltrar.Name = "cbFiltrar";
             this.cbFiltrar.Size = new System.Drawing.Size(162, 26);
             this.cbFiltrar.TabIndex = 101;
