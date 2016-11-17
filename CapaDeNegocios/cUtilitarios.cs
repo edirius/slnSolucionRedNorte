@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Windows.Forms;
 using CapaDeDatos;
+using System.Data;
 
 namespace CapaDeNegocios
 {
@@ -99,6 +100,17 @@ namespace CapaDeNegocios
                 return false;
             }
         }
+
+        public DataTable enumerar_datatable(DataTable dt, int posicion)
+        {
+            dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i][posicion] = i + 1;
+            }
+            return dt;
+        }
+
 
         public string GenerarNumeroMasculino(int N)
         {

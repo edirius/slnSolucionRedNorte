@@ -79,6 +79,7 @@ namespace CapaUsuario
 
             cbYear.SelectedItem = cbYear.Items[0];
             cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
+            
         }
 
         public DataTable enumerar_datatable(DataTable dt, int posicion ) {
