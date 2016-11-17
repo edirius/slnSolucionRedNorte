@@ -102,6 +102,7 @@ namespace CapaDeNegocios
 
         public string GenerarNumeroMasculino(int N)
         {
+
             String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
             "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
             "NOVENO" };
