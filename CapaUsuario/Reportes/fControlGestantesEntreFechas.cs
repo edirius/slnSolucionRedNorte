@@ -22,6 +22,8 @@ namespace CapaUsuario.Reportes
     {
         string folderPath = "C:\\PDFs\\";
         PdfPCell cell;
+        public string IdtHistoriaClinica { get; set; }
+        public string Idtobstetra { get; set; }
 
         const int ERROR_SHARING_VIOLATION = 32;
         const int ERROR_LOCK_VIOLATION = 33;
@@ -29,47 +31,16 @@ namespace CapaUsuario.Reportes
         DateTime fecha_inicio;
         DateTime fecha_fin;
 
-        public string Idtobstetra { get; set; }
+        
 
-        public string IdtHistoriaClinica { get; set; }
+        
 
         public fControlGestantesEntreFechas()
         {
             InitializeComponent();
         }
 
-        protected virtual bool IsFileinUse(FileInfo file, string path)
-        {
-            FileStream stream = null;
-
-            if (!File.Exists(path))
-            {
-                return false;
-            }
-            else
-            {
-                try
-                {
-                    stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
-
-                }
-                catch (IOException)
-                {
-                    //the file is unavailable because it is:
-                    //still being written to
-                    //or being processed by another thread
-                    //or does not exist (has already been processed)
-                    return true;
-
-                }
-                finally
-                {
-                    if (stream != null)
-                        stream.Close();
-                }
-                return false;
-            }
-        }
+ 
 
         private void fControlGestantesEntreFechas_Load(object sender, EventArgs e)
         {
@@ -85,14 +56,17 @@ namespace CapaUsuario.Reportes
             CapaDeNegocios.ControlPeuperio.cControlPeuperio oControlPuerperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
             CapaDeNegocios.RecienNacido.cRecienNacido oRecienNacido = new CapaDeNegocios.RecienNacido.cRecienNacido();
             CapaUsuario.frmHistoriaClinica oHC = new CapaUsuario.frmHistoriaClinica("","");
+
+            dtpFechaInicio.Focus();
+
         }
 
         private void buImprimir_Click(object sender, EventArgs e)
         {
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
             FileInfo file = new FileInfo(@"C:\PDFs\ControGestantesEntreFechas.pdf");
             bool estaAbierto = false;
-            estaAbierto = IsFileinUse(file, @"C:\PDFs\ControGestantesEntreFechas.pdf");
-
+            estaAbierto = oUtilitarios.esta_en_uso(file, @"C:\PDFs\ControGestantesEntreFechas.pdf");
  
             if (!estaAbierto)
             {
@@ -148,8 +122,18 @@ namespace CapaUsuario.Reportes
             oHistoriaClinica.fecha_inicio = fecha_inicio;
             oHistoriaClinica.fecha_fin = fecha_fin;
 
-            odtHC = oHistoriaClinica.ReporteHistoriaClinicaXObstetraXFechas();
+            if (cbTranseunte.Checked == true)
+                oHistoriaClinica.Transeunte = 1;
+            else
+                oHistoriaClinica.Transeunte = 0;
 
+            if (cbArchivado.Checked == true)
+                oHistoriaClinica.Archivado = 1;
+            else
+                oHistoriaClinica.Archivado = 0;
+
+
+            odtHC = oHistoriaClinica.ReporteHistoriaClinicaXObstetraXFechasYTranseuntesYArchivado();
 
 
             if (odtHC.Rows.Count > 0)
@@ -171,6 +155,7 @@ namespace CapaUsuario.Reportes
  
                     //Total de filas en dgvBoletaPago_A, si es mayor a 0 procede a reporte
                     //instanciando pdfTable A , B , C , D , E
+
                     PdfPTable pdfTable_HC_1 = new PdfPTable(dgvHCParte1.ColumnCount);
                     PdfPTable pdfTable_HC_2 = new PdfPTable(dgvHCParte2.ColumnCount);
                     PdfPTable pdfTable_HC_3 = new PdfPTable(dgvHCParte3.ColumnCount);
@@ -1152,7 +1137,7 @@ namespace CapaUsuario.Reportes
             //Creating iTextSharp Table from the DataTable data
             iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.TIMES_ROMAN, 7);
             iTextSharp.text.Font fuenteTitulo = new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9, 1, iTextSharp.text.Color.BLUE);
-
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
 
             if (dgvRegBateria.ColumnCount > 0)
             {
@@ -1205,8 +1190,20 @@ namespace CapaUsuario.Reportes
 
                         if (j == 1 || j == 7 || j==8)
                         {
-                            DateTime celda = Convert.ToDateTime(dgvRegBateria[j, i].Value);
-                            cell = new PdfPCell((new Phrase(celda.ToString("dd/MM/yyyy"), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                            //DateTime celda = Convert.ToDateTime(dgvRegBateria[j, i].Value);
+                            string celda = dgvRegBateria[j, i].Value.ToString();
+
+                            if (oUtilitarios.es_fecha(celda))
+                            {
+                                DateTime celda_fecha = Convert.ToDateTime(dgvRegBateria[j, i].Value);
+                                cell = new PdfPCell((new Phrase(celda_fecha.ToString("dd/MM/yyyy"), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                            }
+                            else {
+                                cell = new PdfPCell((new Phrase(celda , new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                            }
+
+
+                            
                         }
 
                         if (j != 3 || j !=4)
@@ -1676,5 +1673,33 @@ namespace CapaUsuario.Reportes
             return pdfTableE;
         }
 
+        private void dtpFechaInicio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                dtpFechaFin.Focus();
+        }
+
+        private void dtpFechaFin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbTranseunte.Focus();
+        }
+
+        private void cbTranseunte_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbArchivado.Focus();
+        }
+
+        private void cbArchivado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                buImprimir.Focus();
+        }
+
+        private void fControlGestantesEntreFechas_Activated(object sender, EventArgs e)
+        {
+            dtpFechaInicio.Focus();
+        }
     }
 }
