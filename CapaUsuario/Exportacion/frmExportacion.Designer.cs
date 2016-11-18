@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExportacion));
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEstablecimiento = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblObstetra = new System.Windows.Forms.Label();
             this.dlgGuardar = new System.Windows.Forms.SaveFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnImportar = new System.Windows.Forms.Button();
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,12 +43,17 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(84, 143);
+            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportar.BackgroundImage = global::CapaUsuario.Properties.Resources.boton;
+            this.btnExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExportar.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.Location = new System.Drawing.Point(205, 194);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(116, 69);
+            this.btnExportar.Size = new System.Drawing.Size(147, 69);
             this.btnExportar.TabIndex = 0;
-            this.btnExportar.Text = "EXPORTAR";
-            this.btnExportar.UseVisualStyleBackColor = true;
+            this.btnExportar.Text = "EXPORTAR DATOS";
+            this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // label1
@@ -87,22 +92,20 @@
             this.lblObstetra.TabIndex = 4;
             this.lblObstetra.Text = "label3";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(22, 260);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(652, 146);
-            this.textBox1.TabIndex = 5;
-            // 
             // btnImportar
             // 
-            this.btnImportar.Location = new System.Drawing.Point(251, 143);
+            this.btnImportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnImportar.BackgroundImage = global::CapaUsuario.Properties.Resources.boton;
+            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImportar.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.ForeColor = System.Drawing.Color.White;
+            this.btnImportar.Location = new System.Drawing.Point(385, 194);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(108, 75);
+            this.btnImportar.Size = new System.Drawing.Size(142, 69);
             this.btnImportar.TabIndex = 6;
             this.btnImportar.Text = "IMPORTAR";
-            this.btnImportar.UseVisualStyleBackColor = true;
+            this.btnImportar.UseVisualStyleBackColor = false;
+            this.btnImportar.Visible = false;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // dlgAbrir
@@ -112,8 +115,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            //this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.botonNuevo;
-            this.pictureBox1.Location = new System.Drawing.Point(564, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(470, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(105, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,15 +126,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 414);
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(681, 346);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnImportar);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblObstetra);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblEstablecimiento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExportar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmExportacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exportar Datos";
@@ -151,7 +155,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblObstetra;
         private System.Windows.Forms.SaveFileDialog dlgGuardar;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.OpenFileDialog dlgAbrir;
         private System.Windows.Forms.PictureBox pictureBox1;
