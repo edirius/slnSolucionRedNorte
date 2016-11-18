@@ -662,6 +662,9 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Obstetra.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\VisitaDomiciliaria.jpg" />
     <None Include="Resources\VisitaDuranteEmbarazo.jpg" />
     <None Include="Resources\EMBARAZADA.png" />
     <None Include="Resources\FondoFormularios1.jpg" />
@@ -670,6 +673,9 @@
     <None Include="Resources\btnSuculento.jpg" />
     <None Include="Resources\FormularioAlertas.jpg" />
     <None Include="Resources\FondoAlertas.jpg" />
+    <None Include="Resources\ControlPuerperio.jpg" />
+    <None Include="Resources\14199162_10208986981984526_854374781998032101_n.jpg" />
+    <None Include="Resources\descarga %281%29.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

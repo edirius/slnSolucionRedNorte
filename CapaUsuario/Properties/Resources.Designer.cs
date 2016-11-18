@@ -63,6 +63,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _14199162_10208986981984526_854374781998032101_n {
+            get {
+                object obj = ResourceManager.GetObject("14199162_10208986981984526_854374781998032101_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Advertencia_Negro_84733 {
             get {
                 object obj = ResourceManager.GetObject("Advertencia-Negro-84733", resourceCulture);
@@ -133,9 +143,29 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ControlPuerperio {
+            get {
+                object obj = ResourceManager.GetObject("ControlPuerperio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap descarga {
             get {
                 object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga__1_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +303,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lineas_1 {
             get {
                 object obj = ResourceManager.GetObject("lineas-1", resourceCulture);
@@ -296,6 +336,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap margen {
             get {
                 object obj = ResourceManager.GetObject("margen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Obstetra {
+            get {
+                object obj = ResourceManager.GetObject("Obstetra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -336,6 +386,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap sirena_04 {
             get {
                 object obj = ResourceManager.GetObject("sirena-04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VisitaDomiciliaria {
+            get {
+                object obj = ResourceManager.GetObject("VisitaDomiciliaria", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
