@@ -360,6 +360,8 @@ namespace CapaUsuario
             explorando_hc = false;
             dtpFecha.Focus();
 
+            idtpaciente = "";
+
             if (fGestante.ShowDialog() == DialogResult.OK)
             {
                 txtDNI.Text = fGestante.DNI;
@@ -1603,6 +1605,7 @@ namespace CapaUsuario
             DataTable odtIntercepcion = new DataTable();
             DataRow drFilaIntercepcion = odtIntercepcion.NewRow();
             odtIntercepcion.Columns.Add("INTERCEPCION", typeof(string));
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
             string fecha = "";
             string prox_fecha = "";
             string etiqueta_fecha = "";
@@ -1610,6 +1613,10 @@ namespace CapaUsuario
             string etiqueta_hoy = "";
             int j = 0;
             int l = 0;
+            bool basistencia = false;
+            bool bprogramado = false;
+            int indice_a = 0;
+            
 
             for (int i = inicio; i < fin-l; i++) {
                 fecha = odt.Rows[5][i].ToString();
@@ -1630,11 +1637,25 @@ namespace CapaUsuario
                     if (etiqueta_fecha_parto != "")
                         odt.Rows[0][i] = etiqueta_fecha_parto;
 
+                    /* Paciente asistio a su programacion */
+                    if (etiqueta_fecha.Contains("ASISTIDA"))
+                        basistencia = true;
+                    else
+                        basistencia = false;
+
+                    if (etiqueta_fecha.Contains("PROGRAMADA"))
+                        bprogramado = true;
+                    else
+                        bprogramado = false;
+
+                    indice_a = Convert.ToInt16(odt.Rows[7][i]);
+
                     /*intercepcion hoy*/
-                    
+
                     etiqueta_hoy = odt.Rows[6][i + 1].ToString();
-                    if (etiqueta_hoy != "" )
+                    if (etiqueta_hoy != "")
                         odt.Rows[6][i] = etiqueta_hoy;
+
 
                     if (bnivel4) {
                         odt.Rows[4][i] = etiqueta_fecha;
@@ -1655,6 +1676,11 @@ namespace CapaUsuario
                     if (bnivel0) {
                         odt.Rows[0][i] = etiqueta_fecha;
                         bnivel1 = false; bnivel2 = false; bnivel3 = false; bnivel4 = false;
+                    }
+
+                    if (basistencia && bprogramado)
+                    {
+                        odt.Rows[4][i] = oUtilitarios.GenerarNumero( Convert.ToInt16( odt.Rows[7]["NUMERO DE CITA"])) + " CITA ASISTIDA";
                     }
 
                     /*eliminando columna*/
@@ -2169,6 +2195,9 @@ namespace CapaUsuario
                 drFilaCronograma = odtCronograma.NewRow();
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 6);
 
+                drFilaCronograma = odtCronograma.NewRow();
+                odtCronograma.Rows.InsertAt(drFilaCronograma, 7);
+
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
                 odt = oCitaPrenatal.ListaCitasPreNatal();
                 /*fin FUR y FPP*/
@@ -2183,11 +2212,16 @@ namespace CapaUsuario
                     etiqueta_cita = oUtilitarios.GenerarNumero( Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) ) + " CITA ASISTIDA";
                     etiqueta_prox_cita = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"])+1) + " CITA PROGRAMADA";
 
+
                     odtCronograma.Rows[4][1] = etiqueta_cita;
                     odtCronograma.Rows[5][1] = cita.ToString("dd/MM/yyyy") ;
+                    odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
                     odtCronograma.Rows[4][2] = etiqueta_prox_cita;
                     odtCronograma.Rows[5][2] = proxCita.ToString("dd/MM/yyyy");
-                }
+                    odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
+
+
+            }
                 dgvCronograma.DataSource = odtCronograma;
                 
                 odtCronograma = burbuja(odtCronograma);
@@ -2440,7 +2474,7 @@ namespace CapaUsuario
         private DataTable burbuja (DataTable odt)
         {
 
-            string t0,t1,t2,t3,t4,t5,t6;
+            string t0,t1,t2,t3,t4,t5,t6,t7;
             DateTime fecha_a, fecha_b;
 
             for (int a = 1; a < odt.Columns.Count; a++)
@@ -2457,6 +2491,7 @@ namespace CapaUsuario
                         t4 = odt.Rows[4][b - 1].ToString();
                         t5 = odt.Rows[5][b - 1].ToString();
                         t6 = odt.Rows[6][b - 1].ToString();
+                        t7 = odt.Rows[7][b - 1].ToString();
 
                         odt.Rows[0][b - 1] = odt.Rows[0][b];
                         odt.Rows[1][b - 1] = odt.Rows[1][b];
@@ -2465,6 +2500,7 @@ namespace CapaUsuario
                         odt.Rows[4][b - 1] = odt.Rows[4][b];
                         odt.Rows[5][b - 1] = odt.Rows[5][b];
                         odt.Rows[6][b - 1] = odt.Rows[6][b];
+                        odt.Rows[7][b - 1] = odt.Rows[7][b];
 
                         odt.Rows[0][b] = t0;
                         odt.Rows[1][b] = t1;
@@ -2473,6 +2509,7 @@ namespace CapaUsuario
                         odt.Rows[4][b] = t4;
                         odt.Rows[5][b] = t5;
                         odt.Rows[6][b] = t6;
+                        odt.Rows[7][b] = t7;
                     }
                 }
 
