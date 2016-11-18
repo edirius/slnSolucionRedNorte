@@ -134,7 +134,7 @@ namespace CapaUsuario
             {
 
                 fControlGestanteporPaciente.MdiParent = this;
-                fControlGestanteporPaciente.IdObstetra = IdObstetra;
+                fControlGestanteporPaciente.Idtobstetra = IdObstetra;
                 fControlGestanteporPaciente.Show();
                 
             }

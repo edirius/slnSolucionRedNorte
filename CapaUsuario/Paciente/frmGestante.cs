@@ -23,7 +23,7 @@ namespace CapaUsuario
         string stelefono = "";
         string IdtEstablecimientoSalud="";
         int pagina = 0;
-        int cantidad_registros = 30;
+        int cantidad_registros = 10;
         int cantidad_total_registros = 0;
 
         CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
@@ -268,6 +268,11 @@ namespace CapaUsuario
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmGestante_Activated(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
         }
     }
 }

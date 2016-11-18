@@ -430,8 +430,6 @@ namespace CapaUsuario
             Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
             Edad = odtHCXIdHC.Rows[0][4].ToString();
 
-
-
             txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
             txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
 
@@ -1150,6 +1148,8 @@ namespace CapaUsuario
                                 dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
                                 IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
                                 Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
+
+                                    cargar_hc();
 
                                     if (cbArchivado.Checked)
                                         Archivado = true;
@@ -2201,9 +2201,7 @@ namespace CapaUsuario
                 }
                 dgvCronograma.DataSource = odtCronograma;
                 
-                odtCronograma = ordenar_fechas(odtCronograma);
-
-
+                odtCronograma = burbuja(odtCronograma);
 
                 /*fin citas prenatales*/
 
