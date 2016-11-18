@@ -383,8 +383,6 @@ namespace CapaUsuario
 
         }
 
- 
-
         private void rbPrimerTrimestre_CheckedChanged(object sender, EventArgs e)
         {
  
@@ -404,7 +402,6 @@ namespace CapaUsuario
         {
             if (IdtHistoriaClinica != "") {
                 Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento );
-                //fBateria.MdiParent = this;
                 fBateria.ShowDialog();
             }
             else
@@ -429,8 +426,6 @@ namespace CapaUsuario
             DNI = odtHCXIdHC.Rows[0][16].ToString();
             Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
             Edad = odtHCXIdHC.Rows[0][4].ToString();
-
-
 
             txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
             txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
@@ -689,7 +684,6 @@ namespace CapaUsuario
                 fCitaPrenatal.HistoriaClinica = IdtHistoriaClinica;
                 fCitaPrenatal.Establecimiento = IdEstablecimiento;
                 fCitaPrenatal.ShowDialog();
-
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -700,7 +694,6 @@ namespace CapaUsuario
             if (IdtHistoriaClinica != "")
             {
                 RecienNacido.frmRecienNacido miRecienNacido = new RecienNacido.frmRecienNacido(IdtHistoriaClinica, IdEstablecimiento);
-                //fBateria.MdiParent = this;
                 miRecienNacido.ShowDialog();
             }
             else
@@ -1151,6 +1144,8 @@ namespace CapaUsuario
                                 IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
                                 Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
 
+                                    cargar_hc();
+
                                     if (cbArchivado.Checked)
                                         Archivado = true;
                                     else
@@ -1397,7 +1392,6 @@ namespace CapaUsuario
 
         private void buMorbilidad_Click(object sender, EventArgs e)
         {
-            
             if (Codigo_Historia_Clinica != null) {
 
                 frmMorbilidad fMorbilidad = new frmMorbilidad();
@@ -1409,24 +1403,10 @@ namespace CapaUsuario
                 fMorbilidad.Edad = Edad;
                 fMorbilidad.IdEstablecimiento = IdEstablecimiento;
                 fMorbilidad.Archivado = Archivado;
-
                 fMorbilidad.ShowDialog();
             }else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-        }
-
-        private void buControlPuerperio_Click(object sender, EventArgs e)
-        {
-
-            if (Codigo_Historia_Clinica != null)
-            {
-                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPuerperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdtHistoriaClinica);
-                fMantenimientoControlPuerperio.Show();
-            }
-            else
-                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
         }
 
         private void buVisitaDomiciliaria_Click(object sender, EventArgs e)
@@ -1435,21 +1415,30 @@ namespace CapaUsuario
             if (Codigo_Historia_Clinica != null)
             {
                 VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria = new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdtHistoriaClinica);
-                fMantenimientoVisitaDomiciliaria.Show();
+                fMantenimientoVisitaDomiciliaria.ShowDialog();
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnTerminoGestacion_Click(object sender, EventArgs e)
         {
-            
-
             if (Codigo_Historia_Clinica != null)
             {
                 TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdtHistoriaClinica);
-                fMantenimientoTerminoGestacion.Show();
+                fMantenimientoTerminoGestacion.ShowDialog();
+            }
+            else
+                MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void buControlPuerperio_Click(object sender, EventArgs e)
+        {
+            if (Codigo_Historia_Clinica != null)
+            {
+                ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPuerperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdtHistoriaClinica);
+                fMantenimientoControlPuerperio.ShowDialog();
             }
             else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2201,9 +2190,7 @@ namespace CapaUsuario
                 }
                 dgvCronograma.DataSource = odtCronograma;
                 
-                odtCronograma = ordenar_fechas(odtCronograma);
-
-
+                odtCronograma = burbuja(odtCronograma);
 
                 /*fin citas prenatales*/
 

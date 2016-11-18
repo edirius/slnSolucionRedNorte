@@ -101,9 +101,25 @@ namespace CapaDeNegocios
             }
         }
 
+        public bool es_fecha(String date)
+        {
+            DateTime Temp;
+
+            if (DateTime.TryParse(date, out Temp) == true)
+                return true;
+            else
+                return false;
+        }
+
         public DataTable enumerar_datatable(DataTable dt, int posicion)
         {
-            dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
+            DataColumnCollection columns = dt.Columns;
+
+            if (!columns.Contains("Nº"))
+            {
+                dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
+            }
+                
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 dt.Rows[i][posicion] = i + 1;
