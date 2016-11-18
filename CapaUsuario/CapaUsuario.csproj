@@ -659,6 +659,8 @@
     <None Include="Resources\FondoFormularios2.jpg" />
     <None Include="Resources\descarga1.jpg" />
     <None Include="Resources\btnSuculento.jpg" />
+    <None Include="Resources\FormularioAlertas.jpg" />
+    <None Include="Resources\FondoAlertas.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

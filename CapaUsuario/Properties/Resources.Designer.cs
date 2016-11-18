@@ -203,6 +203,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FondoAlertas {
+            get {
+                object obj = ResourceManager.GetObject("FondoAlertas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondoFormularios {
             get {
                 object obj = ResourceManager.GetObject("FondoFormularios", resourceCulture);
@@ -236,6 +246,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap FondoNorte {
             get {
                 object obj = ResourceManager.GetObject("FondoNorte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FormularioAlertas {
+            get {
+                object obj = ResourceManager.GetObject("FormularioAlertas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
