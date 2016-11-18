@@ -1613,9 +1613,8 @@ namespace CapaUsuario
             string etiqueta_hoy = "";
             int j = 0;
             int l = 0;
-            bool basistencia = false;
-            bool bprogramado = false;
-            int indice_a = 0;
+            string stipo_a = "", stipo_b = "";
+            int indice_a = 0, indice_b = 0;
             
 
             for (int i = inicio; i < fin-l; i++) {
@@ -1637,19 +1636,26 @@ namespace CapaUsuario
                     if (etiqueta_fecha_parto != "")
                         odt.Rows[0][i] = etiqueta_fecha_parto;
 
-                    /* Paciente asistio a su programacion */
-                    if (etiqueta_fecha.Contains("ASISTIDA"))
-                        basistencia = true;
-                    else
-                        basistencia = false;
+                    /* Paciente asistio a su control puerperio y cita prenatal */
+                    
+                    indice_b = Convert.ToInt16(odt.Rows[7][i + 1].ToString());
+                    indice_a = Convert.ToInt16(odt.Rows[7][i].ToString());
+                    stipo_a = odt.Rows[8][i].ToString();
+                    stipo_b = odt.Rows[8][i + 1].ToString();
 
-                    if (etiqueta_fecha.Contains("PROGRAMADA"))
-                        bprogramado = true;
-                    else
-                        bprogramado = false;
+                    if (indice_a == indice_b && stipo_a == stipo_b)
+                    {
+                        if (stipo_a == "C") { 
+                            odt.Rows[4][i] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[7][i])) + " CITA ASISTIDA";
+                            etiqueta_fecha = "";
+                        }
+                        if (stipo_a == "P")
+                        {
+                            odt.Rows[4][i] = oUtilitarios.GenerarNumero(Convert.ToInt16(odt.Rows[7][i])) + " CONTROL PUERPERIO ASISTIDO";
+                            etiqueta_fecha = "";
+                        }
 
-                    //indice_a = Convert.ToInt16(odt.Rows[7][i]);
-
+                    }
                     /*intercepcion hoy*/
 
                     etiqueta_hoy = odt.Rows[6][i + 1].ToString();
@@ -1678,10 +1684,7 @@ namespace CapaUsuario
                         bnivel1 = false; bnivel2 = false; bnivel3 = false; bnivel4 = false;
                     }
 
-                    if (basistencia && bprogramado)
-                    {
-                        odt.Rows[4][i] = oUtilitarios.GenerarNumero( Convert.ToInt16( odt.Rows[7]["NUMERO DE CITA"])) + " CITA ASISTIDA";
-                    }
+                    
 
                     /*eliminando columna*/
                     odt.Columns.RemoveAt(i+1);
@@ -2195,10 +2198,17 @@ namespace CapaUsuario
                 drFilaCronograma = odtCronograma.NewRow();
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 6);
 
-                /*
+                
                 drFilaCronograma = odtCronograma.NewRow();
+                drFilaCronograma[0] = -1;
+                drFilaCronograma[1] = -2;
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 7);
-                */
+
+                drFilaCronograma = odtCronograma.NewRow();
+                drFilaCronograma[0] = "E";
+                drFilaCronograma[1] = "N";
+                odtCronograma.Rows.InsertAt(drFilaCronograma, 8);
+
 
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
                 odt = oCitaPrenatal.ListaCitasPreNatal();
@@ -2217,15 +2227,15 @@ namespace CapaUsuario
 
                     odtCronograma.Rows[4][1] = etiqueta_cita;
                     odtCronograma.Rows[5][1] = cita.ToString("dd/MM/yyyy") ;
-                    //odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
+                    odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
+                    odtCronograma.Rows[8][1] = "C";
                     odtCronograma.Rows[4][2] = etiqueta_prox_cita;
                     odtCronograma.Rows[5][2] = proxCita.ToString("dd/MM/yyyy");
-                    //odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
+                    odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
+                    odtCronograma.Rows[8][2] = "C";
+                }
 
-
-            }
                 dgvCronograma.DataSource = odtCronograma;
-                
                 odtCronograma = burbuja(odtCronograma);
 
                 /*fin citas prenatales*/
@@ -2271,6 +2281,15 @@ namespace CapaUsuario
                             bandera_repite_fecha_tg = true;
                             indice_termino_gestacion = i;
                         }
+
+                        if (i == 0) { 
+                            if (termino_gestacion < fecha)
+                            {
+                                bandera_abrir_fecha_tg = true;
+                                indice_termino_gestacion = i ;
+                            }
+                        }
+
                     }
 
                     /*escribir en el cronograma el termino de gestacion*/
@@ -2279,6 +2298,8 @@ namespace CapaUsuario
                         odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(indice_termino_gestacion);
                         odtCronograma.Rows[0][indice_termino_gestacion] = etiqueta_termino_gestacion.ToString();
                         odtCronograma.Rows[5][indice_termino_gestacion] = termino_gestacion.ToString("dd/MM/yyyy");
+                        odtCronograma.Rows[7][indice_termino_gestacion] = "-3";
+                        odtCronograma.Rows[8][indice_termino_gestacion] = "TG";
                     }
                     if (bandera_repite_fecha_tg)
                     {
@@ -2302,9 +2323,13 @@ namespace CapaUsuario
 
                 odtCronograma.Rows[4][cantidad_columnas_cronograma] = oUtilitarios.GenerarNumeroMasculino(1) + " CONTROL PUERPERIO PROGRAMADO";
                 odtCronograma.Rows[5][cantidad_columnas_cronograma] = control_puerperio_7.ToString("dd/MM/yyyy");
+                odtCronograma.Rows[7][cantidad_columnas_cronograma] = 1;
+                odtCronograma.Rows[8][cantidad_columnas_cronograma] = "P";
 
                 odtCronograma.Rows[4][cantidad_columnas_cronograma+1] = oUtilitarios.GenerarNumeroMasculino(2) + " CONTROL PUERPERIO PROGRAMADO";
                 odtCronograma.Rows[5][cantidad_columnas_cronograma+1] = control_puerperio_30.ToString("dd/MM/yyyy");
+                odtCronograma.Rows[7][cantidad_columnas_cronograma+1] = 2;
+                odtCronograma.Rows[8][cantidad_columnas_cronograma+1] = "P";
                 /*Fin control puerperio*/
 
                 /*Inicio control puerperio */
@@ -2318,6 +2343,8 @@ namespace CapaUsuario
                     odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma);
                     odtCronograma.Rows[4][cantidad_columnas_cronograma ] = oUtilitarios.GenerarNumeroMasculino( numero_control_puerperio ) + " CONTROL PUERPERIO ASISTIDO";
                     odtCronograma.Rows[5][cantidad_columnas_cronograma ] = control_puerperio.ToString("dd/MM/yyyy");
+                    odtCronograma.Rows[7][cantidad_columnas_cronograma] = numero_control_puerperio;
+                    odtCronograma.Rows[8][cantidad_columnas_cronograma] = "P";
                 }
 
                 /*Agregando la fecha de hoy*/
@@ -2326,6 +2353,8 @@ namespace CapaUsuario
                 odtCronograma.Columns.Add("", typeof(string)).SetOrdinal(cantidad_columnas_cronograma);
                 odtCronograma.Rows[6][cantidad_columnas_cronograma] = "HOY";
                 odtCronograma.Rows[5][cantidad_columnas_cronograma] = Hoy.ToString("dd/MM/yyyy");
+                odtCronograma.Rows[7][cantidad_columnas_cronograma] = "-7";
+                odtCronograma.Rows[8][cantidad_columnas_cronograma] = "H";
 
                 odtCronograma = burbuja(odtCronograma);
                 
@@ -2334,7 +2363,8 @@ namespace CapaUsuario
                 odtCronograma = interceptar_campos(0, odtCronograma.Columns.Count - 1, odtCronograma);
                 odtCronograma = interceptar_campos(0, odtCronograma.Columns.Count - 1, odtCronograma);
 
- 
+                odtCronograma.Rows.RemoveAt(7);
+                odtCronograma.Rows.RemoveAt(7);
 
                 dgvCronograma.DataSource = odtCronograma;
                 mitad_cantidad_cronograma = odtCronograma.Columns.Count / 2;
@@ -2494,7 +2524,7 @@ namespace CapaUsuario
         private DataTable burbuja (DataTable odt)
         {
 
-            string t0,t1,t2,t3,t4,t5,t6,t7;
+            string t0,t1,t2,t3,t4,t5,t6,t7,t8;
             DateTime fecha_a, fecha_b;
 
             for (int a = 1; a < odt.Columns.Count; a++)
@@ -2511,7 +2541,8 @@ namespace CapaUsuario
                         t4 = odt.Rows[4][b - 1].ToString();
                         t5 = odt.Rows[5][b - 1].ToString();
                         t6 = odt.Rows[6][b - 1].ToString();
-                        //t7 = odt.Rows[7][b - 1].ToString();
+                        t7 = odt.Rows[7][b - 1].ToString();
+                        t8 = odt.Rows[8][b - 1].ToString();
 
                         odt.Rows[0][b - 1] = odt.Rows[0][b];
                         odt.Rows[1][b - 1] = odt.Rows[1][b];
@@ -2520,7 +2551,8 @@ namespace CapaUsuario
                         odt.Rows[4][b - 1] = odt.Rows[4][b];
                         odt.Rows[5][b - 1] = odt.Rows[5][b];
                         odt.Rows[6][b - 1] = odt.Rows[6][b];
-                        //odt.Rows[7][b - 1] = odt.Rows[7][b];
+                        odt.Rows[7][b - 1] = odt.Rows[7][b];
+                        odt.Rows[8][b - 1] = odt.Rows[8][b];
 
                         odt.Rows[0][b] = t0;
                         odt.Rows[1][b] = t1;
@@ -2529,7 +2561,8 @@ namespace CapaUsuario
                         odt.Rows[4][b] = t4;
                         odt.Rows[5][b] = t5;
                         odt.Rows[6][b] = t6;
-                        //odt.Rows[7][b] = t7;
+                        odt.Rows[7][b] = t7;
+                        odt.Rows[8][b] = t8;
                     }
                 }
 
