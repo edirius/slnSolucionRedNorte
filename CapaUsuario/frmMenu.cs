@@ -121,6 +121,8 @@ namespace CapaUsuario
         {
             Exportacion.frmExportacion Exportar = new Exportacion.frmExportacion();
             Exportar.IdEstablecimientoSalud = IdEstablecimientoSalud;
+            Exportar.NombreEstablecimientoSalud = NombreEstablecimientoSalud;
+            Exportar.NombreObstetra = NombreObstetra;
             Exportar.IdObstetra = IdObstetra;
             Exportar.Show();
         }

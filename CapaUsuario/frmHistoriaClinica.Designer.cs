@@ -100,8 +100,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.buGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgvCronograma = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -123,10 +127,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.buGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buCronograma = new System.Windows.Forms.Button();
             this.buRegistroBateria = new System.Windows.Forms.Button();
             this.buAtencionPrenatal = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
             this.buMorbilidad = new System.Windows.Forms.Button();
             this.buControlPuerperio = new System.Windows.Forms.Button();
             this.buVisitaDomiciliaria = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnTerminoGestacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -160,6 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -168,8 +170,6 @@
             this.gbBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -1049,6 +1049,32 @@
             this.label22.Text = "Gestas:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(3, 317);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
+            this.pictureBox4.Location = new System.Drawing.Point(1192, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(3, 317);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1085,6 +1111,38 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // buGuardar
+            // 
+            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buGuardar.ForeColor = System.Drawing.Color.White;
+            this.buGuardar.Location = new System.Drawing.Point(397, 3);
+            this.buGuardar.Name = "buGuardar";
+            this.buGuardar.Size = new System.Drawing.Size(191, 48);
+            this.buGuardar.TabIndex = 23;
+            this.buGuardar.Text = "Guardar";
+            this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(594, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 48);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Nuevo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // dgvCronograma
             // 
@@ -1384,71 +1442,13 @@
             this.groupBox1.Controls.Add(this.buMorbilidad);
             this.groupBox1.Controls.Add(this.buControlPuerperio);
             this.groupBox1.Controls.Add(this.buVisitaDomiciliaria);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnTerminoGestacion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox1.Location = new System.Drawing.Point(1214, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(120, 680);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(3, 317);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
-            this.pictureBox4.Location = new System.Drawing.Point(1192, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(3, 317);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
-            // 
-            // buGuardar
-            // 
-            this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
-            this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buGuardar.ForeColor = System.Drawing.Color.White;
-            this.buGuardar.Location = new System.Drawing.Point(397, 3);
-            this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(191, 48);
-            this.buGuardar.TabIndex = 23;
-            this.buGuardar.Text = "Guardar";
-            this.buGuardar.UseVisualStyleBackColor = true;
-            this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(594, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 48);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // buCronograma
             // 
@@ -1561,21 +1561,21 @@
             this.buVisitaDomiciliaria.UseVisualStyleBackColor = true;
             this.buVisitaDomiciliaria.Click += new System.EventHandler(this.buVisitaDomiciliaria_Click);
             // 
-            // button6
+            // btnTerminoGestacion
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(8, 339);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(106, 78);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "Termino Gestación";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnTerminoGestacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTerminoGestacion.BackgroundImage")));
+            this.btnTerminoGestacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTerminoGestacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTerminoGestacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnTerminoGestacion.ForeColor = System.Drawing.Color.White;
+            this.btnTerminoGestacion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnTerminoGestacion.Location = new System.Drawing.Point(8, 339);
+            this.btnTerminoGestacion.Name = "btnTerminoGestacion";
+            this.btnTerminoGestacion.Size = new System.Drawing.Size(106, 78);
+            this.btnTerminoGestacion.TabIndex = 34;
+            this.btnTerminoGestacion.Text = "Termino Gestación";
+            this.btnTerminoGestacion.UseVisualStyleBackColor = true;
+            this.btnTerminoGestacion.Click += new System.EventHandler(this.btnTerminoGestacion_Click);
             // 
             // frmHistoriaClinica
             // 
@@ -1621,6 +1621,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAbortos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -1631,8 +1633,6 @@
             this.gbBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1642,7 +1642,7 @@
         private System.Windows.Forms.Button buRegistroBateria;
         private System.Windows.Forms.Button buAtencionPrenatal;
         private System.Windows.Forms.Button buVisitaDomiciliaria;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnTerminoGestacion;
         private System.Windows.Forms.Button buControlPuerperio;
         private System.Windows.Forms.Button btnRecienNacido;
         private System.Windows.Forms.Button buMorbilidad;

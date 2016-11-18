@@ -32,28 +32,26 @@ namespace CapaUsuario.Exportacion
             lblObstetra.Text = NombreObstetra;
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
-                                                                       Color.DarkBlue,
-                                                                       Color.Aquamarine,
-                                                                       45F))
-            {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
-            }
-        }
+        //protected override void OnPaintBackground(PaintEventArgs e)
+        //{
+        //    using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle,
+        //                                                               Color.DarkBlue,
+        //                                                               Color.Aquamarine,
+        //                                                               45F))
+        //    {
+        //        e.Graphics.FillRectangle(brush, this.ClientRectangle);
+        //    }
+        //}
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
             dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
             dlgGuardar.DefaultExt = ".gsys";
             dlgGuardar.ShowDialog();
-            MessageBox.Show(dlgGuardar.FileName);
+            
             oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
             oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
-
-           
-            
+            MessageBox.Show("Datos Exportados con el nombre: " + dlgGuardar.FileName, "EXPORTACION");
         }
 
         private void btnImportar_Click(object sender, EventArgs e)
