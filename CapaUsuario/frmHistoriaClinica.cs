@@ -1648,7 +1648,7 @@ namespace CapaUsuario
                     else
                         bprogramado = false;
 
-                    indice_a = Convert.ToInt16(odt.Rows[7][i]);
+                    //indice_a = Convert.ToInt16(odt.Rows[7][i]);
 
                     /*intercepcion hoy*/
 
@@ -2195,8 +2195,10 @@ namespace CapaUsuario
                 drFilaCronograma = odtCronograma.NewRow();
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 6);
 
+                /*
                 drFilaCronograma = odtCronograma.NewRow();
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 7);
+                */
 
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
                 odt = oCitaPrenatal.ListaCitasPreNatal();
@@ -2215,10 +2217,10 @@ namespace CapaUsuario
 
                     odtCronograma.Rows[4][1] = etiqueta_cita;
                     odtCronograma.Rows[5][1] = cita.ToString("dd/MM/yyyy") ;
-                    odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
+                    //odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
                     odtCronograma.Rows[4][2] = etiqueta_prox_cita;
                     odtCronograma.Rows[5][2] = proxCita.ToString("dd/MM/yyyy");
-                    odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
+                    //odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
 
 
             }
@@ -2338,98 +2340,116 @@ namespace CapaUsuario
                 mitad_cantidad_cronograma = odtCronograma.Columns.Count / 2;
                 /*Creacion de pdf*/
 
+                
+                FileInfo file = new FileInfo(@"C:\PDFs\Cronograma.pdf");
+                bool estaAbierto = false;
+                estaAbierto = oUtilitarios.esta_en_uso(file, @"C:\PDFs\Cronograma.pdf");
+
+                if (!estaAbierto)
+                {
+                    exportar_a_pdf();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor cerrar Cronograma.pdf", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
 
 
-                Paragraph paragraph = new Paragraph();
- 
-
-                if (!Directory.Exists(folderPath))
-                    Directory.CreateDirectory(folderPath);
-
-                //using (FileStream stream = new FileStream(folderPath + "Graphics.pdf", FileMode.Create))
-                //{
-
-
-                // Add a new page to the pdf file
-                //pdfDoc.NewPage();
-                Document pdfDoc = new Document(PageSize.A4, 9, 9, 10, 10);
-
-                pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
-                //pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4);
-
-                paragraph.Alignment = Element.ALIGN_CENTER;
-                paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14);
-                paragraph.Add("CRONOGRAMA DE GESTANTE \n\n\n");
-
-                /*              Llenar datagrids            */
-                FileStream fs = new FileStream(folderPath + "Cronograma.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
-                PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
-                CreateHeaderFooter(ref pdfDoc);
-                //Abrir pagina
-                pdfDoc.Open();
-
-                //Total de filas en dgvBoletaPago_A, si es mayor a 0 procede a reporte
-                //instanciando pdfTable A , B , C , D , E
-                PdfPTable pdfTable_Cronograma_parte_1 = new PdfPTable(dgvCronograma.ColumnCount);
-                PdfPTable pdfTable_Cronograma_parte_2 = new PdfPTable(dgvCronograma.ColumnCount);
-
-                //Nueva pagina
-                pdfDoc.NewPage();
-
-                //obtener pdfTableA,B,C,D,E 
-                pdfTable_Cronograma_parte_1 = pdf_cronograma_parte_1(0, 100);
-                pdfTable_Cronograma_parte_2 = pdf_cronograma_parte_2(0, 100);
-
-                //Columnas 
-                MultiColumnText columns = new MultiColumnText();
-                columns.AddRegularColumns(36f, pdfDoc.PageSize.Width - 36f, 24f, 1);
-
-                //Imagen
-                string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-
-                //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
-                //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
-
-                string ruta_imagen = ruta + "\\logo.jpg";
-
-                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
-                logo.ScalePercent(24f);
-                logo.SetAbsolutePosition(35f, pdfDoc.PageSize.Height - 70f);
-
-                //tabla que ecografia y odontologia
-                PdfPTable tabla_cronograma_parte_1 = new PdfPTable(1);
-                tabla_cronograma_parte_1.DefaultCell.BorderWidth = 0;
-
-                //tabla que ecografia y odontologia
-                PdfPTable tabla_cronograma_parte_2 = new PdfPTable(1);
-                tabla_cronograma_parte_2.DefaultCell.BorderWidth = 0;
-
-                //var colWidthPercentages = new[] { 45f, 25f, 30f };
-                //tabla_cronograma.SetWidths(colWidthPercentages);
-
-                tabla_cronograma_parte_1.WidthPercentage = 100;
-                tabla_cronograma_parte_1.AddCell(pdfTable_Cronograma_parte_1);
-
-                tabla_cronograma_parte_2.WidthPercentage = 100;
-                tabla_cronograma_parte_2.AddCell(pdfTable_Cronograma_parte_2);
-
-                //Agregando pdfTable A, B, C, D, E a pdfDoc
-                columns.AddElement(paragraph);
-                columns.AddElement(tabla_cronograma_parte_1);
-                columns.AddElement(tabla_cronograma_parte_2);
-
-                pdfDoc.Add(logo);
-                pdfDoc.Add(columns);
- 
-                pdfDoc.Close();
-                writer.Close();
-                System.Diagnostics.Process proc = new System.Diagnostics.Process();
-                proc.EnableRaisingEvents = false;
-                proc.StartInfo.FileName = "C:\\PDFs\\Cronograma.pdf";
-                proc.Start();
 
             }
 
+        }
+
+        private void exportar_a_pdf() {
+
+            Paragraph paragraph = new Paragraph();
+
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            //using (FileStream stream = new FileStream(folderPath + "Graphics.pdf", FileMode.Create))
+            //{
+
+
+            // Add a new page to the pdf file
+            //pdfDoc.NewPage();
+            Document pdfDoc = new Document(PageSize.A4, 9, 9, 10, 10);
+
+            pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());
+            //pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4);
+
+            paragraph.Alignment = Element.ALIGN_CENTER;
+            paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14);
+            paragraph.Add("CRONOGRAMA DE GESTANTE \n\n\n");
+
+            /*              Llenar datagrids            */
+            FileStream fs = new FileStream(folderPath + "Cronograma.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
+            PdfWriter writer = PdfWriter.GetInstance(pdfDoc, fs);
+            CreateHeaderFooter(ref pdfDoc);
+            //Abrir pagina
+            pdfDoc.Open();
+
+            //Total de filas en dgvBoletaPago_A, si es mayor a 0 procede a reporte
+            //instanciando pdfTable A , B , C , D , E
+            PdfPTable pdfTable_Cronograma_parte_1 = new PdfPTable(dgvCronograma.ColumnCount);
+            PdfPTable pdfTable_Cronograma_parte_2 = new PdfPTable(dgvCronograma.ColumnCount);
+
+            //Nueva pagina
+            pdfDoc.NewPage();
+
+            //obtener pdfTableA,B,C,D,E 
+            pdfTable_Cronograma_parte_1 = pdf_cronograma_parte_1(0, 100);
+            pdfTable_Cronograma_parte_2 = pdf_cronograma_parte_2(0, 100);
+
+            //Columnas 
+            MultiColumnText columns = new MultiColumnText();
+            columns.AddRegularColumns(36f, pdfDoc.PageSize.Width - 36f, 24f, 1);
+
+            //Imagen
+            string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+
+            //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
+            //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
+
+            string ruta_imagen = ruta + "\\logo.jpg";
+
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
+            logo.ScalePercent(24f);
+            logo.SetAbsolutePosition(35f, pdfDoc.PageSize.Height - 70f);
+
+            //tabla que ecografia y odontologia
+            PdfPTable tabla_cronograma_parte_1 = new PdfPTable(1);
+            tabla_cronograma_parte_1.DefaultCell.BorderWidth = 0;
+
+            //tabla que ecografia y odontologia
+            PdfPTable tabla_cronograma_parte_2 = new PdfPTable(1);
+            tabla_cronograma_parte_2.DefaultCell.BorderWidth = 0;
+
+            //var colWidthPercentages = new[] { 45f, 25f, 30f };
+            //tabla_cronograma.SetWidths(colWidthPercentages);
+
+            tabla_cronograma_parte_1.WidthPercentage = 100;
+            tabla_cronograma_parte_1.AddCell(pdfTable_Cronograma_parte_1);
+
+            tabla_cronograma_parte_2.WidthPercentage = 100;
+            tabla_cronograma_parte_2.AddCell(pdfTable_Cronograma_parte_2);
+
+            //Agregando pdfTable A, B, C, D, E a pdfDoc
+            columns.AddElement(paragraph);
+            columns.AddElement(tabla_cronograma_parte_1);
+            columns.AddElement(tabla_cronograma_parte_2);
+
+            pdfDoc.Add(logo);
+            pdfDoc.Add(columns);
+
+            pdfDoc.Close();
+            writer.Close();
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.EnableRaisingEvents = false;
+            proc.StartInfo.FileName = "C:\\PDFs\\Cronograma.pdf";
+            proc.Start();
         }
 
         public void CreateHeaderFooter(ref Document _document)
@@ -2491,7 +2511,7 @@ namespace CapaUsuario
                         t4 = odt.Rows[4][b - 1].ToString();
                         t5 = odt.Rows[5][b - 1].ToString();
                         t6 = odt.Rows[6][b - 1].ToString();
-                        t7 = odt.Rows[7][b - 1].ToString();
+                        //t7 = odt.Rows[7][b - 1].ToString();
 
                         odt.Rows[0][b - 1] = odt.Rows[0][b];
                         odt.Rows[1][b - 1] = odt.Rows[1][b];
@@ -2500,7 +2520,7 @@ namespace CapaUsuario
                         odt.Rows[4][b - 1] = odt.Rows[4][b];
                         odt.Rows[5][b - 1] = odt.Rows[5][b];
                         odt.Rows[6][b - 1] = odt.Rows[6][b];
-                        odt.Rows[7][b - 1] = odt.Rows[7][b];
+                        //odt.Rows[7][b - 1] = odt.Rows[7][b];
 
                         odt.Rows[0][b] = t0;
                         odt.Rows[1][b] = t1;
@@ -2509,7 +2529,7 @@ namespace CapaUsuario
                         odt.Rows[4][b] = t4;
                         odt.Rows[5][b] = t5;
                         odt.Rows[6][b] = t6;
-                        odt.Rows[7][b] = t7;
+                        //odt.Rows[7][b] = t7;
                     }
                 }
 
