@@ -124,6 +124,9 @@
   <data name="VisitaDuranteEmbarazo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VisitaDuranteEmbarazo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Obstetra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Obstetra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="boton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,8 +139,17 @@
   <data name="margen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\margen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\rn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ControlPuerperio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ControlPuerperio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Fondo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="14199162_10208986981984526_854374781998032101_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14199162_10208986981984526_854374781998032101_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOTON21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +175,14 @@
   <data name="Fondo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\rn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="parto_termino gestacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\parto_termino gestacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gestantecusco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\gestantecusco.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FondoAlertas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FondoAlertas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +193,11 @@
   <data name="BOTON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="parto_termino gestacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\parto_termino gestacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VisitaDomiciliaria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VisitaDomiciliaria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lineas-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lineas-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +220,7 @@
   <data name="btnSuculento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSuculento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FondoAlertas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FondoAlertas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
