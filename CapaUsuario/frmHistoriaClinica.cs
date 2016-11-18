@@ -2217,7 +2217,7 @@ namespace CapaUsuario
 
                     odtCronograma.Rows[4][1] = etiqueta_cita;
                     odtCronograma.Rows[5][1] = cita.ToString("dd/MM/yyyy") ;
-                    odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
+                    //odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
                     odtCronograma.Rows[4][2] = etiqueta_prox_cita;
                     odtCronograma.Rows[5][2] = proxCita.ToString("dd/MM/yyyy");
                     //odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
@@ -2511,7 +2511,7 @@ namespace CapaUsuario
                         t4 = odt.Rows[4][b - 1].ToString();
                         t5 = odt.Rows[5][b - 1].ToString();
                         t6 = odt.Rows[6][b - 1].ToString();
-                        t7 = odt.Rows[7][b - 1].ToString();
+                        //t7 = odt.Rows[7][b - 1].ToString();
 
                         odt.Rows[0][b - 1] = odt.Rows[0][b];
                         odt.Rows[1][b - 1] = odt.Rows[1][b];
@@ -2520,7 +2520,7 @@ namespace CapaUsuario
                         odt.Rows[4][b - 1] = odt.Rows[4][b];
                         odt.Rows[5][b - 1] = odt.Rows[5][b];
                         odt.Rows[6][b - 1] = odt.Rows[6][b];
-                        odt.Rows[7][b - 1] = odt.Rows[7][b];
+                        //odt.Rows[7][b - 1] = odt.Rows[7][b];
 
                         odt.Rows[0][b] = t0;
                         odt.Rows[1][b] = t1;
@@ -2529,7 +2529,7 @@ namespace CapaUsuario
                         odt.Rows[4][b] = t4;
                         odt.Rows[5][b] = t5;
                         odt.Rows[6][b] = t6;
-                        odt.Rows[7][b] = t7;
+                        //odt.Rows[7][b] = t7;
                     }
                 }
 
