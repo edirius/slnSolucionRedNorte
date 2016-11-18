@@ -124,9 +124,6 @@
   <data name="VisitaDuranteEmbarazo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VisitaDuranteEmbarazo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Obstetra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Obstetra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="boton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +142,9 @@
   <data name="ControlPuerperio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ControlPuerperio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EMBARAZADA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EMBARAZADA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Fondo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fondo6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +157,8 @@
   <data name="FondoFormularios2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoFormularios2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="EMBARAZADA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EMBARAZADA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Obstetra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Obstetra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FormularioAlertas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FormularioAlertas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,6 +199,9 @@
   <data name="VisitaDomiciliaria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VisitaDomiciliaria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\descarga (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lineas-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lineas-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,7 +223,7 @@
   <data name="btnSuculento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSuculento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="descarga (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\descarga (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RecienNacido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RecienNacido.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
