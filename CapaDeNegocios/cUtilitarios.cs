@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Windows.Forms;
 using CapaDeDatos;
+using System.Data;
 
 namespace CapaDeNegocios
 {
@@ -66,14 +67,60 @@ namespace CapaDeNegocios
             return true;
         }
 
-        public string GenerarNumero(int N)
+        /*devuelve true cuando el archivo esta en uso en el S.O.*/
+        public virtual bool archivoenuso(FileInfo file, string path)
         {
-            String[] Unidad = { "", "PRIMERA", "SEGUNDA", "TERCERA",
-            "CUARTA", "QUINTA", "SEXTA", "SEPTIMA", "OCTAVA",
-            "NOVENA" };
-            String[] Decena = { "", "DECIMA", "VIGESIMA", "TRIGESIMA",
-            "CUADRAGESIMA", "QUINCUAGESIMA", "SEXAGESIMA",
-            "SEPTUAGESIMA", "OCTOGESIMA", "NONAGESIMA" };
+            FileStream stream = null;
+
+            if (!File.Exists(path))
+            {
+                return false;
+            }
+            else
+            {
+                try
+                {
+                    stream = file.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+
+                }
+                catch (IOException)
+                {
+                    //the file is unavailable because it is:
+                    //still being written to
+                    //or being processed by another thread
+                    //or does not exist (has already been processed)
+                    return true;
+
+                }
+                finally
+                {
+                    if (stream != null)
+                        stream.Close();
+                }
+                return false;
+            }
+        }
+
+        public DataTable enumerar_datatable(DataTable dt, int posicion)
+        {
+            dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i][posicion] = i + 1;
+            }
+            return dt;
+        }
+
+
+        public string GenerarNumeroMasculino(int N)
+        {
+
+            String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
+            "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
+            "NOVENO" };
+            String[] Decena = { "", "DECIMO", "VIGESIMO", "TRIGESIMO",
+            "CUADRAGESIMO", "QUINCUAGESIMO", "SEXAGESIMO",
+            "SEPTUAGESIMO", "OCTOGESIMO", "NONAGESIMO" };
             String[] Centena = {"", "centesimo", "ducentesimo",
             "tricentesimo", " cuadringentesimo", " quingentesimo",
             " sexcentesimo", " septingentesimo", " octingentesimo",
@@ -101,14 +148,14 @@ namespace CapaDeNegocios
             return Num;
         }
 
-        public string GenerarNumeroMasculino(int N)
+        public string GenerarNumero(int N)
         {
-            String[] Unidad = { "", "PRIMER", "SEGUNDO", "TERCER",
-            "CUARTO", "QUINTO", "SEXTO", "SEPTIMO", "OCTAVO",
-            "NOVENO" };
-            String[] Decena = { "", "DECIMO", "VIGESIMO", "TRIGESIMO",
-            "CUADRAGESIMO", "QUINCUAGESIMO", "SEXAGESIMO",
-            "SEPTUAGESIMO", "OCTOGESIMO", "NONAGESIMO" };
+            String[] Unidad = { "", "PRIMERA", "SEGUNDA", "TERCERA",
+            "CUARTA", "QUINTA", "SEXTA", "SEPTIMA", "OCTAVA",
+            "NOVENA" };
+            String[] Decena = { "", "DECIMA", "VIGESIMA", "TRIGESIMA",
+            "CUADRAGESIMA", "QUINCUAGESIMA", "SEXAGESIMA",
+            "SEPTUAGESIMA", "OCTOGESIMA", "NONAGESIMA" };
             String[] Centena = {"", "centesimo", "ducentesimo",
             "tricentesimo", " cuadringentesimo", " quingentesimo",
             " sexcentesimo", " septingentesimo", " octingentesimo",

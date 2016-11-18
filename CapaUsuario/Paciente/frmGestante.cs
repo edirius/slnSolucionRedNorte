@@ -264,5 +264,10 @@ namespace CapaUsuario
                 stelefono = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[9].Value);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

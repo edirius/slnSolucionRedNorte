@@ -324,6 +324,12 @@
     <Compile Include="Reportes\fCantidadGestantes.Designer.cs">
       <DependentUpon>fCantidadGestantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\fControlGestanteporPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fControlGestanteporPaciente.Designer.cs">
+      <DependentUpon>fControlGestanteporPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\fControlGestantesEntreFechas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
       <DependentUpon>fCantidadGestantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fControlGestanteporPaciente.resx">
+      <DependentUpon>fControlGestanteporPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fControlGestantesEntreFechas.resx">
       <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
