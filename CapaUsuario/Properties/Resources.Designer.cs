@@ -73,6 +73,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _14980602_10209621931897877_3209561731875319866_n {
+            get {
+                object obj = ResourceManager.GetObject("14980602_10209621931897877_3209561731875319866_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Advertencia_Negro_84733 {
             get {
                 object obj = ResourceManager.GetObject("Advertencia-Negro-84733", resourceCulture);

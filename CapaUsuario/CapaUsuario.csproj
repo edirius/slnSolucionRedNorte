@@ -677,6 +677,7 @@
     <None Include="Resources\ControlPuerperio.jpg" />
     <None Include="Resources\14199162_10208986981984526_854374781998032101_n.jpg" />
     <None Include="Resources\descarga %281%29.jpg" />
+    <None Include="Resources\14980602_10209621931897877_3209561731875319866_n.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
