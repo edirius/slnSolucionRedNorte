@@ -42,13 +42,13 @@ namespace CapaUsuario.Bateria
         }
         private void Alertar()
         {
-            if (txtMensajeHemo.Text != "" || txtMensajeOrina.Text != "" || txtMensajeSifilis.Text != "" || txtMensajeVIH.Text != "" || txtMensajeTratamiento.Text != "")
+            if (lblMensajeHemo.Text != "" || lblMensajeOrina.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeVIH.Text != "" || lblMensajeTratamiento.Text !="")
             {
                 lblAlerta.Visible = true;
                 pbAlerta.Visible = true;
                 timer.Start();
             }
-            else if ( txtMensajeHemo.Text == "" || txtMensajeOrina.Text == "" || txtMensajeSifilis.Text == "" || txtMensajeVIH.Text == "" || txtMensajeTratamiento.Text != "")
+            else if (lblMensajeHemo.Text == "" || lblMensajeOrina.Text == "" || lblMensajeSifilis.Text == "" || lblMensajeVIH.Text == "" || lblMensajeTratamiento.Text == "")
             {
                 pbAlerta.Visible = false;
                 lblAlerta.Visible = false;
@@ -69,11 +69,11 @@ namespace CapaUsuario.Bateria
             nudOrina.Text = "";
             txtFechaExamenOrina.Text = "";
             txtFechaTratamiento.Text = "";
-            txtMensajeHemo.Text = "";
-            txtMensajeOrina.Text = "";
-            txtMensajeSifilis.Text = "";
-            txtMensajeVIH.Text = "";
-            txtMensajeTratamiento.Text = "";
+            lblMensajeHemo.Text = "";
+            lblMensajeOrina.Text = "";
+            lblMensajeSifilis.Text = "";
+            lblMensajeVIH.Text = "";
+            lblMensajeTratamiento.Text = "";
             dtpFecha.Focus();
             timer.Stop();
         }
@@ -241,11 +241,6 @@ namespace CapaUsuario.Bateria
                 MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
-        private void playSonidoDeAlerta()
-        {
-            SoundPlayer Alerta = new SoundPlayer(@"C:\Users\Usuario\Desktop\Imagenes para el sistema de control de embarazo\SonidoDeAlerta.mp3");
-            Alerta.Play();
-        }
         int Tiempo;
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -268,13 +263,13 @@ namespace CapaUsuario.Bateria
                 if (Convert.ToInt16(nudOrina.Value) >= 8)
                 {
 
-                    txtMensajeOrina.Text = "LA GESTANTE TIENE INFECCIÓN URINARIA A TRATAR";
+                    lblMensajeOrina.Text = "LA GESTANTE TIENE INFECCIÓN URINARIA A TRATAR";
                     //playSonidoDeAlerta();
                     //MessageBox.Show("La gestante tiene infección urinaria a tratar", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    txtMensajeOrina.Text = "";
+                    lblMensajeOrina.Text = "";
                 }
                 
             }
@@ -297,14 +292,7 @@ namespace CapaUsuario.Bateria
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
-                if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
-                {
-                    txtMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
-                }
-                if (txtFechaTratamiento.Text != "")
-                {
-                    txtMensajeTratamiento.Text = "";
-                }
+                Alertar();
             }
             catch { }
             
@@ -373,14 +361,14 @@ namespace CapaUsuario.Bateria
             if (cbSifilis.Text == "REACTIVO")
             {
                 
-                txtMensajeSifilis.Text = "LA GESTANTE TIENE SIFILIS POSITIVO";
+                lblMensajeSifilis.Text = "LA GESTANTE TIENE SIFILIS POSITIVO";
                 //playSonidoDeAlerta();
                 //MessageBox.Show("La gestante tiene SIFILIS positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                
-                txtMensajeSifilis.Text = "";
+
+                lblMensajeSifilis.Text = "";
             }
         }
 
@@ -389,13 +377,13 @@ namespace CapaUsuario.Bateria
             if (cbVIH.Text == "REACTIVO")
             {
                 
-                txtMensajeVIH.Text = "LA GESTANTE TIENE VIH POSITIVO";
+                lblMensajeVIH.Text = "LA GESTANTE TIENE VIH POSITIVO";
                 //playSonidoDeAlerta();
-                //MessageBox.Show("La gestante tiene VIH positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessagelblMensajeVIHBox.Show("La gestante tiene VIH positivo.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (cbVIH.Text == "NO REACTIVO")
             {
-                txtMensajeVIH.Text = "";
+                lblMensajeVIH.Text = "";
                 //pbAlerta.Visible = false;
                 //listPrecauciones.Items.Remove(mensaje1);
                 //timer.Stop();
@@ -406,13 +394,12 @@ namespace CapaUsuario.Bateria
         {
             if (Convert.ToDecimal(nudHemoglobina.Value) < Convert.ToDecimal(11.5))
             {
-                txtMensajeHemo.Text = "LA GESTANTE TIENE ANEMIA";
-                //playSonidoDeAlerta();
-                //MessageBox.Show("Precaución: La Gestante tiene anemia", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblMensajeHemo.Text = "LA GESTANTE TIENE ANEMIA";
+                
             }
-            else
+            if (Convert.ToDecimal(nudHemoglobina.Value) >= Convert.ToDecimal(11.5))
             {
-                txtMensajeHemo.Text = "";
+                lblMensajeHemo.Text = "";
                 //this.BackColor = System.Drawing.Color.White;
                 //this.ForeColor = System.Drawing.Color.Black;
                 //dgvListaBateria.ForeColor = System.Drawing.Color.Black;
@@ -488,6 +475,7 @@ namespace CapaUsuario.Bateria
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
+                //Alertar();
             }
             catch { }
             
@@ -559,47 +547,70 @@ namespace CapaUsuario.Bateria
         private void nudGlucosa_KeyPress(object sender, KeyPressEventArgs e)
         {
             miUtilitario.SoloNumeros(e);
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void nudOrina_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
             miUtilitario.SoloNumeros(e);
         }
 
         private void txtFechaExamenOrina_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
             miUtilitario.SoloNumeros(e);
         }
 
         private void txtFechaTratamiento_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
             miUtilitario.SoloNumeros(e);
-        }
-
-        private void txtMensajeTratamiento_TextChanged(object sender, EventArgs e)
-        {
-
-            Alertar();
-        }
-
-        private void txtFechaTratamiento_TextChanged(object sender, EventArgs e)
-        {
-            if (pbAlerta.Visible = true && txtFechaTratamiento.Text == "")
-            {
-                txtMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
-            }
-            if(txtFechaTratamiento.Text != "")
-            {
-                txtMensajeTratamiento.Text = "";
-            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtCodigoBateria.Text == "")
-            { Agregar(); }
-            else
-                Modificar();
+            {
+                if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "")
+                {
+                    MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Agregar();
+                }
+                else
+                {
+                    Agregar();
+                }  
+            }
+            if (txtCodigoBateria.Text != "")
+            {
+                if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text != "")
+                {
+                    MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Modificar();
+                }
+                else
+                {
+                    Modificar();
+                }
+            }
+                
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -615,6 +626,76 @@ namespace CapaUsuario.Bateria
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void cbSifilis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dtpFechaOrina_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void dtpFechaTratamiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void cbVIH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btnGuardar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void lblMensajeHemo_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void lblMensajeVIH_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void lblMensajeSifilis_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void lblMensajeOrina_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
+        }
+
+        private void lblMensajeTratamiento_TextChanged(object sender, EventArgs e)
+        {
+            Alertar();
         }
     }
 }

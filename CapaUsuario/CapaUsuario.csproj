@@ -662,6 +662,7 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\RecienNacido.jpg" />
     <None Include="Resources\Obstetra.jpg" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\VisitaDomiciliaria.jpg" />

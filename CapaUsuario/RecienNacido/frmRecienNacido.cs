@@ -274,7 +274,7 @@ namespace CapaUsuario.RecienNacido
         {
             if (nudApgar1.Value <= 7)
             {
-                txtMensajeApgar1.Text = "¡¡¡¡Alerta!!!!";
+                txtMensajeApgar1.Text = "¡¡¡¡ALERTA!!!!";
             }
             else
             {
@@ -286,7 +286,7 @@ namespace CapaUsuario.RecienNacido
         {
             if (nudApgar5.Value <= 7)
             {
-                txtMensajeApgar5.Text = "Niño Hipoactivo - No reactivo";
+                txtMensajeApgar5.Text = "NIÑO HIPOACTIVO - NO REACTIVO";
             }
             else
             {
@@ -298,7 +298,7 @@ namespace CapaUsuario.RecienNacido
         {
             if (nudPeso.Value <= 2500)
             {
-                txtMensajePeso.Text = "Recien nacido con bajo de peso";
+                txtMensajePeso.Text = "RECIEN NACIDO CON BAJO PESO";
             }
             else
             {
