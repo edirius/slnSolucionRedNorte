@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -78,6 +78,10 @@
             this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblMensajeTratamiento = new System.Windows.Forms.Label();
+            this.lblMensajeOrina = new System.Windows.Forms.Label();
+            this.lblMensajeSifilis = new System.Windows.Forms.Label();
+            this.lblMensajeVIH = new System.Windows.Forms.Label();
             this.lblMensajeHemo = new System.Windows.Forms.Label();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
@@ -88,10 +92,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblMensajeVIH = new System.Windows.Forms.Label();
-            this.lblMensajeOrina = new System.Windows.Forms.Label();
-            this.lblMensajeSifilis = new System.Windows.Forms.Label();
-            this.lblMensajeTratamiento = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -409,16 +409,15 @@
             this.txtCodigoBateria.Name = "txtCodigoBateria";
             this.txtCodigoBateria.Size = new System.Drawing.Size(82, 24);
             this.txtCodigoBateria.TabIndex = 94;
-            this.txtCodigoBateria.Visible = false;
             // 
             // dgvListaBateria
             // 
             this.dgvListaBateria.AllowUserToAddRows = false;
             this.dgvListaBateria.AllowUserToResizeColumns = false;
             this.dgvListaBateria.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListaBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaBateria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListaBateria.BackgroundColor = System.Drawing.Color.White;
@@ -438,9 +437,9 @@
             this.dgvListaBateria.Location = new System.Drawing.Point(12, 206);
             this.dgvListaBateria.Name = "dgvListaBateria";
             this.dgvListaBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaBateria.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvListaBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaBateria.Size = new System.Drawing.Size(763, 131);
             this.dgvListaBateria.TabIndex = 108;
@@ -451,10 +450,10 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "idtbateria";
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Codigo Bateria";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -463,8 +462,8 @@
             // Column2
             // 
             this.Column2.DataPropertyName = "idthistoriaclinica";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.HeaderText = "Codigo Historia";
             this.Column2.Name = "Column2";
             this.Column2.Visible = false;
@@ -472,8 +471,8 @@
             // Column3
             // 
             this.Column3.DataPropertyName = "fecha";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "Fecha Examen";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -481,8 +480,8 @@
             // hemoglobina
             // 
             this.hemoglobina.DataPropertyName = "hemoglobina";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hemoglobina.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hemoglobina.DefaultCellStyle = dataGridViewCellStyle5;
             this.hemoglobina.HeaderText = "Examen Hemoglobina";
             this.hemoglobina.Name = "hemoglobina";
             this.hemoglobina.ReadOnly = true;
@@ -490,8 +489,8 @@
             // vih
             // 
             this.vih.DataPropertyName = "vih";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vih.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vih.DefaultCellStyle = dataGridViewCellStyle6;
             this.vih.HeaderText = "Examen VIH";
             this.vih.Name = "vih";
             this.vih.ReadOnly = true;
@@ -499,8 +498,8 @@
             // sifilis
             // 
             this.sifilis.DataPropertyName = "sifilis";
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sifilis.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sifilis.DefaultCellStyle = dataGridViewCellStyle7;
             this.sifilis.HeaderText = "Examen Sifilis";
             this.sifilis.Name = "sifilis";
             this.sifilis.ReadOnly = true;
@@ -508,8 +507,8 @@
             // glucosa
             // 
             this.glucosa.DataPropertyName = "glucosa";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.glucosa.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glucosa.DefaultCellStyle = dataGridViewCellStyle8;
             this.glucosa.HeaderText = "Examen de Glucosa";
             this.glucosa.Name = "glucosa";
             this.glucosa.ReadOnly = true;
@@ -517,8 +516,8 @@
             // orina
             // 
             this.orina.DataPropertyName = "orina";
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orina.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orina.DefaultCellStyle = dataGridViewCellStyle9;
             this.orina.HeaderText = "Examen de Orina";
             this.orina.Name = "orina";
             this.orina.ReadOnly = true;
@@ -526,16 +525,16 @@
             // Column9
             // 
             this.Column9.DataPropertyName = "fechaexamenorina";
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column9.HeaderText = "Fecha Examen Orina";
             this.Column9.Name = "Column9";
             // 
             // fechatratamiento
             // 
             this.fechatratamiento.DataPropertyName = "fechatratamiento";
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechatratamiento.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechatratamiento.DefaultCellStyle = dataGridViewCellStyle11;
             this.fechatratamiento.HeaderText = "Fecha de Tratamiento";
             this.fechatratamiento.Name = "fechatratamiento";
             this.fechatratamiento.ReadOnly = true;
@@ -561,6 +560,58 @@
             this.groupBox2.TabIndex = 103;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuadro de precaución:";
+            // 
+            // lblMensajeTratamiento
+            // 
+            this.lblMensajeTratamiento.AutoSize = true;
+            this.lblMensajeTratamiento.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensajeTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeTratamiento.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeTratamiento.Location = new System.Drawing.Point(21, 193);
+            this.lblMensajeTratamiento.Name = "lblMensajeTratamiento";
+            this.lblMensajeTratamiento.Size = new System.Drawing.Size(32, 16);
+            this.lblMensajeTratamiento.TabIndex = 108;
+            this.lblMensajeTratamiento.Text = "......";
+            this.lblMensajeTratamiento.TextChanged += new System.EventHandler(this.lblMensajeTratamiento_TextChanged);
+            // 
+            // lblMensajeOrina
+            // 
+            this.lblMensajeOrina.AutoSize = true;
+            this.lblMensajeOrina.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensajeOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeOrina.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeOrina.Location = new System.Drawing.Point(21, 156);
+            this.lblMensajeOrina.Name = "lblMensajeOrina";
+            this.lblMensajeOrina.Size = new System.Drawing.Size(32, 16);
+            this.lblMensajeOrina.TabIndex = 107;
+            this.lblMensajeOrina.Text = "......";
+            this.lblMensajeOrina.TextChanged += new System.EventHandler(this.lblMensajeOrina_TextChanged);
+            // 
+            // lblMensajeSifilis
+            // 
+            this.lblMensajeSifilis.AutoSize = true;
+            this.lblMensajeSifilis.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensajeSifilis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeSifilis.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeSifilis.Location = new System.Drawing.Point(21, 127);
+            this.lblMensajeSifilis.Name = "lblMensajeSifilis";
+            this.lblMensajeSifilis.Size = new System.Drawing.Size(32, 16);
+            this.lblMensajeSifilis.TabIndex = 106;
+            this.lblMensajeSifilis.Text = "......";
+            this.lblMensajeSifilis.TextChanged += new System.EventHandler(this.lblMensajeSifilis_TextChanged);
+            // 
+            // lblMensajeVIH
+            // 
+            this.lblMensajeVIH.AutoSize = true;
+            this.lblMensajeVIH.BackColor = System.Drawing.Color.Transparent;
+            this.lblMensajeVIH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeVIH.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeVIH.Location = new System.Drawing.Point(21, 93);
+            this.lblMensajeVIH.Name = "lblMensajeVIH";
+            this.lblMensajeVIH.Size = new System.Drawing.Size(32, 16);
+            this.lblMensajeVIH.TabIndex = 105;
+            this.lblMensajeVIH.Text = "......";
+            this.lblMensajeVIH.TextChanged += new System.EventHandler(this.lblMensajeVIH_TextChanged);
             // 
             // lblMensajeHemo
             // 
@@ -707,58 +758,6 @@
             this.groupBox3.Size = new System.Drawing.Size(414, 261);
             this.groupBox3.TabIndex = 106;
             this.groupBox3.TabStop = false;
-            // 
-            // lblMensajeVIH
-            // 
-            this.lblMensajeVIH.AutoSize = true;
-            this.lblMensajeVIH.BackColor = System.Drawing.Color.Transparent;
-            this.lblMensajeVIH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeVIH.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeVIH.Location = new System.Drawing.Point(21, 93);
-            this.lblMensajeVIH.Name = "lblMensajeVIH";
-            this.lblMensajeVIH.Size = new System.Drawing.Size(32, 16);
-            this.lblMensajeVIH.TabIndex = 105;
-            this.lblMensajeVIH.Text = "......";
-            this.lblMensajeVIH.TextChanged += new System.EventHandler(this.lblMensajeVIH_TextChanged);
-            // 
-            // lblMensajeOrina
-            // 
-            this.lblMensajeOrina.AutoSize = true;
-            this.lblMensajeOrina.BackColor = System.Drawing.Color.Transparent;
-            this.lblMensajeOrina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeOrina.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeOrina.Location = new System.Drawing.Point(21, 156);
-            this.lblMensajeOrina.Name = "lblMensajeOrina";
-            this.lblMensajeOrina.Size = new System.Drawing.Size(32, 16);
-            this.lblMensajeOrina.TabIndex = 107;
-            this.lblMensajeOrina.Text = "......";
-            this.lblMensajeOrina.TextChanged += new System.EventHandler(this.lblMensajeOrina_TextChanged);
-            // 
-            // lblMensajeSifilis
-            // 
-            this.lblMensajeSifilis.AutoSize = true;
-            this.lblMensajeSifilis.BackColor = System.Drawing.Color.Transparent;
-            this.lblMensajeSifilis.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeSifilis.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeSifilis.Location = new System.Drawing.Point(21, 127);
-            this.lblMensajeSifilis.Name = "lblMensajeSifilis";
-            this.lblMensajeSifilis.Size = new System.Drawing.Size(32, 16);
-            this.lblMensajeSifilis.TabIndex = 106;
-            this.lblMensajeSifilis.Text = "......";
-            this.lblMensajeSifilis.TextChanged += new System.EventHandler(this.lblMensajeSifilis_TextChanged);
-            // 
-            // lblMensajeTratamiento
-            // 
-            this.lblMensajeTratamiento.AutoSize = true;
-            this.lblMensajeTratamiento.BackColor = System.Drawing.Color.Transparent;
-            this.lblMensajeTratamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensajeTratamiento.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajeTratamiento.Location = new System.Drawing.Point(21, 193);
-            this.lblMensajeTratamiento.Name = "lblMensajeTratamiento";
-            this.lblMensajeTratamiento.Size = new System.Drawing.Size(32, 16);
-            this.lblMensajeTratamiento.TabIndex = 108;
-            this.lblMensajeTratamiento.Text = "......";
-            this.lblMensajeTratamiento.TextChanged += new System.EventHandler(this.lblMensajeTratamiento_TextChanged);
             // 
             // frmBateria
             // 

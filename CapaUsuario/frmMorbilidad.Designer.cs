@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMorbilidad));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.txtHistoriaClinica = new System.Windows.Forms.TextBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
@@ -58,6 +58,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dgvGM = new System.Windows.Forms.DataGridView();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -71,11 +74,14 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGM)).BeginInit();
+            this.groupBox12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.txtHistoriaClinica);
+            this.groupBox13.ForeColor = System.Drawing.Color.White;
             this.groupBox13.Location = new System.Drawing.Point(6, 16);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(204, 49);
@@ -88,7 +94,7 @@
             this.txtHistoriaClinica.Enabled = false;
             this.txtHistoriaClinica.Location = new System.Drawing.Point(51, 20);
             this.txtHistoriaClinica.Name = "txtHistoriaClinica";
-            this.txtHistoriaClinica.Size = new System.Drawing.Size(100, 24);
+            this.txtHistoriaClinica.Size = new System.Drawing.Size(118, 24);
             this.txtHistoriaClinica.TabIndex = 1;
             // 
             // groupBox14
@@ -99,6 +105,7 @@
             this.groupBox14.Controls.Add(this.label8);
             this.groupBox14.Controls.Add(this.label1);
             this.groupBox14.Controls.Add(this.label5);
+            this.groupBox14.ForeColor = System.Drawing.Color.White;
             this.groupBox14.Location = new System.Drawing.Point(5, 71);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(690, 56);
@@ -109,6 +116,7 @@
             // txt_NombreCompleto
             // 
             this.txt_NombreCompleto.Enabled = false;
+            this.txt_NombreCompleto.ForeColor = System.Drawing.Color.Black;
             this.txt_NombreCompleto.Location = new System.Drawing.Point(298, 19);
             this.txt_NombreCompleto.Name = "txt_NombreCompleto";
             this.txt_NombreCompleto.Size = new System.Drawing.Size(285, 24);
@@ -117,6 +125,7 @@
             // txt_Edad
             // 
             this.txt_Edad.Enabled = false;
+            this.txt_Edad.ForeColor = System.Drawing.Color.Black;
             this.txt_Edad.Location = new System.Drawing.Point(639, 19);
             this.txt_Edad.Name = "txt_Edad";
             this.txt_Edad.Size = new System.Drawing.Size(34, 24);
@@ -125,6 +134,7 @@
             // txt_DNI
             // 
             this.txt_DNI.Enabled = false;
+            this.txt_DNI.ForeColor = System.Drawing.Color.Black;
             this.txt_DNI.Location = new System.Drawing.Point(51, 19);
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(100, 24);
@@ -133,6 +143,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(589, 22);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 18);
@@ -143,6 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(157, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 18);
@@ -153,6 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(16, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 18);
@@ -166,7 +179,7 @@
             this.groupBox7.Controls.Add(this.groupBox16);
             this.groupBox7.Controls.Add(this.groupBox14);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox7.Location = new System.Drawing.Point(7, 3);
+            this.groupBox7.Location = new System.Drawing.Point(107, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(699, 140);
             this.groupBox7.TabIndex = 45;
@@ -175,6 +188,7 @@
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.dtpFechaHistoriaClinica);
+            this.groupBox16.ForeColor = System.Drawing.Color.White;
             this.groupBox16.Location = new System.Drawing.Point(222, 16);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(143, 51);
@@ -195,6 +209,7 @@
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 705F));
@@ -204,7 +219,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(714, 149);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(913, 149);
             this.tableLayoutPanel3.TabIndex = 46;
             // 
             // groupBox9
@@ -218,7 +233,7 @@
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox9.Location = new System.Drawing.Point(23, 167);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(714, 234);
+            this.groupBox9.Size = new System.Drawing.Size(599, 234);
             this.groupBox9.TabIndex = 47;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Morbilidad(es)";
@@ -245,7 +260,7 @@
             this.dgvMorbilidad_.ReadOnly = true;
             this.dgvMorbilidad_.RowHeadersVisible = false;
             this.dgvMorbilidad_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMorbilidad_.Size = new System.Drawing.Size(702, 151);
+            this.dgvMorbilidad_.Size = new System.Drawing.Size(587, 151);
             this.dgvMorbilidad_.TabIndex = 30;
             this.dgvMorbilidad_.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMorbilidad__CellContentClick_1);
             // 
@@ -315,30 +330,35 @@
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 5;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.btnGuardar, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnNuevo, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnEliminar, 3, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(23, 407);
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.btnGuardar, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnNuevo, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnEliminar, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 3, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(79, 407);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(714, 54);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(777, 61);
             this.tableLayoutPanel4.TabIndex = 48;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnGuardar.Location = new System.Drawing.Point(145, 3);
+            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(3, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(136, 48);
+            this.btnGuardar.Size = new System.Drawing.Size(188, 55);
             this.btnGuardar.TabIndex = 0;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -348,10 +368,14 @@
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnNuevo.Location = new System.Drawing.Point(287, 3);
+            this.btnNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.BackgroundImage")));
+            this.btnNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(197, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(136, 48);
+            this.btnNuevo.Size = new System.Drawing.Size(188, 55);
             this.btnNuevo.TabIndex = 1;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -361,10 +385,14 @@
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnEliminar.Location = new System.Drawing.Point(429, 3);
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(391, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(136, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(188, 55);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -375,11 +403,12 @@
             this.groupBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox15.BackColor = System.Drawing.Color.Transparent;
             this.groupBox15.Controls.Add(this.dgvGM);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox15.Location = new System.Drawing.Point(23, 469);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(714, 185);
+            this.groupBox15.Size = new System.Drawing.Size(913, 185);
             this.groupBox15.TabIndex = 49;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Gestante con Morbilidad(es)";
@@ -394,6 +423,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGM.BackgroundColor = System.Drawing.Color.White;
             this.dgvGM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGM.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvGM.Location = new System.Drawing.Point(6, 19);
@@ -402,17 +432,52 @@
             this.dgvGM.ReadOnly = true;
             this.dgvGM.RowHeadersVisible = false;
             this.dgvGM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGM.Size = new System.Drawing.Size(703, 160);
+            this.dgvGM.Size = new System.Drawing.Size(902, 160);
             this.dgvGM.TabIndex = 20;
             this.dgvGM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellClick);
             this.dgvGM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGM_CellContentClick);
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.pictureBox1);
+            this.groupBox12.Location = new System.Drawing.Point(633, 174);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(303, 227);
+            this.groupBox12.TabIndex = 50;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(291, 206);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(585, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(189, 55);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmMorbilidad
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(766, 666);
+            this.ClientSize = new System.Drawing.Size(965, 666);
+            this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox15);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.groupBox9);
@@ -438,6 +503,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGM)).EndInit();
+            this.groupBox12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,5 +564,8 @@
         private System.Windows.Forms.DataGridView dgvMorbilidad_;
         private System.Windows.Forms.DataGridView dgvGM;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
