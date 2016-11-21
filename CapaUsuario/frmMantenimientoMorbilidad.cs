@@ -12,6 +12,9 @@ namespace CapaUsuario
 {
     public partial class frmMantenimientoMorbilidad : Form
     {
+
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
         public frmMantenimientoMorbilidad()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace CapaUsuario
         {
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
+            
             CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
 
             rbExtrema.Checked = true;
@@ -55,7 +59,7 @@ namespace CapaUsuario
             //odtMorbilidad.Columns.Add("Descripción", typeof(string));
             //odtMorbilidad.Columns.Add("Tipo", typeof(string));
 
-            dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+            dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
             /*
             dgvMorbilidad.Columns[0].Width = 22;
             dgvMorbilidad.Columns[1].Width = 30;
@@ -117,7 +121,7 @@ namespace CapaUsuario
 
                         oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
                         //odtMorbilidad = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad());
-                        dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                        dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
                         dgvMorbilidad.Columns[0].Visible = false;
                         nuevo();
                         /*Buscando indice del item agregado o modificado*/
@@ -228,7 +232,7 @@ namespace CapaUsuario
                         MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         oMorbilidad.Idtestablecimientosalud = CodigoEstablecimiento;
                         //odtMorbilidad = oMorbilidad.ListarMantenimientoMorbilidad();
-                        dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                        dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
                         dgvMorbilidad.Columns[0].Visible = false;
                         DataGridViewCellEventArgs x = new DataGridViewCellEventArgs(1, 0);
                         cargar_datos_morbilidad(x);
@@ -261,7 +265,7 @@ namespace CapaUsuario
                 
             }
 
-            dgvMorbilidad.DataSource = fHC.enumerar_datatable(odtMorbilidad,1);
+            dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(odtMorbilidad,1);
             dgvMorbilidad.Columns[0].Visible = false;
 
         }
@@ -287,7 +291,7 @@ namespace CapaUsuario
             if (seleccionado == "Todo")
             {
                 //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
-                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
+                dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMantenimientoMorbilidad(),1);
                 dgvMorbilidad.Columns[0].Visible = false;
             }
 
@@ -295,7 +299,7 @@ namespace CapaUsuario
             {
                 //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
                 oMorbilidad.Tipo = seleccionado;
-                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
+                dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
                 dgvMorbilidad.Columns[0].Visible = false;
             }
 
@@ -303,7 +307,7 @@ namespace CapaUsuario
             {
                 //oMorbilidad.Idtestablecimientosalud = IdEstablecimiento;
                 oMorbilidad.Tipo = seleccionado;
-                dgvMorbilidad.DataSource = fHC.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
+                dgvMorbilidad.DataSource = oUtilitarios.enumerar_datatable(oMorbilidad.ListarMorbilidadXTipo(),1);
                 dgvMorbilidad.Columns[0].Visible = false;
             }
         }

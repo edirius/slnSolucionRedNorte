@@ -42,6 +42,8 @@ namespace CapaUsuario
 
         bool bnivel0 = false, bnivel1 = false, bnivel2 = false, bnivel3 = false, bnivel4 = false, bnivel5 = false;
 
+        CapaUsuario.fBuscarCicloGestante fBuscarCicloGestante = new CapaUsuario.fBuscarCicloGestante();
+
         int i = 0;
         string obstetra = "";
 
@@ -74,56 +76,33 @@ namespace CapaUsuario
 
 
         }
-
-        private void establecer_combos_fecha_actual() {
-            mes_numero = Convert.ToInt16(DateTime.Now.Month.ToString("00"));
-            año_numero = Convert.ToInt16(DateTime.Now.Year.ToString("0000"));
-
-            cbYear.SelectedItem = cbYear.Items[0];
-            cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
-            
-        }
-
-        public DataTable enumerar_datatable(DataTable dt, int posicion ) {
-            dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
-            for (int i = 0; i < dt.Rows.Count; i++) {
-                dt.Rows[i][posicion] = i + 1;
-            }
-            return dt;
-        }
-
-        /*
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
-        {
-            base.OnPaint(e);
-        }
-        */
+ 
+        
+ 
 
         private void frmHistoriaClinica_Load(object sender, EventArgs e)
         {
             DataTable odtHistoriaClinica = new DataTable();
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
             CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud oEstablecimientoSalud = new CapaDeNegocios.EstablecimientoSalud.cEstablecimientoSalud();
+            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+            /*ocultando picture box de color*/
+            pbMM.Visible = false;
+            pbAPN.Visible = false;
+            pbRB.Visible = false;
+            pbVD.Visible = false;
+            pbTG.Visible = false;
+            pbCP.Visible = false;
+            pbARN.Visible = false;
+            pbCR.Visible = false;
 
 
-            /*Año y mes de historia clinica*/
-
-            /*datetimepicker property*/
-            //this.SetStyle(ControlStyles.UserPaint, true);
-
-
-            cbYear.DataSource = oHistoriaClinica.ListarYear();
-            cbYear.ValueMember = "yyyy";
-            cbYear.DisplayMember = "yyyy";
-
-            establecer_combos_fecha_actual();
+ 
 
             bandera_combobox_año = true;
 
-            año = Convert.ToInt16( this.cbYear.GetItemText(this.cbYear.SelectedItem));
-            mes = Convert.ToInt16 (this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
-            mes = mes + 1;
-            
+         
             /*datagridview odontologo*/
 
             odtOdontologo.Columns.Add("N°", typeof(string));
@@ -177,12 +156,12 @@ namespace CapaUsuario
             oHistoriaClinica.Idtobstetra = IdObstetra;
             oHistoriaClinica.mes = mes;
             oHistoriaClinica.año = año;
-            odtHistoriaClinica = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),1);
-            dgvHC.DataSource = odtHistoriaClinica;
+            odtHistoriaClinica = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),1);
+            //dgvHC.DataSource = odtHistoriaClinica;
 
-            dgvHC.Columns[0].Visible = false;
+            //dgvHC.Columns[0].Visible = false;
 
-            cbBuscar.SelectedItem = cbBuscar.Items[0];
+            //cbBuscar.SelectedItem = cbBuscar.Items[0];
 
             string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
 
@@ -365,7 +344,9 @@ namespace CapaUsuario
             if (fGestante.ShowDialog() == DialogResult.OK)
             {
                 txtDNI.Text = fGestante.DNI;
-                txtNombreCompleto.Text = fGestante.nombres + ", " + fGestante.app + " " + fGestante.apm;
+                txtNombreCompleto.Text = fGestante.nombres;
+                txtApellidoPaterno.Text = fGestante.app;
+                txtApellidoMaterno.Text = fGestante.apm;
                 txtHistoriaClinica.Text = fGestante.codigohistoriaclinica;
 
                 DateTime fn_ = fGestante.fn;
@@ -430,7 +411,9 @@ namespace CapaUsuario
             Edad = odtHCXIdHC.Rows[0][4].ToString();
 
             txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
-            txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
+            txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString();
+            txtApellidoPaterno.Text = odtHCXIdHC.Rows[0][18].ToString();
+            txtApellidoMaterno.Text = odtHCXIdHC.Rows[0][19].ToString();
 
             txtHistoriaClinica.Text = odtHCXIdHC.Rows[0][1].ToString();
             cboTipoLlegada.Text = odtHCXIdHC.Rows[0][2].ToString();
@@ -450,6 +433,10 @@ namespace CapaUsuario
             if (trimestreapn == 2) rbSegundoTrimestre.Checked = true;
             if (trimestreapn == 3) rbTercerTrimestre.Checked = true;
 
+            txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
+            txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
+
+            calcular_imc();
 
             nudSemanas.Text = odtHCXIdHC.Rows[0][13].ToString();
             txtObservaciones.Text = odtHCXIdHC.Rows[0][14].ToString();
@@ -499,6 +486,18 @@ namespace CapaUsuario
             dgvEcografia.Columns[1].Width = 30;
         }
 
+
+        private void calcular_imc() {
+            double peso,talla;
+            if (Double.TryParse(txtPeso.Text, out peso) && Double.TryParse(txtTalla.Text, out talla))
+            {
+                double peso2 = Convert.ToDouble(txtPeso.Text);
+                double talla2 = Convert.ToDouble(txtTalla.Text);
+                double imc = peso2 / Math.Pow(talla2, 2);
+                lblIMC.Text = Math.Round( Convert.ToDecimal(imc), 2).ToString();
+            }
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
  
@@ -509,6 +508,7 @@ namespace CapaUsuario
            
         }
 
+        /*
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
             string buscar = txtBuscar.Text;
@@ -586,30 +586,14 @@ namespace CapaUsuario
 
 
         }
+        */
 
         private void label12_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listar_historia_clinica() {
-
-            if (bandera_combobox_año){
-                CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-                DataTable odtHC = new DataTable();
-                año = 0; mes = 0;
-                año = Convert.ToInt16( cbYear.GetItemText(cbYear.SelectedItem) );
-                mes = Convert.ToInt16(cbMonth.GetItemText(cbMonth.SelectedIndex));
-                mes = mes + 1;
-
-                oHistoriaClinica.año = año;
-                oHistoriaClinica.mes = mes;
-
-                oHistoriaClinica.Idtobstetra = IdObstetra;
-                odtHC = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),1);
-                dgvHC.DataSource = odtHC ;
-            }
-        }
+      
 
         private void cbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -953,7 +937,29 @@ namespace CapaUsuario
                 oHistoriaClinica.Archivado = 0;
             }
 
-            /*Validando datos*/
+                /*Validando datos*/
+                double peso, talla;
+
+            if (Double.TryParse(txtPeso.Text, out peso))
+            {
+                oHistoriaClinica.Peso = Convert.ToDecimal(txtPeso.Text);
+            }
+
+            if (Double.TryParse(txtPeso.Text, out talla))
+            {
+                oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
+            }
+
+            if (Double.TryParse(txtPeso.Text, out peso)) {
+                completo = true;
+                mensaje = "Porfavor ingresar el peso de la gestante.";
+            }
+
+            if (Double.TryParse(txtTalla.Text, out talla))
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar la talla de la gestante.";
+            }
 
             if (dgvOdontologia.Rows.Count < 0)
             {
@@ -1113,17 +1119,17 @@ namespace CapaUsuario
                                 año = año_numero;
                                 mes = mes_numero;
 
-                                establecer_combos_fecha_actual();
+                                //establecer_combos_fecha_actual();
 
                                 oHistoriaClinica.año = dtpFecha.Value.Year;
                                 oHistoriaClinica.mes = dtpFecha.Value.Month;
 
-                                cbYear.SelectedValue = dtpFecha.Value.Year;
-                                cbMonth.SelectedItem = cbMonth.Items[dtpFecha.Value.Month - 1];
+                                //cbYear.SelectedValue = dtpFecha.Value.Year;
+                                //cbMonth.SelectedItem = cbMonth.Items[dtpFecha.Value.Month - 1];
 
                                 oHistoriaClinica.Idtobstetra = IdObstetra;
-                                dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
-                                dgvHC.Columns[0].Visible = false;
+                                //dgvHC.DataSource = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
+                                //dgvHC.Columns[0].Visible = false;
                                 //nueva_historia_clinica();
                                 
                                 int rowIndex = 0;
@@ -1131,6 +1137,7 @@ namespace CapaUsuario
 
 
                                 /*Buscando indice del item agregado o modificado*/
+                                /*
                                 for (int i = 0; i < dgvHC.Rows.Count; i++)
                                 {
                                     item = dgvHC.Rows[i].Cells[0].Value.ToString();
@@ -1140,11 +1147,12 @@ namespace CapaUsuario
                                         break;
                                     }
                                 }
+                                */
 
-                                dgvHC.Rows[rowIndex].Selected = true;
-                                dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
-                                IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
-                                Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
+                                //dgvHC.Rows[rowIndex].Selected = true;
+                                //dgvHC.CurrentCell = dgvHC.Rows[rowIndex].Cells[1];
+                                //IdtHistoriaClinica = dgvHC[0, rowIndex].Value.ToString();
+                                //Codigo_Historia_Clinica = dgvHC[3, rowIndex].Value.ToString();
 
                                     cargar_hc();
 
@@ -1354,26 +1362,34 @@ namespace CapaUsuario
 
         private void cbBuscar_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            /*
             if (e.KeyChar == (char)13)
                 txtBuscar.Focus();
+                */
         }
 
         private void txtBuscar_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            /*
             if (e.KeyChar == (char)13)
                 cbYear.Focus();
+                */
         }
 
         private void cbYear_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            /*
             if (e.KeyChar == (char)13)
                 cbMonth.Focus();
+                */
         }
 
         private void cbMonth_KeyPress(object sender, KeyPressEventArgs e)
         {
+            /*
             if (e.KeyChar == (char)13)
                 dgvHC.Focus();
+                */
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -1384,12 +1400,12 @@ namespace CapaUsuario
 
         private void cbYear_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            listar_historia_clinica();
+            //listar_historia_clinica();
         }
 
         private void cbMonth_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            listar_historia_clinica();
+            //listar_historia_clinica();
         }
 
         private void buMorbilidad_Click(object sender, EventArgs e)
@@ -1455,7 +1471,7 @@ namespace CapaUsuario
         {
             if (e.RowIndex != -1)
             {
-                IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
+                //IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
                 cargar_hc();
             }
         }
@@ -1464,7 +1480,7 @@ namespace CapaUsuario
         {
             if (e.RowIndex != -1)
             {
-                IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
+                //IdtHistoriaClinica = dgvHC[0, e.RowIndex].Value.ToString();
                 cargar_hc();
             }
         }
@@ -2110,22 +2126,22 @@ namespace CapaUsuario
 
         private void gbBuscar_Enter(object sender, EventArgs e)
         {
-            gbBuscar.BackColor = System.Drawing.Color.LightSkyBlue;
+            //gbBuscar.BackColor = System.Drawing.Color.LightSkyBlue;
         }
 
         private void gbBuscar_Leave(object sender, EventArgs e)
         {
-            gbBuscar.BackColor = System.Drawing.Color.White;
+            //gbBuscar.BackColor = System.Drawing.Color.White;
         }
 
         private void gbFiltrar_Enter(object sender, EventArgs e)
         {
-            gbFiltrar.BackColor = System.Drawing.Color.LightSkyBlue;
+            //gbFiltrar.BackColor = System.Drawing.Color.LightSkyBlue;
         }
 
         private void gbFiltrar_Leave(object sender, EventArgs e)
         {
-            gbFiltrar.BackColor = System.Drawing.Color.White;
+            //gbFiltrar.BackColor = System.Drawing.Color.White;
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
@@ -2405,6 +2421,179 @@ namespace CapaUsuario
 
 
 
+            }
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buMorbilidad_MouseEnter(object sender, EventArgs e)
+        {
+            pbMorbilidad.Visible = false;
+            pbMM.Visible = true;
+        }
+
+        private void buMorbilidad_MouseLeave(object sender, EventArgs e)
+        {
+            pbMorbilidad.Visible = true;
+            pbMM.Visible = false;
+            
+        }
+
+        private void buAtencionPrenatal_MouseEnter(object sender, EventArgs e)
+        {
+            pbPrenatal.Visible = false;
+            pbAPN.Visible = true;
+        }
+
+        private void buAtencionPrenatal_MouseLeave(object sender, EventArgs e)
+        {
+            pbPrenatal.Visible = true;
+            pbAPN.Visible = false;
+        }
+
+        private void buRegistroBateria_MouseEnter(object sender, EventArgs e)
+        {
+            pbRegBateria.Visible = false;
+            pbRB.Visible = true;
+        }
+
+        private void buRegistroBateria_MouseLeave(object sender, EventArgs e)
+        {
+            pbRegBateria.Visible = true;
+            pbRB.Visible = false;
+        }
+
+        private void buVisitaDomiciliaria_MouseEnter(object sender, EventArgs e)
+        {
+            pbVisitaDomiciliaria.Visible = false;
+            pbVD.Visible = true;
+        }
+
+        private void buVisitaDomiciliaria_MouseLeave(object sender, EventArgs e)
+        {
+            pbVisitaDomiciliaria.Visible = true;
+            pbVD.Visible = false;
+        }
+
+        private void btnTerminoGestacion_MouseEnter(object sender, EventArgs e)
+        {
+            pbTerminoGestacion.Visible = false;
+            pbTG.Visible = true;
+        }
+
+        private void btnTerminoGestacion_MouseLeave(object sender, EventArgs e)
+        {
+            pbTerminoGestacion.Visible = true;
+            pbTG.Visible = false;
+        }
+
+        private void buControlPuerperio_MouseEnter(object sender, EventArgs e)
+        {
+            pbControlPuerperio.Visible = false;
+            pbCP.Visible = true;
+        }
+
+        private void buControlPuerperio_MouseLeave(object sender, EventArgs e)
+        {
+            pbControlPuerperio.Visible = true;
+            pbCP.Visible = false;
+        }
+
+        private void btnRecienNacido_MouseEnter(object sender, EventArgs e)
+        {
+            pbRecienNAcido.Visible = false;
+            pbARN.Visible = true;
+        }
+
+        private void btnRecienNacido_MouseLeave(object sender, EventArgs e)
+        {
+            pbRecienNAcido.Visible = true;
+            pbARN.Visible = false;
+        }
+
+        private void buCronograma_MouseEnter(object sender, EventArgs e)
+        {
+            pbCronograma.Visible = false;
+            pbCR.Visible = true;
+        }
+
+        private void buCronograma_MouseLeave(object sender, EventArgs e)
+        {
+            pbCronograma.Visible = true;
+            pbCR.Visible = false;
+        }
+
+        private void buBuscar_Click(object sender, EventArgs e)
+        {
+            if (fBuscarCicloGestante.ShowDialog() == DialogResult.OK)
+            {
+                dtpFecha.Focus();
+                IdtHistoriaClinica = fBuscarCicloGestante.IdtHistoriaClinica;
+                cargar_hc();
+            }
+        }
+
+        private void txtPeso_TextChanged(object sender, EventArgs e)
+        {
+            calcular_imc();
+        }
+
+        private void txtTalla_TextChanged(object sender, EventArgs e)
+        {
+            calcular_imc();
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPeso.Text, @"\.\d\d\d"))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtTalla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtTalla.Text, @"\.\d\d"))
+            {
+                e.Handled = true;
+            }
+
+            string word = txtTalla.Text.Trim();
+            string[] wordArr = word.Split('.');
+            if (wordArr.Length > 1)
+            {
+                string afterDot = wordArr[1];
+                if (afterDot.Length > 2)
+                {
+                    txtTalla.Text = wordArr[0] + "." + afterDot.Substring(0, 2);
+                }
             }
 
         }

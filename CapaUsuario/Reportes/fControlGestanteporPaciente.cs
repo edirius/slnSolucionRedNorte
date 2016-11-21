@@ -30,6 +30,7 @@ namespace CapaUsuario.Reportes
         int mes = 0;
         int i = 0;
         bool bandera_combobox_año = false;
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
 
         DataTable odtListaGestantesReporte = new DataTable();
         string codigo_hc = "";
@@ -785,13 +786,13 @@ namespace CapaUsuario.Reportes
 
             oGestanteMorbilidad.idthistoriaclinica = IdtHistoriaClinica;
 
-            odtMO = oHC.enumerar_datatable(oGestanteMorbilidad.ListarGestanteMorbilidad(), 0);
+            odtMO = oUtilitarios.enumerar_datatable(oGestanteMorbilidad.ListarGestanteMorbilidad(), 0);
             odtMO.Columns.RemoveAt(1);
 
             dgvMorbilidad.DataSource = odtMO;
 
 
-            odtPN = oHC.enumerar_datatable(oCitaPrenatal.ListaCitasPreNatal(), 0);
+            odtPN = oUtilitarios.enumerar_datatable(oCitaPrenatal.ListaCitasPreNatal(), 0);
             odtPN.Columns.RemoveAt(1);
             odtPN.Columns.RemoveAt(1);
             odtPN.Columns.RemoveAt(5);
@@ -800,39 +801,39 @@ namespace CapaUsuario.Reportes
             dgvAtencionPreNatal.DataSource = odtPN;
 
 
-            odtRB = oHC.enumerar_datatable(oBateria.ReporteBateria(IdtHistoriaClinica), 0);
+            odtRB = oUtilitarios.enumerar_datatable(oBateria.ReporteBateria(IdtHistoriaClinica), 0);
             odtRB.Columns.RemoveAt(1);
             odtRB.Columns.RemoveAt(1);
             dgvRegBateria.DataSource = odtRB;
 
 
-            odtVG = oHC.enumerar_datatable(oVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(IdtHistoriaClinica), 0);
+            odtVG = oUtilitarios.enumerar_datatable(oVisitaDomiciliariaGestante.ListarVisitaDomiciliariaGestante(IdtHistoriaClinica), 0);
             odtVG.Columns.RemoveAt(1);
             odtVG.Columns.RemoveAt(5);
             dgvVisitasG.DataSource = odtVG;
 
 
-            odtVP = oHC.enumerar_datatable(oVisitaDomiciliariaPuerpera.ListarVisitaDomiciliariaPuerperaRN(IdtHistoriaClinica), 0);
+            odtVP = oUtilitarios.enumerar_datatable(oVisitaDomiciliariaPuerpera.ListarVisitaDomiciliariaPuerperaRN(IdtHistoriaClinica), 0);
             odtVP.Columns.RemoveAt(1);
             odtVP.Columns.RemoveAt(8);
             dgvVisitasPuerpera.DataSource = odtVP;
 
 
-            odtTG = oHC.enumerar_datatable(oTerminoGestacion.ListarTerminoGestacion(IdtHistoriaClinica), 0);
+            odtTG = oUtilitarios.enumerar_datatable(oTerminoGestacion.ListarTerminoGestacion(IdtHistoriaClinica), 0);
             odtTG.Columns.RemoveAt(1);
             odtTG.Columns.RemoveAt(11);
             odtTG.Columns.RemoveAt(1);
             dgvTerminoGestacion.DataSource = odtTG;
 
 
-            odtCP = oHC.enumerar_datatable(oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica), 0);
+            odtCP = oUtilitarios.enumerar_datatable(oControlPuerperio.ListarControlPeuperio(IdtHistoriaClinica), 0);
             odtCP.Columns.RemoveAt(1);
             odtCP.Columns.RemoveAt(9);
             odtCP.Columns.RemoveAt(1);
             dgvControlPuerperio.DataSource = odtCP;
 
 
-            odtRN = oHC.enumerar_datatable(oRecienNacido.ListarRecienNacido(IdtHistoriaClinica), 0);
+            odtRN = oUtilitarios.enumerar_datatable(oRecienNacido.ListarRecienNacido(IdtHistoriaClinica), 0);
             odtRN.Columns.RemoveAt(1);
             odtRN.Columns.RemoveAt(1);
             dgvRecienNacido.DataSource = odtRN;

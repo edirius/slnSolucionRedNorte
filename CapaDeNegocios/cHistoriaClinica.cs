@@ -15,6 +15,8 @@ namespace CapaDeNegocios
         
         public string Tipollegada { get; set; }
         public string Tiempollegada { get; set; }
+        public decimal Peso { get; set; }
+        public decimal Talla { get; set; }
         public int Edad { get; set; }
         public int Gestas { get; set; }
         public int Partos { get; set; }
@@ -46,12 +48,12 @@ namespace CapaDeNegocios
 
         public DataTable CrearHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS,Archivado);
+            return Conexion.GDatos.TraerDataTable("spCrearHistoriaClinica", Idtestablecimientosalud,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha, Transeunte, OrigenEESS,Archivado,Peso,Talla);
         }
 
         public DataTable ModificarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS,Archivado);
+            return Conexion.GDatos.TraerDataTable("spModificarHistoriaClinica", Idthistoriaclinica,  Tipollegada, Tiempollegada, Edad, Gestas, Partos, Abortos, Hijosvivos, Hijosmuertos, Fur, Fpp, Trimestreapn, Semanaapn, Observaciones, Idtpaciente, Idtobstetra, Fecha,Transeunte,OrigenEESS,Archivado,Peso,Talla);
         }
 
         public DataTable ListarHistoriaClinica()

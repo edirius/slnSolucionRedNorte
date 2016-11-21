@@ -239,6 +239,12 @@
     <Compile Include="Exportacion\frmExportacion.Designer.cs">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="fBuscarCicloGestante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBuscarCicloGestante.Designer.cs">
+      <DependentUpon>fBuscarCicloGestante.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoMorbilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,6 +462,9 @@
     <EmbeddedResource Include="Exportacion\frmExportacion.resx">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fBuscarCicloGestante.resx">
+      <DependentUpon>fBuscarCicloGestante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoMorbilidad.resx">
       <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -662,6 +671,25 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\images %289%29 bw.jpg" />
+    <None Include="Resources\images %288%29 bw.jpg" />
+    <None Include="Resources\images %287%29 bw.jpg" />
+    <None Include="Resources\images %286%29 bw.jpg" />
+    <None Include="Resources\images %285%29 bw.jpg" />
+    <None Include="Resources\images %284%29 bw.jpg" />
+    <None Include="Resources\images %283%29 bw.jpg" />
+    <None Include="Resources\images %289%29.jpg" />
+    <None Include="Resources\images %288%29.jpg" />
+    <None Include="Resources\images %287%29.jpg" />
+    <None Include="Resources\images %286%29.jpg" />
+    <None Include="Resources\images %285%29.jpg" />
+    <None Include="Resources\images %284%29.jpg" />
+    <None Include="Resources\images %283%29.jpg" />
+    <None Include="Resources\images %282%29.jpg" />
+    <None Include="Resources\images %281%29.jpg" />
+    <None Include="Resources\mama-del-cusco.jpg" />
+    <None Include="Resources\ninos-eco-01-a.jpg" />
+    <None Include="Resources\sonrisa_ñusta.jpg" />
     <None Include="Resources\RecienNacido.jpg" />
     <None Include="Resources\Obstetra.jpg" />
     <None Include="Resources\images.jpg" />
@@ -678,6 +706,9 @@
     <None Include="Resources\14199162_10208986981984526_854374781998032101_n.jpg" />
     <None Include="Resources\descarga %281%29.jpg" />
     <None Include="Resources\14980602_10209621931897877_3209561731875319866_n.jpg" />
+    <None Include="Resources\cusco_pisac1.jpg" />
+    <None Include="Resources\descarga %282%29.jpg" />
+    <None Include="Resources\descarga %282%29 bw.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
