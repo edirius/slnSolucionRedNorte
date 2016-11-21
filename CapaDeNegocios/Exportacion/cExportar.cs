@@ -56,7 +56,6 @@ namespace CapaDeNegocios.Exportacion
         {
           
             DataTable tablaAuxiliar;
-          
             string lineaInsertCabeza = "Insert into " + nombreTabla + "(";
             string lineaSQL = "";
             tablaAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + nombreTabla);
@@ -68,8 +67,6 @@ namespace CapaDeNegocios.Exportacion
                     lineaInsertCabeza = lineaInsertCabeza + ",";
                 }
             }
-           
-
             lineaInsertCabeza = lineaInsertCabeza + ") values (";
             
             string[] columnas = null;
@@ -85,15 +82,15 @@ namespace CapaDeNegocios.Exportacion
                     switch (tablaAuxiliar.Columns[j].DataType.ToString())
                     {
                         case "System.String":
-                            lineaSQL = lineaSQL + "'" + cSeguridad.DesEncriptar(columnas[j]) + "'";
+                            /*Desencriptar Aquí en las columnas */ lineaSQL = lineaSQL + "'" + columnas[j] + "'";
                             break;
                         case "System.DateTime":
-                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                            /*Desencriptar Aquí en las columnas */ DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
 
                             lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
                             break;
                         default:
-                            lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
+                            /*Desencriptar Aquí en las columnas */ lineaSQL = lineaSQL + columnas[j];
                             break;
                     }
                     
@@ -142,7 +139,8 @@ namespace CapaDeNegocios.Exportacion
 
                                 foreach (DataColumn col in tAuxiliar.Columns)
                                 {
-                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
+                                    
+                                    /*Desencriptar Aquí*/ Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write(",");

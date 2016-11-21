@@ -55,6 +55,7 @@
     <Compile Include="cPruebaExportar.cs" />
     <Compile Include="cSeguridad.cs" />
     <Compile Include="cUtilitarios.cs" />
+    <Compile Include="Exportacion\cProgressReport.cs" />
     <Compile Include="Reportes\cReporteObstetra.cs" />
     <Compile Include="TerminoGestacion\cTerminoGestacion.cs" />
     <Compile Include="cRecienNacido.cs" />
