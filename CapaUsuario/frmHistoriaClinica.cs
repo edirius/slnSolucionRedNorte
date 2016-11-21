@@ -1767,6 +1767,22 @@ namespace CapaUsuario
                             cell.BorderWidthTop = 0f;
                             cell.BorderWidthBottom = 0f;
 
+                            if (celda.Contains("FUR")) {
+                                cell.BackgroundColor = new iTextSharp.text.Color(213, 255, 255);
+                            }
+
+                            if (celda.Contains("FPP"))
+                            {
+                                cell.BackgroundColor = new iTextSharp.text.Color(195, 170, 255);
+                            }
+
+                            if (celda.Contains("CITA ASISTIDA"))
+                            {
+                                cell.BackgroundColor = new iTextSharp.text.Color(195, 170, 255);
+                            }
+
+
+
                             if ( i==0 )
                                 cell.BorderWidthTop = 1f;
 
@@ -2209,7 +2225,6 @@ namespace CapaUsuario
                 drFilaCronograma[1] = "N";
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 8);
 
-
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
                 odt = oCitaPrenatal.ListaCitasPreNatal();
                 /*fin FUR y FPP*/
@@ -2229,10 +2244,12 @@ namespace CapaUsuario
                     odtCronograma.Rows[5][1] = cita.ToString("dd/MM/yyyy") ;
                     odtCronograma.Rows[7][1] = odt.Rows[i]["NUMERO DE CITA"];
                     odtCronograma.Rows[8][1] = "C";
+                    
                     odtCronograma.Rows[4][2] = etiqueta_prox_cita;
                     odtCronograma.Rows[5][2] = proxCita.ToString("dd/MM/yyyy");
                     odtCronograma.Rows[7][2] = Convert.ToInt16(odt.Rows[i]["NUMERO DE CITA"]) + 1 ;
                     odtCronograma.Rows[8][2] = "C";
+                    
                 }
 
                 dgvCronograma.DataSource = odtCronograma;
@@ -2300,6 +2317,7 @@ namespace CapaUsuario
                         odtCronograma.Rows[5][indice_termino_gestacion] = termino_gestacion.ToString("dd/MM/yyyy");
                         odtCronograma.Rows[7][indice_termino_gestacion] = "-3";
                         odtCronograma.Rows[8][indice_termino_gestacion] = "TG";
+                        
                     }
                     if (bandera_repite_fecha_tg)
                     {
@@ -2307,7 +2325,7 @@ namespace CapaUsuario
                     }
                 }
                 else {
-                    termino_gestacion = FPP;
+                    termino_gestacion = FPP;    
                 }
 
                 /*Fin termino gestacion*/
