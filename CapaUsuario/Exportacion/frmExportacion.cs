@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using CapaDeNegocios;
 using CapaDeNegocios.Exportacion;
+using System.Collections;
 namespace CapaUsuario.Exportacion
 {
     public partial class frmExportacion : Form
@@ -19,9 +20,8 @@ namespace CapaUsuario.Exportacion
         {
             InitializeComponent();
         }
-
         cExportar oExportar = new cExportar();
-
+        
         public string NombreObstetra { get; set; }
         public string IdObstetra { get; set; }
         public string NombreEstablecimientoSalud { get; set; }
@@ -29,8 +29,7 @@ namespace CapaUsuario.Exportacion
 
         private void frmExportacion_Load(object sender, EventArgs e)
         {
-            lblEstablecimiento.Text = NombreEstablecimientoSalud;
-            lblObstetra.Text = NombreObstetra;
+            
         }
 
         //protected override void OnPaintBackground(PaintEventArgs e)
@@ -43,29 +42,35 @@ namespace CapaUsuario.Exportacion
         //        e.Graphics.FillRectangle(brush, this.ClientRectangle);
         //    }
         //}
-
+        string NombreArchivo;
         private async void btnExportar_Click(object sender, EventArgs e)
         {
-            dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
-            dlgGuardar.DefaultExt = ".gsys";
+            try { }
+            catch { }
+            oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
+            dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.GSYS)|*.GSYS";
+            dlgGuardar.DefaultExt = ".GSYS";
+
+            char[] delimiter = { '/' };
+            string[] substring = (IdEstablecimientoSalud + NombreEstablecimientoSalud + DateTime.Today.ToShortDateString()).Split(delimiter);
+            NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
+            dlgGuardar.FileName = NombreArchivo;
             dlgGuardar.ShowDialog();
             IniciarCarga();
-            oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
+            oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
             /////
             /////
             MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
-
         }
         
         private async void btnImportar_Click(object sender, EventArgs e)
         {
             
-            dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
-            dlgAbrir.ShowDialog();
-            oExportar.BorrarDatosTabla(IdEstablecimientoSalud);
-            MessageBox.Show(IdEstablecimientoSalud);
-            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+            //dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
+            //dlgAbrir.ShowDialog();
+            ////oExportar.BorrarDatosTabla(IdEstablecimientoSalud);
+            //MessageBox.Show(IdEstablecimientoSalud);
+            //oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
 
             /////////////////////////////
 

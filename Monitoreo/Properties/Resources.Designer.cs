@@ -73,9 +73,49 @@ namespace Monitoreo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSuculento {
+            get {
+                object obj = ResourceManager.GetObject("btnSuculento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ExportarDatos {
+            get {
+                object obj = ResourceManager.GetObject("ExportarDatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FondoFormularios2 {
+            get {
+                object obj = ResourceManager.GetObject("FondoFormularios2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoLogin {
             get {
                 object obj = ResourceManager.GetObject("fondoLogin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap importar {
+            get {
+                object obj = ResourceManager.GetObject("importar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

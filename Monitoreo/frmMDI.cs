@@ -68,5 +68,16 @@ namespace Monitoreo
             fReporteMicroRED.MdiParent = this;
             fReporteMicroRED.Show();
         }
+
+        private void importaciónDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Importacion.frmImportarDatos Importar = new Importacion.frmImportarDatos();
+            //Importar.IdEstablecimientoSalud = IdEstablecimientoSalud;
+            //Importar.NombreEstablecimientoSalud = NombreEstablecimientoSalud;
+            //Importar.NombreObstetra = NombreObstetra;
+            //Importar.IdObstetra = IdObstetra;
+            Importar.MdiParent = this;
+            Importar.Show();
+        }
     }
 }
