@@ -124,6 +124,7 @@ namespace CapaUsuario
             Exportar.NombreEstablecimientoSalud = NombreEstablecimientoSalud;
             Exportar.NombreObstetra = NombreObstetra;
             Exportar.IdObstetra = IdObstetra;
+            Exportar.MdiParent = this;
             Exportar.Show();
         }
 
@@ -140,6 +141,15 @@ namespace CapaUsuario
                 fControlGestanteporPaciente.Show();
                 
             }
+        }
+
+        private void alertasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
+            fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
+            fAlerta.CodigoObstetra = IdObstetra;
+            fAlerta.MdiParent = this;
+            fAlerta.Show();
         }
     }
 }

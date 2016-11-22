@@ -54,6 +54,10 @@ namespace CapaUsuario.Bateria
                 lblAlerta.Visible = false;
                 timer.Stop();
             }
+            if (txtFechaTratamiento.Text != "")
+            {
+                lblMensajeOrina.Text = "";
+            }
         }
         private void Nuevo()
         {
@@ -463,7 +467,8 @@ namespace CapaUsuario.Bateria
 
         private void dgvListaBateria_SelectionChanged(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 int valor = dgvListaBateria.CurrentCell.RowIndex;
                 txtCodigoBateria.Text = dgvListaBateria[0, valor].Value.ToString();
                 txtCodigoHistoria.Text = dgvListaBateria[1, valor].Value.ToString();
@@ -475,7 +480,16 @@ namespace CapaUsuario.Bateria
                 nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
-                //Alertar();
+                if (dgvListaBateria[9, valor].Value.ToString() != "" & Convert.ToInt16(dgvListaBateria[7, valor].Value.ToString()) >= 8)
+                {
+                    lblMensajeOrina.Text = "";
+                    lblMensajeTratamiento.Text = "";
+                }
+                if (dgvListaBateria[9, valor].Value.ToString() == "" & Convert.ToInt16(dgvListaBateria[7, valor].Value.ToString()) >= 8)
+                {
+                    lblMensajeOrina.Text = "LA GESTANTE TIENE INFECCIÓN URINARIA";
+                    lblMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
+                }
             }
             catch { }
             
@@ -696,6 +710,10 @@ namespace CapaUsuario.Bateria
         private void lblMensajeTratamiento_TextChanged(object sender, EventArgs e)
         {
             Alertar();
+        }
+        private void txtFechaTratamiento_TextChanged(object sender, EventArgs e)
+        {
+             
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using CapaDeNegocios;
@@ -43,18 +44,21 @@ namespace CapaUsuario.Exportacion
         //    }
         //}
 
-        private void btnExportar_Click(object sender, EventArgs e)
+        private async void btnExportar_Click(object sender, EventArgs e)
         {
             dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
             dlgGuardar.DefaultExt = ".gsys";
             dlgGuardar.ShowDialog();
-            
+            IniciarCarga();
             oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
             oExportar.InsertarDatosTablaAarchivo( dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia","todontologia","tgestantemorbilidad","tcitaprenatal","tbateria", "tcontrolpeuperio","treciennacido","tterminogestacion","tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn" , "thistoriaclinica");
-            MessageBox.Show("Datos Exportados con el nombre: " + dlgGuardar.FileName, "EXPORTACION");
-        }
+            /////
+            /////
+            MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
 
-        private void btnImportar_Click(object sender, EventArgs e)
+        }
+        
+        private async void btnImportar_Click(object sender, EventArgs e)
         {
             
             dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
@@ -62,6 +66,40 @@ namespace CapaUsuario.Exportacion
             oExportar.BorrarDatosTabla(IdEstablecimientoSalud);
             MessageBox.Show(IdEstablecimientoSalud);
             oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+
+            /////////////////////////////
+
+        }
+        private async void IniciarCarga()
+        {
+            List<string> list = new List<string>();
+            for (int i = 0; i < 1000; i++)
+                list.Add(i.ToString());
+            lblStatus.Text = "Exportando...";
+            var progress = new Progress<cProgressReport>();
+            progress.ProgressChanged += (o, report) =>
+            {
+                lblStatus.Text = string.Format("Exportando información...{0}%", report.PercentComplete);
+                progressBar.Value = report.PercentComplete;
+                progressBar.Update();
+            };
+            await ProcessData(list, progress);
+            lblStatus.Text = "¡Datos exportados exitosamente!";
+        }
+        private Task ProcessData(List<string> list, IProgress<cProgressReport> progress)
+        {
+            int index = 1;
+            int totalProcess = list.Count;
+            var progressReport = new cProgressReport();
+            return Task.Run(()=>
+            {
+                for (int i = 0; i < totalProcess; i++)
+                {
+                    progressReport.PercentComplete = index++ * 100 / totalProcess;
+                    progress.Report(progressReport);
+                    Thread.Sleep(10); //
+                }
+            });
 
         }
     }

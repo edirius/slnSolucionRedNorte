@@ -41,6 +41,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,8 @@
             this.pacientesToolStripMenuItem,
             this.historiaClinicaToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.exportarEImportarDatosToolStripMenuItem});
+            this.exportarEImportarDatosToolStripMenuItem,
+            this.alertasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(949, 24);
@@ -141,6 +143,13 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // alertasToolStripMenuItem
+            // 
+            this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.alertasToolStripMenuItem.Text = "Alertas";
+            this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click_1);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,5 +192,6 @@
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaEntreFechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
     }
 }
