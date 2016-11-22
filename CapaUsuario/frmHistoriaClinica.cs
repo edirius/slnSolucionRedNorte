@@ -39,6 +39,9 @@ namespace CapaUsuario
         public string Nombre_Completo { get; set; }
         public string Edad { get; set; }
         public System.Drawing.Color _backDisabledColor { get; private set; }
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+
+
 
         bool bnivel0 = false, bnivel1 = false, bnivel2 = false, bnivel3 = false, bnivel4 = false, bnivel5 = false;
 
@@ -64,6 +67,10 @@ namespace CapaUsuario
             InitializeComponent();
             IdObstetra = idObstetra;
             IdEstablecimiento = idEstablecimiento;
+
+            //txtTalla.KeyUp -= new KeyEventHandler(txtTalla_KeyUp);
+
+            //txtTalla.KeyDown -= new System.Windows.Forms.KeyEventHandler(txtTalla_KeyDown);
 
         }
 
@@ -133,9 +140,9 @@ namespace CapaUsuario
             dgvbEcografia.UseColumnTextForButtonValue = true;
 
             odtEcografia.Columns.Add("N°", typeof(string));
-            odtEcografia.Columns.Add("Fecha Ecografia", typeof(string));
-            odtEcografia.Columns.Add("Semanas edad gestacional", typeof(string));
-            odtEcografia.Columns.Add("Dias edad gestacional", typeof(string));
+            odtEcografia.Columns.Add("Fecha", typeof(string));
+            odtEcografia.Columns.Add("Semanas", typeof(string));
+            odtEcografia.Columns.Add("Dias", typeof(string));
 
             columnIndex = 0;
 
@@ -152,12 +159,7 @@ namespace CapaUsuario
             dtpTiempoLlegada.CustomFormat = "HH:mm";
             dtpTiempoLlegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 
-            /*Id de obstetra*/
-            oHistoriaClinica.Idtobstetra = IdObstetra;
-            oHistoriaClinica.mes = mes;
-            oHistoriaClinica.año = año;
-            odtHistoriaClinica = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),1);
-            //dgvHC.DataSource = odtHistoriaClinica;
+            
 
             //dgvHC.Columns[0].Visible = false;
 
@@ -338,6 +340,9 @@ namespace CapaUsuario
             cbArchivado.Checked = false;
             explorando_hc = false;
             dtpFecha.Focus();
+            txtPeso.Text = "";
+            txtTalla.Text = "";
+            lblIMC.Text="";
 
             idtpaciente = "";
 
@@ -488,13 +493,43 @@ namespace CapaUsuario
 
 
         private void calcular_imc() {
-            double peso,talla;
+            double peso, talla;
+            decimal imc;
+            double dimc;
+            string resultado = "";
             if (Double.TryParse(txtPeso.Text, out peso) && Double.TryParse(txtTalla.Text, out talla))
             {
                 double peso2 = Convert.ToDouble(txtPeso.Text);
                 double talla2 = Convert.ToDouble(txtTalla.Text);
-                double imc = peso2 / Math.Pow(talla2, 2);
-                lblIMC.Text = Math.Round( Convert.ToDecimal(imc), 2).ToString();
+                imc = Convert.ToDecimal( peso2 / Math.Pow(talla2, 2));
+                imc = Math.Round( imc, 2);
+                
+                dimc = Convert.ToDouble(imc);
+
+                if (dimc < 18.5)
+                {
+                    resultado = "Bajo Peso";
+                    lblIMC.BackColor = System.Drawing.Color.White;
+                }
+                if (dimc >= 18.5 && dimc <= 24.99)
+                {
+                    resultado = "Rango normal";
+                    lblIMC.BackColor = System.Drawing.Color.Yellow;
+                }
+                if (dimc >= 25 && dimc <= 29.99)
+                {
+                    resultado = "Sobre peso";
+                    lblIMC.BackColor = System.Drawing.Color.Orange;
+                }
+                if (dimc >= 30)
+                {
+                    resultado = "Obesidad";
+                    lblIMC.BackColor = System.Drawing.Color.Red;
+                }
+
+                lblIMC.Text = imc.ToString() + "\n" + resultado;
+
+                
             }
         }
 
@@ -633,8 +668,7 @@ namespace CapaUsuario
                 nudSemanas.Minimum = 29;
                 nudSemanas.Maximum = 42; 
               */
-
-            
+ 
             int trimestre = Convert.ToInt16(nudSemanas.Value);
 
             if (trimestre >=1 && trimestre <= 12){
@@ -652,8 +686,7 @@ namespace CapaUsuario
                 rbSegundoTrimestre.Checked = false;
                 rbPrimerTrimestre.Checked = false;
             } 
-            
-            
+           
 
         }
 
@@ -704,18 +737,7 @@ namespace CapaUsuario
 
         private void cbTranseunte_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (cbTranseunte.Checked == false)
-            {
-                lblOrigenEESS.Visible = false;
-                //cbEstablecimientoSalud.Visible = false;
-                txtOrigenEESS.Visible = false;
-            }
-            else {
-                lblOrigenEESS.Visible = true;
-                //cbEstablecimientoSalud.Visible = true;
-                txtOrigenEESS.Visible = true;
-            }
-
+            
 
         }
 
@@ -763,11 +785,7 @@ namespace CapaUsuario
 
         }
 
-        private void dtpFUR_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-                cboTipoLlegada.Focus();
-        }
+     
 
         private void cboTipoLlegada_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -842,7 +860,7 @@ namespace CapaUsuario
         {
             /*Maximizar ventana*/
             this.WindowState = FormWindowState.Maximized;
-            txtHistoriaClinica.Focus();
+            button1.Focus();
         }
 
         private void nudEdadGestacional_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -937,9 +955,10 @@ namespace CapaUsuario
                 oHistoriaClinica.Archivado = 0;
             }
 
-                /*Validando datos*/
-                double peso, talla;
+            /*Validando datos*/
+            double peso, talla;
 
+                /*
             if (Double.TryParse(txtPeso.Text, out peso))
             {
                 oHistoriaClinica.Peso = Convert.ToDecimal(txtPeso.Text);
@@ -949,13 +968,34 @@ namespace CapaUsuario
             {
                 oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
             }
+            */
 
-            if (Double.TryParse(txtPeso.Text, out peso)) {
+            /*
+            if (Convert.ToDecimal(txtPeso.Text) > 0 || txtPeso.Text != "")
+                oHistoriaClinica.Peso = Convert.ToDecimal(txtPeso.Text);
+
+                if (Convert.ToDecimal(txtTalla.Text) > 0 || txtTalla.Text != "")
+                oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
+
+            if (Convert.ToDecimal(txtPeso.Text)<0) {
+                completo = true;
+                mensaje = "Porfavor ingresar el peso de la gestante.";
+            }
+            */
+
+            if ( oUtilitarios.es_numerico(txtPeso.Text)  || txtPeso.Text != "")
+                oHistoriaClinica.Peso = Convert.ToDecimal(txtPeso.Text);
+
+            if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
+                oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
+
+            if (oUtilitarios.es_numerico(txtPeso.Text) && Convert.ToDecimal(txtPeso.Text) < 0)
+            {
                 completo = true;
                 mensaje = "Porfavor ingresar el peso de la gestante.";
             }
 
-            if (Double.TryParse(txtTalla.Text, out talla))
+            if (oUtilitarios.es_numerico(txtTalla.Text) && Convert.ToDecimal(txtTalla.Text) < 0 )
             {
                 completo = true;
                 mensaje = "Porfavor ingresar la talla de la gestante.";
@@ -979,6 +1019,7 @@ namespace CapaUsuario
                 mensaje = "Porfavor llenar Semana(s) APN.";
             }
 
+            /*
             if (oHistoriaClinica.Tiempollegada == "00:00")
             {
                 completo = true;
@@ -990,6 +1031,7 @@ namespace CapaUsuario
                 completo = true;
                 mensaje = "Porfavor seleccionar tipo de llegada.";
             }
+            */
 
             if (idtpaciente == "")
             {
@@ -1029,7 +1071,7 @@ namespace CapaUsuario
 
                     if (IdtHistoriaClinica != "")
                     {
-                        oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
+                        oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica.Trim();
                         odtHistoriaClinica = oHistoriaClinica.ModificarHistoriaClinica();
 
                         oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
@@ -1050,8 +1092,10 @@ namespace CapaUsuario
 
                         string exito = words[0].ToString();
                         string respuesta = words[1].ToString();
-                        string idthistoriaclinica = words[2].ToString();
+                        string idthistoriaclinica = words[2].ToString().Trim();
                         string searchValue = idthistoriaclinica;
+
+                        IdtHistoriaClinica = idthistoriaclinica;
 
                         int suma_ecografia = 0;
                         int suma_odontologia = 0;
@@ -1076,10 +1120,14 @@ namespace CapaUsuario
                                 oEcografia.Diagestacional = dgvEcografia[4, i].Value.ToString();
                                 oEcografia.Idtestablecimientosalud = IdEstablecimiento;
 
+                                    /*
                                 if (IdtHistoriaClinica != "")
                                     oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
                                 else
                                     oEcografia.Idthistoriaclinica = idthistoriaclinica;
+                                    */
+
+                                oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
 
                                 dtEcografia = oEcografia.CrearEcografia();
 
@@ -1255,6 +1303,28 @@ namespace CapaUsuario
         private void dtpFUR_ValueChanged(object sender, EventArgs e)
         {
             hallar_FPP();
+            hallar_semana_primera_atencion();
+        }
+
+        private void hallar_semana_primera_atencion() {
+
+            
+
+            DateTime fecha_atencion = dtpFecha.Value;
+            DateTime fur = dtpFUR.Value;
+
+            if (fecha_atencion >= fur) {
+                TimeSpan dias = fur - fecha_atencion;
+                double NrOfDays = dias.TotalDays;
+                int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
+                if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum)
+                    nudSemanas.Value = semanas;
+                else
+                    MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Porfavor ingrese en FUR una fecha menor o igual a la fecha de atención.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void cboTipoLlegada_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -1276,6 +1346,10 @@ namespace CapaUsuario
         {
             if (e.KeyChar == (char)13)
                 dtpOdontologo.Focus();
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(nudSemanas.Text, @"\d{0,2}"))
+                e.Handled = true;
+
         }
 
         private void dtpOdontologo_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -1322,42 +1396,27 @@ namespace CapaUsuario
             drEcografia[3] = nudDiasEcografia.Value;
             odtEcografia.Rows.InsertAt(drEcografia, i);
             //dtpEcografia.Focus();
-            txtObservaciones.Focus();
+            txtPeso.Focus();
         }
 
         private void txtObservaciones_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-                cbTranseunte.Focus();
+            
         }
 
         private void cbTranseunte_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                if (cbTranseunte.Checked == false)
-                {
-                    //buGuardar.Focus();
-                    cbArchivado.Focus();
-                }
-                else
-                {
-                    //cbEstablecimientoSalud.Focus();
-                    txtOrigenEESS.Focus();
-                }
-            }
+           
         }
 
         private void txtOrigenEESS_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-                cbArchivado.Focus();
+           
         }
 
         private void cbArchivado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
-                buGuardar.Focus();
+            
         }
 
         private void cbBuscar_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -1516,47 +1575,7 @@ namespace CapaUsuario
 
         private void cbArchivado_CheckedChanged(object sender, EventArgs e)
         {
-            if (!explorando_hc)
-            {
-                if (cbArchivado.Checked == true)
-                {
-                    if (MessageBox.Show("El presente control de gestante se bloqueara. ¿Está seguro de archivar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
-                    {
-                        lblArchivado.Text = "ARCHIVADO";
-                        lblArchivado.BackColor = System.Drawing.Color.Green;
-                        cbArchivado.Checked = true;
-                        bloquear_hc(false);
-                    }
-                    else
-                    {
-                        cbArchivado.Checked = false;
-                        bloquear_hc(true);
-                    }
-                }
-
-                if (cbArchivado.Checked == false)
-                {
-                    lblArchivado.Text = "SIN ARCHIVAR";
-                    lblArchivado.BackColor = System.Drawing.Color.Red;
-                    bloquear_hc(true);
-                }
-            }
-            else {
-                if (cbArchivado.Checked == true)
-                {
-                    lblArchivado.Text = "ARCHIVADO";
-                    lblArchivado.BackColor = System.Drawing.Color.Green;
-                    cbArchivado.Checked = true;
-                    bloquear_hc(false);
-                }
-
-                if (cbArchivado.Checked == false)
-                {
-                    lblArchivado.Text = "SIN ARCHIVAR";
-                    lblArchivado.BackColor = System.Drawing.Color.Red;
-                    bloquear_hc(true);
-                }
-            }
+            
 
         }
 
@@ -1879,7 +1898,7 @@ namespace CapaUsuario
             return pdfTableE;
         }
 
-
+        /*
         const int WM_ERASEBKGND = 0x14;
 
         protected override void WndProc(ref System.Windows.Forms.Message m)
@@ -1894,6 +1913,7 @@ namespace CapaUsuario
 
             base.WndProc(ref m);
         }
+        */
 
         private void dtpFecha_Enter(object sender, EventArgs e)
         {
@@ -1919,6 +1939,7 @@ namespace CapaUsuario
         private void nudGestas_Enter(object sender, EventArgs e)
         {
             nudGestas.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudGestas.Select(0, nudGestas.Text.Length);
         }
 
         private void nudGestas_Leave(object sender, EventArgs e)
@@ -1930,6 +1951,7 @@ namespace CapaUsuario
         private void nudPartos_Enter(object sender, EventArgs e)
         {
             nudPartos.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudPartos.Select(0, nudPartos.Text.Length);
         }
 
         private void nudPartos_Leave(object sender, EventArgs e)
@@ -1940,7 +1962,7 @@ namespace CapaUsuario
         private void nudAbortos_Enter(object sender, EventArgs e)
         {
             nudAbortos.BackColor = System.Drawing.Color.LightSkyBlue;
-
+            nudAbortos.Select(0, nudAbortos.Text.Length);
         }
 
         private void nudAbortos_Leave(object sender, EventArgs e)
@@ -1951,6 +1973,7 @@ namespace CapaUsuario
         private void nudHv_Enter(object sender, EventArgs e)
         {
             nudHv.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudHv.Select(0, nudHv.Text.Length);
         }
 
         private void nudHv_Leave(object sender, EventArgs e)
@@ -1961,6 +1984,7 @@ namespace CapaUsuario
         private void nudHm_Enter(object sender, EventArgs e)
         {
             nudHm.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudHm.Select(0, nudHm.Text.Length);
         }
 
         private void nudHm_Leave(object sender, EventArgs e)
@@ -2057,6 +2081,7 @@ namespace CapaUsuario
         private void nudEdadGestacional_Enter(object sender, EventArgs e)
         {
             nudEdadGestacional.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudEdadGestacional.Select(0, nudEdadGestacional.Text.Length);
         }
 
         private void nudEdadGestacional_Leave(object sender, EventArgs e)
@@ -2067,6 +2092,7 @@ namespace CapaUsuario
         private void nudDiasEcografia_Enter(object sender, EventArgs e)
         {
             nudDiasEcografia.BackColor = System.Drawing.Color.LightSkyBlue;
+            nudDiasEcografia.Select(0, nudDiasEcografia.Text.Length);
         }
 
         private void nudDiasEcografia_Leave(object sender, EventArgs e)
@@ -2529,6 +2555,9 @@ namespace CapaUsuario
 
         private void buBuscar_Click(object sender, EventArgs e)
         {
+
+            fBuscarCicloGestante.IdObstetra = IdObstetra ;
+
             if (fBuscarCicloGestante.ShowDialog() == DialogResult.OK)
             {
                 dtpFecha.Focus();
@@ -2560,16 +2589,35 @@ namespace CapaUsuario
                 e.Handled = true;
             }
 
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtPeso.Text, @"\.\d\d\d"))
+            string word = "";
+            int inicio = 0, fin = 0;
+            //if (e.KeyCode == Keys.Back)
+            //inicio = txtPeso.SelectionStart;
+            //fin = txtPeso.SelectionLength;
+
+            if (e.KeyChar == 8)
             {
-                e.Handled = true;
+                word = txtPeso.Text.Trim();
+                if (word.Length > 0)
+                {
+                    txtPeso.Text = word.Substring(0, word.Length - 1);
+                    txtPeso.Select(txtPeso.Text.Length, 0);
+                    e.Handled = true;
+                }
             }
+
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPeso.Text, @"\d{1,4}\.?\d{3,3}"))
+                e.Handled = true;
+
+            if (e.KeyChar == (char)13)
+                txtTalla.Focus();
 
         }
 
-        private void txtTalla_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTalla_KeyPress(object sender, KeyPressEventArgs e)  
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')  )
             {
                 e.Handled = true;
             }
@@ -2580,22 +2628,180 @@ namespace CapaUsuario
                 e.Handled = true;
             }
 
-            if (System.Text.RegularExpressions.Regex.IsMatch(txtTalla.Text, @"\.\d\d"))
-            {
-                e.Handled = true;
-            }
-
             string word = txtTalla.Text.Trim();
-            string[] wordArr = word.Split('.');
-            if (wordArr.Length > 1)
+            //if (e.KeyCode == Keys.Back)
+            if (e.KeyChar == 8)
             {
-                string afterDot = wordArr[1];
-                if (afterDot.Length > 2)
+                word = txtTalla.Text.Trim();
+                if (word.Length > 0)
                 {
-                    txtTalla.Text = wordArr[0] + "." + afterDot.Substring(0, 2);
+                    txtTalla.Text = word.Substring(0, word.Length - 1);
+                    txtTalla.Select(txtTalla.Text.Length, 0);
+                    e.Handled = true;
                 }
             }
+ 
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtTalla.Text, @"\d{0,1}\.?\d{2,2}"))
+                e.Handled = true;
 
+            if (e.KeyChar == (char)13)
+                txtObservaciones.Focus();
+
+        }
+
+        private void txtTalla_KeyDown(object sender, KeyEventArgs e)
+        {
+  
+        }
+
+        private void txtTalla_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIMC_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbTranseunte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbTranseunte.Checked == false)
+            {
+                lblOrigenEESS.Visible = false;
+                //cbEstablecimientoSalud.Visible = false;
+                txtOrigenEESS.Visible = false;
+            }
+            else
+            {
+                lblOrigenEESS.Visible = true;
+                //cbEstablecimientoSalud.Visible = true;
+                txtOrigenEESS.Visible = true;
+            }
+
+        }
+
+        private void cbArchivado_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (!explorando_hc)
+            {
+                if (cbArchivado.Checked == true)
+                {
+                    if (MessageBox.Show("El presente control de gestante se bloqueara. ¿Está seguro de archivar?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        lblArchivado.Text = "ARCHIVADO";
+                        lblArchivado.BackColor = System.Drawing.Color.Green;
+                        cbArchivado.Checked = true;
+                        bloquear_hc(false);
+                    }
+                    else
+                    {
+                        cbArchivado.Checked = false;
+                        bloquear_hc(true);
+                    }
+                }
+
+                if (cbArchivado.Checked == false)
+                {
+                    lblArchivado.Text = "SIN ARCHIVAR";
+                    lblArchivado.BackColor = System.Drawing.Color.Red;
+                    bloquear_hc(true);
+                }
+            }
+            else
+            {
+                if (cbArchivado.Checked == true)
+                {
+                    lblArchivado.Text = "ARCHIVADO";
+                    lblArchivado.BackColor = System.Drawing.Color.Green;
+                    cbArchivado.Checked = true;
+                    bloquear_hc(false);
+                }
+
+                if (cbArchivado.Checked == false)
+                {
+                    lblArchivado.Text = "SIN ARCHIVAR";
+                    lblArchivado.BackColor = System.Drawing.Color.Red;
+                    bloquear_hc(true);
+                }
+            }
+        }
+
+        private void txtPeso_Enter(object sender, EventArgs e)
+        {
+            txtPeso.BackColor = System.Drawing.Color.LightSkyBlue;
+        }
+
+        private void txtPeso_Leave(object sender, EventArgs e)
+        {
+            txtPeso.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtTalla_Enter(object sender, EventArgs e)
+        {
+            txtTalla.BackColor = System.Drawing.Color.LightSkyBlue;
+        }
+
+        private void txtTalla_Leave(object sender, EventArgs e)
+        {
+            txtTalla.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtObservaciones_KeyPress_2(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbTranseunte.Focus();
+        }
+
+        private void cbTranseunte_KeyPress_2(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                if (cbTranseunte.Checked == false)
+                {
+                    //buGuardar.Focus();
+                    cbArchivado.Focus();
+                }
+                else
+                {
+                    //cbEstablecimientoSalud.Focus();
+                    txtOrigenEESS.Focus();
+                }
+            }
+        }
+
+        private void cbArchivado_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                buGuardar.Focus();
+        }
+
+        private void txtOrigenEESS_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                cbArchivado.Focus();
+        }
+
+        private void dtpFUR_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                dtpOdontologo.Focus();
+        }
+
+        private void txtObservaciones_Enter_1(object sender, EventArgs e)
+        {
+            txtObservaciones.Select(0, txtObservaciones.Text.Length);
+        }
+
+        private void txtOrigenEESS_Enter_1(object sender, EventArgs e)
+        {
+            txtOrigenEESS.Select(0, txtOrigenEESS.Text.Length);
         }
 
         private void exportar_a_pdf() {

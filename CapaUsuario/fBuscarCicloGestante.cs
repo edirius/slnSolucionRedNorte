@@ -12,7 +12,7 @@ namespace CapaUsuario
 {
     public partial class fBuscarCicloGestante : Form
     {
-
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
         public string IdtHistoriaClinica = "";
         public string IdObstetra = "";
         int año = 0;
@@ -60,8 +60,8 @@ namespace CapaUsuario
                 {
                     oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
                     oHistoriaClinica.Idtobstetra = IdObstetra;
-                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(), 1);
-                    dgvHC.Columns[0].Visible = false;
+                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(), 0);
+                    dgvHC.Columns[1].Visible = false;
                 }
             }
 
@@ -71,8 +71,8 @@ namespace CapaUsuario
                 {
                     oPaciente.apellidopaterno = buscar;
                     oPaciente.idtobstetra = IdObstetra;
-                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(), 1);
-                    dgvHC.Columns[0].Visible = false;
+                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(), 0);
+                    dgvHC.Columns[1].Visible = false;
                 }
             }
 
@@ -82,8 +82,8 @@ namespace CapaUsuario
                 {
                     oPaciente.apellidomaterno = buscar;
                     oPaciente.idtobstetra = IdObstetra;
-                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(), 1);
-                    dgvHC.Columns[0].Visible = false;
+                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(), 0);
+                    dgvHC.Columns[1].Visible = false;
                 }
             }
 
@@ -93,8 +93,8 @@ namespace CapaUsuario
                 {
                     oPaciente.nombres = buscar;
                     oPaciente.idtobstetra = IdObstetra;
-                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(), 1);
-                    dgvHC.Columns[0].Visible = false;
+                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(), 0);
+                    dgvHC.Columns[1].Visible = false;
                 }
             }
 
@@ -104,8 +104,8 @@ namespace CapaUsuario
                 {
                     oPaciente.dni = buscar;
                     oPaciente.idtobstetra = IdObstetra;
-                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(), 1);
-                    dgvHC.Columns[0].Visible = false;
+                    dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(), 0);
+                    dgvHC.Columns[1].Visible = false;
                 }
             }
 
@@ -114,8 +114,8 @@ namespace CapaUsuario
                 oHistoriaClinica.Idtobstetra = IdObstetra;
                 oHistoriaClinica.mes = mes;
                 oHistoriaClinica.año = año;
-                dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 1);
-                dgvHC.Columns[0].Visible = false;
+                dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),0);
+                dgvHC.Columns[1].Visible = false;
             }
 
         }
@@ -138,29 +138,70 @@ namespace CapaUsuario
                 CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
                 DataTable odtHC = new DataTable();
                 año = 0; mes = 0;
-                //año = Convert.ToInt16( cbYear.GetItemText(cbYear.SelectedItem) );
-                //mes = Convert.ToInt16(cbMonth.GetItemText(cbMonth.SelectedIndex));
+                año = Convert.ToInt16( cbYear.GetItemText(cbYear.SelectedItem) );
+                mes = Convert.ToInt16(cbMonth.GetItemText(cbMonth.SelectedIndex));
                 mes = mes + 1;
 
                 oHistoriaClinica.año = año;
                 oHistoriaClinica.mes = mes;
 
                 oHistoriaClinica.Idtobstetra = IdObstetra;
-                //odtHC = enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),1);
-                //dgvHC.DataSource = odtHC ;
+                odtHC = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),0);
+                dgvHC.DataSource = odtHC ;
+                dgvHC.Columns[1].Visible = false;
             }
         }
 
         private void fBuscarCicloGestante_Load(object sender, EventArgs e)
         {
             CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            
             cbYear.DataSource = oHistoriaClinica.ListarYear();
             cbYear.ValueMember = "yyyy";
             cbYear.DisplayMember = "yyyy";
 
             establecer_combos_fecha_actual();
 
+            cbBuscar.SelectedItem = cbBuscar.Items[0];
+
+            /*Id de obstetra*/
+            oHistoriaClinica.Idtobstetra = IdObstetra;
+            oHistoriaClinica.mes = mes;
+            oHistoriaClinica.año = año;
+            dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
+            dgvHC.Columns[1].Visible = false;
+            //dgvHC.DataSource = odtHistoriaClinica;
+
             bandera_combobox_año = true;
+        }
+
+        private void dgvHC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_hc(e);
+        }
+
+        private void dgvHC_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_hc(e);
+        }
+
+        private void llenar_datos_hc(DataGridViewCellEventArgs e)
+        {
+ 
+            if (e.RowIndex != -1)
+            {
+                IdtHistoriaClinica = dgvHC.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
+        }
+
+        private void dgvHC_DoubleClick(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

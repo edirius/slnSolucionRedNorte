@@ -101,6 +101,12 @@ namespace CapaDeNegocios
             }
         }
 
+        public bool es_numerico(String s)
+        {
+            float output;
+            return float.TryParse(s, out output);
+        }
+
         public bool es_fecha(String date)
         {
             DateTime Temp;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
@@ -285,6 +285,7 @@
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(144, 26);
             this.cbBuscar.TabIndex = 25;
+            this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -303,8 +304,8 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -319,6 +320,9 @@
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHC.Size = new System.Drawing.Size(1149, 564);
             this.dgvHC.TabIndex = 29;
+            this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick);
+            this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
+            this.dgvHC.DoubleClick += new System.EventHandler(this.dgvHC_DoubleClick);
             // 
             // fBuscarCicloGestante
             // 
