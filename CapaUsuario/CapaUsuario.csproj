@@ -253,6 +253,12 @@
     <Compile Include="Exportacion\frmExportacion.Designer.cs">
       <DependentUpon>frmExportacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="fBuscarCicloGestante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBuscarCicloGestante.designer.cs">
+      <DependentUpon>fBuscarCicloGestante.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantenimientoMorbilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exportacion\frmExportacion.resx">
       <DependentUpon>frmExportacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBuscarCicloGestante.resx">
+      <DependentUpon>fBuscarCicloGestante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantenimientoMorbilidad.resx">
       <DependentUpon>frmMantenimientoMorbilidad.cs</DependentUpon>
