@@ -289,7 +289,7 @@
             // pbCR
             // 
             this.pbCR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbCR.Image = global::CapaUsuario.Properties.Resources.images__9_;
+            this.pbCR.Image = global::CapaUsuario.Properties.Resources.images__9_;
             this.pbCR.Location = new System.Drawing.Point(121, 595);
             this.pbCR.Name = "pbCR";
             this.pbCR.Size = new System.Drawing.Size(60, 66);
@@ -300,7 +300,7 @@
             // pbARN
             // 
             this.pbARN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbARN.Image = global::CapaUsuario.Properties.Resources.images__8_;
+            this.pbARN.Image = global::CapaUsuario.Properties.Resources.images__8_;
             this.pbARN.Location = new System.Drawing.Point(121, 513);
             this.pbARN.Name = "pbARN";
             this.pbARN.Size = new System.Drawing.Size(60, 66);
@@ -311,7 +311,7 @@
             // pbCP
             // 
             this.pbCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbCP.Image = global::CapaUsuario.Properties.Resources.images__7_;
+            this.pbCP.Image = global::CapaUsuario.Properties.Resources.images__7_;
             this.pbCP.Location = new System.Drawing.Point(121, 431);
             this.pbCP.Name = "pbCP";
             this.pbCP.Size = new System.Drawing.Size(60, 66);
@@ -322,7 +322,7 @@
             // pbTG
             // 
             this.pbTG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbTG.Image = global::CapaUsuario.Properties.Resources.images__6_;
+            this.pbTG.Image = global::CapaUsuario.Properties.Resources.images__6_;
             this.pbTG.Location = new System.Drawing.Point(121, 349);
             this.pbTG.Name = "pbTG";
             this.pbTG.Size = new System.Drawing.Size(60, 66);
@@ -333,7 +333,7 @@
             // pbVD
             // 
             this.pbVD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbVD.Image = global::CapaUsuario.Properties.Resources.images__5_;
+            this.pbVD.Image = global::CapaUsuario.Properties.Resources.images__5_;
             this.pbVD.Location = new System.Drawing.Point(121, 267);
             this.pbVD.Name = "pbVD";
             this.pbVD.Size = new System.Drawing.Size(60, 66);
@@ -344,7 +344,7 @@
             // pbRB
             // 
             this.pbRB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbRB.Image = global::CapaUsuario.Properties.Resources.descarga__2_;
+            this.pbRB.Image = global::CapaUsuario.Properties.Resources.descarga__2_;
             this.pbRB.Location = new System.Drawing.Point(121, 185);
             this.pbRB.Name = "pbRB";
             this.pbRB.Size = new System.Drawing.Size(60, 66);
@@ -355,7 +355,7 @@
             // pbAPN
             // 
             this.pbAPN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbAPN.Image = global::CapaUsuario.Properties.Resources.images__4_;
+            this.pbAPN.Image = global::CapaUsuario.Properties.Resources.images__4_;
             this.pbAPN.Location = new System.Drawing.Point(121, 103);
             this.pbAPN.Name = "pbAPN";
             this.pbAPN.Size = new System.Drawing.Size(60, 66);
@@ -366,7 +366,7 @@
             // pbMM
             // 
             this.pbMM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbMM.Image = global::CapaUsuario.Properties.Resources.images__3_;
+            this.pbMM.Image = global::CapaUsuario.Properties.Resources.images__3_;
             this.pbMM.Location = new System.Drawing.Point(121, 21);
             this.pbMM.Name = "pbMM";
             this.pbMM.Size = new System.Drawing.Size(60, 66);
@@ -377,7 +377,7 @@
             // pbCronograma
             // 
             this.pbCronograma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbCronograma.Image = global::CapaUsuario.Properties.Resources.images__9__bw;
+            this.pbCronograma.Image = global::CapaUsuario.Properties.Resources.images__9__bw;
             this.pbCronograma.Location = new System.Drawing.Point(121, 595);
             this.pbCronograma.Name = "pbCronograma";
             this.pbCronograma.Size = new System.Drawing.Size(60, 66);
@@ -389,7 +389,7 @@
             // pbRecienNAcido
             // 
             this.pbRecienNAcido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbRecienNAcido.Image = global::CapaUsuario.Properties.Resources.images__8__bw;
+            this.pbRecienNAcido.Image = global::CapaUsuario.Properties.Resources.images__8__bw;
             this.pbRecienNAcido.Location = new System.Drawing.Point(121, 513);
             this.pbRecienNAcido.Name = "pbRecienNAcido";
             this.pbRecienNAcido.Size = new System.Drawing.Size(60, 66);
@@ -401,7 +401,7 @@
             // pbControlPuerperio
             // 
             this.pbControlPuerperio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbControlPuerperio.Image = global::CapaUsuario.Properties.Resources.images__7__bw;
+            this.pbControlPuerperio.Image = global::CapaUsuario.Properties.Resources.images__7__bw;
             this.pbControlPuerperio.Location = new System.Drawing.Point(121, 431);
             this.pbControlPuerperio.Name = "pbControlPuerperio";
             this.pbControlPuerperio.Size = new System.Drawing.Size(60, 66);
@@ -412,7 +412,7 @@
             // pbTerminoGestacion
             // 
             this.pbTerminoGestacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbTerminoGestacion.Image = global::CapaUsuario.Properties.Resources.images__6__bw;
+            this.pbTerminoGestacion.Image = global::CapaUsuario.Properties.Resources.images__6__bw;
             this.pbTerminoGestacion.Location = new System.Drawing.Point(121, 349);
             this.pbTerminoGestacion.Name = "pbTerminoGestacion";
             this.pbTerminoGestacion.Size = new System.Drawing.Size(60, 66);
@@ -423,7 +423,7 @@
             // pbVisitaDomiciliaria
             // 
             this.pbVisitaDomiciliaria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbVisitaDomiciliaria.Image = global::CapaUsuario.Properties.Resources.images__5__bw;
+            this.pbVisitaDomiciliaria.Image = global::CapaUsuario.Properties.Resources.images__5__bw;
             this.pbVisitaDomiciliaria.Location = new System.Drawing.Point(121, 267);
             this.pbVisitaDomiciliaria.Name = "pbVisitaDomiciliaria";
             this.pbVisitaDomiciliaria.Size = new System.Drawing.Size(60, 66);
@@ -434,7 +434,7 @@
             // pbRegBateria
             // 
             this.pbRegBateria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbRegBateria.Image = global::CapaUsuario.Properties.Resources.descarga__2__bw;
+            this.pbRegBateria.Image = global::CapaUsuario.Properties.Resources.descarga__2__bw;
             this.pbRegBateria.Location = new System.Drawing.Point(121, 185);
             this.pbRegBateria.Name = "pbRegBateria";
             this.pbRegBateria.Size = new System.Drawing.Size(60, 66);
@@ -445,7 +445,7 @@
             // pbPrenatal
             // 
             this.pbPrenatal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbPrenatal.Image = global::CapaUsuario.Properties.Resources.images__4__bw;
+            this.pbPrenatal.Image = global::CapaUsuario.Properties.Resources.images__4__bw;
             this.pbPrenatal.Location = new System.Drawing.Point(121, 103);
             this.pbPrenatal.Name = "pbPrenatal";
             this.pbPrenatal.Size = new System.Drawing.Size(60, 66);
@@ -456,7 +456,7 @@
             // pbMorbilidad
             // 
             this.pbMorbilidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            //this.pbMorbilidad.Image = global::CapaUsuario.Properties.Resources.images__3__bw;
+            this.pbMorbilidad.Image = global::CapaUsuario.Properties.Resources.images__3__bw;
             this.pbMorbilidad.Location = new System.Drawing.Point(121, 21);
             this.pbMorbilidad.Name = "pbMorbilidad";
             this.pbMorbilidad.Size = new System.Drawing.Size(60, 66);
@@ -720,7 +720,7 @@
             // 
             // pictureBox6
             // 
-            //this.pictureBox6.Image = global::CapaUsuario.Properties.Resources.images__2_;
+            this.pictureBox6.Image = global::CapaUsuario.Properties.Resources.images__2_;
             this.pictureBox6.Location = new System.Drawing.Point(6, 14);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(116, 63);
@@ -821,7 +821,7 @@
             // 
             // pictureBox5
             // 
-            //this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.cusco_pisac1;
+            this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.cusco_pisac1;
             this.pictureBox5.Location = new System.Drawing.Point(4, 15);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(113, 64);
@@ -895,7 +895,7 @@
             // 
             // pictureBox3
             // 
-            //this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.ninos_eco_01_a;
+            this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.ninos_eco_01_a;
             this.pictureBox3.Location = new System.Drawing.Point(6, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(141, 129);
@@ -914,7 +914,7 @@
             // 
             // pictureBox1
             // 
-            //this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.sonrisa_ñusta;
+            this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.sonrisa_ñusta;
             this.pictureBox1.Location = new System.Drawing.Point(3, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 150);
@@ -1777,7 +1777,7 @@
             // 
             this.buBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            //this.buBuscar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON22;
+            this.buBuscar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON22;
             this.buBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buBuscar.ForeColor = System.Drawing.Color.White;
