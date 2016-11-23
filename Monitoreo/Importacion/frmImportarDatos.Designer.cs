@@ -198,7 +198,6 @@
             this.circularProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.circularProgressBar.Size = new System.Drawing.Size(218, 211);
             this.circularProgressBar.StartAngle = 270;
-            this.circularProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.circularProgressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.circularProgressBar.SubscriptText = ".23";
