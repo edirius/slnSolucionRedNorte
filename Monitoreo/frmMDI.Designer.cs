@@ -39,6 +39,7 @@
             this.establecimientoSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.morbilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importaciónDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +73,8 @@
             this.mantenimientoToolStripMenuItem,
             this.redToolStripMenuItem,
             this.morbilidadToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.reportesToolStripMenuItem,
+            this.importaciónDeDatosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(859, 24);
@@ -131,6 +133,13 @@
             this.reportesToolStripMenuItem.Text = "Reportes";
             this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
+            // importaciónDeDatosToolStripMenuItem
+            // 
+            this.importaciónDeDatosToolStripMenuItem.Name = "importaciónDeDatosToolStripMenuItem";
+            this.importaciónDeDatosToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.importaciónDeDatosToolStripMenuItem.Text = "Importación de datos";
+            this.importaciónDeDatosToolStripMenuItem.Click += new System.EventHandler(this.importaciónDeDatosToolStripMenuItem_Click);
+            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem establecimientoSaludToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem morbilidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importaciónDeDatosToolStripMenuItem;
     }
 }
 

@@ -98,6 +98,7 @@ namespace Monitoreo.EstablecimientoSalud
             }
             catch
             {
+
                 MessageBox.Show("Ya existe un establecimiento con la misma descripción", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
