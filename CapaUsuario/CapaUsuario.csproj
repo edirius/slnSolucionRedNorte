@@ -240,6 +240,12 @@
     <Compile Include="CitaPreNatal\usCitaPrenatal.Designer.cs">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlGestante\frmCronograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlGestante\frmCronograma.Designer.cs">
+      <DependentUpon>frmCronograma.cs</DependentUpon>
+    </Compile>
     <Compile Include="crCantidadGestantes.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -468,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlGestante\frmCronograma.resx">
+      <DependentUpon>frmCronograma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="crCantidadGestantes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

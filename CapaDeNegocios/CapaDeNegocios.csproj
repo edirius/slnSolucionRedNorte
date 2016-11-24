@@ -46,6 +46,7 @@
     <Compile Include="Alertas\cAlertaControlPuerperio.cs" />
     <Compile Include="Alertas\cAlertas.cs" />
     <Compile Include="cBateria.cs" />
+    <Compile Include="Cronograma\cCronograma.cs" />
     <Compile Include="cEcografia.cs" />
     <Compile Include="cGestanteMorbilidad.cs" />
     <Compile Include="cHistoriaClinica.cs" />
@@ -53,6 +54,11 @@
     <Compile Include="cMorbilidad.cs" />
     <Compile Include="cOdontologia.cs" />
     <Compile Include="cPruebaExportar.cs" />
+    <Compile Include="Cronograma\cFechaControlPuerperio.cs" />
+    <Compile Include="Cronograma\cFechaEcografia.cs" />
+    <Compile Include="Cronograma\cFechaOdontologia.cs" />
+    <Compile Include="Cronograma\cFechasBateria.cs" />
+    <Compile Include="Cronograma\cFechasPrenatales.cs" />
     <Compile Include="cSeguridad.cs" />
     <Compile Include="cUtilitarios.cs" />
     <Compile Include="Exportacion\cProgressReport.cs" />
