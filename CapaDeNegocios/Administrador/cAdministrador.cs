@@ -53,7 +53,7 @@ namespace CapaDeNegocios.Administrador
 
         public Boolean CrearAdministrador(cAdministrador miAdministrador)
         {
-            Conexion.GDatos.Ejecutar("spCrearAdministrador", miAdministrador.idtadministrador, miAdministrador.nombres, miAdministrador.apellidopaterno, miAdministrador.apellidomaterno, miAdministrador.sexo, miAdministrador.dni, miAdministrador.fechanacimiento, miAdministrador.direccion, miAdministrador.telefono, miAdministrador.usuario, miAdministrador.password);
+            Conexion.GDatos.Ejecutar("spCrearAdministrador", miAdministrador.nombres, miAdministrador.apellidopaterno, miAdministrador.apellidomaterno, miAdministrador.sexo, miAdministrador.dni, miAdministrador.fechanacimiento, miAdministrador.direccion, miAdministrador.telefono, miAdministrador.usuario, miAdministrador.password);
             return true;
         }
 
