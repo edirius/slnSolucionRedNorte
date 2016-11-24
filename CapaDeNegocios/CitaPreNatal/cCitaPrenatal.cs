@@ -21,6 +21,8 @@ namespace CapaDeNegocios.CitaPreNatal
         DateTime fechaProximaCitaPrenatal;
         cHistoriaClinica historiaClinica;
 
+        public int SulfatoFerroso{ get; set; }
+
         public cCitaPrenatal ()
         {
             historiaClinica = new cHistoriaClinica();
@@ -103,6 +105,8 @@ namespace CapaDeNegocios.CitaPreNatal
             }
         }
 
+
+
         public int NumeroCita
         {
             get
@@ -146,7 +150,7 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal);
+                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal, nuevaCitaPrenatal.SulfatoFerroso);
             }
             catch (Exception eCita)
             {
@@ -158,7 +162,7 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spModificarCitaPreNatal", citaPrenatal.codigoCitaPrenatal, citaPrenatal.HistoriaClinica.Idthistoriaclinica , citaPrenatal.numeroCita,  citaPrenatal.fechaCitaPrenatal, citaPrenatal.edadGestacional, citaPrenatal.fua, citaPrenatal.presionArterialS, citaPrenatal.PresionArterialD, citaPrenatal.fechaProximaCitaPrenatal );
+                return Conexion.GDatos.Ejecutar("spModificarCitaPreNatal", citaPrenatal.codigoCitaPrenatal, citaPrenatal.HistoriaClinica.Idthistoriaclinica , citaPrenatal.numeroCita,  citaPrenatal.fechaCitaPrenatal, citaPrenatal.edadGestacional, citaPrenatal.fua, citaPrenatal.presionArterialS, citaPrenatal.PresionArterialD, citaPrenatal.fechaProximaCitaPrenatal, citaPrenatal.SulfatoFerroso);
             }
             catch (Exception eCita)
             {
@@ -178,7 +182,19 @@ namespace CapaDeNegocios.CitaPreNatal
             }
         }
 
-       public DataTable ListaCitasPreNatal()
+        public int EliminarCitaXHistoriaClinica(cCitaPrenatal citaPrenatal)
+        {
+            try
+            {
+                return Conexion.GDatos.Ejecutar("spEliminarCitaXHistoriaClinica", citaPrenatal.historiaClinica.Idthistoriaclinica);
+            }
+            catch (Exception eCita)
+            {
+                throw new cReglaNegocioException("Error al eliminar Control PreNatal por Historia Clinica : Mensaje : " + eCita.Message, eCita);
+            }
+        }
+
+        public DataTable ListaCitasPreNatal()
         {
             try
             {

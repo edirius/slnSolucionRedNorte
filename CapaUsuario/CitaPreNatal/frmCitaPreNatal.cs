@@ -25,6 +25,16 @@ namespace CapaUsuario.CitaPreNatal
         public string HistoriaClinica
         { get; set; }
 
+        public DateTime FUR
+        { get; set; }
+
+        public DateTime Fecha_Registro
+        { get; set; }
+
+        public int Semana_Gestacional
+        { get; set; }
+
+        public int edad_gestacional_citas = 0;
 
         public cCitaPrenatal oCitaPrenatal = new cCitaPrenatal();
         private int limitePresionArterialS = 140;
@@ -37,6 +47,7 @@ namespace CapaUsuario.CitaPreNatal
             VerificarTerminoGestacion();
             //MessageBox.Show(Establecimiento);
             CargarDatos();
+            realizar_atencion_citas_gestante();
             //if (dtgCitasMedicas.Rows.Count > 0)
             //{
             //    btnGuardar.Enabled = true;
@@ -46,6 +57,247 @@ namespace CapaUsuario.CitaPreNatal
             //    btnGuardar.Enabled = false;
             //}
             estado = "nuevo";
+        }
+
+        private void citar_mensual()
+        {
+            CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
+            DataTable odtCitaPrenatal = new DataTable();
+            int numero_meses_pronostico = 0;
+            DateTime fecha_cita, fecha_prox_cita;
+            int calculado_semana_gestacional = 0;
+            /*calculando numero de cita*/
+            numero_meses_pronostico = (int)  Convert.ToDecimal (28 - Semana_Gestacional)/4 ;
+            calculado_semana_gestacional = edad_gestacional_citas;
+            int inicio = (int) (calculado_semana_gestacional / 4);
+            int fin = (int) ((28-Semana_Gestacional) / 4);
+            fecha_cita = Fecha_Registro;
+            fecha_prox_cita = Fecha_Registro.AddMonths(1);
+
+            for (int i= inicio ; i <=fin; i++) {
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                odtCitaPrenatal = oCitaPrenatal.ListaCitasPreNatal();
+                if (odtCitaPrenatal.Rows.Count > 0)
+                    oCitaPrenatal.NumeroCita = Convert.ToInt16(odtCitaPrenatal.Rows[odtCitaPrenatal.Rows.Count - 1][2]) + 1;
+                else
+                    oCitaPrenatal.NumeroCita = 1;
+
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                oCitaPrenatal.EdadGestacional = edad_gestacional_citas;
+                oCitaPrenatal.Fua = "";
+                oCitaPrenatal.PresionArterialD = 60;
+                oCitaPrenatal.PresionArterialS = 60;
+                oCitaPrenatal.SulfatoFerroso = 30;
+                /*calculando fecha cita y proxima cita*/
+                oCitaPrenatal.FechaCitaPrenatal = fecha_cita;
+                oCitaPrenatal.FechaProximaCitaPrenatal = fecha_prox_cita;
+
+                if (i == fin-1){
+                    Fecha_Registro = Fecha_Registro.AddMonths(1);
+                    fecha_prox_cita = Fecha_Registro.AddDays(15);
+                    edad_gestacional_citas += +4;
+                }
+                else {
+                    Fecha_Registro = Fecha_Registro.AddMonths(1);
+                    edad_gestacional_citas += +4;
+                }
+                if (i == fin )
+                {
+                    Fecha_Registro = Fecha_Registro.AddDays(15);
+                    edad_gestacional_citas += +(int)(15) / 7;
+                }
+
+
+                fecha_cita = Fecha_Registro;
+                fecha_prox_cita = Fecha_Registro.AddMonths(1);
+
+                cSiguienteCodigo miSiguienteCodigo = new cSiguienteCodigo();
+                foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcitaprenatal", Establecimiento).Rows)
+                {
+                    oCitaPrenatal.CodigoCitaPrenatal = row[0].ToString();
+                }
+                oCitaPrenatal.AgregarCita(oCitaPrenatal);
+
+            }
+
+             
+            
+        }
+
+        private void citar_quincenal()
+        {
+            CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
+            DataTable odtCitaPrenatal = new DataTable();
+            int numero_quincenal_pronostico = 0;
+            
+            DateTime fecha_cita, fecha_prox_cita;
+            int calculado_semana_gestacional = 0;
+            /*calculando numero de cita*/
+
+            numero_quincenal_pronostico = (int)Math.Ceiling(Convert.ToDecimal(28 - Semana_Gestacional) / 4);
+
+            calculado_semana_gestacional = edad_gestacional_citas;
+
+            int inicio = ((calculado_semana_gestacional * 7) / 15);
+            int fin = (((36-Semana_Gestacional) * 7) / 15);
+
+            for (int i = inicio; i <= fin; i++)
+            {
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                odtCitaPrenatal = oCitaPrenatal.ListaCitasPreNatal();
+                if (odtCitaPrenatal.Rows.Count > 0)
+                    oCitaPrenatal.NumeroCita = Convert.ToInt16(odtCitaPrenatal.Rows[odtCitaPrenatal.Rows.Count - 1][2]) + 1;
+                else
+                    oCitaPrenatal.NumeroCita = 1;
+
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+
+                oCitaPrenatal.EdadGestacional = edad_gestacional_citas;
+                /*sumar a la edad gestacional una quincena*/
+                
+                oCitaPrenatal.Fua = "";
+                oCitaPrenatal.PresionArterialD = 60;
+                oCitaPrenatal.PresionArterialS = 60;
+                oCitaPrenatal.SulfatoFerroso = 30;
+                /*calculando fecha cita y proxima cita*/
+                /*
+                if (i == fin-1) { 
+                    Fecha_Registro = Fecha_Registro.AddDays(15);
+                    //edad_gestacional_citas += +1;
+                    edad_gestacional_citas += +(int)(15) / 7;
+                }
+                else { 
+                    Fecha_Registro = Fecha_Registro.AddDays(15);
+                    edad_gestacional_citas += +(int)(15) / 7;
+                }
+                */
+
+                //Fecha_Registro = Fecha_Registro.AddDays(15);
+                //edad_gestacional_citas += +(int)(15) / 7;
+                if (i == fin - 1)
+                {
+                    fecha_cita = Fecha_Registro;
+                    fecha_prox_cita = Fecha_Registro.AddDays(7);
+                }
+                else {
+                    fecha_cita = Fecha_Registro;
+                    fecha_prox_cita = Fecha_Registro.AddDays(15);
+                }
+
+                if (i == fin)
+                {
+                    Fecha_Registro = Fecha_Registro.AddDays(7);
+                    edad_gestacional_citas += +1;
+                }
+
+
+                oCitaPrenatal.FechaCitaPrenatal = fecha_cita ;
+                oCitaPrenatal.FechaProximaCitaPrenatal = fecha_prox_cita;
+
+                cSiguienteCodigo miSiguienteCodigo = new cSiguienteCodigo();
+                foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcitaprenatal", Establecimiento).Rows)
+                {
+                    oCitaPrenatal.CodigoCitaPrenatal = row[0].ToString();
+                }
+                oCitaPrenatal.AgregarCita(oCitaPrenatal);
+
+                 
+            }
+        }
+
+        private void citar_semanal()
+        {
+            CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
+            DataTable odtCitaPrenatal = new DataTable();
+            int numero_quincenal_pronostico = 0;
+            
+            DateTime fecha_cita, fecha_prox_cita;
+            int calculado_semana_gestacional = 0;
+            /*calculando numero de cita*/
+
+            
+
+            numero_quincenal_pronostico = (int)Math.Ceiling(Convert.ToDecimal(28 - Semana_Gestacional) / 4);
+            
+
+            calculado_semana_gestacional = edad_gestacional_citas ;
+            int inicio = calculado_semana_gestacional;
+            int fin = 42-Semana_Gestacional;
+
+            for (int i = inicio ; i <= fin; i++)
+            {
+
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                odtCitaPrenatal = oCitaPrenatal.ListaCitasPreNatal();
+                if (odtCitaPrenatal.Rows.Count > 0)
+                    oCitaPrenatal.NumeroCita = Convert.ToInt16(odtCitaPrenatal.Rows[odtCitaPrenatal.Rows.Count - 1][2]) + 1;
+                else
+                    oCitaPrenatal.NumeroCita = 1;
+
+                oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+
+                oCitaPrenatal.EdadGestacional = edad_gestacional_citas;
+                /*sumar a la edad gestacional una quincena*/
+                edad_gestacional_citas += +1 ;
+                oCitaPrenatal.Fua = "";
+                oCitaPrenatal.PresionArterialD = 60;
+                oCitaPrenatal.PresionArterialS = 60;
+                oCitaPrenatal.SulfatoFerroso = 30;
+
+                /*calculando fecha cita y proxima cita*/
+                Fecha_Registro = Fecha_Registro.AddDays(7);
+                fecha_cita = Fecha_Registro;
+                fecha_prox_cita = Fecha_Registro.AddDays(7);
+
+                oCitaPrenatal.FechaProximaCitaPrenatal = fecha_prox_cita;
+                oCitaPrenatal.FechaCitaPrenatal = fecha_cita;
+
+                cSiguienteCodigo miSiguienteCodigo = new cSiguienteCodigo();
+                foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcitaprenatal", Establecimiento).Rows)
+                {
+                    oCitaPrenatal.CodigoCitaPrenatal = row[0].ToString();
+                }
+                oCitaPrenatal.AgregarCita(oCitaPrenatal);
+
+                
+            }
+            oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+            odtCitaPrenatal = oCitaPrenatal.ListaCitasPreNatal();
+            dtgCitasMedicas.DataSource = odtCitaPrenatal;
+        }
+
+        private void realizar_atencion_citas_gestante() {
+
+            DataTable odtCitaPrenatal = new DataTable();
+            CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
+            DateTime fecha_cita;
+            //oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+            if (dtgCitasMedicas.Rows.Count > 0)
+            {
+                /*Si primera cita es diferente a fecha de registro se procede a borrar todas las citas del control de gestante y se añaden nuevamente*/
+                //fecha_cita = (DateTime) dtgCitasMedicas.Rows[0].Cells["FECHA CITA"].Value;
+                fecha_cita = (DateTime)dtgCitasMedicas.Rows[0].Cells[3].Value;
+                if (fecha_cita.ToString("dd/MM/yyyy") != Fecha_Registro.ToString("dd/MM/yyyy")) {
+                    oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
+                    oCitaPrenatal.EliminarCitaXHistoriaClinica(oCitaPrenatal);
+
+                    edad_gestacional_citas = Semana_Gestacional;
+                    citar_mensual();
+                    citar_quincenal();
+                    citar_semanal();
+                }
+
+            }
+            else {
+                edad_gestacional_citas = Semana_Gestacional;
+                citar_mensual();
+                citar_quincenal();
+                citar_semanal();
+            }
+            /* SE EVALUA LA SEMANA DE LA PRIMERA ATENCION PRENATAL PARA QUE COHINCIDA CON EL PRONOSTICO */
+
+            
+
         }
 
         private void VerificarTerminoGestacion()
@@ -190,7 +442,7 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.PresionArterialD = Convert.ToInt16(numPresionArterialD.Value);
                 oCitaPrenatal.PresionArterialS = Convert.ToInt16(numPresionArterialS.Value);
                 oCitaPrenatal.FechaProximaCitaPrenatal = dtpProximaCita.Value;
-                
+                oCitaPrenatal.SulfatoFerroso = Convert.ToInt16( nudSulfatoFerroso.Value  );
 
                 switch (estado)
                 {
@@ -231,6 +483,7 @@ namespace CapaUsuario.CitaPreNatal
                 numEdadGestacional.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["coledadgestacional"].Value);
                 numPresionArterialD.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colPresionArterialD"].Value);
                 numPresionArterialS.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colpresionarterials"].Value);
+                nudSulfatoFerroso.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["SULFATOFERROSO"].Value);
                 txtFUA.Text = dtgCitasMedicas.SelectedRows[0].Cells["colFUA"].Value.ToString();
                 dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
             }
@@ -274,6 +527,7 @@ namespace CapaUsuario.CitaPreNatal
                 numPresionArterialS.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colpresionarterials"].Value);
                 dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
                 txtFUA.Text = Convert.ToString(dtgCitasMedicas.SelectedRows[0].Cells["colFUA"].Value);
+                nudSulfatoFerroso.Value = Convert.ToDecimal( dtgCitasMedicas.SelectedRows[0].Cells["SULFATOFERROSO"].Value );
                 estado = "modificar";
             }
         }
