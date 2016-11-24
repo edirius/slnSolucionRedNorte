@@ -33,6 +33,8 @@ namespace CapaUsuario
         public bool Archivado = false;
         public bool explorando_hc = false;
 
+        public DateTime FUR;
+        public DateTime fecha_reg;
         public string Codigo_Historia_Clinica { get; set; }
         public string Fecha { get; set; }
         public string DNI { get; set; }
@@ -411,6 +413,10 @@ namespace CapaUsuario
             IdtHistoriaClinica = odtHCXIdHC.Rows[0][0].ToString();
             Codigo_Historia_Clinica = odtHCXIdHC.Rows[0][1].ToString();
             Fecha = odtHCXIdHC.Rows[0][21].ToString();
+
+            fecha_reg = Convert.ToDateTime( odtHCXIdHC.Rows[0][21].ToString());
+            FUR = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
+
             DNI = odtHCXIdHC.Rows[0][16].ToString();
             Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
             Edad = odtHCXIdHC.Rows[0][4].ToString();
@@ -671,7 +677,7 @@ namespace CapaUsuario
  
             int trimestre = Convert.ToInt16(nudSemanas.Value);
 
-            if (trimestre >=1 && trimestre <= 12){
+            if (trimestre >=0 && trimestre <= 12){
                 rbTercerTrimestre.Checked = false;
                 rbSegundoTrimestre.Checked = false;
                 rbPrimerTrimestre.Checked = true;
@@ -702,6 +708,10 @@ namespace CapaUsuario
                 CitaPreNatal.frmCitaPreNatal fCitaPrenatal = new CitaPreNatal.frmCitaPreNatal();
                 fCitaPrenatal.HistoriaClinica = IdtHistoriaClinica;
                 fCitaPrenatal.Establecimiento = IdEstablecimiento;
+                fCitaPrenatal.FUR = FUR;
+                fCitaPrenatal.Fecha_Registro = fecha_reg;
+                fCitaPrenatal.Semana_Gestacional = Convert.ToInt16(nudEdadGestacional.Value) ;
+
                 fCitaPrenatal.ShowDialog();
             }
             else
@@ -1316,7 +1326,8 @@ namespace CapaUsuario
             if (fecha_atencion >= fur) {
                 TimeSpan dias = fur - fecha_atencion;
                 double NrOfDays = dias.TotalDays;
-                int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
+                //int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
+                int semanas = (int) Math.Abs(NrOfDays / 7);
                 if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum)
                     nudSemanas.Value = semanas;
                 else

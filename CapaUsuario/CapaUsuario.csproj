@@ -686,6 +686,7 @@
     <None Include="img\gestantecusco.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\madre_bebe.jpg" />
     <None Include="Resources\images %282%29 bw.jpg" />
     <None Include="Resources\images %283%29 bw.jpg" />
     <None Include="Resources\images %284%29 bw.jpg" />
