@@ -93,7 +93,6 @@ namespace CapaUsuario.Bateria
 
 
         }
-        
         private void CargarMes(DateTime FechaActual)
         {
             string Ahora = Convert.ToString(FechaActual.Date.Month);
