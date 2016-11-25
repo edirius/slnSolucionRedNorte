@@ -223,7 +223,7 @@ namespace CapaUsuario.CitaPreNatal
             odtCitas.Columns.Add("N° CITA", typeof(string));
             odtCitas.Columns.Add("FECHA CITA", typeof(string));
             odtCitas.Columns.Add("EDAD GESTACIONAL", typeof(string));
-            odtCitas.Columns.Add("FECHA PROXIMA CITA", typeof(string));
+            
 
             //oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
             if (dtgCitasMedicas.Rows.Count > 0)
