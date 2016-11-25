@@ -144,6 +144,14 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.dgvPuerperio = new System.Windows.Forms.DataGridView();
+            this.dgvBat = new System.Windows.Forms.DataGridView();
+            this.dgvEco = new System.Windows.Forms.DataGridView();
+            this.dgvOdonto = new System.Windows.Forms.DataGridView();
+            this.dgvCitas2 = new System.Windows.Forms.DataGridView();
+            this.dgvCitas1 = new System.Windows.Forms.DataGridView();
+            this.dgvHC = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -155,14 +163,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.buBuscar = new System.Windows.Forms.Button();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.dgvHC = new System.Windows.Forms.DataGridView();
-            this.dgvCitas1 = new System.Windows.Forms.DataGridView();
-            this.dgvCitas2 = new System.Windows.Forms.DataGridView();
-            this.dgvOdonto = new System.Windows.Forms.DataGridView();
-            this.dgvEco = new System.Windows.Forms.DataGridView();
-            this.dgvBat = new System.Windows.Forms.DataGridView();
-            this.dgvPuerperio = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -219,15 +219,15 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.gbEESS.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
+            this.gbEESS.SuspendLayout();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -305,7 +305,7 @@
             // pbCR
             // 
             this.pbCR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCR.Image = global::CapaUsuario.Properties.Resources.images__9_;
+            this.pbCR.Image = ((System.Drawing.Image)(resources.GetObject("pbCR.Image")));
             this.pbCR.Location = new System.Drawing.Point(121, 580);
             this.pbCR.Name = "pbCR";
             this.pbCR.Size = new System.Drawing.Size(60, 66);
@@ -316,7 +316,7 @@
             // pbARN
             // 
             this.pbARN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbARN.Image = global::CapaUsuario.Properties.Resources.images__8_;
+            this.pbARN.Image = ((System.Drawing.Image)(resources.GetObject("pbARN.Image")));
             this.pbARN.Location = new System.Drawing.Point(121, 501);
             this.pbARN.Name = "pbARN";
             this.pbARN.Size = new System.Drawing.Size(60, 66);
@@ -327,7 +327,7 @@
             // pbCP
             // 
             this.pbCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCP.Image = global::CapaUsuario.Properties.Resources.images__7_;
+            this.pbCP.Image = ((System.Drawing.Image)(resources.GetObject("pbCP.Image")));
             this.pbCP.Location = new System.Drawing.Point(121, 421);
             this.pbCP.Name = "pbCP";
             this.pbCP.Size = new System.Drawing.Size(60, 66);
@@ -338,7 +338,7 @@
             // pbTG
             // 
             this.pbTG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTG.Image = global::CapaUsuario.Properties.Resources.images__6_;
+            this.pbTG.Image = ((System.Drawing.Image)(resources.GetObject("pbTG.Image")));
             this.pbTG.Location = new System.Drawing.Point(121, 340);
             this.pbTG.Name = "pbTG";
             this.pbTG.Size = new System.Drawing.Size(60, 66);
@@ -349,7 +349,7 @@
             // pbVD
             // 
             this.pbVD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbVD.Image = global::CapaUsuario.Properties.Resources.images__5_;
+            this.pbVD.Image = ((System.Drawing.Image)(resources.GetObject("pbVD.Image")));
             this.pbVD.Location = new System.Drawing.Point(121, 259);
             this.pbVD.Name = "pbVD";
             this.pbVD.Size = new System.Drawing.Size(60, 66);
@@ -360,7 +360,7 @@
             // pbRB
             // 
             this.pbRB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRB.Image = global::CapaUsuario.Properties.Resources.descarga__2_;
+            this.pbRB.Image = ((System.Drawing.Image)(resources.GetObject("pbRB.Image")));
             this.pbRB.Location = new System.Drawing.Point(121, 180);
             this.pbRB.Name = "pbRB";
             this.pbRB.Size = new System.Drawing.Size(60, 66);
@@ -371,7 +371,7 @@
             // pbAPN
             // 
             this.pbAPN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAPN.Image = global::CapaUsuario.Properties.Resources.images__4_;
+            this.pbAPN.Image = ((System.Drawing.Image)(resources.GetObject("pbAPN.Image")));
             this.pbAPN.Location = new System.Drawing.Point(121, 100);
             this.pbAPN.Name = "pbAPN";
             this.pbAPN.Size = new System.Drawing.Size(60, 66);
@@ -382,7 +382,7 @@
             // pbMM
             // 
             this.pbMM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMM.Image = global::CapaUsuario.Properties.Resources.images__3_;
+            this.pbMM.Image = ((System.Drawing.Image)(resources.GetObject("pbMM.Image")));
             this.pbMM.Location = new System.Drawing.Point(121, 20);
             this.pbMM.Name = "pbMM";
             this.pbMM.Size = new System.Drawing.Size(60, 66);
@@ -393,31 +393,29 @@
             // pbCronograma
             // 
             this.pbCronograma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbCronograma.Image = global::CapaUsuario.Properties.Resources.images__9__bw;
+            this.pbCronograma.Image = ((System.Drawing.Image)(resources.GetObject("pbCronograma.Image")));
             this.pbCronograma.Location = new System.Drawing.Point(121, 580);
             this.pbCronograma.Name = "pbCronograma";
             this.pbCronograma.Size = new System.Drawing.Size(60, 66);
             this.pbCronograma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCronograma.TabIndex = 38;
             this.pbCronograma.TabStop = false;
-            //this.pbCronograma.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pbRecienNAcido
             // 
             this.pbRecienNAcido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRecienNAcido.Image = global::CapaUsuario.Properties.Resources.images__8__bw;
+            this.pbRecienNAcido.Image = ((System.Drawing.Image)(resources.GetObject("pbRecienNAcido.Image")));
             this.pbRecienNAcido.Location = new System.Drawing.Point(121, 501);
             this.pbRecienNAcido.Name = "pbRecienNAcido";
             this.pbRecienNAcido.Size = new System.Drawing.Size(60, 66);
             this.pbRecienNAcido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRecienNAcido.TabIndex = 38;
             this.pbRecienNAcido.TabStop = false;
-            //this.pbRecienNAcido.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pbControlPuerperio
             // 
             this.pbControlPuerperio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbControlPuerperio.Image = global::CapaUsuario.Properties.Resources.images__7__bw;
+            this.pbControlPuerperio.Image = ((System.Drawing.Image)(resources.GetObject("pbControlPuerperio.Image")));
             this.pbControlPuerperio.Location = new System.Drawing.Point(121, 421);
             this.pbControlPuerperio.Name = "pbControlPuerperio";
             this.pbControlPuerperio.Size = new System.Drawing.Size(60, 66);
@@ -428,7 +426,7 @@
             // pbTerminoGestacion
             // 
             this.pbTerminoGestacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTerminoGestacion.Image = global::CapaUsuario.Properties.Resources.images__6__bw;
+            this.pbTerminoGestacion.Image = ((System.Drawing.Image)(resources.GetObject("pbTerminoGestacion.Image")));
             this.pbTerminoGestacion.Location = new System.Drawing.Point(121, 340);
             this.pbTerminoGestacion.Name = "pbTerminoGestacion";
             this.pbTerminoGestacion.Size = new System.Drawing.Size(60, 66);
@@ -439,7 +437,7 @@
             // pbVisitaDomiciliaria
             // 
             this.pbVisitaDomiciliaria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbVisitaDomiciliaria.Image = global::CapaUsuario.Properties.Resources.images__5__bw;
+            this.pbVisitaDomiciliaria.Image = ((System.Drawing.Image)(resources.GetObject("pbVisitaDomiciliaria.Image")));
             this.pbVisitaDomiciliaria.Location = new System.Drawing.Point(121, 259);
             this.pbVisitaDomiciliaria.Name = "pbVisitaDomiciliaria";
             this.pbVisitaDomiciliaria.Size = new System.Drawing.Size(60, 66);
@@ -450,7 +448,7 @@
             // pbRegBateria
             // 
             this.pbRegBateria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRegBateria.Image = global::CapaUsuario.Properties.Resources.descarga__2__bw;
+            this.pbRegBateria.Image = ((System.Drawing.Image)(resources.GetObject("pbRegBateria.Image")));
             this.pbRegBateria.Location = new System.Drawing.Point(121, 180);
             this.pbRegBateria.Name = "pbRegBateria";
             this.pbRegBateria.Size = new System.Drawing.Size(60, 66);
@@ -461,7 +459,7 @@
             // pbPrenatal
             // 
             this.pbPrenatal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbPrenatal.Image = global::CapaUsuario.Properties.Resources.images__4__bw;
+            this.pbPrenatal.Image = ((System.Drawing.Image)(resources.GetObject("pbPrenatal.Image")));
             this.pbPrenatal.Location = new System.Drawing.Point(121, 100);
             this.pbPrenatal.Name = "pbPrenatal";
             this.pbPrenatal.Size = new System.Drawing.Size(60, 66);
@@ -472,7 +470,7 @@
             // pbMorbilidad
             // 
             this.pbMorbilidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbMorbilidad.Image = global::CapaUsuario.Properties.Resources.images__3__bw;
+            this.pbMorbilidad.Image = ((System.Drawing.Image)(resources.GetObject("pbMorbilidad.Image")));
             this.pbMorbilidad.Location = new System.Drawing.Point(121, 20);
             this.pbMorbilidad.Name = "pbMorbilidad";
             this.pbMorbilidad.Size = new System.Drawing.Size(60, 66);
@@ -695,7 +693,7 @@
             // 
             this.lblIMC.AutoSize = true;
             this.lblIMC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblIMC.Location = new System.Drawing.Point(189, 91);
+            this.lblIMC.Location = new System.Drawing.Point(189, 74);
             this.lblIMC.Name = "lblIMC";
             this.lblIMC.Size = new System.Drawing.Size(94, 20);
             this.lblIMC.TabIndex = 5;
@@ -705,7 +703,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(140, 91);
+            this.label15.Location = new System.Drawing.Point(140, 74);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(39, 18);
             this.label15.TabIndex = 4;
@@ -714,7 +712,7 @@
             // 
             // txtTalla
             // 
-            this.txtTalla.Location = new System.Drawing.Point(189, 53);
+            this.txtTalla.Location = new System.Drawing.Point(189, 46);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(75, 24);
             this.txtTalla.TabIndex = 15;
@@ -736,7 +734,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::CapaUsuario.Properties.Resources.images__2_;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(6, 14);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(116, 63);
@@ -747,7 +745,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(140, 56);
+            this.label12.Location = new System.Drawing.Point(140, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(43, 18);
             this.label12.TabIndex = 2;
@@ -776,7 +774,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(263, 59);
+            this.label17.Location = new System.Drawing.Point(263, 51);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(25, 18);
             this.label17.TabIndex = 0;
@@ -837,7 +835,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::CapaUsuario.Properties.Resources.cusco_pisac1;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(4, 15);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(113, 64);
@@ -911,7 +909,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::CapaUsuario.Properties.Resources.ninos_eco_01_a;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(14, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(141, 129);
@@ -930,7 +928,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.sonrisa_ñusta;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 150);
@@ -1099,7 +1097,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::CapaUsuario.Properties.Resources.gestantecusco;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(6, 19);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(178, 100);
@@ -1627,7 +1625,7 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::CapaUsuario.Properties.Resources.rn;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(6, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(147, 144);
@@ -1659,6 +1657,85 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1068, 54);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.dgvPuerperio);
+            this.groupBox15.Controls.Add(this.dgvBat);
+            this.groupBox15.Controls.Add(this.dgvEco);
+            this.groupBox15.Controls.Add(this.dgvOdonto);
+            this.groupBox15.Controls.Add(this.dgvCitas2);
+            this.groupBox15.Controls.Add(this.dgvCitas1);
+            this.groupBox15.Controls.Add(this.dgvHC);
+            this.groupBox15.Location = new System.Drawing.Point(888, 3);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(177, 48);
+            this.groupBox15.TabIndex = 51;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Visible = false;
+            // 
+            // dgvPuerperio
+            // 
+            this.dgvPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPuerperio.Location = new System.Drawing.Point(136, 26);
+            this.dgvPuerperio.Name = "dgvPuerperio";
+            this.dgvPuerperio.Size = new System.Drawing.Size(15, 42);
+            this.dgvPuerperio.TabIndex = 39;
+            this.dgvPuerperio.Visible = false;
+            // 
+            // dgvBat
+            // 
+            this.dgvBat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBat.Location = new System.Drawing.Point(115, 26);
+            this.dgvBat.Name = "dgvBat";
+            this.dgvBat.Size = new System.Drawing.Size(15, 42);
+            this.dgvBat.TabIndex = 39;
+            this.dgvBat.Visible = false;
+            // 
+            // dgvEco
+            // 
+            this.dgvEco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEco.Location = new System.Drawing.Point(94, 26);
+            this.dgvEco.Name = "dgvEco";
+            this.dgvEco.Size = new System.Drawing.Size(15, 42);
+            this.dgvEco.TabIndex = 39;
+            this.dgvEco.Visible = false;
+            // 
+            // dgvOdonto
+            // 
+            this.dgvOdonto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOdonto.Location = new System.Drawing.Point(73, 26);
+            this.dgvOdonto.Name = "dgvOdonto";
+            this.dgvOdonto.Size = new System.Drawing.Size(15, 42);
+            this.dgvOdonto.TabIndex = 39;
+            this.dgvOdonto.Visible = false;
+            // 
+            // dgvCitas2
+            // 
+            this.dgvCitas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas2.Location = new System.Drawing.Point(52, 26);
+            this.dgvCitas2.Name = "dgvCitas2";
+            this.dgvCitas2.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas2.TabIndex = 39;
+            this.dgvCitas2.Visible = false;
+            // 
+            // dgvCitas1
+            // 
+            this.dgvCitas1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas1.Location = new System.Drawing.Point(31, 26);
+            this.dgvCitas1.Name = "dgvCitas1";
+            this.dgvCitas1.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas1.TabIndex = 39;
+            this.dgvCitas1.Visible = false;
+            // 
+            // dgvHC
+            // 
+            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHC.Location = new System.Drawing.Point(10, 26);
+            this.dgvHC.Name = "dgvHC";
+            this.dgvHC.Size = new System.Drawing.Size(15, 42);
+            this.dgvHC.TabIndex = 39;
+            this.dgvHC.Visible = false;
+            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1678,7 +1755,7 @@
             // 
             this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buGuardar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.buGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buGuardar.BackgroundImage")));
             this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buGuardar.ForeColor = System.Drawing.Color.White;
@@ -1694,7 +1771,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON21;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -1796,7 +1873,7 @@
             // 
             this.buBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buBuscar.BackgroundImage = global::CapaUsuario.Properties.Resources.BOTON22;
+            this.buBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buBuscar.BackgroundImage")));
             this.buBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.buBuscar.ForeColor = System.Drawing.Color.White;
@@ -1808,85 +1885,6 @@
             this.buBuscar.Text = "Buscar";
             this.buBuscar.UseVisualStyleBackColor = true;
             this.buBuscar.Click += new System.EventHandler(this.buBuscar_Click);
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.dgvPuerperio);
-            this.groupBox15.Controls.Add(this.dgvBat);
-            this.groupBox15.Controls.Add(this.dgvEco);
-            this.groupBox15.Controls.Add(this.dgvOdonto);
-            this.groupBox15.Controls.Add(this.dgvCitas2);
-            this.groupBox15.Controls.Add(this.dgvCitas1);
-            this.groupBox15.Controls.Add(this.dgvHC);
-            this.groupBox15.Location = new System.Drawing.Point(888, 3);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(177, 48);
-            this.groupBox15.TabIndex = 51;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Visible = false;
-            // 
-            // dgvHC
-            // 
-            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHC.Location = new System.Drawing.Point(10, 26);
-            this.dgvHC.Name = "dgvHC";
-            this.dgvHC.Size = new System.Drawing.Size(15, 42);
-            this.dgvHC.TabIndex = 39;
-            this.dgvHC.Visible = false;
-            // 
-            // dgvCitas1
-            // 
-            this.dgvCitas1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas1.Location = new System.Drawing.Point(31, 26);
-            this.dgvCitas1.Name = "dgvCitas1";
-            this.dgvCitas1.Size = new System.Drawing.Size(15, 42);
-            this.dgvCitas1.TabIndex = 39;
-            this.dgvCitas1.Visible = false;
-            // 
-            // dgvCitas2
-            // 
-            this.dgvCitas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas2.Location = new System.Drawing.Point(52, 26);
-            this.dgvCitas2.Name = "dgvCitas2";
-            this.dgvCitas2.Size = new System.Drawing.Size(15, 42);
-            this.dgvCitas2.TabIndex = 39;
-            this.dgvCitas2.Visible = false;
-            // 
-            // dgvOdonto
-            // 
-            this.dgvOdonto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOdonto.Location = new System.Drawing.Point(73, 26);
-            this.dgvOdonto.Name = "dgvOdonto";
-            this.dgvOdonto.Size = new System.Drawing.Size(15, 42);
-            this.dgvOdonto.TabIndex = 39;
-            this.dgvOdonto.Visible = false;
-            // 
-            // dgvEco
-            // 
-            this.dgvEco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEco.Location = new System.Drawing.Point(94, 26);
-            this.dgvEco.Name = "dgvEco";
-            this.dgvEco.Size = new System.Drawing.Size(15, 42);
-            this.dgvEco.TabIndex = 39;
-            this.dgvEco.Visible = false;
-            // 
-            // dgvBat
-            // 
-            this.dgvBat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBat.Location = new System.Drawing.Point(115, 26);
-            this.dgvBat.Name = "dgvBat";
-            this.dgvBat.Size = new System.Drawing.Size(15, 42);
-            this.dgvBat.TabIndex = 39;
-            this.dgvBat.Visible = false;
-            // 
-            // dgvPuerperio
-            // 
-            this.dgvPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPuerperio.Location = new System.Drawing.Point(136, 26);
-            this.dgvPuerperio.Name = "dgvPuerperio";
-            this.dgvPuerperio.Size = new System.Drawing.Size(15, 42);
-            this.dgvPuerperio.TabIndex = 39;
-            this.dgvPuerperio.Visible = false;
             // 
             // frmHistoriaClinica
             // 
@@ -1963,16 +1961,16 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.gbEESS.ResumeLayout(false);
             this.gbEESS.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).EndInit();
             this.ResumeLayout(false);
 
         }

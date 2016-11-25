@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.cbVer = new System.Windows.Forms.CheckBox();
@@ -57,6 +58,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(137, 22);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "CARMEN";
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // cbVer
@@ -81,6 +83,7 @@
             this.txtContraseña.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(137, 22);
             this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.Text = "CARMEN";
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // label2
@@ -97,7 +100,7 @@
             // btnIniciar
             // 
             this.btnIniciar.BackColor = System.Drawing.Color.Transparent;
-            this.btnIniciar.BackgroundImage = global::CapaUsuario.Properties.Resources.boton;
+            this.btnIniciar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIniciar.BackgroundImage")));
             this.btnIniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnIniciar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -113,7 +116,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackgroundImage = global::CapaUsuario.Properties.Resources.boton;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
             this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -132,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CapaUsuario.Properties.Resources.fondoLogin;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(396, 433);
             this.Controls.Add(this.txtContraseña);

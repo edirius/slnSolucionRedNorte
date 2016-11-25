@@ -2809,7 +2809,7 @@ namespace CapaUsuario
 
                 paragraph.Alignment = Element.ALIGN_CENTER;
                 paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 14);
-                paragraph.Add("CRONOGRAMA DE GESTANTE PERTENECIENTE A: \n " + Nombre_Completo + " AL" + DateTime.Now.ToString("dd/MM/yyyy") + "\n\n\n");
+                paragraph.Add("CRONOGRAMA DE GESTANTE PERTENECIENTE A: \n " + Nombre_Completo + " AL " + DateTime.Now.ToString("dd/MM/yyyy") + "\n\n\n");
 
                 /*              Llenar datagrids            */
                 FileStream fs = new FileStream(folderPath + "Cronograma.pdf", FileMode.Create, FileAccess.Write, FileShare.None);
@@ -2859,10 +2859,39 @@ namespace CapaUsuario
                 //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
 
                 string ruta_imagen = ruta + "\\logo.jpg";
+                string ruta_imagen_odo = ruta + "\\odontologia.JPG";
+                string ruta_imagen_eco = ruta + "\\ecografia.png";
+                string ruta_imagen_pue = ruta + "\\parto.JPG";
+                string ruta_imagen_bat = ruta + "\\laboratorio.JPG";
+                string ruta_imagen_ges = ruta + "\\gestante.png";
 
                 iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
                 logo.ScalePercent(24f);
                 logo.SetAbsolutePosition(35f, pdfDoc.PageSize.Height - 70f);
+
+                iTextSharp.text.Image logo1 = iTextSharp.text.Image.GetInstance(ruta_imagen_odo);
+                logo1.ScalePercent(44f);
+                logo1.SetAbsolutePosition(90f, pdfDoc.PageSize.Height - 370f);
+
+                iTextSharp.text.Image logo2 = iTextSharp.text.Image.GetInstance(ruta_imagen_eco);
+                logo2.ScalePercent(19f);
+                logo2.SetAbsolutePosition(280f, pdfDoc.PageSize.Height - 370f);
+
+                iTextSharp.text.Image logo4 = iTextSharp.text.Image.GetInstance(ruta_imagen_bat);
+                logo4.ScalePercent(44f);
+                logo4.SetAbsolutePosition(450f, pdfDoc.PageSize.Height - 370f);
+
+                iTextSharp.text.Image logo3 = iTextSharp.text.Image.GetInstance(ruta_imagen_pue);
+                logo3.ScalePercent(44f);
+                logo3.SetAbsolutePosition(660f, pdfDoc.PageSize.Height - 370f);
+
+                
+
+                iTextSharp.text.Image logo5 = iTextSharp.text.Image.GetInstance(ruta_imagen_ges);
+                logo5.ScalePercent(34f);
+                logo5.SetAbsolutePosition(220f, pdfDoc.PageSize.Height - 190f);
+
+
 
                 //tabla que ecografia y odontologia
                 PdfPTable tabla_cronograma_parte_1 = new PdfPTable(2);
@@ -2888,6 +2917,10 @@ namespace CapaUsuario
                 PdfPTable tabla_fila_3 = new PdfPTable(4);
                 tabla_fila_3.DefaultCell.BorderWidth = 0;
 
+                //fila 3
+                PdfPTable tabla_fila_4 = new PdfPTable(4);
+                tabla_fila_4.DefaultCell.BorderWidth = 0;
+
                 //Agrupando tabla titular
                 tabla_fila_1.AddCell( pdfTable_HC );
                 tabla_fila_1.AddCell(pdfTable_vacio);
@@ -2902,11 +2935,16 @@ namespace CapaUsuario
                 tabla_fila_3.AddCell(pdfTable_Bateria);
                 tabla_fila_3.AddCell(pdfTable_Puerperio);
 
+                tabla_fila_4.AddCell(pdfTable_vacio);
+                tabla_fila_4.AddCell(pdfTable_vacio);
+                tabla_fila_4.AddCell(pdfTable_vacio);
+                tabla_fila_4.AddCell(pdfTable_vacio);
+
                 var colWidthPercentages = new[] { 20f, 20f, 67f };
                 tabla_fila_1.SetWidths(colWidthPercentages);
                 tabla_fila_1.WidthPercentage = 100;
 
-                var colWidthPercentages_2 = new[] { 13f, 20f, 67f };
+                var colWidthPercentages_2 = new[] { 20f, 20f, 67f };
                 tabla_fila_2.SetWidths(colWidthPercentages_2);
                 tabla_fila_2.WidthPercentage = 100;
 
@@ -2914,13 +2952,24 @@ namespace CapaUsuario
                 tabla_fila_3.SetWidths(colWidthPercentages_3);
                 tabla_fila_3.WidthPercentage = 100;
 
+                var colWidthPercentages_4 = new[] { 25f, 25f, 25f, 25f };
+                tabla_fila_4.SetWidths(colWidthPercentages_4);
+                tabla_fila_4.WidthPercentage = 100;
+
                 //Agregando pdfTable A, B, C, D, E a pdfDoc
                 columns.AddElement(paragraph);
                 columns.AddElement(tabla_fila_1);
                 columns.AddElement(tabla_fila_2);
+                columns.AddElement(tabla_fila_4);
                 columns.AddElement(tabla_fila_3);
 
                 pdfDoc.Add(logo);
+                pdfDoc.Add(logo1);
+                pdfDoc.Add(logo2);
+                pdfDoc.Add(logo3);
+                pdfDoc.Add(logo4);
+                pdfDoc.Add(logo5);
+
                 pdfDoc.Add(columns);
 
                 pdfDoc.Close();
