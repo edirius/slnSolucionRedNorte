@@ -14,26 +14,27 @@ namespace CapaUsuario.Seguridad
 {
     public partial class frmLogin : Form
     {
+        public string Usuario;
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         
         public frmLogin()
         {
             InitializeComponent();
-            HacerConeccion();
         }
-        private void HacerConeccion()
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
             try
             {
                 Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
-                //MessageBox.Show(String.Format("{0}", "Se conecto exitosamente"));
+                txtUsuario.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        public string Usuario;
+
         public void IniciarSesion()
         {
             string existe = "@a";
@@ -53,7 +54,6 @@ namespace CapaUsuario.Seguridad
                     Menu.obtenerDatos(Usuario);
                     Menu.Show();
                     this.Hide();
-                   
                 }
                 else
                 {
@@ -63,7 +63,10 @@ namespace CapaUsuario.Seguridad
                     txtUsuario.Text = ""; txtContraseña.Text = ""; txtUsuario.Focus();
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cbVer_CheckedChanged(object sender, EventArgs e)
         {
@@ -85,11 +88,6 @@ namespace CapaUsuario.Seguridad
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
