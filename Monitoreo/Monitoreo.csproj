@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDatos">
       <HintPath>..\CapaDeNegocios\bin\Debug\CapaDatos.dll</HintPath>
@@ -263,6 +266,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\importar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,13 +16,13 @@
         "Entry"
         {
         "MsmKey" = "8:_0DDD1B89BF9BF83E47355CE5B6851A9B"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_110BB84181D97BD03C1395212D854DAB"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,14 +39,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "MsmKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_85FE1EC2E5C37B9A057CE21EF9CDCE2E"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_938C686421A96ADCB62420C892949B6F"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,19 +70,19 @@
         "Entry"
         {
         "MsmKey" = "8:_B16F577477C7C9D32971DA99DC46F44C"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B219EAB2E90198FF8C42B0B17BE9BADA"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,31 +106,37 @@
         "Entry"
         {
         "MsmKey" = "8:_BCAD52F8F03A95971E04ED9F518D89D5"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D963C37B0C1600C0C193151A9148CB86"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EA3E92E02320E26E6DC097A92AA6D38A"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_ED2E5FFC75D18BDCA9A2189CD1D0144B"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -193,12 +199,6 @@
         "OwnerKey" = "8:_EA3E92E02320E26E6DC097A92AA6D38A"
         "MsmSig" = "8:_UNDEFINED"
         }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
-        "MsmSig" = "8:_UNDEFINED"
-        }
     }
     "Configurations"
     {
@@ -251,6 +251,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -688,28 +696,6 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_D61CE315555F4B75BAFFB662A85721CA"
-                    {
-                    "Name" = "8:EDIRIUS SOFT S.A.C"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_6DEEF33CC6EA4A99A2764A6664C30752"
-                        "Folders"
-                        {
-                            "{9EF0B969-E518-4E46-987F-47570745A589}:_7F7395D304D943C4A67D55F1B7198A52"
-                            {
-                            "Name" = "8:Sistema Monitoreo Gestantes"
-                            "AlwaysCreate" = "11:FALSE"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "Property" = "8:_318C3D55EC104AA5B8EE7EE530DB006C"
-                                "Folders"
-                                {
-                                }
-                            }
-                        }
-                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_A929AFDF281949A9B2CC014279E67195"
@@ -741,7 +727,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SistemaMonitoreoGestantes"
         "ProductCode" = "8:{AE3FAF69-2ED4-430E-9034-EF82C18473B7}"
-        "PackageCode" = "8:{B2F305AD-60AD-4D0E-826E-720158D19383}"
+        "PackageCode" = "8:{E503ADC7-7535-4969-8079-02DA2B320BE3}"
         "UpgradeCode" = "8:{19F60005-E2B4-47A0-9FDA-3E4C3436A931}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -861,48 +847,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_66B29913D2E640EB914CBA3B608087B7"
-            {
-            "Name" = "8:Sistema Monitoreo Gestantes"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
-            "Folder" = "8:_7F7395D304D943C4A67D55F1B7198A52"
-            "WorkingFolder" = "8:_A929AFDF281949A9B2CC014279E67195"
-            "Icon" = "8:_1CF71CF3FDAE4BE09E727F982CBDAED4"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_88DF84E5150D4973A8B4A5F7D7A56A38"
-            {
-            "Name" = "8:Sistema Monitoreo Gestantes"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
-            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
-            "WorkingFolder" = "8:_A929AFDF281949A9B2CC014279E67195"
-            "Icon" = "8:_1CF71CF3FDAE4BE09E727F982CBDAED4"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CB0C2020D5624227BFF269B1DCEFDA51"
-            {
-            "Name" = "8:Sistema Monitoreo Gestantes"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
-            "Folder" = "8:_6F1464E6804E43FE9C84C2921A7DC020"
-            "WorkingFolder" = "8:_A929AFDF281949A9B2CC014279E67195"
-            "Icon" = "8:_1CF71CF3FDAE4BE09E727F982CBDAED4"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -1302,7 +1246,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_54361CBA6EF94C87AC792012E9F6D9FF"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2C500EFD2F8C4133BD0565C38E37DC5D"
             {
             "SourcePath" = "8:..\\Monitoreo\\obj\\Debug\\Monitoreo.exe"
             "TargetName" = "8:"
