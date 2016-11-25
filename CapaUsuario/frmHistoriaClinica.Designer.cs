@@ -147,7 +147,6 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.buGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvCronograma_ = new System.Windows.Forms.DataGridView();
             this.gbEESS = new System.Windows.Forms.GroupBox();
             this.cboTipoLlegada = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -156,6 +155,14 @@
             this.label23 = new System.Windows.Forms.Label();
             this.dtpTiempoLlegada = new System.Windows.Forms.DateTimePicker();
             this.buBuscar = new System.Windows.Forms.Button();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.dgvHC = new System.Windows.Forms.DataGridView();
+            this.dgvCitas1 = new System.Windows.Forms.DataGridView();
+            this.dgvCitas2 = new System.Windows.Forms.DataGridView();
+            this.dgvOdonto = new System.Windows.Forms.DataGridView();
+            this.dgvEco = new System.Windows.Forms.DataGridView();
+            this.dgvBat = new System.Windows.Forms.DataGridView();
+            this.dgvPuerperio = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.nupEdadGestacional)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -212,8 +219,15 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma_)).BeginInit();
             this.gbEESS.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).BeginInit();
             this.SuspendLayout();
             // 
             // nupEdadGestacional
@@ -386,7 +400,7 @@
             this.pbCronograma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCronograma.TabIndex = 38;
             this.pbCronograma.TabStop = false;
-            this.pbCronograma.Click += new System.EventHandler(this.pictureBox13_Click);
+            //this.pbCronograma.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pbRecienNAcido
             // 
@@ -398,7 +412,7 @@
             this.pbRecienNAcido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbRecienNAcido.TabIndex = 38;
             this.pbRecienNAcido.TabStop = false;
-            this.pbRecienNAcido.Click += new System.EventHandler(this.pictureBox13_Click);
+            //this.pbRecienNAcido.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pbControlPuerperio
             // 
@@ -1632,10 +1646,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox15, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.buGuardar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgvCronograma_, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.gbEESS, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buBuscar, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 588);
@@ -1691,15 +1705,6 @@
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // dgvCronograma_
-            // 
-            this.dgvCronograma_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCronograma_.Location = new System.Drawing.Point(888, 3);
-            this.dgvCronograma_.Name = "dgvCronograma_";
-            this.dgvCronograma_.Size = new System.Drawing.Size(176, 48);
-            this.dgvCronograma_.TabIndex = 38;
-            this.dgvCronograma_.Visible = false;
             // 
             // gbEESS
             // 
@@ -1804,6 +1809,85 @@
             this.buBuscar.UseVisualStyleBackColor = true;
             this.buBuscar.Click += new System.EventHandler(this.buBuscar_Click);
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.dgvPuerperio);
+            this.groupBox15.Controls.Add(this.dgvBat);
+            this.groupBox15.Controls.Add(this.dgvEco);
+            this.groupBox15.Controls.Add(this.dgvOdonto);
+            this.groupBox15.Controls.Add(this.dgvCitas2);
+            this.groupBox15.Controls.Add(this.dgvCitas1);
+            this.groupBox15.Controls.Add(this.dgvHC);
+            this.groupBox15.Location = new System.Drawing.Point(888, 3);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(177, 48);
+            this.groupBox15.TabIndex = 51;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Visible = false;
+            // 
+            // dgvHC
+            // 
+            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHC.Location = new System.Drawing.Point(10, 26);
+            this.dgvHC.Name = "dgvHC";
+            this.dgvHC.Size = new System.Drawing.Size(15, 42);
+            this.dgvHC.TabIndex = 39;
+            this.dgvHC.Visible = false;
+            // 
+            // dgvCitas1
+            // 
+            this.dgvCitas1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas1.Location = new System.Drawing.Point(31, 26);
+            this.dgvCitas1.Name = "dgvCitas1";
+            this.dgvCitas1.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas1.TabIndex = 39;
+            this.dgvCitas1.Visible = false;
+            // 
+            // dgvCitas2
+            // 
+            this.dgvCitas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas2.Location = new System.Drawing.Point(52, 26);
+            this.dgvCitas2.Name = "dgvCitas2";
+            this.dgvCitas2.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas2.TabIndex = 39;
+            this.dgvCitas2.Visible = false;
+            // 
+            // dgvOdonto
+            // 
+            this.dgvOdonto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOdonto.Location = new System.Drawing.Point(73, 26);
+            this.dgvOdonto.Name = "dgvOdonto";
+            this.dgvOdonto.Size = new System.Drawing.Size(15, 42);
+            this.dgvOdonto.TabIndex = 39;
+            this.dgvOdonto.Visible = false;
+            // 
+            // dgvEco
+            // 
+            this.dgvEco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEco.Location = new System.Drawing.Point(94, 26);
+            this.dgvEco.Name = "dgvEco";
+            this.dgvEco.Size = new System.Drawing.Size(15, 42);
+            this.dgvEco.TabIndex = 39;
+            this.dgvEco.Visible = false;
+            // 
+            // dgvBat
+            // 
+            this.dgvBat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBat.Location = new System.Drawing.Point(115, 26);
+            this.dgvBat.Name = "dgvBat";
+            this.dgvBat.Size = new System.Drawing.Size(15, 42);
+            this.dgvBat.TabIndex = 39;
+            this.dgvBat.Visible = false;
+            // 
+            // dgvPuerperio
+            // 
+            this.dgvPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPuerperio.Location = new System.Drawing.Point(136, 26);
+            this.dgvPuerperio.Name = "dgvPuerperio";
+            this.dgvPuerperio.Size = new System.Drawing.Size(15, 42);
+            this.dgvPuerperio.TabIndex = 39;
+            this.dgvPuerperio.Visible = false;
+            // 
             // frmHistoriaClinica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1879,9 +1963,16 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCronograma_)).EndInit();
             this.gbEESS.ResumeLayout(false);
             this.gbEESS.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOdonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1948,7 +2039,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button buCronograma;
-        private System.Windows.Forms.DataGridView dgvCronograma_;
         private System.Windows.Forms.ComboBox cboTipoLlegada;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
@@ -2012,6 +2102,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.DataGridView dgvPuerperio;
+        private System.Windows.Forms.DataGridView dgvBat;
+        private System.Windows.Forms.DataGridView dgvEco;
+        private System.Windows.Forms.DataGridView dgvOdonto;
+        private System.Windows.Forms.DataGridView dgvCitas2;
+        private System.Windows.Forms.DataGridView dgvCitas1;
+        private System.Windows.Forms.DataGridView dgvHC;
     }
 }
 
