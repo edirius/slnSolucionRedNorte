@@ -52,9 +52,9 @@ namespace CapaDeNegocios.Obstetra
         public string password
         { get { return spassword; } set { spassword = value; } }
 
-        public DataTable ListarObstetra(string idtestablecimientosalud)
+        public DataTable ListarObstetra()
         {
-            return Conexion.GDatos.TraerDataTable("spListarObstetra", idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spListarObstetra");
         }
 
         public Boolean CrearObstetra(cObstetra miObstetra)

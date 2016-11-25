@@ -57,7 +57,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(137, 22);
             this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "CARMEN";
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // cbVer
@@ -82,7 +81,6 @@
             this.txtContraseña.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(137, 22);
             this.txtContraseña.TabIndex = 2;
-            this.txtContraseña.Text = "CARMEN";
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // label2

@@ -114,7 +114,7 @@ namespace CapaUsuario.Obstetra
                 //{
                 //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
                 //}
-                dgvObstetras.DataSource = miObstetra.ListarObstetra(sidtestablecimientosalud);
+                dgvObstetras.DataSource = miObstetra.ListarObstetra();
                 if (dgvObstetras.Rows.Count > 0)
                 {
                     dgvObstetras.Rows[0].Selected = true;
