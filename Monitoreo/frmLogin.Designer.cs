@@ -47,7 +47,6 @@
             this.txtContraseña.PasswordChar = '●';
             this.txtContraseña.Size = new System.Drawing.Size(137, 22);
             this.txtContraseña.TabIndex = 8;
-            this.txtContraseña.Text = "ZOL";
             this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress_1);
             // 
             // label2
@@ -116,7 +115,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(137, 22);
             this.txtUsuario.TabIndex = 7;
-            this.txtUsuario.Text = "ZOL";
             this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress_1);
             // 
             // label1

@@ -32,16 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitaPreNatal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
-            this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idthistoriaclinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colnumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colfechacita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coledadgestacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFUA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPresionArterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colpresionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNumeroCita = new System.Windows.Forms.TextBox();
             this.dtpFechaCita = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,6 +58,20 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.nudSulfatoFerroso = new System.Windows.Forms.NumericUpDown();
+            this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idthistoriaclinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colnumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfechacita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coledadgestacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFUA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SULFATOFERROSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colpresionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).BeginInit();
@@ -79,6 +83,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -116,6 +121,7 @@
             this.coledadgestacional,
             this.colFUA,
             this.colPresionArterial,
+            this.SULFATOFERROSO,
             this.colpresionarterials,
             this.colPresionArterialD,
             this.colFechaProximaCita});
@@ -129,80 +135,6 @@
             this.dtgCitasMedicas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgCitasMedicas_CellFormatting);
             this.dtgCitasMedicas.SelectionChanged += new System.EventHandler(this.dtgCitasMedicas_SelectionChanged);
             this.dtgCitasMedicas.Click += new System.EventHandler(this.dtgCitasMedicas_Click);
-            // 
-            // colidtcitaprenatal
-            // 
-            this.colidtcitaprenatal.DataPropertyName = "idtcitaprenatal";
-            this.colidtcitaprenatal.HeaderText = "CODIGO";
-            this.colidtcitaprenatal.Name = "colidtcitaprenatal";
-            this.colidtcitaprenatal.ReadOnly = true;
-            this.colidtcitaprenatal.Visible = false;
-            // 
-            // idthistoriaclinica
-            // 
-            this.idthistoriaclinica.DataPropertyName = "idthistoriaclinica";
-            this.idthistoriaclinica.HeaderText = "CODIGO HISTORIA CLINICA";
-            this.idthistoriaclinica.Name = "idthistoriaclinica";
-            this.idthistoriaclinica.ReadOnly = true;
-            this.idthistoriaclinica.Visible = false;
-            // 
-            // colnumerocita
-            // 
-            this.colnumerocita.DataPropertyName = "NUMERO DE CITA";
-            this.colnumerocita.HeaderText = "NUMERO DE CITA";
-            this.colnumerocita.Name = "colnumerocita";
-            this.colnumerocita.ReadOnly = true;
-            // 
-            // colfechacita
-            // 
-            this.colfechacita.DataPropertyName = "FECHA CITA";
-            this.colfechacita.HeaderText = "FECHA CITA";
-            this.colfechacita.Name = "colfechacita";
-            this.colfechacita.ReadOnly = true;
-            // 
-            // coledadgestacional
-            // 
-            this.coledadgestacional.DataPropertyName = "EDAD GESTACIONAL";
-            this.coledadgestacional.HeaderText = "EDAD GESTACIONAL";
-            this.coledadgestacional.Name = "coledadgestacional";
-            this.coledadgestacional.ReadOnly = true;
-            // 
-            // colFUA
-            // 
-            this.colFUA.DataPropertyName = "FUA";
-            this.colFUA.HeaderText = "FUA";
-            this.colFUA.Name = "colFUA";
-            this.colFUA.ReadOnly = true;
-            // 
-            // colPresionArterial
-            // 
-            this.colPresionArterial.DataPropertyName = "PRESION ARTERIAL";
-            this.colPresionArterial.HeaderText = "PRESION ARTERIAL";
-            this.colPresionArterial.Name = "colPresionArterial";
-            this.colPresionArterial.ReadOnly = true;
-            // 
-            // colpresionarterials
-            // 
-            this.colpresionarterials.DataPropertyName = "PRESION ARTERIAL S";
-            this.colpresionarterials.HeaderText = "PRESION ARTERIAL S";
-            this.colpresionarterials.Name = "colpresionarterials";
-            this.colpresionarterials.ReadOnly = true;
-            this.colpresionarterials.Visible = false;
-            // 
-            // colPresionArterialD
-            // 
-            this.colPresionArterialD.DataPropertyName = "PRESION ARTERIAL D";
-            this.colPresionArterialD.HeaderText = "PRESION ARTERIAL D";
-            this.colPresionArterialD.Name = "colPresionArterialD";
-            this.colPresionArterialD.ReadOnly = true;
-            this.colPresionArterialD.Visible = false;
-            // 
-            // colFechaProximaCita
-            // 
-            this.colFechaProximaCita.DataPropertyName = "FECHA PROXIMA CITA";
-            this.colFechaProximaCita.HeaderText = "FECHA PROXIMA CITA";
-            this.colFechaProximaCita.Name = "colFechaProximaCita";
-            this.colFechaProximaCita.ReadOnly = true;
             // 
             // txtNumeroCita
             // 
@@ -219,7 +151,7 @@
             this.dtpFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCita.Location = new System.Drawing.Point(156, 120);
             this.dtpFechaCita.Name = "dtpFechaCita";
-            this.dtpFechaCita.Size = new System.Drawing.Size(125, 24);
+            this.dtpFechaCita.Size = new System.Drawing.Size(107, 24);
             this.dtpFechaCita.TabIndex = 2;
             this.dtpFechaCita.ValueChanged += new System.EventHandler(this.dtpFechaCita_ValueChanged);
             // 
@@ -250,7 +182,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(289, 125);
+            this.label3.Location = new System.Drawing.Point(289, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 18);
             this.label3.TabIndex = 6;
@@ -260,9 +192,9 @@
             // 
             this.dtpProximaCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpProximaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpProximaCita.Location = new System.Drawing.Point(402, 120);
+            this.dtpProximaCita.Location = new System.Drawing.Point(402, 174);
             this.dtpProximaCita.Name = "dtpProximaCita";
-            this.dtpProximaCita.Size = new System.Drawing.Size(118, 24);
+            this.dtpProximaCita.Size = new System.Drawing.Size(100, 24);
             this.dtpProximaCita.TabIndex = 7;
             // 
             // label4
@@ -270,7 +202,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(289, 178);
+            this.label4.Location = new System.Drawing.Point(289, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 18);
             this.label4.TabIndex = 8;
@@ -279,10 +211,10 @@
             // txtFUA
             // 
             this.txtFUA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFUA.Location = new System.Drawing.Point(402, 175);
+            this.txtFUA.Location = new System.Drawing.Point(402, 227);
             this.txtFUA.MaxLength = 15;
             this.txtFUA.Name = "txtFUA";
-            this.txtFUA.Size = new System.Drawing.Size(174, 24);
+            this.txtFUA.Size = new System.Drawing.Size(156, 24);
             this.txtFUA.TabIndex = 9;
             // 
             // label5
@@ -485,6 +417,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.nudSulfatoFerroso);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.numPresionArterialS);
             this.groupBox2.Controls.Add(this.txtNumeroCita);
             this.groupBox2.Controls.Add(this.dtpFechaCita);
@@ -499,6 +434,7 @@
             this.groupBox2.Controls.Add(this.txtFUA);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(335, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(583, 263);
@@ -562,6 +498,132 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(289, 128);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Sulfato Ferroso:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(455, 126);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 18);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Tab.";
+            // 
+            // nudSulfatoFerroso
+            // 
+            this.nudSulfatoFerroso.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Location = new System.Drawing.Point(402, 126);
+            this.nudSulfatoFerroso.Maximum = new decimal(new int[] {
+            210,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Name = "nudSulfatoFerroso";
+            this.nudSulfatoFerroso.Size = new System.Drawing.Size(49, 24);
+            this.nudSulfatoFerroso.TabIndex = 20;
+            this.nudSulfatoFerroso.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // colidtcitaprenatal
+            // 
+            this.colidtcitaprenatal.DataPropertyName = "idtcitaprenatal";
+            this.colidtcitaprenatal.HeaderText = "CODIGO";
+            this.colidtcitaprenatal.Name = "colidtcitaprenatal";
+            this.colidtcitaprenatal.ReadOnly = true;
+            this.colidtcitaprenatal.Visible = false;
+            // 
+            // idthistoriaclinica
+            // 
+            this.idthistoriaclinica.DataPropertyName = "idthistoriaclinica";
+            this.idthistoriaclinica.HeaderText = "CODIGO HISTORIA CLINICA";
+            this.idthistoriaclinica.Name = "idthistoriaclinica";
+            this.idthistoriaclinica.ReadOnly = true;
+            this.idthistoriaclinica.Visible = false;
+            // 
+            // colnumerocita
+            // 
+            this.colnumerocita.DataPropertyName = "NUMERO DE CITA";
+            this.colnumerocita.HeaderText = "NUMERO DE CITA";
+            this.colnumerocita.Name = "colnumerocita";
+            this.colnumerocita.ReadOnly = true;
+            // 
+            // colfechacita
+            // 
+            this.colfechacita.DataPropertyName = "FECHA CITA";
+            this.colfechacita.HeaderText = "FECHA CITA";
+            this.colfechacita.Name = "colfechacita";
+            this.colfechacita.ReadOnly = true;
+            // 
+            // coledadgestacional
+            // 
+            this.coledadgestacional.DataPropertyName = "EDAD GESTACIONAL";
+            this.coledadgestacional.HeaderText = "EDAD GESTACIONAL";
+            this.coledadgestacional.Name = "coledadgestacional";
+            this.coledadgestacional.ReadOnly = true;
+            // 
+            // colFUA
+            // 
+            this.colFUA.DataPropertyName = "FUA";
+            this.colFUA.HeaderText = "FUA";
+            this.colFUA.Name = "colFUA";
+            this.colFUA.ReadOnly = true;
+            // 
+            // colPresionArterial
+            // 
+            this.colPresionArterial.DataPropertyName = "PRESION ARTERIAL";
+            this.colPresionArterial.HeaderText = "PRESION ARTERIAL";
+            this.colPresionArterial.Name = "colPresionArterial";
+            this.colPresionArterial.ReadOnly = true;
+            // 
+            // SULFATOFERROSO
+            // 
+            this.SULFATOFERROSO.DataPropertyName = "SULFATO FERROSO";
+            this.SULFATOFERROSO.HeaderText = "SULFATO FERROSO";
+            this.SULFATOFERROSO.Name = "SULFATOFERROSO";
+            this.SULFATOFERROSO.ReadOnly = true;
+            // 
+            // colpresionarterials
+            // 
+            this.colpresionarterials.DataPropertyName = "PRESION ARTERIAL S";
+            this.colpresionarterials.HeaderText = "PRESION ARTERIAL S";
+            this.colpresionarterials.Name = "colpresionarterials";
+            this.colpresionarterials.ReadOnly = true;
+            this.colpresionarterials.Visible = false;
+            // 
+            // colPresionArterialD
+            // 
+            this.colPresionArterialD.DataPropertyName = "PRESION ARTERIAL D";
+            this.colPresionArterialD.HeaderText = "PRESION ARTERIAL D";
+            this.colPresionArterialD.Name = "colPresionArterialD";
+            this.colPresionArterialD.ReadOnly = true;
+            this.colPresionArterialD.Visible = false;
+            // 
+            // colFechaProximaCita
+            // 
+            this.colFechaProximaCita.DataPropertyName = "FECHA PROXIMA CITA";
+            this.colFechaProximaCita.HeaderText = "FECHA PROXIMA CITA";
+            this.colFechaProximaCita.Name = "colFechaProximaCita";
+            this.colFechaProximaCita.ReadOnly = true;
+            // 
             // frmCitaPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +657,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,6 +687,14 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pbAlerta;
         private System.Windows.Forms.TextBox txtAlerta;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown nudSulfatoFerroso;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn colidtcitaprenatal;
         private System.Windows.Forms.DataGridViewTextBoxColumn idthistoriaclinica;
         private System.Windows.Forms.DataGridViewTextBoxColumn colnumerocita;
@@ -631,13 +702,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coledadgestacional;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFUA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SULFATOFERROSO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colpresionarterials;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterialD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaProximaCita;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

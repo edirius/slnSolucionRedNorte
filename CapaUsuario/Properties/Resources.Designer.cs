@@ -583,6 +583,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap madre_bebe {
+            get {
+                object obj = ResourceManager.GetObject("madre_bebe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap margen {
             get {
                 object obj = ResourceManager.GetObject("margen", resourceCulture);

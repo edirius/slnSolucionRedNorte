@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0DDD1B89BF9BF83E47355CE5B6851A9B"
+        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_110BB84181D97BD03C1395212D854DAB"
         "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
         "MsmSig" = "8:_UNDEFINED"
@@ -93,6 +99,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BCAD52F8F03A95971E04ED9F518D89D5"
+        "OwnerKey" = "8:_0DDD1B89BF9BF83E47355CE5B6851A9B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BCAD52F8F03A95971E04ED9F518D89D5"
+        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D963C37B0C1600C0C193151A9148CB86"
         "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,13 +130,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
+        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54361CBA6EF94C87AC792012E9F6D9FF"
+        "OwnerKey" = "8:_0DDD1B89BF9BF83E47355CE5B6851A9B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BCAD52F8F03A95971E04ED9F518D89D5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -169,6 +193,12 @@
         "OwnerKey" = "8:_EA3E92E02320E26E6DC097A92AA6D38A"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -187,6 +217,17 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                }
+            }
         }
         "Release"
         {
@@ -203,6 +244,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -232,6 +281,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0DDD1B89BF9BF83E47355CE5B6851A9B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:CircularProgressBar, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0DDD1B89BF9BF83E47355CE5B6851A9B"
+                    {
+                    "Name" = "8:CircularProgressBar.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:CircularProgressBar.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_110BB84181D97BD03C1395212D854DAB"
             {
             "AssemblyRegister" = "3:1"
@@ -458,6 +538,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BCAD52F8F03A95971E04ED9F518D89D5"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:WinFormAnimation, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_BCAD52F8F03A95971E04ED9F518D89D5"
+                    {
+                    "Name" = "8:WinFormAnimation.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:WinFormAnimation.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D963C37B0C1600C0C193151A9148CB86"
             {
             "AssemblyRegister" = "3:1"
@@ -630,7 +741,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SistemaMonitoreoGestantes"
         "ProductCode" = "8:{AE3FAF69-2ED4-430E-9034-EF82C18473B7}"
-        "PackageCode" = "8:{E57EBFE8-5EE4-4AE7-A1D2-E29FDBA820C5}"
+        "PackageCode" = "8:{B2F305AD-60AD-4D0E-826E-720158D19383}"
         "UpgradeCode" = "8:{19F60005-E2B4-47A0-9FDA-3E4C3436A931}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

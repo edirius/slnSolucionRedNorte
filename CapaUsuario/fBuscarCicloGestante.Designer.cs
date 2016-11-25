@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.gbFiltrar = new System.Windows.Forms.GroupBox();
-            this.cbMonth = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.cbYear = new System.Windows.Forms.ComboBox();
             this.gbBuscar = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -48,11 +43,20 @@
             this.cbBuscar = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvHC = new System.Windows.Forms.DataGridView();
+            this.cbYear = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.gbFiltrar = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.gbFiltrar.SuspendLayout();
             this.gbBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
+            this.gbFiltrar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -60,6 +64,7 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Controls.Add(this.dgvHC);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -75,89 +80,20 @@
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 4;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 628F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 863F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
             this.tableLayoutPanel4.Controls.Add(this.gbFiltrar, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.gbBuscar, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 19);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox1, 3, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 23);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1149, 60);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1148, 67);
             this.tableLayoutPanel4.TabIndex = 30;
-            // 
-            // gbFiltrar
-            // 
-            this.gbFiltrar.Controls.Add(this.cbMonth);
-            this.gbFiltrar.Controls.Add(this.label17);
-            this.gbFiltrar.Controls.Add(this.label24);
-            this.gbFiltrar.Controls.Add(this.cbYear);
-            this.gbFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.gbFiltrar.Location = new System.Drawing.Point(631, 3);
-            this.gbFiltrar.Name = "gbFiltrar";
-            this.gbFiltrar.Size = new System.Drawing.Size(347, 54);
-            this.gbFiltrar.TabIndex = 32;
-            this.gbFiltrar.TabStop = false;
-            this.gbFiltrar.Text = "Filtrar por:";
-            // 
-            // cbMonth
-            // 
-            this.cbMonth.BackColor = System.Drawing.Color.White;
-            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.cbMonth.Location = new System.Drawing.Point(193, 19);
-            this.cbMonth.Name = "cbMonth";
-            this.cbMonth.Size = new System.Drawing.Size(148, 26);
-            this.cbMonth.TabIndex = 28;
-            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label17.Location = new System.Drawing.Point(17, 22);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 18);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Año:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label24.Location = new System.Drawing.Point(146, 22);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 18);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Mes:";
-            // 
-            // cbYear
-            // 
-            this.cbYear.BackColor = System.Drawing.Color.White;
-            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(61, 19);
-            this.cbYear.Name = "cbYear";
-            this.cbYear.Size = new System.Drawing.Size(79, 26);
-            this.cbYear.TabIndex = 27;
-            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // gbBuscar
             // 
@@ -174,7 +110,7 @@
             this.gbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gbBuscar.Location = new System.Drawing.Point(3, 3);
             this.gbBuscar.Name = "gbBuscar";
-            this.gbBuscar.Size = new System.Drawing.Size(622, 54);
+            this.gbBuscar.Size = new System.Drawing.Size(622, 61);
             this.gbBuscar.TabIndex = 31;
             this.gbBuscar.TabStop = false;
             // 
@@ -304,31 +240,123 @@
             this.dgvHC.AllowUserToOrderColumns = true;
             this.dgvHC.AllowUserToResizeColumns = false;
             this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvHC.Location = new System.Drawing.Point(15, 85);
+            this.dgvHC.Location = new System.Drawing.Point(15, 96);
             this.dgvHC.MultiSelect = false;
             this.dgvHC.Name = "dgvHC";
             this.dgvHC.ReadOnly = true;
             this.dgvHC.RowHeadersVisible = false;
             this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1149, 564);
+            this.dgvHC.Size = new System.Drawing.Size(1149, 553);
             this.dgvHC.TabIndex = 29;
             this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick);
             this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
             this.dgvHC.DoubleClick += new System.EventHandler(this.dgvHC_DoubleClick);
             // 
+            // cbYear
+            // 
+            this.cbYear.BackColor = System.Drawing.Color.White;
+            this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cbYear.FormattingEnabled = true;
+            this.cbYear.Location = new System.Drawing.Point(61, 19);
+            this.cbYear.Name = "cbYear";
+            this.cbYear.Size = new System.Drawing.Size(79, 26);
+            this.cbYear.TabIndex = 27;
+            this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label24.Location = new System.Drawing.Point(146, 22);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 18);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Mes:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.label17.Location = new System.Drawing.Point(17, 22);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(38, 18);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Año:";
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.BackColor = System.Drawing.Color.White;
+            this.cbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cbMonth.Location = new System.Drawing.Point(193, 19);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(148, 26);
+            this.cbMonth.TabIndex = 28;
+            this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
+            // 
+            // gbFiltrar
+            // 
+            this.gbFiltrar.Controls.Add(this.cbMonth);
+            this.gbFiltrar.Controls.Add(this.label17);
+            this.gbFiltrar.Controls.Add(this.label24);
+            this.gbFiltrar.Controls.Add(this.cbYear);
+            this.gbFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.gbFiltrar.Location = new System.Drawing.Point(631, 3);
+            this.gbFiltrar.Name = "gbFiltrar";
+            this.gbFiltrar.Size = new System.Drawing.Size(347, 61);
+            this.gbFiltrar.TabIndex = 32;
+            this.gbFiltrar.TabStop = false;
+            this.gbFiltrar.Text = "Filtrar por:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(984, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(161, 61);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.madre_bebe;
+            this.pictureBox1.InitialImage = global::CapaUsuario.Properties.Resources.madre_bebe;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // fBuscarCicloGestante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapaUsuario.Properties.Resources.descarga__2__bw;
             this.ClientSize = new System.Drawing.Size(1178, 681);
             this.Controls.Add(this.groupBox3);
             this.Name = "fBuscarCicloGestante";
@@ -336,11 +364,13 @@
             this.Load += new System.EventHandler(this.fBuscarCicloGestante_Load);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.gbFiltrar.ResumeLayout(false);
-            this.gbFiltrar.PerformLayout();
             this.gbBuscar.ResumeLayout(false);
             this.gbBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
+            this.gbFiltrar.ResumeLayout(false);
+            this.gbFiltrar.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,11 +379,6 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.GroupBox gbFiltrar;
-        private System.Windows.Forms.ComboBox cbMonth;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.GroupBox gbBuscar;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label28;
@@ -366,5 +391,12 @@
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgvHC;
+        private System.Windows.Forms.GroupBox gbFiltrar;
+        private System.Windows.Forms.ComboBox cbMonth;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cbYear;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
