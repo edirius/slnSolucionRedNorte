@@ -105,8 +105,11 @@ namespace CapaUsuario.Reportes
 
             pdfDoc.SetPageSize(iTextSharp.text.PageSize.A4);
 
+
             fecha_inicio = dtpFechaInicio.Value;
             fecha_fin = dtpFechaFin.Value;
+
+            
 
             paragraph.Alignment = Element.ALIGN_CENTER;
             paragraph.Font = FontFactory.GetFont(FontFactory.TIMES_BOLD, 12 );
@@ -115,9 +118,7 @@ namespace CapaUsuario.Reportes
  
  
             /*              Llenar datagrids            */
-
-            fecha_fin = dtpFechaFin.Value;
-            fecha_inicio = dtpFechaInicio.Value;
+            //fecha_inicio = fecha_inicio.AddDays(-1);
 
             oHistoriaClinica.Idtobstetra = Idtobstetra;
             oHistoriaClinica.fecha_inicio = fecha_inicio;
@@ -304,8 +305,35 @@ namespace CapaUsuario.Reportes
             float[] values = new float[dg.ColumnCount];
             for (int i = 0; i < dg.ColumnCount; i++)
             {
-                
+
                 values[i] = (float)dg.Columns[i].Width;
+            }
+            return values;
+        }
+
+        public float[] GetTamañoColumnas_n(DataGridView dg)
+        {
+            float[] values = new float[dg.ColumnCount];
+            for (int i = 0; i < dg.ColumnCount; i++)
+            {
+                if (i == 0)
+                    values[i] = 50;
+                else
+                    values[i] = (float)dg.Columns[i].Width;
+            }
+            return values;
+        }
+
+        public float[] GetTamañoColumnasHC_2(DataGridView dg)
+        {
+            float[] values = new float[dg.ColumnCount];
+            for (int i = 0; i < dg.ColumnCount; i++)
+            {
+                if (i == 1 || i == 2 || i == 3 || i == 4 || i == 5)
+                    values[i] = 50;
+                else
+                    values[i] = (float)dg.Columns[i].Width;
+
             }
             return values;
         }
@@ -398,7 +426,7 @@ namespace CapaUsuario.Reportes
         }
 
 
-        public float[] GetTamañoColumnas10(DataGridView dg)
+        public float[] GetTamañoColumnas_n0(DataGridView dg)
         {
             float[] values = new float[dg.ColumnCount];
             for (int i = 0; i < dg.ColumnCount; i++)
@@ -413,7 +441,7 @@ namespace CapaUsuario.Reportes
             return values;
         }
 
-        public float[] GetTamañoColumnas11(DataGridView dg)
+        public float[] GetTamañoColumnas_n1(DataGridView dg)
         {
             float[] values = new float[dg.ColumnCount];
             for (int i = 0; i < dg.ColumnCount; i++)
@@ -639,7 +667,7 @@ namespace CapaUsuario.Reportes
             return pdfTableE;
         }
 
-        private PdfPTable pdf_hc_2(int alineacion, int ancho)
+         private PdfPTable pdf_hc_2(int alineacion, int ancho)
         {
             PdfPTable pdfTableE = new PdfPTable(dgvHCParte2.ColumnCount);
             //Creating iTextSharp Table from the DataTable data
@@ -652,39 +680,81 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvHCParte2);
+                float[] headerwidths_E = GetTamañoColumnasHC_2(dgvHCParte2);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
                 pdfTableE.SetWidths(headerwidths_E);
                 pdfTableE.WidthPercentage = ancho;
-         
+
 
                 /* -------------------------------INICIO DGVBOLETA_E */
                 int k = 0;
+
+                /*agregando formular obstetrica*/
+
+
+
                 foreach (DataGridViewColumn column in dgvHCParte2.Columns)
                 {
                     cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                     cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-                
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                    if ( k==0 || k > 5)
+                    {
+                        cell.Rowspan = 2;
+                    }
+                    else
+                        cell.Rowspan = 1;
+
+
+                    if (k == 1)
+                    {
+
+                        cell = new PdfPCell((new Phrase("FORMULA OBSTETRICA", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        cell.Colspan = 5;
+                        cell.Rowspan = 1;
+                        cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                        cell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                        //pdfTableE.AddCell(cell);
+                    }
+
+                    if (k > 5 || k==1 || k==0  )
                     pdfTableE.AddCell(cell);
+
                     k++;
                 }
+                k = 0;
 
-                for (int i = 0; i < dgvHCParte2.RowCount ; i++)
+                foreach (DataGridViewColumn column in dgvHCParte2.Columns)
+                {
+                    cell = new PdfPCell((new Phrase(column.HeaderText, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                    cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                    cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    if (k == 0 || k > 5) { }
+                    else
+                        pdfTableE.AddCell(cell);
+
+                    k++;
+                }
+                string celda_valor = "";
+                for (int i = 0; i < dgvHCParte2.RowCount; i++)
                 {
                     for (int j = 0; j < dgvHCParte2.ColumnCount; j++)
                     {
-                        cell = new PdfPCell((new Phrase(dgvHCParte2[j, i].Value.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                        celda_valor = dgvHCParte2[j, i].Value.ToString();
+                        cell = new PdfPCell((new Phrase(celda_valor, new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
 
-                        if (j == 6 || j==7)
+
+                        if (j == 6 || j == 7)
                         {
                             DateTime celda = Convert.ToDateTime(dgvHCParte2[j, i].Value);
                             cell = new PdfPCell((new Phrase(celda.ToString("dd/MM/yyyy"), new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
                         }
 
-                        
+
                         cell.HorizontalAlignment = Element.ALIGN_RIGHT;
 
                         //cell.FixedHeight = 25f;
@@ -786,7 +856,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvEcografico);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvEcografico);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -875,7 +945,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvOdontologico);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvOdontologico);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -969,7 +1039,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvMorbilidad);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvMorbilidad);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1145,7 +1215,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvRegBateria);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvRegBateria);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1243,7 +1313,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvVisitasG);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvVisitasG);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1331,7 +1401,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvVisitasPuerpera);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvVisitasPuerpera);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1423,7 +1493,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvTerminoGestacion);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvTerminoGestacion);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1510,7 +1580,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvControlPuerperio);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvControlPuerperio);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1600,7 +1670,7 @@ namespace CapaUsuario.Reportes
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas1(dgvRecienNacido);
+                float[] headerwidths_E = GetTamañoColumnas_n(dgvRecienNacido);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;

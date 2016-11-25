@@ -22,6 +22,8 @@ namespace CapaUsuario
         int año_numero = 0;
 
         bool bandera_combobox_año = false;
+        int cantidad_control_gesntante = 0;
+        int cantidad_años = 0;
 
         public fBuscarCicloGestante()
         {
@@ -33,12 +35,14 @@ namespace CapaUsuario
             mes_numero = Convert.ToInt16(DateTime.Now.Month.ToString("00"));
             año_numero = Convert.ToInt16(DateTime.Now.Year.ToString("0000"));
 
-            cbYear.SelectedItem = cbYear.Items[0];
             cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
-
-            año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
             mes = Convert.ToInt16(this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
             mes = mes + 1;
+
+            if (cantidad_años>0) { 
+                cbYear.SelectedItem = cbYear.Items[0];
+                año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
+            }
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -160,6 +164,8 @@ namespace CapaUsuario
             cbYear.ValueMember = "yyyy";
             cbYear.DisplayMember = "yyyy";
 
+            cantidad_años = oHistoriaClinica.ListarYear().Rows.Count;
+
             establecer_combos_fecha_actual();
 
             cbBuscar.SelectedItem = cbBuscar.Items[0];
@@ -171,6 +177,7 @@ namespace CapaUsuario
             dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
             dgvHC.Columns[1].Visible = false;
             //dgvHC.DataSource = odtHistoriaClinica;
+
 
             bandera_combobox_año = true;
         }
