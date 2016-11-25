@@ -25,12 +25,14 @@ namespace CapaUsuario.ControlGestante
             miCronograma = new cCronograma(miCicloGestante);
             dtgCronograma.Columns.Add("FUR", "FUR");
             dtgCronograma.Rows[0].Cells["FUR"].Value = miCronograma.FechaFur;
+            dtgCronograma.Rows.Add();
 
             for (int i = 0; i < miCronograma.misFechasPrenatales.Count  ; i++)
             {
                 dtgCronograma.Columns.Add(miCronograma.misFechasPrenatales[i].nombre , miCronograma.misFechasPrenatales[i].nombre);
                 dtgCronograma.Rows[0].Cells[miCronograma.misFechasPrenatales[i].nombre].Value = miCronograma.misFechasPrenatales[i].fechaCita;
                 dtgCronograma.Columns[i+ 1].DefaultCellStyle.BackColor = Color.LawnGreen;
+                dtgCronograma.Rows[1].Cells[miCronograma.misFechasPrenatales[i].nombre].Value = miCronograma.misFechasPrenatales[i].semanaGestacional ;
             }
 
             for (int i = 0; i < miCronograma.misFechasProbalesOdontologias.Count  ; i++)

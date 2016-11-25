@@ -19,6 +19,7 @@ namespace CapaUsuario.Alertas
 
         public string CodigoEstablecimiento { get; set; }
         public string CodigoObstetra { get; set; }
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
 
         private void frmAlerta_Load(object sender, EventArgs e)
         {
@@ -34,7 +35,12 @@ namespace CapaUsuario.Alertas
         {
             frmGestantesControlPreNatal fGestantes = new frmGestantesControlPreNatal();
             fGestantes.codigoEstablecimiento = CodigoEstablecimiento;
-            fGestantes.Show();
+
+            if (oUtilitarios.verificarventanaabierta("frmGestantesControlPreNatal"))
+            {
+                //fGestantes.MdiParent = this;
+                fGestantes.Show();
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

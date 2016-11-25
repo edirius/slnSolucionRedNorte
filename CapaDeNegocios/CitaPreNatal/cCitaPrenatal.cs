@@ -22,6 +22,7 @@ namespace CapaDeNegocios.CitaPreNatal
         cHistoriaClinica historiaClinica;
 
         public int SulfatoFerroso{ get; set; }
+        public int Asistencia { get; set; }
 
         public cCitaPrenatal ()
         {
@@ -150,7 +151,7 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal, nuevaCitaPrenatal.SulfatoFerroso);
+                return Conexion.GDatos.Ejecutar("spCrearCitaPreNatal", nuevaCitaPrenatal.codigoCitaPrenatal, HistoriaClinica.Idthistoriaclinica  ,nuevaCitaPrenatal.numeroCita , nuevaCitaPrenatal.fechaCitaPrenatal, nuevaCitaPrenatal.edadGestacional, nuevaCitaPrenatal.fua, nuevaCitaPrenatal.presionArterialS, nuevaCitaPrenatal.PresionArterialD,  nuevaCitaPrenatal.FechaProximaCitaPrenatal, nuevaCitaPrenatal.SulfatoFerroso, nuevaCitaPrenatal.Asistencia );
             }
             catch (Exception eCita)
             {
@@ -162,7 +163,7 @@ namespace CapaDeNegocios.CitaPreNatal
         {
             try
             {
-                return Conexion.GDatos.Ejecutar("spModificarCitaPreNatal", citaPrenatal.codigoCitaPrenatal, citaPrenatal.HistoriaClinica.Idthistoriaclinica , citaPrenatal.numeroCita,  citaPrenatal.fechaCitaPrenatal, citaPrenatal.edadGestacional, citaPrenatal.fua, citaPrenatal.presionArterialS, citaPrenatal.PresionArterialD, citaPrenatal.fechaProximaCitaPrenatal, citaPrenatal.SulfatoFerroso);
+                return Conexion.GDatos.Ejecutar("spModificarCitaPreNatal", citaPrenatal.codigoCitaPrenatal, citaPrenatal.HistoriaClinica.Idthistoriaclinica , citaPrenatal.numeroCita,  citaPrenatal.fechaCitaPrenatal, citaPrenatal.edadGestacional, citaPrenatal.fua, citaPrenatal.presionArterialS, citaPrenatal.PresionArterialD, citaPrenatal.fechaProximaCitaPrenatal, citaPrenatal.SulfatoFerroso, citaPrenatal.Asistencia );
             }
             catch (Exception eCita)
             {
