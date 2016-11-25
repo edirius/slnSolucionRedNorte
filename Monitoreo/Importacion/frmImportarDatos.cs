@@ -86,8 +86,8 @@ namespace Monitoreo.Importacion
                     archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                     if (archivos.Length != 0)
                     {
-                        //oExportar.BorrarDatosTabla(CodigoEstablecimiento);
-                        //oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                        oExportar.BorrarDatosTabla(CodigoEstablecimiento);
+                        oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
                         IniciarCircularProgressBar();
                         IniciarCarga();
                     }

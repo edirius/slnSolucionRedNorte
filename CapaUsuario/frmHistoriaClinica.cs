@@ -32,8 +32,12 @@ namespace CapaUsuario
         public string IdtHistoriaClinica = "";
         public bool Archivado = false;
         public bool explorando_hc = false;
+        public int edad_gestacional = 0;
+        public double dias_gestacional = 0;
+
 
         public DateTime FUR;
+        public DateTime FPP;
         public DateTime fecha_reg;
         public string Codigo_Historia_Clinica { get; set; }
         public string Fecha { get; set; }
@@ -416,6 +420,8 @@ namespace CapaUsuario
 
             fecha_reg = Convert.ToDateTime( odtHCXIdHC.Rows[0][21].ToString());
             FUR = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
+            FPP = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
+            edad_gestacional = (int) odtHCXIdHC.Rows[0][13] ;
 
             DNI = odtHCXIdHC.Rows[0][16].ToString();
             Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
@@ -446,6 +452,14 @@ namespace CapaUsuario
 
             txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
             txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
+
+            /*
+            if (oUtilitarios.es_numerico(txtPeso.Text) || txtPeso.Text != "")
+                txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
+
+            if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
+                txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
+            */
 
             calcular_imc();
 
@@ -483,6 +497,7 @@ namespace CapaUsuario
 
             explorando_hc = false;
 
+            hallar_semana_primera_atencion();
 
             /* Llenando ecografias y odontologia */
             oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
@@ -507,35 +522,36 @@ namespace CapaUsuario
             {
                 double peso2 = Convert.ToDouble(txtPeso.Text);
                 double talla2 = Convert.ToDouble(txtTalla.Text);
-                imc = Convert.ToDecimal( peso2 / Math.Pow(talla2, 2));
-                imc = Math.Round( imc, 2);
+                if (peso2 != 0 && talla2 != 0) { 
+                    imc = Convert.ToDecimal( peso2 / Math.Pow(talla2, 2));
+                    imc = Math.Round( imc, 2);
                 
-                dimc = Convert.ToDouble(imc);
+                    dimc = Convert.ToDouble(imc);
 
-                if (dimc < 18.5)
-                {
-                    resultado = "Bajo Peso";
-                    lblIMC.BackColor = System.Drawing.Color.White;
-                }
-                if (dimc >= 18.5 && dimc <= 24.99)
-                {
-                    resultado = "Rango normal";
-                    lblIMC.BackColor = System.Drawing.Color.Yellow;
-                }
-                if (dimc >= 25 && dimc <= 29.99)
-                {
-                    resultado = "Sobre peso";
-                    lblIMC.BackColor = System.Drawing.Color.Orange;
-                }
-                if (dimc >= 30)
-                {
-                    resultado = "Obesidad";
-                    lblIMC.BackColor = System.Drawing.Color.Red;
+                    if (dimc < 18.5)
+                    {
+                        resultado = "Bajo Peso";
+                        lblIMC.BackColor = System.Drawing.Color.White;
+                    }
+                    if (dimc >= 18.5 && dimc <= 24.99)
+                    {
+                        resultado = "Rango normal";
+                        lblIMC.BackColor = System.Drawing.Color.Yellow;
+                    }
+                    if (dimc >= 25 && dimc <= 29.99)
+                    {
+                        resultado = "Sobre peso";
+                        lblIMC.BackColor = System.Drawing.Color.Orange;
+                    }
+                    if (dimc >= 30)
+                    {
+                        resultado = "Obesidad";
+                        lblIMC.BackColor = System.Drawing.Color.Red;
+                    }
+
+                    lblIMC.Text = imc.ToString() + "\n" + resultado;
                 }
 
-                lblIMC.Text = imc.ToString() + "\n" + resultado;
-
-                
             }
         }
 
@@ -703,15 +719,16 @@ namespace CapaUsuario
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (IdtHistoriaClinica != "")
+            if  (IdtHistoriaClinica != "")
             {
                 CitaPreNatal.frmCitaPreNatal fCitaPrenatal = new CitaPreNatal.frmCitaPreNatal();
                 fCitaPrenatal.HistoriaClinica = IdtHistoriaClinica;
                 fCitaPrenatal.Establecimiento = IdEstablecimiento;
                 fCitaPrenatal.FUR = FUR;
+                fCitaPrenatal.FPP = FPP;
                 fCitaPrenatal.Fecha_Registro = fecha_reg;
-                fCitaPrenatal.Semana_Gestacional = Convert.ToInt16(nudEdadGestacional.Value) ;
-
+                fCitaPrenatal.Semana_Gestacional = edad_gestacional;
+                fCitaPrenatal.dias_gestacional = dias_gestacional;
                 fCitaPrenatal.ShowDialog();
             }
             else
@@ -1225,13 +1242,14 @@ namespace CapaUsuario
                 }
             }
 
-            
+        
         }
         catch (Exception ex)
         {
             MessageBox.Show( ex.StackTrace +' ' + ex.Source +' '+ ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+        
         
         }
 
@@ -1328,7 +1346,8 @@ namespace CapaUsuario
                 double NrOfDays = dias.TotalDays;
                 //int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
                 int semanas = (int) Math.Abs(NrOfDays / 7);
-                if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum)
+                dias_gestacional = NrOfDays;
+                if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum) 
                     nudSemanas.Value = semanas;
                 else
                     MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1778,12 +1797,12 @@ namespace CapaUsuario
             string celda = "";
             string valor = "";
 
-            if (dgvCronograma.ColumnCount > 0)
+            if (dgvCronograma_.ColumnCount > 0)
             {
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas_parte_1(dgvCronograma);
+                float[] headerwidths_E = GetTamañoColumnas_parte_1(dgvCronograma_);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1791,15 +1810,15 @@ namespace CapaUsuario
                 pdfTableE.WidthPercentage = ancho;
  
                 /* -------------------------------INICIO DGVCRONOGRAMA */
-                for (int i = 0; i < dgvCronograma.RowCount; i++)
+                for (int i = 0; i < dgvCronograma_.RowCount; i++)
                 {
-                    for (int j = 0; j < dgvCronograma.ColumnCount; j++)
+                    for (int j = 0; j < dgvCronograma_.ColumnCount; j++)
                     {
                         //valor = ;
-                        if (dgvCronograma[j, i].Value == null)
+                        if (dgvCronograma_[j, i].Value == null)
                             celda = "";
                         else
-                            celda = dgvCronograma[j, i].Value.ToString();
+                            celda = dgvCronograma_[j, i].Value.ToString();
 
 
                         if (j < mitad_cantidad_cronograma) {
@@ -1849,19 +1868,19 @@ namespace CapaUsuario
 
         private PdfPTable pdf_cronograma_parte_2(int alineacion, int ancho)
         {
-            PdfPTable pdfTableE = new PdfPTable(dgvCronograma.ColumnCount- mitad_cantidad_cronograma);
+            PdfPTable pdfTableE = new PdfPTable(dgvCronograma_.ColumnCount- mitad_cantidad_cronograma);
             //Creating iTextSharp Table from the DataTable data
             iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.TIMES_ROMAN, 7);
             iTextSharp.text.Font fuenteTitulo = new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9, 1, iTextSharp.text.Color.BLUE);
             string celda = "";
             string valor = "";
 
-            if (dgvCronograma.ColumnCount > 0)
+            if (dgvCronograma_.ColumnCount > 0)
             {
 
                 Phrase objH_E = new Phrase("A", fuenteTitulo);
                 Phrase objP_E = new Phrase("A", fuente);
-                float[] headerwidths_E = GetTamañoColumnas_parte_2(dgvCronograma);
+                float[] headerwidths_E = GetTamañoColumnas_parte_2(dgvCronograma_);
                 pdfTableE.DefaultCell.Padding = 0;
                 pdfTableE.HorizontalAlignment = alineacion;
                 pdfTableE.DefaultCell.BorderWidth = 1;
@@ -1869,15 +1888,15 @@ namespace CapaUsuario
                 pdfTableE.WidthPercentage = ancho;
 
                 /* -------------------------------INICIO DGVCRONOGRAMA */
-                for (int i = 0; i < dgvCronograma.RowCount; i++)
+                for (int i = 0; i < dgvCronograma_.RowCount; i++)
                 {
-                    for (int j = 0; j < dgvCronograma.ColumnCount; j++)
+                    for (int j = 0; j < dgvCronograma_.ColumnCount; j++)
                     {
                         //valor = ;
-                        if (dgvCronograma[j, i].Value == null)
+                        if (dgvCronograma_[j, i].Value == null)
                             celda = "";
                         else
-                            celda = dgvCronograma[j, i].Value.ToString();
+                            celda = dgvCronograma_[j, i].Value.ToString();
 
 
                         if (j >= mitad_cantidad_cronograma) { 
@@ -1902,29 +1921,13 @@ namespace CapaUsuario
                     }
                     pdfTableE.CompleteRow();
                 }
-                /* -------------------------------FIN DGVCRONOGRAMA */
+                /* -------------------------------FIN DGVCRONOGRAMA ------*/
 
             }
 
             return pdfTableE;
         }
-
-        /*
-        const int WM_ERASEBKGND = 0x14;
-
-        protected override void WndProc(ref System.Windows.Forms.Message m)
-        {
-            if (m.Msg == WM_ERASEBKGND)
-            {
-                Graphics g = Graphics.FromHdc(m.WParam);
-                g.FillRectangle(new SolidBrush(System.Drawing.Color.LightSkyBlue), ClientRectangle);
-                g.Dispose();
-                return;
-            }
-
-            base.WndProc(ref m);
-        }
-        */
+ 
 
         private void dtpFecha_Enter(object sender, EventArgs e)
         {
@@ -2189,6 +2192,16 @@ namespace CapaUsuario
 
         private void buCronograma_Click(object sender, EventArgs e)
         {
+            /*
+            CapaUsuario.ControlGestante.frmCronograma fCronoggrama = new CapaUsuario.ControlGestante.frmCronograma();
+            fCronoggrama.miCicloGestante = new CapaDeNegocios.cHistoriaClinica();
+            fCronoggrama.miCicloGestante.Idthistoriaclinica = IdtHistoriaClinica;
+            fCronoggrama.miCicloGestante.CargarDatos(IdtHistoriaClinica);
+            fCronoggrama.ShowDialog();
+            */
+
+
+
             CapaDeNegocios.cHistoriaClinica oHistoriClinica = new CapaDeNegocios.cHistoriaClinica();
             CapaDeNegocios.CitaPreNatal.cCitaPrenatal oCitaPrenatal = new CapaDeNegocios.CitaPreNatal.cCitaPrenatal();
             CapaDeNegocios.TerminoGestacion.cTerminoGestacion oTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
@@ -2266,8 +2279,8 @@ namespace CapaUsuario
 
                 drFilaCronograma = odtCronograma.NewRow();
                 odtCronograma.Rows.InsertAt(drFilaCronograma, 6);
-
                 
+
                 drFilaCronograma = odtCronograma.NewRow();
                 drFilaCronograma[0] = -1;
                 drFilaCronograma[1] = -2;
@@ -2305,7 +2318,7 @@ namespace CapaUsuario
                     
                 }
 
-                dgvCronograma.DataSource = odtCronograma;
+                dgvCronograma_.DataSource = odtCronograma;
                 odtCronograma = burbuja(odtCronograma);
 
                 /*fin citas prenatales*/
@@ -2437,7 +2450,7 @@ namespace CapaUsuario
                 odtCronograma.Rows.RemoveAt(7);
                 odtCronograma.Rows.RemoveAt(7);
 
-                dgvCronograma.DataSource = odtCronograma;
+                dgvCronograma_.DataSource = odtCronograma;
                 mitad_cantidad_cronograma = odtCronograma.Columns.Count / 2;
                 /*Creacion de pdf*/
 
@@ -2847,8 +2860,8 @@ namespace CapaUsuario
 
             //Total de filas en dgvBoletaPago_A, si es mayor a 0 procede a reporte
             //instanciando pdfTable A , B , C , D , E
-            PdfPTable pdfTable_Cronograma_parte_1 = new PdfPTable(dgvCronograma.ColumnCount);
-            PdfPTable pdfTable_Cronograma_parte_2 = new PdfPTable(dgvCronograma.ColumnCount);
+            PdfPTable pdfTable_Cronograma_parte_1 = new PdfPTable(dgvCronograma_.ColumnCount);
+            PdfPTable pdfTable_Cronograma_parte_2 = new PdfPTable(dgvCronograma_.ColumnCount);
 
             //Nueva pagina
             pdfDoc.NewPage();
@@ -2998,6 +3011,7 @@ namespace CapaUsuario
 
 
 }
+
 
 
 

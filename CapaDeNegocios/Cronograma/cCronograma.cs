@@ -62,11 +62,11 @@ namespace CapaDeNegocios.Cronograma
                 else
                 {
                     miFechaPrenatal.semanaGestacional = HallarSemana(FechaFur - misFechasPrenatales[misFechasPrenatales.Count -1].fechaCita );
-                    if (miFechaPrenatal.semanaGestacional   <= 24)
+                    if (miFechaPrenatal.semanaGestacional   <= 28)
                     {
                         miFechaPrenatal.fechaCita = misFechasPrenatales[misFechasPrenatales.Count - 1].fechaCita.AddDays(30);
                     }
-                    else if (miFechaPrenatal.semanaGestacional <= 34)
+                    else if (miFechaPrenatal.semanaGestacional <= 36)
                     {
                         miFechaPrenatal.fechaCita = misFechasPrenatales[misFechasPrenatales.Count - 1].fechaCita.AddDays(15);
                     }

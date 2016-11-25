@@ -61,7 +61,7 @@
             // 
             this.progressBar.BackColor = System.Drawing.Color.White;
             this.progressBar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar.Location = new System.Drawing.Point(93, 462);
+            this.progressBar.Location = new System.Drawing.Point(102, 287);
             this.progressBar.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(424, 32);
@@ -104,7 +104,7 @@
             this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportar.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportar.ForeColor = System.Drawing.Color.White;
-            this.btnImportar.Location = new System.Drawing.Point(375, 375);
+            this.btnImportar.Location = new System.Drawing.Point(366, 327);
             this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(193, 79);
@@ -121,7 +121,7 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportar.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(69, 375);
+            this.btnExportar.Location = new System.Drawing.Point(69, 327);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(177, 79);
@@ -187,7 +187,7 @@
             this.circularProgressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar.InnerMargin = 2;
             this.circularProgressBar.InnerWidth = -1;
-            this.circularProgressBar.Location = new System.Drawing.Point(264, 291);
+            this.circularProgressBar.Location = new System.Drawing.Point(592, 108);
             this.circularProgressBar.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar.Name = "circularProgressBar";
             this.circularProgressBar.OuterColor = System.Drawing.Color.White;
@@ -196,7 +196,7 @@
             this.circularProgressBar.ProgressColor = System.Drawing.SystemColors.MenuHighlight;
             this.circularProgressBar.ProgressWidth = 25;
             this.circularProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar.Size = new System.Drawing.Size(97, 92);
+            this.circularProgressBar.Size = new System.Drawing.Size(218, 211);
             this.circularProgressBar.StartAngle = 270;
             this.circularProgressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);

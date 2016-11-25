@@ -54,13 +54,13 @@
             this.pbAlerta = new System.Windows.Forms.PictureBox();
             this.txtAlerta = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.nudSulfatoFerroso = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.nudSulfatoFerroso = new System.Windows.Forms.NumericUpDown();
             this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idthistoriaclinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colnumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +72,7 @@
             this.colpresionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASISTENCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCitasMedicas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialS)).BeginInit();
@@ -79,11 +80,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numEdadGestacional)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,7 +125,8 @@
             this.SULFATOFERROSO,
             this.colpresionarterials,
             this.colPresionArterialD,
-            this.colFechaProximaCita});
+            this.colFechaProximaCita,
+            this.ASISTENCIA});
             this.dtgCitasMedicas.Location = new System.Drawing.Point(6, 19);
             this.dtgCitasMedicas.Name = "dtgCitasMedicas";
             this.dtgCitasMedicas.ReadOnly = true;
@@ -442,6 +444,51 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "...";
             // 
+            // nudSulfatoFerroso
+            // 
+            this.nudSulfatoFerroso.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Location = new System.Drawing.Point(402, 126);
+            this.nudSulfatoFerroso.Maximum = new decimal(new int[] {
+            210,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.nudSulfatoFerroso.Name = "nudSulfatoFerroso";
+            this.nudSulfatoFerroso.Size = new System.Drawing.Size(49, 24);
+            this.nudSulfatoFerroso.TabIndex = 20;
+            this.nudSulfatoFerroso.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(455, 126);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 18);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Tab.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(289, 128);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Sulfato Ferroso:";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -498,54 +545,9 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(289, 128);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 18);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Sulfato Ferroso:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 126);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 18);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Tab.";
-            // 
-            // nudSulfatoFerroso
-            // 
-            this.nudSulfatoFerroso.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudSulfatoFerroso.Location = new System.Drawing.Point(402, 126);
-            this.nudSulfatoFerroso.Maximum = new decimal(new int[] {
-            210,
-            0,
-            0,
-            0});
-            this.nudSulfatoFerroso.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.nudSulfatoFerroso.Name = "nudSulfatoFerroso";
-            this.nudSulfatoFerroso.Size = new System.Drawing.Size(49, 24);
-            this.nudSulfatoFerroso.TabIndex = 20;
-            this.nudSulfatoFerroso.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            // 
             // colidtcitaprenatal
             // 
-            this.colidtcitaprenatal.DataPropertyName = "idtcitaprenatal";
+            this.colidtcitaprenatal.DataPropertyName = "CODIGO";
             this.colidtcitaprenatal.HeaderText = "CODIGO";
             this.colidtcitaprenatal.Name = "colidtcitaprenatal";
             this.colidtcitaprenatal.ReadOnly = true;
@@ -553,7 +555,7 @@
             // 
             // idthistoriaclinica
             // 
-            this.idthistoriaclinica.DataPropertyName = "idthistoriaclinica";
+            this.idthistoriaclinica.DataPropertyName = "CODIGO HISTORIA CLINICA";
             this.idthistoriaclinica.HeaderText = "CODIGO HISTORIA CLINICA";
             this.idthistoriaclinica.Name = "idthistoriaclinica";
             this.idthistoriaclinica.ReadOnly = true;
@@ -624,6 +626,13 @@
             this.colFechaProximaCita.Name = "colFechaProximaCita";
             this.colFechaProximaCita.ReadOnly = true;
             // 
+            // ASISTENCIA
+            // 
+            this.ASISTENCIA.DataPropertyName = "ASISTENCIA";
+            this.ASISTENCIA.HeaderText = "ASISTENCIA";
+            this.ASISTENCIA.Name = "ASISTENCIA";
+            this.ASISTENCIA.ReadOnly = true;
+            // 
             // frmCitaPreNatal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,12 +661,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAlerta)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSulfatoFerroso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -706,5 +715,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colpresionarterials;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPresionArterialD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaProximaCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ASISTENCIA;
     }
 }

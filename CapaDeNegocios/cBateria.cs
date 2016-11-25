@@ -85,7 +85,6 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria", id, id2, mes, año);
         }
 
-       
 
     }
 }
