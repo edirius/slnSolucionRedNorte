@@ -49,14 +49,10 @@ namespace Alertas
             return Conexion.GDatos.TraerDataTable("spListarGestantesConRiesgoXPresionArterial");
         }
 
-        public DataTable AlertaRecienNacidoBajoPeso()
+        public DataTable AlertaRecienNacidoBajoPeso(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso");
+            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso2", mes, año);
         }
-        //public DataTable AlertaRecienNacidoBajoPeso()
-        //{
-        //    return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso");
-        //}
 
     }
 }

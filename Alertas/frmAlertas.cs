@@ -208,7 +208,7 @@ namespace Alertas
             catch { }
 
         }
-        
+        DataTable TablitaRN = new DataTable();
         private void CargarTodosGrid()
         {
             dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2(cbMes.Text, cbAños.Text);
@@ -218,6 +218,8 @@ namespace Alertas
             dgvGestantesVIH.DataSource = miAlerta.AlertaGestanteVIH2(cbMes.Text, cbAños.Text);
             dgvGestantesInfeccionUrinaria.DataSource = miAlerta.AlertaGestanteOrina2(cbMes.Text, cbAños.Text);
             dgvGestantesSinExamenOrina.DataSource = miAlerta.AlertaGestanteSinExamenOrina2(cbMes.Text, cbAños.Text);
+            
+            dgvRecienNacidosBajoPeso.DataSource = miAlerta.AlertaRecienNacidoBajoPeso(cbMes.Text, cbAños.Text);
 
         }
         private void OcultarGrids()
@@ -229,6 +231,7 @@ namespace Alertas
             dgvGestantesVIH.Visible = false;
             dgvGestantesInfeccionUrinaria.Visible = false;
             dgvGestantesSinExamenOrina.Visible = false;
+            dgvRecienNacidosBajoPeso.Visible = false;
         }
         private void MostrarNuevasGestantesConProblemas()
         {
@@ -275,6 +278,13 @@ namespace Alertas
                 int contarRegistro7 = dgvGestantesSinExamenOrina.RowCount;
                 string valorcelda7 = dgvGestantesSinExamenOrina[1, contarRegistro7 - 1].Value.ToString();
                 txtUltimaGestanteSinEOrina.Text = valorcelda7;
+            }
+            catch { }
+            try
+            {
+                //int contarRegistro8 = dgvRecienNacidosBajoPeso.RowCount;
+                //string valorcelda8 = dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Value.ToString();
+                //txtUltimaGestanteSinEOrina.Text = valorcelda8;
             }
             catch { }
         }
@@ -348,6 +358,7 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Gestantes con presion arterial elevada":
+                                lblTipoDeAlerta.Text = e.Node.Text;
                                 //
                                 break;
                         }
@@ -356,6 +367,10 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Recien nacidos con bajo peso":
+                                lblTipoDeAlerta.Text = e.Node.Text;
+                                OcultarGrids();
+                                dgvRecienNacidosBajoPeso.Visible = true;
+                                dgvRecienNacidosBajoPeso.Location = new Point(7, 91);
                                 //
                                 break;
                         }
