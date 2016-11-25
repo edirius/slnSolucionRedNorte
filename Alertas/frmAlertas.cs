@@ -404,43 +404,43 @@ namespace Alertas
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas",  "Gestante sin Bateria:" + "\n" + txtUltimaGestanteSinBateria.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1",  "Gestante sin Bateria:" + "\n" + txtUltimaGestanteSinBateria.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteConAnemia_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con Anemia:" + "\n" + txtUltimaGestanteConAnemia.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con Anemia:" + "\n" + txtUltimaGestanteConAnemia.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSinTrata_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante sin tratamiento:" + "\n" + txtUltimaGestanteSinTrata.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante sin tratamiento:" + "\n" + txtUltimaGestanteSinTrata.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSifilis_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con infección urinaria:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con infección urinaria:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteVIH_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con VIH reactivo:" + "\n" + txtUltimaGestanteVIH.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con VIH reactivo:" + "\n" + txtUltimaGestanteVIH.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteInfeccion_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con Sifilis reactivo:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con Sifilis reactivo:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSinEOrina_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante sin examén de orina:" + "\n" + txtUltimaGestanteSinEOrina.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante sin examén de orina:" + "\n" + txtUltimaGestanteSinEOrina.Text, ToolTipIcon.Warning);
             SonidoAlerta();
         }
 
