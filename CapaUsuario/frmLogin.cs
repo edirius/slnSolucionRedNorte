@@ -14,7 +14,7 @@ namespace CapaUsuario.Seguridad
 {
     public partial class frmLogin : Form
     {
-        public string Usuario;
+        CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         
         public frmLogin()
@@ -37,21 +37,16 @@ namespace CapaUsuario.Seguridad
 
         public void IniciarSesion()
         {
-            string existe = "@a";
-            string user = "@b";
             try
             {
-                int numero;
-                //string Contraseña = txtContraseña.Text;
-                string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
-                numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
-                Usuario = txtUsuario.Text;
-                //
-                if (numero == 1)
+                DataView objDataView = new DataView();
+                objDataView.Table = miObstetra.ListarObstetra();
+                objDataView.RowFilter = "usuario='" + txtUsuario.Text + "' and password='" + miUsuario.ObtenerSHA1(txtContraseña.Text) + "'";
+                if (objDataView.Count > 0)
                 {
                     frmMenu Menu = new frmMenu();
-                    MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Menu.obtenerDatos(Usuario);
+                    MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + txtUsuario.Text + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Menu.obtenerDatos(txtUsuario.Text);
                     Menu.Show();
                     this.Hide();
                 }
@@ -62,6 +57,32 @@ namespace CapaUsuario.Seguridad
                     var result = MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsuario.Text = ""; txtContraseña.Text = ""; txtUsuario.Focus();
                 }
+
+
+                //string existe = "@a";
+                //string user = "@b";
+                //string Usuario = "";
+                //int numero;
+                ////string Contraseña = txtContraseña.Text;
+                //string Contraseña = miUsuario.ObtenerSHA1(txtContraseña.Text);
+                //numero = miUsuario.ValidarUsuarioContraseña(txtUsuario.Text, Contraseña, existe, user);
+                //Usuario = txtUsuario.Text;
+                ////
+                //if (numero == 1)
+                //{
+                //    frmMenu Menu = new frmMenu();
+                //    MessageBox.Show("Bienvenido al Sistema de Control de Gestantes usuario " + Usuario + ".", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    Menu.obtenerDatos(Usuario);
+                //    Menu.Show();
+                //    this.Hide();
+                //}
+                //else
+                //{
+                //    const string message = "El Usuario no existe o la contraseña es incorrecta.";
+                //    const string caption = "Error";
+                //    var result = MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    txtUsuario.Text = ""; txtContraseña.Text = ""; txtUsuario.Focus();
+                //}
             }
             catch (Exception ex)
             {
