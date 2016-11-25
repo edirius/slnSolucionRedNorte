@@ -12,7 +12,6 @@ using CapaDeDatos;
 using System.Media;
 using WMPLib;
 using System.Runtime.InteropServices;
-using System.Collections;
 namespace Alertas
 {
     public partial class frmAlertas : Form
@@ -29,7 +28,6 @@ namespace Alertas
         private const int MF_DISABLED = 0x0002;
 
         cAlertas miAlerta = new cAlertas();
-        ArrayList miLista = new ArrayList();
         string FechaTexto = "";
         public frmAlertas()
         {
@@ -39,8 +37,7 @@ namespace Alertas
             CargarAños();
             DateTime Ahora = DateTime.Today;
             CargarMes(Ahora);
-            CargarTodosGrid();
-            timerActualizar.Start();
+            //CargarTodosGrid();
 
         }
         private void CargarGrid(string tipo)
@@ -153,7 +150,8 @@ namespace Alertas
             if (this.WindowState == FormWindowState.Minimized)
             {
                 this.Hide();
-                notifyIcon1.ShowBalloonTip(1000, "Alertas en el Sistema de Control de Gestantes", "Para ver la lista de gestantes con problemas haga click aquí.", ToolTipIcon.Warning);
+                timer.Start();
+                notifyIcon1.ShowBalloonTip(1000, "Alertas en el Sistema de Control de Gestantes", "Para ver las alertas haga click aquí.", ToolTipIcon.Warning);
             }
         }
 
@@ -161,6 +159,22 @@ namespace Alertas
         {
             this.Show();
             this.WindowState = FormWindowState.Maximized;
+        }
+        private void ActualizarAlertas()
+        {
+
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            string Tiempo;
+            Tiempo = DateTime.Now.Minute.ToString();
+            if ((int.Parse(Tiempo) % 5) == 0)
+            {
+                notifyIcon1.ShowBalloonTip(1000, "Alertas en el Sistema de Control de Gestantes", "Para ver las alertas haga click aquí.", ToolTipIcon.Warning);
+                SonidoAlerta();
+            }
+            else { }
+
         }
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
@@ -208,77 +222,18 @@ namespace Alertas
             catch { }
 
         }
-        
+        //93, 85
         private void CargarTodosGrid()
         {
             dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2(cbMes.Text, cbAños.Text);
             dgvGestantesConAnemia.DataSource = miAlerta.AlertaGestanteAnemia2(cbMes.Text, cbAños.Text);
-            dgvGestantesSinTratamiento.DataSource = miAlerta.AlertaGestanteSinFechaTratamiento2(cbMes.Text, cbAños.Text);
+            dgvGestantesSinTratamiento.DataSource = miAlerta.AlertaGestanteSinFechaTratamiento2(cbMes.Text,cbAños.Text);
             dgvGestantesSifilis.DataSource = miAlerta.AlertaGestanteSifilis2(cbMes.Text, cbAños.Text);
             dgvGestantesVIH.DataSource = miAlerta.AlertaGestanteVIH2(cbMes.Text, cbAños.Text);
             dgvGestantesInfeccionUrinaria.DataSource = miAlerta.AlertaGestanteOrina2(cbMes.Text, cbAños.Text);
             dgvGestantesSinExamenOrina.DataSource = miAlerta.AlertaGestanteSinExamenOrina2(cbMes.Text, cbAños.Text);
 
         }
-        private void OcultarGrids()
-        {
-            dgvGestantesSinBateria.Visible = false;
-            dgvGestantesConAnemia.Visible = false;
-            dgvGestantesSinTratamiento.Visible = false;
-            dgvGestantesSifilis.Visible = false;
-            dgvGestantesVIH.Visible = false;
-            dgvGestantesInfeccionUrinaria.Visible = false;
-            dgvGestantesSinExamenOrina.Visible = false;
-        }
-        private void MostrarNuevasGestantesConProblemas()
-        {
-            try
-            {
-                int contarRegistro = dgvGestantesSinBateria.RowCount;
-                string valorcelda = dgvGestantesSinBateria[1, contarRegistro - 1].Value.ToString();
-                txtUltimaGestanteSinBateria.Text = valorcelda;
-            } catch { }
-            try
-            {
-                int contarRegistro2 = dgvGestantesConAnemia.RowCount;
-                string valorcelda2 = dgvGestantesConAnemia[1, contarRegistro2 - 1].Value.ToString();
-                txtUltimaGestanteConAnemia.Text = valorcelda2;}catch { }
-            try
-            {
-                int contarRegistro3 = dgvGestantesSinTratamiento.RowCount;
-                string valorcelda3 = dgvGestantesSinTratamiento[1, contarRegistro3 - 1].Value.ToString();
-                txtUltimaGestanteSinTrata.Text = valorcelda3;
-            }catch { }
-            try
-            {
-                int contarRegistro4 = dgvGestantesSifilis.RowCount;
-                string valorcelda4 = dgvGestantesSifilis[1, contarRegistro4 - 1].Value.ToString();
-                txtUltimaGestanteSifilis.Text = valorcelda4;
-            }
-            catch { }
-            try
-            {
-                int contarRegistro5 = dgvGestantesVIH.RowCount;
-                string valorcelda5 = dgvGestantesVIH[1, contarRegistro5 - 1].Value.ToString();
-                txtUltimaGestanteVIH.Text = valorcelda5;
-            }
-            catch { }
-            try
-            {
-                int contarRegistro6 = dgvGestantesInfeccionUrinaria.RowCount;
-                string valorcelda6 = dgvGestantesInfeccionUrinaria[1, contarRegistro6 - 1].Value.ToString();
-                txtUltimaGestanteInfeccion.Text = valorcelda6;
-            }
-            catch { }
-            try
-            {
-                int contarRegistro7 = dgvGestantesSinExamenOrina.RowCount;
-                string valorcelda7 = dgvGestantesSinExamenOrina[1, contarRegistro7 - 1].Value.ToString();
-                txtUltimaGestanteSinEOrina.Text = valorcelda7;
-            }
-            catch { }
-        }
-
         private void Arbol_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Parent != null)
@@ -290,49 +245,31 @@ namespace Alertas
                         {
                             case "Gestantes sin bateria":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesSinBateria.Visible = true;
-                                
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes con anemia":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesConAnemia.Visible = true;
-                                dgvGestantesConAnemia.Location = new Point(7, 91);
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes sin tratamiento":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesSinTratamiento.Visible = true;
-                                dgvGestantesSinTratamiento.Location = new Point(7, 91);
-
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes con sifilis reactivo":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesSifilis.Visible = true;
-                                dgvGestantesSifilis.Location = new Point(7, 91);
-
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes con VIH reactivo":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesVIH.Visible = true;
-                                dgvGestantesVIH.Location = new Point(7, 91);
-
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes con infección urinaria":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesInfeccionUrinaria.Visible = true;
-                                dgvGestantesInfeccionUrinaria.Location = new Point(7, 91);
-
+                                CargarGrid(e.Node.Text);
                                 break;
                             case "Gestantes sin examen de orina":
                                 lblTipoDeAlerta.Text = e.Node.Text;
-                                OcultarGrids();
-                                dgvGestantesSinExamenOrina.Visible = true;
-                                dgvGestantesSinExamenOrina.Location = new Point(7, 91);
+                                CargarGrid(e.Node.Text);
                                 break;
                         }
                         break;
@@ -385,7 +322,7 @@ namespace Alertas
                     break;
             }
         }
-        
+
         private void cbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarTodosGrid();
@@ -395,65 +332,6 @@ namespace Alertas
         {
             CargarTodosGrid();
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MostrarNuevasGestantesConProblemas();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas",  "Gestante sin Bateria:" + "\n" + txtUltimaGestanteSinBateria.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteConAnemia_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con Anemia:" + "\n" + txtUltimaGestanteConAnemia.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteSinTrata_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante sin tratamiento:" + "\n" + txtUltimaGestanteSinTrata.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteSifilis_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con infección urinaria:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteVIH_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con VIH reactivo:" + "\n" + txtUltimaGestanteVIH.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteInfeccion_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante con Sifilis reactivo:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void txtUltimaGestanteSinEOrina_TextChanged(object sender, EventArgs e)
-        {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas", "Gestante sin examén de orina:" + "\n" + txtUltimaGestanteSinEOrina.Text, ToolTipIcon.Warning);
-            SonidoAlerta();
-        }
-
-        private void timerActualizar_Tick(object sender, EventArgs e)
-        {
-            string Tiempo;
-            Tiempo = DateTime.Now.Minute.ToString();
-            if ((int.Parse(Tiempo) % 1) == 0)
-            {
-                CargarTodosGrid();
-                MostrarNuevasGestantesConProblemas();
-            }
-            else { }
         }
     }
 }
