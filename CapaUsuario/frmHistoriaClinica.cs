@@ -2085,6 +2085,15 @@ namespace CapaUsuario
                 pdfTableE.WidthPercentage = ancho;
 
                 int k = 0;
+
+                cell = new PdfPCell((new Phrase("CONTROLES PRENATALES", new iTextSharp.text.Font(iTextSharp.text.Font.BOLD, 9f, iTextSharp.text.Font.BOLD, iTextSharp.text.Color.BLACK))));
+                cell.Colspan = mitad_cantidad_cronograma;
+                cell.Rowspan = 1;
+                cell.HorizontalAlignment = 1;
+                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTableE.AddCell(cell);
+
                 foreach (DataGridViewColumn column in dgvCitas1.Columns)
                 {
                     if (k < mitad_cantidad_cronograma)
