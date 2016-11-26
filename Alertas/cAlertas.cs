@@ -48,11 +48,22 @@ namespace Alertas
         {
             return Conexion.GDatos.TraerDataTable("spListarGestantesConRiesgoXPresionArterial");
         }
-
+        //RN
         public DataTable AlertaRecienNacidoBajoPeso(string mes, string año)
         {
             return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso2", mes, año);
         }
+        //CITAS PRENATALES
+        public DataTable ListarGestantesQueNoAcudenCita(string codigoEstablecimiento)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarGestantesQueNoAcudenALasCitas", codigoEstablecimiento);
+        }
+        //GESTANTES CON PROBLEMAS DE PRESION ARTERIAL
+        public DataTable ListarGestanteConRiesgoXPresionArterial(string codigoEstablecimiento, int presionarterialMaxS, int presionarterialMaxD)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarGestantesConRiesgoXPresionArterial", presionarterialMaxS, presionarterialMaxD, codigoEstablecimiento);
+        }
+
 
     }
 }

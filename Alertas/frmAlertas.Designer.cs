@@ -54,6 +54,8 @@
             System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Recien nacidos con bajo peso");
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Alertas en Recien Nacidos", new System.Windows.Forms.TreeNode[] {
             treeNode13});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -76,9 +78,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,6 +88,8 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Arbol = new System.Windows.Forms.TreeView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRNBajoPeso = new System.Windows.Forms.TextBox();
+            this.dgvRecienNacidosBajoPeso = new System.Windows.Forms.DataGridView();
             this.txtUltimaGestanteSinEOrina = new System.Windows.Forms.TextBox();
             this.txtUltimaGestanteVIH = new System.Windows.Forms.TextBox();
             this.txtUltimaGestanteInfeccion = new System.Windows.Forms.TextBox();
@@ -138,10 +142,17 @@
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerActualizar = new System.Windows.Forms.Timer(this.components);
-            this.dgvRecienNacidosBajoPeso = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacidosBajoPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesSinExamenOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesInfeccionUrinaria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesVIH)).BeginInit();
@@ -150,7 +161,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesConAnemia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesSinBateria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacidosBajoPeso)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -190,7 +200,7 @@
             this.Arbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Arbol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Arbol.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Arbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Arbol.Font = new System.Drawing.Font("Palatino", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Arbol.ForeColor = System.Drawing.Color.White;
             this.Arbol.Location = new System.Drawing.Point(0, 0);
             this.Arbol.Name = "Arbol";
@@ -227,13 +237,17 @@
             treeNode10,
             treeNode12,
             treeNode14});
-            this.Arbol.Size = new System.Drawing.Size(310, 750);
+            this.Arbol.Size = new System.Drawing.Size(317, 630);
             this.Arbol.TabIndex = 3;
             this.Arbol.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Arbol_NodeMouseClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtRNBajoPeso);
             this.groupBox1.Controls.Add(this.dgvRecienNacidosBajoPeso);
             this.groupBox1.Controls.Add(this.txtUltimaGestanteSinEOrina);
             this.groupBox1.Controls.Add(this.txtUltimaGestanteVIH);
@@ -255,74 +269,119 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dgvGestantesSinBateria);
             this.groupBox1.Controls.Add(this.cbMes);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(316, 2);
+            this.groupBox1.Location = new System.Drawing.Point(323, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(702, 598);
+            this.groupBox1.Size = new System.Drawing.Size(944, 598);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Visualizador de gestantes con problemas:";
             // 
+            // txtRNBajoPeso
+            // 
+            this.txtRNBajoPeso.Location = new System.Drawing.Point(837, 273);
+            this.txtRNBajoPeso.Name = "txtRNBajoPeso";
+            this.txtRNBajoPeso.Size = new System.Drawing.Size(100, 28);
+            this.txtRNBajoPeso.TabIndex = 135;
+            this.txtRNBajoPeso.Visible = false;
+            this.txtRNBajoPeso.TextChanged += new System.EventHandler(this.txtRNBajoPeso_TextChanged);
+            // 
+            // dgvRecienNacidosBajoPeso
+            // 
+            this.dgvRecienNacidosBajoPeso.AllowUserToAddRows = false;
+            this.dgvRecienNacidosBajoPeso.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvRecienNacidosBajoPeso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRecienNacidosBajoPeso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRecienNacidosBajoPeso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecienNacidosBajoPeso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvRecienNacidosBajoPeso.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRecienNacidosBajoPeso.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvRecienNacidosBajoPeso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecienNacidosBajoPeso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.Column29,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28});
+            this.dgvRecienNacidosBajoPeso.GridColor = System.Drawing.Color.White;
+            this.dgvRecienNacidosBajoPeso.Location = new System.Drawing.Point(8, 268);
+            this.dgvRecienNacidosBajoPeso.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRecienNacidosBajoPeso.Name = "dgvRecienNacidosBajoPeso";
+            this.dgvRecienNacidosBajoPeso.RowHeadersVisible = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecienNacidosBajoPeso.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRecienNacidosBajoPeso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRecienNacidosBajoPeso.Size = new System.Drawing.Size(929, 500);
+            this.dgvRecienNacidosBajoPeso.TabIndex = 134;
+            this.dgvRecienNacidosBajoPeso.Visible = false;
+            // 
             // txtUltimaGestanteSinEOrina
             // 
-            this.txtUltimaGestanteSinEOrina.Location = new System.Drawing.Point(793, 219);
+            this.txtUltimaGestanteSinEOrina.Location = new System.Drawing.Point(837, 246);
             this.txtUltimaGestanteSinEOrina.Name = "txtUltimaGestanteSinEOrina";
-            this.txtUltimaGestanteSinEOrina.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteSinEOrina.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteSinEOrina.TabIndex = 133;
             this.txtUltimaGestanteSinEOrina.Visible = false;
             this.txtUltimaGestanteSinEOrina.TextChanged += new System.EventHandler(this.txtUltimaGestanteSinEOrina_TextChanged);
             // 
             // txtUltimaGestanteVIH
             // 
-            this.txtUltimaGestanteVIH.Location = new System.Drawing.Point(793, 168);
+            this.txtUltimaGestanteVIH.Location = new System.Drawing.Point(837, 195);
             this.txtUltimaGestanteVIH.Name = "txtUltimaGestanteVIH";
-            this.txtUltimaGestanteVIH.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteVIH.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteVIH.TabIndex = 132;
             this.txtUltimaGestanteVIH.Visible = false;
             this.txtUltimaGestanteVIH.TextChanged += new System.EventHandler(this.txtUltimaGestanteVIH_TextChanged);
             // 
             // txtUltimaGestanteInfeccion
             // 
-            this.txtUltimaGestanteInfeccion.Location = new System.Drawing.Point(793, 193);
+            this.txtUltimaGestanteInfeccion.Location = new System.Drawing.Point(837, 220);
             this.txtUltimaGestanteInfeccion.Name = "txtUltimaGestanteInfeccion";
-            this.txtUltimaGestanteInfeccion.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteInfeccion.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteInfeccion.TabIndex = 132;
             this.txtUltimaGestanteInfeccion.Visible = false;
             this.txtUltimaGestanteInfeccion.TextChanged += new System.EventHandler(this.txtUltimaGestanteInfeccion_TextChanged);
             // 
             // txtUltimaGestanteSifilis
             // 
-            this.txtUltimaGestanteSifilis.Location = new System.Drawing.Point(793, 143);
+            this.txtUltimaGestanteSifilis.Location = new System.Drawing.Point(837, 170);
             this.txtUltimaGestanteSifilis.Name = "txtUltimaGestanteSifilis";
-            this.txtUltimaGestanteSifilis.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteSifilis.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteSifilis.TabIndex = 131;
             this.txtUltimaGestanteSifilis.Visible = false;
             this.txtUltimaGestanteSifilis.TextChanged += new System.EventHandler(this.txtUltimaGestanteSifilis_TextChanged);
             // 
             // txtUltimaGestanteSinTrata
             // 
-            this.txtUltimaGestanteSinTrata.Location = new System.Drawing.Point(793, 117);
+            this.txtUltimaGestanteSinTrata.Location = new System.Drawing.Point(837, 144);
             this.txtUltimaGestanteSinTrata.Name = "txtUltimaGestanteSinTrata";
-            this.txtUltimaGestanteSinTrata.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteSinTrata.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteSinTrata.TabIndex = 130;
             this.txtUltimaGestanteSinTrata.Visible = false;
             this.txtUltimaGestanteSinTrata.TextChanged += new System.EventHandler(this.txtUltimaGestanteSinTrata_TextChanged);
             // 
             // txtUltimaGestanteConAnemia
             // 
-            this.txtUltimaGestanteConAnemia.Location = new System.Drawing.Point(793, 91);
+            this.txtUltimaGestanteConAnemia.Location = new System.Drawing.Point(837, 118);
             this.txtUltimaGestanteConAnemia.Name = "txtUltimaGestanteConAnemia";
-            this.txtUltimaGestanteConAnemia.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteConAnemia.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteConAnemia.TabIndex = 129;
             this.txtUltimaGestanteConAnemia.Visible = false;
             this.txtUltimaGestanteConAnemia.TextChanged += new System.EventHandler(this.txtUltimaGestanteConAnemia_TextChanged);
             // 
             // txtUltimaGestanteSinBateria
             // 
-            this.txtUltimaGestanteSinBateria.Location = new System.Drawing.Point(793, 64);
+            this.txtUltimaGestanteSinBateria.Location = new System.Drawing.Point(837, 91);
             this.txtUltimaGestanteSinBateria.Name = "txtUltimaGestanteSinBateria";
-            this.txtUltimaGestanteSinBateria.Size = new System.Drawing.Size(100, 24);
+            this.txtUltimaGestanteSinBateria.Size = new System.Drawing.Size(100, 28);
             this.txtUltimaGestanteSinBateria.TabIndex = 128;
             this.txtUltimaGestanteSinBateria.Visible = false;
             this.txtUltimaGestanteSinBateria.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -347,7 +406,7 @@
             this.Column21,
             this.Column22});
             this.dgvGestantesSinExamenOrina.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesSinExamenOrina.Location = new System.Drawing.Point(7, 242);
+            this.dgvGestantesSinExamenOrina.Location = new System.Drawing.Point(55, 242);
             this.dgvGestantesSinExamenOrina.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesSinExamenOrina.Name = "dgvGestantesSinExamenOrina";
             this.dgvGestantesSinExamenOrina.RowHeadersVisible = false;
@@ -355,7 +414,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesSinExamenOrina.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvGestantesSinExamenOrina.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesSinExamenOrina.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesSinExamenOrina.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesSinExamenOrina.TabIndex = 126;
             this.dgvGestantesSinExamenOrina.Visible = false;
             // 
@@ -419,7 +478,7 @@
             this.Column18,
             this.Column19});
             this.dgvGestantesInfeccionUrinaria.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesInfeccionUrinaria.Location = new System.Drawing.Point(7, 219);
+            this.dgvGestantesInfeccionUrinaria.Location = new System.Drawing.Point(55, 219);
             this.dgvGestantesInfeccionUrinaria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesInfeccionUrinaria.Name = "dgvGestantesInfeccionUrinaria";
             this.dgvGestantesInfeccionUrinaria.RowHeadersVisible = false;
@@ -427,7 +486,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesInfeccionUrinaria.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvGestantesInfeccionUrinaria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesInfeccionUrinaria.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesInfeccionUrinaria.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesInfeccionUrinaria.TabIndex = 125;
             this.dgvGestantesInfeccionUrinaria.Visible = false;
             // 
@@ -496,7 +555,7 @@
             this.Column14,
             this.Column15});
             this.dgvGestantesVIH.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesVIH.Location = new System.Drawing.Point(7, 195);
+            this.dgvGestantesVIH.Location = new System.Drawing.Point(55, 195);
             this.dgvGestantesVIH.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesVIH.Name = "dgvGestantesVIH";
             this.dgvGestantesVIH.RowHeadersVisible = false;
@@ -504,7 +563,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesVIH.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvGestantesVIH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesVIH.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesVIH.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesVIH.TabIndex = 124;
             this.dgvGestantesVIH.Visible = false;
             // 
@@ -564,7 +623,7 @@
             this.Column11,
             this.Column12});
             this.dgvGestantesSifilis.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesSifilis.Location = new System.Drawing.Point(7, 170);
+            this.dgvGestantesSifilis.Location = new System.Drawing.Point(55, 170);
             this.dgvGestantesSifilis.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesSifilis.Name = "dgvGestantesSifilis";
             this.dgvGestantesSifilis.RowHeadersVisible = false;
@@ -572,7 +631,7 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesSifilis.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvGestantesSifilis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesSifilis.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesSifilis.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesSifilis.TabIndex = 123;
             this.dgvGestantesSifilis.Visible = false;
             // 
@@ -628,7 +687,7 @@
             this.dgvGestantesSinTratamiento.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -640,7 +699,7 @@
             this.Column8,
             this.Column9});
             this.dgvGestantesSinTratamiento.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesSinTratamiento.Location = new System.Drawing.Point(7, 144);
+            this.dgvGestantesSinTratamiento.Location = new System.Drawing.Point(55, 144);
             this.dgvGestantesSinTratamiento.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesSinTratamiento.Name = "dgvGestantesSinTratamiento";
             this.dgvGestantesSinTratamiento.RowHeadersVisible = false;
@@ -648,7 +707,7 @@
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesSinTratamiento.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvGestantesSinTratamiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesSinTratamiento.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesSinTratamiento.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesSinTratamiento.TabIndex = 122;
             this.dgvGestantesSinTratamiento.Visible = false;
             // 
@@ -703,7 +762,7 @@
             this.dgvGestantesConAnemia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -717,7 +776,7 @@
             this.Column5,
             this.Column6});
             this.dgvGestantesConAnemia.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesConAnemia.Location = new System.Drawing.Point(7, 118);
+            this.dgvGestantesConAnemia.Location = new System.Drawing.Point(55, 118);
             this.dgvGestantesConAnemia.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesConAnemia.Name = "dgvGestantesConAnemia";
             this.dgvGestantesConAnemia.RowHeadersVisible = false;
@@ -725,7 +784,7 @@
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGestantesConAnemia.RowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvGestantesConAnemia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesConAnemia.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesConAnemia.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesConAnemia.TabIndex = 121;
             this.dgvGestantesConAnemia.Visible = false;
             // 
@@ -776,12 +835,12 @@
             // lblTipoDeAlerta
             // 
             this.lblTipoDeAlerta.AutoSize = true;
-            this.lblTipoDeAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDeAlerta.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoDeAlerta.ForeColor = System.Drawing.Color.Black;
-            this.lblTipoDeAlerta.Location = new System.Drawing.Point(250, 31);
+            this.lblTipoDeAlerta.Location = new System.Drawing.Point(333, 30);
             this.lblTipoDeAlerta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipoDeAlerta.Name = "lblTipoDeAlerta";
-            this.lblTipoDeAlerta.Size = new System.Drawing.Size(182, 20);
+            this.lblTipoDeAlerta.Size = new System.Drawing.Size(158, 21);
             this.lblTipoDeAlerta.TabIndex = 120;
             this.lblTipoDeAlerta.Text = "Gestantes sin bateria";
             // 
@@ -789,10 +848,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(150, 31);
+            this.label2.Location = new System.Drawing.Point(233, 30);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 18);
+            this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 119;
             this.label2.Text = "Tipo de Alerta:";
             // 
@@ -801,10 +860,10 @@
             this.cbAños.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAños.ForeColor = System.Drawing.Color.Black;
             this.cbAños.FormattingEnabled = true;
-            this.cbAños.Location = new System.Drawing.Point(437, 55);
+            this.cbAños.Location = new System.Drawing.Point(517, 55);
             this.cbAños.Margin = new System.Windows.Forms.Padding(4);
             this.cbAños.Name = "cbAños";
-            this.cbAños.Size = new System.Drawing.Size(79, 26);
+            this.cbAños.Size = new System.Drawing.Size(79, 28);
             this.cbAños.TabIndex = 105;
             this.cbAños.SelectedIndexChanged += new System.EventHandler(this.cbAños_SelectedIndexChanged);
             // 
@@ -812,10 +871,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(193, 59);
+            this.label1.Location = new System.Drawing.Point(273, 59);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 18);
+            this.label1.Size = new System.Drawing.Size(41, 20);
             this.label1.TabIndex = 106;
             this.label1.Text = "Mes:";
             // 
@@ -823,16 +882,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(398, 59);
+            this.label3.Location = new System.Drawing.Point(478, 59);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 18);
+            this.label3.Size = new System.Drawing.Size(41, 20);
             this.label3.TabIndex = 107;
             this.label3.Text = "Año:";
             // 
             // dgvGestantesSinBateria
             // 
             this.dgvGestantesSinBateria.AllowUserToAddRows = false;
+            this.dgvGestantesSinBateria.AllowUserToDeleteRows = false;
             this.dgvGestantesSinBateria.AllowUserToResizeRows = false;
             dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvGestantesSinBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
@@ -850,17 +910,33 @@
             this.name,
             this.Column2,
             this.Column3});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGestantesSinBateria.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvGestantesSinBateria.GridColor = System.Drawing.Color.White;
-            this.dgvGestantesSinBateria.Location = new System.Drawing.Point(7, 91);
+            this.dgvGestantesSinBateria.Location = new System.Drawing.Point(55, 91);
             this.dgvGestantesSinBateria.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGestantesSinBateria.Name = "dgvGestantesSinBateria";
             this.dgvGestantesSinBateria.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGestantesSinBateria.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvGestantesSinBateria.RowHeadersVisible = false;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGestantesSinBateria.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGestantesSinBateria.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvGestantesSinBateria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestantesSinBateria.Size = new System.Drawing.Size(688, 500);
+            this.dgvGestantesSinBateria.Size = new System.Drawing.Size(824, 500);
             this.dgvGestantesSinBateria.TabIndex = 118;
             this.dgvGestantesSinBateria.Visible = false;
             // 
@@ -918,15 +994,16 @@
             "OCTUBRE",
             "NOVIEMBRE",
             "DICIEMBRE"});
-            this.cbMes.Location = new System.Drawing.Point(240, 55);
+            this.cbMes.Location = new System.Drawing.Point(320, 55);
             this.cbMes.Margin = new System.Windows.Forms.Padding(4);
             this.cbMes.Name = "cbMes";
-            this.cbMes.Size = new System.Drawing.Size(156, 26);
+            this.cbMes.Size = new System.Drawing.Size(156, 28);
             this.cbMes.TabIndex = 104;
             this.cbMes.SelectedIndexChanged += new System.EventHandler(this.cbMes_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.Image = global::Alertas.Properties.Resources.images__3_;
             this.pictureBox1.Location = new System.Drawing.Point(0, 352);
             this.pictureBox1.Name = "pictureBox1";
@@ -940,35 +1017,6 @@
             this.timerActualizar.Interval = 1000;
             this.timerActualizar.Tick += new System.EventHandler(this.timerActualizar_Tick);
             // 
-            // dgvRecienNacidosBajoPeso
-            // 
-            this.dgvRecienNacidosBajoPeso.AllowUserToAddRows = false;
-            this.dgvRecienNacidosBajoPeso.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvRecienNacidosBajoPeso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvRecienNacidosBajoPeso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRecienNacidosBajoPeso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRecienNacidosBajoPeso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvRecienNacidosBajoPeso.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRecienNacidosBajoPeso.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvRecienNacidosBajoPeso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecienNacidosBajoPeso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn7});
-            this.dgvRecienNacidosBajoPeso.GridColor = System.Drawing.Color.White;
-            this.dgvRecienNacidosBajoPeso.Location = new System.Drawing.Point(8, 268);
-            this.dgvRecienNacidosBajoPeso.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvRecienNacidosBajoPeso.Name = "dgvRecienNacidosBajoPeso";
-            this.dgvRecienNacidosBajoPeso.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecienNacidosBajoPeso.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvRecienNacidosBajoPeso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecienNacidosBajoPeso.Size = new System.Drawing.Size(688, 500);
-            this.dgvRecienNacidosBajoPeso.TabIndex = 134;
-            this.dgvRecienNacidosBajoPeso.Visible = false;
-            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -980,12 +1028,71 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 55;
             // 
+            // Column29
+            // 
+            this.Column29.DataPropertyName = "Nombres";
+            this.Column29.HeaderText = "Nombres";
+            this.Column29.Name = "Column29";
+            this.Column29.ReadOnly = true;
+            // 
+            // Column23
+            // 
+            this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column23.DataPropertyName = "dni";
+            this.Column23.HeaderText = "DNI";
+            this.Column23.Name = "Column23";
+            this.Column23.ReadOnly = true;
+            this.Column23.Width = 75;
+            // 
+            // Column24
+            // 
+            this.Column24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column24.DataPropertyName = "fechaderivado";
+            this.Column24.HeaderText = "F.Derivado";
+            this.Column24.Name = "Column24";
+            this.Column24.ReadOnly = true;
+            this.Column24.Width = 85;
+            // 
+            // Column25
+            // 
+            this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column25.DataPropertyName = "peso";
+            this.Column25.HeaderText = "Peso";
+            this.Column25.Name = "Column25";
+            this.Column25.ReadOnly = true;
+            this.Column25.Width = 50;
+            // 
+            // Column26
+            // 
+            this.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column26.DataPropertyName = "sexo";
+            this.Column26.HeaderText = "Sexo";
+            this.Column26.Name = "Column26";
+            this.Column26.ReadOnly = true;
+            this.Column26.Width = 50;
+            // 
+            // Column27
+            // 
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column27.DataPropertyName = "microred";
+            this.Column27.HeaderText = "Microred";
+            this.Column27.Name = "Column27";
+            this.Column27.ReadOnly = true;
+            this.Column27.Width = 120;
+            // 
+            // Column28
+            // 
+            this.Column28.DataPropertyName = "descripcion";
+            this.Column28.HeaderText = "Establecimiento de Salud";
+            this.Column28.Name = "Column28";
+            this.Column28.ReadOnly = true;
+            // 
             // frmAlertas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1031, 750);
+            this.ClientSize = new System.Drawing.Size(1273, 630);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Arbol);
@@ -1000,6 +1107,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacidosBajoPeso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesSinExamenOrina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesInfeccionUrinaria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesVIH)).EndInit();
@@ -1008,7 +1116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesConAnemia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestantesSinBateria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacidosBajoPeso)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1074,6 +1181,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridView dgvRecienNacidosBajoPeso;
+        private System.Windows.Forms.TextBox txtRNBajoPeso;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
     }
 }

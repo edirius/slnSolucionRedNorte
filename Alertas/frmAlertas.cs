@@ -40,7 +40,6 @@ namespace Alertas
             DateTime Ahora = DateTime.Today;
             CargarMes(Ahora);
             CargarTodosGrid();
-            timerActualizar.Start();
 
         }
         private void CargarGrid(string tipo)
@@ -160,12 +159,14 @@ namespace Alertas
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Normal;
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
         }
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
             this.Show();
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Normal;
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
         }
 
         private void lbleliminar_Click(object sender, EventArgs e)
@@ -201,26 +202,33 @@ namespace Alertas
                 if (Sonido == null)
                 {
                     Sonido = new WindowsMediaPlayer();
-                    Sonido.URL = Application.StartupPath + @"\El-Exorcista.mp3";
+                    Sonido.URL = Application.StartupPath + @"\SD_ALERT_12.mp3";
                     Sonido.controls.play();
+                    
                 }
+                Sonido = null;
             }
             catch { }
 
         }
-        DataTable TablitaRN = new DataTable();
         private void CargarTodosGrid()
         {
             dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesConAnemia.DataSource = miAlerta.AlertaGestanteAnemia2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesSinTratamiento.DataSource = miAlerta.AlertaGestanteSinFechaTratamiento2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesSifilis.DataSource = miAlerta.AlertaGestanteSifilis2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesVIH.DataSource = miAlerta.AlertaGestanteVIH2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesInfeccionUrinaria.DataSource = miAlerta.AlertaGestanteOrina2(cbMes.Text, cbAños.Text);
+            
             dgvGestantesSinExamenOrina.DataSource = miAlerta.AlertaGestanteSinExamenOrina2(cbMes.Text, cbAños.Text);
             
             dgvRecienNacidosBajoPeso.DataSource = miAlerta.AlertaRecienNacidoBajoPeso(cbMes.Text, cbAños.Text);
-
+            
         }
         private void OcultarGrids()
         {
@@ -237,54 +245,82 @@ namespace Alertas
         {
             try
             {
+                
                 int contarRegistro = dgvGestantesSinBateria.RowCount;
                 string valorcelda = dgvGestantesSinBateria[1, contarRegistro - 1].Value.ToString();
+                dgvGestantesSinBateria.ClearSelection();
+                dgvGestantesSinBateria[1, contarRegistro - 1].Selected = true;
                 txtUltimaGestanteSinBateria.Text = valorcelda;
-            } catch { }
+            }
+            catch { }
             try
             {
+                
                 int contarRegistro2 = dgvGestantesConAnemia.RowCount;
                 string valorcelda2 = dgvGestantesConAnemia[1, contarRegistro2 - 1].Value.ToString();
-                txtUltimaGestanteConAnemia.Text = valorcelda2;}catch { }
+                dgvGestantesConAnemia.ClearSelection();
+                dgvGestantesConAnemia[1, contarRegistro2 - 1].Selected = true;
+                txtUltimaGestanteConAnemia.Text = valorcelda2;
+            }
+            catch { }
             try
             {
+                
                 int contarRegistro3 = dgvGestantesSinTratamiento.RowCount;
                 string valorcelda3 = dgvGestantesSinTratamiento[1, contarRegistro3 - 1].Value.ToString();
+                dgvGestantesSinTratamiento.ClearSelection();
+                dgvGestantesSinTratamiento[1, contarRegistro3 - 1].Selected = true;
                 txtUltimaGestanteSinTrata.Text = valorcelda3;
-            }catch { }
+            }
+            catch { }
             try
             {
+                
                 int contarRegistro4 = dgvGestantesSifilis.RowCount;
                 string valorcelda4 = dgvGestantesSifilis[1, contarRegistro4 - 1].Value.ToString();
+                dgvGestantesSifilis.ClearSelection();
+                dgvGestantesSifilis[1, contarRegistro4 - 1].Selected = true;
                 txtUltimaGestanteSifilis.Text = valorcelda4;
             }
             catch { }
             try
             {
+                
                 int contarRegistro5 = dgvGestantesVIH.RowCount;
                 string valorcelda5 = dgvGestantesVIH[1, contarRegistro5 - 1].Value.ToString();
+                dgvGestantesVIH.ClearSelection();
+                dgvGestantesVIH[1, contarRegistro5 - 1].Selected = true;
                 txtUltimaGestanteVIH.Text = valorcelda5;
             }
             catch { }
             try
             {
+                
                 int contarRegistro6 = dgvGestantesInfeccionUrinaria.RowCount;
                 string valorcelda6 = dgvGestantesInfeccionUrinaria[1, contarRegistro6 - 1].Value.ToString();
+                dgvGestantesInfeccionUrinaria.ClearSelection();
+                dgvGestantesInfeccionUrinaria[1, contarRegistro6 - 1].Selected = true;
                 txtUltimaGestanteInfeccion.Text = valorcelda6;
             }
             catch { }
             try
             {
+                
                 int contarRegistro7 = dgvGestantesSinExamenOrina.RowCount;
                 string valorcelda7 = dgvGestantesSinExamenOrina[1, contarRegistro7 - 1].Value.ToString();
+                dgvGestantesSinExamenOrina.ClearSelection();
+                dgvGestantesSinExamenOrina[1, contarRegistro7 - 1].Selected = true;
                 txtUltimaGestanteSinEOrina.Text = valorcelda7;
             }
             catch { }
             try
             {
-                //int contarRegistro8 = dgvRecienNacidosBajoPeso.RowCount;
-                //string valorcelda8 = dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Value.ToString();
-                //txtUltimaGestanteSinEOrina.Text = valorcelda8;
+                
+                int contarRegistro8 = dgvRecienNacidosBajoPeso.RowCount;
+                string valorcelda8 = dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Value.ToString();
+                dgvRecienNacidosBajoPeso.ClearSelection();
+                dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Selected = true;
+                txtRNBajoPeso.Text = valorcelda8;
             }
             catch { }
         }
@@ -299,50 +335,51 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Gestantes sin bateria":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES SIN BATERIA";
                                 OcultarGrids();
                                 dgvGestantesSinBateria.Visible = true;
-                                
+                                dgvGestantesSinBateria.Location = new Point(55, 91);
+
                                 break;
                             case "Gestantes con anemia":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES CON ANEMIA";
                                 OcultarGrids();
                                 dgvGestantesConAnemia.Visible = true;
-                                dgvGestantesConAnemia.Location = new Point(7, 91);
+                                dgvGestantesConAnemia.Location = new Point(55, 91);
                                 break;
                             case "Gestantes sin tratamiento":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES SIN TRATAMIENTO";
                                 OcultarGrids();
                                 dgvGestantesSinTratamiento.Visible = true;
-                                dgvGestantesSinTratamiento.Location = new Point(7, 91);
+                                dgvGestantesSinTratamiento.Location = new Point(55, 91);
 
                                 break;
                             case "Gestantes con sifilis reactivo":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES CON SIFILIS REACTIVO";
                                 OcultarGrids();
                                 dgvGestantesSifilis.Visible = true;
-                                dgvGestantesSifilis.Location = new Point(7, 91);
+                                dgvGestantesSifilis.Location = new Point(55, 91);
 
                                 break;
                             case "Gestantes con VIH reactivo":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES CON VIH REACTIVO";
                                 OcultarGrids();
                                 dgvGestantesVIH.Visible = true;
-                                dgvGestantesVIH.Location = new Point(7, 91);
+                                dgvGestantesVIH.Location = new Point(55, 91);
 
                                 break;
                             case "Gestantes con infección urinaria":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES CON INFECCION URINARIA";
                                 OcultarGrids();
                                 dgvGestantesInfeccionUrinaria.Visible = true;
-                                dgvGestantesInfeccionUrinaria.Location = new Point(7, 91);
+                                dgvGestantesInfeccionUrinaria.Location = new Point(55, 91);
 
                                 break;
                             case "Gestantes sin examen de orina":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ORINA";
                                 OcultarGrids();
                                 dgvGestantesSinExamenOrina.Visible = true;
-                                dgvGestantesSinExamenOrina.Location = new Point(7, 91);
+                                dgvGestantesSinExamenOrina.Location = new Point(55, 91);
                                 break;
                         }
                         break;
@@ -350,7 +387,7 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Gestantes que no acuden a sus citas":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS";
                                 break;
                         }
                         break;
@@ -358,7 +395,7 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Gestantes con presion arterial elevada":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "GESTANTES CON PRESION ARTERIAL ELEVADA";
                                 //
                                 break;
                         }
@@ -367,7 +404,7 @@ namespace Alertas
                         switch (e.Node.Text)
                         {
                             case "Recien nacidos con bajo peso":
-                                lblTipoDeAlerta.Text = e.Node.Text;
+                                lblTipoDeAlerta.Text = "RECIEN NACIDOS CON BAJO PESO";
                                 OcultarGrids();
                                 dgvRecienNacidosBajoPeso.Visible = true;
                                 dgvRecienNacidosBajoPeso.Location = new Point(7, 91);
@@ -381,6 +418,7 @@ namespace Alertas
         }
         private void frmAlertas_Load(object sender, EventArgs e)
         {
+            timerActualizar.Start();
             cbMes.Text = FechaTexto;
             IntPtr hmenu = GetSystemMenu(this.Handle, 0);
             int cnt = GetMenuItemCount(hmenu);
@@ -409,66 +447,142 @@ namespace Alertas
         private void cbAños_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarTodosGrid();
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MostrarNuevasGestantesConProblemas();
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1",  "Gestante sin Bateria:" + "\n" + txtUltimaGestanteSinBateria.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1",  "GESTANTE SIN BATERIA:" + "\n" + txtUltimaGestanteSinBateria.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN BATERIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteConAnemia_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con Anemia:" + "\n" + txtUltimaGestanteConAnemia.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE CON ANEMIA:" + "\n" + txtUltimaGestanteConAnemia.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES CON ANEMIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSinTrata_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante sin tratamiento:" + "\n" + txtUltimaGestanteSinTrata.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN TRATAMIENTO" + "\n" + txtUltimaGestanteSinTrata.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN TRATAMIENTO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSifilis_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con infección urinaria:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE CON SIFILIS REACTIVO:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES CON SIFILIS REACTIVO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteVIH_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con VIH reactivo:" + "\n" + txtUltimaGestanteVIH.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE CON VIH REACTIVO:" + "\n" + txtUltimaGestanteVIH.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES CON VIH REACTIVO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteInfeccion_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante con Sifilis reactivo:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE CON INFECCION URINARIA:" + "\n" + txtUltimaGestanteInfeccion.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES CON INFECCION URINARIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
 
         private void txtUltimaGestanteSinEOrina_TextChanged(object sender, EventArgs e)
         {
-            notifyIcon1.ShowBalloonTip(1000, "Nueva gestante con problemas en GESSYS V.1", "Gestante sin examén de orina:" + "\n" + txtUltimaGestanteSinEOrina.Text, ToolTipIcon.Warning);
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN EXAMEN DE ORINA:" + "\n" + txtUltimaGestanteSinEOrina.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN EXAMEN DE ORINA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }
-
+        private void mostrarAlertaSeleccionada(string formulario)
+        {
+            if (formulario == "GESTANTES SIN BATERIA")
+            {
+                OcultarGrids();
+                dgvGestantesSinBateria.Location = new Point(55, 91);
+                dgvGestantesSinBateria.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES CON ANEMIA")
+            {
+                OcultarGrids();
+                dgvGestantesConAnemia.Location = new Point(55, 91);
+                dgvGestantesConAnemia.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN TRATAMIENTO")
+            {
+                OcultarGrids();
+                dgvGestantesSinTratamiento.Location = new Point(55, 91);
+                dgvGestantesSinTratamiento.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES CON SIFILIS REACTIVO")
+            {
+                OcultarGrids();
+                dgvGestantesSifilis.Location = new Point(55, 91);
+                dgvGestantesSifilis.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES CON VIH REACTIVO")
+            {
+                OcultarGrids();
+                dgvGestantesVIH.Location = new Point(55, 91);
+                dgvGestantesVIH.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES CON INFECCION URINARIA")
+            {
+                OcultarGrids();
+                dgvGestantesInfeccionUrinaria.Location = new Point(55, 91);
+                dgvGestantesInfeccionUrinaria.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN EXAMEN DE ORINA")
+            {
+                OcultarGrids();
+                dgvGestantesSinExamenOrina.Location = new Point(55, 91);
+                dgvGestantesSinExamenOrina.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "RECIEN NACIDOS CON BAJO PESO")
+            {
+                OcultarGrids();
+                dgvRecienNacidosBajoPeso.Location = new Point(7, 91);
+                dgvRecienNacidosBajoPeso.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+        }
         private void timerActualizar_Tick(object sender, EventArgs e)
         {
             string Tiempo;
-            Tiempo = DateTime.Now.Minute.ToString();
-            if ((int.Parse(Tiempo) % 1) == 0)
+            Tiempo = DateTime.Now.Second.ToString();
+            if ((int.Parse(Tiempo) % 5) == 0)
             {
                 CargarTodosGrid();
                 MostrarNuevasGestantesConProblemas();
             }
             else { }
+        }
+        private void txtRNBajoPeso_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "RECIEN NACIDO CON BAJO PESO DE:" + "\n" + txtRNBajoPeso.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "RECIEN NACIDOS CON BAJO PESO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
         }
     }
 }
