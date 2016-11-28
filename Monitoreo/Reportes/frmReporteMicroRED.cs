@@ -138,7 +138,7 @@ namespace Monitoreo.Reportes
         private void btnReporObstetras_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteObstetra("rptReportesObstetras");
+            frmVistaReportes.ReporteObstetra("rptReportesObstetras", sidtmicrored);
             frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }

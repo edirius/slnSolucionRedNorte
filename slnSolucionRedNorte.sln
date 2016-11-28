@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDeNegocios", "CapaDeNegocios\CapaDeNegocios.csproj", "{87FDA639-1F04-4224-ACFC-1CC205BE4ED8}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SistemaMonitoreoGestantes", "SistemaMonitoreoGestantes\SistemaMonitoreoGestantes.vdproj", "{A080C040-0E90-41F0-84F9-1B8238CF43E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGrafica", "CapaGrafica\CapaGrafica.csproj", "{985F9624-2819-4015-8396-FB538C8EFB7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alertas", "Alertas\Alertas.csproj", "{705EF91E-502F-404C-AC61-572D436BB80A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{985F9624-2819-4015-8396-FB538C8EFB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{985F9624-2819-4015-8396-FB538C8EFB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{985F9624-2819-4015-8396-FB538C8EFB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{705EF91E-502F-404C-AC61-572D436BB80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705EF91E-502F-404C-AC61-572D436BB80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705EF91E-502F-404C-AC61-572D436BB80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705EF91E-502F-404C-AC61-572D436BB80A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

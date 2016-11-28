@@ -9,16 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CrystalDecisions.Shared;
-using CrystalDecisions.Windows;
 using CrystalDecisions.ReportSource;
-using CrystalDecisions.CrystalReports;
 using CrystalDecisions.CrystalReports.Engine;
-using Microsoft.VisualBasic;
-using Microsoft.Win32;
-using System.Data.SqlClient;
-//using System.Data.SqlClient.SqlConnection;
-using System.Data.OleDb;
-//using System.Web.UI.Page;
 
 namespace Monitoreo.Reportes
 {
@@ -47,17 +39,11 @@ namespace Monitoreo.Reportes
                 {
                     Reportes.rptReportesObstetras rptReportesObstetras = new Reportes.rptReportesObstetras();
 
-                    //crParameterDiscreteValue.Value = cVariables.v_idobstetra;
-                    //crParameterFieldDefinitions = rptAlertaControlPeuperio.DataDefinition.ParameterFields;
-                    //crParameterFieldDefinition = crParameterFieldDefinitions["pidtobstetra"];
-                    //crParameterValues.Add(crParameterDiscreteValue);
-                    //crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
-
-                    //crParameterDiscreteValue.Value = cVariables.v_idestablecimientosalud;
-                    //crParameterFieldDefinitions = rptAlertaControlPeuperio.DataDefinition.ParameterFields;
-                    //crParameterFieldDefinition = crParameterFieldDefinitions["pidtestablecimientosalud"];
-                    //crParameterValues.Add(crParameterDiscreteValue);
-                    //crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+                    crParameterDiscreteValue.Value = sidtmicrored;
+                    crParameterFieldDefinitions = rptReportesObstetras.DataDefinition.ParameterFields;
+                    crParameterFieldDefinition = crParameterFieldDefinitions["pidtmicrored"];
+                    crParameterValues.Add(crParameterDiscreteValue);
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
                     crystalReportViewer1.ReportSource = rptReportesObstetras;
                     crystalReportViewer1.Refresh();
@@ -144,9 +130,10 @@ namespace Monitoreo.Reportes
             }
         }
 
-        public void ReporteObstetra(string tipo)
+        public void ReporteObstetra(string tipo, string pidtmicrored)
         {
             Reporte = tipo;
+            sidtmicrored = pidtmicrored;
         }
 
         public void ReporteNominalGestanteMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
