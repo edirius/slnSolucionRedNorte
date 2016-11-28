@@ -1,16 +1,16 @@
-﻿namespace Monitoreo.Reportes
+﻿namespace Prueba
 {
-    partial class frmVistaReportes
+    partial class Form1
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
@@ -39,27 +39,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1234, 611);
-            this.crystalReportViewer1.TabIndex = 1;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(674, 480);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
-            // frmVistaReportes
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 611);
+            this.ClientSize = new System.Drawing.Size(674, 480);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frmVistaReportes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reportes";
-            this.Load += new System.EventHandler(this.frmVistaReportes_Load);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -69,3 +60,4 @@
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
+

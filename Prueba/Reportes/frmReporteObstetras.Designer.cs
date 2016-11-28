@@ -1,6 +1,6 @@
-﻿namespace Monitoreo.Reportes
+﻿namespace Prueba.Reportes
 {
-    partial class frmVistaReportes
+    partial class frmReporteObstetras
     {
         /// <summary>
         /// Required designer variable.
@@ -39,27 +39,18 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1234, 611);
-            this.crystalReportViewer1.TabIndex = 1;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(747, 495);
+            this.crystalReportViewer1.TabIndex = 0;
             // 
-            // frmVistaReportes
+            // frmReporteObstetras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 611);
+            this.ClientSize = new System.Drawing.Size(747, 495);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frmVistaReportes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reportes";
-            this.Load += new System.EventHandler(this.frmVistaReportes_Load);
+            this.Name = "frmReporteObstetras";
+            this.Text = "frmReporteObstetras";
+            this.Load += new System.EventHandler(this.frmReporteObstetras_Load);
             this.ResumeLayout(false);
 
         }

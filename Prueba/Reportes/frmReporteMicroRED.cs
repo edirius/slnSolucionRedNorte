@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Monitoreo.Reportes
+namespace Prueba.Reportes
 {
     public partial class frmReporteMicroRED : Form
     {
@@ -137,10 +137,10 @@ namespace Monitoreo.Reportes
 
         private void btnReporObstetras_Click(object sender, EventArgs e)
         {
-            frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteObstetra("rptReportesObstetras", sidtmicrored);
-            frmVistaReportes.MdiParent = this.MdiParent;
-            frmVistaReportes.Show();
+            frmAlertaControlPuerperio fReporteObstetras = new frmAlertaControlPuerperio();
+            //fReporteObstetras.ReporteObstetra(sidtmicrored);
+            fReporteObstetras.MdiParent = this.MdiParent;
+            fReporteObstetras.Show();
         }
 
         private void btnNominalGestante_Click(object sender, EventArgs e)
