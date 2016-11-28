@@ -43,27 +43,30 @@ namespace Alertas
         {
             return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria2", mes, año);
         }
-        
-        public DataTable AlertaGestantePresionArterial()
-        {
-            return Conexion.GDatos.TraerDataTable("spListarGestantesConRiesgoXPresionArterial");
-        }
         //RN
         public DataTable AlertaRecienNacidoBajoPeso(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso2", mes, año);
+            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso", mes, año);
         }
         //CITAS PRENATALES
-        public DataTable ListarGestantesQueNoAcudenCita(string codigoEstablecimiento)
+        public DataTable AlertaGestanteNoAcudeCitas()
         {
-            return Conexion.GDatos.TraerDataTable("spListarGestantesQueNoAcudenALasCitas", codigoEstablecimiento);
+            return Conexion.GDatos.TraerDataTable("spListarGestantesQueNoAcudenALasCitas2");
         }
         //GESTANTES CON PROBLEMAS DE PRESION ARTERIAL
-        public DataTable ListarGestanteConRiesgoXPresionArterial(string codigoEstablecimiento, int presionarterialMaxS, int presionarterialMaxD)
+        public DataTable AlertaGestantePresionPAalta(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spListarGestantesConRiesgoXPresionArterial", presionarterialMaxS, presionarterialMaxD, codigoEstablecimiento);
+            return Conexion.GDatos.TraerDataTable("spGestantePresionConPAalta", mes, año);
         }
-
+        //GESTANTES SIN CONTROL PUERPERIO
+        public DataTable AlertaPuerperaSinControlPuerperio(string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaSinControlPuerperio", mes, año);
+        }
+        public DataTable AlertaPuerperaSin2doControlPuerperio(string mes, string año)
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaSinControlPuerperio2", mes, año);
+        }
 
     }
 }
