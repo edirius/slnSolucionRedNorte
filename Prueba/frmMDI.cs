@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Monitoreo
+namespace Prueba
 {
     public partial class frmMDI : Form
     {
@@ -50,13 +50,13 @@ namespace Monitoreo
 
         private void morbilidadToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Morbilidad.frmMantenimientoMorbilidad fMantenimientoMorbilidad = new Morbilidad.frmMantenimientoMorbilidad();
-            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
-            if (oUtilitarios.verificarventanaabierta("frmMantenimientoMorbilidad"))
-            {
-                fMantenimientoMorbilidad.MdiParent = this;
-                fMantenimientoMorbilidad.Show();
-            }
+            //Morbilidad.frmMantenimientoMorbilidad fMantenimientoMorbilidad = new Morbilidad.frmMantenimientoMorbilidad();
+            //CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+            //if (oUtilitarios.verificarventanaabierta("frmMantenimientoMorbilidad"))
+            //{
+            //    fMantenimientoMorbilidad.MdiParent = this;
+            //    fMantenimientoMorbilidad.Show();
+            //}
         }
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,13 +68,19 @@ namespace Monitoreo
 
         private void importaciónDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Importacion.frmImportarDatos Importar = new Importacion.frmImportarDatos();
-            //Importar.IdEstablecimientoSalud = IdEstablecimientoSalud;
-            //Importar.NombreEstablecimientoSalud = NombreEstablecimientoSalud;
-            //Importar.NombreObstetra = NombreObstetra;
-            //Importar.IdObstetra = IdObstetra;
-            Importar.MdiParent = this;
-            Importar.Show();
+            //Importacion.frmImportarDatos Importar = new Importacion.frmImportarDatos();
+            ////Importar.IdEstablecimientoSalud = IdEstablecimientoSalud;
+            ////Importar.NombreEstablecimientoSalud = NombreEstablecimientoSalud;
+            ////Importar.NombreObstetra = NombreObstetra;
+            ////Importar.IdObstetra = IdObstetra;
+            //Importar.MdiParent = this;
+            //Importar.Show();
+        }
+
+        private void fToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 fReporteMicroRED = new Prueba.Form1();
+            fReporteMicroRED.Show();
         }
     }
 }

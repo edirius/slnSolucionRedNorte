@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaUsuario
+namespace Monitoreo.Morbilidad
 {
     public partial class frmMantenimientoMorbilidad : Form
     {
@@ -40,7 +40,7 @@ namespace CapaUsuario
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
             
-            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+            //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
 
             rbExtrema.Checked = true;
             //DataGridViewButtonColumn dgvbEcografia = new DataGridViewButtonColumn();
@@ -89,7 +89,7 @@ namespace CapaUsuario
         {
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
             DataTable odtMorbilidad = new DataTable();
-            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+            //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
             string tipo = "";
 
             if (txtDescripcion.Text != "")
@@ -210,7 +210,7 @@ namespace CapaUsuario
             
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
-            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("","");
+            //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("","");
 
             if (Convert.ToInt16(indice) > 0)
             {
@@ -252,7 +252,7 @@ namespace CapaUsuario
         {
             DataTable odtMorbilidad = new DataTable();
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
-            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+            //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
 
             string buscar = txtBuscar.Text;
             if (buscar.Length > 0) { 
@@ -286,7 +286,7 @@ namespace CapaUsuario
         {
             CapaDeNegocios.cMorbilidad oMorbilidad = new CapaDeNegocios.cMorbilidad();
             string seleccionado = this.cbFiltrar.GetItemText(this.cbFiltrar.SelectedItem);
-            CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
+            //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("", "");
 
             if (seleccionado == "Todo")
             {

@@ -1,4 +1,4 @@
-﻿namespace CapaUsuario
+﻿namespace Monitoreo.Morbilidad
 {
     partial class frmMantenimientoMorbilidad
     {
@@ -341,7 +341,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
+            this.BackgroundImage = global::Monitoreo.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(846, 504);
             this.Controls.Add(this.tableLayoutPanel4);
@@ -349,6 +349,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmMantenimientoMorbilidad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Morbilidad";
             this.Load += new System.EventHandler(this.frmMantenimientoMorbilidad_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

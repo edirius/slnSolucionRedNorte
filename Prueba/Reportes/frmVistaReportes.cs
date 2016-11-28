@@ -12,7 +12,7 @@ using CrystalDecisions.Shared;
 using CrystalDecisions.ReportSource;
 using CrystalDecisions.CrystalReports.Engine;
 
-namespace Monitoreo.Reportes
+namespace Prueba.Reportes
 {
     public partial class frmVistaReportes : Form
     {
