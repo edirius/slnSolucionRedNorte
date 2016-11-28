@@ -411,105 +411,108 @@ namespace CapaUsuario
             CapaDeNegocios.cEcografia oEcografia = new CapaDeNegocios.cEcografia();
             CapaDeNegocios.cOdontologia oOdontologia = new CapaDeNegocios.cOdontologia();
 
-            oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
-            odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
+            if (IdtHistoriaClinica != "") { 
 
-            IdtHistoriaClinica = odtHCXIdHC.Rows[0][0].ToString();
-            Codigo_Historia_Clinica = odtHCXIdHC.Rows[0][1].ToString();
-            Fecha = odtHCXIdHC.Rows[0][21].ToString();
+                oHistoriaClinica.Idthistoriaclinica = IdtHistoriaClinica;
+                odtHCXIdHC = oHistoriaClinica.ListarHistoriaClinicaLargo();
 
-            fecha_reg = Convert.ToDateTime( odtHCXIdHC.Rows[0][21].ToString());
-            FUR = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
-            FPP = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
-            edad_gestacional = (int) odtHCXIdHC.Rows[0][13] ;
+                IdtHistoriaClinica = odtHCXIdHC.Rows[0][0].ToString();
+                Codigo_Historia_Clinica = odtHCXIdHC.Rows[0][1].ToString();
+                Fecha = odtHCXIdHC.Rows[0][21].ToString();
 
-            DNI = odtHCXIdHC.Rows[0][16].ToString();
-            Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
-            Edad = odtHCXIdHC.Rows[0][4].ToString();
+                fecha_reg = Convert.ToDateTime( odtHCXIdHC.Rows[0][21].ToString());
+                FUR = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
+                FPP = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
+                edad_gestacional = (int) odtHCXIdHC.Rows[0][13] ;
 
-            txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
-            txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString();
-            txtApellidoPaterno.Text = odtHCXIdHC.Rows[0][18].ToString();
-            txtApellidoMaterno.Text = odtHCXIdHC.Rows[0][19].ToString();
+                DNI = odtHCXIdHC.Rows[0][16].ToString();
+                Nombre_Completo = odtHCXIdHC.Rows[0][17].ToString() + ", " + odtHCXIdHC.Rows[0][18].ToString() + " " + odtHCXIdHC.Rows[0][19].ToString();
+                Edad = odtHCXIdHC.Rows[0][4].ToString();
 
-            txtHistoriaClinica.Text = odtHCXIdHC.Rows[0][1].ToString();
-            cboTipoLlegada.Text = odtHCXIdHC.Rows[0][2].ToString();
-            dtpTiempoLlegada.Text = odtHCXIdHC.Rows[0][3].ToString(); ;
-            txtEdad.Text = odtHCXIdHC.Rows[0][4].ToString();
+                txtDNI.Text = odtHCXIdHC.Rows[0][16].ToString();
+                txtNombreCompleto.Text = odtHCXIdHC.Rows[0][17].ToString();
+                txtApellidoPaterno.Text = odtHCXIdHC.Rows[0][18].ToString();
+                txtApellidoMaterno.Text = odtHCXIdHC.Rows[0][19].ToString();
 
-            nudGestas.Text = odtHCXIdHC.Rows[0][5].ToString();
-            nudPartos.Text = odtHCXIdHC.Rows[0][6].ToString();
-            nudAbortos.Text = odtHCXIdHC.Rows[0][7].ToString();
-            nudHv.Text = odtHCXIdHC.Rows[0][8].ToString();
-            nudHm.Text = odtHCXIdHC.Rows[0][9].ToString();
-            dtpFUR.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
-            dtpFPP.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
-            int trimestreapn = Convert.ToInt16(odtHCXIdHC.Rows[0][12]);
+                txtHistoriaClinica.Text = odtHCXIdHC.Rows[0][1].ToString();
+                cboTipoLlegada.Text = odtHCXIdHC.Rows[0][2].ToString();
+                dtpTiempoLlegada.Text = odtHCXIdHC.Rows[0][3].ToString(); ;
+                txtEdad.Text = odtHCXIdHC.Rows[0][4].ToString();
 
-            if (trimestreapn == 1) rbPrimerTrimestre.Checked = true;
-            if (trimestreapn == 2) rbSegundoTrimestre.Checked = true;
-            if (trimestreapn == 3) rbTercerTrimestre.Checked = true;
+                nudGestas.Text = odtHCXIdHC.Rows[0][5].ToString();
+                nudPartos.Text = odtHCXIdHC.Rows[0][6].ToString();
+                nudAbortos.Text = odtHCXIdHC.Rows[0][7].ToString();
+                nudHv.Text = odtHCXIdHC.Rows[0][8].ToString();
+                nudHm.Text = odtHCXIdHC.Rows[0][9].ToString();
+                dtpFUR.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
+                dtpFPP.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
+                int trimestreapn = Convert.ToInt16(odtHCXIdHC.Rows[0][12]);
 
-            txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
-            txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
+                if (trimestreapn == 1) rbPrimerTrimestre.Checked = true;
+                if (trimestreapn == 2) rbSegundoTrimestre.Checked = true;
+                if (trimestreapn == 3) rbTercerTrimestre.Checked = true;
 
-            /*
-            if (oUtilitarios.es_numerico(txtPeso.Text) || txtPeso.Text != "")
                 txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
-
-            if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
                 txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
-            */
 
-            calcular_imc();
+                /*
+                if (oUtilitarios.es_numerico(txtPeso.Text) || txtPeso.Text != "")
+                    txtPeso.Text = odtHCXIdHC.Rows[0][25].ToString();
 
-            nudSemanas.Text = odtHCXIdHC.Rows[0][13].ToString();
-            txtObservaciones.Text = odtHCXIdHC.Rows[0][14].ToString();
+                if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
+                    txtTalla.Text = odtHCXIdHC.Rows[0][26].ToString();
+                */
+
+                calcular_imc();
+
+                nudSemanas.Text = odtHCXIdHC.Rows[0][13].ToString();
+                txtObservaciones.Text = odtHCXIdHC.Rows[0][14].ToString();
 
 
-            idtpaciente = odtHCXIdHC.Rows[0][15].ToString();
-            IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
-            dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
+                idtpaciente = odtHCXIdHC.Rows[0][15].ToString();
+                IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
+                dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
 
-            if (odtHCXIdHC.Rows[0][22].ToString() == "1")
-                cbTranseunte.Checked = true;
-            else
-                cbTranseunte.Checked = false;
+                if (odtHCXIdHC.Rows[0][22].ToString() == "1")
+                    cbTranseunte.Checked = true;
+                else
+                    cbTranseunte.Checked = false;
 
             
 
-            //cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
+                //cbEstablecimientoSalud.SelectedValue = odtHCXIdHC.Rows[0][23].ToString();
 
-            txtOrigenEESS.Text = odtHCXIdHC.Rows[0][23].ToString();
+                txtOrigenEESS.Text = odtHCXIdHC.Rows[0][23].ToString();
 
-            explorando_hc = true;
+                explorando_hc = true;
 
-            if (odtHCXIdHC.Rows[0][24].ToString() == "1")
-            {
-                cbArchivado.Checked = true;
-                Archivado = true;
+                if (odtHCXIdHC.Rows[0][24].ToString() == "1")
+                {
+                    cbArchivado.Checked = true;
+                    Archivado = true;
+                }
+                else
+                {
+                    cbArchivado.Checked = false;
+                    Archivado = false;
+                }
+
+                explorando_hc = false;
+
+                hallar_semana_primera_atencion();
+
+                /* Llenando ecografias y odontologia */
+                oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
+                odtEcografia = oEcografia.ListarEcografiaXIdHC();
+                dgvEcografia.DataSource = odtEcografia;
+
+                oOdontologia.Idthistoriaclinica = IdtHistoriaClinica;
+                odtOdontologo = oOdontologia.ListarOdontologiaXIdHC();
+                dgvOdontologia.DataSource = odtOdontologo;
+
+                dgvOdontologia.Columns[1].Width = 30;
+                dgvEcografia.Columns[1].Width = 30;
             }
-            else
-            {
-                cbArchivado.Checked = false;
-                Archivado = false;
-            }
-
-            explorando_hc = false;
-
-            hallar_semana_primera_atencion();
-
-            /* Llenando ecografias y odontologia */
-            oEcografia.Idthistoriaclinica = IdtHistoriaClinica;
-            odtEcografia = oEcografia.ListarEcografiaXIdHC();
-            dgvEcografia.DataSource = odtEcografia;
-
-            oOdontologia.Idthistoriaclinica = IdtHistoriaClinica;
-            odtOdontologo = oOdontologia.ListarOdontologiaXIdHC();
-            dgvOdontologia.DataSource = odtOdontologo;
-
-            dgvOdontologia.Columns[1].Width = 30;
-            dgvEcografia.Columns[1].Width = 30;
         }
 
 
@@ -2142,6 +2145,9 @@ namespace CapaUsuario
 
         private PdfPTable pdf_citas_parte_2(int alineacion, int ancho)
         {
+            if (mitad_cantidad_cronograma == 1)
+                mitad_cantidad_cronograma = 0;
+
             PdfPTable pdfTableE = new PdfPTable(dgvCitas1.ColumnCount- mitad_cantidad_cronograma);
             //Creating iTextSharp Table from the DataTable data
             iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.TIMES_ROMAN, 7);
@@ -2288,7 +2294,7 @@ namespace CapaUsuario
 
         private void dtpFecha_Leave(object sender, EventArgs e)
         {
-            gbFecha.BackColor = System.Drawing.Color.White;
+            gbFecha.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void nudGestas_Enter(object sender, EventArgs e)
@@ -2354,7 +2360,7 @@ namespace CapaUsuario
 
         private void dtpFUR_Leave(object sender, EventArgs e)
         {
-            gbFechas.BackColor = System.Drawing.Color.White;
+            gbFechas.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void cboTipoLlegada_Enter(object sender, EventArgs e)
@@ -2380,7 +2386,7 @@ namespace CapaUsuario
 
         private void cboTipoLlegada_Leave_1(object sender, EventArgs e)
         {
-            gbEESS.BackColor = System.Drawing.Color.White;
+            gbEESS.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void dtpTiempoLlegada_Enter(object sender, EventArgs e)
@@ -2390,7 +2396,7 @@ namespace CapaUsuario
 
         private void dtpTiempoLlegada_Leave(object sender, EventArgs e)
         {
-            gbEESS.BackColor = System.Drawing.Color.White;
+            gbEESS.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void nudSemanas_Enter(object sender, EventArgs e)
@@ -2410,7 +2416,7 @@ namespace CapaUsuario
 
         private void dtpOdontologo_Leave(object sender, EventArgs e)
         {
-            gbOdontologico.BackColor = System.Drawing.Color.White;
+            gbOdontologico.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void buAgregarOdontologia_Enter(object sender, EventArgs e)
@@ -2420,7 +2426,7 @@ namespace CapaUsuario
 
         private void buAgregarOdontologia_Leave(object sender, EventArgs e)
         {
-            gbOdontologico.BackColor = System.Drawing.Color.White;
+            gbOdontologico.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void dtpEcografia_Enter(object sender, EventArgs e)
@@ -2430,7 +2436,7 @@ namespace CapaUsuario
 
         private void dtpEcografia_Leave(object sender, EventArgs e)
         {
-            gbEcografia.BackColor = System.Drawing.Color.White;
+            gbEcografia.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void nudEdadGestacional_Enter(object sender, EventArgs e)
@@ -2462,7 +2468,7 @@ namespace CapaUsuario
 
         private void buAgregarEcografia_Leave(object sender, EventArgs e)
         {
-            gbEcografia.BackColor = System.Drawing.Color.White;
+            gbEcografia.BackColor = System.Drawing.Color.Transparent;
         }
 
         private void txtObservaciones_Enter(object sender, EventArgs e)
@@ -2547,7 +2553,7 @@ namespace CapaUsuario
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
 
-            while (semana_gestacional <= 42 && Fecha_Registro <= FPP)
+            while (semana_gestacional <= 42 && Fecha_Registro.Date < FPP.Date)
             {
 
                 /*nº cita, fecha cita, edad gestacional */
@@ -2604,18 +2610,21 @@ namespace CapaUsuario
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                 }
@@ -2673,6 +2682,9 @@ namespace CapaUsuario
             DataTable odtPuerperio = new DataTable();
             DataRow odrPuerperio = odtPuerperio.NewRow();
 
+
+            
+
             oHC.Idthistoriaclinica = IdtHistoriaClinica;
             odt = oHC.ListarHistoriaClinicaLargo();
 
@@ -2680,7 +2692,10 @@ namespace CapaUsuario
             FPP = Convert.ToDateTime(odt.Rows[0]["FPP"]);
             EdadGestacional = (int)odt.Rows[0]["SEMANA APN"];
 
-            odtHC.Columns.Add("", typeof(string));
+            if (fecha_reg.Date < FPP.Date)
+            {
+
+                odtHC.Columns.Add("", typeof(string));
             odtHC.Columns.Add("", typeof(string));
 
             odrHC = odtHC.NewRow();
@@ -2707,8 +2722,22 @@ namespace CapaUsuario
 
             odrOdontologia = odtOdontologia.NewRow();
             odrOdontologia[0] = "FECHA MAXIMA:";
-            odrOdontologia[1] = odt.Rows[0][1].ToString();
-            odrOdontologia[2] = odt.Rows[0][3].ToString();
+            
+
+            if (odt.Columns.Count > 3) {
+                odrOdontologia[1] = odt.Rows[0][1].ToString();
+                odrOdontologia[2] = odt.Rows[0][3].ToString();
+            }
+            else if(odt.Columns.Count == 1)
+            {
+                odrOdontologia[1] = odt.Rows[0][0].ToString();
+                odrOdontologia[2] = "";
+            }
+            else if (odt.Columns.Count == 2  )
+            {
+                odrOdontologia[1] = odt.Rows[0][1].ToString();
+                odrOdontologia[2] = "";
+            }
 
             odtOdontologia.Rows.InsertAt(odrOdontologia, 0);
 
@@ -2718,8 +2747,23 @@ namespace CapaUsuario
 
             odrEcografia = odtEcografia.NewRow();
             odrEcografia[0] = "FECHA MAXIMA";
-            odrEcografia[1] = odt.Rows[0][1].ToString();
-            odrEcografia[2] = odt.Rows[0][3].ToString();
+            
+
+            if (odt.Columns.Count > 3)
+            {
+                odrEcografia[1] = odt.Rows[0][1].ToString();
+                odrEcografia[2] = odt.Rows[0][3].ToString();
+            }
+            else if (odt.Columns.Count == 1)
+            {
+                odrEcografia[1] = odt.Rows[0][0].ToString();
+                odrEcografia[2] = "";
+            }
+            else if (odt.Columns.Count == 2)
+            {
+                odrEcografia[1] = odt.Rows[0][1].ToString();
+                odrEcografia[2] = "";
+            }
 
             odtEcografia.Rows.InsertAt(odrEcografia, 0);
 
@@ -2729,8 +2773,22 @@ namespace CapaUsuario
 
             odrBateria = odtBateria.NewRow();
             odrBateria[0] = "FECHA MAXIMA";
-            odrBateria[1] = odt.Rows[0][1].ToString();
-            odrBateria[2] = odt.Rows[0][3].ToString();
+
+            if (odt.Columns.Count > 3)
+            {
+                odrBateria[1] = odt.Rows[0][1].ToString();
+                odrBateria[2] = odt.Rows[0][3].ToString();
+            }
+            else if (odt.Columns.Count == 1)
+            {
+                odrBateria[1] = odt.Rows[0][0].ToString();
+                odrBateria[2] = "";
+            }
+            else if (odt.Columns.Count == 2)
+            {
+                odrBateria[1] = odt.Rows[0][1].ToString();
+                odrBateria[2] = "";
+            }
 
             odtBateria.Rows.InsertAt(odrBateria, 0);
 
@@ -2795,6 +2853,7 @@ namespace CapaUsuario
 
             FileInfo file = new FileInfo(@"C:\PDFs\Cronograma.pdf");
             bool estaAbierto = false;
+            int numero_columnas_dgv = 0;
             estaAbierto = oUtilitarios.esta_en_uso(file, @"C:\PDFs\Cronograma.pdf");
 
             if (!estaAbierto)
@@ -2843,11 +2902,27 @@ namespace CapaUsuario
                 PdfPTable pdfTable_Bateria = new PdfPTable(dgvBat.ColumnCount);
                 pdfTable_Bateria = pdf_Bateria(0, 100);
                 dgvCitas1.DataSource = odtCitas;
-                mitad_cantidad_cronograma = (int) dgvCitas1.ColumnCount / 2;
-                PdfPTable pdfTable_citas_1 = new PdfPTable(dgvCitas1.ColumnCount/2);
+                
+
+
+                if (dgvCitas1.ColumnCount == 1)
+                {
+                    numero_columnas_dgv = 1;
+                    mitad_cantidad_cronograma = 1;
+                }
+                else{
+                    numero_columnas_dgv = dgvCitas1.ColumnCount / 2;
+                    mitad_cantidad_cronograma = (int)dgvCitas1.ColumnCount / 2;
+                }
+
+
+
+                PdfPTable pdfTable_citas_1 = new PdfPTable( numero_columnas_dgv );
                 pdfTable_citas_1 = pdf_citas_parte_1(0, 100);
-                PdfPTable pdfTable_citas_2 = new PdfPTable(dgvCitas1.ColumnCount/2);
+
+                PdfPTable pdfTable_citas_2 = new PdfPTable( numero_columnas_dgv );
                 pdfTable_citas_2 = pdf_citas_parte_2(0, 100);
+
                 dgvPuerperio.DataSource = odtPuerperio;
                 PdfPTable pdfTable_Puerperio = new PdfPTable(dgvPuerperio.ColumnCount);
                 pdfTable_Puerperio = pdf_puerperio(0, 100);
@@ -2930,14 +3005,32 @@ namespace CapaUsuario
                 PdfPTable tabla_fila_4 = new PdfPTable(4);
                 tabla_fila_4.DefaultCell.BorderWidth = 0;
 
-                //Agrupando tabla titular
-                tabla_fila_1.AddCell( pdfTable_HC );
-                tabla_fila_1.AddCell(pdfTable_vacio);
-                tabla_fila_1.AddCell( pdfTable_citas_1 );
+                
 
-                tabla_fila_2.AddCell(pdfTable_vacio);
-                tabla_fila_2.AddCell(pdfTable_vacio);
-                tabla_fila_2.AddCell(pdfTable_citas_2);
+                if (numero_columnas_dgv == 1)
+                {
+                    //Agrupando tabla titular
+                    tabla_fila_1.AddCell(pdfTable_HC);
+                    tabla_fila_1.AddCell(pdfTable_vacio);
+                    tabla_fila_1.AddCell(pdfTable_citas_1);
+
+                    tabla_fila_2.AddCell(pdfTable_vacio);
+                    tabla_fila_2.AddCell(pdfTable_vacio);
+                    tabla_fila_2.AddCell(pdfTable_vacio);
+                    
+                }
+                else {
+                    //Agrupando tabla titular
+                    tabla_fila_1.AddCell(pdfTable_HC);
+                    tabla_fila_1.AddCell(pdfTable_vacio);
+                    tabla_fila_1.AddCell(pdfTable_citas_1);
+
+                    tabla_fila_2.AddCell(pdfTable_vacio);
+                    tabla_fila_2.AddCell(pdfTable_vacio);
+                    tabla_fila_2.AddCell(pdfTable_citas_2);
+                }
+
+                
 
                 tabla_fila_3.AddCell(pdfTable_Odontologia);
                 tabla_fila_3.AddCell(pdfTable_Ecografia);
@@ -2995,8 +3088,12 @@ namespace CapaUsuario
             }
 
 
+            }
+            else
+            {
+                MessageBox.Show("No se puede realizar un cronograma que tenga una fecha de registro mayor al FUR.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
-            
 
         }
 
@@ -3346,6 +3443,11 @@ namespace CapaUsuario
         private void txtObservaciones_Enter_1(object sender, EventArgs e)
         {
             txtObservaciones.Select(0, txtObservaciones.Text.Length);
+        }
+
+        private void gbFecha_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void txtOrigenEESS_Enter_1(object sender, EventArgs e)

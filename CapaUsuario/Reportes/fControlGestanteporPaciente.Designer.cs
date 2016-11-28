@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fControlGestanteporPaciente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
@@ -62,25 +63,25 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvListaGestantesReporte = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buAgregar = new System.Windows.Forms.Button();
-            this.buEliminar = new System.Windows.Forms.Button();
-            this.buImprimir = new System.Windows.Forms.Button();
-            this.buNuevo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
             this.dgvControlPuerperio = new System.Windows.Forms.DataGridView();
             this.dgvTerminoGestacion = new System.Windows.Forms.DataGridView();
             this.dgvVisitasPuerpera = new System.Windows.Forms.DataGridView();
+            this.dgvAtencionPreNatal = new System.Windows.Forms.DataGridView();
             this.dgvVisitasG = new System.Windows.Forms.DataGridView();
             this.dgvOdontologico = new System.Windows.Forms.DataGridView();
             this.dgvRegBateria = new System.Windows.Forms.DataGridView();
             this.dgvHCEntreFechas = new System.Windows.Forms.DataGridView();
-            this.dgvAtencionPreNatal = new System.Windows.Forms.DataGridView();
             this.dgvHCParte3 = new System.Windows.Forms.DataGridView();
             this.dgvMorbilidad = new System.Windows.Forms.DataGridView();
             this.dgvEcografico = new System.Windows.Forms.DataGridView();
             this.dgvHCParte2 = new System.Windows.Forms.DataGridView();
             this.dgvHCParte1 = new System.Windows.Forms.DataGridView();
+            this.buAgregar = new System.Windows.Forms.Button();
+            this.buEliminar = new System.Windows.Forms.Button();
+            this.buImprimir = new System.Windows.Forms.Button();
+            this.buNuevo = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestante)).BeginInit();
@@ -93,11 +94,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPuerperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminoGestacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasPuerpera)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegBateria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCEntreFechas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCParte3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografico)).BeginInit();
@@ -118,9 +119,11 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.gbFiltrar);
             this.groupBox2.Controls.Add(this.dgvGestante);
             this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1058, 289);
@@ -206,8 +209,8 @@
             this.dgvGestante.AllowUserToOrderColumns = true;
             this.dgvGestante.AllowUserToResizeColumns = false;
             this.dgvGestante.AllowUserToResizeRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -253,7 +256,7 @@
             // 
             this.txtBuscar.Location = new System.Drawing.Point(266, 16);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(168, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(168, 24);
             this.txtBuscar.TabIndex = 2;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -308,7 +311,9 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.dgvListaGestantesReporte);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox3.Location = new System.Drawing.Point(12, 371);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1058, 314);
@@ -323,8 +328,8 @@
             this.dgvListaGestantesReporte.AllowUserToOrderColumns = true;
             this.dgvListaGestantesReporte.AllowUserToResizeColumns = false;
             this.dgvListaGestantesReporte.AllowUserToResizeRows = false;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvListaGestantesReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvListaGestantesReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaGestantesReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -346,6 +351,7 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -369,54 +375,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1058, 54);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // buAgregar
-            // 
-            this.buAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buAgregar.Location = new System.Drawing.Point(267, 3);
-            this.buAgregar.Name = "buAgregar";
-            this.buAgregar.Size = new System.Drawing.Size(126, 48);
-            this.buAgregar.TabIndex = 6;
-            this.buAgregar.Text = "Agregar";
-            this.buAgregar.UseVisualStyleBackColor = true;
-            this.buAgregar.Click += new System.EventHandler(this.buAgregar_Click);
-            // 
-            // buEliminar
-            // 
-            this.buEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buEliminar.Location = new System.Drawing.Point(399, 3);
-            this.buEliminar.Name = "buEliminar";
-            this.buEliminar.Size = new System.Drawing.Size(126, 48);
-            this.buEliminar.TabIndex = 7;
-            this.buEliminar.Text = "Eliminar";
-            this.buEliminar.UseVisualStyleBackColor = true;
-            this.buEliminar.Click += new System.EventHandler(this.buEliminar_Click);
-            // 
-            // buImprimir
-            // 
-            this.buImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buImprimir.Location = new System.Drawing.Point(663, 3);
-            this.buImprimir.Name = "buImprimir";
-            this.buImprimir.Size = new System.Drawing.Size(126, 48);
-            this.buImprimir.TabIndex = 9;
-            this.buImprimir.Text = "Imprimir";
-            this.buImprimir.UseVisualStyleBackColor = true;
-            this.buImprimir.Click += new System.EventHandler(this.buImprimir_Click);
-            // 
-            // buNuevo
-            // 
-            this.buNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buNuevo.Location = new System.Drawing.Point(531, 3);
-            this.buNuevo.Name = "buNuevo";
-            this.buNuevo.Size = new System.Drawing.Size(126, 48);
-            this.buNuevo.TabIndex = 8;
-            this.buNuevo.Text = "Nuevo";
-            this.buNuevo.UseVisualStyleBackColor = true;
-            this.buNuevo.Click += new System.EventHandler(this.buNuevo_Click);
             // 
             // groupBox5
             // 
@@ -446,8 +404,8 @@
             // 
             this.dgvRecienNacido.AllowUserToAddRows = false;
             this.dgvRecienNacido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvRecienNacido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRecienNacido.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecienNacido.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRecienNacido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -466,8 +424,8 @@
             // 
             this.dgvControlPuerperio.AllowUserToAddRows = false;
             this.dgvControlPuerperio.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvControlPuerperio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvControlPuerperio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvControlPuerperio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvControlPuerperio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvControlPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -486,8 +444,8 @@
             // 
             this.dgvTerminoGestacion.AllowUserToAddRows = false;
             this.dgvTerminoGestacion.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvTerminoGestacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvTerminoGestacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTerminoGestacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTerminoGestacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvTerminoGestacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -506,8 +464,8 @@
             // 
             this.dgvVisitasPuerpera.AllowUserToAddRows = false;
             this.dgvVisitasPuerpera.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvVisitasPuerpera.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvVisitasPuerpera.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvVisitasPuerpera.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisitasPuerpera.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasPuerpera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -522,12 +480,32 @@
             this.dgvVisitasPuerpera.TabIndex = 18;
             this.dgvVisitasPuerpera.Visible = false;
             // 
+            // dgvAtencionPreNatal
+            // 
+            this.dgvAtencionPreNatal.AllowUserToAddRows = false;
+            this.dgvAtencionPreNatal.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvAtencionPreNatal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAtencionPreNatal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(22, -29);
+            this.dgvAtencionPreNatal.MultiSelect = false;
+            this.dgvAtencionPreNatal.Name = "dgvAtencionPreNatal";
+            this.dgvAtencionPreNatal.ReadOnly = true;
+            this.dgvAtencionPreNatal.RowHeadersVisible = false;
+            this.dgvAtencionPreNatal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAtencionPreNatal.Size = new System.Drawing.Size(171, 81);
+            this.dgvAtencionPreNatal.TabIndex = 23;
+            this.dgvAtencionPreNatal.Visible = false;
+            // 
             // dgvVisitasG
             // 
             this.dgvVisitasG.AllowUserToAddRows = false;
             this.dgvVisitasG.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvVisitasG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvVisitasG.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvVisitasG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisitasG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvVisitasG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -546,8 +524,8 @@
             // 
             this.dgvOdontologico.AllowUserToAddRows = false;
             this.dgvOdontologico.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvOdontologico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOdontologico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvOdontologico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -566,8 +544,8 @@
             // 
             this.dgvRegBateria.AllowUserToAddRows = false;
             this.dgvRegBateria.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvRegBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvRegBateria.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvRegBateria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRegBateria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvRegBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -586,8 +564,8 @@
             // 
             this.dgvHCEntreFechas.AllowUserToAddRows = false;
             this.dgvHCEntreFechas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCEntreFechas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCEntreFechas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvHCEntreFechas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCEntreFechas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCEntreFechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -602,32 +580,12 @@
             this.dgvHCEntreFechas.TabIndex = 22;
             this.dgvHCEntreFechas.Visible = false;
             // 
-            // dgvAtencionPreNatal
-            // 
-            this.dgvAtencionPreNatal.AllowUserToAddRows = false;
-            this.dgvAtencionPreNatal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
-            this.dgvAtencionPreNatal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAtencionPreNatal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(22, -29);
-            this.dgvAtencionPreNatal.MultiSelect = false;
-            this.dgvAtencionPreNatal.Name = "dgvAtencionPreNatal";
-            this.dgvAtencionPreNatal.ReadOnly = true;
-            this.dgvAtencionPreNatal.RowHeadersVisible = false;
-            this.dgvAtencionPreNatal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAtencionPreNatal.Size = new System.Drawing.Size(171, 81);
-            this.dgvAtencionPreNatal.TabIndex = 23;
-            this.dgvAtencionPreNatal.Visible = false;
-            // 
             // dgvHCParte3
             // 
             this.dgvHCParte3.AllowUserToAddRows = false;
             this.dgvHCParte3.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvHCParte3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -646,8 +604,8 @@
             // 
             this.dgvMorbilidad.AllowUserToAddRows = false;
             this.dgvMorbilidad.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvMorbilidad.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvMorbilidad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMorbilidad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvMorbilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -666,8 +624,8 @@
             // 
             this.dgvEcografico.AllowUserToAddRows = false;
             this.dgvEcografico.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvEcografico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEcografico.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvEcografico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -686,8 +644,8 @@
             // 
             this.dgvHCParte2.AllowUserToAddRows = false;
             this.dgvHCParte2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvHCParte2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -706,8 +664,8 @@
             // 
             this.dgvHCParte1.AllowUserToAddRows = false;
             this.dgvHCParte1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHCParte1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvHCParte1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvHCParte1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCParte1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvHCParte1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -722,10 +680,80 @@
             this.dgvHCParte1.TabIndex = 28;
             this.dgvHCParte1.Visible = false;
             // 
+            // buAgregar
+            // 
+            this.buAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buAgregar.BackgroundImage")));
+            this.buAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buAgregar.ForeColor = System.Drawing.Color.White;
+            this.buAgregar.Location = new System.Drawing.Point(267, 3);
+            this.buAgregar.Name = "buAgregar";
+            this.buAgregar.Size = new System.Drawing.Size(126, 48);
+            this.buAgregar.TabIndex = 6;
+            this.buAgregar.Text = "Agregar";
+            this.buAgregar.UseVisualStyleBackColor = true;
+            this.buAgregar.Click += new System.EventHandler(this.buAgregar_Click);
+            // 
+            // buEliminar
+            // 
+            this.buEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buEliminar.BackgroundImage")));
+            this.buEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buEliminar.ForeColor = System.Drawing.Color.White;
+            this.buEliminar.Location = new System.Drawing.Point(399, 3);
+            this.buEliminar.Name = "buEliminar";
+            this.buEliminar.Size = new System.Drawing.Size(126, 48);
+            this.buEliminar.TabIndex = 7;
+            this.buEliminar.Text = "Eliminar";
+            this.buEliminar.UseVisualStyleBackColor = true;
+            this.buEliminar.Click += new System.EventHandler(this.buEliminar_Click);
+            // 
+            // buImprimir
+            // 
+            this.buImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buImprimir.BackgroundImage")));
+            this.buImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buImprimir.ForeColor = System.Drawing.Color.White;
+            this.buImprimir.Location = new System.Drawing.Point(663, 3);
+            this.buImprimir.Name = "buImprimir";
+            this.buImprimir.Size = new System.Drawing.Size(126, 48);
+            this.buImprimir.TabIndex = 9;
+            this.buImprimir.Text = "Imprimir";
+            this.buImprimir.UseVisualStyleBackColor = true;
+            this.buImprimir.Click += new System.EventHandler(this.buImprimir_Click);
+            // 
+            // buNuevo
+            // 
+            this.buNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buNuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buNuevo.BackgroundImage")));
+            this.buNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buNuevo.ForeColor = System.Drawing.Color.White;
+            this.buNuevo.Location = new System.Drawing.Point(531, 3);
+            this.buNuevo.Name = "buNuevo";
+            this.buNuevo.Size = new System.Drawing.Size(126, 48);
+            this.buNuevo.TabIndex = 8;
+            this.buNuevo.Text = "Nuevo";
+            this.buNuevo.UseVisualStyleBackColor = true;
+            this.buNuevo.Click += new System.EventHandler(this.buNuevo_Click);
+            // 
             // fControlGestanteporPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 697);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox3);
@@ -749,11 +777,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPuerperio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminoGestacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasPuerpera)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegBateria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCEntreFechas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCParte3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografico)).EndInit();

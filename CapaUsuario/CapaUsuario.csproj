@@ -735,6 +735,7 @@
     <None Include="Resources\descarga %282%29.jpg" />
     <None Include="Resources\descarga %282%29 bw.jpg" />
     <Content Include="icono %281%29.ico" />
+    <None Include="Resources\FondoFormularios.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
