@@ -52,10 +52,10 @@ namespace CapaUsuario.Alertas
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-                Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria();
-                frmAlertaGestanteSinBateria.CodigoEstablecimiento = CodigoEstablecimiento;
-                frmAlertaGestanteSinBateria.CodigoObstetra = CodigoObstetra;
-                frmAlertaGestanteSinBateria.Show();
+            Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria();
+            frmAlertaGestanteSinBateria.CodigoEstablecimiento = CodigoEstablecimiento;
+            frmAlertaGestanteSinBateria.CodigoObstetra = CodigoObstetra;
+            frmAlertaGestanteSinBateria.Show();
         }
 
         private void lbleliminar_Click(object sender, EventArgs e)
