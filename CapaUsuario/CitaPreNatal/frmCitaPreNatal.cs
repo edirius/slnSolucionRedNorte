@@ -86,7 +86,7 @@ namespace CapaUsuario.CitaPreNatal
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
             
-            while ( semana_gestacional <= 42 && Fecha_Registro.Date < FPP.Date ) {
+            while ( semana_gestacional <= 42 && Fecha_Registro <= FPP ) {
 
                 /*nº cita, fecha cita, edad gestacional */
                 odrCitas = odtCitas.NewRow();
@@ -162,21 +162,18 @@ namespace CapaUsuario.CitaPreNatal
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddMonths(1);
-                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(15);
-                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(7);
-                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                 }
@@ -356,14 +353,14 @@ namespace CapaUsuario.CitaPreNatal
             if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
-                lblAlerta.Visible = true;
-                lblAlerta.Text = "Presion Arterial Alta";
+                txtAlerta.Visible = true;
+                txtAlerta.Text = "Presion Arterial Alta";
                 //this.BackColor = Color.DarkRed;
             }
             else
             {
                 pbAlerta.Visible = false;
-                lblAlerta.Visible = false;
+                txtAlerta.Visible = false;
                 this.BackColor = Color.White;
             }
         }
@@ -373,14 +370,14 @@ namespace CapaUsuario.CitaPreNatal
             if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
-                lblAlerta.Visible = true;
-                lblAlerta.Text = "Presion Arterial Alta";
+                txtAlerta.Visible = true;
+                txtAlerta.Text = "Presion Arterial Alta";
                 //this.BackColor = Color.DarkRed;
             }
             else
             {
                 pbAlerta.Visible = false;
-                lblAlerta.Visible = false;
+                txtAlerta.Visible = false;
                 
                 this.BackColor = Color.White;
             }
@@ -390,7 +387,7 @@ namespace CapaUsuario.CitaPreNatal
         {
             if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
             {
-                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) >= limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) >= limitePresionArterialD))
+                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
                 {
                     dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
                 }
@@ -513,10 +510,16 @@ namespace CapaUsuario.CitaPreNatal
             }
         }
 
+        private void dtpFechaCita_Enter(object sender, EventArgs e)
+        {
+        }
+
         private void dtpFechaCita_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (e.KeyChar == (char)13)
                 numEdadGestacional.Focus();
+
         }
 
         private void numEdadGestacional_KeyPress(object sender, KeyPressEventArgs e)
@@ -553,11 +556,6 @@ namespace CapaUsuario.CitaPreNatal
         {
             if (e.KeyChar == (char)13)
                 btnGuardar.Focus();
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
