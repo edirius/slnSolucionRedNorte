@@ -53,7 +53,7 @@ namespace CapaUsuario.Bateria
             if (cbTipoAlerta.Text == "GESTANTES CON SIFILIS REACTIVO")
             {
                 Bateria.GestanteConSifilis RPGestanteConSifilis = new GestanteConSifilis();
-                RPGestanteConSifilis.SetDataSource(miBateria.AlertaGestanteSifilis(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                RPGestanteConSifilis.SetDataSource(miBateria.AlertaGestanteSifilis(cbMes.Text, cbAños.Text));
                 Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
                 miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteConSifilis;
                 miFrmReporte.Show();
@@ -69,7 +69,7 @@ namespace CapaUsuario.Bateria
             if (cbTipoAlerta.Text == "GESTANTES SIN FECHA DE TRATAMIENTO")
             {
                 Bateria.GestanteSinTratamiento RPGestanteSinFechaTratamiento = new GestanteSinTratamiento();
-                RPGestanteSinFechaTratamiento.SetDataSource(miBateria.AlertaGestanteSinExamenOrina(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+                RPGestanteSinFechaTratamiento.SetDataSource(miBateria.AlertaGestanteSinFechaTratamiento(cbMes.Text, cbAños.Text));
                 Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
                 miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinFechaTratamiento;
                 miFrmReporte.Show();
