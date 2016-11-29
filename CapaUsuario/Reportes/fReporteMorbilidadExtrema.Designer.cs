@@ -1,6 +1,6 @@
-﻿namespace CapaUsuario.Alertas
+﻿namespace CapaUsuario.Reportes
 {
-    partial class frmAlertaControlPuerperio
+    partial class fReporteMorbilidadExtrema
     {
         /// <summary>
         /// Required designer variable.
@@ -39,33 +39,23 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(648, 467);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(701, 646);
+            this.crystalReportViewer1.TabIndex = 1;
             // 
-            // frmAlertaControlPuerperio
+            // fReporteMorbilidadExtrema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 467);
+            this.ClientSize = new System.Drawing.Size(701, 646);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "frmAlertaControlPuerperio";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alerta Control Puerperio";
-            this.Load += new System.EventHandler(this.frmAlertaControlPuerperio_Load);
+            this.Name = "fReporteMorbilidadExtrema";
+            this.Text = "Reporte Morbilidad Extrema";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
