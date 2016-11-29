@@ -26,7 +26,7 @@ namespace CapaUsuario.RecienNacido
         }
         private void CargarGrid()
         {
-            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(cbMes.Text, cbAños.Text);
         }
         private void CargarMes(DateTime FechaActual)
         {
@@ -109,18 +109,18 @@ namespace CapaUsuario.RecienNacido
 
         private void cbMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(cbMes.Text, cbAños.Text);
         }
 
         private void cbAños_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text);
+            dgvListaRN.DataSource = miRN.ListarRecienNacidoConBajoPeso(cbMes.Text, cbAños.Text);
         }
 
         private void btnGenerarReporte_Click(object sender, EventArgs e)
         {
             RecienNacido.CrystalReport1 RpRNBajoPeso = new CrystalReport1();
-            RpRNBajoPeso.SetDataSource(miRN.ListarRecienNacidoConBajoPeso(CodigoEstablecimiento, CodigoObstetra, cbMes.Text, cbAños.Text));
+            RpRNBajoPeso.SetDataSource(miRN.ListarRecienNacidoConBajoPeso(cbMes.Text, cbAños.Text));
             RecienNacido.frmReporteRNBajoPeso miFrmReporte = new frmReporteRNBajoPeso();
             miFrmReporte.crystalReportViewer1.ReportSource = RpRNBajoPeso;
             miFrmReporte.Show();

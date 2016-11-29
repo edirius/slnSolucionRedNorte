@@ -39,9 +39,9 @@ namespace CapaDeNegocios.RecienNacido
         {
             return Conexion.GDatos.TraerDataTable("spListarRecienNacido", id);
         }
-        public DataTable ListarRecienNacidoConBajoPeso(string id, string id2, string mes, string año)
+        public DataTable ListarRecienNacidoConBajoPeso(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso", id, id2, mes, año);
+            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso", mes, año);
         }
 
     }
