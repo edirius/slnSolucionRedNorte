@@ -55,7 +55,12 @@ namespace CapaUsuario.Alertas
                 Bateria.frmAlertaGestanteBateria frmAlertaGestanteSinBateria = new Bateria.frmAlertaGestanteBateria();
                 frmAlertaGestanteSinBateria.CodigoEstablecimiento = CodigoEstablecimiento;
                 frmAlertaGestanteSinBateria.CodigoObstetra = CodigoObstetra;
+                
+            if (oUtilitarios.verificarventanaabierta("frmAlertaGestanteBateria"))
+            {
+                //fGestantes.MdiParent = this;
                 frmAlertaGestanteSinBateria.Show();
+            }
         }
 
         private void lbleliminar_Click(object sender, EventArgs e)

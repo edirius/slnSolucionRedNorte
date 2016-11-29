@@ -32,7 +32,6 @@
             this.lnkGestantesControlPreNatal = new System.Windows.Forms.LinkLabel();
             this.lnkGestantesConRiesgoPresionArterial = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.lbleliminar = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -82,22 +81,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "GESTANTES CON PROBLEMAS EN BATERIA";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked_1);
-            // 
-            // lbleliminar
-            // 
-            this.lbleliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbleliminar.AutoSize = true;
-            this.lbleliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbleliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbleliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbleliminar.ForeColor = System.Drawing.Color.White;
-            this.lbleliminar.Location = new System.Drawing.Point(639, 5);
-            this.lbleliminar.Name = "lbleliminar";
-            this.lbleliminar.Size = new System.Drawing.Size(17, 16);
-            this.lbleliminar.TabIndex = 113;
-            this.lbleliminar.Text = "X";
-            this.lbleliminar.Visible = false;
-            this.lbleliminar.Click += new System.EventHandler(this.lbleliminar_Click);
             // 
             // linkLabel2
             // 
@@ -176,7 +159,6 @@
             this.ClientSize = new System.Drawing.Size(659, 520);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lbleliminar);
             this.Controls.Add(this.pictureBox5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(675, 558);
@@ -189,7 +171,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -197,7 +178,6 @@
         private System.Windows.Forms.LinkLabel lnkGestantesControlPreNatal;
         private System.Windows.Forms.LinkLabel lnkGestantesConRiesgoPresionArterial;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label lbleliminar;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.PictureBox pictureBox5;
