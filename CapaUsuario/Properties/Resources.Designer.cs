@@ -713,6 +713,26 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Obstetra1 {
+            get {
+                object obj = ResourceManager.GetObject("Obstetra1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Obstetra2 {
+            get {
+                object obj = ResourceManager.GetObject("Obstetra2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap parto_termino_gestacion {
             get {
                 object obj = ResourceManager.GetObject("parto_termino gestacion", resourceCulture);
