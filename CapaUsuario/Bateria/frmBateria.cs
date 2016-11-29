@@ -614,8 +614,7 @@ namespace CapaUsuario.Bateria
         //nudHemoglobina.Value.ToString() != "" || nudGlucosa.Value.ToString() != ""
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (nudHemoglobina.Value.ToString() == "" || nudGlucosa.Value.ToString() == "")
-            {
+            
                 if (txtCodigoBateria.Text == "")
                 {
                     if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
@@ -639,15 +638,7 @@ namespace CapaUsuario.Bateria
                     {
                         Modificar();
                     }
-                }
-            }
-            else
-            {
-                MessageBox.Show(nudGlucosa.Value.ToString());
-                
-            }
-            
-                
+                }   
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
