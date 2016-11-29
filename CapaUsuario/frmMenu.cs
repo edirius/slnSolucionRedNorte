@@ -164,5 +164,16 @@ namespace CapaUsuario
             }
             
         }
+
+        private void reportesDeMorbilidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.fControlGestantePorMorbilidad fCGM = new Reportes.fControlGestantePorMorbilidad();
+
+            if (oUtilitarios.verificarventanaabierta("fControlGestantePorMorbilidad"))
+            {
+                fCGM.MdiParent = this;
+                fCGM.Show();
+            }
+        }
     }
 }
