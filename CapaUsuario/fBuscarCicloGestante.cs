@@ -39,8 +39,9 @@ namespace CapaUsuario
             mes = Convert.ToInt16(this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
             mes = mes + 1;
 
-            if (cantidad_años>0) { 
-                cbYear.SelectedItem = cbYear.Items[0];
+            if (cantidad_años>0) {
+                //cbYear.SelectedItem = cbYear.Text[año_numero];
+                cbYear.Text= año_numero.ToString();
                 año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
             }
         }

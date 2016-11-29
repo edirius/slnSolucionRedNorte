@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -257,6 +257,7 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.52124F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.47876F));
@@ -271,6 +272,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.pbCR);
             this.groupBox1.Controls.Add(this.pbARN);
             this.groupBox1.Controls.Add(this.pbCP);
@@ -299,7 +301,7 @@
             this.groupBox1.Location = new System.Drawing.Point(1084, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(192, 655);
-            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
             // pbCR
@@ -480,143 +482,152 @@
             // 
             // buCronograma
             // 
+            this.buCronograma.BackColor = System.Drawing.Color.Transparent;
             this.buCronograma.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buCronograma.BackgroundImage")));
             this.buCronograma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buCronograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buCronograma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buCronograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buCronograma.ForeColor = System.Drawing.Color.White;
             this.buCronograma.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buCronograma.Location = new System.Drawing.Point(9, 579);
+            this.buCronograma.Location = new System.Drawing.Point(3, 579);
             this.buCronograma.Name = "buCronograma";
-            this.buCronograma.Size = new System.Drawing.Size(106, 68);
-            this.buCronograma.TabIndex = 31;
-            this.buCronograma.Text = "Cronograma";
-            this.buCronograma.UseVisualStyleBackColor = true;
+            this.buCronograma.Size = new System.Drawing.Size(115, 68);
+            this.buCronograma.TabIndex = 40;
+            this.buCronograma.Text = "Cr&onograma";
+            this.buCronograma.UseVisualStyleBackColor = false;
             this.buCronograma.Click += new System.EventHandler(this.buCronograma_Click);
             this.buCronograma.MouseEnter += new System.EventHandler(this.buCronograma_MouseEnter);
             this.buCronograma.MouseLeave += new System.EventHandler(this.buCronograma_MouseLeave);
             // 
             // buRegistroBateria
             // 
+            this.buRegistroBateria.BackColor = System.Drawing.Color.Transparent;
             this.buRegistroBateria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buRegistroBateria.BackgroundImage")));
             this.buRegistroBateria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buRegistroBateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buRegistroBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buRegistroBateria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buRegistroBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buRegistroBateria.ForeColor = System.Drawing.Color.White;
             this.buRegistroBateria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buRegistroBateria.Location = new System.Drawing.Point(9, 179);
+            this.buRegistroBateria.Location = new System.Drawing.Point(3, 179);
             this.buRegistroBateria.Name = "buRegistroBateria";
-            this.buRegistroBateria.Size = new System.Drawing.Size(106, 68);
-            this.buRegistroBateria.TabIndex = 26;
-            this.buRegistroBateria.Text = "Registro Bateria";
-            this.buRegistroBateria.UseVisualStyleBackColor = true;
+            this.buRegistroBateria.Size = new System.Drawing.Size(115, 68);
+            this.buRegistroBateria.TabIndex = 35;
+            this.buRegistroBateria.Text = "&Registro Bateria";
+            this.buRegistroBateria.UseVisualStyleBackColor = false;
             this.buRegistroBateria.Click += new System.EventHandler(this.button3_Click);
             this.buRegistroBateria.MouseEnter += new System.EventHandler(this.buRegistroBateria_MouseEnter);
             this.buRegistroBateria.MouseLeave += new System.EventHandler(this.buRegistroBateria_MouseLeave);
             // 
             // buAtencionPrenatal
             // 
+            this.buAtencionPrenatal.BackColor = System.Drawing.Color.Transparent;
             this.buAtencionPrenatal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buAtencionPrenatal.BackgroundImage")));
             this.buAtencionPrenatal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buAtencionPrenatal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buAtencionPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buAtencionPrenatal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buAtencionPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buAtencionPrenatal.ForeColor = System.Drawing.Color.White;
             this.buAtencionPrenatal.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buAtencionPrenatal.Location = new System.Drawing.Point(9, 99);
+            this.buAtencionPrenatal.Location = new System.Drawing.Point(3, 99);
             this.buAtencionPrenatal.Name = "buAtencionPrenatal";
-            this.buAtencionPrenatal.Size = new System.Drawing.Size(106, 68);
-            this.buAtencionPrenatal.TabIndex = 25;
-            this.buAtencionPrenatal.Text = "Atención Prenatal";
-            this.buAtencionPrenatal.UseVisualStyleBackColor = true;
+            this.buAtencionPrenatal.Size = new System.Drawing.Size(115, 68);
+            this.buAtencionPrenatal.TabIndex = 34;
+            this.buAtencionPrenatal.Text = "&Atención Prenatal";
+            this.buAtencionPrenatal.UseVisualStyleBackColor = false;
             this.buAtencionPrenatal.Click += new System.EventHandler(this.button4_Click);
             this.buAtencionPrenatal.MouseEnter += new System.EventHandler(this.buAtencionPrenatal_MouseEnter);
             this.buAtencionPrenatal.MouseLeave += new System.EventHandler(this.buAtencionPrenatal_MouseLeave);
             // 
             // btnRecienNacido
             // 
+            this.btnRecienNacido.BackColor = System.Drawing.Color.Transparent;
             this.btnRecienNacido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRecienNacido.BackgroundImage")));
             this.btnRecienNacido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecienNacido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecienNacido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnRecienNacido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRecienNacido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecienNacido.ForeColor = System.Drawing.Color.White;
             this.btnRecienNacido.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRecienNacido.Location = new System.Drawing.Point(9, 499);
+            this.btnRecienNacido.Location = new System.Drawing.Point(3, 499);
             this.btnRecienNacido.Name = "btnRecienNacido";
-            this.btnRecienNacido.Size = new System.Drawing.Size(106, 68);
-            this.btnRecienNacido.TabIndex = 30;
-            this.btnRecienNacido.Text = "Atención Recien Nacido";
-            this.btnRecienNacido.UseVisualStyleBackColor = true;
+            this.btnRecienNacido.Size = new System.Drawing.Size(115, 68);
+            this.btnRecienNacido.TabIndex = 39;
+            this.btnRecienNacido.Text = "A&tención Recien Nacido";
+            this.btnRecienNacido.UseVisualStyleBackColor = false;
             this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
             this.btnRecienNacido.MouseEnter += new System.EventHandler(this.btnRecienNacido_MouseEnter);
             this.btnRecienNacido.MouseLeave += new System.EventHandler(this.btnRecienNacido_MouseLeave);
             // 
             // buMorbilidad
             // 
+            this.buMorbilidad.BackColor = System.Drawing.Color.Transparent;
             this.buMorbilidad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buMorbilidad.BackgroundImage")));
             this.buMorbilidad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buMorbilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buMorbilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buMorbilidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buMorbilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buMorbilidad.ForeColor = System.Drawing.Color.White;
             this.buMorbilidad.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buMorbilidad.Location = new System.Drawing.Point(9, 19);
+            this.buMorbilidad.Location = new System.Drawing.Point(3, 19);
             this.buMorbilidad.Name = "buMorbilidad";
-            this.buMorbilidad.Size = new System.Drawing.Size(106, 68);
-            this.buMorbilidad.TabIndex = 24;
-            this.buMorbilidad.Text = "Morbilidad Materna Extrema";
-            this.buMorbilidad.UseVisualStyleBackColor = true;
+            this.buMorbilidad.Size = new System.Drawing.Size(115, 68);
+            this.buMorbilidad.TabIndex = 33;
+            this.buMorbilidad.Text = "&Morbilidad Materna Extrema";
+            this.buMorbilidad.UseVisualStyleBackColor = false;
             this.buMorbilidad.Click += new System.EventHandler(this.buMorbilidad_Click);
             this.buMorbilidad.MouseEnter += new System.EventHandler(this.buMorbilidad_MouseEnter);
             this.buMorbilidad.MouseLeave += new System.EventHandler(this.buMorbilidad_MouseLeave);
             // 
             // buControlPuerperio
             // 
+            this.buControlPuerperio.BackColor = System.Drawing.Color.Transparent;
             this.buControlPuerperio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buControlPuerperio.BackgroundImage")));
             this.buControlPuerperio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buControlPuerperio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buControlPuerperio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buControlPuerperio.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buControlPuerperio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buControlPuerperio.ForeColor = System.Drawing.Color.White;
             this.buControlPuerperio.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buControlPuerperio.Location = new System.Drawing.Point(9, 419);
+            this.buControlPuerperio.Location = new System.Drawing.Point(3, 419);
             this.buControlPuerperio.Name = "buControlPuerperio";
-            this.buControlPuerperio.Size = new System.Drawing.Size(106, 68);
-            this.buControlPuerperio.TabIndex = 29;
-            this.buControlPuerperio.Text = "Control Puerperio";
-            this.buControlPuerperio.UseVisualStyleBackColor = true;
+            this.buControlPuerperio.Size = new System.Drawing.Size(115, 68);
+            this.buControlPuerperio.TabIndex = 38;
+            this.buControlPuerperio.Text = "&Control Puerperio";
+            this.buControlPuerperio.UseVisualStyleBackColor = false;
             this.buControlPuerperio.Click += new System.EventHandler(this.buControlPuerperio_Click);
             this.buControlPuerperio.MouseEnter += new System.EventHandler(this.buControlPuerperio_MouseEnter);
             this.buControlPuerperio.MouseLeave += new System.EventHandler(this.buControlPuerperio_MouseLeave);
             // 
             // buVisitaDomiciliaria
             // 
+            this.buVisitaDomiciliaria.BackColor = System.Drawing.Color.Transparent;
             this.buVisitaDomiciliaria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buVisitaDomiciliaria.BackgroundImage")));
             this.buVisitaDomiciliaria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buVisitaDomiciliaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buVisitaDomiciliaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buVisitaDomiciliaria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buVisitaDomiciliaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buVisitaDomiciliaria.ForeColor = System.Drawing.Color.White;
             this.buVisitaDomiciliaria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(9, 259);
+            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(3, 259);
             this.buVisitaDomiciliaria.Name = "buVisitaDomiciliaria";
-            this.buVisitaDomiciliaria.Size = new System.Drawing.Size(106, 68);
-            this.buVisitaDomiciliaria.TabIndex = 27;
-            this.buVisitaDomiciliaria.Text = "Visita Domiciliaria";
-            this.buVisitaDomiciliaria.UseVisualStyleBackColor = true;
+            this.buVisitaDomiciliaria.Size = new System.Drawing.Size(115, 68);
+            this.buVisitaDomiciliaria.TabIndex = 36;
+            this.buVisitaDomiciliaria.Text = "&Visita Domiciliaria";
+            this.buVisitaDomiciliaria.UseVisualStyleBackColor = false;
             this.buVisitaDomiciliaria.Click += new System.EventHandler(this.buVisitaDomiciliaria_Click);
             this.buVisitaDomiciliaria.MouseEnter += new System.EventHandler(this.buVisitaDomiciliaria_MouseEnter);
             this.buVisitaDomiciliaria.MouseLeave += new System.EventHandler(this.buVisitaDomiciliaria_MouseLeave);
             // 
             // btnTerminoGestacion
             // 
+            this.btnTerminoGestacion.BackColor = System.Drawing.Color.Transparent;
             this.btnTerminoGestacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTerminoGestacion.BackgroundImage")));
             this.btnTerminoGestacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTerminoGestacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTerminoGestacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnTerminoGestacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTerminoGestacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminoGestacion.ForeColor = System.Drawing.Color.White;
             this.btnTerminoGestacion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnTerminoGestacion.Location = new System.Drawing.Point(9, 339);
+            this.btnTerminoGestacion.Location = new System.Drawing.Point(3, 339);
             this.btnTerminoGestacion.Name = "btnTerminoGestacion";
-            this.btnTerminoGestacion.Size = new System.Drawing.Size(106, 68);
-            this.btnTerminoGestacion.TabIndex = 28;
-            this.btnTerminoGestacion.Text = "Termino Gestación";
-            this.btnTerminoGestacion.UseVisualStyleBackColor = true;
+            this.btnTerminoGestacion.Size = new System.Drawing.Size(115, 68);
+            this.btnTerminoGestacion.TabIndex = 37;
+            this.btnTerminoGestacion.Text = "&Termino Gestación";
+            this.btnTerminoGestacion.UseVisualStyleBackColor = false;
             this.btnTerminoGestacion.Click += new System.EventHandler(this.btnTerminoGestacion_Click);
             this.btnTerminoGestacion.MouseEnter += new System.EventHandler(this.btnTerminoGestacion_MouseEnter);
             this.btnTerminoGestacion.MouseLeave += new System.EventHandler(this.btnTerminoGestacion_MouseLeave);
@@ -638,6 +649,7 @@
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1056F));
@@ -685,7 +697,7 @@
             this.groupBox12.Location = new System.Drawing.Point(16, 432);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(300, 122);
-            this.groupBox12.TabIndex = 48;
+            this.groupBox12.TabIndex = 20;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Medidas:";
             // 
@@ -715,7 +727,7 @@
             this.txtTalla.Location = new System.Drawing.Point(189, 46);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(75, 24);
-            this.txtTalla.TabIndex = 15;
+            this.txtTalla.TabIndex = 22;
             this.txtTalla.TextChanged += new System.EventHandler(this.txtTalla_TextChanged);
             this.txtTalla.Enter += new System.EventHandler(this.txtTalla_Enter);
             this.txtTalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTalla_KeyDown);
@@ -756,7 +768,7 @@
             this.txtPeso.Location = new System.Drawing.Point(189, 18);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(75, 24);
-            this.txtPeso.TabIndex = 14;
+            this.txtPeso.TabIndex = 21;
             this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
             this.txtPeso.Enter += new System.EventHandler(this.txtPeso_Enter);
             this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
@@ -802,7 +814,7 @@
             this.groupBox7.Location = new System.Drawing.Point(331, 432);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(701, 122);
-            this.groupBox7.TabIndex = 47;
+            this.groupBox7.TabIndex = 23;
             this.groupBox7.TabStop = false;
             // 
             // txtObservaciones
@@ -811,7 +823,7 @@
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(193, 69);
-            this.txtObservaciones.TabIndex = 16;
+            this.txtObservaciones.TabIndex = 24;
             this.txtObservaciones.Enter += new System.EventHandler(this.txtObservaciones_Enter_1);
             this.txtObservaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtObservaciones_KeyPress_2);
             // 
@@ -861,7 +873,7 @@
             this.txtOrigenEESS.Multiline = true;
             this.txtOrigenEESS.Name = "txtOrigenEESS";
             this.txtOrigenEESS.Size = new System.Drawing.Size(209, 71);
-            this.txtOrigenEESS.TabIndex = 18;
+            this.txtOrigenEESS.TabIndex = 27;
             this.txtOrigenEESS.Enter += new System.EventHandler(this.txtOrigenEESS_Enter_1);
             this.txtOrigenEESS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrigenEESS_KeyPress_1);
             // 
@@ -871,7 +883,7 @@
             this.cbArchivado.Location = new System.Drawing.Point(348, 66);
             this.cbArchivado.Name = "cbArchivado";
             this.cbArchivado.Size = new System.Drawing.Size(92, 22);
-            this.cbArchivado.TabIndex = 19;
+            this.cbArchivado.TabIndex = 26;
             this.cbArchivado.Text = "Archivado";
             this.cbArchivado.UseVisualStyleBackColor = true;
             this.cbArchivado.CheckedChanged += new System.EventHandler(this.cbArchivado_CheckedChanged_1);
@@ -883,7 +895,7 @@
             this.cbTranseunte.Location = new System.Drawing.Point(348, 40);
             this.cbTranseunte.Name = "cbTranseunte";
             this.cbTranseunte.Size = new System.Drawing.Size(101, 22);
-            this.cbTranseunte.TabIndex = 17;
+            this.cbTranseunte.TabIndex = 25;
             this.cbTranseunte.Text = "Transeunte";
             this.cbTranseunte.UseVisualStyleBackColor = true;
             this.cbTranseunte.CheckedChanged += new System.EventHandler(this.cbTranseunte_CheckedChanged);
@@ -952,7 +964,7 @@
             this.gbFormula.Location = new System.Drawing.Point(672, 22);
             this.gbFormula.Name = "gbFormula";
             this.gbFormula.Size = new System.Drawing.Size(126, 218);
-            this.gbFormula.TabIndex = 31;
+            this.gbFormula.TabIndex = 2;
             this.gbFormula.TabStop = false;
             this.gbFormula.Text = "Formula Obstetrica:";
             // 
@@ -977,7 +989,7 @@
             0});
             this.nudGestas.Name = "nudGestas";
             this.nudGestas.Size = new System.Drawing.Size(41, 24);
-            this.nudGestas.TabIndex = 1;
+            this.nudGestas.TabIndex = 3;
             this.nudGestas.Enter += new System.EventHandler(this.nudGestas_Enter);
             this.nudGestas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudGestas_KeyPress_1);
             this.nudGestas.Leave += new System.EventHandler(this.nudGestas_Leave);
@@ -992,7 +1004,7 @@
             0});
             this.nudPartos.Name = "nudPartos";
             this.nudPartos.Size = new System.Drawing.Size(41, 24);
-            this.nudPartos.TabIndex = 2;
+            this.nudPartos.TabIndex = 4;
             this.nudPartos.Enter += new System.EventHandler(this.nudPartos_Enter);
             this.nudPartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPartos_KeyPress_1);
             this.nudPartos.Leave += new System.EventHandler(this.nudPartos_Leave);
@@ -1007,7 +1019,7 @@
             0});
             this.nudAbortos.Name = "nudAbortos";
             this.nudAbortos.Size = new System.Drawing.Size(41, 24);
-            this.nudAbortos.TabIndex = 3;
+            this.nudAbortos.TabIndex = 5;
             this.nudAbortos.Enter += new System.EventHandler(this.nudAbortos_Enter);
             this.nudAbortos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudAbortos_KeyPress_1);
             this.nudAbortos.Leave += new System.EventHandler(this.nudAbortos_Leave);
@@ -1022,7 +1034,7 @@
             0});
             this.nudHv.Name = "nudHv";
             this.nudHv.Size = new System.Drawing.Size(41, 24);
-            this.nudHv.TabIndex = 4;
+            this.nudHv.TabIndex = 6;
             this.nudHv.Enter += new System.EventHandler(this.nudHv_Enter);
             this.nudHv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHv_KeyPress_1);
             this.nudHv.Leave += new System.EventHandler(this.nudHv_Leave);
@@ -1037,7 +1049,7 @@
             0});
             this.nudHm.Name = "nudHm";
             this.nudHm.Size = new System.Drawing.Size(41, 24);
-            this.nudHm.TabIndex = 5;
+            this.nudHm.TabIndex = 7;
             this.nudHm.ValueChanged += new System.EventHandler(this.nudHm_ValueChanged);
             this.nudHm.Enter += new System.EventHandler(this.nudHm_Enter);
             this.nudHm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudHm_KeyPress_1);
@@ -1112,9 +1124,10 @@
             this.gbFecha.Location = new System.Drawing.Point(475, 22);
             this.gbFecha.Name = "gbFecha";
             this.gbFecha.Size = new System.Drawing.Size(191, 59);
-            this.gbFecha.TabIndex = 40;
+            this.gbFecha.TabIndex = 0;
             this.gbFecha.TabStop = false;
             this.gbFecha.Text = "Fecha de registro:";
+            this.gbFecha.Enter += new System.EventHandler(this.gbFecha_Enter);
             // 
             // dtpFecha
             // 
@@ -1124,7 +1137,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(53, 22);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 24);
-            this.dtpFecha.TabIndex = 0;
+            this.dtpFecha.TabIndex = 1;
             this.dtpFecha.Enter += new System.EventHandler(this.dtpFecha_Enter);
             this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
             this.dtpFecha.Leave += new System.EventHandler(this.dtpFecha_Leave);
@@ -1139,7 +1152,7 @@
             this.gbFechas.Location = new System.Drawing.Point(805, 22);
             this.gbFechas.Name = "gbFechas";
             this.gbFechas.Size = new System.Drawing.Size(227, 83);
-            this.gbFechas.TabIndex = 36;
+            this.gbFechas.TabIndex = 8;
             this.gbFechas.TabStop = false;
             this.gbFechas.Text = "Fechas:";
             this.gbFechas.Enter += new System.EventHandler(this.gbFechas_Enter);
@@ -1156,10 +1169,10 @@
             // dtpFUR
             // 
             this.dtpFUR.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFUR.Location = new System.Drawing.Point(92, 22);
+            this.dtpFUR.Location = new System.Drawing.Point(92, 20);
             this.dtpFUR.Name = "dtpFUR";
             this.dtpFUR.Size = new System.Drawing.Size(99, 24);
-            this.dtpFUR.TabIndex = 6;
+            this.dtpFUR.TabIndex = 9;
             this.dtpFUR.ValueChanged += new System.EventHandler(this.dtpFUR_ValueChanged);
             this.dtpFUR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFUR_KeyPress);
             this.dtpFUR.Leave += new System.EventHandler(this.dtpFUR_Leave);
@@ -1192,7 +1205,7 @@
             this.gbOdontologico.Location = new System.Drawing.Point(16, 250);
             this.gbOdontologico.Name = "gbOdontologico";
             this.gbOdontologico.Size = new System.Drawing.Size(266, 176);
-            this.gbOdontologico.TabIndex = 35;
+            this.gbOdontologico.TabIndex = 10;
             this.gbOdontologico.TabStop = false;
             this.gbOdontologico.Text = "Atención en el Servicio Odontologico:";
             // 
@@ -1200,8 +1213,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1215,7 +1228,7 @@
             this.dgvOdontologia.RowHeadersVisible = false;
             this.dgvOdontologia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOdontologia.Size = new System.Drawing.Size(253, 112);
-            this.dgvOdontologia.TabIndex = 14;
+            this.dgvOdontologia.TabIndex = 13;
             this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick_1);
             // 
             // buAgregarOdontologia
@@ -1223,7 +1236,7 @@
             this.buAgregarOdontologia.Location = new System.Drawing.Point(231, 21);
             this.buAgregarOdontologia.Name = "buAgregarOdontologia";
             this.buAgregarOdontologia.Size = new System.Drawing.Size(28, 26);
-            this.buAgregarOdontologia.TabIndex = 9;
+            this.buAgregarOdontologia.TabIndex = 12;
             this.buAgregarOdontologia.Text = "+";
             this.buAgregarOdontologia.UseVisualStyleBackColor = true;
             this.buAgregarOdontologia.Click += new System.EventHandler(this.buAgregarOdontologia_Click_2);
@@ -1236,7 +1249,7 @@
             this.dtpOdontologo.Location = new System.Drawing.Point(117, 23);
             this.dtpOdontologo.Name = "dtpOdontologo";
             this.dtpOdontologo.Size = new System.Drawing.Size(99, 24);
-            this.dtpOdontologo.TabIndex = 8;
+            this.dtpOdontologo.TabIndex = 11;
             this.dtpOdontologo.Enter += new System.EventHandler(this.dtpOdontologo_Enter);
             this.dtpOdontologo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpOdontologo_KeyPress_1);
             this.dtpOdontologo.Leave += new System.EventHandler(this.dtpOdontologo_Leave);
@@ -1367,7 +1380,7 @@
             this.gbEcografia.Location = new System.Drawing.Point(428, 250);
             this.gbEcografia.Name = "gbEcografia";
             this.gbEcografia.Size = new System.Drawing.Size(428, 176);
-            this.gbEcografia.TabIndex = 34;
+            this.gbEcografia.TabIndex = 14;
             this.gbEcografia.TabStop = false;
             this.gbEcografia.Text = "Ecografia Obstetrica de gestante:";
             // 
@@ -1380,7 +1393,7 @@
             this.groupBox11.Location = new System.Drawing.Point(114, 18);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(273, 53);
-            this.groupBox11.TabIndex = 20;
+            this.groupBox11.TabIndex = 16;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Edad Gestacional";
             // 
@@ -1389,7 +1402,7 @@
             this.nudDiasEcografia.Location = new System.Drawing.Point(212, 19);
             this.nudDiasEcografia.Name = "nudDiasEcografia";
             this.nudDiasEcografia.Size = new System.Drawing.Size(41, 24);
-            this.nudDiasEcografia.TabIndex = 12;
+            this.nudDiasEcografia.TabIndex = 17;
             this.nudDiasEcografia.Value = new decimal(new int[] {
             1,
             0,
@@ -1409,7 +1422,7 @@
             0});
             this.nudEdadGestacional.Name = "nudEdadGestacional";
             this.nudEdadGestacional.Size = new System.Drawing.Size(41, 24);
-            this.nudEdadGestacional.TabIndex = 11;
+            this.nudEdadGestacional.TabIndex = 16;
             this.nudEdadGestacional.Value = new decimal(new int[] {
             1,
             0,
@@ -1441,8 +1454,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1465,7 +1478,7 @@
             this.dtpEcografia.Location = new System.Drawing.Point(9, 37);
             this.dtpEcografia.Name = "dtpEcografia";
             this.dtpEcografia.Size = new System.Drawing.Size(99, 24);
-            this.dtpEcografia.TabIndex = 10;
+            this.dtpEcografia.TabIndex = 15;
             this.dtpEcografia.Enter += new System.EventHandler(this.dtpEcografia_Enter);
             this.dtpEcografia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEcografia_KeyPress_1);
             this.dtpEcografia.Leave += new System.EventHandler(this.dtpEcografia_Leave);
@@ -1475,7 +1488,7 @@
             this.buAgregarEcografia.Location = new System.Drawing.Point(393, 34);
             this.buAgregarEcografia.Name = "buAgregarEcografia";
             this.buAgregarEcografia.Size = new System.Drawing.Size(28, 27);
-            this.buAgregarEcografia.TabIndex = 13;
+            this.buAgregarEcografia.TabIndex = 18;
             this.buAgregarEcografia.Text = "+";
             this.buAgregarEcografia.UseVisualStyleBackColor = true;
             this.buAgregarEcografia.Click += new System.EventHandler(this.buAgregarEcografia_Click_1);
@@ -1637,6 +1650,7 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 6;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -1741,13 +1755,14 @@
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalir.Location = new System.Drawing.Point(711, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(171, 48);
-            this.btnSalir.TabIndex = 23;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.TabIndex = 30;
+            this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -1755,32 +1770,36 @@
             // 
             this.buGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buGuardar.BackColor = System.Drawing.Color.Transparent;
             this.buGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buGuardar.BackgroundImage")));
             this.buGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buGuardar.ForeColor = System.Drawing.Color.White;
             this.buGuardar.Location = new System.Drawing.Point(357, 3);
             this.buGuardar.Name = "buGuardar";
             this.buGuardar.Size = new System.Drawing.Size(171, 48);
-            this.buGuardar.TabIndex = 20;
-            this.buGuardar.Text = "Guardar";
-            this.buGuardar.UseVisualStyleBackColor = true;
+            this.buGuardar.TabIndex = 28;
+            this.buGuardar.Text = "&Guardar";
+            this.buGuardar.UseVisualStyleBackColor = false;
             this.buGuardar.Click += new System.EventHandler(this.buGuardar_Click_1);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(534, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(171, 48);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TabIndex = 29;
+            this.button1.Text = "&Nuevo";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // gbEESS
@@ -1873,17 +1892,19 @@
             // 
             this.buBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buBuscar.BackColor = System.Drawing.Color.Transparent;
             this.buBuscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buBuscar.BackgroundImage")));
             this.buBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buBuscar.ForeColor = System.Drawing.Color.White;
             this.buBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.buBuscar.Location = new System.Drawing.Point(180, 3);
             this.buBuscar.Name = "buBuscar";
             this.buBuscar.Size = new System.Drawing.Size(171, 48);
-            this.buBuscar.TabIndex = 22;
-            this.buBuscar.Text = "Buscar";
-            this.buBuscar.UseVisualStyleBackColor = true;
+            this.buBuscar.TabIndex = 31;
+            this.buBuscar.Text = "&Buscar";
+            this.buBuscar.UseVisualStyleBackColor = false;
             this.buBuscar.Click += new System.EventHandler(this.buBuscar_Click);
             // 
             // frmHistoriaClinica
@@ -1891,6 +1912,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios4;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1294, 670);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "frmHistoriaClinica";

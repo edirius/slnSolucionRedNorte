@@ -42,10 +42,6 @@ namespace Alertas
             CargarTodosGrid();
 
         }
-        private void CargarGrid(string tipo)
-        {
-            dgvGestantesSinBateria.DataSource = miAlerta.ListadeAlertasenBateria2(tipo, cbMes.Text, cbAños.Text);
-        }
         private void HacerConeccion()
         {
             try
@@ -228,7 +224,15 @@ namespace Alertas
             dgvGestantesSinExamenOrina.DataSource = miAlerta.AlertaGestanteSinExamenOrina2(cbMes.Text, cbAños.Text);
             
             dgvRecienNacidosBajoPeso.DataSource = miAlerta.AlertaRecienNacidoBajoPeso(cbMes.Text, cbAños.Text);
-            
+
+            dgvGestantePAalta.DataSource = miAlerta.AlertaGestantePresionPAalta(cbMes.Text, cbAños.Text);
+
+            dgvPuerperaSinControl.DataSource = miAlerta.AlertaPuerperaSinControlPuerperio(cbMes.Text, cbAños.Text);
+
+            dgvPuerperaSin2doControl.DataSource = miAlerta.AlertaPuerperaSin2doControlPuerperio(cbMes.Text, cbAños.Text);
+
+            dgvGestanteNoAcudeCitas.DataSource = miAlerta.AlertaGestanteNoAcudeCitas();
+
         }
         private void OcultarGrids()
         {
@@ -240,6 +244,10 @@ namespace Alertas
             dgvGestantesInfeccionUrinaria.Visible = false;
             dgvGestantesSinExamenOrina.Visible = false;
             dgvRecienNacidosBajoPeso.Visible = false;
+            dgvGestantePAalta.Visible = false;
+            dgvPuerperaSinControl.Visible = false;
+            dgvPuerperaSin2doControl.Visible = false;
+            dgvGestanteNoAcudeCitas.Visible = false;
         }
         private void MostrarNuevasGestantesConProblemas()
         {
@@ -323,6 +331,46 @@ namespace Alertas
                 txtRNBajoPeso.Text = valorcelda8;
             }
             catch { }
+            try
+            {
+
+                int contarRegistro9 = dgvGestantePAalta.RowCount;
+                string valorcelda8 = dgvGestantePAalta[1, contarRegistro9 - 1].Value.ToString();
+                dgvGestantePAalta.ClearSelection();
+                dgvGestantePAalta[1, contarRegistro9 - 1].Selected = true;
+                txtGestantePAalta.Text = valorcelda8;
+            }
+            catch { }
+            try
+            {
+
+                int contarRegistro10 = dgvPuerperaSinControl.RowCount;
+                string valorcelda8 = dgvPuerperaSinControl[1, contarRegistro10 - 1].Value.ToString();
+                dgvPuerperaSinControl.ClearSelection();
+                dgvPuerperaSinControl[1, contarRegistro10 - 1].Selected = true;
+                txtPuerperaSinControl.Text = valorcelda8;
+            }
+            catch { }
+            try
+            {
+
+                int contarRegistro11 = dgvPuerperaSin2doControl.RowCount;
+                string valorcelda8 = dgvPuerperaSin2doControl[1, contarRegistro11 - 1].Value.ToString();
+                dgvPuerperaSin2doControl.ClearSelection();
+                dgvPuerperaSin2doControl[1, contarRegistro11 - 1].Selected = true;
+                txtPuerperaSin2doControl.Text = valorcelda8;
+            }
+            catch { }
+            try
+            {
+
+                int contarRegistro11 = dgvGestanteNoAcudeCitas.RowCount;
+                string valorcelda8 = dgvGestanteNoAcudeCitas[1, contarRegistro11 - 1].Value.ToString();
+                dgvGestanteNoAcudeCitas.ClearSelection();
+                dgvGestanteNoAcudeCitas[1, contarRegistro11 - 1].Selected = true;
+                dgvGestanteNoAcudeCitas.Text = valorcelda8;
+            }
+            catch { }
         }
 
         private void Arbol_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -383,11 +431,14 @@ namespace Alertas
                                 break;
                         }
                         break;
-                    case "Alertas en Citas":
+                    case "Alertas en Cita Pre-Natal":
                         switch (e.Node.Text)
                         {
                             case "Gestantes que no acuden a sus citas":
-                                lblTipoDeAlerta.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS";
+                                lblTipoDeAlerta.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES";
+                                OcultarGrids();
+                                dgvGestanteNoAcudeCitas.Visible = true;
+                                dgvGestanteNoAcudeCitas.Location = new Point(7, 91);
                                 break;
                         }
                         break;
@@ -396,6 +447,9 @@ namespace Alertas
                         {
                             case "Gestantes con presion arterial elevada":
                                 lblTipoDeAlerta.Text = "GESTANTES CON PRESION ARTERIAL ELEVADA";
+                                OcultarGrids();
+                                dgvGestantePAalta.Visible = true;
+                                dgvGestantePAalta.Location = new Point(55, 91);
                                 //
                                 break;
                         }
@@ -408,6 +462,25 @@ namespace Alertas
                                 OcultarGrids();
                                 dgvRecienNacidosBajoPeso.Visible = true;
                                 dgvRecienNacidosBajoPeso.Location = new Point(7, 91);
+                                //
+                                break;
+                        }
+                        break;
+                    case "Alertas en Control Puerperio":
+                        switch (e.Node.Text)
+                        {
+                            case "Puerpera sin control puerperio":
+                                lblTipoDeAlerta.Text = "PUERPERA SIN CONTROL PUERPERIO";
+                                OcultarGrids();
+                                dgvPuerperaSinControl.Visible = true;
+                                dgvPuerperaSinControl.Location = new Point(55, 91);
+                                //
+                                break;
+                            case "Puerpera sin 2do control puerperio":
+                                lblTipoDeAlerta.Text = "PUERPERA SIN 2DO CONTROL PUERPERIO";
+                                OcultarGrids();
+                                dgvPuerperaSin2doControl.Visible = true;
+                                dgvPuerperaSin2doControl.Location = new Point(55, 91);
                                 //
                                 break;
                         }
@@ -565,6 +638,35 @@ namespace Alertas
                 dgvRecienNacidosBajoPeso.Visible = true;
                 lblTipoDeAlerta.Text = formulario;
             }
+            if (formulario == "GESTANTES CON PRESION ARTERIAL ELEVADA")
+            {
+                OcultarGrids();
+                dgvGestantePAalta.Location = new Point(55, 91);
+                dgvGestantePAalta.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "PUERPERAS SIN CONTROL PUERPERIO")
+            {
+                OcultarGrids();
+                dgvPuerperaSinControl.Location = new Point(55, 91);
+                dgvPuerperaSinControl.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "PUERPERAS SIN 2DO CONTROL PUERPERIO")
+            {
+                OcultarGrids();
+                dgvPuerperaSin2doControl.Location = new Point(55, 91);
+                dgvPuerperaSin2doControl.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES")
+            {
+                OcultarGrids();
+                dgvGestanteNoAcudeCitas.Location = new Point(7, 91);
+                dgvGestanteNoAcudeCitas.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+
         }
         private void timerActualizar_Tick(object sender, EventArgs e)
         {
@@ -581,6 +683,38 @@ namespace Alertas
         {
             notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "RECIEN NACIDO CON BAJO PESO DE:" + "\n" + txtRNBajoPeso.Text, ToolTipIcon.Warning);
             notifyIcon1.Text = "RECIEN NACIDOS CON BAJO PESO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtGestantePAalta_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE CON PRESION ARTERIAL ELEVADA:" + "\n" + txtGestantePAalta.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES CON PRESION ARTERIAL ELEVADA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtPuerperaSinControl_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "PUERPERA SIN CONTROL PUERPERIO:" + "\n" + txtPuerperaSinControl.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "PUERPERAS SIN CONTROL PUERPERIO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtPuerperaSin2doControl_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "PUERPERA SIN 2DO CONTROL PUERPERIO:" + "\n" + txtPuerperaSin2doControl.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "PUERPERAS SIN 2DO CONTROL PUERPERIO";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtGestanteNoAcudeCitas_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE QUE NO ACUDE A SUS CITAS PRENATALES:" + "\n" + txtGestanteNoAcudeCitas.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES";
             mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }

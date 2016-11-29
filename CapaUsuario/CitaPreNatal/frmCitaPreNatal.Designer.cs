@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCitaPreNatal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgCitasMedicas = new System.Windows.Forms.DataGridView();
+            this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idthistoriaclinica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colnumerocita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfechacita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coledadgestacional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFUA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SULFATOFERROSO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colpresionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPresionArterialD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaProximaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASISTENCIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNumeroCita = new System.Windows.Forms.TextBox();
             this.dtpFechaCita = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,13 +64,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pbAlerta = new System.Windows.Forms.PictureBox();
-            this.txtAlerta = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nudSulfatoFerroso = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblAlerta = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.colidtcitaprenatal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +106,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.dtgCitasMedicas);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(10, 275);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(914, 302);
@@ -105,8 +118,8 @@
             // 
             this.dtgCitasMedicas.AllowUserToAddRows = false;
             this.dtgCitasMedicas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            this.dtgCitasMedicas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgCitasMedicas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,6 +151,94 @@
             this.dtgCitasMedicas.SelectionChanged += new System.EventHandler(this.dtgCitasMedicas_SelectionChanged);
             this.dtgCitasMedicas.Click += new System.EventHandler(this.dtgCitasMedicas_Click);
             // 
+            // colidtcitaprenatal
+            // 
+            this.colidtcitaprenatal.DataPropertyName = "CODIGO";
+            this.colidtcitaprenatal.HeaderText = "CODIGO";
+            this.colidtcitaprenatal.Name = "colidtcitaprenatal";
+            this.colidtcitaprenatal.ReadOnly = true;
+            this.colidtcitaprenatal.Visible = false;
+            // 
+            // idthistoriaclinica
+            // 
+            this.idthistoriaclinica.DataPropertyName = "CODIGO HISTORIA CLINICA";
+            this.idthistoriaclinica.HeaderText = "CODIGO HISTORIA CLINICA";
+            this.idthistoriaclinica.Name = "idthistoriaclinica";
+            this.idthistoriaclinica.ReadOnly = true;
+            this.idthistoriaclinica.Visible = false;
+            // 
+            // colnumerocita
+            // 
+            this.colnumerocita.DataPropertyName = "NUMERO DE CITA";
+            this.colnumerocita.HeaderText = "NUMERO DE CITA";
+            this.colnumerocita.Name = "colnumerocita";
+            this.colnumerocita.ReadOnly = true;
+            // 
+            // colfechacita
+            // 
+            this.colfechacita.DataPropertyName = "FECHA CITA";
+            this.colfechacita.HeaderText = "FECHA CITA";
+            this.colfechacita.Name = "colfechacita";
+            this.colfechacita.ReadOnly = true;
+            // 
+            // coledadgestacional
+            // 
+            this.coledadgestacional.DataPropertyName = "EDAD GESTACIONAL";
+            this.coledadgestacional.HeaderText = "EDAD GESTACIONAL";
+            this.coledadgestacional.Name = "coledadgestacional";
+            this.coledadgestacional.ReadOnly = true;
+            // 
+            // colFUA
+            // 
+            this.colFUA.DataPropertyName = "FUA";
+            this.colFUA.HeaderText = "FUA";
+            this.colFUA.Name = "colFUA";
+            this.colFUA.ReadOnly = true;
+            // 
+            // colPresionArterial
+            // 
+            this.colPresionArterial.DataPropertyName = "PRESION ARTERIAL";
+            this.colPresionArterial.HeaderText = "PRESION ARTERIAL";
+            this.colPresionArterial.Name = "colPresionArterial";
+            this.colPresionArterial.ReadOnly = true;
+            // 
+            // SULFATOFERROSO
+            // 
+            this.SULFATOFERROSO.DataPropertyName = "SULFATO FERROSO";
+            this.SULFATOFERROSO.HeaderText = "SULFATO FERROSO";
+            this.SULFATOFERROSO.Name = "SULFATOFERROSO";
+            this.SULFATOFERROSO.ReadOnly = true;
+            // 
+            // colpresionarterials
+            // 
+            this.colpresionarterials.DataPropertyName = "PRESION ARTERIAL S";
+            this.colpresionarterials.HeaderText = "PRESION ARTERIAL S";
+            this.colpresionarterials.Name = "colpresionarterials";
+            this.colpresionarterials.ReadOnly = true;
+            this.colpresionarterials.Visible = false;
+            // 
+            // colPresionArterialD
+            // 
+            this.colPresionArterialD.DataPropertyName = "PRESION ARTERIAL D";
+            this.colPresionArterialD.HeaderText = "PRESION ARTERIAL D";
+            this.colPresionArterialD.Name = "colPresionArterialD";
+            this.colPresionArterialD.ReadOnly = true;
+            this.colPresionArterialD.Visible = false;
+            // 
+            // colFechaProximaCita
+            // 
+            this.colFechaProximaCita.DataPropertyName = "FECHA PROXIMA CITA";
+            this.colFechaProximaCita.HeaderText = "FECHA PROXIMA CITA";
+            this.colFechaProximaCita.Name = "colFechaProximaCita";
+            this.colFechaProximaCita.ReadOnly = true;
+            // 
+            // ASISTENCIA
+            // 
+            this.ASISTENCIA.DataPropertyName = "ASISTENCIA";
+            this.ASISTENCIA.HeaderText = "ASISTENCIA";
+            this.ASISTENCIA.Name = "ASISTENCIA";
+            this.ASISTENCIA.ReadOnly = true;
+            // 
             // txtNumeroCita
             // 
             this.txtNumeroCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,8 +255,9 @@
             this.dtpFechaCita.Location = new System.Drawing.Point(156, 120);
             this.dtpFechaCita.Name = "dtpFechaCita";
             this.dtpFechaCita.Size = new System.Drawing.Size(107, 24);
-            this.dtpFechaCita.TabIndex = 2;
+            this.dtpFechaCita.TabIndex = 1;
             this.dtpFechaCita.ValueChanged += new System.EventHandler(this.dtpFechaCita_ValueChanged);
+            this.dtpFechaCita.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaCita_KeyPress);
             // 
             // label1
             // 
@@ -197,7 +299,8 @@
             this.dtpProximaCita.Location = new System.Drawing.Point(402, 174);
             this.dtpProximaCita.Name = "dtpProximaCita";
             this.dtpProximaCita.Size = new System.Drawing.Size(100, 24);
-            this.dtpProximaCita.TabIndex = 7;
+            this.dtpProximaCita.TabIndex = 6;
+            this.dtpProximaCita.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpProximaCita_KeyPress);
             // 
             // label4
             // 
@@ -217,7 +320,8 @@
             this.txtFUA.MaxLength = 15;
             this.txtFUA.Name = "txtFUA";
             this.txtFUA.Size = new System.Drawing.Size(156, 24);
-            this.txtFUA.TabIndex = 9;
+            this.txtFUA.TabIndex = 7;
+            this.txtFUA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFUA_KeyPress);
             // 
             // label5
             // 
@@ -262,48 +366,70 @@
             this.btnAgregarControl.Location = new System.Drawing.Point(3, 3);
             this.btnAgregarControl.Name = "btnAgregarControl";
             this.btnAgregarControl.Size = new System.Drawing.Size(170, 64);
-            this.btnAgregarControl.TabIndex = 15;
-            this.btnAgregarControl.Text = "Nuevo";
+            this.btnAgregarControl.TabIndex = 8;
+            this.btnAgregarControl.Text = "&Nuevo";
             this.btnAgregarControl.UseVisualStyleBackColor = false;
             this.btnAgregarControl.Click += new System.EventHandler(this.btnAgregarControl_Click);
             // 
             // numPresionArterialS
             // 
             this.numPresionArterialS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialS.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialS.Location = new System.Drawing.Point(402, 75);
             this.numPresionArterialS.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
+            this.numPresionArterialS.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.numPresionArterialS.Name = "numPresionArterialS";
             this.numPresionArterialS.Size = new System.Drawing.Size(49, 24);
-            this.numPresionArterialS.TabIndex = 16;
+            this.numPresionArterialS.TabIndex = 3;
             this.numPresionArterialS.Value = new decimal(new int[] {
             120,
             0,
             0,
             0});
             this.numPresionArterialS.ValueChanged += new System.EventHandler(this.numPresionArterialS_ValueChanged);
+            this.numPresionArterialS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numPresionArterialS_KeyPress);
             // 
             // numPresionArterialD
             // 
             this.numPresionArterialD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialD.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialD.Location = new System.Drawing.Point(473, 75);
             this.numPresionArterialD.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
+            this.numPresionArterialD.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.numPresionArterialD.Name = "numPresionArterialD";
             this.numPresionArterialD.Size = new System.Drawing.Size(42, 24);
-            this.numPresionArterialD.TabIndex = 17;
+            this.numPresionArterialD.TabIndex = 4;
             this.numPresionArterialD.Value = new decimal(new int[] {
             80,
             0,
             0,
             0});
             this.numPresionArterialD.ValueChanged += new System.EventHandler(this.numPresionArterialD_ValueChanged);
+            this.numPresionArterialD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numPresionArterialD_KeyPress);
             // 
             // numEdadGestacional
             // 
@@ -321,12 +447,13 @@
             0});
             this.numEdadGestacional.Name = "numEdadGestacional";
             this.numEdadGestacional.Size = new System.Drawing.Size(41, 24);
-            this.numEdadGestacional.TabIndex = 18;
+            this.numEdadGestacional.TabIndex = 2;
             this.numEdadGestacional.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numEdadGestacional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numEdadGestacional_KeyPress);
             // 
             // btnImprimir
             // 
@@ -339,8 +466,8 @@
             this.btnImprimir.Location = new System.Drawing.Point(3, 213);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(170, 64);
-            this.btnImprimir.TabIndex = 19;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TabIndex = 11;
+            this.btnImprimir.Text = "&Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
@@ -355,8 +482,8 @@
             this.btnGuardar.Location = new System.Drawing.Point(3, 73);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(170, 64);
-            this.btnGuardar.TabIndex = 20;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -371,8 +498,8 @@
             this.btnEliminar.Location = new System.Drawing.Point(3, 143);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(170, 64);
-            this.btnEliminar.TabIndex = 21;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -387,8 +514,8 @@
             this.btnSalir.Location = new System.Drawing.Point(3, 283);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(170, 66);
-            this.btnSalir.TabIndex = 22;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -437,10 +564,11 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(335, 6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(583, 263);
-            this.groupBox2.TabIndex = 102;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "...";
             // 
@@ -464,17 +592,18 @@
             0});
             this.nudSulfatoFerroso.Name = "nudSulfatoFerroso";
             this.nudSulfatoFerroso.Size = new System.Drawing.Size(49, 24);
-            this.nudSulfatoFerroso.TabIndex = 20;
+            this.nudSulfatoFerroso.TabIndex = 5;
             this.nudSulfatoFerroso.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
+            this.nudSulfatoFerroso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudSulfatoFerroso_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 126);
+            this.label9.Location = new System.Drawing.Point(455, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 18);
             this.label9.TabIndex = 19;
@@ -513,13 +642,26 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.lblAlerta);
             this.groupBox3.Controls.Add(this.pbAlerta);
-            this.groupBox3.Controls.Add(this.txtAlerta);
             this.groupBox3.Location = new System.Drawing.Point(933, 362);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(176, 215);
             this.groupBox3.TabIndex = 106;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // lblAlerta
+            // 
+            this.lblAlerta.AutoSize = true;
+            this.lblAlerta.BackColor = System.Drawing.Color.White;
+            this.lblAlerta.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblAlerta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.lblAlerta.ForeColor = System.Drawing.Color.Red;
+            this.lblAlerta.Location = new System.Drawing.Point(15, 139);
+            this.lblAlerta.Name = "lblAlerta";
+            this.lblAlerta.Size = new System.Drawing.Size(0, 18);
+            this.lblAlerta.TabIndex = 101;
             // 
             // groupBox4
             // 
@@ -647,8 +789,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1137, 627);
             this.Name = "frmCitaPreNatal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "------ Cita Pre Natal -----";
@@ -695,12 +836,10 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox pbAlerta;
-        private System.Windows.Forms.TextBox txtAlerta;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nudSulfatoFerroso;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
