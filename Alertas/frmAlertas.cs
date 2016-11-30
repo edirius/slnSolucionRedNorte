@@ -30,6 +30,7 @@ namespace Alertas
 
         cAlertas miAlerta = new cAlertas();
         ArrayList miLista = new ArrayList();
+        DateTime Ahora = DateTime.Today;
         string FechaTexto = "";
         public frmAlertas()
         {
@@ -676,6 +677,7 @@ namespace Alertas
             {
                 CargarTodosGrid();
                 MostrarNuevasGestantesConProblemas();
+
             }
             else { }
         }

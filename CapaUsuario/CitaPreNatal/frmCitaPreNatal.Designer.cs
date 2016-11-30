@@ -633,9 +633,9 @@
             // 
             this.pbCitas.BackgroundImage = global::CapaUsuario.Properties.Resources.VisitaDomiciliaria;
             this.pbCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbCitas.Location = new System.Drawing.Point(6, 33);
+            this.pbCitas.Location = new System.Drawing.Point(6, 13);
             this.pbCitas.Name = "pbCitas";
-            this.pbCitas.Size = new System.Drawing.Size(307, 163);
+            this.pbCitas.Size = new System.Drawing.Size(307, 244);
             this.pbCitas.TabIndex = 0;
             this.pbCitas.TabStop = false;
             // 
