@@ -3475,6 +3475,12 @@ namespace CapaUsuario
 
         }
 
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            hallar_FPP();
+            hallar_semana_primera_atencion();
+        }
+
         private void txtOrigenEESS_Enter_1(object sender, EventArgs e)
         {
             txtOrigenEESS.Select(0, txtOrigenEESS.Text.Length);

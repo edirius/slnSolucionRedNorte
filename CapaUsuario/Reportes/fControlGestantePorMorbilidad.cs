@@ -18,6 +18,7 @@ namespace CapaUsuario.Reportes
         int año_numero = 0;
         string morbilidad = "";
         int Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic, Año;
+
         public fControlGestantePorMorbilidad()
         {
             InitializeComponent();

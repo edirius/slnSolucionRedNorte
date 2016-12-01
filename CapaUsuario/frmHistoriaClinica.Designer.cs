@@ -1150,6 +1150,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 24);
             this.dtpFecha.TabIndex = 1;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             this.dtpFecha.Enter += new System.EventHandler(this.dtpFecha_Enter);
             this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
             this.dtpFecha.Leave += new System.EventHandler(this.dtpFecha_Leave);
