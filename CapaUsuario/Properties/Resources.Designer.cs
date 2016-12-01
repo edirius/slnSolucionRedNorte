@@ -273,6 +273,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ecografia {
+            get {
+                object obj = ResourceManager.GetObject("ecografia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EMBARAZADA {
             get {
                 object obj = ResourceManager.GetObject("EMBARAZADA", resourceCulture);
@@ -456,6 +466,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap FormularioAlertas {
             get {
                 object obj = ResourceManager.GetObject("FormularioAlertas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gestante {
+            get {
+                object obj = ResourceManager.GetObject("gestante", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -673,6 +693,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap laboratorio {
+            get {
+                object obj = ResourceManager.GetObject("laboratorio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lineas_1 {
             get {
                 object obj = ResourceManager.GetObject("lineas-1", resourceCulture);
@@ -686,6 +716,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap Login {
             get {
                 object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -746,6 +786,26 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap Obstetra2 {
             get {
                 object obj = ResourceManager.GetObject("Obstetra2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap odontologia {
+            get {
+                object obj = ResourceManager.GetObject("odontologia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap parto {
+            get {
+                object obj = ResourceManager.GetObject("parto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -753,8 +753,14 @@
     <None Include="Resources\cusco_pisac1.jpg" />
     <None Include="Resources\descarga %282%29.jpg" />
     <None Include="Resources\descarga %282%29 bw.jpg" />
+    <None Include="ecografia.png" />
+    <None Include="gestante.png" />
     <Content Include="icono %281%29.ico" />
     <None Include="Resources\FondoFormularios.jpg" />
+    <None Include="logo.jpg" />
+    <None Include="odontologia.jpg" />
+    <None Include="parto.jpg" />
+    <None Include="laboratorio.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

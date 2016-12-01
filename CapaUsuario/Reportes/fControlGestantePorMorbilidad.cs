@@ -35,12 +35,6 @@ namespace CapaUsuario.Reportes
 
             establecer_combos_fecha_actual();
             rbExtrema.Checked = true;
-
-            
-
-            
-
-
         }
 
         private void establecer_combos_fecha_actual()
