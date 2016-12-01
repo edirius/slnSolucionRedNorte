@@ -46,7 +46,7 @@ namespace CapaUsuario.CitaPreNatal
 
         public cCitaPrenatal oCitaPrenatal = new cCitaPrenatal();
         private int limitePresionArterialS = 140;
-        private int limitePresionArterialD = 85;
+        private int limitePresionArterialD = 90;
 
         private string estado = "nuevo";
 
@@ -353,7 +353,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void numPresionArterialS_ValueChanged(object sender, EventArgs e)
         {
-            if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
+            if ((numPresionArterialS.Value >= limitePresionArterialS) || (numPresionArterialD.Value >= limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
                 txtAlerta.Visible = true;
@@ -370,7 +370,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void numPresionArterialD_ValueChanged(object sender, EventArgs e)
         {
-            if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
+            if ((numPresionArterialS.Value >= limitePresionArterialS) || (numPresionArterialD.Value >= limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
                 txtAlerta.Visible = true;
@@ -390,7 +390,7 @@ namespace CapaUsuario.CitaPreNatal
         {
             if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
             {
-                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
+                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) >= limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) >= limitePresionArterialD))
                 {
                     dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
                 }

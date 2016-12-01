@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantenimientoControlPeuperio));
             this.dgvControlPeuperio = new System.Windows.Forms.DataGridView();
-            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -62,6 +54,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPeuperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAlturaUterino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).BeginInit();
@@ -82,6 +83,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvControlPeuperio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvControlPeuperio.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvControlPeuperio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvControlPeuperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvControlPeuperio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtcontrolpeuperio,
@@ -93,77 +102,14 @@
             this.alturauterino,
             this.fua,
             this.detalle});
-            this.dgvControlPeuperio.Location = new System.Drawing.Point(12, 228);
+            this.dgvControlPeuperio.Location = new System.Drawing.Point(12, 241);
             this.dgvControlPeuperio.Name = "dgvControlPeuperio";
             this.dgvControlPeuperio.ReadOnly = true;
             this.dgvControlPeuperio.RowHeadersVisible = false;
             this.dgvControlPeuperio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvControlPeuperio.Size = new System.Drawing.Size(578, 253);
+            this.dgvControlPeuperio.Size = new System.Drawing.Size(576, 240);
             this.dgvControlPeuperio.TabIndex = 11;
             this.dgvControlPeuperio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlPeuperio_CellClick);
-            // 
-            // idtcontrolpeuperio
-            // 
-            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PUERPERIO";
-            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
-            this.idtcontrolpeuperio.ReadOnly = true;
-            this.idtcontrolpeuperio.Visible = false;
-            // 
-            // numero
-            // 
-            this.numero.FillWeight = 60.9137F;
-            this.numero.HeaderText = "NUMERO";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.FillWeight = 107.8173F;
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // presionarterial
-            // 
-            this.presionarterial.FillWeight = 107.8173F;
-            this.presionarterial.HeaderText = "PRESION ARTERIAL";
-            this.presionarterial.Name = "presionarterial";
-            this.presionarterial.ReadOnly = true;
-            // 
-            // presionarterials
-            // 
-            this.presionarterials.HeaderText = "PRESION ARTERIAL S";
-            this.presionarterials.Name = "presionarterials";
-            this.presionarterials.ReadOnly = true;
-            this.presionarterials.Visible = false;
-            // 
-            // presionarteriald
-            // 
-            this.presionarteriald.HeaderText = "PRESION ARTERIAL D";
-            this.presionarteriald.Name = "presionarteriald";
-            this.presionarteriald.ReadOnly = true;
-            this.presionarteriald.Visible = false;
-            // 
-            // alturauterino
-            // 
-            this.alturauterino.FillWeight = 107.8173F;
-            this.alturauterino.HeaderText = "ALTURA UTERINO";
-            this.alturauterino.Name = "alturauterino";
-            this.alturauterino.ReadOnly = true;
-            // 
-            // fua
-            // 
-            this.fua.FillWeight = 107.8173F;
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.FillWeight = 107.8173F;
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -251,7 +197,7 @@
             this.txtNumero.Location = new System.Drawing.Point(125, 3);
             this.txtNumero.MaxLength = 15;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(154, 20);
+            this.txtNumero.Size = new System.Drawing.Size(154, 24);
             this.txtNumero.TabIndex = 0;
             // 
             // numAlturaUterino
@@ -290,7 +236,7 @@
             this.txtFUA.Location = new System.Drawing.Point(125, 63);
             this.txtFUA.MaxLength = 15;
             this.txtFUA.Name = "txtFUA";
-            this.txtFUA.Size = new System.Drawing.Size(400, 20);
+            this.txtFUA.Size = new System.Drawing.Size(400, 24);
             this.txtFUA.TabIndex = 5;
             this.txtFUA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFUA_KeyPress);
             // 
@@ -299,7 +245,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 68);
+            this.label4.Location = new System.Drawing.Point(3, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 151;
@@ -391,10 +337,10 @@
             this.txtDetalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tableLayoutPanel1.SetColumnSpan(this.txtDetalle, 5);
             this.txtDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalle.Location = new System.Drawing.Point(125, 89);
+            this.txtDetalle.Location = new System.Drawing.Point(125, 93);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(400, 82);
+            this.txtDetalle.Size = new System.Drawing.Size(400, 91);
             this.txtDetalle.TabIndex = 6;
             this.txtDetalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalle_KeyPress);
             // 
@@ -440,9 +386,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 86);
+            this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 88);
+            this.label2.Size = new System.Drawing.Size(116, 97);
             this.label2.TabIndex = 146;
             this.label2.Text = "Detalle :";
             // 
@@ -481,7 +427,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 174);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 187);
             this.tableLayoutPanel1.TabIndex = 153;
             // 
             // groupBox1
@@ -529,12 +475,76 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(578, 210);
+            this.groupBox2.Size = new System.Drawing.Size(578, 223);
             this.groupBox2.TabIndex = 156;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "...";
+            this.groupBox2.Text = "Datos de Mantenimiento de Control Puerperio";
+            // 
+            // idtcontrolpeuperio
+            // 
+            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PUERPERIO";
+            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
+            this.idtcontrolpeuperio.ReadOnly = true;
+            this.idtcontrolpeuperio.Visible = false;
+            // 
+            // numero
+            // 
+            this.numero.FillWeight = 60.9137F;
+            this.numero.HeaderText = "NRO";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.FillWeight = 107.8173F;
+            this.fecha.HeaderText = "FECHA";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // presionarterial
+            // 
+            this.presionarterial.FillWeight = 107.8173F;
+            this.presionarterial.HeaderText = "PRESION ARTERIAL";
+            this.presionarterial.Name = "presionarterial";
+            this.presionarterial.ReadOnly = true;
+            // 
+            // presionarterials
+            // 
+            this.presionarterials.HeaderText = "PRESION ARTERIAL S";
+            this.presionarterials.Name = "presionarterials";
+            this.presionarterials.ReadOnly = true;
+            this.presionarterials.Visible = false;
+            // 
+            // presionarteriald
+            // 
+            this.presionarteriald.HeaderText = "PRESION ARTERIAL D";
+            this.presionarteriald.Name = "presionarteriald";
+            this.presionarteriald.ReadOnly = true;
+            this.presionarteriald.Visible = false;
+            // 
+            // alturauterino
+            // 
+            this.alturauterino.FillWeight = 107.8173F;
+            this.alturauterino.HeaderText = "ALTURA UTERINO";
+            this.alturauterino.Name = "alturauterino";
+            this.alturauterino.ReadOnly = true;
+            // 
+            // fua
+            // 
+            this.fua.FillWeight = 107.8173F;
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.FillWeight = 107.8173F;
+            this.detalle.HeaderText = "DETALLE";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
             // 
             // frmMantenimientoControlPeuperio
             // 
@@ -542,7 +552,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 493);
+            this.ClientSize = new System.Drawing.Size(998, 493);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.dgvControlPeuperio);
@@ -590,6 +600,10 @@
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.NumericUpDown numPresionArterialS;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtcontrolpeuperio;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
@@ -599,9 +613,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn alturauterino;
         private System.Windows.Forms.DataGridViewTextBoxColumn fua;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

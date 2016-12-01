@@ -363,9 +363,19 @@
             // numPresionArterialS
             // 
             this.numPresionArterialS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialS.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialS.Location = new System.Drawing.Point(402, 75);
             this.numPresionArterialS.Maximum = new decimal(new int[] {
-            200,
+            140,
+            0,
+            0,
+            0});
+            this.numPresionArterialS.Minimum = new decimal(new int[] {
+            90,
             0,
             0,
             0});
@@ -383,9 +393,19 @@
             // numPresionArterialD
             // 
             this.numPresionArterialD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialD.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialD.Location = new System.Drawing.Point(473, 75);
             this.numPresionArterialD.Maximum = new decimal(new int[] {
-            200,
+            90,
+            0,
+            0,
+            0});
+            this.numPresionArterialD.Minimum = new decimal(new int[] {
+            60,
             0,
             0,
             0});

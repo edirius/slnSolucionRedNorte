@@ -168,6 +168,7 @@
             this.ClientSize = new System.Drawing.Size(704, 436);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgvObstetras);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMantenimientoObstetra";
