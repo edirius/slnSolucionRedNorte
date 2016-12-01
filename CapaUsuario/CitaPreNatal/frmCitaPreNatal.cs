@@ -86,7 +86,7 @@ namespace CapaUsuario.CitaPreNatal
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
             
-            while ( semana_gestacional <= 42 && Fecha_Registro <= FPP ) {
+            while ( semana_gestacional <= 42 && Fecha_Registro < FPP ) {
 
                 /*nº cita, fecha cita, edad gestacional */
                 odrCitas = odtCitas.NewRow();
@@ -162,18 +162,21 @@ namespace CapaUsuario.CitaPreNatal
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                 }
