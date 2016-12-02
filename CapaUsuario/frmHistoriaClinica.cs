@@ -1559,8 +1559,73 @@ namespace CapaUsuario
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            
+
+            //ingresar_hc();
             this.Close();
         }
+
+        private static readonly Random getrandom = new Random();
+        private static readonly object syncLock = new object();
+        public static int GetRandomNumber(int min, int max)
+        {
+            lock (syncLock)
+            { // synchronize
+                return getrandom.Next(min, max);
+            }
+        }
+
+        private void ingresar_hc()
+        {
+
+            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+
+            DataTable odtGestante = new DataTable();
+             
+
+            odtGestante = oGestante.ListarPacienteXIdEstablecimientoSalud(576 , 10);
+
+            /*Buscando indice del item agregado o modificado*/
+            
+            
+            for (int i = 0; i < odtGestante.Rows.Count; i++)
+            {
+                string idtpaciente = odtGestante.Rows[i][1].ToString();
+
+                oHistoriaClinica.Idtestablecimientosalud = "E006";
+                oHistoriaClinica.Tipollegada = "";
+                oHistoriaClinica.Tiempollegada = "";
+                oHistoriaClinica.Edad = 29;
+
+                oHistoriaClinica.Gestas = GetRandomNumber(1, 5);
+                oHistoriaClinica.Partos = GetRandomNumber(1, 5);
+                oHistoriaClinica.Abortos = GetRandomNumber(1, 5);
+                oHistoriaClinica.Hijosvivos = GetRandomNumber(1, 5);
+                oHistoriaClinica.Hijosmuertos = GetRandomNumber(1, 5);
+                oHistoriaClinica.Fur = dtpFUR.Value.Date;
+                oHistoriaClinica.Fpp = dtpFPP.Value.Date;
+
+                oHistoriaClinica.Trimestreapn = 1;
+                oHistoriaClinica.Semanaapn = "8";
+                oHistoriaClinica.Observaciones = txtObservaciones.Text;
+                oHistoriaClinica.Idtpaciente = idtpaciente;
+                oHistoriaClinica.Idtobstetra = "E006O00001";
+                oHistoriaClinica.Fecha = dtpFecha.Value;
+
+                oHistoriaClinica.Transeunte = 0;
+                oHistoriaClinica.OrigenEESS = "";
+
+                oHistoriaClinica.Archivado = 0;
+
+                oHistoriaClinica.CrearHistoriaClinica();
+            }
+
+            
+
+        }
+
+
 
         private void dgvHC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
