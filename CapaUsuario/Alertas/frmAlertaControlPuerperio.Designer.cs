@@ -57,6 +57,7 @@
             this.ClientSize = new System.Drawing.Size(716, 449);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "frmAlertaControlPuerperio";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alerta Control Puerperio";
             this.Load += new System.EventHandler(this.frmAlertaControlPuerperio_Load);

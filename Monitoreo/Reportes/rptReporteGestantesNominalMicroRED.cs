@@ -16,14 +16,14 @@ namespace Monitoreo.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptReporteNominalGestanteMicroRED : ReportClass {
+    public class rptReporteGestantesNominalMicroRED : ReportClass {
         
-        public rptReporteNominalGestanteMicroRED() {
+        public rptReporteGestantesNominalMicroRED() {
         }
         
         public override string ResourceName {
             get {
-                return "rptReporteNominalGestanteMicroRED.rpt";
+                return "rptReporteGestantesNominalMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Monitoreo.Reportes {
         
         public override string FullResourceName {
             get {
-                return "Monitoreo.Reportes.rptReporteNominalGestanteMicroRED.rpt";
+                return "Monitoreo.Reportes.rptReporteGestantesNominalMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -146,9 +146,9 @@ namespace Monitoreo.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptReporteNominalGestanteMicroRED : Component, ICachedReport {
+    public class CachedrptReporteGestantesNominalMicroRED : Component, ICachedReport {
         
-        public CachedrptReporteNominalGestanteMicroRED() {
+        public CachedrptReporteGestantesNominalMicroRED() {
         }
         
         [Browsable(false)]
@@ -185,7 +185,7 @@ namespace Monitoreo.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptReporteNominalGestanteMicroRED rpt = new rptReporteNominalGestanteMicroRED();
+            rptReporteGestantesNominalMicroRED rpt = new rptReporteGestantesNominalMicroRED();
             rpt.Site = this.Site;
             return rpt;
         }
