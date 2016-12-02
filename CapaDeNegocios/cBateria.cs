@@ -64,17 +64,17 @@ namespace CapaDeNegocios
         {
             return Conexion.GDatos.TraerDataTable("spAlertaGestanteVIH", id, id2, mes, año);
         }
-        public DataTable AlertaGestanteSifilis(string id, string id2, string mes, string año)
+        public DataTable AlertaGestanteSifilis(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSifilis", id, id2, mes, año);
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSifilis", mes, año);
         }
         public DataTable AlertaGestanteOrina(string id, string id2, string mes, string año)
         {
             return Conexion.GDatos.TraerDataTable("spAlertaGestanteOrina", id, id2, mes, año);
         }
-        public DataTable AlertaGestanteSinFechaTratamiento(string id, string id2, string mes, string año)
+        public DataTable AlertaGestanteSinFechaTratamiento(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSinFechaTratamiento", id, id2, mes, año);
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteSinFechaTratamiento", mes, año);
         }
         public DataTable AlertaGestanteSinExamenOrina(string id, string id2, string mes, string año)
         {

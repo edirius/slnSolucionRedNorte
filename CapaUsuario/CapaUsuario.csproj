@@ -341,6 +341,12 @@
     <Compile Include="Reportes\fCantidadGestantes.Designer.cs">
       <DependentUpon>fCantidadGestantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\fControlGestantePorMorbilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fControlGestantePorMorbilidad.Designer.cs">
+      <DependentUpon>fControlGestantePorMorbilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\fControlGestanteporPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,18 @@
     </Compile>
     <Compile Include="Reportes\fControlGestantesEntreFechas.Designer.cs">
       <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\fReporteMorbilidadExtrema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\fReporteMorbilidadExtrema.Designer.cs">
+      <DependentUpon>fReporteMorbilidadExtrema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptReporteMorbilidadExtrema.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteMorbilidadExtrema.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Seguridad\frmAlerta.cs">
       <SubType>Form</SubType>
@@ -521,11 +539,21 @@
     <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
       <DependentUpon>fCantidadGestantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fControlGestantePorMorbilidad.resx">
+      <DependentUpon>fControlGestantePorMorbilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fControlGestanteporPaciente.resx">
       <DependentUpon>fControlGestanteporPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fControlGestantesEntreFechas.resx">
       <DependentUpon>fControlGestantesEntreFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\fReporteMorbilidadExtrema.resx">
+      <DependentUpon>fReporteMorbilidadExtrema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteMorbilidadExtrema.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteMorbilidadExtrema.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>
@@ -725,8 +753,14 @@
     <None Include="Resources\cusco_pisac1.jpg" />
     <None Include="Resources\descarga %282%29.jpg" />
     <None Include="Resources\descarga %282%29 bw.jpg" />
+    <None Include="ecografia.png" />
+    <None Include="gestante.png" />
     <Content Include="icono %281%29.ico" />
     <None Include="Resources\FondoFormularios.jpg" />
+    <None Include="logo.jpg" />
+    <None Include="odontologia.jpg" />
+    <None Include="parto.jpg" />
+    <None Include="laboratorio.jpg" />
     <Content Include="Resources\icono %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -50,7 +50,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.IsMdiContainer = true;
             this.Name = "frmReporteGestantesSinBateria";
-            this.Text = "frmReporteGestantesSinBateria";
+            this.Text = "Reporte de Gestantes con problemas en bateria";
             this.Load += new System.EventHandler(this.frmReporteGestantesSinBateria_Load);
             this.ResumeLayout(false);
 

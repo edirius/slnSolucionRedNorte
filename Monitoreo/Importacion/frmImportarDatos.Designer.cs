@@ -50,8 +50,9 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblStatus.Location = new System.Drawing.Point(271, 270);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Font = new System.Drawing.Font("Palatino", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(271, 398);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(16, 13);
             this.lblStatus.TabIndex = 17;
@@ -61,12 +62,13 @@
             // 
             this.progressBar.BackColor = System.Drawing.Color.White;
             this.progressBar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.progressBar.Location = new System.Drawing.Point(102, 287);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar.Location = new System.Drawing.Point(40, 287);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(424, 32);
+            this.progressBar.Size = new System.Drawing.Size(495, 32);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 16;
+            this.progressBar.Visible = false;
             // 
             // pictureBox2
             // 
@@ -74,10 +76,10 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox2.Image = global::Monitoreo.Properties.Resources.importar;
-            this.pictureBox2.Location = new System.Drawing.Point(319, 81);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(425, 81);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(240, 180);
+            this.pictureBox2.Size = new System.Drawing.Size(241, 180);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
@@ -88,10 +90,10 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Image = global::Monitoreo.Properties.Resources.ExportarDatos;
-            this.pictureBox1.Location = new System.Drawing.Point(69, 81);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(108, 81);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(241, 180);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -104,12 +106,12 @@
             this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportar.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportar.ForeColor = System.Drawing.Color.White;
-            this.btnImportar.Location = new System.Drawing.Point(366, 327);
-            this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnImportar.Location = new System.Drawing.Point(274, 415);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(193, 79);
+            this.btnImportar.Size = new System.Drawing.Size(225, 79);
             this.btnImportar.TabIndex = 13;
-            this.btnImportar.Text = "IMPORTAR";
+            this.btnImportar.Text = "IMPORTAR DATOS";
             this.btnImportar.UseVisualStyleBackColor = false;
             this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
@@ -121,13 +123,14 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportar.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(69, 327);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportar.Location = new System.Drawing.Point(108, 415);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(177, 79);
+            this.btnExportar.Size = new System.Drawing.Size(225, 79);
             this.btnExportar.TabIndex = 12;
             this.btnExportar.Text = "EXPORTAR DATOS";
             this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Visible = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // dlgAbrir
@@ -138,11 +141,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(186, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Palatino", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(193, 10);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(99, 18);
             this.label2.TabIndex = 20;
             this.label2.Text = "MICRORED:";
             // 
@@ -150,30 +154,33 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(90, 57);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Palatino", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(45, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 13);
+            this.label1.Size = new System.Drawing.Size(244, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "ESTABLECIMIENTO DE SALUD:";
             // 
             // cbEstablecimientoSalud
             // 
             this.cbEstablecimientoSalud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstablecimientoSalud.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbEstablecimientoSalud.FormattingEnabled = true;
-            this.cbEstablecimientoSalud.Location = new System.Drawing.Point(264, 52);
+            this.cbEstablecimientoSalud.Location = new System.Drawing.Point(310, 43);
             this.cbEstablecimientoSalud.Name = "cbEstablecimientoSalud";
-            this.cbEstablecimientoSalud.Size = new System.Drawing.Size(274, 21);
+            this.cbEstablecimientoSalud.Size = new System.Drawing.Size(319, 21);
             this.cbEstablecimientoSalud.TabIndex = 23;
             // 
             // cbMicrored
             // 
             this.cbMicrored.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMicrored.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbMicrored.FormattingEnabled = true;
-            this.cbMicrored.Location = new System.Drawing.Point(264, 20);
+            this.cbMicrored.Location = new System.Drawing.Point(310, 12);
             this.cbMicrored.Name = "cbMicrored";
-            this.cbMicrored.Size = new System.Drawing.Size(274, 21);
+            this.cbMicrored.Size = new System.Drawing.Size(319, 21);
             this.cbMicrored.TabIndex = 22;
             this.cbMicrored.SelectedIndexChanged += new System.EventHandler(this.cbMicrored_SelectedIndexChanged);
             // 
@@ -187,16 +194,16 @@
             this.circularProgressBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar.InnerMargin = 2;
             this.circularProgressBar.InnerWidth = -1;
-            this.circularProgressBar.Location = new System.Drawing.Point(592, 108);
+            this.circularProgressBar.Location = new System.Drawing.Point(323, 268);
             this.circularProgressBar.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar.Name = "circularProgressBar";
             this.circularProgressBar.OuterColor = System.Drawing.Color.White;
             this.circularProgressBar.OuterMargin = -25;
             this.circularProgressBar.OuterWidth = 26;
-            this.circularProgressBar.ProgressColor = System.Drawing.SystemColors.MenuHighlight;
+            this.circularProgressBar.ProgressColor = System.Drawing.SystemColors.Highlight;
             this.circularProgressBar.ProgressWidth = 25;
             this.circularProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar.Size = new System.Drawing.Size(218, 211);
+            this.circularProgressBar.Size = new System.Drawing.Size(130, 130);
             this.circularProgressBar.StartAngle = 270;
             this.circularProgressBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularProgressBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -210,11 +217,11 @@
             // 
             // frmImportarDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Monitoreo.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(847, 507);
+            this.ClientSize = new System.Drawing.Size(796, 507);
             this.Controls.Add(this.circularProgressBar);
             this.Controls.Add(this.cbEstablecimientoSalud);
             this.Controls.Add(this.cbMicrored);
@@ -226,7 +233,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnImportar);
             this.Controls.Add(this.btnExportar);
+            this.Font = new System.Drawing.Font("Palatino", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(812, 545);
             this.Name = "frmImportarDatos";
             this.Text = "Importación de datos";
             this.Load += new System.EventHandler(this.frmImportarDatos_Load);

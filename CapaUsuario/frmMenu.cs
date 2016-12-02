@@ -145,11 +145,35 @@ namespace CapaUsuario
 
         private void alertasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            //Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
+            //fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
+            //fAlerta.CodigoObstetra = IdObstetra;
+            //fAlerta.MdiParent = this;
+            //fAlerta.Show();
+        }
+        CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+        private void reportesDeAlertasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
             fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
             fAlerta.CodigoObstetra = IdObstetra;
-            fAlerta.MdiParent = this;
-            fAlerta.Show();
+            if (oUtilitarios.verificarventanaabierta("frmAlerta"))
+            {
+                fAlerta.MdiParent = this;
+                fAlerta.Show();
+            }
+            
+        }
+
+        private void reportesDeMorbilidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.fControlGestantePorMorbilidad fCGM = new Reportes.fControlGestantePorMorbilidad();
+
+            if (oUtilitarios.verificarventanaabierta("fControlGestantePorMorbilidad"))
+            {
+                fCGM.MdiParent = this;
+                fCGM.Show();
+            }
         }
     }
 }

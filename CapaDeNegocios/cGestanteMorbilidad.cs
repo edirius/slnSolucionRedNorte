@@ -31,5 +31,15 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spEliminarGestanteMorbilidad", idthistoriaclinica);
         }
 
+        public DataTable ReporteMorbilidadExtrema(int Ene, int Feb, int Mar, int Abr, int May, int Jun, int Jul, int Ago, int Sep, int Oct, int Nov, int Dic, int Año)
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteMorbilidadExtrema", Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic,Año );
+        }
+
+        public DataTable ReporteMorbilidadPotencial(int Ene, int Feb, int Mar, int Abr, int May, int Jun, int Jul, int Ago, int Sep, int Oct, int Nov, int Dic, int Año)
+        {
+            return Conexion.GDatos.TraerDataTable("spReporteMorbilidadPotencial", Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic, Año);
+        }
+
     }
 }
