@@ -29,7 +29,8 @@ namespace CapaUsuario.Exportacion
 
         private void frmExportacion_Load(object sender, EventArgs e)
         {
-            
+            lblEstablecimiento.Text = NombreEstablecimientoSalud;
+            lblObstetra.Text = NombreObstetra;
         }
 
         //protected override void OnPaintBackground(PaintEventArgs e)
@@ -45,22 +46,29 @@ namespace CapaUsuario.Exportacion
         string NombreArchivo;
         private async void btnExportar_Click(object sender, EventArgs e)
         {
-            try { }
-            catch { }
-            oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.GSYS)|*.GSYS";
-            dlgGuardar.DefaultExt = ".GSYS";
+            try
+            {
+                oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
+                dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.GSYS)|*.GSYS";
+                dlgGuardar.DefaultExt = ".GSYS";
 
-            char[] delimiter = { '/' };
-            string[] substring = (IdEstablecimientoSalud + NombreEstablecimientoSalud + DateTime.Today.ToShortDateString()).Split(delimiter);
-            NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
-            dlgGuardar.FileName = NombreArchivo;
-            dlgGuardar.ShowDialog();
-            IniciarCarga();
-            oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
-            /////
-            /////
-            MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
+                char[] delimiter = { '/' };
+                string[] substring = (IdEstablecimientoSalud + NombreEstablecimientoSalud + DateTime.Today.ToShortDateString()).Split(delimiter);
+                NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
+                dlgGuardar.FileName = NombreArchivo;
+                dlgGuardar.ShowDialog();
+                IniciarCarga();
+                oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                /////
+                /////
+                MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
+            }
+            catch
+            {
+                progressBar.Visible = false;
+                lblStatus.Visible = false;
+            }
+            
         }
         
         private async void btnImportar_Click(object sender, EventArgs e)
@@ -77,6 +85,8 @@ namespace CapaUsuario.Exportacion
         }
         private async void IniciarCarga()
         {
+            progressBar.Visible = true;
+            lblStatus.Visible = true;
             List<string> list = new List<string>();
             for (int i = 0; i < 1000; i++)
                 list.Add(i.ToString());

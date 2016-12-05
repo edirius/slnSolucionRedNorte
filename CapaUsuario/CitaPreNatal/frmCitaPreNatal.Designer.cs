@@ -363,9 +363,19 @@
             // numPresionArterialS
             // 
             this.numPresionArterialS.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialS.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialS.Location = new System.Drawing.Point(402, 75);
             this.numPresionArterialS.Maximum = new decimal(new int[] {
-            200,
+            140,
+            0,
+            0,
+            0});
+            this.numPresionArterialS.Minimum = new decimal(new int[] {
+            90,
             0,
             0,
             0});
@@ -383,9 +393,19 @@
             // numPresionArterialD
             // 
             this.numPresionArterialD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numPresionArterialD.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numPresionArterialD.Location = new System.Drawing.Point(473, 75);
             this.numPresionArterialD.Maximum = new decimal(new int[] {
-            200,
+            90,
+            0,
+            0,
+            0});
+            this.numPresionArterialD.Minimum = new decimal(new int[] {
+            60,
             0,
             0,
             0});
@@ -406,11 +426,6 @@
             this.numEdadGestacional.Location = new System.Drawing.Point(156, 176);
             this.numEdadGestacional.Maximum = new decimal(new int[] {
             42,
-            0,
-            0,
-            0});
-            this.numEdadGestacional.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -633,9 +648,9 @@
             // 
             this.pbCitas.BackgroundImage = global::CapaUsuario.Properties.Resources.VisitaDomiciliaria;
             this.pbCitas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbCitas.Location = new System.Drawing.Point(6, 33);
+            this.pbCitas.Location = new System.Drawing.Point(6, 13);
             this.pbCitas.Name = "pbCitas";
-            this.pbCitas.Size = new System.Drawing.Size(307, 163);
+            this.pbCitas.Size = new System.Drawing.Size(307, 244);
             this.pbCitas.TabIndex = 0;
             this.pbCitas.TabStop = false;
             // 

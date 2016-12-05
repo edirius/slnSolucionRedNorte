@@ -37,7 +37,6 @@
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.dgvListaRN = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.establecimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRN)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -166,22 +166,6 @@
             this.dgvListaRN.Size = new System.Drawing.Size(967, 369);
             this.dgvListaRN.TabIndex = 108;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.cbAños);
-            this.groupBox1.Controls.Add(this.dgvListaRN);
-            this.groupBox1.Controls.Add(this.cbMes);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(981, 437);
-            this.groupBox1.TabIndex = 114;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar Recien Nacidos con Bajo Peso:";
-            // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -254,6 +238,22 @@
             this.establecimiento.Name = "establecimiento";
             this.establecimiento.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cbAños);
+            this.groupBox1.Controls.Add(this.dgvListaRN);
+            this.groupBox1.Controls.Add(this.cbMes);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(4, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(981, 437);
+            this.groupBox1.TabIndex = 114;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Buscar Recien Nacidos con Bajo Peso:";
+            // 
             // frmAlertaRNBajoPeso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -265,6 +265,7 @@
             this.Controls.Add(this.btnGenerarReporte);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmAlertaRNBajoPeso";
             this.Text = "Cuadro de alertas de recien nacidos con bajo peso";
             this.Load += new System.EventHandler(this.frmAlertaRNBajoPeso_Load);

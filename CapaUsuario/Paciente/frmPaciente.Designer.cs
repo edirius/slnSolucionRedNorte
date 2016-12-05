@@ -115,7 +115,6 @@
             this.groupBox1.Size = new System.Drawing.Size(260, 302);
             this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "...";
             // 
             // label9
             // 
@@ -133,9 +132,9 @@
             this.txtApePaterno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApePaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApePaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApePaterno.Location = new System.Drawing.Point(153, 110);
+            this.txtApePaterno.Location = new System.Drawing.Point(178, 113);
             this.txtApePaterno.Name = "txtApePaterno";
-            this.txtApePaterno.Size = new System.Drawing.Size(283, 24);
+            this.txtApePaterno.Size = new System.Drawing.Size(303, 24);
             this.txtApePaterno.TabIndex = 3;
             this.txtApePaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePaterno_KeyPress);
             // 
@@ -155,9 +154,9 @@
             this.txtNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(108, 68);
+            this.txtNombre.Location = new System.Drawing.Point(178, 71);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(283, 24);
+            this.txtNombre.Size = new System.Drawing.Size(303, 24);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -188,7 +187,7 @@
             this.dtpFechaNacimiento.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(182, 204);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(178, 203);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(96, 24);
             this.dtpFechaNacimiento.TabIndex = 5;
@@ -210,9 +209,9 @@
             this.txtApeMaterno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtApeMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApeMaterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeMaterno.Location = new System.Drawing.Point(157, 159);
+            this.txtApeMaterno.Location = new System.Drawing.Point(178, 156);
             this.txtApeMaterno.Name = "txtApeMaterno";
-            this.txtApeMaterno.Size = new System.Drawing.Size(283, 24);
+            this.txtApeMaterno.Size = new System.Drawing.Size(303, 24);
             this.txtApeMaterno.TabIndex = 4;
             this.txtApeMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMaterno_KeyPress);
             // 
@@ -279,9 +278,9 @@
             this.txtDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(112, 245);
+            this.txtDireccion.Location = new System.Drawing.Point(178, 245);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(369, 24);
+            this.txtDireccion.Size = new System.Drawing.Size(303, 24);
             this.txtDireccion.TabIndex = 7;
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
@@ -315,12 +314,13 @@
             this.groupBox2.Controls.Add(this.txtCodigoHistoriaClinica);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(550, 302);
             this.groupBox2.TabIndex = 120;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "...";
+            this.groupBox2.Text = "Datos gestante";
             // 
             // frmPaciente
             // 
@@ -328,7 +328,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(846, 428);
+            this.ClientSize = new System.Drawing.Size(846, 427);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
@@ -338,7 +338,7 @@
             this.Name = "frmPaciente";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Gestante";
+            this.Text = "Registro de Gestante";
             this.Load += new System.EventHandler(this.frmPaciente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

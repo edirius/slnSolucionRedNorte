@@ -68,40 +68,45 @@ namespace Monitoreo.Importacion
         }
         private void btnImportar_Click(object sender, EventArgs e)  
         {
-            string CodigoEstablecimiento;
-            dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
-            dlgAbrir.ShowDialog();
-            string CadenaTexto = "";
-            CadenaTexto = dlgAbrir.FileName.ToString();
-            CodigoEstablecimiento = (ExtractFilename(CadenaTexto)).Substring(0, 4);
-
-            if (cbEstablecimientoSalud.SelectedValue.ToString() == CodigoEstablecimiento)
+            try
             {
-                MessageBox.Show("Importando datos del establecimiento '" + cbEstablecimientoSalud.Text + "'", "Mensaje de importación...", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string[] archivos;
-                using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(dlgAbrir.FileName))
+                string CodigoEstablecimiento;
+                dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
+                dlgAbrir.ShowDialog();
+                string CadenaTexto = "";
+                CadenaTexto = dlgAbrir.FileName.ToString();
+                CodigoEstablecimiento = (ExtractFilename(CadenaTexto)).Substring(0, 4);
+
+                if (cbEstablecimientoSalud.SelectedValue.ToString() == CodigoEstablecimiento)
                 {
-                    string FileText = ReadFile.ReadToEnd();
-                    string[] delimiters = new string[] { "@@" };
-                    archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-                    if (archivos.Length != 0)
+                    MessageBox.Show("Importando datos del establecimiento '" + cbEstablecimientoSalud.Text + "'", "Mensaje de importación...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string[] archivos;
+                    using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(dlgAbrir.FileName))
                     {
-                        oExportar.BorrarDatosTabla(CodigoEstablecimiento);
-                        oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
-                        IniciarCircularProgressBar();
-                        IniciarCarga();
+                        string FileText = ReadFile.ReadToEnd();
+                        string[] delimiters = new string[] { "@@" };
+                        archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                        if (archivos.Length != 0)
+                        {
+                            oExportar.BorrarDatosTabla(CodigoEstablecimiento);
+                            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                            IniciarCircularProgressBar();
+                            IniciarCarga();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El archivo esta vacio.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                     }
-                    else
-                    {
-                        MessageBox.Show("El archivo esta vacio.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    
+                }
+                else
+                {
+                    MessageBox.Show("El código de establecimiento '" + cbEstablecimientoSalud.Text + "' no coincide con el código del establecimiento del archivo. Asegúrese que esta importando los datos del establecimiento seleccionado.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("El código de establecimiento '" + cbEstablecimientoSalud.Text + "' no coincide con el código del establecimiento del archivo. Asegúrese que esta importando los datos del establecimiento seleccionado.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }  
+            catch { }
+
         }
         private async void IniciarCarga()
         {

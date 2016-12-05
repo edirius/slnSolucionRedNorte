@@ -46,7 +46,7 @@ namespace CapaUsuario.CitaPreNatal
 
         public cCitaPrenatal oCitaPrenatal = new cCitaPrenatal();
         private int limitePresionArterialS = 140;
-        private int limitePresionArterialD = 85;
+        private int limitePresionArterialD = 90;
 
         private string estado = "nuevo";
 
@@ -86,7 +86,7 @@ namespace CapaUsuario.CitaPreNatal
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
             
-            while ( semana_gestacional <= 42 && Fecha_Registro <= FPP ) {
+            while ( semana_gestacional <= 42 && Fecha_Registro < FPP ) {
 
                 /*nº cita, fecha cita, edad gestacional */
                 odrCitas = odtCitas.NewRow();
@@ -162,18 +162,21 @@ namespace CapaUsuario.CitaPreNatal
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
                         fecha_prox_cita = Fecha_Registro.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
                 }
@@ -189,7 +192,7 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.EdadGestacional = edad_gestacional_citas;
                 oCitaPrenatal.Fua = "";
                 oCitaPrenatal.PresionArterialD = 60;
-                oCitaPrenatal.PresionArterialS = 60;
+                oCitaPrenatal.PresionArterialS = 90;
                 oCitaPrenatal.SulfatoFerroso = 30;
                 /*calculando fecha cita y proxima cita*/
                 oCitaPrenatal.FechaCitaPrenatal = fecha_cita;
@@ -254,8 +257,11 @@ namespace CapaUsuario.CitaPreNatal
 
         private void VerificarTerminoGestacion()
         {
+            /*
             try
             {
+            */
+
                 CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
                 if (miTerminoGestacion.ListarTerminoGestacion(HistoriaClinica).Rows.Count == 0)
                 {
@@ -277,11 +283,15 @@ namespace CapaUsuario.CitaPreNatal
                     btnGuardar.Enabled = false;
 
                 }
+
+            /* 
             }
+            
             catch (Exception m)
             {
                 MessageBox.Show(m.Message);
             }
+            */
         }
 
         private void pintar_asistencias() {
@@ -305,8 +315,9 @@ namespace CapaUsuario.CitaPreNatal
         private void CargarDatos()
         {
             
-            try
+            /*try
             {
+            */
                 
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 dtpProximaCita.MinDate = dtpFechaCita.Value; 
@@ -321,11 +332,12 @@ namespace CapaUsuario.CitaPreNatal
                     dtpFechaCita.Value = Convert.ToDateTime( dtgCitasMedicas.Rows[dtgCitasMedicas.Rows.Count - 1].Cells["colFechaProximaCita"].Value) ;
                 }
                 estado = "nuevo";
+            /*
             }
             catch (Exception e)
             {
                 MessageBox.Show("Error al cargar Datos: " + e.Message);
-            }
+            }*/
             
         }
 
@@ -350,7 +362,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void numPresionArterialS_ValueChanged(object sender, EventArgs e)
         {
-            if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
+            if ((numPresionArterialS.Value >= limitePresionArterialS) || (numPresionArterialD.Value >= limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
                 txtAlerta.Visible = true;
@@ -367,7 +379,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void numPresionArterialD_ValueChanged(object sender, EventArgs e)
         {
-            if ((numPresionArterialS.Value > limitePresionArterialS) || (numPresionArterialD.Value > limitePresionArterialD))
+            if ((numPresionArterialS.Value >= limitePresionArterialS) || (numPresionArterialD.Value >= limitePresionArterialD))
             {
                 pbAlerta.Visible = true;
                 txtAlerta.Visible = true;
@@ -387,7 +399,7 @@ namespace CapaUsuario.CitaPreNatal
         {
             if (dtgCitasMedicas.Rows[e.RowIndex].Cells[0].Value != null)
             {
-                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) > limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) > limitePresionArterialD))
+                if ((Convert.ToInt16 (dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialS"].Value) >= limitePresionArterialS  ) || (Convert.ToInt16(dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterialD"].Value) >= limitePresionArterialD))
                 {
                     dtgCitasMedicas.Rows[e.RowIndex].Cells["colpresionarterial"].Style.BackColor = Color.Red;
                 }
@@ -407,8 +419,10 @@ namespace CapaUsuario.CitaPreNatal
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
+            */
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 oCitaPrenatal.NumeroCita = Convert.ToInt16(txtNumeroCita.Text);
                 oCitaPrenatal.EdadGestacional = Convert.ToInt16(numEdadGestacional.Value);
@@ -444,11 +458,14 @@ namespace CapaUsuario.CitaPreNatal
 
                 
                 CargarDatos();
+        /*
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            */
         }
 
         private void dtgCitasMedicas_SelectionChanged(object sender, EventArgs e)

@@ -83,17 +83,17 @@ namespace CapaDeNegocios.Exportacion
                     {
                         case "System.String":
                             /*Desencriptar Aquí en las columnas */
-                            lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            lineaSQL = lineaSQL + "'" +  cSeguridad.DesEncriptar(columnas[j]) + "'";
                             break;
                         case "System.DateTime":
                             /*Desencriptar Aquí en las columnas */
-                            DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
 
                             lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
                             break;
                         default:
                             /*Desencriptar Aquí en las columnas */
-                            lineaSQL = lineaSQL + columnas[j];
+                            lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
                             break;
                     }
 
@@ -116,7 +116,7 @@ namespace CapaDeNegocios.Exportacion
             return true;
         }
         //insert into tObstetra(idObstetra, nombre, apellido, fecha) values(
-
+        cUtilitarios miUtilitario = new cUtilitarios();
         public bool InsertarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
         {
             DataTable tAuxiliar;
@@ -138,8 +138,8 @@ namespace CapaDeNegocios.Exportacion
                                 foreach (DataColumn col in tAuxiliar.Columns)
                                 {
 
-                                    /*Desencriptar Aquí*/
-                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    /*Encriptar Aquí*/
+                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write(",");

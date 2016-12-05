@@ -109,7 +109,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(113, 32);
+            this.label3.Location = new System.Drawing.Point(62, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
             this.label3.TabIndex = 78;
@@ -119,7 +119,7 @@
             // 
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(172, 28);
+            this.dtpFecha.Location = new System.Drawing.Point(121, 29);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(106, 24);
             this.dtpFecha.TabIndex = 1;
@@ -130,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(113, 67);
+            this.label1.Location = new System.Drawing.Point(62, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 18);
             this.label1.TabIndex = 83;
@@ -140,7 +140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 110);
+            this.label2.Location = new System.Drawing.Point(62, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 18);
             this.label2.TabIndex = 85;
@@ -154,7 +154,7 @@
             this.cbVIH.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbVIH.Location = new System.Drawing.Point(227, 106);
+            this.cbVIH.Location = new System.Drawing.Point(176, 108);
             this.cbVIH.Name = "cbVIH";
             this.cbVIH.Size = new System.Drawing.Size(136, 26);
             this.cbVIH.TabIndex = 4;
@@ -169,7 +169,7 @@
             this.cbSifilis.Items.AddRange(new object[] {
             "REACTIVO",
             "NO REACTIVO"});
-            this.cbSifilis.Location = new System.Drawing.Point(236, 146);
+            this.cbSifilis.Location = new System.Drawing.Point(185, 148);
             this.cbSifilis.Name = "cbSifilis";
             this.cbSifilis.Size = new System.Drawing.Size(136, 26);
             this.cbSifilis.TabIndex = 4;
@@ -180,7 +180,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(113, 152);
+            this.label4.Location = new System.Drawing.Point(62, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 18);
             this.label4.TabIndex = 87;
@@ -218,10 +218,6 @@
             this.groupBox1.Controls.Add(this.nudOrina);
             this.groupBox1.Controls.Add(this.nudGlucosa);
             this.groupBox1.Controls.Add(this.nudHemoglobina);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtCodigoHistoria);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtCodigoBateria);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label6);
@@ -231,12 +227,13 @@
             this.groupBox1.Controls.Add(this.cbVIH);
             this.groupBox1.Controls.Add(this.cbSifilis);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(7, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(799, 199);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "...";
+            this.groupBox1.Text = "Datos bateria";
             // 
             // txtFechaTratamiento
             // 
@@ -350,7 +347,7 @@
             // 
             this.nudHemoglobina.DecimalPlaces = 1;
             this.nudHemoglobina.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudHemoglobina.Location = new System.Drawing.Point(297, 65);
+            this.nudHemoglobina.Location = new System.Drawing.Point(246, 66);
             this.nudHemoglobina.Maximum = new decimal(new int[] {
             18,
             0,
@@ -376,7 +373,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(202, 7);
+            this.label8.Location = new System.Drawing.Point(209, 234);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(115, 18);
             this.label8.TabIndex = 97;
@@ -386,7 +383,7 @@
             // txtCodigoHistoria
             // 
             this.txtCodigoHistoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoHistoria.Location = new System.Drawing.Point(287, 4);
+            this.txtCodigoHistoria.Location = new System.Drawing.Point(294, 231);
             this.txtCodigoHistoria.Name = "txtCodigoHistoria";
             this.txtCodigoHistoria.Size = new System.Drawing.Size(82, 24);
             this.txtCodigoHistoria.TabIndex = 96;
@@ -396,7 +393,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 7);
+            this.label7.Location = new System.Drawing.Point(22, 234);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 18);
             this.label7.TabIndex = 95;
@@ -406,7 +403,7 @@
             // txtCodigoBateria
             // 
             this.txtCodigoBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoBateria.Location = new System.Drawing.Point(100, 4);
+            this.txtCodigoBateria.Location = new System.Drawing.Point(107, 231);
             this.txtCodigoBateria.Name = "txtCodigoBateria";
             this.txtCodigoBateria.Size = new System.Drawing.Size(82, 24);
             this.txtCodigoBateria.TabIndex = 94;
@@ -564,6 +561,10 @@
             this.groupBox2.Controls.Add(this.lblMensajeHemo);
             this.groupBox2.Controls.Add(this.lblAlerta);
             this.groupBox2.Controls.Add(this.pbAlerta);
+            this.groupBox2.Controls.Add(this.txtCodigoHistoria);
+            this.groupBox2.Controls.Add(this.txtCodigoBateria);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(371, 336);
@@ -778,7 +779,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(978, 601);
+            this.ClientSize = new System.Drawing.Size(978, 600);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.dgvListaBateria);

@@ -66,10 +66,10 @@ namespace CapaUsuario.Bateria
             txtCodigoBateria.Text = "";
             dtpFecha.Value = DateTime.Today;
             pbAlerta.Visible = false;
-            nudHemoglobina.Text = "";
+            nudHemoglobina.Text = "60";
             cbSifilis.Text = "NO REACTIVO";
             cbVIH.Text = "NO REACTIVO";
-            nudGlucosa.Text = "";
+            nudGlucosa.Text = "10";
             nudOrina.Text = "";
             txtFechaExamenOrina.Text = "";
             txtFechaTratamiento.Text = "";
@@ -114,46 +114,43 @@ namespace CapaUsuario.Bateria
         }
         public void Agregar()
         {
-            //try
-            //{
-            if (txtCodigoBateria.Text == "")
+            try
             {
-                Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
-                txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
-                miBateria.IdBateria = txtCodigoBateria.Text;
-                miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
-                miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
-                miBateria.Hemoglobina = nudHemoglobina.Text;
-                miBateria.Vih = cbVIH.Text;
-                miBateria.Sifilis = cbSifilis.Text;
-                miBateria.Glucosa = nudGlucosa.Text;
-                miBateria.Orina = nudOrina.Text;
-                miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
-                miBateria.FechaTratamiento = txtFechaTratamiento.Text;
-                Tabla = miBateria.AgregarBateria();
-                respuesta = Tabla.Rows[0][0].ToString();
-                mensaje = Tabla.Rows[0][1].ToString();
-
-                if (respuesta == "1")
+                if (txtCodigoBateria.Text == "")
                 {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ActualizarLista();
-                    Nuevo();
-                }
-                else if (respuesta == "0")
-                {
-                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Nuevo();
-                }
+                    Tabla = micodigo.SiguientesCodigo("tbateria", IdEstablecimiento);
+                    txtCodigoBateria.Text = Tabla.Rows[0][0].ToString();
+                    miBateria.IdBateria = txtCodigoBateria.Text;
+                    miBateria.IdHistoriaClinica = txtCodigoHistoria.Text;
+                    miBateria.Fecha = Convert.ToDateTime(dtpFecha.Value.ToShortDateString());
+                    miBateria.Hemoglobina = nudHemoglobina.Text;
+                    miBateria.Vih = cbVIH.Text;
+                    miBateria.Sifilis = cbSifilis.Text;
+                    miBateria.Glucosa = nudGlucosa.Text;
+                    miBateria.Orina = nudOrina.Text;
+                    miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
+                    miBateria.FechaTratamiento = txtFechaTratamiento.Text;
+                    Tabla = miBateria.AgregarBateria();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
 
+                    if (respuesta == "1")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ActualizarLista();
+                        Nuevo();
+                    }
+                    else if (respuesta == "0")
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Nuevo();
+                    }
+                }
             }
-            else { }
-                
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Ya existe una bateria con la misma fecha", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            catch
+            {
+                MessageBox.Show("Los campos: Hemoglobina y Glucosa deben de tener siempre un valor", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
         }
@@ -180,6 +177,7 @@ namespace CapaUsuario.Bateria
                     if (respuesta == "1")
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ActualizarLista();
                         Nuevo();
                     }
                     else if (respuesta == "0")
@@ -511,7 +509,7 @@ namespace CapaUsuario.Bateria
         {
             try
             {
-                if (dgvListaBateria.Rows[e.RowIndex].Cells["fechatratamiento"].Value == null)
+                if (dgvListaBateria.Rows[e.RowIndex].Cells["fechatratamiento"].Value == "")
                 {
                     if (dgvListaBateria.Rows[e.RowIndex].Cells[0].Value != null)
                     {
@@ -535,10 +533,8 @@ namespace CapaUsuario.Bateria
                     }
                     else { }
                 }
-                
             }
             catch { }
-
         }
 
         private void pbNuevo_Click(object sender, EventArgs e)
@@ -614,34 +610,35 @@ namespace CapaUsuario.Bateria
             }
             miUtilitario.SoloNumeros(e);
         }
-
+        
+        //nudHemoglobina.Value.ToString() != "" || nudGlucosa.Value.ToString() != ""
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoBateria.Text == "")
-            {
-                if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text != "")
+            
+                if (txtCodigoBateria.Text == "")
                 {
-                    MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Agregar();
+                    if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
+                    {
+                        MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Agregar();
+                    }
+                    else
+                    {
+                        Agregar();
+                    }
                 }
-                else
+                if (txtCodigoBateria.Text != "")
                 {
-                    Agregar();
-                }  
-            }
-            if (txtCodigoBateria.Text != "")
-            {
-                if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text != "")
-                {
-                    MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Modificar();
-                }
-                else
-                {
-                    Modificar();
-                }
-            }
-                
+                    if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
+                    {
+                        MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Modificar();
+                    }
+                    else
+                    {
+                        Modificar();
+                    }
+                }   
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
