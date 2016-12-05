@@ -429,11 +429,6 @@
             0,
             0,
             0});
-            this.numEdadGestacional.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numEdadGestacional.Name = "numEdadGestacional";
             this.numEdadGestacional.Size = new System.Drawing.Size(41, 24);
             this.numEdadGestacional.TabIndex = 2;
