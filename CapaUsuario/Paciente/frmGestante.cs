@@ -25,6 +25,7 @@ namespace CapaUsuario
         int pagina = 0;
         int cantidad_registros = 10;
         int cantidad_total_registros = 0;
+        
 
         CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
 
@@ -204,7 +205,66 @@ namespace CapaUsuario
             DataTable odtGestante = new DataTable();
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
-            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(pagina, cantidad_registros);
+            int rowIndex = 0;
+            string item = "", searchValue="";
+
+            /*hallando datos de barra de navegacion */
+            decimal dcantidad_registros = 0; 
+            decimal dcantidad_total_registros = 0;  
+
+            
+
+            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
+            odtGestante = oGestante.ListarCantidadPacientes();
+            cantidad_total_registros = Convert.ToUInt16(odtGestante.Rows[0][0]);
+
+            int total_registros = Convert.ToInt16(odtGestante.Rows[0][0].ToString());
+
+            dcantidad_registros = Convert.ToDecimal(cantidad_registros);
+            dcantidad_total_registros = Convert.ToDecimal(cantidad_total_registros);
+
+            int registros = 0;
+
+            if (cantidad_total_registros > 10)
+                registros = Math.Abs(cantidad_total_registros - 10);
+            else
+                registros = 0;
+
+
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(  registros , cantidad_registros);
+
+            /*Buscando indice del item agregado o modificado*/
+
+            searchValue = cantidad_total_registros.ToString();
+
+            for (int i = 0; i < dgvGestante.Rows.Count; i++)
+            {
+                item = dgvGestante.Rows[i].Cells[0].Value.ToString();
+                if (item.Trim() == searchValue.Trim())
+                {
+                    rowIndex = i;
+                    break;
+                }
+            }
+
+            
+
+            decimal total_registros_paciente = dcantidad_total_registros / dcantidad_registros;
+            total_registros_paciente = Math.Ceiling(total_registros_paciente);
+            cantidad_total_registros = Convert.ToInt16(total_registros_paciente);
+
+            
+
+            bnpiGestante.Text = cantidad_total_registros.ToString() ;
+            bnctGestante.Text = "de " + total_registros_paciente;
+            bnGestante.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorMovePreviousItem.Enabled = true;
+            bindingNavigatorMoveFirstItem.Enabled = true;
+            dgvGestante.Columns[1].Visible = false;
+
+            cbBuscar.SelectedItem = cbBuscar.Items[0];
 
             if (dgvGestante.Rows.Count > 0)
             {
@@ -217,35 +277,17 @@ namespace CapaUsuario
                 fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[7].Value);
                 sdireccion = Convert.ToString(dgvGestante.Rows[0].Cells[8].Value);
                 stelefono = Convert.ToString(dgvGestante.Rows[0].Cells[9].Value);
+                dgvGestante.Rows[rowIndex].Selected = true;
+                dgvGestante.CurrentCell = dgvGestante.Rows[rowIndex].Cells[2];
+
+
             }
             else
             {
                 MessageBox.Show("No hay registros de gestantes.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            oGestante.idtestablecimientosalud = IdtEstablecimientoSalud;
-            odtGestante = oGestante.ListarCantidadPacientes();
-            cantidad_total_registros = Convert.ToUInt16(odtGestante.Rows[0][0]);
-
-            /*hallando datos de barra de navegacion */
-            decimal dcantidad_registros = Convert.ToDecimal(cantidad_registros);
-            decimal dcantidad_total_registros = Convert.ToDecimal(cantidad_total_registros);
-
-            int total_registros = Convert.ToInt16(odtGestante.Rows[0][0].ToString());
-            decimal total_registros_paciente = dcantidad_total_registros / dcantidad_registros;
-            total_registros_paciente = Math.Ceiling(total_registros_paciente);
-            cantidad_total_registros = Convert.ToInt16(total_registros_paciente);
-
-            bnpiGestante.Text = "1";
-            bnctGestante.Text = "de " + total_registros_paciente;
-            bnGestante.Enabled = true;
-            bindingNavigatorMoveNextItem.Enabled = true;
-            bindingNavigatorMoveLastItem.Enabled = true;
-            bindingNavigatorMovePreviousItem.Enabled = true;
-            bindingNavigatorMoveFirstItem.Enabled = true;
-            dgvGestante.Columns[1].Visible = false;
-
-            cbBuscar.SelectedItem = cbBuscar.Items[0];
+            
         }
 
         private void llenar_datos_gestante(DataGridViewCellEventArgs e)

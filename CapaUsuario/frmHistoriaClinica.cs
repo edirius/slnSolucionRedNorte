@@ -12,6 +12,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp;
 using System.Windows.Forms.VisualStyles;
+using System.Reflection;
 
 namespace CapaUsuario
 {
@@ -1019,16 +1020,19 @@ namespace CapaUsuario
             if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
                 oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
 
-            if (oUtilitarios.es_numerico(txtPeso.Text) && Convert.ToDecimal(txtPeso.Text) < 0)
+                bool bpeso = oUtilitarios.es_numerico(txtPeso.Text);
+                bool btalla = oUtilitarios.es_numerico(txtTalla.Text);
+
+            if ( !bpeso  || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
             {
                 completo = true;
-                mensaje = "Porfavor ingresar el peso de la gestante.";
+                mensaje = "Porfavor ingresar un peso correcto de la gestante.";
             }
 
-            if (oUtilitarios.es_numerico(txtTalla.Text) && Convert.ToDecimal(txtTalla.Text) < 0 )
+            if ( !btalla || Convert.ToDecimal(txtTalla.Text) < 0 || Convert.ToDecimal(txtTalla.Text) > 3)
             {
                 completo = true;
-                mensaje = "Porfavor ingresar la talla de la gestante.";
+                mensaje = "Porfavor ingresar una talla correcta de la gestante.";
             }
 
             if (dgvOdontologia.Rows.Count < 0)
@@ -2936,11 +2940,13 @@ namespace CapaUsuario
                 MultiColumnText columns = new MultiColumnText();
                 columns.AddRegularColumns(36f, pdfDoc.PageSize.Width - 36f, 24f, 1);
 
-                //Imagen
-                string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                    //Imagen
+                    //string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
 
-                //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
-                //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
+                    //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
+                    //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
+
+                string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
 
                 string ruta_imagen = ruta + "\\logo.jpg";
                 string ruta_imagen_odo = ruta + "\\odontologia.JPG";
@@ -2948,6 +2954,7 @@ namespace CapaUsuario
                 string ruta_imagen_pue = ruta + "\\parto.JPG";
                 string ruta_imagen_bat = ruta + "\\laboratorio.JPG";
                 string ruta_imagen_ges = ruta + "\\gestante.png";
+ 
 
                 iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
                 logo.ScalePercent(24f);
@@ -2961,16 +2968,14 @@ namespace CapaUsuario
                 logo2.ScalePercent(19f);
                 logo2.SetAbsolutePosition(280f, pdfDoc.PageSize.Height - 370f);
 
-                iTextSharp.text.Image logo4 = iTextSharp.text.Image.GetInstance(ruta_imagen_bat);
+                iTextSharp.text.Image logo4 = iTextSharp.text.Image.GetInstance(ruta_imagen_pue);
                 logo4.ScalePercent(44f);
                 logo4.SetAbsolutePosition(450f, pdfDoc.PageSize.Height - 370f);
 
-                iTextSharp.text.Image logo3 = iTextSharp.text.Image.GetInstance(ruta_imagen_pue);
+                iTextSharp.text.Image logo3 = iTextSharp.text.Image.GetInstance(ruta_imagen_bat);
                 logo3.ScalePercent(44f);
                 logo3.SetAbsolutePosition(660f, pdfDoc.PageSize.Height - 370f);
-
-                
-
+                    
                 iTextSharp.text.Image logo5 = iTextSharp.text.Image.GetInstance(ruta_imagen_ges);
                 logo5.ScalePercent(34f);
                 logo5.SetAbsolutePosition(220f, pdfDoc.PageSize.Height - 190f);
@@ -3446,6 +3451,11 @@ namespace CapaUsuario
         }
 
         private void gbFecha_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbecografia_Click(object sender, EventArgs e)
         {
 
         }

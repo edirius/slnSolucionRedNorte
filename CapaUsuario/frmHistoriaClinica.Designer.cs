@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -145,6 +145,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.pblogo = new System.Windows.Forms.PictureBox();
+            this.pbodontologia = new System.Windows.Forms.PictureBox();
+            this.pbParto = new System.Windows.Forms.PictureBox();
+            this.pbecografia = new System.Windows.Forms.PictureBox();
+            this.pbLaboratorio = new System.Windows.Forms.PictureBox();
+            this.pbGestante = new System.Windows.Forms.PictureBox();
             this.dgvPuerperio = new System.Windows.Forms.DataGridView();
             this.dgvBat = new System.Windows.Forms.DataGridView();
             this.dgvEco = new System.Windows.Forms.DataGridView();
@@ -220,6 +226,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbodontologia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbecografia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGestante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).BeginInit();
@@ -1213,8 +1225,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1454,8 +1466,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1673,6 +1685,12 @@
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.pblogo);
+            this.groupBox15.Controls.Add(this.pbodontologia);
+            this.groupBox15.Controls.Add(this.pbParto);
+            this.groupBox15.Controls.Add(this.pbecografia);
+            this.groupBox15.Controls.Add(this.pbLaboratorio);
+            this.groupBox15.Controls.Add(this.pbGestante);
             this.groupBox15.Controls.Add(this.dgvPuerperio);
             this.groupBox15.Controls.Add(this.dgvBat);
             this.groupBox15.Controls.Add(this.dgvEco);
@@ -1682,71 +1700,132 @@
             this.groupBox15.Controls.Add(this.dgvHC);
             this.groupBox15.Location = new System.Drawing.Point(888, 3);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(177, 48);
+            this.groupBox15.Size = new System.Drawing.Size(166, 48);
             this.groupBox15.TabIndex = 51;
             this.groupBox15.TabStop = false;
             this.groupBox15.Visible = false;
             // 
+            // pblogo
+            // 
+            this.pblogo.BackgroundImage = global::CapaUsuario.Properties.Resources.logo;
+            this.pblogo.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\logo.jpg";
+            this.pblogo.Location = new System.Drawing.Point(14, 31);
+            this.pblogo.Name = "pblogo";
+            this.pblogo.Size = new System.Drawing.Size(29, 10);
+            this.pblogo.TabIndex = 47;
+            this.pblogo.TabStop = false;
+            // 
+            // pbodontologia
+            // 
+            this.pbodontologia.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\odontolog" +
+    "ia.jpg";
+            this.pbodontologia.Location = new System.Drawing.Point(43, 30);
+            this.pbodontologia.Name = "pbodontologia";
+            this.pbodontologia.Size = new System.Drawing.Size(26, 10);
+            this.pbodontologia.TabIndex = 46;
+            this.pbodontologia.TabStop = false;
+            // 
+            // pbParto
+            // 
+            this.pbParto.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\parto.jpg" +
+    "";
+            this.pbParto.Location = new System.Drawing.Point(97, 30);
+            this.pbParto.Name = "pbParto";
+            this.pbParto.Size = new System.Drawing.Size(24, 11);
+            this.pbParto.TabIndex = 45;
+            this.pbParto.TabStop = false;
+            // 
+            // pbecografia
+            // 
+            this.pbecografia.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\ecografia" +
+    ".png";
+            this.pbecografia.Location = new System.Drawing.Point(70, 30);
+            this.pbecografia.Name = "pbecografia";
+            this.pbecografia.Size = new System.Drawing.Size(27, 10);
+            this.pbecografia.TabIndex = 44;
+            this.pbecografia.TabStop = false;
+            this.pbecografia.Click += new System.EventHandler(this.pbecografia_Click);
+            // 
+            // pbLaboratorio
+            // 
+            this.pbLaboratorio.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\laborator" +
+    "io.jpg";
+            this.pbLaboratorio.Location = new System.Drawing.Point(121, 31);
+            this.pbLaboratorio.Name = "pbLaboratorio";
+            this.pbLaboratorio.Size = new System.Drawing.Size(20, 10);
+            this.pbLaboratorio.TabIndex = 43;
+            this.pbLaboratorio.TabStop = false;
+            // 
+            // pbGestante
+            // 
+            this.pbGestante.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\gestante." +
+    "png";
+            this.pbGestante.Location = new System.Drawing.Point(139, 29);
+            this.pbGestante.Name = "pbGestante";
+            this.pbGestante.Size = new System.Drawing.Size(21, 13);
+            this.pbGestante.TabIndex = 40;
+            this.pbGestante.TabStop = false;
+            // 
             // dgvPuerperio
             // 
             this.dgvPuerperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPuerperio.Location = new System.Drawing.Point(136, 26);
+            this.dgvPuerperio.Location = new System.Drawing.Point(139, 10);
             this.dgvPuerperio.Name = "dgvPuerperio";
-            this.dgvPuerperio.Size = new System.Drawing.Size(15, 42);
+            this.dgvPuerperio.Size = new System.Drawing.Size(16, 12);
             this.dgvPuerperio.TabIndex = 39;
             this.dgvPuerperio.Visible = false;
             // 
             // dgvBat
             // 
             this.dgvBat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBat.Location = new System.Drawing.Point(115, 26);
+            this.dgvBat.Location = new System.Drawing.Point(118, 10);
             this.dgvBat.Name = "dgvBat";
-            this.dgvBat.Size = new System.Drawing.Size(15, 42);
+            this.dgvBat.Size = new System.Drawing.Size(16, 12);
             this.dgvBat.TabIndex = 39;
             this.dgvBat.Visible = false;
             // 
             // dgvEco
             // 
             this.dgvEco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEco.Location = new System.Drawing.Point(94, 26);
+            this.dgvEco.Location = new System.Drawing.Point(97, 10);
             this.dgvEco.Name = "dgvEco";
-            this.dgvEco.Size = new System.Drawing.Size(15, 42);
+            this.dgvEco.Size = new System.Drawing.Size(16, 12);
             this.dgvEco.TabIndex = 39;
             this.dgvEco.Visible = false;
             // 
             // dgvOdonto
             // 
             this.dgvOdonto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOdonto.Location = new System.Drawing.Point(73, 26);
+            this.dgvOdonto.Location = new System.Drawing.Point(76, 10);
             this.dgvOdonto.Name = "dgvOdonto";
-            this.dgvOdonto.Size = new System.Drawing.Size(15, 42);
+            this.dgvOdonto.Size = new System.Drawing.Size(16, 12);
             this.dgvOdonto.TabIndex = 39;
             this.dgvOdonto.Visible = false;
             // 
             // dgvCitas2
             // 
             this.dgvCitas2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas2.Location = new System.Drawing.Point(52, 26);
+            this.dgvCitas2.Location = new System.Drawing.Point(55, 10);
             this.dgvCitas2.Name = "dgvCitas2";
-            this.dgvCitas2.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas2.Size = new System.Drawing.Size(16, 12);
             this.dgvCitas2.TabIndex = 39;
             this.dgvCitas2.Visible = false;
             // 
             // dgvCitas1
             // 
             this.dgvCitas1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCitas1.Location = new System.Drawing.Point(31, 26);
+            this.dgvCitas1.Location = new System.Drawing.Point(34, 10);
             this.dgvCitas1.Name = "dgvCitas1";
-            this.dgvCitas1.Size = new System.Drawing.Size(15, 42);
+            this.dgvCitas1.Size = new System.Drawing.Size(16, 12);
             this.dgvCitas1.TabIndex = 39;
             this.dgvCitas1.Visible = false;
             // 
             // dgvHC
             // 
             this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHC.Location = new System.Drawing.Point(10, 26);
+            this.dgvHC.Location = new System.Drawing.Point(13, 10);
             this.dgvHC.Name = "dgvHC";
-            this.dgvHC.Size = new System.Drawing.Size(15, 42);
+            this.dgvHC.Size = new System.Drawing.Size(16, 12);
             this.dgvHC.TabIndex = 39;
             this.dgvHC.Visible = false;
             // 
@@ -1985,6 +2064,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbodontologia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbParto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbecografia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGestante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).EndInit();
@@ -2131,6 +2216,12 @@
         private System.Windows.Forms.DataGridView dgvCitas2;
         private System.Windows.Forms.DataGridView dgvCitas1;
         private System.Windows.Forms.DataGridView dgvHC;
+        private System.Windows.Forms.PictureBox pblogo;
+        private System.Windows.Forms.PictureBox pbodontologia;
+        private System.Windows.Forms.PictureBox pbParto;
+        private System.Windows.Forms.PictureBox pbecografia;
+        private System.Windows.Forms.PictureBox pbLaboratorio;
+        private System.Windows.Forms.PictureBox pbGestante;
     }
 }
 
