@@ -192,7 +192,7 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.EdadGestacional = edad_gestacional_citas;
                 oCitaPrenatal.Fua = "";
                 oCitaPrenatal.PresionArterialD = 60;
-                oCitaPrenatal.PresionArterialS = 60;
+                oCitaPrenatal.PresionArterialS = 90;
                 oCitaPrenatal.SulfatoFerroso = 30;
                 /*calculando fecha cita y proxima cita*/
                 oCitaPrenatal.FechaCitaPrenatal = fecha_cita;
