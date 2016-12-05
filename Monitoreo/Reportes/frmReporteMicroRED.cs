@@ -138,15 +138,23 @@ namespace Monitoreo.Reportes
         private void btnReporObstetras_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteObstetra("rptReportesObstetras", sidtmicrored);
+            frmVistaReportes.ReporteObstetra("rptReporteObstetras", sidtmicrored);
             frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }
 
-        private void btnNominalGestante_Click(object sender, EventArgs e)
+        private void btnGestantesNominal_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteNominalGestanteMicroRED("rptReporteNominalGestanteMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.ReporteGestantesNominalMicroRED("rptReporteGestantesNominalMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesMorbilidad_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.ReporteGestantesMorbilidadMicroRED("rptReporteGestantesMorbilidadMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
             frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }
@@ -162,7 +170,7 @@ namespace Monitoreo.Reportes
         private void btnGestantesDadoParto_Click(object sender, EventArgs e)
         {
             frmVistaReportes frmVistaReportes = new frmVistaReportes();
-            frmVistaReportes.ReporteGestanteDadoPartoMicroRED("rptReporteGestanteDadoPartoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
+            frmVistaReportes.ReporteGestantesDadoPartoMicroRED("rptReporteGestantesDadoPartoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored);
             frmVistaReportes.MdiParent = this.MdiParent;
             frmVistaReportes.Show();
         }
