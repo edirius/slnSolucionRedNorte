@@ -356,7 +356,7 @@
             this.MaximumSize = new System.Drawing.Size(799, 533);
             this.Name = "frmGestante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestante";
+            this.Text = "Gestantes";
             this.Load += new System.EventHandler(this.frmGestante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bnGestante)).EndInit();
             this.bnGestante.ResumeLayout(false);

@@ -335,12 +335,6 @@
     <Compile Include="RecienNacido\frmReporteRNBajoPeso.Designer.cs">
       <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\fCantidadGestantes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\fCantidadGestantes.Designer.cs">
-      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\fControlGestantePorMorbilidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -535,9 +529,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecienNacido\frmReporteRNBajoPeso.resx">
       <DependentUpon>frmReporteRNBajoPeso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\fCantidadGestantes.resx">
-      <DependentUpon>fCantidadGestantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\fControlGestantePorMorbilidad.resx">
       <DependentUpon>fControlGestantePorMorbilidad.cs</DependentUpon>

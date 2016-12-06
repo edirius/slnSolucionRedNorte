@@ -112,9 +112,11 @@ namespace CapaUsuario
 
         private void rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
             CapaUsuario.Reportes.fCantidadGestantes frmCantidadGestantes = new CapaUsuario.Reportes.fCantidadGestantes();
             frmCantidadGestantes.MdiParent = this;
             frmCantidadGestantes.Show();
+            */
         }
 
         private void exportarEImportarDatosToolStripMenuItem_Click(object sender, EventArgs e)

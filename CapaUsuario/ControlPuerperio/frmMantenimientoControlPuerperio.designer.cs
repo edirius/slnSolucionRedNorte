@@ -31,6 +31,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantenimientoControlPeuperio));
             this.dgvControlPeuperio = new System.Windows.Forms.DataGridView();
+            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -54,15 +63,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarterials = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presionarteriald = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alturauterino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPeuperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAlturaUterino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPresionArterialD)).BeginInit();
@@ -111,6 +111,69 @@
             this.dgvControlPeuperio.TabIndex = 11;
             this.dgvControlPeuperio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlPeuperio_CellClick);
             // 
+            // idtcontrolpeuperio
+            // 
+            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PUERPERIO";
+            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
+            this.idtcontrolpeuperio.ReadOnly = true;
+            this.idtcontrolpeuperio.Visible = false;
+            // 
+            // numero
+            // 
+            this.numero.FillWeight = 60.9137F;
+            this.numero.HeaderText = "NRO";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // fecha
+            // 
+            this.fecha.FillWeight = 107.8173F;
+            this.fecha.HeaderText = "FECHA";
+            this.fecha.Name = "fecha";
+            this.fecha.ReadOnly = true;
+            // 
+            // presionarterial
+            // 
+            this.presionarterial.FillWeight = 107.8173F;
+            this.presionarterial.HeaderText = "PRESION ARTERIAL";
+            this.presionarterial.Name = "presionarterial";
+            this.presionarterial.ReadOnly = true;
+            // 
+            // presionarterials
+            // 
+            this.presionarterials.HeaderText = "PRESION ARTERIAL S";
+            this.presionarterials.Name = "presionarterials";
+            this.presionarterials.ReadOnly = true;
+            this.presionarterials.Visible = false;
+            // 
+            // presionarteriald
+            // 
+            this.presionarteriald.HeaderText = "PRESION ARTERIAL D";
+            this.presionarteriald.Name = "presionarteriald";
+            this.presionarteriald.ReadOnly = true;
+            this.presionarteriald.Visible = false;
+            // 
+            // alturauterino
+            // 
+            this.alturauterino.FillWeight = 107.8173F;
+            this.alturauterino.HeaderText = "ALTURA UTERINO";
+            this.alturauterino.Name = "alturauterino";
+            this.alturauterino.ReadOnly = true;
+            // 
+            // fua
+            // 
+            this.fua.FillWeight = 107.8173F;
+            this.fua.HeaderText = "FUA";
+            this.fua.Name = "fua";
+            this.fua.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.FillWeight = 107.8173F;
+            this.detalle.HeaderText = "DETALLE";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,9 +184,9 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(194, 121);
+            this.btnSalir.Location = new System.Drawing.Point(154, 79);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(165, 72);
+            this.btnSalir.Size = new System.Drawing.Size(145, 56);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -140,9 +203,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(6, 17);
+            this.btnNuevo.Location = new System.Drawing.Point(3, 7);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(167, 75);
+            this.btnNuevo.Size = new System.Drawing.Size(145, 56);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -159,9 +222,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(194, 17);
+            this.btnEliminar.Location = new System.Drawing.Point(154, 7);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(165, 75);
+            this.btnEliminar.Size = new System.Drawing.Size(145, 56);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -178,9 +241,9 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.ImageKey = "13.png";
-            this.btnGuardar.Location = new System.Drawing.Point(6, 121);
+            this.btnGuardar.Location = new System.Drawing.Point(3, 79);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(167, 72);
+            this.btnGuardar.Size = new System.Drawing.Size(145, 56);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -220,6 +283,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(285, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 18);
@@ -245,6 +309,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(3, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 18);
@@ -312,6 +377,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(194, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 30);
@@ -349,6 +415,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(285, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 18);
@@ -386,6 +453,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 97);
@@ -455,20 +523,18 @@
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61879F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38121F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnNuevo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnGuardar, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSalir, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(620, 266);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(644, 301);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.46939F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.53061F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(362, 196);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(302, 138);
             this.tableLayoutPanel3.TabIndex = 155;
             // 
             // groupBox2
@@ -476,75 +542,13 @@
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(578, 223);
             this.groupBox2.TabIndex = 156;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Mantenimiento de Control Puerperio";
-            // 
-            // idtcontrolpeuperio
-            // 
-            this.idtcontrolpeuperio.HeaderText = "ID CONTROL PUERPERIO";
-            this.idtcontrolpeuperio.Name = "idtcontrolpeuperio";
-            this.idtcontrolpeuperio.ReadOnly = true;
-            this.idtcontrolpeuperio.Visible = false;
-            // 
-            // numero
-            // 
-            this.numero.FillWeight = 60.9137F;
-            this.numero.HeaderText = "NRO";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            // 
-            // fecha
-            // 
-            this.fecha.FillWeight = 107.8173F;
-            this.fecha.HeaderText = "FECHA";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
-            // 
-            // presionarterial
-            // 
-            this.presionarterial.FillWeight = 107.8173F;
-            this.presionarterial.HeaderText = "PRESION ARTERIAL";
-            this.presionarterial.Name = "presionarterial";
-            this.presionarterial.ReadOnly = true;
-            // 
-            // presionarterials
-            // 
-            this.presionarterials.HeaderText = "PRESION ARTERIAL S";
-            this.presionarterials.Name = "presionarterials";
-            this.presionarterials.ReadOnly = true;
-            this.presionarterials.Visible = false;
-            // 
-            // presionarteriald
-            // 
-            this.presionarteriald.HeaderText = "PRESION ARTERIAL D";
-            this.presionarteriald.Name = "presionarteriald";
-            this.presionarteriald.ReadOnly = true;
-            this.presionarteriald.Visible = false;
-            // 
-            // alturauterino
-            // 
-            this.alturauterino.FillWeight = 107.8173F;
-            this.alturauterino.HeaderText = "ALTURA UTERINO";
-            this.alturauterino.Name = "alturauterino";
-            this.alturauterino.ReadOnly = true;
-            // 
-            // fua
-            // 
-            this.fua.FillWeight = 107.8173F;
-            this.fua.HeaderText = "FUA";
-            this.fua.Name = "fua";
-            this.fua.ReadOnly = true;
-            // 
-            // detalle
-            // 
-            this.detalle.FillWeight = 107.8173F;
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
             // 
             // frmMantenimientoControlPeuperio
             // 

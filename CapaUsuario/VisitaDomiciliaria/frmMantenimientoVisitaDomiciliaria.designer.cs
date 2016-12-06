@@ -194,7 +194,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 193);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 236);
             this.tableLayoutPanel1.TabIndex = 113;
             // 
             // label10
@@ -300,7 +300,7 @@
             this.txtDetalleGestante.Location = new System.Drawing.Point(70, 65);
             this.txtDetalleGestante.Multiline = true;
             this.txtDetalleGestante.Name = "txtDetalleGestante";
-            this.txtDetalleGestante.Size = new System.Drawing.Size(352, 130);
+            this.txtDetalleGestante.Size = new System.Drawing.Size(352, 168);
             this.txtDetalleGestante.TabIndex = 3;
             this.txtDetalleGestante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalleGestante_KeyPress);
             // 
@@ -869,9 +869,9 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(1073, 568);
+            this.btnSalir.Location = new System.Drawing.Point(1051, 578);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(148, 60);
+            this.btnSalir.Size = new System.Drawing.Size(160, 56);
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -888,9 +888,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(914, 498);
+            this.btnNuevo.Location = new System.Drawing.Point(892, 508);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(148, 60);
+            this.btnNuevo.Size = new System.Drawing.Size(160, 56);
             this.btnNuevo.TabIndex = 12;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -907,9 +907,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(1073, 498);
+            this.btnEliminar.Location = new System.Drawing.Point(1051, 508);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(148, 60);
+            this.btnEliminar.Size = new System.Drawing.Size(160, 56);
             this.btnEliminar.TabIndex = 14;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -926,9 +926,9 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.ImageKey = "13.png";
-            this.btnGuardar.Location = new System.Drawing.Point(914, 568);
+            this.btnGuardar.Location = new System.Drawing.Point(892, 578);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(148, 60);
+            this.btnGuardar.Size = new System.Drawing.Size(160, 56);
             this.btnGuardar.TabIndex = 13;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CuadroDeAlertasBateria));
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbMes = new System.Windows.Forms.ComboBox();
@@ -43,18 +45,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(294, 54);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(324, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(38, 18);
             this.label3.TabIndex = 111;
             this.label3.Text = "Año:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 54);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(116, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(41, 18);
             this.label1.TabIndex = 110;
             this.label1.Text = "Mes:";
             // 
@@ -77,32 +81,41 @@
             "DICIEMBRE"});
             this.cbMes.Location = new System.Drawing.Point(163, 51);
             this.cbMes.Name = "cbMes";
-            this.cbMes.Size = new System.Drawing.Size(121, 21);
+            this.cbMes.Size = new System.Drawing.Size(121, 26);
             this.cbMes.TabIndex = 108;
             // 
             // cbAños
             // 
             this.cbAños.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAños.FormattingEnabled = true;
-            this.cbAños.Location = new System.Drawing.Point(329, 51);
+            this.cbAños.Location = new System.Drawing.Point(368, 54);
             this.cbAños.Name = "cbAños";
-            this.cbAños.Size = new System.Drawing.Size(74, 21);
+            this.cbAños.Size = new System.Drawing.Size(74, 26);
             this.cbAños.TabIndex = 109;
             // 
             // dgvAlertasBateria
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlertasBateria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAlertasBateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlertasBateria.Location = new System.Drawing.Point(12, 102);
             this.dgvAlertasBateria.Name = "dgvAlertasBateria";
-            this.dgvAlertasBateria.Size = new System.Drawing.Size(551, 329);
+            this.dgvAlertasBateria.Size = new System.Drawing.Size(591, 424);
             this.dgvAlertasBateria.TabIndex = 112;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(81, 27);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(55, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.Size = new System.Drawing.Size(102, 18);
             this.label7.TabIndex = 114;
             this.label7.Text = "Tipo de Alerta:";
             // 
@@ -118,20 +131,23 @@
             "Gestantes sin examen de orina"});
             this.cbTipoAlerta.Location = new System.Drawing.Point(163, 24);
             this.cbTipoAlerta.Name = "cbTipoAlerta";
-            this.cbTipoAlerta.Size = new System.Drawing.Size(279, 21);
+            this.cbTipoAlerta.Size = new System.Drawing.Size(279, 26);
             this.cbTipoAlerta.TabIndex = 113;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cbTipoAlerta);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cbAños);
             this.groupBox1.Controls.Add(this.cbMes);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(551, 90);
+            this.groupBox1.Size = new System.Drawing.Size(591, 90);
             this.groupBox1.TabIndex = 112;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alertas en Bateria:";
@@ -140,11 +156,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 443);
+            this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(615, 538);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvAlertasBateria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CuadroDeAlertasBateria";
-            this.Text = "CuadroDeAlertasBateria";
+            this.Text = "Cuadro de Alertas de Bateria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlertasBateria)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

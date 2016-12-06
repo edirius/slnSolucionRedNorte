@@ -67,7 +67,7 @@
             this.btnCancelar.ImageKey = "NetByte Design Studio - 0957.png";
             this.btnCancelar.Location = new System.Drawing.Point(667, 341);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(155, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(155, 56);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -86,7 +86,7 @@
             this.btnAceptar.ImageKey = "NetByte Design Studio - 0849.png";
             this.btnAceptar.Location = new System.Drawing.Point(487, 341);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(155, 65);
+            this.btnAceptar.Size = new System.Drawing.Size(155, 56);
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

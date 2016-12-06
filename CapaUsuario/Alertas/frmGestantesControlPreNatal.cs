@@ -45,5 +45,10 @@ namespace CapaUsuario.Alertas
             reporteListaGestantes.Show();
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -65,15 +65,15 @@
             // txtCelular
             // 
             this.txtCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCelular.Location = new System.Drawing.Point(350, 170);
+            this.txtCelular.Location = new System.Drawing.Point(340, 170);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(125, 24);
+            this.txtCelular.Size = new System.Drawing.Size(111, 24);
             this.txtCelular.TabIndex = 92;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(282, 173);
+            this.label9.Location = new System.Drawing.Point(272, 173);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 18);
             this.label9.TabIndex = 114;
@@ -101,7 +101,7 @@
             this.txtApeMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApeMaterno.Location = new System.Drawing.Point(160, 112);
             this.txtApeMaterno.Name = "txtApeMaterno";
-            this.txtApeMaterno.Size = new System.Drawing.Size(267, 24);
+            this.txtApeMaterno.Size = new System.Drawing.Size(291, 24);
             this.txtApeMaterno.TabIndex = 96;
             // 
             // label4
@@ -123,9 +123,9 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.ImageKey = "NetByte Design Studio - 0957.png";
-            this.btnCancelar.Location = new System.Drawing.Point(726, 418);
+            this.btnCancelar.Location = new System.Drawing.Point(706, 438);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(156, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(160, 56);
             this.btnCancelar.TabIndex = 105;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -142,9 +142,9 @@
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnAceptar.Location = new System.Drawing.Point(546, 418);
+            this.btnAceptar.Location = new System.Drawing.Point(526, 438);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(156, 65);
+            this.btnAceptar.Size = new System.Drawing.Size(160, 56);
             this.btnAceptar.TabIndex = 104;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -156,7 +156,7 @@
             this.txtApePaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApePaterno.Location = new System.Drawing.Point(159, 79);
             this.txtApePaterno.Name = "txtApePaterno";
-            this.txtApePaterno.Size = new System.Drawing.Size(268, 24);
+            this.txtApePaterno.Size = new System.Drawing.Size(292, 24);
             this.txtApePaterno.TabIndex = 94;
             // 
             // label5
@@ -190,7 +190,7 @@
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(159, 50);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(268, 24);
+            this.txtNombre.Size = new System.Drawing.Size(292, 24);
             this.txtNombre.TabIndex = 93;
             // 
             // txtDNI
@@ -234,7 +234,7 @@
             this.txtTituloProfesional.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTituloProfesional.Location = new System.Drawing.Point(160, 234);
             this.txtTituloProfesional.Name = "txtTituloProfesional";
-            this.txtTituloProfesional.Size = new System.Drawing.Size(320, 24);
+            this.txtTituloProfesional.Size = new System.Drawing.Size(291, 24);
             this.txtTituloProfesional.TabIndex = 115;
             // 
             // rbtFemenino
@@ -364,7 +364,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(894, 504);
+            this.ClientSize = new System.Drawing.Size(894, 524);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
