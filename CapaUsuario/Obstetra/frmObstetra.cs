@@ -31,6 +31,11 @@ namespace CapaUsuario.Obstetra
         {
             try
             {
+                if (txtUsuario.Text == "" || txtPassword.Text == "")
+                {
+                    MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 bool bOk = false;
                 CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
                 miObstetra.idtobstetra = sidtobstetra;

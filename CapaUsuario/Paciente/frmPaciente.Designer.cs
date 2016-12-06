@@ -236,6 +236,7 @@
             this.txtCodigoHistoriaClinica.Name = "txtCodigoHistoriaClinica";
             this.txtCodigoHistoriaClinica.Size = new System.Drawing.Size(164, 24);
             this.txtCodigoHistoriaClinica.TabIndex = 1;
+            this.txtCodigoHistoriaClinica.TextChanged += new System.EventHandler(this.txtCodigoHistoriaClinica_TextChanged);
             this.txtCodigoHistoriaClinica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoHistoriaClinica_KeyPress);
             // 
             // txtDNI
