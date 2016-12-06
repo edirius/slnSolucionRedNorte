@@ -109,12 +109,11 @@ namespace CapaUsuario.Obstetra
         {
             try
             {
-                //dgvPaciente.Rows.Clear();
-                //foreach (DataRow row in miPaciente.ListarPaciente("E0002").Rows)
-                //{
-                //    dgvPaciente.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString());
-                //}
-                dgvObstetras.DataSource = miObstetra.ListarObstetra();
+                dgvObstetras.Rows.Clear();
+                foreach (DataRow row in miObstetra.ListarObstetra().Select("idtestablecimientosalud = '" + sidtestablecimientosalud + "'"))
+                {
+                    dgvObstetras.Rows.Add(row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString(), row[4].ToString(), row[5].ToString(), row[6].ToString(), row[7].ToString(), row[8].ToString(), row[9].ToString(), row[10].ToString(), row[11].ToString(), row[12].ToString());
+                }
                 if (dgvObstetras.Rows.Count > 0)
                 {
                     dgvObstetras.Rows[0].Selected = true;

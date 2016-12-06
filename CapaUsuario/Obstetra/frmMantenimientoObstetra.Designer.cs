@@ -30,13 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantenimientoObstetra));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.dgvObstetras = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.idtobstetra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidopaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidomaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechanacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloprofesional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtestablecimientosalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObstetras)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +63,9 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(411, 7);
+            this.btnSalir.Location = new System.Drawing.Point(411, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(132, 56);
+            this.btnSalir.Size = new System.Drawing.Size(132, 60);
             this.btnSalir.TabIndex = 53;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -70,9 +82,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(275, 7);
+            this.btnEliminar.Location = new System.Drawing.Point(275, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(130, 56);
+            this.btnEliminar.Size = new System.Drawing.Size(130, 60);
             this.btnEliminar.TabIndex = 52;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -89,9 +101,9 @@
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.ImageKey = "13.png";
-            this.btnModificar.Location = new System.Drawing.Point(139, 7);
+            this.btnModificar.Location = new System.Drawing.Point(139, 3);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(130, 56);
+            this.btnModificar.Size = new System.Drawing.Size(130, 60);
             this.btnModificar.TabIndex = 51;
             this.btnModificar.Text = "&Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -108,9 +120,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(3, 7);
+            this.btnNuevo.Location = new System.Drawing.Point(3, 3);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(130, 56);
+            this.btnNuevo.Size = new System.Drawing.Size(130, 60);
             this.btnNuevo.TabIndex = 50;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -126,24 +138,31 @@
             this.dgvObstetras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvObstetras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObstetras.BackgroundColor = System.Drawing.Color.White;
             this.dgvObstetras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObstetras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idtobstetra,
+            this.nombres,
+            this.apellidopaterno,
+            this.apellidomaterno,
+            this.sexo,
+            this.dni,
+            this.fechanacimiento,
+            this.direccion,
+            this.telefono,
+            this.tituloprofesional,
+            this.idtestablecimientosalud,
+            this.usuario,
+            this.password});
             this.dgvObstetras.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvObstetras.Location = new System.Drawing.Point(12, 12);
             this.dgvObstetras.MultiSelect = false;
             this.dgvObstetras.Name = "dgvObstetras";
             this.dgvObstetras.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvObstetras.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvObstetras.RowHeadersVisible = false;
             this.dgvObstetras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvObstetras.Size = new System.Drawing.Size(781, 465);
+            this.dgvObstetras.Size = new System.Drawing.Size(721, 336);
             this.dgvObstetras.TabIndex = 49;
             this.dgvObstetras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObstetras_CellClick);
             this.dgvObstetras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObstetras_CellContentClick);
@@ -161,12 +180,96 @@
             this.tableLayoutPanel1.Controls.Add(this.btnSalir, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnModificar, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(247, 487);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(187, 358);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(546, 66);
             this.tableLayoutPanel1.TabIndex = 54;
+            // 
+            // idtobstetra
+            // 
+            this.idtobstetra.HeaderText = "idtobstetra";
+            this.idtobstetra.Name = "idtobstetra";
+            this.idtobstetra.ReadOnly = true;
+            this.idtobstetra.Visible = false;
+            // 
+            // nombres
+            // 
+            this.nombres.HeaderText = "NOMBRES";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            // 
+            // apellidopaterno
+            // 
+            this.apellidopaterno.HeaderText = "A. PATERNO";
+            this.apellidopaterno.Name = "apellidopaterno";
+            this.apellidopaterno.ReadOnly = true;
+            // 
+            // apellidomaterno
+            // 
+            this.apellidomaterno.HeaderText = "A. MATERNO";
+            this.apellidomaterno.Name = "apellidomaterno";
+            this.apellidomaterno.ReadOnly = true;
+            // 
+            // sexo
+            // 
+            this.sexo.HeaderText = "SEXO";
+            this.sexo.Name = "sexo";
+            this.sexo.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // fechanacimiento
+            // 
+            this.fechanacimiento.HeaderText = "fechanacimiento";
+            this.fechanacimiento.Name = "fechanacimiento";
+            this.fechanacimiento.ReadOnly = true;
+            this.fechanacimiento.Visible = false;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Visible = false;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "TELEFONO";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // tituloprofesional
+            // 
+            this.tituloprofesional.HeaderText = "TITULO";
+            this.tituloprofesional.Name = "tituloprofesional";
+            this.tituloprofesional.ReadOnly = true;
+            // 
+            // idtestablecimientosalud
+            // 
+            this.idtestablecimientosalud.HeaderText = "idtestablecimientosalud";
+            this.idtestablecimientosalud.Name = "idtestablecimientosalud";
+            this.idtestablecimientosalud.ReadOnly = true;
+            this.idtestablecimientosalud.Visible = false;
+            // 
+            // usuario
+            // 
+            this.usuario.HeaderText = "usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            this.usuario.Visible = false;
+            // 
+            // password
+            // 
+            this.password.HeaderText = "password";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
             // 
             // frmMantenimientoObstetra
             // 
@@ -174,7 +277,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(805, 565);
+            this.ClientSize = new System.Drawing.Size(745, 436);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgvObstetras);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -199,5 +302,18 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridView dgvObstetras;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtobstetra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidopaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidomaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechanacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloprofesional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtestablecimientosalud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
     }
 }

@@ -65,15 +65,16 @@
             // txtCelular
             // 
             this.txtCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCelular.Location = new System.Drawing.Point(340, 170);
+            this.txtCelular.Location = new System.Drawing.Point(350, 170);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(111, 24);
-            this.txtCelular.TabIndex = 92;
+            this.txtCelular.Size = new System.Drawing.Size(125, 24);
+            this.txtCelular.TabIndex = 7;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(272, 173);
+            this.label9.Location = new System.Drawing.Point(282, 173);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 18);
             this.label9.TabIndex = 114;
@@ -94,15 +95,17 @@
             this.txtDireccion.Location = new System.Drawing.Point(160, 200);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(291, 24);
-            this.txtDireccion.TabIndex = 100;
+            this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtApeMaterno
             // 
             this.txtApeMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApeMaterno.Location = new System.Drawing.Point(160, 112);
             this.txtApeMaterno.Name = "txtApeMaterno";
-            this.txtApeMaterno.Size = new System.Drawing.Size(291, 24);
-            this.txtApeMaterno.TabIndex = 96;
+            this.txtApeMaterno.Size = new System.Drawing.Size(267, 24);
+            this.txtApeMaterno.TabIndex = 3;
+            this.txtApeMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMaterno_KeyPress);
             // 
             // label4
             // 
@@ -123,10 +126,10 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.ImageKey = "NetByte Design Studio - 0957.png";
-            this.btnCancelar.Location = new System.Drawing.Point(706, 438);
+            this.btnCancelar.Location = new System.Drawing.Point(726, 418);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(160, 56);
-            this.btnCancelar.TabIndex = 105;
+            this.btnCancelar.Size = new System.Drawing.Size(156, 65);
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -142,10 +145,10 @@
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnAceptar.Location = new System.Drawing.Point(526, 438);
+            this.btnAceptar.Location = new System.Drawing.Point(546, 418);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(160, 56);
-            this.btnAceptar.TabIndex = 104;
+            this.btnAceptar.Size = new System.Drawing.Size(156, 65);
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -156,8 +159,9 @@
             this.txtApePaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtApePaterno.Location = new System.Drawing.Point(159, 79);
             this.txtApePaterno.Name = "txtApePaterno";
-            this.txtApePaterno.Size = new System.Drawing.Size(292, 24);
-            this.txtApePaterno.TabIndex = 94;
+            this.txtApePaterno.Size = new System.Drawing.Size(268, 24);
+            this.txtApePaterno.TabIndex = 2;
+            this.txtApePaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePaterno_KeyPress);
             // 
             // label5
             // 
@@ -183,15 +187,17 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(160, 168);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(106, 24);
-            this.dtpFechaNacimiento.TabIndex = 98;
+            this.dtpFechaNacimiento.TabIndex = 6;
+            this.dtpFechaNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaNacimiento_KeyPress);
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Location = new System.Drawing.Point(159, 50);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(292, 24);
-            this.txtNombre.TabIndex = 93;
+            this.txtNombre.Size = new System.Drawing.Size(268, 24);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDNI
             // 
@@ -200,7 +206,8 @@
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(130, 24);
-            this.txtDNI.TabIndex = 91;
+            this.txtDNI.TabIndex = 0;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label2
             // 
@@ -234,8 +241,9 @@
             this.txtTituloProfesional.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTituloProfesional.Location = new System.Drawing.Point(160, 234);
             this.txtTituloProfesional.Name = "txtTituloProfesional";
-            this.txtTituloProfesional.Size = new System.Drawing.Size(291, 24);
-            this.txtTituloProfesional.TabIndex = 115;
+            this.txtTituloProfesional.Size = new System.Drawing.Size(320, 24);
+            this.txtTituloProfesional.TabIndex = 9;
+            this.txtTituloProfesional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTituloProfesional_KeyPress);
             // 
             // rbtFemenino
             // 
@@ -244,10 +252,11 @@
             this.rbtFemenino.Location = new System.Drawing.Point(160, 140);
             this.rbtFemenino.Name = "rbtFemenino";
             this.rbtFemenino.Size = new System.Drawing.Size(92, 22);
-            this.rbtFemenino.TabIndex = 117;
+            this.rbtFemenino.TabIndex = 4;
             this.rbtFemenino.TabStop = true;
             this.rbtFemenino.Text = "Femenino";
             this.rbtFemenino.UseVisualStyleBackColor = true;
+            this.rbtFemenino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtFemenino_KeyPress);
             // 
             // rbtMasculino
             // 
@@ -255,10 +264,11 @@
             this.rbtMasculino.Location = new System.Drawing.Point(272, 140);
             this.rbtMasculino.Name = "rbtMasculino";
             this.rbtMasculino.Size = new System.Drawing.Size(94, 22);
-            this.rbtMasculino.TabIndex = 118;
+            this.rbtMasculino.TabIndex = 5;
             this.rbtMasculino.TabStop = true;
             this.rbtMasculino.Text = "Masculino";
             this.rbtMasculino.UseVisualStyleBackColor = true;
+            this.rbtMasculino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtMasculino_KeyPress);
             // 
             // label8
             // 
@@ -275,7 +285,8 @@
             this.txtUsuario.Location = new System.Drawing.Point(160, 271);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(138, 24);
-            this.txtUsuario.TabIndex = 119;
+            this.txtUsuario.TabIndex = 10;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // label10
             // 
@@ -293,7 +304,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(140, 24);
-            this.txtPassword.TabIndex = 121;
+            this.txtPassword.TabIndex = 11;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // groupBox1
             // 
@@ -364,7 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(894, 524);
+            this.ClientSize = new System.Drawing.Size(894, 504);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
