@@ -24,7 +24,7 @@ namespace CapaUsuario.Obstetra
 
         private void frmPaciente_Load(object sender, EventArgs e)
         {
-
+            txtDNI.Focus();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -115,6 +115,102 @@ namespace CapaUsuario.Obstetra
             txtUsuario.Text = pusuario;
             txtPassword.Text = ppassword;
             saccion = paccion;
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtNombre.Focus();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApePaterno.Focus();
+            }
+        }
+
+        private void txtApePaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApeMaterno.Focus();
+            }
+        }
+
+        private void txtApeMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                rbtFemenino.Focus();
+            }
+        }
+
+        private void rbtFemenino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFechaNacimiento.Focus();
+            }
+        }
+
+        private void rbtMasculino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFechaNacimiento.Focus();
+            }
+        }
+
+        private void dtpFechaNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCelular.Focus();
+            }
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDireccion.Focus();
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtTituloProfesional.Focus();
+            }
+        }
+
+        private void txtTituloProfesional_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtUsuario.Focus();
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnAceptar.Focus();
+            }
         }
     }
 }
