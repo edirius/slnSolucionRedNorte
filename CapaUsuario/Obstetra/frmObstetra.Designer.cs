@@ -68,7 +68,8 @@
             this.txtCelular.Location = new System.Drawing.Point(350, 170);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(125, 24);
-            this.txtCelular.TabIndex = 92;
+            this.txtCelular.TabIndex = 7;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // label9
             // 
@@ -82,7 +83,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 206);
+            this.label6.Location = new System.Drawing.Point(65, 209);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 18);
             this.label6.TabIndex = 111;
@@ -91,23 +92,25 @@
             // txtDireccion
             // 
             this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDireccion.Location = new System.Drawing.Point(99, 203);
+            this.txtDireccion.Location = new System.Drawing.Point(160, 200);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(291, 24);
-            this.txtDireccion.TabIndex = 100;
+            this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // txtApeMaterno
             // 
             this.txtApeMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApeMaterno.Location = new System.Drawing.Point(146, 109);
+            this.txtApeMaterno.Location = new System.Drawing.Point(160, 112);
             this.txtApeMaterno.Name = "txtApeMaterno";
             this.txtApeMaterno.Size = new System.Drawing.Size(267, 24);
-            this.txtApeMaterno.TabIndex = 96;
+            this.txtApeMaterno.TabIndex = 3;
+            this.txtApeMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMaterno_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 112);
+            this.label4.Location = new System.Drawing.Point(18, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 18);
             this.label4.TabIndex = 110;
@@ -126,7 +129,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(726, 418);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(156, 65);
-            this.btnCancelar.TabIndex = 105;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -145,7 +148,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(546, 418);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(156, 65);
-            this.btnAceptar.TabIndex = 104;
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -154,15 +157,16 @@
             // txtApePaterno
             // 
             this.txtApePaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtApePaterno.Location = new System.Drawing.Point(145, 79);
+            this.txtApePaterno.Location = new System.Drawing.Point(159, 79);
             this.txtApePaterno.Name = "txtApePaterno";
             this.txtApePaterno.Size = new System.Drawing.Size(268, 24);
-            this.txtApePaterno.TabIndex = 94;
+            this.txtApePaterno.TabIndex = 2;
+            this.txtApePaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePaterno_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 173);
+            this.label5.Location = new System.Drawing.Point(8, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 18);
             this.label5.TabIndex = 109;
@@ -171,7 +175,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 52);
+            this.label3.Location = new System.Drawing.Point(66, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 18);
             this.label3.TabIndex = 108;
@@ -183,29 +187,32 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(160, 168);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(106, 24);
-            this.dtpFechaNacimiento.TabIndex = 98;
+            this.dtpFechaNacimiento.TabIndex = 6;
+            this.dtpFechaNacimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFechaNacimiento_KeyPress);
             // 
             // txtNombre
             // 
             this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombre.Location = new System.Drawing.Point(98, 49);
+            this.txtNombre.Location = new System.Drawing.Point(159, 50);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(268, 24);
-            this.txtNombre.TabIndex = 93;
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDNI
             // 
             this.txtDNI.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDNI.Location = new System.Drawing.Point(61, 20);
+            this.txtDNI.Location = new System.Drawing.Point(160, 23);
             this.txtDNI.MaxLength = 8;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(130, 24);
-            this.txtDNI.TabIndex = 91;
+            this.txtDNI.TabIndex = 0;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 82);
+            this.label2.Location = new System.Drawing.Point(21, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 18);
             this.label2.TabIndex = 107;
@@ -214,7 +221,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 23);
+            this.label1.Location = new System.Drawing.Point(103, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 18);
             this.label1.TabIndex = 106;
@@ -223,7 +230,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 237);
+            this.label7.Location = new System.Drawing.Point(13, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
             this.label7.TabIndex = 116;
@@ -232,22 +239,24 @@
             // txtTituloProfesional
             // 
             this.txtTituloProfesional.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTituloProfesional.Location = new System.Drawing.Point(146, 234);
+            this.txtTituloProfesional.Location = new System.Drawing.Point(160, 234);
             this.txtTituloProfesional.Name = "txtTituloProfesional";
             this.txtTituloProfesional.Size = new System.Drawing.Size(320, 24);
-            this.txtTituloProfesional.TabIndex = 115;
+            this.txtTituloProfesional.TabIndex = 9;
+            this.txtTituloProfesional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTituloProfesional_KeyPress);
             // 
             // rbtFemenino
             // 
             this.rbtFemenino.AutoSize = true;
             this.rbtFemenino.Checked = true;
-            this.rbtFemenino.Location = new System.Drawing.Point(156, 140);
+            this.rbtFemenino.Location = new System.Drawing.Point(160, 140);
             this.rbtFemenino.Name = "rbtFemenino";
             this.rbtFemenino.Size = new System.Drawing.Size(92, 22);
-            this.rbtFemenino.TabIndex = 117;
+            this.rbtFemenino.TabIndex = 4;
             this.rbtFemenino.TabStop = true;
             this.rbtFemenino.Text = "Femenino";
             this.rbtFemenino.UseVisualStyleBackColor = true;
+            this.rbtFemenino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtFemenino_KeyPress);
             // 
             // rbtMasculino
             // 
@@ -255,15 +264,16 @@
             this.rbtMasculino.Location = new System.Drawing.Point(272, 140);
             this.rbtMasculino.Name = "rbtMasculino";
             this.rbtMasculino.Size = new System.Drawing.Size(94, 22);
-            this.rbtMasculino.TabIndex = 118;
+            this.rbtMasculino.TabIndex = 5;
             this.rbtMasculino.TabStop = true;
             this.rbtMasculino.Text = "Masculino";
             this.rbtMasculino.UseVisualStyleBackColor = true;
+            this.rbtMasculino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtMasculino_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 274);
+            this.label8.Location = new System.Drawing.Point(76, 277);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 18);
             this.label8.TabIndex = 120;
@@ -272,15 +282,16 @@
             // txtUsuario
             // 
             this.txtUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsuario.Location = new System.Drawing.Point(88, 271);
+            this.txtUsuario.Location = new System.Drawing.Point(160, 271);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(138, 24);
-            this.txtUsuario.TabIndex = 119;
+            this.txtUsuario.TabIndex = 10;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 306);
+            this.label10.Location = new System.Drawing.Point(61, 309);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 18);
             this.label10.TabIndex = 122;
@@ -289,11 +300,12 @@
             // txtPassword
             // 
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPassword.Location = new System.Drawing.Point(103, 303);
+            this.txtPassword.Location = new System.Drawing.Point(160, 306);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(140, 24);
-            this.txtPassword.TabIndex = 121;
+            this.txtPassword.TabIndex = 11;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // groupBox1
             // 
@@ -327,12 +339,12 @@
             this.groupBox1.Size = new System.Drawing.Size(482, 349);
             this.groupBox1.TabIndex = 123;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "...";
+            this.groupBox1.Text = "Datos obstetra";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 142);
+            this.label11.Location = new System.Drawing.Point(98, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 18);
             this.label11.TabIndex = 123;
@@ -347,7 +359,6 @@
             this.groupBox2.Size = new System.Drawing.Size(389, 206);
             this.groupBox2.TabIndex = 124;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "...";
             // 
             // pictureBox1
             // 

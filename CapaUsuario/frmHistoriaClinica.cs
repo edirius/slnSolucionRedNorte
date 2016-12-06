@@ -1020,18 +1020,19 @@ namespace CapaUsuario
             if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
                 oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
 
-            if (!oUtilitarios.es_numerico(txtPeso.Text) || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
+                bool bpeso = oUtilitarios.es_numerico(txtPeso.Text);
+                bool btalla = oUtilitarios.es_numerico(txtTalla.Text);
+
+            if ( !bpeso  || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
             {
                 completo = true;
                 mensaje = "Porfavor ingresar un peso correcto de la gestante.";
-                txtPeso.Focus();
             }
 
-            if (!oUtilitarios.es_numerico(txtTalla.Text) || Convert.ToDecimal(txtTalla.Text) < 0 || Convert.ToDecimal(txtTalla.Text) > 3)
+            if ( !btalla || Convert.ToDecimal(txtTalla.Text) < 0 || Convert.ToDecimal(txtTalla.Text) > 3)
             {
                 completo = true;
                 mensaje = "Porfavor ingresar una talla correcta de la gestante.";
-                txtTalla.Focus();
             }
 
             if (dgvOdontologia.Rows.Count < 0)
@@ -2939,37 +2940,23 @@ namespace CapaUsuario
                 MultiColumnText columns = new MultiColumnText();
                 columns.AddRegularColumns(36f, pdfDoc.PageSize.Width - 36f, 24f, 1);
 
-                //Imagen
-                string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                    //Imagen
+                    //string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
 
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
-                    /*
-                    string ruta_imagen = ruta + "\\logo.jpg";
-                    string ruta_imagen_odo = ruta + "\\odontologia.JPG";
-                    string ruta_imagen_eco = ruta + "\\ecografia.png";
-                    string ruta_imagen_pue = ruta + "\\parto.JPG";
-                    string ruta_imagen_bat = ruta + "\\laboratorio.JPG";
-                    string ruta_imagen_ges = ruta + "\\gestante.png";
-                    */
 
-                    /*
-                    string ImagesDirectory = Path.Combine(
-                                                Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                                                "Resources"
-                                             );
+                string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
 
-                    MessageBox.Show(ImagesDirectory);
-                    */
+                string ruta_imagen = ruta + "\\logo.jpg";
+                string ruta_imagen_odo = ruta + "\\odontologia.JPG";
+                string ruta_imagen_eco = ruta + "\\ecografia.png";
+                string ruta_imagen_pue = ruta + "\\parto.JPG";
+                string ruta_imagen_bat = ruta + "\\laboratorio.JPG";
+                string ruta_imagen_ges = ruta + "\\gestante.png";
+ 
 
-                    string ruta_imagen = pblogo.ImageLocation ;
-                    string ruta_imagen_odo = pbodontologia.ImageLocation;
-                    string ruta_imagen_eco = pbecografia.ImageLocation ;
-                    string ruta_imagen_pue = pbParto.ImageLocation ;
-                    string ruta_imagen_bat = pbLaboratorio.ImageLocation;
-                    string ruta_imagen_ges = pbGestante.ImageLocation;
-
-                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
+                iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(ruta_imagen);
                 logo.ScalePercent(24f);
                 logo.SetAbsolutePosition(35f, pdfDoc.PageSize.Height - 70f);
 
@@ -2981,16 +2968,14 @@ namespace CapaUsuario
                 logo2.ScalePercent(19f);
                 logo2.SetAbsolutePosition(280f, pdfDoc.PageSize.Height - 370f);
 
-                iTextSharp.text.Image logo4 = iTextSharp.text.Image.GetInstance(ruta_imagen_bat);
+                iTextSharp.text.Image logo4 = iTextSharp.text.Image.GetInstance(ruta_imagen_pue);
                 logo4.ScalePercent(44f);
                 logo4.SetAbsolutePosition(450f, pdfDoc.PageSize.Height - 370f);
 
-                iTextSharp.text.Image logo3 = iTextSharp.text.Image.GetInstance(ruta_imagen_pue);
+                iTextSharp.text.Image logo3 = iTextSharp.text.Image.GetInstance(ruta_imagen_bat);
                 logo3.ScalePercent(44f);
                 logo3.SetAbsolutePosition(660f, pdfDoc.PageSize.Height - 370f);
-
-                
-
+                    
                 iTextSharp.text.Image logo5 = iTextSharp.text.Image.GetInstance(ruta_imagen_ges);
                 logo5.ScalePercent(34f);
                 logo5.SetAbsolutePosition(220f, pdfDoc.PageSize.Height - 190f);
@@ -3473,12 +3458,6 @@ namespace CapaUsuario
         private void pbecografia_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-            hallar_FPP();
-            hallar_semana_primera_atencion();
         }
 
         private void txtOrigenEESS_Enter_1(object sender, EventArgs e)

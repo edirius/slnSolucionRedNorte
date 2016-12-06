@@ -35,42 +35,67 @@ namespace Monitoreo.Reportes
         {
             try
             {
-                if (Reporte == "rptReportesObstetras")
+                if (Reporte == "rptReporteObstetras")
                 {
-                    Reportes.rptReportesObstetras rptReportesObstetras = new Reportes.rptReportesObstetras();
+                    Reportes.rptReporteObstetraMicroRED rptReporteObstetras = new Reportes.rptReporteObstetraMicroRED();
 
                     crParameterDiscreteValue.Value = sidtmicrored;
-                    crParameterFieldDefinitions = rptReportesObstetras.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rptReporteObstetras.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["pidtmicrored"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
-                    crystalReportViewer1.ReportSource = rptReportesObstetras;
+                    crystalReportViewer1.ReportSource = rptReporteObstetras;
                     crystalReportViewer1.Refresh();
                 }
-                else if (Reporte == "rptReporteNominalGestanteMicroRED")
+                else if (Reporte == "rptReporteGestantesNominalMicroRED")
                 {
-                    Reportes.rptReporteNominalGestanteMicroRED rReporteNominalGestanteMicroRED = new Reportes.rptReporteNominalGestanteMicroRED();
+                    Reportes.rptReporteGestantesNominalMicroRED rReporteGestantesNominalMicroRED = new Reportes.rptReporteGestantesNominalMicroRED();
 
                     crParameterDiscreteValue.Value = saño;
-                    crParameterFieldDefinitions = rReporteNominalGestanteMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesNominalMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["paño"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
                     crParameterDiscreteValue.Value = smes;
-                    crParameterFieldDefinitions = rReporteNominalGestanteMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesNominalMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["pmes"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
                     crParameterDiscreteValue.Value = sidtmicrored;
-                    crParameterFieldDefinitions = rReporteNominalGestanteMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesNominalMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["pidtmicrored"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
-                    crystalReportViewer1.ReportSource = rReporteNominalGestanteMicroRED;
+                    crystalReportViewer1.ReportSource = rReporteGestantesNominalMicroRED;
+                    crystalReportViewer1.Refresh();
+                }
+                else if (Reporte == "rptReporteGestantesMorbilidadMicroRED")
+                {
+                    Reportes.rptReporteGestantesMorbilidadMicroRED rReporteGestantesMorbilidadMicroRED = new Reportes.rptReporteGestantesMorbilidadMicroRED();
+
+                    crParameterDiscreteValue.Value = saño;
+                    crParameterFieldDefinitions = rReporteGestantesMorbilidadMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinition = crParameterFieldDefinitions["paño"];
+                    crParameterValues.Add(crParameterDiscreteValue);
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                    crParameterDiscreteValue.Value = smes;
+                    crParameterFieldDefinitions = rReporteGestantesMorbilidadMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinition = crParameterFieldDefinitions["pmes"];
+                    crParameterValues.Add(crParameterDiscreteValue);
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                    crParameterDiscreteValue.Value = sidtmicrored;
+                    crParameterFieldDefinitions = rReporteGestantesMorbilidadMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinition = crParameterFieldDefinitions["pidtmicrored"];
+                    crParameterValues.Add(crParameterDiscreteValue);
+                    crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                    crystalReportViewer1.ReportSource = rReporteGestantesMorbilidadMicroRED;
                     crystalReportViewer1.Refresh();
                 }
                 else if (Reporte == "rptReporteGestantesFechaPPMicroRED")
@@ -98,29 +123,29 @@ namespace Monitoreo.Reportes
                     crystalReportViewer1.ReportSource = rReporteGestantesFechaPPMicroRED;
                     crystalReportViewer1.Refresh();
                 }
-                else if (Reporte == "rptReporteGestanteDadoPartoMicroRED")
+                else if (Reporte == "rptReporteGestantesDadoPartoMicroRED")
                 {
-                    Reportes.rptReporteGestanteDadoPartoMicroRED rReporteGestanteDadoPartoMicroRED = new Reportes.rptReporteGestanteDadoPartoMicroRED();
+                    Reportes.rptReporteGestantesDadoPartoMicroRED rReporteGestantesDadoPartoMicroRED = new Reportes.rptReporteGestantesDadoPartoMicroRED();
 
                     crParameterDiscreteValue.Value = saño;
-                    crParameterFieldDefinitions = rReporteGestanteDadoPartoMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesDadoPartoMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["paño"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
                     crParameterDiscreteValue.Value = smes;
-                    crParameterFieldDefinitions = rReporteGestanteDadoPartoMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesDadoPartoMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["pmes"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
                     crParameterDiscreteValue.Value = sidtmicrored;
-                    crParameterFieldDefinitions = rReporteGestanteDadoPartoMicroRED.DataDefinition.ParameterFields;
+                    crParameterFieldDefinitions = rReporteGestantesDadoPartoMicroRED.DataDefinition.ParameterFields;
                     crParameterFieldDefinition = crParameterFieldDefinitions["pidtmicrored"];
                     crParameterValues.Add(crParameterDiscreteValue);
                     crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
 
-                    crystalReportViewer1.ReportSource = rReporteGestanteDadoPartoMicroRED;
+                    crystalReportViewer1.ReportSource = rReporteGestantesDadoPartoMicroRED;
                     crystalReportViewer1.Refresh();
                 }
             }
@@ -136,7 +161,15 @@ namespace Monitoreo.Reportes
             sidtmicrored = pidtmicrored;
         }
 
-        public void ReporteNominalGestanteMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
+        public void ReporteGestantesNominalMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
+        {
+            Reporte = ptipo;
+            saño = paño;
+            smes = pmes;
+            sidtmicrored = pidtmicrored;
+        }
+
+        public void ReporteGestantesMorbilidadMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
         {
             Reporte = ptipo;
             saño = paño;
@@ -152,7 +185,7 @@ namespace Monitoreo.Reportes
             sidtmicrored = pidtmicrored;
         }
 
-        public void ReporteGestanteDadoPartoMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
+        public void ReporteGestantesDadoPartoMicroRED(string ptipo, string paño, string pmes, string pidtmicrored)
         {
             Reporte = ptipo;
             saño = paño;

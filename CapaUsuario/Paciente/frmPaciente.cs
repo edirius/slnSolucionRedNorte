@@ -92,13 +92,27 @@ namespace CapaUsuario.Paciente
         {
             DataTable oDataPaciente = new DataTable();
             oDataPaciente = miPaciente.ListarPaciente(sidtestablecimientosalud);
-
-            if (txtDNI.Text.Length == 8)
+            if (txtDNI.Text.Length == 8 && txtDNI.Text != "")
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
                 {
                     MessageBox.Show("El DNI ingresado ya pertenece a otra Gestante.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtDNI.Text = "";
+                    return;
+                }
+            }
+        }
+
+        private void txtCodigoHistoriaClinica_TextChanged(object sender, EventArgs e)
+        {
+            DataTable oDataPaciente = new DataTable();
+            oDataPaciente = miPaciente.ListarPaciente(sidtestablecimientosalud);
+            if (txtCodigoHistoriaClinica.Text != "")
+            {
+                foreach (DataRow row in oDataPaciente.Select("codigohistoriaclinica = '" + txtCodigoHistoriaClinica.Text + "'"))
+                {
+                    MessageBox.Show("La Historia Clinica ingresada ya pertenece a otra Gestante.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCodigoHistoriaClinica.Text = "";
                     return;
                 }
             }

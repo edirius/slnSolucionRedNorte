@@ -106,10 +106,10 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(808, 541);
+            this.btnSalir.Location = new System.Drawing.Point(852, 541);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(207, 73);
+            this.btnSalir.Size = new System.Drawing.Size(160, 56);
             this.btnSalir.TabIndex = 111;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -126,10 +126,10 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.ImageKey = "13.png";
-            this.btnGuardar.Location = new System.Drawing.Point(545, 541);
+            this.btnGuardar.Location = new System.Drawing.Point(684, 541);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(207, 73);
+            this.btnGuardar.Size = new System.Drawing.Size(160, 56);
             this.btnGuardar.TabIndex = 113;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -798,6 +798,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMantenimientoTerminoGestacion";
             this.ShowInTaskbar = false;

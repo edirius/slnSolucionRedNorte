@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaUsuario.Alertas {
+namespace Monitoreo.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CapaUsuario.Alertas {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptAlertaControlPuerperio : ReportClass {
+    public class rptReporteObstetraMicroRED : ReportClass {
         
-        public rptAlertaControlPuerperio() {
+        public rptReporteObstetraMicroRED() {
         }
         
         public override string ResourceName {
             get {
-                return "rptAlertaControlPuerperio.rpt";
+                return "rptReporteObstetraMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaUsuario.Alertas {
         
         public override string FullResourceName {
             get {
-                return "CapaUsuario.Alertas.rptAlertaControlPuerperio.rpt";
+                return "Monitoreo.Reportes.rptReporteObstetraMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -106,25 +106,17 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_pidtobstetra {
+        public CrystalDecisions.Shared.IParameterField Parameter_pidtmicrored {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_pidtestablecimientosalud {
-            get {
-                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptAlertaControlPuerperio : Component, ICachedReport {
+    public class CachedrptReporteObstetraMicroRED : Component, ICachedReport {
         
-        public CachedrptAlertaControlPuerperio() {
+        public CachedrptReporteObstetraMicroRED() {
         }
         
         [Browsable(false)]
@@ -161,7 +153,7 @@ namespace CapaUsuario.Alertas {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptAlertaControlPuerperio rpt = new rptAlertaControlPuerperio();
+            rptReporteObstetraMicroRED rpt = new rptReporteObstetraMicroRED();
             rpt.Site = this.Site;
             return rpt;
         }

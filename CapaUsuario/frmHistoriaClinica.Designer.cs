@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -1150,7 +1150,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 24);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             this.dtpFecha.Enter += new System.EventHandler(this.dtpFecha_Enter);
             this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
             this.dtpFecha.Leave += new System.EventHandler(this.dtpFecha_Leave);
@@ -1226,12 +1225,13 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvOdontologia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOdontologia.BackgroundColor = System.Drawing.Color.White;
             this.dgvOdontologia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOdontologia.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvOdontologia.Location = new System.Drawing.Point(6, 56);
@@ -1467,12 +1467,13 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEcografia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEcografia.BackgroundColor = System.Drawing.Color.White;
             this.dgvEcografia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEcografia.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvEcografia.Location = new System.Drawing.Point(6, 76);
@@ -1681,7 +1682,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1068, 54);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1068, 62);
             this.tableLayoutPanel1.TabIndex = 28;
             // 
             // groupBox15
@@ -1840,7 +1841,7 @@
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalir.Location = new System.Drawing.Point(711, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(171, 48);
+            this.btnSalir.Size = new System.Drawing.Size(171, 56);
             this.btnSalir.TabIndex = 30;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -1858,7 +1859,7 @@
             this.buGuardar.ForeColor = System.Drawing.Color.White;
             this.buGuardar.Location = new System.Drawing.Point(357, 3);
             this.buGuardar.Name = "buGuardar";
-            this.buGuardar.Size = new System.Drawing.Size(171, 48);
+            this.buGuardar.Size = new System.Drawing.Size(171, 56);
             this.buGuardar.TabIndex = 28;
             this.buGuardar.Text = "&Guardar";
             this.buGuardar.UseVisualStyleBackColor = false;
@@ -1876,7 +1877,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(534, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 48);
+            this.button1.Size = new System.Drawing.Size(171, 56);
             this.button1.TabIndex = 29;
             this.button1.Text = "&Nuevo";
             this.button1.UseVisualStyleBackColor = false;
@@ -1981,7 +1982,7 @@
             this.buBuscar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
             this.buBuscar.Location = new System.Drawing.Point(180, 3);
             this.buBuscar.Name = "buBuscar";
-            this.buBuscar.Size = new System.Drawing.Size(171, 48);
+            this.buBuscar.Size = new System.Drawing.Size(171, 56);
             this.buBuscar.TabIndex = 31;
             this.buBuscar.Text = "&Buscar";
             this.buBuscar.UseVisualStyleBackColor = false;
@@ -1996,6 +1997,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1294, 670);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistoriaClinica";
             this.Text = "Control de Gestante";
             this.Activated += new System.EventHandler(this.frmHistoriaClinica_Activated);

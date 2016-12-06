@@ -55,12 +55,12 @@
             this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(524, 580);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(612, 580);
             this.btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
-            this.btnGenerarReporte.Size = new System.Drawing.Size(205, 58);
+            this.btnGenerarReporte.Size = new System.Drawing.Size(117, 56);
             this.btnGenerarReporte.TabIndex = 101;
-            this.btnGenerarReporte.Text = "GENERAR REPORTES";
+            this.btnGenerarReporte.Text = "&Vista preliminar";
             this.btnGenerarReporte.UseVisualStyleBackColor = false;
             this.btnGenerarReporte.Click += new System.EventHandler(this.btnGenerarReporte_Click);
             // 
@@ -68,10 +68,9 @@
             // 
             this.cbAños.BackColor = System.Drawing.Color.White;
             this.cbAños.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAños.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbAños.ForeColor = System.Drawing.Color.Black;
             this.cbAños.FormattingEnabled = true;
-            this.cbAños.Location = new System.Drawing.Point(453, 89);
+            this.cbAños.Location = new System.Drawing.Point(398, 89);
             this.cbAños.Margin = new System.Windows.Forms.Padding(4);
             this.cbAños.Name = "cbAños";
             this.cbAños.Size = new System.Drawing.Size(93, 26);
@@ -82,7 +81,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(177, 92);
+            this.label1.Location = new System.Drawing.Point(119, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 18);
@@ -93,7 +92,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(407, 92);
+            this.label3.Location = new System.Drawing.Point(352, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 18);
@@ -104,7 +103,6 @@
             // 
             this.cbMes.BackColor = System.Drawing.Color.White;
             this.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbMes.ForeColor = System.Drawing.Color.Black;
             this.cbMes.FormattingEnabled = true;
             this.cbMes.Items.AddRange(new object[] {
@@ -120,7 +118,7 @@
             "OCTUBRE",
             "NOVIEMBRE",
             "DICIEMBRE"});
-            this.cbMes.Location = new System.Drawing.Point(226, 89);
+            this.cbMes.Location = new System.Drawing.Point(168, 89);
             this.cbMes.Margin = new System.Windows.Forms.Padding(4);
             this.cbMes.Name = "cbMes";
             this.cbMes.Size = new System.Drawing.Size(156, 26);
@@ -132,7 +130,6 @@
             this.cbTipoAlerta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTipoAlerta.BackColor = System.Drawing.Color.White;
             this.cbTipoAlerta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoAlerta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbTipoAlerta.ForeColor = System.Drawing.Color.Black;
             this.cbTipoAlerta.FormattingEnabled = true;
             this.cbTipoAlerta.Items.AddRange(new object[] {
@@ -229,13 +226,14 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(739, 647);
+            this.ClientSize = new System.Drawing.Size(739, 646);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.dgvListaBateria);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(755, 685);
             this.Name = "frmAlertaGestanteBateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

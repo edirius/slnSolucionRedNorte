@@ -36,13 +36,12 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaPorPaciwinwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historiaClinicaEntreFechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesDeAlertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesDeMorbilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarEImportarDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
-            this.reportesDeMorbilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,8 +77,8 @@
             // historiaClinicaToolStripMenuItem
             // 
             this.historiaClinicaToolStripMenuItem.Name = "historiaClinicaToolStripMenuItem";
-            this.historiaClinicaToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
-            this.historiaClinicaToolStripMenuItem.Text = "Historia Clinica";
+            this.historiaClinicaToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.historiaClinicaToolStripMenuItem.Text = "Control Gestante";
             this.historiaClinicaToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
@@ -87,7 +86,6 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.historiaClinicaPorPaciwinwToolStripMenuItem,
             this.historiaClinicaEntreFechasToolStripMenuItem,
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem,
             this.reportesDeAlertasToolStripMenuItem,
             this.reportesDeMorbilidadToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
@@ -97,30 +95,30 @@
             // historiaClinicaPorPaciwinwToolStripMenuItem
             // 
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Name = "historiaClinicaPorPaciwinwToolStripMenuItem";
-            this.historiaClinicaPorPaciwinwToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaPorPaciwinwToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Text = "Monitor Gestante Por Paciente";
             this.historiaClinicaPorPaciwinwToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaPorPaciwinwToolStripMenuItem_Click);
             // 
             // historiaClinicaEntreFechasToolStripMenuItem
             // 
             this.historiaClinicaEntreFechasToolStripMenuItem.Name = "historiaClinicaEntreFechasToolStripMenuItem";
-            this.historiaClinicaEntreFechasToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.historiaClinicaEntreFechasToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.historiaClinicaEntreFechasToolStripMenuItem.Text = "Monitor Gestante Entre Fechas";
             this.historiaClinicaEntreFechasToolStripMenuItem.Click += new System.EventHandler(this.historiaClinicaEntreFechasToolStripMenuItem_Click);
-            // 
-            // rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem
-            // 
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Name = "rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem";
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Text = "Resumen Cantidad De Gestantes Por Microred/EE.SS.";
-            this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem.Click += new System.EventHandler(this.rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem_Click);
             // 
             // reportesDeAlertasToolStripMenuItem
             // 
             this.reportesDeAlertasToolStripMenuItem.Name = "reportesDeAlertasToolStripMenuItem";
-            this.reportesDeAlertasToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
+            this.reportesDeAlertasToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.reportesDeAlertasToolStripMenuItem.Text = "Reportes de Alertas";
             this.reportesDeAlertasToolStripMenuItem.Click += new System.EventHandler(this.reportesDeAlertasToolStripMenuItem_Click);
+            // 
+            // reportesDeMorbilidadToolStripMenuItem
+            // 
+            this.reportesDeMorbilidadToolStripMenuItem.Name = "reportesDeMorbilidadToolStripMenuItem";
+            this.reportesDeMorbilidadToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.reportesDeMorbilidadToolStripMenuItem.Text = "Reportes de Morbilidad";
+            this.reportesDeMorbilidadToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMorbilidadToolStripMenuItem_Click);
             // 
             // exportarEImportarDatosToolStripMenuItem
             // 
@@ -151,13 +149,6 @@
             this.slEstablecimiento.Name = "slEstablecimiento";
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
-            // 
-            // reportesDeMorbilidadToolStripMenuItem
-            // 
-            this.reportesDeMorbilidadToolStripMenuItem.Name = "reportesDeMorbilidadToolStripMenuItem";
-            this.reportesDeMorbilidadToolStripMenuItem.Size = new System.Drawing.Size(352, 22);
-            this.reportesDeMorbilidadToolStripMenuItem.Text = "Reportes de Morbilidad";
-            this.reportesDeMorbilidadToolStripMenuItem.Click += new System.EventHandler(this.reportesDeMorbilidadToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -199,7 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaPorPaciwinwToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiaClinicaEntreFechasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rESUMENCANTIDADDEGESTANTESPORMICROREDEESSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeAlertasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeMorbilidadToolStripMenuItem;

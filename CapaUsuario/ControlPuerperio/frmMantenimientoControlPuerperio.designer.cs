@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantenimientoControlPeuperio));
             this.dgvControlPeuperio = new System.Windows.Forms.DataGridView();
             this.idtcontrolpeuperio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +83,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvControlPeuperio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvControlPeuperio.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvControlPeuperio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvControlPeuperio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvControlPeuperio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtcontrolpeuperio,
@@ -93,12 +102,12 @@
             this.alturauterino,
             this.fua,
             this.detalle});
-            this.dgvControlPeuperio.Location = new System.Drawing.Point(12, 228);
+            this.dgvControlPeuperio.Location = new System.Drawing.Point(12, 241);
             this.dgvControlPeuperio.Name = "dgvControlPeuperio";
             this.dgvControlPeuperio.ReadOnly = true;
             this.dgvControlPeuperio.RowHeadersVisible = false;
             this.dgvControlPeuperio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvControlPeuperio.Size = new System.Drawing.Size(578, 253);
+            this.dgvControlPeuperio.Size = new System.Drawing.Size(576, 240);
             this.dgvControlPeuperio.TabIndex = 11;
             this.dgvControlPeuperio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvControlPeuperio_CellClick);
             // 
@@ -112,7 +121,7 @@
             // numero
             // 
             this.numero.FillWeight = 60.9137F;
-            this.numero.HeaderText = "NUMERO";
+            this.numero.HeaderText = "NRO";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
             // 
@@ -175,9 +184,9 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.ImageKey = "ssss.png";
-            this.btnSalir.Location = new System.Drawing.Point(194, 121);
+            this.btnSalir.Location = new System.Drawing.Point(154, 79);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(165, 72);
+            this.btnSalir.Size = new System.Drawing.Size(145, 56);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -194,9 +203,9 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.ImageIndex = 1;
-            this.btnNuevo.Location = new System.Drawing.Point(6, 17);
+            this.btnNuevo.Location = new System.Drawing.Point(3, 7);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(167, 75);
+            this.btnNuevo.Size = new System.Drawing.Size(145, 56);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "&Nuevo";
             this.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -213,9 +222,9 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.ImageKey = "118.png";
-            this.btnEliminar.Location = new System.Drawing.Point(194, 17);
+            this.btnEliminar.Location = new System.Drawing.Point(154, 7);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(165, 75);
+            this.btnEliminar.Size = new System.Drawing.Size(145, 56);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "&Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -232,9 +241,9 @@
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.ImageKey = "13.png";
-            this.btnGuardar.Location = new System.Drawing.Point(6, 121);
+            this.btnGuardar.Location = new System.Drawing.Point(3, 79);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(167, 72);
+            this.btnGuardar.Size = new System.Drawing.Size(145, 56);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -251,7 +260,7 @@
             this.txtNumero.Location = new System.Drawing.Point(125, 3);
             this.txtNumero.MaxLength = 15;
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(154, 20);
+            this.txtNumero.Size = new System.Drawing.Size(154, 24);
             this.txtNumero.TabIndex = 0;
             // 
             // numAlturaUterino
@@ -274,6 +283,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(285, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 18);
@@ -290,7 +300,7 @@
             this.txtFUA.Location = new System.Drawing.Point(125, 63);
             this.txtFUA.MaxLength = 15;
             this.txtFUA.Name = "txtFUA";
-            this.txtFUA.Size = new System.Drawing.Size(400, 20);
+            this.txtFUA.Size = new System.Drawing.Size(400, 24);
             this.txtFUA.TabIndex = 5;
             this.txtFUA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFUA_KeyPress);
             // 
@@ -299,7 +309,8 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 68);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(3, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 18);
             this.label4.TabIndex = 151;
@@ -366,6 +377,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(194, 30);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 30);
@@ -391,10 +403,10 @@
             this.txtDetalle.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tableLayoutPanel1.SetColumnSpan(this.txtDetalle, 5);
             this.txtDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalle.Location = new System.Drawing.Point(125, 89);
+            this.txtDetalle.Location = new System.Drawing.Point(125, 93);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(400, 82);
+            this.txtDetalle.Size = new System.Drawing.Size(400, 91);
             this.txtDetalle.TabIndex = 6;
             this.txtDetalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDetalle_KeyPress);
             // 
@@ -403,6 +415,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(285, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 18);
@@ -440,9 +453,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 86);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(3, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 88);
+            this.label2.Size = new System.Drawing.Size(116, 97);
             this.label2.TabIndex = 146;
             this.label2.Text = "Detalle :";
             // 
@@ -481,7 +495,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 174);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(528, 187);
             this.tableLayoutPanel1.TabIndex = 153;
             // 
             // groupBox1
@@ -509,32 +523,32 @@
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.61879F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.38121F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.btnNuevo, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnGuardar, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnEliminar, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnSalir, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(620, 266);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(644, 301);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.46939F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.53061F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(362, 196);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(302, 138);
             this.tableLayoutPanel3.TabIndex = 155;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(578, 210);
+            this.groupBox2.Size = new System.Drawing.Size(578, 223);
             this.groupBox2.TabIndex = 156;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "...";
+            this.groupBox2.Text = "Datos de Mantenimiento de Control Puerperio";
             // 
             // frmMantenimientoControlPeuperio
             // 
@@ -542,7 +556,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 493);
+            this.ClientSize = new System.Drawing.Size(998, 493);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.dgvControlPeuperio);
@@ -590,6 +604,10 @@
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.NumericUpDown numPresionArterialS;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idtcontrolpeuperio;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
@@ -599,9 +617,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn alturauterino;
         private System.Windows.Forms.DataGridViewTextBoxColumn fua;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
