@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -1150,7 +1150,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(97, 24);
             this.dtpFecha.TabIndex = 1;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             this.dtpFecha.Enter += new System.EventHandler(this.dtpFecha_Enter);
             this.dtpFecha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpFecha_KeyPress);
             this.dtpFecha.Leave += new System.EventHandler(this.dtpFecha_Leave);
@@ -1226,8 +1225,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1467,8 +1466,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1651,7 +1650,6 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(6, 12);
             this.pictureBox2.Name = "pictureBox2";
@@ -1673,11 +1671,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox15, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.buGuardar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.gbEESS, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buBuscar, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 588);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -1997,7 +1995,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1294, 670);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistoriaClinica";
             this.Text = "Control de Gestante";
             this.Activated += new System.EventHandler(this.frmHistoriaClinica_Activated);

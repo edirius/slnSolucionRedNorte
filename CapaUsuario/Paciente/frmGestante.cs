@@ -223,7 +223,15 @@ namespace CapaUsuario
             dcantidad_registros = Convert.ToDecimal(cantidad_registros);
             dcantidad_total_registros = Convert.ToDecimal(cantidad_total_registros);
 
-            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud((int)cantidad_total_registros-10, cantidad_registros);
+            int registros = 0;
+
+            if (cantidad_total_registros > 10)
+                registros = Math.Abs(cantidad_total_registros - 10);
+            else
+                registros = 0;
+
+
+            dgvGestante.DataSource = oGestante.ListarPacienteXIdEstablecimientoSalud(  registros , cantidad_registros);
 
             /*Buscando indice del item agregado o modificado*/
 
@@ -239,8 +247,7 @@ namespace CapaUsuario
                 }
             }
 
-            dgvGestante.Rows[rowIndex].Selected = true;
-            dgvGestante.CurrentCell = dgvGestante.Rows[rowIndex].Cells[2];
+            
 
             decimal total_registros_paciente = dcantidad_total_registros / dcantidad_registros;
             total_registros_paciente = Math.Ceiling(total_registros_paciente);
@@ -270,8 +277,9 @@ namespace CapaUsuario
                 fn = Convert.ToDateTime(dgvGestante.Rows[0].Cells[7].Value);
                 sdireccion = Convert.ToString(dgvGestante.Rows[0].Cells[8].Value);
                 stelefono = Convert.ToString(dgvGestante.Rows[0].Cells[9].Value);
+                dgvGestante.Rows[rowIndex].Selected = true;
+                dgvGestante.CurrentCell = dgvGestante.Rows[rowIndex].Cells[2];
 
-                                
 
             }
             else
