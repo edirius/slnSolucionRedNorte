@@ -68,6 +68,7 @@ namespace Monitoreo.Importacion
         }
         private void btnImportar_Click(object sender, EventArgs e)  
         {
+            //SYNC
             try
             {
                 string CodigoEstablecimiento;
