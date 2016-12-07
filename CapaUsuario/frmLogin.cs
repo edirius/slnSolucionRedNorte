@@ -16,7 +16,6 @@ namespace CapaUsuario.Seguridad
     {
         CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
-        
         public frmLogin()
         {
             InitializeComponent();
