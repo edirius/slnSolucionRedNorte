@@ -58,6 +58,9 @@ namespace CapaUsuario.Reportes
             CapaDeNegocios.RecienNacido.cRecienNacido oRecienNacido = new CapaDeNegocios.RecienNacido.cRecienNacido();
             CapaUsuario.frmHistoriaClinica oHC = new CapaUsuario.frmHistoriaClinica("","");
 
+            dtpFechaInicio.Value = DateTime.Now;
+            dtpFechaFin.Value = DateTime.Now;
+
             dtpFechaInicio.Focus();
 
         }
@@ -1773,6 +1776,11 @@ namespace CapaUsuario.Reportes
         private void fControlGestantesEntreFechas_Activated(object sender, EventArgs e)
         {
             dtpFechaInicio.Focus();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -178,9 +178,6 @@
   <data name="FondoFormularios3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoFormularios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lineas-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lineas-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="descarga (2) bw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga (2) bw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,6 +186,9 @@
   </data>
   <data name="parto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSuculentoRojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOTON21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -204,6 +204,9 @@
   </data>
   <data name="margen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\margen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSuculentoRojo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="14199162_10208986981984526_854374781998032101_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\14199162_10208986981984526_854374781998032101_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +226,9 @@
   <data name="images (8) bw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (8) bw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSuculentoRojo6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="importar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\importar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -234,6 +240,9 @@
   </data>
   <data name="AlertaRoja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AlertaRoja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSuculentoRojo7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FondoFormularios1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoFormularios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,11 +298,17 @@
   <data name="images (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sonrisa_ñusta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sonrisa_ñusta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="images (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnSuculento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSuculento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSuculentoRojo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnSuculento4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSuculento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,6 +325,9 @@
   <data name="BOTON22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gestante" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="recien_nacido" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\recien_nacido.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -322,17 +340,26 @@
   <data name="ExportarDatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExportarDatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSuculentoRojo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="images (9) bw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images (9) bw.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSuculentoRojo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="boton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\boton.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSuculentoRojo8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FondoFormularios6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoFormularios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sonrisa_ñusta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sonrisa_ñusta.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="images (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images (8).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Obstetra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Obstetra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -343,8 +370,8 @@
   <data name="madre_bebe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\madre_bebe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="images (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images (8).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lineas-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lineas-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOTON2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,10 +388,13 @@
   <data name="odontologia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\odontologia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnSuculentoRojo5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BOTON23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BOTON2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gestante" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gestante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSuculentoRojo9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSuculentoRojo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

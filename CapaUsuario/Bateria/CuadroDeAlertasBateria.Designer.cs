@@ -38,6 +38,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbTipoAlerta = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlertasBateria)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -152,18 +153,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alertas en Bateria:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(507, 544);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(96, 56);
+            this.btnSalir.TabIndex = 113;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // CuadroDeAlertasBateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(615, 538);
+            this.ClientSize = new System.Drawing.Size(615, 612);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvAlertasBateria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CuadroDeAlertasBateria";
             this.Text = "Cuadro de Alertas de Bateria";
+            this.Load += new System.EventHandler(this.CuadroDeAlertasBateria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlertasBateria)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -180,5 +199,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbTipoAlerta;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

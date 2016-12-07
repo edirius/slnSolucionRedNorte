@@ -41,6 +41,7 @@
             this.lblObstetra = new System.Windows.Forms.Label();
             this.lblEstablecimiento = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -189,6 +190,22 @@
             this.lblStatus.TabIndex = 11;
             this.lblStatus.Text = "...";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(629, 453);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(96, 56);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmExportacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -196,6 +213,7 @@
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(737, 521);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.pictureBox2);
@@ -237,5 +255,6 @@
         private System.Windows.Forms.Label lblObstetra;
         private System.Windows.Forms.Label lblEstablecimiento;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

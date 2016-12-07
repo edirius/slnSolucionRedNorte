@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBuscarCicloGestante));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvHC = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
@@ -50,14 +52,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvHC = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbBuscar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -66,8 +68,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Controls.Add(this.dgvHC);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(3, 12);
@@ -77,6 +79,37 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Explorar Control de Gestantes:";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // dgvHC
+            // 
+            this.dgvHC.AllowUserToAddRows = false;
+            this.dgvHC.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvHC.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHC.Location = new System.Drawing.Point(18, 96);
+            this.dgvHC.MultiSelect = false;
+            this.dgvHC.Name = "dgvHC";
+            this.dgvHC.ReadOnly = true;
+            this.dgvHC.RowHeadersVisible = false;
+            this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHC.Size = new System.Drawing.Size(1145, 412);
+            this.dgvHC.TabIndex = 31;
             // 
             // tableLayoutPanel4
             // 
@@ -106,7 +139,7 @@
             this.gbFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gbFiltrar.Location = new System.Drawing.Point(631, 3);
             this.gbFiltrar.Name = "gbFiltrar";
-            this.gbFiltrar.Size = new System.Drawing.Size(347, 61);
+            this.gbFiltrar.Size = new System.Drawing.Size(339, 61);
             this.gbFiltrar.TabIndex = 32;
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar por:";
@@ -130,7 +163,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cbMonth.Location = new System.Drawing.Point(193, 19);
+            this.cbMonth.Location = new System.Drawing.Point(182, 19);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(148, 26);
             this.cbMonth.TabIndex = 28;
@@ -141,7 +174,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(17, 22);
+            this.label17.Location = new System.Drawing.Point(6, 23);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(38, 18);
             this.label17.TabIndex = 0;
@@ -152,7 +185,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(146, 22);
+            this.label24.Location = new System.Drawing.Point(135, 22);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 18);
             this.label24.TabIndex = 0;
@@ -164,7 +197,7 @@
             this.cbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.cbYear.FormattingEnabled = true;
-            this.cbYear.Location = new System.Drawing.Point(61, 19);
+            this.cbYear.Location = new System.Drawing.Point(50, 20);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(79, 26);
             this.cbYear.TabIndex = 27;
@@ -312,8 +345,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(984, 3);
+            this.groupBox1.Location = new System.Drawing.Point(976, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 61);
             this.groupBox1.TabIndex = 33;
@@ -325,40 +359,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.madre_bebe;
             this.pictureBox1.InitialImage = global::CapaUsuario.Properties.Resources.madre_bebe;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(73, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvHC
+            // btnSalir
             // 
-            this.dgvHC.AllowUserToAddRows = false;
-            this.dgvHC.AllowUserToDeleteRows = false;
-            this.dgvHC.AllowUserToOrderColumns = true;
-            this.dgvHC.AllowUserToResizeColumns = false;
-            this.dgvHC.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvHC.BackgroundColor = System.Drawing.Color.White;
-            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvHC.Location = new System.Drawing.Point(15, 96);
-            this.dgvHC.MultiSelect = false;
-            this.dgvHC.Name = "dgvHC";
-            this.dgvHC.ReadOnly = true;
-            this.dgvHC.RowHeadersVisible = false;
-            this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1149, 419);
-            this.dgvHC.TabIndex = 29;
-            this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick);
-            this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick);
-            this.dgvHC.DoubleClick += new System.EventHandler(this.dgvHC_DoubleClick);
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(80, 11);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(79, 47);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // fBuscarCicloGestante
             // 
@@ -373,6 +395,7 @@
             this.Text = "Buscar en Control de Gestante(s)";
             this.Load += new System.EventHandler(this.fBuscarCicloGestante_Load);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
@@ -380,7 +403,6 @@
             this.gbBuscar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +422,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.ComboBox cbBuscar;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dgvHC;
         private System.Windows.Forms.GroupBox gbFiltrar;
         private System.Windows.Forms.ComboBox cbMonth;
         private System.Windows.Forms.Label label17;
@@ -408,5 +429,7 @@
         private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgvHC;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

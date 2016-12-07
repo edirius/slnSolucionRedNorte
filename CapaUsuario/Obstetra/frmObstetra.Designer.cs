@@ -67,7 +67,7 @@
             this.txtCelular.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCelular.Location = new System.Drawing.Point(350, 170);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(125, 24);
+            this.txtCelular.Size = new System.Drawing.Size(114, 24);
             this.txtCelular.TabIndex = 7;
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
@@ -94,7 +94,7 @@
             this.txtDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDireccion.Location = new System.Drawing.Point(160, 200);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(291, 24);
+            this.txtDireccion.Size = new System.Drawing.Size(304, 24);
             this.txtDireccion.TabIndex = 8;
             this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
@@ -241,7 +241,7 @@
             this.txtTituloProfesional.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTituloProfesional.Location = new System.Drawing.Point(160, 234);
             this.txtTituloProfesional.Name = "txtTituloProfesional";
-            this.txtTituloProfesional.Size = new System.Drawing.Size(320, 24);
+            this.txtTituloProfesional.Size = new System.Drawing.Size(304, 24);
             this.txtTituloProfesional.TabIndex = 9;
             this.txtTituloProfesional.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTituloProfesional_KeyPress);
             // 
