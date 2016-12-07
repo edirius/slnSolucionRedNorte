@@ -33,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1CF71CF3FDAE4BE09E727F982CBDAED4"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -130,12 +124,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -197,6 +185,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EA3E92E02320E26E6DC097A92AA6D38A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B9AAE6D80E30427EC1A140DC2B0A8106"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -349,26 +343,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1CF71CF3FDAE4BE09E727F982CBDAED4"
-            {
-            "SourcePath" = "8:..\\Monitoreo\\Resources\\icono (1).ico"
-            "TargetName" = "8:icono (1).ico"
-            "Tag" = "8:"
-            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_85FE1EC2E5C37B9A057CE21EF9CDCE2E"
