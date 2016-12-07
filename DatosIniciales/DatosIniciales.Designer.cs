@@ -299,6 +299,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DatosIniciales";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración Inicial";
             this.Load += new System.EventHandler(this.DatosIniciales_Load);
