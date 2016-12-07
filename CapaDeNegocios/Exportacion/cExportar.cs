@@ -88,27 +88,26 @@ namespace CapaDeNegocios.Exportacion
                     {
                         case "System.String":
                             /*Desencriptar Aquí en las columnas */
-                            //lineaSQL = lineaSQL + "'" +  cSeguridad.DesEncriptar(columnas[j]) + "'";
-                            lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            lineaSQL = lineaSQL + "'" +  cSeguridad.DesEncriptar(columnas[j]) + "'";
+                            //lineaSQL = lineaSQL + "'" + columnas[j] + "'";
                             break;
                         case "System.DateTime":
                             /*Desencriptar Aquí en las columnas */
-                            //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
-                            DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                            //DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
                             lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd hh:mm:ss") + "'";
                             break;
                         case "System.Decimal":
                             /*Desencriptar Aquí en las columnas */
                             //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
-                            
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
                             lineaSQL = lineaSQL + "'" + Convert.ToDecimal(columnas[j]) + "'";
                             break;
                         default:
                             /*Desencriptar Aquí en las columnas */
-                            //lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
-                            lineaSQL = lineaSQL + columnas[j];
+                            lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
+                            //lineaSQL = lineaSQL + columnas[j];
                             break;
                     }
 
@@ -158,8 +157,8 @@ namespace CapaDeNegocios.Exportacion
                                 {
 
                                     /*Encriptar Aquí*/
-                                    //Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
-                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
+                                    //Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write("®");
