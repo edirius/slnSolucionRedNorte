@@ -26,7 +26,7 @@ namespace DatosIniciales.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
         public string ConexionMySql {
             get {
                 return ((string)(this["ConexionMySql"]));
