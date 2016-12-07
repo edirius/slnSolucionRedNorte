@@ -16,7 +16,7 @@ namespace CapaDeNegocios.Exportacion
         public string CodigoEstablecimiento { get; set; }
 
         string[] tablas;
-
+        
 
 
         public string RutaArchivo
@@ -52,6 +52,7 @@ namespace CapaDeNegocios.Exportacion
             }
         }
 
+
         public bool InsertarDatosTabla(string nombreTabla, string[] datosTabla)
         {
 
@@ -69,13 +70,17 @@ namespace CapaDeNegocios.Exportacion
             }
             lineaInsertCabeza = lineaInsertCabeza + ") values (";
 
+            //if (nombreTabla == "thistoriaclinica")
+            
+
+
             string[] columnas = null;
 
             for (int i = 0; i < datosTabla.Length; i++)
             {
                 lineaSQL = lineaInsertCabeza;
 
-                columnas = datosTabla[i].Split(',');
+                columnas = datosTabla[i].Split('®');
                 for (int j = 0; j < columnas.Length; j++)
                 {
 
@@ -83,15 +88,21 @@ namespace CapaDeNegocios.Exportacion
                     {
                         case "System.String":
                             /*Desencriptar Aquí en las columnas */
-                            //lineaSQL = lineaSQL + "'" +  cSeguridad.DesEncriptar(columnas[j]) + "'";
-                            lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            lineaSQL = lineaSQL + "'" +  cSeguridad.DesEncriptar(columnas[j]) + "'";
+                            //lineaSQL = lineaSQL + "'" + columnas[j] + "'";
                             break;
                         case "System.DateTime":
                             /*Desencriptar Aquí en las columnas */
-                            //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
-                            DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                            //DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
-                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
+                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd hh:mm:ss") + "'";
+                            break;
+                        case "System.Decimal":
+                            /*Desencriptar Aquí en las columnas */
+                            //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                            //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
+                            lineaSQL = lineaSQL + "'" + Convert.ToDecimal(columnas[j]) + "'";
                             break;
                         default:
                             /*Desencriptar Aquí en las columnas */
@@ -118,10 +129,14 @@ namespace CapaDeNegocios.Exportacion
             }
             return true;
         }
-        //insert into tObstetra(idObstetra, nombre, apellido, fecha) values(
+
         cUtilitarios miUtilitario = new cUtilitarios();
-        public bool InsertarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
+
+        
+
+        public int ContarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
         {
+            int cantidad_lineas = 0;
             DataTable tAuxiliar;
             try
             {
@@ -146,11 +161,13 @@ namespace CapaDeNegocios.Exportacion
                                     //Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
-                                        Output.Write(",");
+                                        Output.Write("®");
                                     }
                                     else
                                     {
                                         Output.WriteLine();
+                                        cantidad_lineas++;
+                                        
                                     }
                                 }
 
@@ -158,49 +175,59 @@ namespace CapaDeNegocios.Exportacion
                         }
 
                     }
+
                 }
-                return true;
+
+                //MessageBox.Show(cantidad_lineas.ToString());
+                return cantidad_lineas;
             }
             catch (Exception e)
             {
                 throw new cReglaNegocioException("Error al insertar datos al backup: " + e.Message);
             }
         }
+
+        public int Contador(int c) {
+            return c;
+        }
+
+        
        
         public bool ImportarDatosArchivoABaseDeDatos(string nombreArchivo)
         {
-            
-            //try
-            //{
-            
+
+            try
+            {
+
                 string[] archivos;
-                
+
                 using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
                 {
                     string FileText = ReadFile.ReadToEnd();
                     string[] delimiters = new string[] { "@@" };
                     archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                 }
-                string nombreTablaAuxiliar= "";
+                string nombreTablaAuxiliar = "";
                 string[] contenidoAuxiliar = null;
                 string[] camposAuxiliar = null;
                 for (int i = 0; i < archivos.Length; i = i + 2)
                 {
                     nombreTablaAuxiliar = archivos[i];
                     string[] delimiters2 = new string[] { "\r\n" };
-                    contenidoAuxiliar = archivos[i + 1].Split(delimiters2,StringSplitOptions.RemoveEmptyEntries);
+                    contenidoAuxiliar = archivos[i + 1].Split(delimiters2, StringSplitOptions.RemoveEmptyEntries);
+
                     InsertarDatosTabla(nombreTablaAuxiliar, contenidoAuxiliar);
 
                 }
 
                 return true;
-                
-            //}
-            //catch ( Exception ex)
-            //{
-            //    throw new cReglaNegocioException ("Error al importar Datos: " + ex.Message);
-            //}
-            
+
+            }
+            catch (Exception ex)
+            {
+                throw new cReglaNegocioException("Error al importar Datos: " + ex.Message);
+            }
+
         }
     }
 }

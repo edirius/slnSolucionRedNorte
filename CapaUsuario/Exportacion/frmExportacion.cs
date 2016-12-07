@@ -12,10 +12,14 @@ using System.Drawing.Drawing2D;
 using CapaDeNegocios;
 using CapaDeNegocios.Exportacion;
 using System.Collections;
+using CapaDeDatos;
+
 namespace CapaUsuario.Exportacion
 {
     public partial class frmExportacion : Form
     {
+        int total_lineas = 0;
+
         public frmExportacion()
         {
             InitializeComponent();
@@ -43,6 +47,70 @@ namespace CapaUsuario.Exportacion
         //        e.Graphics.FillRectangle(brush, this.ClientRectangle);
         //    }
         //}
+
+        public bool InsertarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
+        {
+ 
+            int porcentaje_avanzado = 0;
+            //var progressReport = new cProgressReport();
+            DataTable tAuxiliar;
+            try
+            {
+
+                using (System.IO.StreamWriter Output = new System.IO.StreamWriter(nombreArchivo))
+                {
+                    foreach (string iTablas in nombresTablas)
+                    {
+                        tAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + iTablas);
+                        tAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + iTablas + " where left(" + tAuxiliar.Columns[0].ColumnName + ", 4) = '" + IdEstablecimientoSalud + "'");
+                        if (tAuxiliar.Rows.Count > 0)
+                        {
+                            Output.WriteLine("@@" + iTablas + "@@");
+                            for (int i = 0; i < tAuxiliar.Rows.Count; i++)
+                            {
+
+                                foreach (DataColumn col in tAuxiliar.Columns)
+                                {
+
+                                    /*Encriptar Aquí*/
+                                    //Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
+                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    if (col.Ordinal < tAuxiliar.Columns.Count - 1)
+                                    {
+                                        Output.Write("®");
+                                    }
+                                    else
+                                    {
+                                        Output.WriteLine();
+                                        porcentaje_avanzado++;
+                                        
+                                        progressBar.Value = (porcentaje_avanzado*100)/total_lineas;
+                                        progressBar.Update();
+
+                                        lblStatus.Text = string.Format("Exportando información...{0}%", progressBar.Value);
+
+                                        if (progressBar.Value == 100) {
+                                            lblStatus.Text = "¡Datos exportados exitosamente!";
+                                            total_lineas = 0;
+                                        }
+                                            
+
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                throw new cReglaNegocioException("Error al insertar datos al backup: " + e.Message);
+            }
+        }
+
         string NombreArchivo;
         private async void btnExportar_Click(object sender, EventArgs e)
         {
@@ -57,8 +125,11 @@ namespace CapaUsuario.Exportacion
                 NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
                 dlgGuardar.FileName = NombreArchivo;
                 dlgGuardar.ShowDialog();
-                IniciarCarga();
-                oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+
+                total_lineas = 0;
+                total_lineas = oExportar.ContarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
                 /////
                 /////
                 MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
@@ -83,7 +154,7 @@ namespace CapaUsuario.Exportacion
             /////////////////////////////
 
         }
-        private async void IniciarCarga()
+        private async void IniciarCarga(int progreso)
         {
             progressBar.Visible = true;
             lblStatus.Visible = true;
@@ -99,6 +170,8 @@ namespace CapaUsuario.Exportacion
                 progressBar.Update();
             };
             await ProcessData(list, progress);
+
+
             lblStatus.Text = "¡Datos exportados exitosamente!";
         }
         private Task ProcessData(List<string> list, IProgress<cProgressReport> progress)

@@ -288,9 +288,9 @@ namespace CapaUsuario.Bateria
                 cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
                 cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
                 nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
-                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
+                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
                 Alertar();
             }
             catch { }
@@ -487,7 +487,7 @@ namespace CapaUsuario.Bateria
                 cbVIH.Text = dgvListaBateria[4, valor].Value.ToString();
                 cbSifilis.Text = dgvListaBateria[5, valor].Value.ToString();
                 nudGlucosa.Text = dgvListaBateria[6, valor].Value.ToString();
-                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
+                
                 txtFechaExamenOrina.Text = dgvListaBateria[8, valor].Value.ToString();
                 txtFechaTratamiento.Text = dgvListaBateria[9, valor].Value.ToString();
                 if (dgvListaBateria[9, valor].Value.ToString() != "" & Convert.ToInt16(dgvListaBateria[7, valor].Value.ToString()) >= 8)
@@ -500,6 +500,7 @@ namespace CapaUsuario.Bateria
                     lblMensajeOrina.Text = "LA GESTANTE TIENE INFECCIÓN URINARIA";
                     lblMensajeTratamiento.Text = "LA GESTANTE NO TIENE FECHA DE TRATAMIENTO";
                 }
+                nudOrina.Text = dgvListaBateria[7, valor].Value.ToString();
             }
             catch { }
             

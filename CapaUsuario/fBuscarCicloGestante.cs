@@ -185,12 +185,12 @@ namespace CapaUsuario
 
         private void dgvHC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            llenar_datos_hc(e);
+             
         }
 
         private void dgvHC_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            llenar_datos_hc(e);
+            
         }
 
         private void llenar_datos_hc(DataGridViewCellEventArgs e)
@@ -204,7 +204,7 @@ namespace CapaUsuario
 
         private void dgvHC_DoubleClick(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+           
         }
 
         private void cbBuscar_SelectedIndexChanged(object sender, EventArgs e)
@@ -215,6 +215,21 @@ namespace CapaUsuario
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvHC_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_hc(e);
+        }
+
+        private void dgvHC_DoubleClick_1(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void dgvHC_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_hc(e);
         }
     }
 }
