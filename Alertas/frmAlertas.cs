@@ -141,7 +141,7 @@ namespace Alertas
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
         private void frmAlertas_Move(object sender, EventArgs e)
