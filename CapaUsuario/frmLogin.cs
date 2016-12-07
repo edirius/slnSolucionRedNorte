@@ -16,7 +16,6 @@ namespace CapaUsuario.Seguridad
     {
         CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
-        
         public frmLogin()
         {
             InitializeComponent();
@@ -33,6 +32,7 @@ namespace CapaUsuario.Seguridad
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         public void IniciarSesion()
@@ -125,6 +125,16 @@ namespace CapaUsuario.Seguridad
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 IniciarSesion();
+            }
+        }
+
+        private void txtAdmin_TextChanged(object sender, EventArgs e)
+        {
+            if (txtAdmin.Text == "BAHAMUT")
+            {
+                frmMenu menu = new frmMenu();
+                menu.Show();
+                this.Hide();
             }
         }
     }

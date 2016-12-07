@@ -238,6 +238,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(812, 545);
             this.Name = "frmImportarDatos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importación de datos";
             this.Load += new System.EventHandler(this.frmImportarDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
