@@ -69,8 +69,8 @@ namespace Monitoreo.Importacion
         private void btnImportar_Click(object sender, EventArgs e)  
         {
             //SYNC
-            //try
-            //{
+            try
+            {
                 string CodigoEstablecimiento;
                 dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
                 dlgAbrir.ShowDialog();
@@ -105,8 +105,8 @@ namespace Monitoreo.Importacion
                 {
                     MessageBox.Show("El código de establecimiento '" + cbEstablecimientoSalud.Text + "' no coincide con el código del establecimiento del archivo. Asegúrese que esta importando los datos del establecimiento seleccionado.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            //}
-            //catch { }
+        }
+            catch { }
 
         }
         private async void IniciarCarga()

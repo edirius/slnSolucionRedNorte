@@ -30,13 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,17 +44,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fControlGestantesEntreFechas));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.buImprimir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
             this.dgvControlPuerperio = new System.Windows.Forms.DataGridView();
+            this.dgvAtencionPreNatal = new System.Windows.Forms.DataGridView();
             this.dgvTerminoGestacion = new System.Windows.Forms.DataGridView();
             this.dgvVisitasPuerpera = new System.Windows.Forms.DataGridView();
             this.dgvVisitasG = new System.Windows.Forms.DataGridView();
             this.dgvOdontologico = new System.Windows.Forms.DataGridView();
             this.dgvRegBateria = new System.Windows.Forms.DataGridView();
             this.dgvHCEntreFechas = new System.Windows.Forms.DataGridView();
-            this.dgvAtencionPreNatal = new System.Windows.Forms.DataGridView();
             this.dgvHCParte3 = new System.Windows.Forms.DataGridView();
             this.dgvMorbilidad = new System.Windows.Forms.DataGridView();
             this.dgvEcografico = new System.Windows.Forms.DataGridView();
@@ -70,18 +71,17 @@
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPuerperio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminoGestacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasPuerpera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegBateria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCEntreFechas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCParte3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografico)).BeginInit();
@@ -108,12 +108,30 @@
             this.tableLayoutPanel2.Controls.Add(this.btnSalir, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.buImprimir, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox3, 4, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 137);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 251);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(778, 57);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(770, 57);
             this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(387, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(122, 51);
+            this.btnSalir.TabIndex = 15;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // buImprimir
             // 
@@ -124,9 +142,9 @@
             this.buImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buImprimir.ForeColor = System.Drawing.Color.White;
-            this.buImprimir.Location = new System.Drawing.Point(261, 3);
+            this.buImprimir.Location = new System.Drawing.Point(259, 3);
             this.buImprimir.Name = "buImprimir";
-            this.buImprimir.Size = new System.Drawing.Size(123, 51);
+            this.buImprimir.Size = new System.Drawing.Size(122, 51);
             this.buImprimir.TabIndex = 5;
             this.buImprimir.Text = "&Vista preliminar";
             this.buImprimir.UseVisualStyleBackColor = true;
@@ -148,9 +166,9 @@
             this.groupBox3.Controls.Add(this.dgvEcografico);
             this.groupBox3.Controls.Add(this.dgvHCParte2);
             this.groupBox3.Controls.Add(this.dgvHCParte1);
-            this.groupBox3.Location = new System.Drawing.Point(519, 3);
+            this.groupBox3.Location = new System.Drawing.Point(515, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(123, 51);
+            this.groupBox3.Size = new System.Drawing.Size(122, 51);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
@@ -195,6 +213,26 @@
             this.dgvControlPuerperio.Size = new System.Drawing.Size(171, 81);
             this.dgvControlPuerperio.TabIndex = 16;
             this.dgvControlPuerperio.Visible = false;
+            // 
+            // dgvAtencionPreNatal
+            // 
+            this.dgvAtencionPreNatal.AllowUserToAddRows = false;
+            this.dgvAtencionPreNatal.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAtencionPreNatal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAtencionPreNatal.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(17, 3);
+            this.dgvAtencionPreNatal.MultiSelect = false;
+            this.dgvAtencionPreNatal.Name = "dgvAtencionPreNatal";
+            this.dgvAtencionPreNatal.ReadOnly = true;
+            this.dgvAtencionPreNatal.RowHeadersVisible = false;
+            this.dgvAtencionPreNatal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAtencionPreNatal.Size = new System.Drawing.Size(123, 51);
+            this.dgvAtencionPreNatal.TabIndex = 23;
+            this.dgvAtencionPreNatal.Visible = false;
             // 
             // dgvTerminoGestacion
             // 
@@ -316,26 +354,6 @@
             this.dgvHCEntreFechas.TabIndex = 22;
             this.dgvHCEntreFechas.Visible = false;
             // 
-            // dgvAtencionPreNatal
-            // 
-            this.dgvAtencionPreNatal.AllowUserToAddRows = false;
-            this.dgvAtencionPreNatal.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvAtencionPreNatal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAtencionPreNatal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAtencionPreNatal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvAtencionPreNatal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAtencionPreNatal.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvAtencionPreNatal.Location = new System.Drawing.Point(17, 3);
-            this.dgvAtencionPreNatal.MultiSelect = false;
-            this.dgvAtencionPreNatal.Name = "dgvAtencionPreNatal";
-            this.dgvAtencionPreNatal.ReadOnly = true;
-            this.dgvAtencionPreNatal.RowHeadersVisible = false;
-            this.dgvAtencionPreNatal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAtencionPreNatal.Size = new System.Drawing.Size(123, 51);
-            this.dgvAtencionPreNatal.TabIndex = 23;
-            this.dgvAtencionPreNatal.Visible = false;
-            // 
             // dgvHCParte3
             // 
             this.dgvHCParte3.AllowUserToAddRows = false;
@@ -450,7 +468,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(778, 116);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(770, 220);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // groupBox2
@@ -458,9 +476,9 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox2.Location = new System.Drawing.Point(71, 3);
+            this.groupBox2.Location = new System.Drawing.Point(67, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(635, 98);
+            this.groupBox2.Size = new System.Drawing.Size(635, 214);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Configurarción de reporte";
@@ -469,9 +487,9 @@
             // 
             this.groupBox4.Controls.Add(this.cbArchivado);
             this.groupBox4.Controls.Add(this.cbTranseunte);
-            this.groupBox4.Location = new System.Drawing.Point(325, 28);
+            this.groupBox4.Location = new System.Drawing.Point(183, 94);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(300, 55);
+            this.groupBox4.Size = new System.Drawing.Size(295, 114);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Mostrar:";
@@ -504,7 +522,7 @@
             this.groupBox1.Controls.Add(this.dtpFechaInicio);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(7, 28);
+            this.groupBox1.Location = new System.Drawing.Point(183, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 55);
             this.groupBox1.TabIndex = 9;
@@ -549,31 +567,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio:";
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
-            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
-            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(390, 3);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(123, 51);
-            this.btnSalir.TabIndex = 15;
-            this.btnSalir.Text = "&Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // fControlGestantesEntreFechas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(806, 206);
+            this.ClientSize = new System.Drawing.Size(798, 320);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -585,13 +585,13 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvControlPuerperio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerminoGestacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasPuerpera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitasG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdontologico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegBateria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCEntreFechas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAtencionPreNatal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCParte3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMorbilidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEcografico)).EndInit();
