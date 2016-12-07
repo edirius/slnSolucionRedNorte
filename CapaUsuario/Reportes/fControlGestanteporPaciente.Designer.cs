@@ -82,6 +82,7 @@
             this.buEliminar = new System.Windows.Forms.Button();
             this.buImprimir = new System.Windows.Forms.Button();
             this.buNuevo = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestante)).BeginInit();
@@ -352,16 +353,17 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 8;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnCount = 9;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox5, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.buAgregar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.buEliminar, 3, 0);
@@ -371,8 +373,6 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1058, 54);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -392,9 +392,9 @@
             this.groupBox5.Controls.Add(this.dgvEcografico);
             this.groupBox5.Controls.Add(this.dgvHCParte2);
             this.groupBox5.Controls.Add(this.dgvHCParte1);
-            this.groupBox5.Location = new System.Drawing.Point(927, 3);
+            this.groupBox5.Location = new System.Drawing.Point(822, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(128, 25);
+            this.groupBox5.Size = new System.Drawing.Size(111, 25);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "groupBox5";
@@ -689,9 +689,9 @@
             this.buAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buAgregar.ForeColor = System.Drawing.Color.White;
-            this.buAgregar.Location = new System.Drawing.Point(267, 3);
+            this.buAgregar.Location = new System.Drawing.Point(237, 3);
             this.buAgregar.Name = "buAgregar";
-            this.buAgregar.Size = new System.Drawing.Size(126, 48);
+            this.buAgregar.Size = new System.Drawing.Size(111, 48);
             this.buAgregar.TabIndex = 6;
             this.buAgregar.Text = "&Agregar";
             this.buAgregar.UseVisualStyleBackColor = true;
@@ -706,9 +706,9 @@
             this.buEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buEliminar.ForeColor = System.Drawing.Color.White;
-            this.buEliminar.Location = new System.Drawing.Point(399, 3);
+            this.buEliminar.Location = new System.Drawing.Point(354, 3);
             this.buEliminar.Name = "buEliminar";
-            this.buEliminar.Size = new System.Drawing.Size(126, 48);
+            this.buEliminar.Size = new System.Drawing.Size(111, 48);
             this.buEliminar.TabIndex = 7;
             this.buEliminar.Text = "&Eliminar";
             this.buEliminar.UseVisualStyleBackColor = true;
@@ -723,9 +723,9 @@
             this.buImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buImprimir.ForeColor = System.Drawing.Color.White;
-            this.buImprimir.Location = new System.Drawing.Point(663, 3);
+            this.buImprimir.Location = new System.Drawing.Point(588, 3);
             this.buImprimir.Name = "buImprimir";
-            this.buImprimir.Size = new System.Drawing.Size(126, 48);
+            this.buImprimir.Size = new System.Drawing.Size(111, 48);
             this.buImprimir.TabIndex = 9;
             this.buImprimir.Text = "&Vista preliminar";
             this.buImprimir.UseVisualStyleBackColor = true;
@@ -740,13 +740,31 @@
             this.buNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buNuevo.ForeColor = System.Drawing.Color.White;
-            this.buNuevo.Location = new System.Drawing.Point(531, 3);
+            this.buNuevo.Location = new System.Drawing.Point(471, 3);
             this.buNuevo.Name = "buNuevo";
-            this.buNuevo.Size = new System.Drawing.Size(126, 48);
+            this.buNuevo.Size = new System.Drawing.Size(111, 48);
             this.buNuevo.TabIndex = 8;
             this.buNuevo.Text = "&Nuevo";
             this.buNuevo.UseVisualStyleBackColor = true;
             this.buNuevo.Click += new System.EventHandler(this.buNuevo_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(705, 3);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(111, 48);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // fControlGestanteporPaciente
             // 
@@ -831,5 +849,6 @@
         private System.Windows.Forms.DataGridView dgvEcografico;
         private System.Windows.Forms.DataGridView dgvHCParte2;
         private System.Windows.Forms.DataGridView dgvHCParte1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

@@ -47,6 +47,7 @@
             this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.establecimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRN)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +116,7 @@
             this.btnGenerarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGenerarReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporte.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporte.Location = new System.Drawing.Point(849, 447);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(709, 447);
             this.btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerarReporte.Name = "btnGenerarReporte";
             this.btnGenerarReporte.Size = new System.Drawing.Size(136, 56);
@@ -255,6 +256,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar Recien Nacidos con Bajo Peso:";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.MintCream;
+            this.btnSalir.BackgroundImage = global::CapaUsuario.Properties.Resources.btnSuculentoRojo;
+            this.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(852, 446);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(133, 56);
+            this.btnSalir.TabIndex = 115;
+            this.btnSalir.Text = "&Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmAlertaRNBajoPeso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -262,6 +279,7 @@
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(997, 518);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGenerarReporte);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,5 +313,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn microred;
         private System.Windows.Forms.DataGridViewTextBoxColumn establecimiento;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

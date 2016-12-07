@@ -1017,7 +1017,7 @@ namespace CapaUsuario
             if ( oUtilitarios.es_numerico(txtPeso.Text)  || txtPeso.Text != "")
                 oHistoriaClinica.Peso = Convert.ToDecimal(txtPeso.Text);
 
-            if (oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
+            if ( oUtilitarios.es_numerico(txtTalla.Text) || txtTalla.Text != "")
                 oHistoriaClinica.Talla = Convert.ToDecimal(txtTalla.Text);
 
                 bool bpeso = oUtilitarios.es_numerico(txtPeso.Text);

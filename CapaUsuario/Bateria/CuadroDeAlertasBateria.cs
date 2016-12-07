@@ -16,5 +16,15 @@ namespace CapaUsuario.Bateria
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CuadroDeAlertasBateria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

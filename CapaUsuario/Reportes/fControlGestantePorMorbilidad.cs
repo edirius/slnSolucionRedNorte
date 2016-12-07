@@ -19,6 +19,11 @@ namespace CapaUsuario.Reportes
         string morbilidad = "";
         int Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic, Año;
 
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public fControlGestantePorMorbilidad()
         {
             InitializeComponent();
