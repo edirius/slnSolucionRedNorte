@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtAdmin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -130,6 +131,17 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtAdmin
+            // 
+            this.txtAdmin.BackColor = System.Drawing.Color.White;
+            this.txtAdmin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtAdmin.Font = new System.Drawing.Font("Perpetua Titling MT", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdmin.Location = new System.Drawing.Point(257, 440);
+            this.txtAdmin.Name = "txtAdmin";
+            this.txtAdmin.Size = new System.Drawing.Size(137, 22);
+            this.txtAdmin.TabIndex = 6;
+            this.txtAdmin.TextChanged += new System.EventHandler(this.txtAdmin_TextChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,6 +150,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(396, 433);
+            this.Controls.Add(this.txtAdmin);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtAdmin;
     }
 }
