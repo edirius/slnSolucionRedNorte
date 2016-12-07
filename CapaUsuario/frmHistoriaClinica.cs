@@ -3229,6 +3229,7 @@ namespace CapaUsuario
 
         private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
@@ -3262,6 +3263,7 @@ namespace CapaUsuario
 
             if (e.KeyChar == (char)13)
                 txtTalla.Focus();
+            
 
         }
 
@@ -3297,6 +3299,7 @@ namespace CapaUsuario
 
             if (e.KeyChar == (char)13)
                 txtObservaciones.Focus();
+            
 
         }
 

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,8 +69,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
@@ -279,7 +277,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 665);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 660);
             this.tableLayoutPanel2.TabIndex = 37;
             // 
             // groupBox1
@@ -312,7 +310,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox1.Location = new System.Drawing.Point(1084, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 655);
+            this.groupBox1.Size = new System.Drawing.Size(192, 654);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
@@ -652,7 +650,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1075, 655);
+            this.groupBox2.Size = new System.Drawing.Size(1075, 654);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -703,8 +701,6 @@
             this.groupBox12.Controls.Add(this.groupBox13);
             this.groupBox12.Controls.Add(this.label12);
             this.groupBox12.Controls.Add(this.txtPeso);
-            this.groupBox12.Controls.Add(this.label24);
-            this.groupBox12.Controls.Add(this.label17);
             this.groupBox12.Controls.Add(this.label3);
             this.groupBox12.Location = new System.Drawing.Point(16, 432);
             this.groupBox12.Name = "groupBox12";
@@ -717,7 +713,7 @@
             // 
             this.lblIMC.AutoSize = true;
             this.lblIMC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblIMC.Location = new System.Drawing.Point(189, 74);
+            this.lblIMC.Location = new System.Drawing.Point(185, 75);
             this.lblIMC.Name = "lblIMC";
             this.lblIMC.Size = new System.Drawing.Size(94, 20);
             this.lblIMC.TabIndex = 5;
@@ -736,7 +732,7 @@
             // 
             // txtTalla
             // 
-            this.txtTalla.Location = new System.Drawing.Point(189, 46);
+            this.txtTalla.Location = new System.Drawing.Point(219, 48);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(75, 24);
             this.txtTalla.TabIndex = 22;
@@ -771,13 +767,13 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(140, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 18);
+            this.label12.Size = new System.Drawing.Size(74, 18);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Talla:";
+            this.label12.Text = "Talla (m) :";
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(189, 18);
+            this.txtPeso.Location = new System.Drawing.Point(219, 20);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(75, 24);
             this.txtPeso.TabIndex = 21;
@@ -786,32 +782,14 @@
             this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             this.txtPeso.Leave += new System.EventHandler(this.txtPeso_Leave);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(265, 24);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(24, 18);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "kg";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(263, 51);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(21, 18);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "m";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(140, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 18);
+            this.label3.Size = new System.Drawing.Size(81, 18);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Peso:";
+            this.label3.Text = "Peso (kg) :";
             // 
             // groupBox7
             // 
@@ -1225,8 +1203,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1467,8 +1445,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1994,10 +1972,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1294, 670);
+            this.ClientSize = new System.Drawing.Size(1294, 665);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistoriaClinica";
@@ -2197,8 +2175,6 @@
         private System.Windows.Forms.PictureBox pbMM;
         private System.Windows.Forms.Button buBuscar;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
