@@ -18,7 +18,7 @@ namespace CapaUsuario.VisitaDomiciliaria
         string sidtvisitadomiciliariapuerperarn = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
-        string snombreobstetra = "";
+        string sidtobstetra = "";
 
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
@@ -31,7 +31,7 @@ namespace CapaUsuario.VisitaDomiciliaria
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtobstetra = cVariables.v_idobstetra;
             sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
             VerificarTerminoGestacion();
             tabControl1_SelectedIndexChanged(sender, e);
@@ -77,6 +77,7 @@ namespace CapaUsuario.VisitaDomiciliaria
                     miVisitaDomiciliariaGestante.fua = txtFuaGestante.Text;
                     miVisitaDomiciliariaGestante.detalle = txtDetalleGestante.Text;
                     miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
+                    miVisitaDomiciliariaGestante.idtobstetra = sidtobstetra;
                     if (saccion == 1)
                     {
                         CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
@@ -106,6 +107,7 @@ namespace CapaUsuario.VisitaDomiciliaria
                     miVisitaDomiciliariaPuerperaRN.fuareciennacido = txtFuaRN.Text;
                     miVisitaDomiciliariaPuerperaRN.detallereciennacido = txtDetalleRN.Text;
                     miVisitaDomiciliariaPuerperaRN.idthistoriaclinica = sidthistoriaclinica;
+                    miVisitaDomiciliariaPuerperaRN.idtobstetra = sidtobstetra;
                     if (saccion == 1)
                     {
                         CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();

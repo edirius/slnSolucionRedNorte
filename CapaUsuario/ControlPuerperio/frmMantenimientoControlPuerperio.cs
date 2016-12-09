@@ -17,7 +17,7 @@ namespace CapaUsuario.ControlPeuperio
         string sidtcontrolpeuperio = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
-        string snombreobstetra = "";
+        string sidtobstetra = "";
 
         CapaDeNegocios.ControlPeuperio.cControlPeuperio miControlPeuperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
 
@@ -29,7 +29,7 @@ namespace CapaUsuario.ControlPeuperio
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtobstetra = cVariables.v_idobstetra;
             sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
             VerificarTerminoGestacion();
             CargarDatos();
@@ -72,6 +72,7 @@ namespace CapaUsuario.ControlPeuperio
                 miControlPeuperio.fua = txtFUA.Text;
                 miControlPeuperio.detalle = txtDetalle.Text;
                 miControlPeuperio.idthistoriaclinica = sidthistoriaclinica;
+                miControlPeuperio.idtobstetra = sidtobstetra;
                 if (saccion == 1)
                 {
                     CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();

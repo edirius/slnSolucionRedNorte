@@ -296,6 +296,12 @@
     <Compile Include="frmMorbilidad.Designer.cs">
       <DependentUpon>frmMorbilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obstetra\frmMantenimientoContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obstetra\frmMantenimientoContraseña.Designer.cs">
+      <DependentUpon>frmMantenimientoContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Paciente\frmGestante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMorbilidad.resx">
       <DependentUpon>frmMorbilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obstetra\frmMantenimientoContraseña.resx">
+      <DependentUpon>frmMantenimientoContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Paciente\frmGestante.resx">
       <DependentUpon>frmGestante.cs</DependentUpon>

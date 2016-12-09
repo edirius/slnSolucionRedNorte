@@ -19,6 +19,9 @@ namespace CapaUsuario
         public string IdObstetra;
         public string NombreEstablecimientoSalud;
         public string IdEstablecimientoSalud;
+        public string susuario;
+        public string spassword;
+        public string scatogoria;
 
         public frmMenu()
         {
@@ -28,6 +31,7 @@ namespace CapaUsuario
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            HabilitarPermisos();
             Alertas.frmAlerta fAlerta = new Alertas.frmAlerta();
             fAlerta.CodigoEstablecimiento = IdEstablecimientoSalud;
             fAlerta.CodigoObstetra = IdObstetra;
@@ -48,6 +52,9 @@ namespace CapaUsuario
             IdObstetra = Tabla.Rows[0][1].ToString();
             IdEstablecimientoSalud = Tabla.Rows[0][2].ToString();
             NombreEstablecimientoSalud = Tabla.Rows[0][3].ToString();
+            susuario = Tabla.Rows[0][4].ToString();
+            spassword = Tabla.Rows[0][5].ToString();
+            scatogoria = Tabla.Rows[0][6].ToString();
             slNombre.Text = "Obstetra: " + NombreObstetra;
             slEstablecimiento.Text = "Establecimiento de Salud: " + NombreEstablecimientoSalud;
             PasarDatos();
@@ -66,11 +73,30 @@ namespace CapaUsuario
             }
         }
 
+        private void HabilitarPermisos()
+        {
+            if (scatogoria == "ADMINISTRADOR")
+            {
+                mantenimientoObstetrasToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                mantenimientoObstetrasToolStripMenuItem.Visible = false;
+            }
+        }
+
         private void mantenimientoObstetrasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra(IdEstablecimientoSalud);
+            Obstetra.frmMantenimientoObstetra fMantenimientoObstetra = new Obstetra.frmMantenimientoObstetra();
             fMantenimientoObstetra.MdiParent = this;
             fMantenimientoObstetra.Show();
+        }
+
+        private void mantenimientoContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Obstetra.frmMantenimientoContraseña fMantenimientoContraseña = new Obstetra.frmMantenimientoContraseña();
+            fMantenimientoContraseña.MdiParent = this;
+            fMantenimientoContraseña.Show();
         }
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,6 +124,8 @@ namespace CapaUsuario
         {
             cVariables.v_idobstetra = IdObstetra;
             cVariables.v_nombreobstetra = NombreObstetra;
+            cVariables.v_usuario = susuario;
+            cVariables.v_password = spassword;
             cVariables.v_idestablecimientosalud = IdEstablecimientoSalud;
             cVariables.v_nombreestablecimientosalud = NombreEstablecimientoSalud;
         }

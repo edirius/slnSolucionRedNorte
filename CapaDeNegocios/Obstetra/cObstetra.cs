@@ -24,6 +24,7 @@ namespace CapaDeNegocios.Obstetra
         string sidtestablecimientosalud;
         string susuario;
         string spassword;
+        string scategoria;
 
         public string idtobstetra
         { get { return sidtobstetra; } set { sidtobstetra = value; } }
@@ -51,6 +52,8 @@ namespace CapaDeNegocios.Obstetra
         { get { return susuario; } set { susuario = value; } }
         public string password
         { get { return spassword; } set { spassword = value; } }
+        public string categoria
+        { get { return scategoria; } set { scategoria = value; } }
 
         public DataTable ListarObstetra()
         {
@@ -59,19 +62,25 @@ namespace CapaDeNegocios.Obstetra
 
         public Boolean CrearObstetra(cObstetra miObstetra)
         {
-            Conexion.GDatos.Ejecutar("spCrearObstetra", miObstetra.idtobstetra, miObstetra.nombres, miObstetra.apellidopaterno, miObstetra.apellidomaterno, miObstetra.sexo, miObstetra.dni, miObstetra.fechanacimiento, miObstetra.direccion, miObstetra.telefono, miObstetra.tituloprofesional, miObstetra.idtestablecimientosalud, miObstetra.usuario, miObstetra.password);
+            Conexion.GDatos.Ejecutar("spCrearObstetra", miObstetra.idtobstetra, miObstetra.nombres, miObstetra.apellidopaterno, miObstetra.apellidomaterno, miObstetra.sexo, miObstetra.dni, miObstetra.fechanacimiento, miObstetra.direccion, miObstetra.telefono, miObstetra.tituloprofesional, miObstetra.idtestablecimientosalud, miObstetra.usuario, miObstetra.password, miObstetra.categoria);
             return true;
         }
 
         public Boolean ModificarObstetra(cObstetra miObstetra)
         {
-            Conexion.GDatos.Ejecutar("spModificarObstetra", miObstetra.idtobstetra, miObstetra.nombres, miObstetra.apellidopaterno, miObstetra.apellidomaterno, miObstetra.sexo, miObstetra.dni, miObstetra.fechanacimiento, miObstetra.direccion, miObstetra.telefono, miObstetra.tituloprofesional, miObstetra.idtestablecimientosalud, miObstetra.usuario, miObstetra.password);
+            Conexion.GDatos.Ejecutar("spModificarObstetra", miObstetra.idtobstetra, miObstetra.nombres, miObstetra.apellidopaterno, miObstetra.apellidomaterno, miObstetra.sexo, miObstetra.dni, miObstetra.fechanacimiento, miObstetra.direccion, miObstetra.telefono, miObstetra.tituloprofesional, miObstetra.idtestablecimientosalud, miObstetra.usuario, miObstetra.password, miObstetra.categoria);
             return true;
         }
 
         public Boolean EliminarObstetra(string idtObstetra)
         {
             Conexion.GDatos.Ejecutar("spELiminarObstetra", idtObstetra);
+            return true;
+        }
+        
+        public Boolean MantenimientoContraseña(cObstetra miObstetra)
+        {
+            Conexion.GDatos.Ejecutar("spMantenimientoContraseña", miObstetra.idtobstetra, miObstetra.usuario, miObstetra.password);
             return true;
         }
     }

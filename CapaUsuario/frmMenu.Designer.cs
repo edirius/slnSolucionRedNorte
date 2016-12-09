@@ -42,6 +42,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.slNombre = new System.Windows.Forms.ToolStripStatusLabel();
             this.slEstablecimiento = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mantenimientoContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,8 @@
             // pacientesToolStripMenuItem
             // 
             this.pacientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mantenimientoObstetrasToolStripMenuItem});
+            this.mantenimientoObstetrasToolStripMenuItem,
+            this.mantenimientoContraseñaToolStripMenuItem});
             this.pacientesToolStripMenuItem.Name = "pacientesToolStripMenuItem";
             this.pacientesToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.pacientesToolStripMenuItem.Text = "Personal";
@@ -70,7 +72,7 @@
             // mantenimientoObstetrasToolStripMenuItem
             // 
             this.mantenimientoObstetrasToolStripMenuItem.Name = "mantenimientoObstetrasToolStripMenuItem";
-            this.mantenimientoObstetrasToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.mantenimientoObstetrasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.mantenimientoObstetrasToolStripMenuItem.Text = "Mantenimiento Obstetras";
             this.mantenimientoObstetrasToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoObstetrasToolStripMenuItem_Click);
             // 
@@ -150,6 +152,13 @@
             this.slEstablecimiento.Size = new System.Drawing.Size(16, 17);
             this.slEstablecimiento.Text = "...";
             // 
+            // mantenimientoContraseñaToolStripMenuItem
+            // 
+            this.mantenimientoContraseñaToolStripMenuItem.Name = "mantenimientoContraseñaToolStripMenuItem";
+            this.mantenimientoContraseñaToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.mantenimientoContraseñaToolStripMenuItem.Text = "Mantenimiento Contraseña";
+            this.mantenimientoContraseñaToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoContraseñaToolStripMenuItem_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +202,6 @@
         private System.Windows.Forms.ToolStripMenuItem exportarEImportarDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeAlertasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesDeMorbilidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoContraseñaToolStripMenuItem;
     }
 }

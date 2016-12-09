@@ -52,6 +52,7 @@ namespace CapaUsuario.Obstetra
                 miObstetra.idtestablecimientosalud = sidtestablecimientosalud;
                 miObstetra.usuario = txtUsuario.Text;
                 miObstetra.password = miUsuario.ObtenerSHA1(txtPassword.Text);
+                miObstetra.categoria = "OBSTETRA";
 
                 if (saccion == 1)
                 {
