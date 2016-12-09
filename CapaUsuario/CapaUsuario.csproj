@@ -247,6 +247,12 @@
       <DependentUpon>rptListaPreNatal.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CitaPreNatal\rptListarCitasPrenatales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListarCitasPrenatales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CitaPreNatal\usCitaPrenatal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -490,6 +496,10 @@
     <EmbeddedResource Include="CitaPreNatal\rptListaPreNatal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListaPreNatal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CitaPreNatal\rptListarCitasPrenatales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListarCitasPrenatales.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CitaPreNatal\usCitaPrenatal.resx">
       <DependentUpon>usCitaPrenatal.cs</DependentUpon>

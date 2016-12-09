@@ -29,15 +29,7 @@ namespace Monitoreo.Importacion
         }
         private async void btnExportar_Click(object sender, EventArgs e)
         {
-            //dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
-            //dlgGuardar.DefaultExt = ".gsys";
-            //dlgGuardar.ShowDialog();
-            //IniciarCarga();
-            //oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
-            ///////
-            ///////
-            //MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
+            
         }
         public static string ExtractFilename(string filepath)
         {
@@ -66,9 +58,78 @@ namespace Monitoreo.Importacion
                     return String.Empty;
             }
         }
+        public int total_lineas = 0;
+        private void MostrarProgreso(int CantidadLineas)
+        {
+            int porcentaje_avanzado = 0;
+            porcentaje_avanzado++;
+            total_lineas = CantidadLineas;
+            progressBar.Value = (porcentaje_avanzado * 100) / total_lineas;
+            progressBar.Update();
+
+            lblStatus.Text = string.Format("Exportando información...{0}%", progressBar.Value);
+
+            if (progressBar.Value == 100)
+            {
+                lblStatus.Text = "¡Datos exportados exitosamente!";
+                total_lineas = 0;
+            }
+        }
+        public bool ContarDatosImportados(string nombreArchivo)
+        {
+            int porcentaje_avanzado = 0;
+            try
+            {
+
+                string[] archivos;
+
+                using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
+                {
+                    string FileText = ReadFile.ReadToEnd();
+                    string[] delimiters = new string[] { "@@" };
+                    archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+                }
+                string nombreTablaAuxiliar = "";
+                string[] contenidoAuxiliar = null;
+                string[] camposAuxiliar = null;
+                for (int i = 0; i < archivos.Length; i = i + 2)
+                {
+                    nombreTablaAuxiliar = archivos[i];
+                    string[] delimiters2 = new string[] { "\r\n" };
+                    contenidoAuxiliar = archivos[i + 1].Split(delimiters2, StringSplitOptions.RemoveEmptyEntries);
+                    //
+                    string[] lineas = File.ReadAllLines(nombreArchivo);
+                    total_lineas = lineas.Count();
+                    for (int j = 0; j <= total_lineas; j++)
+                    {
+                        porcentaje_avanzado++;
+                        circularProgressBar.Value = (porcentaje_avanzado * 100) / total_lineas;
+                        circularProgressBar.Update();
+
+                        lblStatus.Text = string.Format("Importando información...{0}%", circularProgressBar.Value);
+
+                        if (circularProgressBar.Value == 100)
+                        {
+                            lblStatus.Text = "¡Datos importados exitosamente!";
+                            total_lineas = 0;
+                        }
+                    }
+                    
+
+                }
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                throw new cReglaNegocioException("Error al importar Datos: " + ex.Message);
+            }
+
+        }
         private void btnImportar_Click(object sender, EventArgs e)  
         {
-            //SYNC
+            circularProgressBar.Value = 0;
             try
             {
                 string CodigoEstablecimiento;
@@ -89,11 +150,11 @@ namespace Monitoreo.Importacion
                         archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                         if (archivos.Length != 0)
                         {
-                            oExportar.BorrarDatosTabla(CodigoEstablecimiento);
-                            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
-                            IniciarCircularProgressBar();
-                            IniciarCarga();
-                        }
+                        oExportar.BorrarDatosTabla(CodigoEstablecimiento);
+                        total_lineas = 0;
+                            ContarDatosImportados(dlgAbrir.FileName);
+                        oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                    }
                         else
                         {
                             MessageBox.Show("El archivo esta vacio.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,39 +170,6 @@ namespace Monitoreo.Importacion
             catch { }
 
         }
-        private async void IniciarCarga()
-        {
-            List<string> list = new List<string>();
-            for (int i = 0; i < 500; i++)
-                list.Add(i.ToString());
-            lblStatus.Text = "Importando...";
-            var progress = new Progress<cProgressReport>();
-            progress.ProgressChanged += (o, report) =>
-            {
-                lblStatus.Text = string.Format("Importando información...{0}%", report.PercentComplete);
-                progressBar.Value = report.PercentComplete;
-                progressBar.Update();
-            };
-            await ProcessData(list, progress);
-            lblStatus.Text = "¡Datos importados exitosamente!";
-        }
-        private Task ProcessData(List<string> list, IProgress<cProgressReport> progress)
-        {
-            int index = 1;
-            int totalProcess = list.Count;
-            var progressReport = new cProgressReport();
-            return Task.Run(() =>
-            {
-                for (int i = 0; i < totalProcess; i++)
-                {
-                    progressReport.PercentComplete = index++ * 100 / totalProcess;
-                    progress.Report(progressReport);
-                    Thread.Sleep(10); //
-                }
-            });
-
-        }
-
         private void frmImportarDatos_Load(object sender, EventArgs e)
         {
             cbMicrored.ValueMember = "idtmicrored";
@@ -149,7 +177,7 @@ namespace Monitoreo.Importacion
             cbMicrored.DataSource = miMicrored.ListarMicrored();
             circularProgressBar.Value = 0;
             circularProgressBar.Minimum = 0;
-            circularProgressBar.Maximum = 1000;
+            circularProgressBar.Maximum = 100;
         }
 
         private void cbMicrored_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,15 +185,6 @@ namespace Monitoreo.Importacion
             cbEstablecimientoSalud.ValueMember = "idtestablecimientosalud";
             cbEstablecimientoSalud.DisplayMember = "descripcion";
             cbEstablecimientoSalud.DataSource = miEstablecimiento.ListarEstablecimientoXMicrored(cbMicrored.SelectedValue.ToString());
-        }
-        private void IniciarCircularProgressBar()
-        {
-            for (int i = 1; i <= 1000; i++)
-            {
-                Thread.Sleep(5);
-                circularProgressBar.Value = i;
-                circularProgressBar.Update();
-            }
         }
     }
 }

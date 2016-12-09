@@ -190,9 +190,6 @@ namespace CapaDeNegocios.Exportacion
         public int Contador(int c) {
             return c;
         }
-
-        
-       
         public bool ImportarDatosArchivoABaseDeDatos(string nombreArchivo)
         {
 

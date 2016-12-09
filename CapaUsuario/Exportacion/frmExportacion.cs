@@ -50,9 +50,7 @@ namespace CapaUsuario.Exportacion
 
         public bool InsertarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
         {
- 
             int porcentaje_avanzado = 0;
-            //var progressReport = new cProgressReport();
             DataTable tAuxiliar;
             try
             {
@@ -73,8 +71,8 @@ namespace CapaUsuario.Exportacion
                                 {
 
                                     /*Encriptar Aquí*/
-                                    //Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
-                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
+                                    //Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write("®");
@@ -141,7 +139,6 @@ namespace CapaUsuario.Exportacion
             }
             
         }
-        
         private async void btnImportar_Click(object sender, EventArgs e)
         {
             
@@ -170,8 +167,6 @@ namespace CapaUsuario.Exportacion
                 progressBar.Update();
             };
             await ProcessData(list, progress);
-
-
             lblStatus.Text = "¡Datos exportados exitosamente!";
         }
         private Task ProcessData(List<string> list, IProgress<cProgressReport> progress)

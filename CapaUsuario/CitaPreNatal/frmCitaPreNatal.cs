@@ -18,7 +18,7 @@ namespace CapaUsuario.CitaPreNatal
         {
             InitializeComponent();
         }
-
+        public string IdObstetra { get; set; }
         public string Establecimiento
         { get; set; }
 
@@ -198,7 +198,7 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.FechaCitaPrenatal = fecha_cita;
                 oCitaPrenatal.FechaProximaCitaPrenatal = fecha_prox_cita;
                 oCitaPrenatal.Asistencia = 0;
-
+                oCitaPrenatal.IdObstetra = IdObstetra;
                 oCitaPrenatal.AgregarCita(oCitaPrenatal);
 
             }
@@ -408,7 +408,7 @@ namespace CapaUsuario.CitaPreNatal
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            rptListaPreNatal rListaPrenatal = new rptListaPreNatal();
+            rptListarCitasPrenatales rListaPrenatal = new rptListarCitasPrenatales();
 
             rListaPrenatal.SetDataSource(oCitaPrenatal.ListaCitasPreNatal());
 
@@ -433,6 +433,7 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.FechaProximaCitaPrenatal = dtpProximaCita.Value;
                 oCitaPrenatal.SulfatoFerroso = Convert.ToInt16( nudSulfatoFerroso.Value  );
                 oCitaPrenatal.Asistencia = 1;
+                oCitaPrenatal.IdObstetra = IdObstetra;
                 
 
                 switch (estado)

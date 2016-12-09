@@ -734,6 +734,7 @@ namespace CapaUsuario
                 fCitaPrenatal.Fecha_Registro = fecha_reg;
                 fCitaPrenatal.Semana_Gestacional = edad_gestacional;
                 fCitaPrenatal.dias_gestacional = dias_gestacional;
+                fCitaPrenatal.IdObstetra = IdObstetra;
                 fCitaPrenatal.ShowDialog();
             }
             else
