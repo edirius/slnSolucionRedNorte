@@ -396,7 +396,8 @@ namespace CapaUsuario
         private void button3_Click(object sender, EventArgs e)
         {
             if (IdtHistoriaClinica != "") {
-                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento );
+                Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento);
+                fBateria.IdObstetra = IdObstetra;
                 fBateria.ShowDialog();
             }
             else
@@ -744,6 +745,7 @@ namespace CapaUsuario
             if (IdtHistoriaClinica != "")
             {
                 RecienNacido.frmRecienNacido miRecienNacido = new RecienNacido.frmRecienNacido(IdtHistoriaClinica, IdEstablecimiento);
+                miRecienNacido.IdObstetra = IdObstetra;
                 miRecienNacido.ShowDialog();
             }
             else

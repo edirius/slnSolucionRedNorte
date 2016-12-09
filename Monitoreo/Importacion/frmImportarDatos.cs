@@ -29,15 +29,15 @@ namespace Monitoreo.Importacion
         }
         private async void btnExportar_Click(object sender, EventArgs e)
         {
-            dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
-            dlgGuardar.DefaultExt = ".gsys";
-            dlgGuardar.ShowDialog();
-            IniciarCarga();
-            oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
-            /////
-            /////
-            MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
+            //dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys";
+            //dlgGuardar.DefaultExt = ".gsys";
+            //dlgGuardar.ShowDialog();
+            //IniciarCarga();
+            //oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
+            //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
+            ///////
+            ///////
+            //MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
         }
         public static string ExtractFilename(string filepath)
         {

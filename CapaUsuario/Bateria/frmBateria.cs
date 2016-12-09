@@ -23,6 +23,7 @@ namespace CapaUsuario.Bateria
         string mensaje = "";
         public string IdHistoria = "";
         public string IdEstablecimiento = "";
+        public string IdObstetra { get; set; }
         public frmBateria(string IdtHistoriaClinica, string IdtEstablecimiento)
         {
             InitializeComponent();
@@ -130,6 +131,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Orina = nudOrina.Text;
                     miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
                     miBateria.FechaTratamiento = txtFechaTratamiento.Text;
+                    miBateria.IdObstetra = IdObstetra;
                     Tabla = miBateria.AgregarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();
@@ -151,8 +153,6 @@ namespace CapaUsuario.Bateria
             {
                 MessageBox.Show("Los campos: Hemoglobina y Glucosa deben de tener siempre un valor", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
         }
         public void Modificar()
         {
@@ -170,6 +170,7 @@ namespace CapaUsuario.Bateria
                     miBateria.Orina = nudOrina.Text;
                     miBateria.FechaExamenOrina = txtFechaExamenOrina.Text;
                     miBateria.FechaTratamiento = txtFechaTratamiento.Text;
+                    miBateria.IdObstetra = IdObstetra;
                     Tabla = miBateria.ModificarBateria();
                     respuesta = Tabla.Rows[0][0].ToString();
                     mensaje = Tabla.Rows[0][1].ToString();

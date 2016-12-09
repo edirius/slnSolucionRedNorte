@@ -123,7 +123,7 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportar.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(108, 415);
+            this.btnExportar.Location = new System.Drawing.Point(274, 415);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(225, 79);
