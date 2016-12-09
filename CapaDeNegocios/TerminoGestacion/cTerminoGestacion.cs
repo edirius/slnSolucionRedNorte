@@ -23,6 +23,7 @@ namespace CapaDeNegocios.TerminoGestacion
         string stipoinstitucion;
         string snombreinstitucion;
         string sidthistoriaclinica;
+        string sidtobstetra;
 
         public string idtterminogestacion
         { get { return sidtterminogestacion; } set { sidtterminogestacion = value; } }
@@ -48,6 +49,8 @@ namespace CapaDeNegocios.TerminoGestacion
         { get { return snombreinstitucion; } set { snombreinstitucion = value; } }
         public string idthistoriaclinica
         { get { return sidthistoriaclinica; } set { sidthistoriaclinica = value; } }
+        public string idtobstetra
+        { get { return sidtobstetra; } set { sidtobstetra = value; } }
 
         public DataTable ListarTerminoGestacion(string idthistoriaclinica)
         {
@@ -56,13 +59,13 @@ namespace CapaDeNegocios.TerminoGestacion
 
         public Boolean CrearTerminoGestacion(cTerminoGestacion miTerminoGestacion)
         {
-            Conexion.GDatos.Ejecutar("spCrearTerminoGestacion", miTerminoGestacion.idtterminogestacion, miTerminoGestacion.gestacion, miTerminoGestacion.lugar, miTerminoGestacion.reciennacido, miTerminoGestacion.fecha, miTerminoGestacion.persona, miTerminoGestacion.tipoparto, miTerminoGestacion.modoparto, miTerminoGestacion.manejoalumbramiento, miTerminoGestacion.tipoinstitucion, miTerminoGestacion.nombreinstitucion, miTerminoGestacion.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spCrearTerminoGestacion", miTerminoGestacion.idtterminogestacion, miTerminoGestacion.gestacion, miTerminoGestacion.lugar, miTerminoGestacion.reciennacido, miTerminoGestacion.fecha, miTerminoGestacion.persona, miTerminoGestacion.tipoparto, miTerminoGestacion.modoparto, miTerminoGestacion.manejoalumbramiento, miTerminoGestacion.tipoinstitucion, miTerminoGestacion.nombreinstitucion, miTerminoGestacion.idthistoriaclinica, miTerminoGestacion.idtobstetra);
             return true;
         }
 
         public Boolean ModificarTerminoGestacion(cTerminoGestacion miTerminoGestacion)
         {
-            Conexion.GDatos.Ejecutar("spModificarTerminoGestacion", miTerminoGestacion.idtterminogestacion, miTerminoGestacion.gestacion, miTerminoGestacion.lugar, miTerminoGestacion.reciennacido, miTerminoGestacion.fecha, miTerminoGestacion.persona, miTerminoGestacion.tipoparto, miTerminoGestacion.modoparto, miTerminoGestacion.manejoalumbramiento, miTerminoGestacion.tipoinstitucion, miTerminoGestacion.nombreinstitucion, miTerminoGestacion.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spModificarTerminoGestacion", miTerminoGestacion.idtterminogestacion, miTerminoGestacion.gestacion, miTerminoGestacion.lugar, miTerminoGestacion.reciennacido, miTerminoGestacion.fecha, miTerminoGestacion.persona, miTerminoGestacion.tipoparto, miTerminoGestacion.modoparto, miTerminoGestacion.manejoalumbramiento, miTerminoGestacion.tipoinstitucion, miTerminoGestacion.nombreinstitucion, miTerminoGestacion.idthistoriaclinica, miTerminoGestacion.idtobstetra);
             return true;
         }
 

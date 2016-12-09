@@ -16,7 +16,7 @@ namespace CapaUsuario.TerminoGestacion
         string sidtterminogestacion = "";
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
-        string snombreobstetra = "";
+        string sidtobstetra = "";
 
         CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
 
@@ -28,7 +28,7 @@ namespace CapaUsuario.TerminoGestacion
 
         private void frmVisitaDomiciliaria_Load(object sender, EventArgs e)
         {
-            snombreobstetra = cVariables.v_nombreobstetra;
+            sidtobstetra = cVariables.v_idobstetra;
             sidtestablecimientosalud = cVariables.v_idestablecimientosalud;
             CargarDatos();
         }
@@ -65,6 +65,7 @@ namespace CapaUsuario.TerminoGestacion
                 miTerminoGestacion.tipoinstitucion = cboHospital.Text;
                 miTerminoGestacion.nombreinstitucion = txtHospital.Text;
                 miTerminoGestacion.idthistoriaclinica = sidthistoriaclinica;
+                miTerminoGestacion.idtobstetra = sidtobstetra;
                 if (saccion == 1)
                 {
                     CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();

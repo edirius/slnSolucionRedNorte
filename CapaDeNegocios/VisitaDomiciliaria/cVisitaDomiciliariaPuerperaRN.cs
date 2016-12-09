@@ -20,6 +20,7 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         string sfuareciennacido;
         string sdetallereciennacido;
         string sidthistoriaclinica;
+        string sidtobstetra;
 
         public string idtvisitadomiciliariapuerperarn
         { get { return sidtvisitadomiciliariapuerperarn; } set { sidtvisitadomiciliariapuerperarn = value; } }
@@ -39,6 +40,8 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         { get { return sdetallereciennacido; } set { sdetallereciennacido = value; } }
         public string idthistoriaclinica
         { get { return sidthistoriaclinica; } set { sidthistoriaclinica = value; } }
+        public string idtobstetra
+        { get { return sidtobstetra; } set { sidtobstetra = value; } }
 
         public DataTable ListarVisitaDomiciliariaPuerperaRN(string idthistoriaclinica)
         {
@@ -47,13 +50,13 @@ namespace CapaDeNegocios.VisitaDomiciliaria
 
         public Boolean CrearVisitaDomiciliariaPuerperaRN(cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN)
         {
-            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliariaPuerperaRN", miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn, miVisitaDomiciliariaPuerperaRN.fecha, miVisitaDomiciliariaPuerperaRN.motivopuerpera, miVisitaDomiciliariaPuerperaRN.fuapuerpera, miVisitaDomiciliariaPuerperaRN.detallepuerpera, miVisitaDomiciliariaPuerperaRN.motivoreciennacido, miVisitaDomiciliariaPuerperaRN.fuareciennacido, miVisitaDomiciliariaPuerperaRN.detallereciennacido, miVisitaDomiciliariaPuerperaRN.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliariaPuerperaRN", miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn, miVisitaDomiciliariaPuerperaRN.fecha, miVisitaDomiciliariaPuerperaRN.motivopuerpera, miVisitaDomiciliariaPuerperaRN.fuapuerpera, miVisitaDomiciliariaPuerperaRN.detallepuerpera, miVisitaDomiciliariaPuerperaRN.motivoreciennacido, miVisitaDomiciliariaPuerperaRN.fuareciennacido, miVisitaDomiciliariaPuerperaRN.detallereciennacido, miVisitaDomiciliariaPuerperaRN.idthistoriaclinica, miVisitaDomiciliariaPuerperaRN.idtobstetra);
             return true;
         }
 
         public Boolean ModificarVisitaDomiciliariaPuerperaRN(cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN)
         {
-            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliariaPuerperaRN", miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn, miVisitaDomiciliariaPuerperaRN.fecha, miVisitaDomiciliariaPuerperaRN.motivopuerpera, miVisitaDomiciliariaPuerperaRN.fuapuerpera, miVisitaDomiciliariaPuerperaRN.detallepuerpera, miVisitaDomiciliariaPuerperaRN.motivoreciennacido, miVisitaDomiciliariaPuerperaRN.fuareciennacido, miVisitaDomiciliariaPuerperaRN.detallereciennacido, miVisitaDomiciliariaPuerperaRN.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliariaPuerperaRN", miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn, miVisitaDomiciliariaPuerperaRN.fecha, miVisitaDomiciliariaPuerperaRN.motivopuerpera, miVisitaDomiciliariaPuerperaRN.fuapuerpera, miVisitaDomiciliariaPuerperaRN.detallepuerpera, miVisitaDomiciliariaPuerperaRN.motivoreciennacido, miVisitaDomiciliariaPuerperaRN.fuareciennacido, miVisitaDomiciliariaPuerperaRN.detallereciennacido, miVisitaDomiciliariaPuerperaRN.idthistoriaclinica, miVisitaDomiciliariaPuerperaRN.idtobstetra);
             return true;
         }
 

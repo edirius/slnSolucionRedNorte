@@ -73,8 +73,8 @@ namespace CapaUsuario.Exportacion
                                 {
 
                                     /*Encriptar Aquí*/
-                                    //Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
-                                    Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
+                                    //Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write("®");

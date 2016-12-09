@@ -27,14 +27,14 @@ namespace CapaUsuario.Obstetra
         string spassword = "";
         CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
 
-        public frmMantenimientoObstetra(string pidestablecimientosalud)
+        public frmMantenimientoObstetra()
         {
-            sidtestablecimientosalud = pidestablecimientosalud;
             InitializeComponent();
         }
 
         private void frmMantenimientoPaciente_Load(object sender, EventArgs e)
         {
+            sidtestablecimientosalud = cVariables.v_idestablecimientosalud; ;
             CargarDatos();
         }
 

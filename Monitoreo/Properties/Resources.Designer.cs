@@ -93,6 +93,16 @@ namespace Monitoreo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo6 {
+            get {
+                object obj = ResourceManager.GetObject("Fondo6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FondoFormularios2 {
             get {
                 object obj = ResourceManager.GetObject("FondoFormularios2", resourceCulture);
