@@ -20,7 +20,7 @@ namespace CapaUsuario.RecienNacido
         string mensaje = "";
         public string aIdHistoria = "";
         public string aIdEstablecimiento = "";
-
+        public string IdObstetra { get; set; }
         public frmRecienNacido(string IdHistoria, string IdEstablecimiento)
         {
             InitializeComponent();
@@ -106,6 +106,7 @@ namespace CapaUsuario.RecienNacido
                 miRecienNacido.Apgar5 = nudApgar5.Text;
                 miRecienNacido.Peso = nudPeso.Text;
                 miRecienNacido.Sexo = cbSexo.Text;
+                miRecienNacido.IdObstetra = IdObstetra;
                 Tabla = miRecienNacido.AgregarRecienNacido();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
@@ -147,6 +148,7 @@ namespace CapaUsuario.RecienNacido
                 miRecienNacido.Apgar5 = nudApgar5.Text;
                 miRecienNacido.Peso = nudPeso.Text;
                 miRecienNacido.Sexo = cbSexo.Text;
+                miRecienNacido.IdObstetra = IdObstetra;
                 Tabla = miRecienNacido.ModificarRecienNacido();
                 respuesta = Tabla.Rows[0][0].ToString();
                 mensaje = Tabla.Rows[0][1].ToString();
@@ -264,6 +266,7 @@ namespace CapaUsuario.RecienNacido
                 nudApgar5.Text = dgvRecienNacido[4, Valor].Value.ToString();
                 nudPeso.Text = dgvRecienNacido[5, Valor].Value.ToString();
                 cbSexo.Text = dgvRecienNacido[6, Valor].Value.ToString();
+                dtpFecha.Enabled = false;
             }
             catch { }
             
@@ -342,6 +345,7 @@ namespace CapaUsuario.RecienNacido
                 nudApgar5.Text = dgvRecienNacido[4, Valor].Value.ToString();
                 nudPeso.Text = dgvRecienNacido[5, Valor].Value.ToString();
                 cbSexo.Text = dgvRecienNacido[6, Valor].Value.ToString();
+                
             }
             catch { }
         }
