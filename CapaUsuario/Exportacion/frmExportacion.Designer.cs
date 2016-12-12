@@ -69,7 +69,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(123, 18);
+            this.label1.Location = new System.Drawing.Point(101, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 20);
@@ -82,12 +82,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(284, 53);
+            this.label2.Location = new System.Drawing.Point(124, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.Size = new System.Drawing.Size(251, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "OBSTETRA :";
+            this.label2.Text = "NOMBRE DE LA OBSTETRA :";
             // 
             // btnImportar
             // 
@@ -97,7 +97,7 @@
             this.btnImportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportar.ForeColor = System.Drawing.Color.White;
-            this.btnImportar.Location = new System.Drawing.Point(397, 423);
+            this.btnImportar.Location = new System.Drawing.Point(413, 423);
             this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(167, 56);
@@ -157,7 +157,7 @@
             this.lblObstetra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblObstetra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObstetra.ForeColor = System.Drawing.Color.Black;
-            this.lblObstetra.Location = new System.Drawing.Point(393, 53);
+            this.lblObstetra.Location = new System.Drawing.Point(371, 53);
             this.lblObstetra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObstetra.Name = "lblObstetra";
             this.lblObstetra.Size = new System.Drawing.Size(24, 20);
@@ -171,7 +171,7 @@
             this.lblEstablecimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEstablecimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstablecimiento.ForeColor = System.Drawing.Color.Black;
-            this.lblEstablecimiento.Location = new System.Drawing.Point(393, 18);
+            this.lblEstablecimiento.Location = new System.Drawing.Point(371, 18);
             this.lblEstablecimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstablecimiento.Name = "lblEstablecimiento";
             this.lblEstablecimiento.Size = new System.Drawing.Size(24, 20);
