@@ -54,7 +54,7 @@
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.Location = new System.Drawing.Point(157, 360);
+            this.btnExportar.Location = new System.Drawing.Point(149, 360);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(160, 56);
@@ -100,7 +100,7 @@
             this.btnImportar.Location = new System.Drawing.Point(397, 423);
             this.btnImportar.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Size = new System.Drawing.Size(160, 56);
+            this.btnImportar.Size = new System.Drawing.Size(167, 56);
             this.btnImportar.TabIndex = 6;
             this.btnImportar.Text = "&Importar Datos";
             this.btnImportar.UseVisualStyleBackColor = false;
@@ -198,7 +198,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(397, 360);
+            this.btnSalir.Location = new System.Drawing.Point(413, 360);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(167, 56);
             this.btnSalir.TabIndex = 12;

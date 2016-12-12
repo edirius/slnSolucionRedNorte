@@ -10,6 +10,8 @@ namespace CapaUsuario
     {
         public static string v_nombreobstetra;
         public static string v_idobstetra;
+        public static string v_usuario;
+        public static string v_password;
         public static string v_nombreestablecimientosalud;
         public static string v_idestablecimientosalud;
     }

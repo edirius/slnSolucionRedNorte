@@ -87,6 +87,7 @@ namespace DatosIniciales
                 miObstetra.idtestablecimientosalud = sidtestablecimientosalud;
                 miObstetra.usuario = txtUsuario.Text;
                 miObstetra.password = miUsuario.ObtenerSHA1(txtPassword.Text);
+                miObstetra.categoria = "ADMINISTRADOR";
 
                 CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
                 foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tobstetra", sidtestablecimientosalud).Rows)

@@ -17,6 +17,7 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         string sfua;
         string sdetalle;
         string sidthistoriaclinica;
+        string sidtobstetra;
 
         public string idtvisitadomiciliariagestante
         { get { return sidtvisitadomiciliariagestante; } set { sidtvisitadomiciliariagestante = value; } }
@@ -30,6 +31,8 @@ namespace CapaDeNegocios.VisitaDomiciliaria
         { get { return sdetalle; } set { sdetalle = value; } }
         public string idthistoriaclinica
         { get { return sidthistoriaclinica; } set { sidthistoriaclinica = value; } }
+        public string idtobstetra
+        { get { return sidtobstetra; } set { sidtobstetra = value; } }
 
         public DataTable ListarVisitaDomiciliariaGestante(string idthistoriaclinica)
         {
@@ -38,13 +41,13 @@ namespace CapaDeNegocios.VisitaDomiciliaria
 
         public Boolean CrearVisitaDomiciliariaGestante(cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante)
         {
-            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliariaGestante", miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante, miVisitaDomiciliariaGestante.fecha, miVisitaDomiciliariaGestante.motivo, miVisitaDomiciliariaGestante.fua, miVisitaDomiciliariaGestante.detalle, miVisitaDomiciliariaGestante.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliariaGestante", miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante, miVisitaDomiciliariaGestante.fecha, miVisitaDomiciliariaGestante.motivo, miVisitaDomiciliariaGestante.fua, miVisitaDomiciliariaGestante.detalle, miVisitaDomiciliariaGestante.idthistoriaclinica, miVisitaDomiciliariaGestante.idtobstetra);
             return true;
         }
 
         public Boolean ModificarVisitaDomiciliariaGestante(cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante)
         {
-            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliariaGestante", miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante, miVisitaDomiciliariaGestante.fecha, miVisitaDomiciliariaGestante.motivo, miVisitaDomiciliariaGestante.fua, miVisitaDomiciliariaGestante.detalle, miVisitaDomiciliariaGestante.idthistoriaclinica);
+            Conexion.GDatos.Ejecutar("spModificarVisitaDomiciliariaGestante", miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante, miVisitaDomiciliariaGestante.fecha, miVisitaDomiciliariaGestante.motivo, miVisitaDomiciliariaGestante.fua, miVisitaDomiciliariaGestante.detalle, miVisitaDomiciliariaGestante.idthistoriaclinica, miVisitaDomiciliariaGestante.idtobstetra);
             return true;
         }
 

@@ -295,9 +295,13 @@ namespace CapaUsuario.CitaPreNatal {
             
             private global::System.Data.DataColumn columnpresionarteriald;
             
-            private global::System.Data.DataColumn columnpresionarterial;
-            
             private global::System.Data.DataColumn columnfechaProximaCita;
+            
+            private global::System.Data.DataColumn columnsulfatoferroso;
+            
+            private global::System.Data.DataColumn columnasistencia;
+            
+            private global::System.Data.DataColumn columnidtobstetra;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -398,17 +402,33 @@ namespace CapaUsuario.CitaPreNatal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn presionarterialColumn {
+            public global::System.Data.DataColumn fechaProximaCitaColumn {
                 get {
-                    return this.columnpresionarterial;
+                    return this.columnfechaProximaCita;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechaProximaCitaColumn {
+            public global::System.Data.DataColumn sulfatoferrosoColumn {
                 get {
-                    return this.columnfechaProximaCita;
+                    return this.columnsulfatoferroso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn asistenciaColumn {
+                get {
+                    return this.columnasistencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idtobstetraColumn {
+                get {
+                    return this.columnidtobstetra;
                 }
             }
             
@@ -449,7 +469,7 @@ namespace CapaUsuario.CitaPreNatal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spListarCitasPreNatalRow AddspListarCitasPreNatalRow(string idtcitaprenatal, string idthistoriaclinica, string numerocita, string fechacita, string edadgestacional, string fua, short presionarterials, short presionarteriald, string presionarterial, string fechaProximaCita) {
+            public spListarCitasPreNatalRow AddspListarCitasPreNatalRow(string idtcitaprenatal, string idthistoriaclinica, string numerocita, string fechacita, string edadgestacional, string fua, short presionarterials, short presionarteriald, string fechaProximaCita, string sulfatoferroso, string asistencia, string idtobstetra) {
                 spListarCitasPreNatalRow rowspListarCitasPreNatalRow = ((spListarCitasPreNatalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idtcitaprenatal,
@@ -460,8 +480,10 @@ namespace CapaUsuario.CitaPreNatal {
                         fua,
                         presionarterials,
                         presionarteriald,
-                        presionarterial,
-                        fechaProximaCita};
+                        fechaProximaCita,
+                        sulfatoferroso,
+                        asistencia,
+                        idtobstetra};
                 rowspListarCitasPreNatalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowspListarCitasPreNatalRow);
                 return rowspListarCitasPreNatalRow;
@@ -492,8 +514,10 @@ namespace CapaUsuario.CitaPreNatal {
                 this.columnfua = base.Columns["fua"];
                 this.columnpresionarterials = base.Columns["presionarterials"];
                 this.columnpresionarteriald = base.Columns["presionarteriald"];
-                this.columnpresionarterial = base.Columns["presionarterial"];
                 this.columnfechaProximaCita = base.Columns["fechaProximaCita"];
+                this.columnsulfatoferroso = base.Columns["sulfatoferroso"];
+                this.columnasistencia = base.Columns["asistencia"];
+                this.columnidtobstetra = base.Columns["idtobstetra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -515,10 +539,14 @@ namespace CapaUsuario.CitaPreNatal {
                 base.Columns.Add(this.columnpresionarterials);
                 this.columnpresionarteriald = new global::System.Data.DataColumn("presionarteriald", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpresionarteriald);
-                this.columnpresionarterial = new global::System.Data.DataColumn("presionarterial", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpresionarterial);
                 this.columnfechaProximaCita = new global::System.Data.DataColumn("fechaProximaCita", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaProximaCita);
+                this.columnsulfatoferroso = new global::System.Data.DataColumn("sulfatoferroso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsulfatoferroso);
+                this.columnasistencia = new global::System.Data.DataColumn("asistencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnasistencia);
+                this.columnidtobstetra = new global::System.Data.DataColumn("idtobstetra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidtobstetra);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -794,23 +822,6 @@ namespace CapaUsuario.CitaPreNatal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string presionarterial {
-                get {
-                    try {
-                        return ((string)(this[this.tablespListarCitasPreNatal.presionarterialColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'presionarterial\' in table \'spListarCitasPreNatal\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tablespListarCitasPreNatal.presionarterialColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string fechaProximaCita {
                 get {
                     try {
@@ -823,6 +834,55 @@ namespace CapaUsuario.CitaPreNatal {
                 }
                 set {
                     this[this.tablespListarCitasPreNatal.fechaProximaCitaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string sulfatoferroso {
+                get {
+                    try {
+                        return ((string)(this[this.tablespListarCitasPreNatal.sulfatoferrosoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sulfatoferroso\' in table \'spListarCitasPreNatal\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablespListarCitasPreNatal.sulfatoferrosoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string asistencia {
+                get {
+                    try {
+                        return ((string)(this[this.tablespListarCitasPreNatal.asistenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'asistencia\' in table \'spListarCitasPreNatal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablespListarCitasPreNatal.asistenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string idtobstetra {
+                get {
+                    try {
+                        return ((string)(this[this.tablespListarCitasPreNatal.idtobstetraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idtobstetra\' in table \'spListarCitasPreNatal\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablespListarCitasPreNatal.idtobstetraColumn] = value;
                 }
             }
             
@@ -924,18 +984,6 @@ namespace CapaUsuario.CitaPreNatal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IspresionarterialNull() {
-                return this.IsNull(this.tablespListarCitasPreNatal.presionarterialColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetpresionarterialNull() {
-                this[this.tablespListarCitasPreNatal.presionarterialColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfechaProximaCitaNull() {
                 return this.IsNull(this.tablespListarCitasPreNatal.fechaProximaCitaColumn);
             }
@@ -944,6 +992,42 @@ namespace CapaUsuario.CitaPreNatal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetfechaProximaCitaNull() {
                 this[this.tablespListarCitasPreNatal.fechaProximaCitaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssulfatoferrosoNull() {
+                return this.IsNull(this.tablespListarCitasPreNatal.sulfatoferrosoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsulfatoferrosoNull() {
+                this[this.tablespListarCitasPreNatal.sulfatoferrosoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsasistenciaNull() {
+                return this.IsNull(this.tablespListarCitasPreNatal.asistenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetasistenciaNull() {
+                this[this.tablespListarCitasPreNatal.asistenciaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidtobstetraNull() {
+                return this.IsNull(this.tablespListarCitasPreNatal.idtobstetraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidtobstetraNull() {
+                this[this.tablespListarCitasPreNatal.idtobstetraColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_023219B42E5A44E986A4F6225D90686C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0F9EAEBCE9CAB2A25A572D306986A68D"
         "OwnerKey" = "8:_6672B694570E4E9BA645DE9DC8C0508C"
         "MsmSig" = "8:_UNDEFINED"
@@ -129,6 +135,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_63872066A7694577A8E1C25898269FC0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6509B5ACC5A321C37AFECF03A284907C"
         "OwnerKey" = "8:_F5E3F61CD11C3E42679C19A694FDD7BA"
         "MsmSig" = "8:_UNDEFINED"
@@ -177,8 +189,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9E0186FA8306432596B356B094829273"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9E5DE13E3FAEE25D5036CCC0768A0AA0"
         "OwnerKey" = "8:_6672B694570E4E9BA645DE9DC8C0508C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A219EAB0FFB94B1EBA3D4C9F125C324A"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -195,6 +219,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C266A8DF5ECA456999B313264232A9F4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_CF2342E48CF86822BF63198C522C50AD"
         "OwnerKey" = "8:_9E5DE13E3FAEE25D5036CCC0768A0AA0"
         "MsmSig" = "8:_UNDEFINED"
@@ -203,6 +233,12 @@
         {
         "MsmKey" = "8:_CF2342E48CF86822BF63198C522C50AD"
         "OwnerKey" = "8:_6672B694570E4E9BA645DE9DC8C0508C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E3169F43FDA047D7B15C30E1EB3717D4"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -426,6 +462,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_023219B42E5A44E986A4F6225D90686C"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\laboratorio.jpg"
+            "TargetName" = "8:laboratorio.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0F9EAEBCE9CAB2A25A572D306986A68D"
             {
             "AssemblyRegister" = "3:1"
@@ -725,6 +781,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_63872066A7694577A8E1C25898269FC0"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\gestante.png"
+            "TargetName" = "8:gestante.png"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6509B5ACC5A321C37AFECF03A284907C"
             {
             "AssemblyRegister" = "3:1"
@@ -849,6 +925,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9E0186FA8306432596B356B094829273"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\parto.jpg"
+            "TargetName" = "8:parto.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E5DE13E3FAEE25D5036CCC0768A0AA0"
             {
             "AssemblyRegister" = "3:1"
@@ -878,6 +974,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A219EAB0FFB94B1EBA3D4C9F125C324A"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\icono (1).ico"
+            "TargetName" = "8:icono (1).ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BBE958AD87B57C5C290B338A9D734DB0"
@@ -911,6 +1027,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C266A8DF5ECA456999B313264232A9F4"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\odontologia.jpg"
+            "TargetName" = "8:odontologia.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CF2342E48CF86822BF63198C522C50AD"
             {
             "AssemblyRegister" = "3:1"
@@ -940,6 +1076,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E3169F43FDA047D7B15C30E1EB3717D4"
+            {
+            "SourcePath" = "8:..\\CapaUsuario\\logo.jpg"
+            "TargetName" = "8:logo.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_F708E7D33A5D476E8A4706A7854FEB1B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F5E3F61CD11C3E42679C19A694FDD7BA"
@@ -1030,7 +1186,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SistemaControlGestantes"
         "ProductCode" = "8:{530930E4-D39D-4B28-94B4-D2ABB013AD10}"
-        "PackageCode" = "8:{FD499328-0C13-4C2F-9C4D-955AA99AC5AE}"
+        "PackageCode" = "8:{E0A7912F-CD5E-401C-B3AB-B0E294FDA980}"
         "UpgradeCode" = "8:{662F7B76-6E8A-442F-B9B0-C84BF235C245}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

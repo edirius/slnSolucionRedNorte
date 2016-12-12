@@ -23,13 +23,15 @@ namespace CapaDeNegocios.RecienNacido
 
         public string Sexo { get; set; }
 
+        public string IdObstetra { get; set; }
+
         public DataTable AgregarRecienNacido()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearRecienNacido", IdRecienNacido, IdHistoriaClinica, FechaDerivado, Apgar1, Apgar5, Peso, Sexo);
+            return Conexion.GDatos.TraerDataTable("spCrearRecienNacido", IdRecienNacido, IdHistoriaClinica, FechaDerivado, Apgar1, Apgar5, Peso, Sexo, IdObstetra);
         }
         public DataTable ModificarRecienNacido()
         {
-            return Conexion.GDatos.TraerDataTable("spModificarRecienNacido", IdRecienNacido, IdHistoriaClinica, FechaDerivado, Apgar1, Apgar5, Peso, Sexo);
+            return Conexion.GDatos.TraerDataTable("spModificarRecienNacido", IdRecienNacido, IdHistoriaClinica, FechaDerivado, Apgar1, Apgar5, Peso, Sexo, IdObstetra);
         }
         public DataTable EliminarRecienNacido()
         {
@@ -37,7 +39,7 @@ namespace CapaDeNegocios.RecienNacido
         }
         public DataTable ListarRecienNacido(string id)
         {
-            return Conexion.GDatos.TraerDataTable("spListarRecienNacido", id);
+            return Conexion.GDatos.TraerDataTable("spListarRecienNacido2", id);
         }
         public DataTable ListarRecienNacidoConBajoPeso(string mes, string año)
         {
