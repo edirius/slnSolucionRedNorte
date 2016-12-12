@@ -112,6 +112,7 @@ namespace CapaUsuario.Exportacion
         string NombreArchivo;
         private async void btnExportar_Click(object sender, EventArgs e)
         {
+            progressBar.Value = 0;
             try
             {
                 oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
@@ -122,15 +123,20 @@ namespace CapaUsuario.Exportacion
                 string[] substring = (IdEstablecimientoSalud + NombreEstablecimientoSalud + DateTime.Today.ToShortDateString()).Split(delimiter);
                 NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
                 dlgGuardar.FileName = NombreArchivo;
-                dlgGuardar.ShowDialog();
-
-                total_lineas = 0;
-                total_lineas = oExportar.ContarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
-                //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
-                InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
-                /////
-                /////
-                MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);
+                //dlgGuardar.ShowDialog();
+                if (this.dlgGuardar.ShowDialog() == DialogResult.OK)
+                {
+                    total_lineas = 0;
+                    total_lineas = oExportar.ContarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                    //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                    InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                    MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName, "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("¡La exportación fue cancelada!", "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                dlgGuardar.Dispose();
             }
             catch
             {
