@@ -71,61 +71,69 @@ namespace CapaUsuario.Reportes
 
         private void fControlGestanteporPaciente_Load(object sender, EventArgs e)
         {
-            CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
-            CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
-            DataTable odt = new DataTable();
+            //try
+            //{
+                CapaDeNegocios.cHistoriaClinica oHistoriaClinica = new CapaDeNegocios.cHistoriaClinica();
+                CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
+                DataTable odt = new DataTable();
 
-            odtListaGestantesReporte.Columns.Add("Nº", typeof(string));
-            odtListaGestantesReporte.Columns.Add("ID HISTORIA CLINICA", typeof(string));
-            odtListaGestantesReporte.Columns.Add("FECHA", typeof(string));
-            odtListaGestantesReporte.Columns.Add("HISTORIA CLINICA", typeof(string));
-            odtListaGestantesReporte.Columns.Add("DNI", typeof(string));
-            odtListaGestantesReporte.Columns.Add("NOMBRE COMPLETO", typeof(string));
-            odtListaGestantesReporte.Columns.Add("TRANSEUNTE", typeof(string));
-            odtListaGestantesReporte.Columns.Add("ARCHIVADO", typeof(string));
+                odtListaGestantesReporte.Columns.Add("Nº", typeof(string));
+                odtListaGestantesReporte.Columns.Add("ID HISTORIA CLINICA", typeof(string));
+                odtListaGestantesReporte.Columns.Add("FECHA", typeof(string));
+                odtListaGestantesReporte.Columns.Add("HISTORIA CLINICA", typeof(string));
+                odtListaGestantesReporte.Columns.Add("DNI", typeof(string));
+                odtListaGestantesReporte.Columns.Add("NOMBRE COMPLETO", typeof(string));
+                odtListaGestantesReporte.Columns.Add("TRANSEUNTE", typeof(string));
+                odtListaGestantesReporte.Columns.Add("ARCHIVADO", typeof(string));
 
-            cbYear.DataSource = oHistoriaClinica.ListarYear();
-            cbYear.ValueMember = "yyyy";
-            cbYear.DisplayMember = "yyyy";
+                cbYear.DataSource = oHistoriaClinica.ListarYear();
+                cbYear.ValueMember = "yyyy";
+                cbYear.DisplayMember = "yyyy";
 
-            int mes_numero = Convert.ToInt16(DateTime.Now.Month.ToString("00"));
-            int año_numero = Convert.ToInt16(DateTime.Now.Year.ToString("0000"));
+                int mes_numero = Convert.ToInt16(DateTime.Now.Month.ToString("00"));
+                int año_numero = Convert.ToInt16(DateTime.Now.Year.ToString("0000"));
 
-            bandera_combobox_año = true;
+                bandera_combobox_año = true;
 
-            cbYear.SelectedItem = cbYear.Items[0];
-            cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
+                cbYear.SelectedItem = cbYear.Items[0];
+                cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
 
-            año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
-            mes = Convert.ToInt16(this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
-            mes = mes + 1;
+                año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
+                mes = Convert.ToInt16(this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
+                mes = mes + 1;
 
-            cbYear.SelectedItem = cbYear.Items[0];
-            cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
-            cbBuscar.SelectedItem = cbBuscar.Items[0];
+                cbYear.SelectedItem = cbYear.Items[0];
+                cbMonth.SelectedItem = cbMonth.Items[mes_numero - 1];
+                cbBuscar.SelectedItem = cbBuscar.Items[0];
 
-            oHistoriaClinica.Idtobstetra = Idtobstetra;
-            oHistoriaClinica.mes = mes;
-            oHistoriaClinica.año = año;
-            odt = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
-            dgvGestante.DataSource = odt;
-            
+                oHistoriaClinica.Idtobstetra = Idtobstetra;
+                oHistoriaClinica.mes = mes;
+                oHistoriaClinica.año = año;
+                odt = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
+                dgvGestante.DataSource = odt;
 
-            if (odt.Rows.Count > 0) {
-                id_hc = dgvGestante[1,0].Value.ToString();
-                fecha = dgvGestante[2,0].Value.ToString();
-                codigo_hc = dgvGestante[3,0].Value.ToString();
-                dni = dgvGestante[4,0].Value.ToString();
-                nombre_completo = dgvGestante[5,0].Value.ToString();
-                transeunte = dgvGestante[9,0].Value.ToString();
-                archivado = dgvGestante[10,0].Value.ToString();
-                posicion = 0;
-            }
 
-            ocultar_columnas();
+                if (odt.Rows.Count > 0)
+                {
+                    id_hc = dgvGestante[1, 0].Value.ToString();
+                    fecha = dgvGestante[2, 0].Value.ToString();
+                    codigo_hc = dgvGestante[3, 0].Value.ToString();
+                    dni = dgvGestante[4, 0].Value.ToString();
+                    nombre_completo = dgvGestante[5, 0].Value.ToString();
+                    transeunte = dgvGestante[9, 0].Value.ToString();
+                    archivado = dgvGestante[10, 0].Value.ToString();
+                    posicion = 0;
+                }
 
-            if (dgvGestante.Rows.Count == 0)
-                posicion = -1;
+                ocultar_columnas();
+
+                if (dgvGestante.Rows.Count == 0)
+                    posicion = -1;
+
+                
+        //}
+        //    catch {
+        //    }
 
         }
 
@@ -472,8 +480,8 @@ namespace CapaUsuario.Reportes
 
                     //Imagen
                     //string ruta = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-                    string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
-
+                    //string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
+                    string ruta = AppDomain.CurrentDomain.BaseDirectory;
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
 

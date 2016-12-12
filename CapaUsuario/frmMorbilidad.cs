@@ -19,6 +19,7 @@ namespace CapaUsuario
 
         public string Codigo_Historia_Clinica { get; set; }
         public string Id_Historia_Clinica { get; set; }
+        public string idtobstetra { get; set; }
         public string Fecha { get; set; }
         public string DNI { get; set; }
         public string Nomnbre_Completo { get; set; }
@@ -56,16 +57,17 @@ namespace CapaUsuario
             CapaDeNegocios.cGestanteMorbilidad oGestanteMorbilidad = new CapaDeNegocios.cGestanteMorbilidad();
             DataTable odtMorbilidad = new DataTable();
 
+            /*
             txtHistoriaClinica.Text = Codigo_Historia_Clinica;
             dtpFechaHistoriaClinica.Value = Convert.ToDateTime(Fecha);
             txt_DNI.Text = DNI;
             txt_NombreCompleto.Text = Nomnbre_Completo;
             txt_Edad.Text = Edad;
+            */
 
-
-            dgvbMorbilidad.Name = "Acción";
+            dgvbMorbilidad.Name = "ACCION";
             dgvbMorbilidad.Text = "Agregar";
-            dgvbMorbilidad.HeaderText = "Acción";
+            dgvbMorbilidad.HeaderText = "ACCION";
             dgvbMorbilidad.UseColumnTextForButtonValue = true;
 
             int columnIndex =4;
@@ -85,21 +87,20 @@ namespace CapaUsuario
             cbFiltrar.SelectedItem = cbFiltrar.Items[0];
             txtBuscar_.Focus();
             
-
-            odtGM.Columns.Add("N°", typeof(string));
-            odtGM.Columns.Add("Id Morbilidad", typeof(string));
-            odtGM.Columns.Add("Fecha", typeof(string));
-            odtGM.Columns.Add("Descripción", typeof(string));
-
+            odtGM.Columns.Add("NRO", typeof(string));
+            odtGM.Columns.Add("ID MORBILIDAD", typeof(string));
+            odtGM.Columns.Add("FECHA", typeof(string));
+            odtGM.Columns.Add("DESCRIPCION", typeof(string));
+            odtGM.Columns.Add("COD_GES_MOR", typeof(string));
             /* Boton eliminar en dgvGestanteMorbilidad */
 
-            dgvbGestanteMorbilidad.Name = "Acción";
+            dgvbGestanteMorbilidad.Name = "ACCION";
             dgvbGestanteMorbilidad.Text = "Eliminar";
-            dgvbGestanteMorbilidad.HeaderText = "Acción";
+            dgvbGestanteMorbilidad.HeaderText = "ACCION";
             dgvbGestanteMorbilidad.UseColumnTextForButtonValue = true;
 
             
-            int columnIndex2 = 4;
+            int columnIndex2 = 5;
 
             oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
 
@@ -112,6 +113,7 @@ namespace CapaUsuario
 
             i = dgvGM.Rows.Count;
             dgvGM.Columns[1].Visible = false;
+            dgvGM.Columns[4].Visible = false;
             dgvGM.Columns[0].Width = 60;
             dgvGM.Columns[2].Width = 120;
 
@@ -270,9 +272,7 @@ namespace CapaUsuario
         {
             CapaDeNegocios.cGestanteMorbilidad oGestanteMorbilidad = new CapaDeNegocios.cGestanteMorbilidad();
             DataTable odtGestanteMorbilidad = new DataTable();
-
-            oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
-            oGestanteMorbilidad.EliminarGestanteMorbilidad();
+            string r = "";
 
             if (!Archivado) { 
                 for (int i = 0; i < dgvGM.Rows.Count; i++)
@@ -283,30 +283,27 @@ namespace CapaUsuario
                     string sfecha = dgvGM.Rows[i].Cells[2].Value.ToString();
                     DateTime fecha = Convert.ToDateTime(sfecha);
                     oGestanteMorbilidad.fecha = fecha ;
-                    odtGestanteMorbilidad = oGestanteMorbilidad.CrearGestanteMorbilidad();
+                    oGestanteMorbilidad.idtobstetra = idtobstetra;
+
+                    /*agregar si no existe morbilidad*/
+
+                    oGestanteMorbilidad.idtgestantemorbilidad = dgvGM.Rows[i].Cells[4].Value.ToString();
+                    r = oGestanteMorbilidad.ExisteGestanteMorbilidad().Rows[0][0].ToString();
+
+                    if (r != "1")
+                        odtGestanteMorbilidad = oGestanteMorbilidad.CrearGestanteMorbilidad();
 
                     if (i == dgvGM.Rows.Count - 1) { 
-                        foreach (DataRow row in odtGestanteMorbilidad.Rows)
-                        {
-                            string respuesta_historia_clinica = row[0].ToString().Trim();
-                            string[] words = respuesta_historia_clinica.Split('*');
-                            string exito = words[0].ToString();
-                            string respuesta = words[1].ToString();
-                            //string idthistoriaclinica = words[2].ToString();
+                        MessageBox.Show("Morbilidad de gestante agregada(s) correctamente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
 
-                            if (exito == "1") { 
-                                MessageBox.Show(respuesta, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                oGestanteMorbilidad.idthistoriaclinica = Id_Historia_Clinica;
-
- 
-
-                                odtGestanteMorbilidad = oUtilitarios.enumerar_datatable(oGestanteMorbilidad.ListarGestanteMorbilidad(), 0);
-                                dgvGM.DataSource = odtGestanteMorbilidad;
-                                dgvGM.Columns[1].Visible = false;
-                                dgvGM.Columns[0].Width = 60;
-                                dgvGM.Columns[2].Width = 120;
-                            }
-                        }
+                        odtGM = oUtilitarios.enumerar_datatable(oGestanteMorbilidad.ListarGestanteMorbilidad(), 0);
+                        dgvGM.DataSource = odtGM;
+                        dgvGM.Columns[1].Visible = false;
+                        dgvGM.Columns[4].Visible = false;
+                        dgvGM.Columns[0].Width = 60;
+                        dgvGM.Columns[2].Width = 120;
+                         
                     }
                 }
             }else
@@ -332,6 +329,8 @@ namespace CapaUsuario
 
         private void eliminar_gestantes_morbilidad(int e) {
 
+            string idtgestantemorbilidad = "";
+            CapaDeNegocios.cGestanteMorbilidad oGM = new CapaDeNegocios.cGestanteMorbilidad();
             if (dgvGM.Rows.Count > 0)
             {
                 if (!Archivado)
@@ -341,6 +340,12 @@ namespace CapaUsuario
                     if (MessageBox.Show("Está seguro que desea eliminar la morbilidad Nº " + indice2, "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.Yes)
                     {
                         //dgvOdontologia.Rows.RemoveAt(e.RowIndex);
+                        
+
+                        idtgestantemorbilidad = odtGM.Rows[e][4].ToString();
+                        oGM.idtgestantemorbilidad = idtgestantemorbilidad;
+                        
+                        oGM.EliminarGestanteMorbilidad();
                         odtGM.Rows.RemoveAt(e);
                         i = odtGM.Rows.Count;
                         for (int j = 0; j < odtGM.Rows.Count; j++)
@@ -369,12 +374,22 @@ namespace CapaUsuario
 
         private void dgvGM_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indice = e.RowIndex;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvGM_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            indice = e.RowIndex;
+        }
+
+        private void dgvGM_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            indice = e.RowIndex;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CapaDeNegocios
 {
     public class cEcografia
     {
-        private string idtecografia;
+        public string idtecografia;
 
         public string Idtecografia
         {
@@ -60,12 +60,14 @@ namespace CapaDeNegocios
         }
 
         public string Idtestablecimientosalud { get; set; }
+        public string Idtobstetra { get; set; }
+  
 
 
 
         public DataTable CrearEcografia()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional, Diagestacional,Idthistoriaclinica, Idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spCrearEcografia", Fecha_servicio,Edadgestacional, Diagestacional,Idthistoriaclinica, Idtestablecimientosalud, Idtobstetra);
         }
 
         public DataTable ListarEcografiaXIdHC()
@@ -75,7 +77,12 @@ namespace CapaDeNegocios
 
         public DataTable EliminarEcografia()
         {
-            return Conexion.GDatos.TraerDataTable("spEliminarEcografia", Idthistoriaclinica);
+            return Conexion.GDatos.TraerDataTable("spEliminarEcografia", Idtecografia);
+        }
+
+        public DataTable ExisteEcografia()
+        {
+            return Conexion.GDatos.TraerDataTable("spExisteEcografia", Idtecografia);
         }
 
     }

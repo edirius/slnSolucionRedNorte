@@ -34,7 +34,7 @@ namespace Monitoreo.Importacion
             dlgGuardar.ShowDialog();
             IniciarCarga();
             oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
-            oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
+            //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn", "thistoriaclinica");
             /////
             /////
             MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName);

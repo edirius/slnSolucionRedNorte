@@ -55,10 +55,9 @@ namespace CapaUsuario.CitaPreNatal
             VerificarTerminoGestacion();
             //MessageBox.Show(Establecimiento);
             CargarDatos();
-            
-
-
             realizar_atencion_citas_gestante();
+            seleccionar_fecha_cercana();
+
             //if (dtgCitasMedicas.Rows.Count > 0)
             //{
             //    btnGuardar.Enabled = true;
@@ -211,7 +210,32 @@ namespace CapaUsuario.CitaPreNatal
 
         }
 
-        
+        private void seleccionar_fecha_cercana() {
+
+            DateTime hoy = new DateTime();
+            DateTime cita = new DateTime();
+            DateTime prox_cita = new DateTime();
+            string scita = "", sprox_cita = "";
+            int numero_cita = 0;
+
+            hoy = DateTime.Now.Date;
+
+            for (int i=0; i<dtgCitasMedicas.Rows.Count-1; i++) {
+                scita = dtgCitasMedicas.Rows[i].Cells["colfechacita"].Value.ToString();
+                sprox_cita = dtgCitasMedicas.Rows[i].Cells["colFechaProximaCita"].Value.ToString();
+                cita = Convert.ToDateTime(scita).Date;
+                prox_cita = Convert.ToDateTime(sprox_cita).Date;
+
+                if (hoy >= cita && hoy <= prox_cita)
+                    numero_cita = i;
+            }
+
+            dtgCitasMedicas.Rows[numero_cita].Selected = true;
+            dtgCitasMedicas.CurrentCell = dtgCitasMedicas.Rows[numero_cita].Cells[3];
+
+
+
+        }
 
         private void realizar_atencion_citas_gestante() {
 
