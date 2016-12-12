@@ -11,7 +11,7 @@ namespace CapaDeNegocios
     public class cOdontologia
     {
 
-        private string idtodontologia;
+        public string idtodontologia;
 
         public string Idtodontologia
         {
@@ -44,11 +44,11 @@ namespace CapaDeNegocios
         }
 
         public string Idtestablecimientosalud { get; set; }
-
+        public string Idtobstetra { get; set; }
 
         public DataTable CrearOdontologia()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearOdontologia", Fecha_servicio, Idthistoriaclinica, Idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spCrearOdontologia", Fecha_servicio, Idthistoriaclinica, Idtestablecimientosalud,Idtobstetra);
         }
 
         public DataTable ListarOdontologiaXIdHC()
@@ -58,9 +58,13 @@ namespace CapaDeNegocios
 
         public DataTable EliminarOdontologia()
         {
-            return Conexion.GDatos.TraerDataTable("spEliminarOdontologia", Idthistoriaclinica);
+            return Conexion.GDatos.TraerDataTable("spEliminarOdontologia", Idtodontologia);
         }
 
+        public DataTable ExisteOdontologia()
+        {
+            return Conexion.GDatos.TraerDataTable("spExisteOdontologia", Idtodontologia);
+        }
 
     }
 }

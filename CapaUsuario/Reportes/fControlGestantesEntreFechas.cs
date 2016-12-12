@@ -204,8 +204,8 @@ namespace CapaUsuario.Reportes
 
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario\\bin\\Debug
                     //C:\\Users\\ADVANCE\\Source\\Repos\\slnRecursosHumanos\\slnRecursosHumanos\\CapaUsuario
-
-                    string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
+                    string ruta = AppDomain.CurrentDomain.BaseDirectory;
+                    //string ruta = "C:\\Program Files\\EDIRIUS SOFT S.A.C\\Sistema Control Gestantes";
 
                     string ruta_imagen = ruta + "\\logo.jpg";
 

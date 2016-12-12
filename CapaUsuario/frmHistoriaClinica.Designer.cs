@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistoriaClinica));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nupEdadGestacional = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -143,12 +143,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.pblogo = new System.Windows.Forms.PictureBox();
-            this.pbodontologia = new System.Windows.Forms.PictureBox();
-            this.pbParto = new System.Windows.Forms.PictureBox();
-            this.pbecografia = new System.Windows.Forms.PictureBox();
-            this.pbLaboratorio = new System.Windows.Forms.PictureBox();
-            this.pbGestante = new System.Windows.Forms.PictureBox();
             this.dgvPuerperio = new System.Windows.Forms.DataGridView();
             this.dgvBat = new System.Windows.Forms.DataGridView();
             this.dgvEco = new System.Windows.Forms.DataGridView();
@@ -224,12 +218,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbodontologia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbParto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbecografia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGestante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).BeginInit();
@@ -277,8 +265,9 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 660);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1280, 657);
             this.tableLayoutPanel2.TabIndex = 37;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // groupBox1
             // 
@@ -310,7 +299,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox1.Location = new System.Drawing.Point(1084, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 654);
+            this.groupBox1.Size = new System.Drawing.Size(192, 651);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             // 
@@ -650,7 +639,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1075, 654);
+            this.groupBox2.Size = new System.Drawing.Size(1075, 651);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
@@ -922,18 +911,18 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.pictureBox1);
-            this.groupBox6.Location = new System.Drawing.Point(288, 250);
+            this.groupBox6.Location = new System.Drawing.Point(304, 250);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(134, 176);
+            this.groupBox6.Size = new System.Drawing.Size(118, 176);
             this.groupBox6.TabIndex = 46;
             this.groupBox6.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(101, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
@@ -1194,7 +1183,7 @@
             this.gbOdontologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.gbOdontologico.Location = new System.Drawing.Point(16, 250);
             this.gbOdontologico.Name = "gbOdontologico";
-            this.gbOdontologico.Size = new System.Drawing.Size(266, 176);
+            this.gbOdontologico.Size = new System.Drawing.Size(285, 176);
             this.gbOdontologico.TabIndex = 10;
             this.gbOdontologico.TabStop = false;
             this.gbOdontologico.Text = "Atención en el Servicio Odontologico:";
@@ -1203,8 +1192,8 @@
             // 
             this.dgvOdontologia.AllowUserToAddRows = false;
             this.dgvOdontologia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvOdontologia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOdontologia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1218,13 +1207,13 @@
             this.dgvOdontologia.ReadOnly = true;
             this.dgvOdontologia.RowHeadersVisible = false;
             this.dgvOdontologia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOdontologia.Size = new System.Drawing.Size(253, 112);
+            this.dgvOdontologia.Size = new System.Drawing.Size(272, 112);
             this.dgvOdontologia.TabIndex = 13;
             this.dgvOdontologia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdontologia_CellContentClick_1);
             // 
             // buAgregarOdontologia
             // 
-            this.buAgregarOdontologia.Location = new System.Drawing.Point(231, 21);
+            this.buAgregarOdontologia.Location = new System.Drawing.Point(241, 23);
             this.buAgregarOdontologia.Name = "buAgregarOdontologia";
             this.buAgregarOdontologia.Size = new System.Drawing.Size(28, 26);
             this.buAgregarOdontologia.TabIndex = 12;
@@ -1237,7 +1226,7 @@
             // dtpOdontologo
             // 
             this.dtpOdontologo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpOdontologo.Location = new System.Drawing.Point(117, 23);
+            this.dtpOdontologo.Location = new System.Drawing.Point(122, 23);
             this.dtpOdontologo.Name = "dtpOdontologo";
             this.dtpOdontologo.Size = new System.Drawing.Size(99, 24);
             this.dtpOdontologo.TabIndex = 11;
@@ -1445,8 +1434,8 @@
             // 
             this.dgvEcografia.AllowUserToAddRows = false;
             this.dgvEcografia.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvEcografia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEcografia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1665,12 +1654,6 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.pblogo);
-            this.groupBox15.Controls.Add(this.pbodontologia);
-            this.groupBox15.Controls.Add(this.pbParto);
-            this.groupBox15.Controls.Add(this.pbecografia);
-            this.groupBox15.Controls.Add(this.pbLaboratorio);
-            this.groupBox15.Controls.Add(this.pbGestante);
             this.groupBox15.Controls.Add(this.dgvPuerperio);
             this.groupBox15.Controls.Add(this.dgvBat);
             this.groupBox15.Controls.Add(this.dgvEco);
@@ -1684,67 +1667,6 @@
             this.groupBox15.TabIndex = 51;
             this.groupBox15.TabStop = false;
             this.groupBox15.Visible = false;
-            // 
-            // pblogo
-            // 
-            this.pblogo.BackgroundImage = global::CapaUsuario.Properties.Resources.logo;
-            this.pblogo.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\logo.jpg";
-            this.pblogo.Location = new System.Drawing.Point(14, 31);
-            this.pblogo.Name = "pblogo";
-            this.pblogo.Size = new System.Drawing.Size(29, 10);
-            this.pblogo.TabIndex = 47;
-            this.pblogo.TabStop = false;
-            // 
-            // pbodontologia
-            // 
-            this.pbodontologia.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\odontolog" +
-    "ia.jpg";
-            this.pbodontologia.Location = new System.Drawing.Point(43, 30);
-            this.pbodontologia.Name = "pbodontologia";
-            this.pbodontologia.Size = new System.Drawing.Size(26, 10);
-            this.pbodontologia.TabIndex = 46;
-            this.pbodontologia.TabStop = false;
-            // 
-            // pbParto
-            // 
-            this.pbParto.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\parto.jpg" +
-    "";
-            this.pbParto.Location = new System.Drawing.Point(97, 30);
-            this.pbParto.Name = "pbParto";
-            this.pbParto.Size = new System.Drawing.Size(24, 11);
-            this.pbParto.TabIndex = 45;
-            this.pbParto.TabStop = false;
-            // 
-            // pbecografia
-            // 
-            this.pbecografia.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\ecografia" +
-    ".png";
-            this.pbecografia.Location = new System.Drawing.Point(70, 30);
-            this.pbecografia.Name = "pbecografia";
-            this.pbecografia.Size = new System.Drawing.Size(27, 10);
-            this.pbecografia.TabIndex = 44;
-            this.pbecografia.TabStop = false;
-            this.pbecografia.Click += new System.EventHandler(this.pbecografia_Click);
-            // 
-            // pbLaboratorio
-            // 
-            this.pbLaboratorio.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\laborator" +
-    "io.jpg";
-            this.pbLaboratorio.Location = new System.Drawing.Point(121, 31);
-            this.pbLaboratorio.Name = "pbLaboratorio";
-            this.pbLaboratorio.Size = new System.Drawing.Size(20, 10);
-            this.pbLaboratorio.TabIndex = 43;
-            this.pbLaboratorio.TabStop = false;
-            // 
-            // pbGestante
-            // 
-            this.pbGestante.ImageLocation = "C:\\Users\\ADVANCE\\Source\\Repos\\slnSolucionRedNorte\\CapaUsuario\\Resources\\gestante." +
-    "png";
-            this.pbGestante.Location = new System.Drawing.Point(139, 29);
-            this.pbGestante.Name = "pbGestante";
-            this.pbGestante.Size = new System.Drawing.Size(21, 13);
-            this.pbGestante.TabIndex = 40;
-            this.pbGestante.TabStop = false;
             // 
             // dgvPuerperio
             // 
@@ -1975,7 +1897,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1294, 665);
+            this.ClientSize = new System.Drawing.Size(1294, 666);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistoriaClinica";
@@ -2047,12 +1969,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbodontologia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbParto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbecografia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLaboratorio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGestante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuerperio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEco)).EndInit();
@@ -2197,12 +2113,6 @@
         private System.Windows.Forms.DataGridView dgvCitas2;
         private System.Windows.Forms.DataGridView dgvCitas1;
         private System.Windows.Forms.DataGridView dgvHC;
-        private System.Windows.Forms.PictureBox pblogo;
-        private System.Windows.Forms.PictureBox pbodontologia;
-        private System.Windows.Forms.PictureBox pbParto;
-        private System.Windows.Forms.PictureBox pbecografia;
-        private System.Windows.Forms.PictureBox pbLaboratorio;
-        private System.Windows.Forms.PictureBox pbGestante;
     }
 }
 

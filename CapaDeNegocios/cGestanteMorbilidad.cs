@@ -14,11 +14,12 @@ namespace CapaDeNegocios
         public string idthistoriaclinica { get; set; }
         public string idtmorbilidad { get; set; }
         public string idtestablecimientosalud { get; set; }
+        public string idtobstetra { get; set; }
         public DateTime fecha { get; set; }
 
         public DataTable CrearGestanteMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spCrearGestanteMorbilidad", idthistoriaclinica, idtmorbilidad, fecha, idtestablecimientosalud);
+            return Conexion.GDatos.TraerDataTable("spCrearGestanteMorbilidad", idthistoriaclinica, idtmorbilidad, fecha, idtestablecimientosalud, idtobstetra);
         }
 
         public DataTable ListarGestanteMorbilidad()
@@ -28,7 +29,12 @@ namespace CapaDeNegocios
 
         public DataTable EliminarGestanteMorbilidad()
         {
-            return Conexion.GDatos.TraerDataTable("spEliminarGestanteMorbilidad", idthistoriaclinica);
+            return Conexion.GDatos.TraerDataTable("spEliminarGestanteMorbilidad", idtgestantemorbilidad);
+        }
+
+        public DataTable ExisteGestanteMorbilidad()
+        {
+            return Conexion.GDatos.TraerDataTable("spExisteGestanteMorbilidad", idtgestantemorbilidad);
         }
 
         public DataTable ReporteMorbilidadExtrema(int Ene, int Feb, int Mar, int Abr, int May, int Jun, int Jul, int Ago, int Sep, int Oct, int Nov, int Dic, int Año)
