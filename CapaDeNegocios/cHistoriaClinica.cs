@@ -73,7 +73,7 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica", Idtobstetra, año, mes);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinica", Idtestablecimientosalud, año, mes);
         }
 
         public DataTable ListarHistoriaClinicaLargo()
@@ -83,7 +83,7 @@ namespace CapaDeNegocios
 
         public DataTable ListarHistoriaClinicaXHistoriaClinica()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica", oPaciente.codigohistoriaclinica,Idtobstetra);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXHistoriaClinica",Idtestablecimientosalud ,oPaciente.codigohistoriaclinica,Idtobstetra);
         }
 
         public DataTable ReporteHistoriaClinicaXObstetraXFechasYTranseuntesYArchivado()

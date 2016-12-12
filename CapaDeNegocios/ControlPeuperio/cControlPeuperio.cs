@@ -48,6 +48,11 @@ namespace CapaDeNegocios.ControlPeuperio
             return Conexion.GDatos.TraerDataTable("spListarControlPeuperio", idthistoriaclinica);
         }
 
+        public DataTable ListarControlPeuperioR(string idthistoriaclinica)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarControlPeuperioR", idthistoriaclinica);
+        }
+
         public Boolean CrearControlPeuperio(cControlPeuperio miControlPeuperio)
         {
             Conexion.GDatos.Ejecutar("spCrearControlPeuperio", miControlPeuperio.idtcontrolpeuperio, miControlPeuperio.numero, miControlPeuperio.fecha, miControlPeuperio.presionarterials, miControlPeuperio.presionarteriald, miControlPeuperio.alturauterino, miControlPeuperio.fua, miControlPeuperio.detalle, miControlPeuperio.idthistoriaclinica, miControlPeuperio.idtobstetra);

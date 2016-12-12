@@ -21,7 +21,7 @@ namespace CapaUsuario.Reportes
     public partial class fControlGestanteporPaciente : Form
     {
 
-
+        public string IdtEstablecimientoSalud = "";
         string folderPath = "C:\\PDFs\\";
         PdfPCell cell;
         public string IdtHistoriaClinica { get; set; }
@@ -107,6 +107,7 @@ namespace CapaUsuario.Reportes
                 cbBuscar.SelectedItem = cbBuscar.Items[0];
 
                 oHistoriaClinica.Idtobstetra = Idtobstetra;
+                oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                 oHistoriaClinica.mes = mes;
                 oHistoriaClinica.año = año;
                 odt = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
@@ -153,6 +154,7 @@ namespace CapaUsuario.Reportes
                 oHistoriaClinica.mes = mes;
 
                 oHistoriaClinica.Idtobstetra = Idtobstetra;
+                oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                 odtHC = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
                 dgvGestante.DataSource = odtHC;
                 ocultar_columnas();
@@ -213,6 +215,7 @@ namespace CapaUsuario.Reportes
                 {
                     oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
                     oHistoriaClinica.Idtobstetra = Idtobstetra;
+                    oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(), 0);
                     ocultar_columnas();
                 }
@@ -224,6 +227,7 @@ namespace CapaUsuario.Reportes
                 {
                     oPaciente.apellidopaterno = buscar;
                     oPaciente.idtobstetra = Idtobstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(), 0);
                     ocultar_columnas();
                 }
@@ -235,6 +239,7 @@ namespace CapaUsuario.Reportes
                 {
                     oPaciente.apellidomaterno = buscar;
                     oPaciente.idtobstetra = Idtobstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(), 0);
                     ocultar_columnas();
                 }
@@ -246,6 +251,7 @@ namespace CapaUsuario.Reportes
                 {
                     oPaciente.nombres = buscar;
                     oPaciente.idtobstetra = Idtobstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(), 0);
                     ocultar_columnas();
                 }
@@ -257,6 +263,7 @@ namespace CapaUsuario.Reportes
                 {
                     oPaciente.dni = buscar;
                     oPaciente.idtobstetra = Idtobstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(), 0);
                     ocultar_columnas();
                 }
@@ -265,6 +272,7 @@ namespace CapaUsuario.Reportes
             if (buscar.Length < 1)
             {
                 oHistoriaClinica.Idtobstetra = Idtobstetra;
+                oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                 oHistoriaClinica.mes = mes;
                 oHistoriaClinica.año = año;
                 dgvGestante.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
