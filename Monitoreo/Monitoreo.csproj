@@ -161,6 +161,78 @@
     <Compile Include="Reportes\frmVistaReportes.Designer.cs">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\rptReporteGestantesNoAcudenCitasMicroRED.cs">
+      <DependentUpon>rptReporteGestantesNoAcudenCitasMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesConPresionAltaMicroRED.cs">
+      <DependentUpon>rptReporteGestantesConPresionAltaMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesConInfeccionUrinariaMicroRED.cs">
+      <DependentUpon>rptReporteGestantesConInfeccionUrinariaMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesConVIHMicroRED.cs">
+      <DependentUpon>rptReporteGestantesConVIHMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesConSifilisMicroRED.cs">
+      <DependentUpon>rptReporteGestantesConSifilisMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesConAnemiaMicroRED.cs">
+      <DependentUpon>rptReporteGestantesConAnemiaMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReportePuerperaSin2ControlPuerperioMicroRED.cs">
+      <DependentUpon>rptReportePuerperaSin2ControlPuerperioMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReportePuerperaSinControlPuerperioMicroRED.cs">
+      <DependentUpon>rptReportePuerperaSinControlPuerperioMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesSinExamenOrinaMicroRED.cs">
+      <DependentUpon>rptReporteGestantesSinExamenOrinaMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesSinTratamientoMicroRED.cs">
+      <DependentUpon>rptReporteGestantesSinTratamientoMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteGestantesSinBateriaMicroRED.cs">
+      <DependentUpon>rptReporteGestantesSinBateriaMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptReporteRNBajoPesoMicroRED.cs">
+      <DependentUpon>rptReporteRNBajoPesoMicroRED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reportes\rptReporteGestantesDadoPartoMicroRED.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,6 +311,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmVistaReportes.resx">
       <DependentUpon>frmVistaReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesNoAcudenCitasMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesNoAcudenCitasMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesConPresionAltaMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesConPresionAltaMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesConInfeccionUrinariaMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesConInfeccionUrinariaMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesConVIHMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesConVIHMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesConSifilisMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesConSifilisMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesConAnemiaMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesConAnemiaMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReportePuerperaSin2ControlPuerperioMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReportePuerperaSin2ControlPuerperioMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReportePuerperaSinControlPuerperioMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReportePuerperaSinControlPuerperioMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesSinExamenOrinaMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesSinExamenOrinaMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesSinTratamientoMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesSinTratamientoMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteGestantesSinBateriaMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteGestantesSinBateriaMicroRED.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteRNBajoPesoMicroRED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteRNBajoPesoMicroRED.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteGestantesDadoPartoMicroRED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

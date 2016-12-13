@@ -243,7 +243,7 @@
             this.Arbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Arbol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Arbol.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Arbol.Font = new System.Drawing.Font("Palatino", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Arbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Arbol.ForeColor = System.Drawing.Color.Red;
             this.Arbol.Location = new System.Drawing.Point(0, 0);
             this.Arbol.Name = "Arbol";
@@ -287,7 +287,7 @@
             treeNode12,
             treeNode14,
             treeNode17});
-            this.Arbol.Size = new System.Drawing.Size(324, 637);
+            this.Arbol.Size = new System.Drawing.Size(324, 636);
             this.Arbol.TabIndex = 3;
             this.Arbol.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Arbol_NodeMouseClick);
             // 
@@ -1606,7 +1606,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Alertas.Properties.Resources.FondoSysAlertas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1273, 637);
+            this.ClientSize = new System.Drawing.Size(1273, 636);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
