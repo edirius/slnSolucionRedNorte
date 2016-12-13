@@ -19,6 +19,7 @@ namespace CapaUsuario
 
         public string Codigo_Historia_Clinica { get; set; }
         public string Id_Historia_Clinica { get; set; }
+        public string nombreObstetra { get; set; }
         public string idtobstetra { get; set; }
         public string Fecha { get; set; }
         public string DNI { get; set; }
@@ -27,7 +28,7 @@ namespace CapaUsuario
         public bool Archivado { get; set; }
 
         public string IdEstablecimiento { get; set; }
-        CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("","");
+        //CapaUsuario.frmHistoriaClinica fHC = new CapaUsuario.frmHistoriaClinica("","");
         int i = 0;
         DataTable odtGM = new DataTable();
         int indice = 0;
@@ -238,7 +239,7 @@ namespace CapaUsuario
                     drGM[1] = dgvM[2, posicion].Value.ToString();
                     drGM[2] = dtpFechaMorbilidad.Value.Date;
                     drGM[3] = dgvM[3, posicion].Value.ToString();
-
+                    drGM[5] = nombreObstetra;
 
                     odtGM.Rows.InsertAt(drGM, i);
                     dgvGM.DataSource = odtGM;
@@ -301,6 +302,7 @@ namespace CapaUsuario
                         dgvGM.DataSource = odtGM;
                         dgvGM.Columns[1].Visible = false;
                         dgvGM.Columns[4].Visible = false;
+                        
                         dgvGM.Columns[0].Width = 60;
                         dgvGM.Columns[2].Width = 120;
                          

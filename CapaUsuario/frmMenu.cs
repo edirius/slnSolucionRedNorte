@@ -101,7 +101,7 @@ namespace CapaUsuario
 
         private void historiaClinicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica( IdObstetra, IdEstablecimientoSalud );
+            frmHistoriaClinica frmHistoriaClinica = new frmHistoriaClinica( IdObstetra, IdEstablecimientoSalud, NombreObstetra);
             CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
 
             if (oUtilitarios.verificarventanaabierta("frmHistoriaClinica"))

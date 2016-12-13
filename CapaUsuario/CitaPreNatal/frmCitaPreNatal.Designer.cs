@@ -97,7 +97,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(10, 275);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(914, 302);
+            this.groupBox1.Size = new System.Drawing.Size(908, 302);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control de las Citas Medicas";
@@ -133,8 +133,9 @@
             this.dtgCitasMedicas.ReadOnly = true;
             this.dtgCitasMedicas.RowHeadersVisible = false;
             this.dtgCitasMedicas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCitasMedicas.Size = new System.Drawing.Size(902, 273);
+            this.dtgCitasMedicas.Size = new System.Drawing.Size(896, 273);
             this.dtgCitasMedicas.TabIndex = 0;
+            this.dtgCitasMedicas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCitasMedicas_CellContentClick);
             this.dtgCitasMedicas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgCitasMedicas_CellFormatting);
             this.dtgCitasMedicas.SelectionChanged += new System.EventHandler(this.dtgCitasMedicas_SelectionChanged);
             this.dtgCitasMedicas.Click += new System.EventHandler(this.dtgCitasMedicas_Click);
@@ -669,7 +670,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1121, 589);
+            this.ClientSize = new System.Drawing.Size(1115, 589);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.tableLayoutPanel3);

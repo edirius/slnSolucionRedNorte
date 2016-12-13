@@ -69,7 +69,13 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
+                    if (buscar.Length >= 9)
+                        oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar.Substring(0, 9);
+
+                    if (buscar.Length <= 9)
+                        oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
+
+
                     oHistoriaClinica.Idtobstetra = IdObstetra;
                     oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(), 0);
@@ -81,7 +87,12 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    oPaciente.apellidopaterno = buscar;
+                    if (buscar.Length >= 149)
+                        oPaciente.apellidopaterno = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 149)
+                        oPaciente.apellidopaterno = buscar;
+
                     oPaciente.idtobstetra = IdObstetra;
                     oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(), 0);
@@ -93,7 +104,12 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    oPaciente.apellidomaterno = buscar;
+                    if (buscar.Length >= 149)
+                        oPaciente.apellidomaterno = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 149)
+                        oPaciente.apellidomaterno = buscar;
+
                     oPaciente.idtobstetra = IdObstetra;
                     oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(), 0);
@@ -105,7 +121,12 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    oPaciente.nombres = buscar;
+                    if (buscar.Length >= 149)
+                        oPaciente.nombres = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 149)
+                        oPaciente.nombres = buscar;
+
                     oPaciente.idtobstetra = IdObstetra;
                     oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(), 0);
@@ -117,7 +138,12 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    oPaciente.dni = buscar;
+                    if (buscar.Length>=8)
+                        oPaciente.dni = buscar.Substring(0, 7);
+
+                    if (buscar.Length <= 8)
+                        oPaciente.dni = buscar;
+
                     oPaciente.idtobstetra = IdObstetra;
                     oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(), 0);

@@ -369,6 +369,7 @@ namespace CapaUsuario.RecienNacido
         {
             VerificarTerminoGestacion();
             Nuevo();
+            cbSexo.SelectedItem = cbSexo.Items[0];
         }
         cUtilitarios miUtilitario = new cUtilitarios();
         private void nudApgar1_KeyPress(object sender, KeyPressEventArgs e)

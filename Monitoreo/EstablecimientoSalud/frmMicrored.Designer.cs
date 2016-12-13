@@ -61,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListarMicrored.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarMicrored.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListarMicrored.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvListarMicrored.BackgroundColor = System.Drawing.Color.White;
             this.dgvListarMicrored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListarMicrored.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,

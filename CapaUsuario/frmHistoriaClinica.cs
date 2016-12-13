@@ -29,6 +29,7 @@ namespace CapaUsuario
         public string establecimientosalud = "";
 
         public string IdObstetra = "";
+        public string nombreObstetra = "";
         public string IdEstablecimiento = "";
         public string IdtHistoriaClinica = "";
         public bool Archivado = false;
@@ -69,11 +70,12 @@ namespace CapaUsuario
         bool bandera_combobox_año = false;
 
 
-        public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
+        public frmHistoriaClinica(string idObstetra , string idEstablecimiento, string NombreObstetra)
         {
             InitializeComponent();
             IdObstetra = idObstetra;
             IdEstablecimiento = idEstablecimiento;
+            nombreObstetra = NombreObstetra;
 
             //txtTalla.KeyUp -= new KeyEventHandler(txtTalla_KeyUp);
 
@@ -137,7 +139,8 @@ namespace CapaUsuario
             dgvOdontologia.Columns.Insert(columnIndex, dgvbOdontologo);
 
             //dgvOdontologia.Columns[0].Width = 30;
-            dgvOdontologia.Columns[1].Width = 60;
+            dgvOdontologia.Columns[1].Width = 50;
+            dgvOdontologia.Columns[2].Width = 200;
 
             /*datagridview ecografia*/
 
@@ -156,9 +159,10 @@ namespace CapaUsuario
             columnIndex = 0;
 
             dgvEcografia.DataSource = odtEcografia;
-            dgvEcografia.Columns[0].Width = 60;
+            dgvEcografia.Columns[0].Width = 55;
+            dgvEcografia.Columns[1].Width = 150;
             dgvEcografia.Columns[2].Width = 110;
-            dgvEcografia.Columns[3].Width = 110;
+            dgvEcografia.Columns[3].Width = 100;
             dgvEcografia.Columns.Insert(columnIndex, dgvbEcografia);
 
             /*datetimepicker 24 hrs format*/
@@ -486,8 +490,13 @@ namespace CapaUsuario
                 nudAbortos.Text = odtHCXIdHC.Rows[0][7].ToString();
                 nudHv.Text = odtHCXIdHC.Rows[0][8].ToString();
                 nudHm.Text = odtHCXIdHC.Rows[0][9].ToString();
+                dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
                 dtpFUR.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][10]);
                 dtpFPP.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][11]);
+
+                hallar_FPP();
+                hallar_semana_primera_atencion();
+
                 int trimestreapn = Convert.ToInt16(odtHCXIdHC.Rows[0][12]);
 
                 if (trimestreapn == 1) rbPrimerTrimestre.Checked = true;
@@ -515,7 +524,7 @@ namespace CapaUsuario
                 //IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
 
 
-                dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
+                
 
                 if (odtHCXIdHC.Rows[0][22].ToString() == "1")
                     cbTranseunte.Checked = true;
@@ -1343,8 +1352,7 @@ namespace CapaUsuario
 
         private void dtpFUR_ValueChanged(object sender, EventArgs e)
         {
-            hallar_FPP();
-            hallar_semana_primera_atencion();
+          
         }
 
         private void hallar_semana_primera_atencion() {
@@ -1355,10 +1363,14 @@ namespace CapaUsuario
             DateTime fur = dtpFUR.Value;
 
             if (fecha_atencion >= fur) {
-                TimeSpan dias = fur - fecha_atencion;
+                TimeSpan dias = fecha_atencion - fur;
+                //double NrOfDays = dias.TotalDays;
+                //double NrOfDays = (fecha_atencion.Date - fur.Date).TotalDays;
+
                 double NrOfDays = dias.TotalDays;
+
                 //int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
-                int semanas = (int) Math.Abs(NrOfDays / 7);
+                 int semanas = (int) Math.Abs(NrOfDays / 7);
                 dias_gestacional = NrOfDays;
                 if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum) 
                     nudSemanas.Value = semanas;
@@ -1524,6 +1536,9 @@ namespace CapaUsuario
                 fMorbilidad.IdEstablecimiento = IdEstablecimiento;
                 fMorbilidad.Archivado = Archivado;
                 fMorbilidad.idtobstetra = IdObstetra;
+                fMorbilidad.nombreObstetra = nombreObstetra;
+
+
                 fMorbilidad.ShowDialog();
             }else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2306,6 +2321,8 @@ namespace CapaUsuario
         private void dtpFecha_Leave(object sender, EventArgs e)
         {
             gbFecha.BackColor = System.Drawing.Color.Transparent;
+            hallar_FPP();
+            hallar_semana_primera_atencion();
         }
 
         private void nudGestas_Enter(object sender, EventArgs e)
@@ -2372,6 +2389,8 @@ namespace CapaUsuario
         private void dtpFUR_Leave(object sender, EventArgs e)
         {
             gbFechas.BackColor = System.Drawing.Color.Transparent;
+            hallar_FPP();
+            hallar_semana_primera_atencion();
         }
 
         private void cboTipoLlegada_Enter(object sender, EventArgs e)
@@ -2592,25 +2611,31 @@ namespace CapaUsuario
 
                     if (edad_gestacional_citas <= 28 && !ocupado)
                     {
-                        Fecha_Registro = Fecha_Registro.AddMonths(1);
+                        //Fecha_Registro = Fecha_Registro.AddDays(28);
+
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
+                        Fecha_Registro = fecha_prox_cita;
+                        //fecha_prox_cita = Fecha_Registro.AddDays(28);
                         //edad_gestacional_citas += +4;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(15);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(15);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        //fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas = ((edad_gestacional_citas * 7) + 15) / 7;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(7);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(7);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas += +1;
                         ocupado = true;
                     }
@@ -2620,7 +2645,7 @@ namespace CapaUsuario
                     if (edad_gestacional_citas <= 28 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
                         Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
@@ -3478,6 +3503,11 @@ namespace CapaUsuario
 
         }
 
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
         private void txtOrigenEESS_Enter_1(object sender, EventArgs e)
         {
             txtOrigenEESS.Select(0, txtOrigenEESS.Text.Length);
@@ -3541,3 +3571,4 @@ namespace CapaUsuario
 
 
 }
+

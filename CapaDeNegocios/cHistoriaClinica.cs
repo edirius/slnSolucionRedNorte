@@ -88,9 +88,8 @@ namespace CapaDeNegocios
 
         public DataTable ReporteHistoriaClinicaXObstetraXFechasYTranseuntesYArchivado()
         {
-            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaXObstetraXFechasYTranseuntesYArchivado", Idtobstetra, fecha_inicio, fecha_fin, Transeunte, Archivado );
+            return Conexion.GDatos.TraerDataTable("spReporteHistoriaClinicaXObstetraXFechasYTranseuntesYArchivado", fecha_inicio, fecha_fin, Transeunte, Archivado );
         }
- 
 
         public DataTable ReporteHistoriaClinicaParte1()
         {
