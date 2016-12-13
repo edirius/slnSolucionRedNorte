@@ -29,7 +29,7 @@ namespace Monitoreo.Importacion
         }
         private async void btnExportar_Click(object sender, EventArgs e)
         {
-            
+            Close();
         }
         public static string ExtractFilename(string filepath)
         {
@@ -78,25 +78,7 @@ namespace Monitoreo.Importacion
         public bool ContarDatosImportados(string nombreArchivo)
         {
             int porcentaje_avanzado = 0;
-            try
-            {
-
-                string[] archivos;
-
-                using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
-                {
-                    string FileText = ReadFile.ReadToEnd();
-                    string[] delimiters = new string[] { "@@" };
-                    archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
-                }
-                string nombreTablaAuxiliar = "";
-                string[] contenidoAuxiliar = null;
-                string[] camposAuxiliar = null;
-                for (int i = 0; i < archivos.Length; i = i + 2)
-                {
-                    nombreTablaAuxiliar = archivos[i];
-                    string[] delimiters2 = new string[] { "\r\n" };
-                    contenidoAuxiliar = archivos[i + 1].Split(delimiters2, StringSplitOptions.RemoveEmptyEntries);
+            
                     //
                     string[] lineas = File.ReadAllLines(nombreArchivo);
                     total_lineas = lineas.Count();
@@ -105,40 +87,27 @@ namespace Monitoreo.Importacion
                         porcentaje_avanzado++;
                         circularProgressBar.Value = (porcentaje_avanzado * 100) / total_lineas;
                         circularProgressBar.Update();
-
                         lblStatus.Text = string.Format("Importando información...{0}%", circularProgressBar.Value);
-
                         if (circularProgressBar.Value == 100)
                         {
                             lblStatus.Text = "¡Datos importados exitosamente!";
                             total_lineas = 0;
                         }
                     }
-                    
-
-                }
-
-                return true;
-
-            }
-            catch (Exception ex)
-            {
-                throw new cReglaNegocioException("Error al importar Datos: " + ex.Message);
-            }
-
+            return true;
         }
         private void btnImportar_Click(object sender, EventArgs e)  
         {
             circularProgressBar.Value = 0;
-            try
-            {
+            //try
+            //{
                 string CodigoEstablecimiento;
                 dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
-                dlgAbrir.ShowDialog();
+            if (this.dlgAbrir.ShowDialog() == DialogResult.OK)
+            {
                 string CadenaTexto = "";
                 CadenaTexto = dlgAbrir.FileName.ToString();
                 CodigoEstablecimiento = (ExtractFilename(CadenaTexto)).Substring(0, 4);
-
                 if (cbEstablecimientoSalud.SelectedValue.ToString() == CodigoEstablecimiento)
                 {
                     MessageBox.Show("Importando datos del establecimiento '" + cbEstablecimientoSalud.Text + "'", "Mensaje de importación...", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -150,11 +119,11 @@ namespace Monitoreo.Importacion
                         archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                         if (archivos.Length != 0)
                         {
-                        oExportar.BorrarDatosTabla(CodigoEstablecimiento);
-                        total_lineas = 0;
+                            //oExportar.BorrarDatosTabla(CodigoEstablecimiento);
+                            total_lineas = 0;
                             ContarDatosImportados(dlgAbrir.FileName);
-                        oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
-                    }
+                            //oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                        }
                         else
                         {
                             MessageBox.Show("El archivo esta vacio.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -166,8 +135,11 @@ namespace Monitoreo.Importacion
                 {
                     MessageBox.Show("El código de establecimiento '" + cbEstablecimientoSalud.Text + "' no coincide con el código del establecimiento del archivo. Asegúrese que esta importando los datos del establecimiento seleccionado.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-        }
-            catch { }
+            }
+            else
+                MessageBox.Show("¡La importación fue cancelada!", "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+            //    catch { }
 
         }
         private void frmImportarDatos_Load(object sender, EventArgs e)

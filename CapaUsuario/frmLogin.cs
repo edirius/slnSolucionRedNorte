@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaUsuario.Properties;
 using CapaDeDatos;
+using System.IO;
 
 namespace CapaUsuario.Seguridad
 {
@@ -21,8 +22,52 @@ namespace CapaUsuario.Seguridad
             InitializeComponent();
         }
 
+        private void MoverArchivo()
+        {
+            string usuario = Environment.UserName;
+            string path = @"C:\Users\Usuario\Desktop\Sistema Control Gestantes.lnk";
+            path = path.Replace("Usuario", usuario);
+
+            string path2 = @"C:\Users\Usuario\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\Sistema Control Gestantes.lnk";
+            path2 = path2.Replace("Usuario", usuario);
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    //This statement ensures that the file is created,
+                    // but the handle is not kept.
+                    using (FileStream fs = File.Create(path)) { }
+                }
+
+                //Ensure that the target does not exist.
+                if (File.Exists(path2))
+                    File.Delete(path2);
+
+                //Move the file.
+                File.Copy(path, path2);
+                //MessageBox.Show("El archivo fue movido");
+
+                //See if the original exists now.
+                if (File.Exists(path))
+                {
+                    //MessageBox.Show("El archivo original todavía existe, lo cual es inesperado.");
+                }
+                else
+                {
+                    //MessageBox.Show("El archivo original ya no existe, lo que se espera.");
+                }
+
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show("El proceso falló: {0}", e.ToString());
+            }
+        }
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            MoverArchivo();
+
             try
             {
                 Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");

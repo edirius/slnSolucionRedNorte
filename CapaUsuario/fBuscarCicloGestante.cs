@@ -14,6 +14,7 @@ namespace CapaUsuario
     {
         CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
         public string IdtHistoriaClinica = "";
+        public string IdtEstablecimientoSalud = "";
         public string IdObstetra = "";
         int año = 0;
         int mes = 0;
@@ -39,11 +40,16 @@ namespace CapaUsuario
             mes = Convert.ToInt16(this.cbMonth.GetItemText(this.cbMonth.SelectedIndex));
             mes = mes + 1;
 
-            if (cantidad_años>0) {
+            if (cantidad_años > 0)
+            {
                 //cbYear.SelectedItem = cbYear.Text[año_numero];
-                cbYear.Text= año_numero.ToString();
+                cbYear.Text = año_numero.ToString();
                 año = Convert.ToInt16(this.cbYear.GetItemText(this.cbYear.SelectedItem));
+                cbMonth.Enabled = true;
             }
+            else
+                cbMonth.Enabled = false;
+                
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -65,6 +71,7 @@ namespace CapaUsuario
                 {
                     oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
                     oHistoriaClinica.Idtobstetra = IdObstetra;
+                    oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinicaXHistoriaClinica(), 0);
                     dgvHC.Columns[1].Visible = false;
                 }
@@ -76,6 +83,7 @@ namespace CapaUsuario
                 {
                     oPaciente.apellidopaterno = buscar;
                     oPaciente.idtobstetra = IdObstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoPaterno(), 0);
                     dgvHC.Columns[1].Visible = false;
                 }
@@ -87,6 +95,7 @@ namespace CapaUsuario
                 {
                     oPaciente.apellidomaterno = buscar;
                     oPaciente.idtobstetra = IdObstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXApellidoMaterno(), 0);
                     dgvHC.Columns[1].Visible = false;
                 }
@@ -98,6 +107,7 @@ namespace CapaUsuario
                 {
                     oPaciente.nombres = buscar;
                     oPaciente.idtobstetra = IdObstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXNombres(), 0);
                     dgvHC.Columns[1].Visible = false;
                 }
@@ -109,6 +119,7 @@ namespace CapaUsuario
                 {
                     oPaciente.dni = buscar;
                     oPaciente.idtobstetra = IdObstetra;
+                    oPaciente.idtestablecimientosalud = IdtEstablecimientoSalud;
                     dgvHC.DataSource = oUtilitarios.enumerar_datatable(oPaciente.ListarHistoriaClinicaXDNI(), 0);
                     dgvHC.Columns[1].Visible = false;
                 }
@@ -117,6 +128,7 @@ namespace CapaUsuario
             if (buscar.Length < 1)
             {
                 oHistoriaClinica.Idtobstetra = IdObstetra;
+                oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                 oHistoriaClinica.mes = mes;
                 oHistoriaClinica.año = año;
                 dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),0);
@@ -151,6 +163,7 @@ namespace CapaUsuario
                 oHistoriaClinica.mes = mes;
 
                 oHistoriaClinica.Idtobstetra = IdObstetra;
+                oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
                 odtHC = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(),0);
                 dgvHC.DataSource = odtHC ;
                 dgvHC.Columns[1].Visible = false;
@@ -173,6 +186,7 @@ namespace CapaUsuario
 
             /*Id de obstetra*/
             oHistoriaClinica.Idtobstetra = IdObstetra;
+            oHistoriaClinica.Idtestablecimientosalud = IdtEstablecimientoSalud;
             oHistoriaClinica.mes = mes;
             oHistoriaClinica.año = año;
             dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);

@@ -512,7 +512,9 @@ namespace CapaUsuario
 
 
                 idtpaciente = odtHCXIdHC.Rows[0][15].ToString();
-                IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
+                //IdObstetra = odtHCXIdHC.Rows[0][20].ToString();
+
+
                 dtpFecha.Value = Convert.ToDateTime(odtHCXIdHC.Rows[0][21].ToString());
 
                 if (odtHCXIdHC.Rows[0][22].ToString() == "1")
@@ -3215,6 +3217,7 @@ namespace CapaUsuario
         {
 
             fBuscarCicloGestante.IdObstetra = IdObstetra ;
+            fBuscarCicloGestante.IdtEstablecimientoSalud = IdEstablecimiento;
 
             if (fBuscarCicloGestante.ShowDialog() == DialogResult.OK)
             {

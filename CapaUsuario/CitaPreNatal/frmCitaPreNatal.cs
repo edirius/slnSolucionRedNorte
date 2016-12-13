@@ -56,6 +56,7 @@ namespace CapaUsuario.CitaPreNatal
             //MessageBox.Show(Establecimiento);
             CargarDatos();
             realizar_atencion_citas_gestante();
+            estado = "nuevo";
             seleccionar_fecha_cercana();
 
             //if (dtgCitasMedicas.Rows.Count > 0)
@@ -66,7 +67,7 @@ namespace CapaUsuario.CitaPreNatal
             //{
             //    btnGuardar.Enabled = false;
             //}
-            estado = "nuevo";
+            
         }
 
         private DataTable realizar_citas(DataTable odtCitas)
@@ -81,7 +82,8 @@ namespace CapaUsuario.CitaPreNatal
             /*calculando numero de cita*/
 
             fecha_cita = Fecha_Registro;
-            fecha_prox_cita = Fecha_Registro.AddMonths(1);
+            fecha_prox_cita = Fecha_Registro;
+            //fecha_prox_cita = Fecha_Registro.AddMonths(1);
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
             
@@ -133,25 +135,31 @@ namespace CapaUsuario.CitaPreNatal
                     ocupado = false;
 
                     if (edad_gestacional_citas <= 28 && !ocupado) {
-                        Fecha_Registro = Fecha_Registro.AddMonths(1);
+                        //Fecha_Registro = Fecha_Registro.AddDays(28);
+                        
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
+                        Fecha_Registro = fecha_prox_cita;
+                        //fecha_prox_cita = Fecha_Registro.AddDays(28);
                         //edad_gestacional_citas += +4;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(15);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(15);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        //fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas = ((edad_gestacional_citas * 7) + 15) / 7;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(7);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(7);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas += +1;
                         ocupado = true;
                     }
@@ -160,7 +168,7 @@ namespace CapaUsuario.CitaPreNatal
                     if (edad_gestacional_citas <= 28 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
                         Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }

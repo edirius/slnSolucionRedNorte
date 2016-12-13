@@ -56,6 +56,11 @@ namespace CapaDeNegocios
             return Conexion.GDatos.TraerDataTable("spListarOdontologiaXIdHC", Idthistoriaclinica);
         }
 
+        public DataTable ListarOdontologiaXIdHCR()
+        {
+            return Conexion.GDatos.TraerDataTable("spListarOdontologiaXIdHCR", Idthistoriaclinica);
+        }
+
         public DataTable EliminarOdontologia()
         {
             return Conexion.GDatos.TraerDataTable("spEliminarOdontologia", Idtodontologia);
