@@ -44,11 +44,22 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGestantesFechaPP = new System.Windows.Forms.Button();
             this.btnGestantesDadoParto = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTranseuntes = new System.Windows.Forms.Button();
             this.btnGestantesMorbilidad = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRNBajoPeso = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGestantesSin2ControlPuerperio = new System.Windows.Forms.Button();
+            this.btnGestantesPresionAlta = new System.Windows.Forms.Button();
+            this.btnGestantesConAnemia = new System.Windows.Forms.Button();
+            this.btnGestantesConSifilis = new System.Windows.Forms.Button();
+            this.btnGestantesConVIH = new System.Windows.Forms.Button();
+            this.btnGestantesConInfeccionUrinaria = new System.Windows.Forms.Button();
+            this.btnGestantesSinTratamiento = new System.Windows.Forms.Button();
+            this.btnGestantesSinBateria = new System.Windows.Forms.Button();
+            this.btnGestantesSinExamenOrina = new System.Windows.Forms.Button();
+            this.btnGestantesSinControlPuerperio = new System.Windows.Forms.Button();
+            this.btnGestantesSinCita = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMicroRED)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,7 +72,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(280, 9);
+            this.label1.Location = new System.Drawing.Point(247, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 0;
@@ -73,9 +84,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboAño.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboAño.FormattingEnabled = true;
-            this.cboAño.Location = new System.Drawing.Point(59, 3);
+            this.cboAño.Location = new System.Drawing.Point(53, 3);
             this.cboAño.Name = "cboAño";
-            this.cboAño.Size = new System.Drawing.Size(192, 21);
+            this.cboAño.Size = new System.Drawing.Size(171, 21);
             this.cboAño.TabIndex = 1;
             this.cboAño.SelectedIndexChanged += new System.EventHandler(this.cboAño_SelectedIndexChanged);
             // 
@@ -88,9 +99,9 @@
             this.btnSalir.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.Color.Red;
             this.btnSalir.ImageKey = "NetByte Design Studio - 0957.png";
-            this.btnSalir.Location = new System.Drawing.Point(3, 343);
+            this.btnSalir.Location = new System.Drawing.Point(3, 429);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(95, 64);
+            this.btnSalir.Size = new System.Drawing.Size(115, 70);
             this.btnSalir.TabIndex = 107;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -108,7 +119,7 @@
             this.btnReporObstetras.ImageKey = "NetByte Design Studio - 0849.png";
             this.btnReporObstetras.Location = new System.Drawing.Point(3, 3);
             this.btnReporObstetras.Name = "btnReporObstetras";
-            this.btnReporObstetras.Size = new System.Drawing.Size(107, 59);
+            this.btnReporObstetras.Size = new System.Drawing.Size(115, 65);
             this.btnReporObstetras.TabIndex = 106;
             this.btnReporObstetras.Text = "Obstetras";
             this.btnReporObstetras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -135,9 +146,9 @@
             "OCTUBRE",
             "NOVIEMBRE",
             "DICIEMBRE"});
-            this.cboMes.Location = new System.Drawing.Point(313, 3);
+            this.cboMes.Location = new System.Drawing.Point(280, 3);
             this.cboMes.Name = "cboMes";
-            this.cboMes.Size = new System.Drawing.Size(251, 21);
+            this.cboMes.Size = new System.Drawing.Size(225, 21);
             this.cboMes.TabIndex = 109;
             this.cboMes.SelectedIndexChanged += new System.EventHandler(this.cboMes_SelectedIndexChanged);
             // 
@@ -146,7 +157,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(27, 9);
+            this.label2.Location = new System.Drawing.Point(21, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 108;
@@ -161,9 +172,9 @@
             this.btnGestantesNominal.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnGestantesNominal.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGestantesNominal.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnGestantesNominal.Location = new System.Drawing.Point(3, 3);
+            this.btnGestantesNominal.Location = new System.Drawing.Point(3, 74);
             this.btnGestantesNominal.Name = "btnGestantesNominal";
-            this.btnGestantesNominal.Size = new System.Drawing.Size(95, 62);
+            this.btnGestantesNominal.Size = new System.Drawing.Size(115, 65);
             this.btnGestantesNominal.TabIndex = 110;
             this.btnGestantesNominal.Text = "Nominal Gestantes";
             this.btnGestantesNominal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -187,7 +198,7 @@
             this.dgvMicroRED.Name = "dgvMicroRED";
             this.dgvMicroRED.RowHeadersVisible = false;
             this.dgvMicroRED.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMicroRED.Size = new System.Drawing.Size(555, 314);
+            this.dgvMicroRED.Size = new System.Drawing.Size(496, 224);
             this.dgvMicroRED.TabIndex = 111;
             this.dgvMicroRED.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellClick);
             this.dgvMicroRED.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellContentClick);
@@ -221,7 +232,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(567, 339);
+            this.groupBox1.Size = new System.Drawing.Size(508, 249);
             this.groupBox1.TabIndex = 112;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Micro RED";
@@ -244,7 +255,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(567, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(508, 31);
             this.tableLayoutPanel1.TabIndex = 113;
             // 
             // btnGestantesFechaPP
@@ -256,9 +267,9 @@
             this.btnGestantesFechaPP.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnGestantesFechaPP.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGestantesFechaPP.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnGestantesFechaPP.Location = new System.Drawing.Point(3, 139);
+            this.btnGestantesFechaPP.Location = new System.Drawing.Point(3, 216);
             this.btnGestantesFechaPP.Name = "btnGestantesFechaPP";
-            this.btnGestantesFechaPP.Size = new System.Drawing.Size(95, 62);
+            this.btnGestantesFechaPP.Size = new System.Drawing.Size(115, 65);
             this.btnGestantesFechaPP.TabIndex = 114;
             this.btnGestantesFechaPP.Text = "Gestantes Fecha P.P.";
             this.btnGestantesFechaPP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -274,31 +285,32 @@
             this.btnGestantesDadoParto.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnGestantesDadoParto.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGestantesDadoParto.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnGestantesDadoParto.Location = new System.Drawing.Point(3, 207);
+            this.btnGestantesDadoParto.Location = new System.Drawing.Point(3, 287);
             this.btnGestantesDadoParto.Name = "btnGestantesDadoParto";
-            this.btnGestantesDadoParto.Size = new System.Drawing.Size(95, 62);
+            this.btnGestantesDadoParto.Size = new System.Drawing.Size(115, 65);
             this.btnGestantesDadoParto.TabIndex = 115;
             this.btnGestantesDadoParto.Text = "Gestantes Dado Parto";
             this.btnGestantesDadoParto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesDadoParto.UseVisualStyleBackColor = false;
             this.btnGestantesDadoParto.Click += new System.EventHandler(this.btnGestantesDadoParto_Click);
             // 
-            // button1
+            // btnTranseuntes
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnTranseuntes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.MintCream;
-            this.button1.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.ImageKey = "NetByte Design Studio - 0849.png";
-            this.button1.Location = new System.Drawing.Point(116, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 59);
-            this.button1.TabIndex = 116;
-            this.button1.Text = "Transeuntes";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTranseuntes.BackColor = System.Drawing.Color.MintCream;
+            this.btnTranseuntes.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTranseuntes.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnTranseuntes.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnTranseuntes.Location = new System.Drawing.Point(3, 145);
+            this.btnTranseuntes.Name = "btnTranseuntes";
+            this.btnTranseuntes.Size = new System.Drawing.Size(115, 65);
+            this.btnTranseuntes.TabIndex = 116;
+            this.btnTranseuntes.Text = "Transeuntes";
+            this.btnTranseuntes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnTranseuntes.UseVisualStyleBackColor = false;
+            this.btnTranseuntes.Click += new System.EventHandler(this.btnTranseuntes_Click);
             // 
             // btnGestantesMorbilidad
             // 
@@ -309,9 +321,9 @@
             this.btnGestantesMorbilidad.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
             this.btnGestantesMorbilidad.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnGestantesMorbilidad.ImageKey = "NetByte Design Studio - 0849.png";
-            this.btnGestantesMorbilidad.Location = new System.Drawing.Point(3, 71);
+            this.btnGestantesMorbilidad.Location = new System.Drawing.Point(3, 3);
             this.btnGestantesMorbilidad.Name = "btnGestantesMorbilidad";
-            this.btnGestantesMorbilidad.Size = new System.Drawing.Size(95, 62);
+            this.btnGestantesMorbilidad.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesMorbilidad.TabIndex = 117;
             this.btnGestantesMorbilidad.Text = "Morbilidad Gestantes";
             this.btnGestantesMorbilidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -325,62 +337,273 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.button2, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.btnGestantesNominal, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnGestantesMorbilidad, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnSalir, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.btnGestantesDadoParto, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.btnGestantesFechaPP, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(585, 49);
+            this.tableLayoutPanel2.Controls.Add(this.btnGestantesNominal, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnReporObstetras, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnTranseuntes, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnGestantesFechaPP, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.btnRNBajoPeso, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnGestantesDadoParto, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.btnSalir, 0, 6);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(526, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(101, 410);
+            this.tableLayoutPanel2.RowCount = 7;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(121, 502);
             this.tableLayoutPanel2.TabIndex = 118;
             // 
-            // button2
+            // btnRNBajoPeso
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnRNBajoPeso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.MintCream;
-            this.button2.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.ImageKey = "NetByte Design Studio - 0849.png";
-            this.button2.Location = new System.Drawing.Point(3, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 62);
-            this.button2.TabIndex = 120;
-            this.button2.Text = "Recien Nacidos Bajo Peso";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnRNBajoPeso.BackColor = System.Drawing.Color.MintCream;
+            this.btnRNBajoPeso.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRNBajoPeso.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRNBajoPeso.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnRNBajoPeso.Location = new System.Drawing.Point(3, 358);
+            this.btnRNBajoPeso.Name = "btnRNBajoPeso";
+            this.btnRNBajoPeso.Size = new System.Drawing.Size(115, 65);
+            this.btnRNBajoPeso.TabIndex = 120;
+            this.btnRNBajoPeso.Text = "Recien Nacidos con Bajo Peso";
+            this.btnRNBajoPeso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnRNBajoPeso.UseVisualStyleBackColor = false;
+            this.btnRNBajoPeso.Click += new System.EventHandler(this.btnRNBajoPeso_Click);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel3.ColumnCount = 5;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.btnReporObstetras, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 394);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSin2ControlPuerperio, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesMorbilidad, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesPresionAlta, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesConAnemia, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesConSifilis, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesConVIH, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesConInfeccionUrinaria, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSinTratamiento, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSinBateria, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSinExamenOrina, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSinControlPuerperio, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btnGestantesSinCita, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 304);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(567, 65);
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(508, 210);
             this.tableLayoutPanel3.TabIndex = 119;
+            // 
+            // btnGestantesSin2ControlPuerperio
+            // 
+            this.btnGestantesSin2ControlPuerperio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSin2ControlPuerperio.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSin2ControlPuerperio.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSin2ControlPuerperio.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSin2ControlPuerperio.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSin2ControlPuerperio.Location = new System.Drawing.Point(384, 143);
+            this.btnGestantesSin2ControlPuerperio.Name = "btnGestantesSin2ControlPuerperio";
+            this.btnGestantesSin2ControlPuerperio.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSin2ControlPuerperio.TabIndex = 130;
+            this.btnGestantesSin2ControlPuerperio.Text = "Puerpera sin 2do Control Puerperio";
+            this.btnGestantesSin2ControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSin2ControlPuerperio.UseVisualStyleBackColor = false;
+            this.btnGestantesSin2ControlPuerperio.Click += new System.EventHandler(this.btnGestantesSin2ControlPuerperio_Click);
+            // 
+            // btnGestantesPresionAlta
+            // 
+            this.btnGestantesPresionAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesPresionAlta.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesPresionAlta.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesPresionAlta.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesPresionAlta.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesPresionAlta.Location = new System.Drawing.Point(130, 3);
+            this.btnGestantesPresionAlta.Name = "btnGestantesPresionAlta";
+            this.btnGestantesPresionAlta.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesPresionAlta.TabIndex = 121;
+            this.btnGestantesPresionAlta.Text = "Gestantes con Presion Arterial Elevada";
+            this.btnGestantesPresionAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesPresionAlta.UseVisualStyleBackColor = false;
+            this.btnGestantesPresionAlta.Click += new System.EventHandler(this.btnGestantesPresionAlta_Click);
+            // 
+            // btnGestantesConAnemia
+            // 
+            this.btnGestantesConAnemia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesConAnemia.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesConAnemia.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesConAnemia.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesConAnemia.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesConAnemia.Location = new System.Drawing.Point(3, 73);
+            this.btnGestantesConAnemia.Name = "btnGestantesConAnemia";
+            this.btnGestantesConAnemia.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesConAnemia.TabIndex = 120;
+            this.btnGestantesConAnemia.Text = "Gestantes con Anemia";
+            this.btnGestantesConAnemia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesConAnemia.UseVisualStyleBackColor = false;
+            this.btnGestantesConAnemia.Click += new System.EventHandler(this.btnGestantesConAnemia_Click);
+            // 
+            // btnGestantesConSifilis
+            // 
+            this.btnGestantesConSifilis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesConSifilis.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesConSifilis.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesConSifilis.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesConSifilis.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesConSifilis.Location = new System.Drawing.Point(130, 73);
+            this.btnGestantesConSifilis.Name = "btnGestantesConSifilis";
+            this.btnGestantesConSifilis.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesConSifilis.TabIndex = 122;
+            this.btnGestantesConSifilis.Text = "Gestantes con Sifilis";
+            this.btnGestantesConSifilis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesConSifilis.UseVisualStyleBackColor = false;
+            this.btnGestantesConSifilis.Click += new System.EventHandler(this.btnGestantesConSifilis_Click);
+            // 
+            // btnGestantesConVIH
+            // 
+            this.btnGestantesConVIH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesConVIH.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesConVIH.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesConVIH.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesConVIH.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesConVIH.Location = new System.Drawing.Point(257, 73);
+            this.btnGestantesConVIH.Name = "btnGestantesConVIH";
+            this.btnGestantesConVIH.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesConVIH.TabIndex = 123;
+            this.btnGestantesConVIH.Text = "Gestantes con VIH";
+            this.btnGestantesConVIH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesConVIH.UseVisualStyleBackColor = false;
+            this.btnGestantesConVIH.Click += new System.EventHandler(this.btnGestantesConVIH_Click);
+            // 
+            // btnGestantesConInfeccionUrinaria
+            // 
+            this.btnGestantesConInfeccionUrinaria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesConInfeccionUrinaria.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesConInfeccionUrinaria.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesConInfeccionUrinaria.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesConInfeccionUrinaria.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesConInfeccionUrinaria.Location = new System.Drawing.Point(384, 73);
+            this.btnGestantesConInfeccionUrinaria.Name = "btnGestantesConInfeccionUrinaria";
+            this.btnGestantesConInfeccionUrinaria.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesConInfeccionUrinaria.TabIndex = 124;
+            this.btnGestantesConInfeccionUrinaria.Text = "Gestantes con Infección Urinaria";
+            this.btnGestantesConInfeccionUrinaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesConInfeccionUrinaria.UseVisualStyleBackColor = false;
+            this.btnGestantesConInfeccionUrinaria.Click += new System.EventHandler(this.btnGestantesConInfeccionUrinaria_Click);
+            // 
+            // btnGestantesSinTratamiento
+            // 
+            this.btnGestantesSinTratamiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSinTratamiento.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSinTratamiento.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSinTratamiento.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSinTratamiento.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSinTratamiento.Location = new System.Drawing.Point(3, 143);
+            this.btnGestantesSinTratamiento.Name = "btnGestantesSinTratamiento";
+            this.btnGestantesSinTratamiento.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSinTratamiento.TabIndex = 128;
+            this.btnGestantesSinTratamiento.Text = "Gestantes sin Tratamiento";
+            this.btnGestantesSinTratamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSinTratamiento.UseVisualStyleBackColor = false;
+            this.btnGestantesSinTratamiento.Click += new System.EventHandler(this.btnGestantesSinTratamiento_Click);
+            // 
+            // btnGestantesSinBateria
+            // 
+            this.btnGestantesSinBateria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSinBateria.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSinBateria.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSinBateria.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSinBateria.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSinBateria.Location = new System.Drawing.Point(384, 3);
+            this.btnGestantesSinBateria.Name = "btnGestantesSinBateria";
+            this.btnGestantesSinBateria.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSinBateria.TabIndex = 127;
+            this.btnGestantesSinBateria.Text = "Gestantes sin Bateria";
+            this.btnGestantesSinBateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSinBateria.UseVisualStyleBackColor = false;
+            this.btnGestantesSinBateria.Click += new System.EventHandler(this.btnGestantesSinBateria_Click);
+            // 
+            // btnGestantesSinExamenOrina
+            // 
+            this.btnGestantesSinExamenOrina.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSinExamenOrina.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSinExamenOrina.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSinExamenOrina.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSinExamenOrina.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSinExamenOrina.Location = new System.Drawing.Point(130, 143);
+            this.btnGestantesSinExamenOrina.Name = "btnGestantesSinExamenOrina";
+            this.btnGestantesSinExamenOrina.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSinExamenOrina.TabIndex = 129;
+            this.btnGestantesSinExamenOrina.Text = "Gestantes sin Examen Orina";
+            this.btnGestantesSinExamenOrina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSinExamenOrina.UseVisualStyleBackColor = false;
+            this.btnGestantesSinExamenOrina.Click += new System.EventHandler(this.btnGestantesSinExamenOrina_Click);
+            // 
+            // btnGestantesSinControlPuerperio
+            // 
+            this.btnGestantesSinControlPuerperio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSinControlPuerperio.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSinControlPuerperio.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSinControlPuerperio.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSinControlPuerperio.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSinControlPuerperio.Location = new System.Drawing.Point(257, 143);
+            this.btnGestantesSinControlPuerperio.Name = "btnGestantesSinControlPuerperio";
+            this.btnGestantesSinControlPuerperio.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSinControlPuerperio.TabIndex = 126;
+            this.btnGestantesSinControlPuerperio.Text = "Puerpera sin 1er Control Puerperio";
+            this.btnGestantesSinControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSinControlPuerperio.UseVisualStyleBackColor = false;
+            this.btnGestantesSinControlPuerperio.Click += new System.EventHandler(this.btnGestantesSinControlPuerperio_Click);
+            // 
+            // btnGestantesSinCita
+            // 
+            this.btnGestantesSinCita.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGestantesSinCita.BackColor = System.Drawing.Color.MintCream;
+            this.btnGestantesSinCita.Font = new System.Drawing.Font("Bookman Old Style", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGestantesSinCita.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGestantesSinCita.ImageKey = "NetByte Design Studio - 0849.png";
+            this.btnGestantesSinCita.Location = new System.Drawing.Point(257, 3);
+            this.btnGestantesSinCita.Name = "btnGestantesSinCita";
+            this.btnGestantesSinCita.Size = new System.Drawing.Size(121, 64);
+            this.btnGestantesSinCita.TabIndex = 125;
+            this.btnGestantesSinCita.Text = "Gestantes que no Acuden a sus Citas";
+            this.btnGestantesSinCita.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGestantesSinCita.UseVisualStyleBackColor = false;
+            this.btnGestantesSinCita.Click += new System.EventHandler(this.btnGestantesSinCita_Click);
             // 
             // frmReporteMicroRED
             // 
@@ -388,7 +611,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Monitoreo.Properties.Resources.FondoFormularios2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(698, 471);
+            this.ClientSize = new System.Drawing.Size(659, 526);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -425,10 +648,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.Button btnGestantesFechaPP;
         private System.Windows.Forms.Button btnGestantesDadoParto;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTranseuntes;
         private System.Windows.Forms.Button btnGestantesMorbilidad;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRNBajoPeso;
+        private System.Windows.Forms.Button btnGestantesPresionAlta;
+        private System.Windows.Forms.Button btnGestantesConAnemia;
+        private System.Windows.Forms.Button btnGestantesConSifilis;
+        private System.Windows.Forms.Button btnGestantesConVIH;
+        private System.Windows.Forms.Button btnGestantesConInfeccionUrinaria;
+        private System.Windows.Forms.Button btnGestantesSinExamenOrina;
+        private System.Windows.Forms.Button btnGestantesSinTratamiento;
+        private System.Windows.Forms.Button btnGestantesSinBateria;
+        private System.Windows.Forms.Button btnGestantesSinCita;
+        private System.Windows.Forms.Button btnGestantesSinControlPuerperio;
+        private System.Windows.Forms.Button btnGestantesSin2ControlPuerperio;
     }
 }

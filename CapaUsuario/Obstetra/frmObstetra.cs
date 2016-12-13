@@ -31,7 +31,7 @@ namespace CapaUsuario.Obstetra
         {
             try
             {
-                if (txtUsuario.Text == "" || txtPassword.Text == "")
+                if (txtNombre.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -92,7 +92,6 @@ namespace CapaUsuario.Obstetra
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
             DataTable oDataPaciente = new DataTable();
-
             if (txtDNI.Text.Length == 8)
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
@@ -125,8 +124,30 @@ namespace CapaUsuario.Obstetra
 
         private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
             if (e.KeyChar == 13)
             {
+                if (txtDNI.Text.Length != 8)
+                {
+                    MessageBox.Show("El DNI ingresado no es el correcto.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDNI.Select();
+                    return;
+                }
                 txtNombre.Focus();
             }
         }
