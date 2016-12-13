@@ -163,11 +163,13 @@ namespace CapaUsuario
             CapaUsuario.Reportes.fControlGestanteporPaciente fControlGestanteporPaciente = new CapaUsuario.Reportes.fControlGestanteporPaciente();
             CapaDeNegocios.cUtilitarios oUtilitarios = new CapaDeNegocios.cUtilitarios();
 
+
             if (oUtilitarios.verificarventanaabierta("fControlGestanteporPaciente"))
             {
 
                 fControlGestanteporPaciente.MdiParent = this;
                 fControlGestanteporPaciente.Idtobstetra = IdObstetra;
+                fControlGestanteporPaciente.IdtEstablecimientoSalud = IdEstablecimientoSalud;
                 fControlGestanteporPaciente.Show();
                 
             }

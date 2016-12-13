@@ -207,6 +207,18 @@ namespace CapaDeNegocios.CitaPreNatal
             }
         }
 
-        
+        public DataTable ListaCitasPreNatalR()
+        {
+            try
+            {
+                return Conexion.GDatos.TraerDataTable("spListarCitasPreNatalR", historiaClinica.Idthistoriaclinica);
+            }
+            catch (Exception eCita)
+            {
+                throw new cReglaNegocioException("Error al traer la lista de Citas: Mensaje : " + eCita.Message, eCita);
+            }
+        }
+
+
     }
 }

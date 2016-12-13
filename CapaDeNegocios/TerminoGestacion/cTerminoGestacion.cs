@@ -57,6 +57,13 @@ namespace CapaDeNegocios.TerminoGestacion
             return Conexion.GDatos.TraerDataTable("spListarTerminoGestacion", idthistoriaclinica);
         }
 
+        public DataTable ListarTerminoGestacionR(string idthistoriaclinica)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarTerminoGestacionR", idthistoriaclinica);
+        }
+
+        
+
         public Boolean CrearTerminoGestacion(cTerminoGestacion miTerminoGestacion)
         {
             Conexion.GDatos.Ejecutar("spCrearTerminoGestacion", miTerminoGestacion.idtterminogestacion, miTerminoGestacion.gestacion, miTerminoGestacion.lugar, miTerminoGestacion.reciennacido, miTerminoGestacion.fecha, miTerminoGestacion.persona, miTerminoGestacion.tipoparto, miTerminoGestacion.modoparto, miTerminoGestacion.manejoalumbramiento, miTerminoGestacion.tipoinstitucion, miTerminoGestacion.nombreinstitucion, miTerminoGestacion.idthistoriaclinica, miTerminoGestacion.idtobstetra);

@@ -316,5 +316,10 @@ namespace CapaUsuario
         {
             txtBuscar.Focus();
         }
+
+        private void bnGestante_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

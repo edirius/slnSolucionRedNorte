@@ -101,22 +101,22 @@ namespace CapaDeNegocios.Paciente
 
         public DataTable ListarHistoriaClinicaXApellidoPaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", apellidopaterno, idtobstetra );
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoPaterno", idtestablecimientosalud, apellidopaterno, idtobstetra );
         }
 
         public DataTable ListarHistoriaClinicaXApellidoMaterno()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoMaterno", apellidomaterno, idtobstetra);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXApellidoMaterno",idtestablecimientosalud, apellidomaterno, idtobstetra);
         }
 
         public DataTable ListarHistoriaClinicaXNombres()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXNombres", nombres, idtobstetra);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXNombres", idtestablecimientosalud, nombres, idtobstetra);
         }
 
         public DataTable ListarHistoriaClinicaXDNI()
         {
-            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXDNI", dni, idtobstetra);
+            return Conexion.GDatos.TraerDataTable("spListarHistoriaClinicaXDNI", idtestablecimientosalud, dni, idtobstetra);
         }
 
         public DataTable ListarCantidadPacientes()

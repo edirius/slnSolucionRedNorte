@@ -86,6 +86,7 @@
             this.bnGestante.Size = new System.Drawing.Size(783, 25);
             this.bnGestante.TabIndex = 96;
             this.bnGestante.Text = "bindingNavigator1";
+            this.bnGestante.RefreshItems += new System.EventHandler(this.bnGestante_RefreshItems);
             // 
             // bnctGestante
             // 

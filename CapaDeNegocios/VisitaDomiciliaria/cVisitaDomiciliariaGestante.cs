@@ -39,6 +39,11 @@ namespace CapaDeNegocios.VisitaDomiciliaria
             return Conexion.GDatos.TraerDataTable("spListarVisitaDomiciliariaGestante", idthistoriaclinica);
         }
 
+        public DataTable ListarVisitaDomiciliariaGestanteR(string idthistoriaclinica)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarVisitaDomiciliariaGestanteR", idthistoriaclinica);
+        }
+
         public Boolean CrearVisitaDomiciliariaGestante(cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante)
         {
             Conexion.GDatos.Ejecutar("spCrearVisitaDomiciliariaGestante", miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante, miVisitaDomiciliariaGestante.fecha, miVisitaDomiciliariaGestante.motivo, miVisitaDomiciliariaGestante.fua, miVisitaDomiciliariaGestante.detalle, miVisitaDomiciliariaGestante.idthistoriaclinica, miVisitaDomiciliariaGestante.idtobstetra);
