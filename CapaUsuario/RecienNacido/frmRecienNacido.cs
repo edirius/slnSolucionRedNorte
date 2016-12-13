@@ -82,7 +82,7 @@ namespace CapaUsuario.RecienNacido
             nudApgar5.Enabled = true;
             nudPeso.Value = 2000;
             nudPeso.Enabled = true;
-            cbSexo.Text = "Seleccione el sexo.";
+            cbSexo.Text = "";
             cbSexo.Enabled = true;
             btnInsertar.Enabled = true;
             btnEliminar.Enabled = true;
@@ -210,6 +210,11 @@ namespace CapaUsuario.RecienNacido
         {
             if (txtCodigoRN.Text == "")
             {
+                if (cbSexo.Text == "")
+                {
+                    MessageBox.Show("Por favor seleccione el tipo de sexo del Recien Nacido ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
                 Agregar();
             }
             else

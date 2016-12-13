@@ -32,9 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecienNacido));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecienNacido));
             this.dgvRecienNacido = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,14 +75,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APGAR1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APGAR5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudApgar1)).BeginInit();
@@ -135,6 +135,76 @@
             this.dgvRecienNacido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecienNacido_CellContentClick);
             this.dgvRecienNacido.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRecienNacido_CellFormatting);
             this.dgvRecienNacido.SelectionChanged += new System.EventHandler(this.dgvRecienNacido_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtreciennacido";
+            this.Column1.HeaderText = "ID RECIEN NACIDO";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            this.Column2.HeaderText = "HISTORIA CLINICA";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.DataPropertyName = "fechaderivado";
+            this.Column3.HeaderText = "Fecha de Derivado";
+            this.Column3.MinimumWidth = 80;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 105;
+            // 
+            // APGAR1
+            // 
+            this.APGAR1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.APGAR1.DataPropertyName = "apgar1";
+            this.APGAR1.HeaderText = "Apgar1";
+            this.APGAR1.Name = "APGAR1";
+            this.APGAR1.ReadOnly = true;
+            this.APGAR1.Width = 70;
+            // 
+            // APGAR5
+            // 
+            this.APGAR5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.APGAR5.DataPropertyName = "apgar5";
+            this.APGAR5.HeaderText = "Apgar5";
+            this.APGAR5.Name = "APGAR5";
+            this.APGAR5.ReadOnly = true;
+            this.APGAR5.Width = 70;
+            // 
+            // PESO
+            // 
+            this.PESO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PESO.DataPropertyName = "peso";
+            this.PESO.HeaderText = "Peso";
+            this.PESO.Name = "PESO";
+            this.PESO.ReadOnly = true;
+            this.PESO.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column6.DataPropertyName = "sexo";
+            this.Column6.HeaderText = "Sexo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 70;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Nombres";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4.HeaderText = "Obstetra";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -572,7 +642,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaUsuario.Properties.Resources.RecienNacido;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(462, 246);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -587,76 +657,6 @@
             this.groupBox5.Size = new System.Drawing.Size(650, 151);
             this.groupBox5.TabIndex = 111;
             this.groupBox5.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtreciennacido";
-            this.Column1.HeaderText = "ID RECIEN NACIDO";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            this.Column2.HeaderText = "HISTORIA CLINICA";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.DataPropertyName = "fechaderivado";
-            this.Column3.HeaderText = "Fecha de Derivado";
-            this.Column3.MinimumWidth = 80;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 105;
-            // 
-            // APGAR1
-            // 
-            this.APGAR1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.APGAR1.DataPropertyName = "apgar1";
-            this.APGAR1.HeaderText = "Apgar1";
-            this.APGAR1.Name = "APGAR1";
-            this.APGAR1.ReadOnly = true;
-            this.APGAR1.Width = 70;
-            // 
-            // APGAR5
-            // 
-            this.APGAR5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.APGAR5.DataPropertyName = "apgar5";
-            this.APGAR5.HeaderText = "Apgar5";
-            this.APGAR5.Name = "APGAR5";
-            this.APGAR5.ReadOnly = true;
-            this.APGAR5.Width = 70;
-            // 
-            // PESO
-            // 
-            this.PESO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.PESO.DataPropertyName = "peso";
-            this.PESO.HeaderText = "Peso";
-            this.PESO.Name = "PESO";
-            this.PESO.ReadOnly = true;
-            this.PESO.Width = 70;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column6.DataPropertyName = "sexo";
-            this.Column6.HeaderText = "Sexo";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 70;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Nombres";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column4.HeaderText = "Obstetra";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // frmRecienNacido
             // 
