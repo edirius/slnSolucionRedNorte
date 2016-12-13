@@ -54,9 +54,9 @@ namespace CapaUsuario.CitaPreNatal
         {
             VerificarTerminoGestacion();
             //MessageBox.Show(Establecimiento);
+            estado = "nuevo";
             CargarDatos();
             realizar_atencion_citas_gestante();
-            estado = "nuevo";
             seleccionar_fecha_cercana();
 
             //if (dtgCitasMedicas.Rows.Count > 0)
@@ -240,7 +240,7 @@ namespace CapaUsuario.CitaPreNatal
 
             dtgCitasMedicas.Rows[numero_cita].Selected = true;
             dtgCitasMedicas.CurrentCell = dtgCitasMedicas.Rows[numero_cita].Cells[3];
-
+            cargar_cita();
 
 
         }
@@ -330,8 +330,8 @@ namespace CapaUsuario.CitaPreNatal
             string asistencia = "";
             for (int i = 0; i < dtgCitasMedicas.Rows.Count; i++)
             {
-                asistencia = dtgCitasMedicas.Rows[i].Cells[11].Value.ToString();
-                if (asistencia == "Si")
+                asistencia = dtgCitasMedicas.Rows[i].Cells[12].Value.ToString();
+                 if (asistencia == "Si")
                 {
                     for (int j = 0; j < dtgCitasMedicas.Columns.Count; j++)
                         dtgCitasMedicas.Rows[i].Cells[j].Style.BackColor = Color.LightGreen;
@@ -544,7 +544,7 @@ namespace CapaUsuario.CitaPreNatal
             this.Close();
         }
 
-        private void dtgCitasMedicas_Click(object sender, EventArgs e)
+        private void cargar_cita()
         {
             if (dtgCitasMedicas.Rows.Count > 0)
             {
@@ -555,9 +555,14 @@ namespace CapaUsuario.CitaPreNatal
                 numPresionArterialS.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["colpresionarterials"].Value);
                 dtpProximaCita.Value = Convert.ToDateTime(dtgCitasMedicas.SelectedRows[0].Cells["colFechaProximaCita"].Value);
                 txtFUA.Text = Convert.ToString(dtgCitasMedicas.SelectedRows[0].Cells["colFUA"].Value);
-                nudSulfatoFerroso.Value = Convert.ToDecimal( dtgCitasMedicas.SelectedRows[0].Cells["SULFATOFERROSO"].Value );
+                nudSulfatoFerroso.Value = Convert.ToDecimal(dtgCitasMedicas.SelectedRows[0].Cells["SULFATOFERROSO"].Value);
                 estado = "modificar";
             }
+        }
+
+        private void dtgCitasMedicas_Click(object sender, EventArgs e)
+        {
+            cargar_cita();
         }
 
         private void dtpFechaCita_Enter(object sender, EventArgs e)
@@ -606,6 +611,11 @@ namespace CapaUsuario.CitaPreNatal
         {
             if (e.KeyChar == (char)13)
                 btnGuardar.Focus();
+        }
+
+        private void dtgCitasMedicas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

@@ -29,6 +29,7 @@ namespace CapaUsuario
         public string establecimientosalud = "";
 
         public string IdObstetra = "";
+        public string nombreObstetra = "";
         public string IdEstablecimiento = "";
         public string IdtHistoriaClinica = "";
         public bool Archivado = false;
@@ -69,11 +70,12 @@ namespace CapaUsuario
         bool bandera_combobox_año = false;
 
 
-        public frmHistoriaClinica(string idObstetra , string idEstablecimiento)
+        public frmHistoriaClinica(string idObstetra , string idEstablecimiento, string NombreObstetra)
         {
             InitializeComponent();
             IdObstetra = idObstetra;
             IdEstablecimiento = idEstablecimiento;
+            nombreObstetra = NombreObstetra;
 
             //txtTalla.KeyUp -= new KeyEventHandler(txtTalla_KeyUp);
 
@@ -1524,6 +1526,9 @@ namespace CapaUsuario
                 fMorbilidad.IdEstablecimiento = IdEstablecimiento;
                 fMorbilidad.Archivado = Archivado;
                 fMorbilidad.idtobstetra = IdObstetra;
+                fMorbilidad.nombreObstetra = nombreObstetra;
+
+
                 fMorbilidad.ShowDialog();
             }else
                 MessageBox.Show("Porfavor seleccione una Historia Clinica.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2592,25 +2597,31 @@ namespace CapaUsuario
 
                     if (edad_gestacional_citas <= 28 && !ocupado)
                     {
-                        Fecha_Registro = Fecha_Registro.AddMonths(1);
+                        //Fecha_Registro = Fecha_Registro.AddDays(28);
+
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
+                        Fecha_Registro = fecha_prox_cita;
+                        //fecha_prox_cita = Fecha_Registro.AddDays(28);
                         //edad_gestacional_citas += +4;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 29 && edad_gestacional_citas <= 36 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(15);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(15);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        //fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(15);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas = ((edad_gestacional_citas * 7) + 15) / 7;
                         ocupado = true;
                     }
                     if (edad_gestacional_citas >= 37 && edad_gestacional_citas <= 42 && !ocupado)
                     {
-                        Fecha_Registro = fecha_prox_cita.AddDays(7);
+                        //Fecha_Registro = fecha_prox_cita.AddDays(7);
                         fecha_cita = fecha_prox_cita;
-                        fecha_prox_cita = Fecha_Registro;
+                        fecha_prox_cita = fecha_prox_cita.AddDays(7);
+                        Fecha_Registro = fecha_prox_cita;
                         //edad_gestacional_citas += +1;
                         ocupado = true;
                     }
@@ -2620,7 +2631,7 @@ namespace CapaUsuario
                     if (edad_gestacional_citas <= 28 && !ocupado)
                     {
                         fecha_cita = Fecha_Registro;
-                        fecha_prox_cita = Fecha_Registro.AddMonths(1);
+                        fecha_prox_cita = Fecha_Registro.AddDays(28);
                         Fecha_Registro = fecha_prox_cita;
                         ocupado = true;
                     }
