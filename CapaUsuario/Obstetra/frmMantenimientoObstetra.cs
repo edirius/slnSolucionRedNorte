@@ -87,17 +87,24 @@ namespace CapaUsuario.Obstetra
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (sidtobstetra == "")
+            try
             {
-                MessageBox.Show("Debe seleccionar nuevamente los datos", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (sidtobstetra == "")
+                {
+                    MessageBox.Show("Debe seleccionar nuevamente los datos", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Está seguro que desea eliminar la Obstetra", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                miObstetra.EliminarObstetra(sidtobstetra);
+                CargarDatos();
             }
-            if (MessageBox.Show("Está seguro que desea eliminar el Maestro Descuentos", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
+            catch
             {
-                return;
+                MessageBox.Show("La obstetra no se puede eliminar.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            miObstetra.EliminarObstetra(sidtobstetra);
-            CargarDatos();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -55,6 +55,7 @@ namespace CapaUsuario.ControlPeuperio
             numAlturaUterino.Value = 0;
             txtFUA.Text = "";
             txtDetalle.Text = "";
+            dtpFecha.Select();
             dtpFecha.Focus();
         }
 
@@ -92,7 +93,7 @@ namespace CapaUsuario.ControlPeuperio
                 }
                 if (bOk == true)
                 {
-                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                    //DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else
                 {

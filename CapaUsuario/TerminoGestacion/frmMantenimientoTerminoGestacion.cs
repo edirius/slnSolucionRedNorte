@@ -91,7 +91,7 @@ namespace CapaUsuario.TerminoGestacion
                     {
                         MessageBox.Show("Termino de Gestación modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                    //DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else
                 {

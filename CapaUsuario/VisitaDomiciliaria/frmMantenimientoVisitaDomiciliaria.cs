@@ -49,6 +49,7 @@ namespace CapaUsuario.VisitaDomiciliaria
                 cboMotivoGestante.SelectedIndex = -1;
                 txtFuaGestante.Text = "";
                 txtDetalleGestante.Text = "";
+                dtpFechaGestante.Select();
                 dtpFechaGestante.Focus();
             }
             else if (stipo == "PUERPERIA/R.NACIDO")
@@ -60,6 +61,7 @@ namespace CapaUsuario.VisitaDomiciliaria
                 cboMotivoRN.SelectedIndex = -1;
                 txtFuaRN.Text = "";
                 txtDetalleRN.Text = "";
+                dtpFechaPuerpera.Select();
                 dtpFechaPuerpera.Focus();
             }
         }
@@ -71,6 +73,11 @@ namespace CapaUsuario.VisitaDomiciliaria
                 bool bOk = false;
                 if (stipo == "GESTANTE")
                 {
+                    if (cboMotivoGestante.Text == "")
+                    {
+                        MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliariagestante;
                     miVisitaDomiciliariaGestante.fecha = dtpFechaGestante.Value;
                     miVisitaDomiciliariaGestante.motivo = cboMotivoGestante.Text;
@@ -98,6 +105,11 @@ namespace CapaUsuario.VisitaDomiciliaria
                 }
                 else if (stipo == "PUERPERIA/R.NACIDO")
                 {
+                    if (cboMotivoPuerpera.Text == "")
+                    {
+                        MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = sidtvisitadomiciliariapuerperarn;
                     miVisitaDomiciliariaPuerperaRN.fecha = dtpFechaPuerpera.Value;
                     miVisitaDomiciliariaPuerperaRN.motivopuerpera = cboMotivoPuerpera.Text;
@@ -129,7 +141,7 @@ namespace CapaUsuario.VisitaDomiciliaria
                 }
                 if (bOk == true)
                 {
-                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                    //DialogResult = System.Windows.Forms.DialogResult.OK;
                 }
                 else
                 {

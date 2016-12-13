@@ -35,7 +35,7 @@ namespace CapaUsuario.Paciente
             {
                 if (txtDNI.Text == "" || txtNombre.Text == "" || txtApePaterno.Text == "" || txtApeMaterno.Text == "" || txtCodigoHistoriaClinica.Text == "")
                 {
-                    MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe tener un DNI, Nombre, Apellido Paterno, Apellido Materno y Codigo de Historia Clinica.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 bool bOk = false;

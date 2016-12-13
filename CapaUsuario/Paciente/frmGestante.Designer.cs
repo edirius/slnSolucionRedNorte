@@ -92,8 +92,8 @@
             // 
             this.bnctGestante.ForeColor = System.Drawing.Color.White;
             this.bnctGestante.Name = "bnctGestante";
-            this.bnctGestante.Size = new System.Drawing.Size(43, 22);
-            this.bnctGestante.Text = "of {0}";
+            this.bnctGestante.Size = new System.Drawing.Size(46, 22);
+            this.bnctGestante.Text = "de {0}";
             this.bnctGestante.ToolTipText = "Total number of items";
             this.bnctGestante.Click += new System.EventHandler(this.bindingNavigatorCountItem_Click);
             // 
@@ -356,6 +356,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(799, 533);
             this.Name = "frmGestante";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestantes";
             this.Load += new System.EventHandler(this.frmGestante_Load);
