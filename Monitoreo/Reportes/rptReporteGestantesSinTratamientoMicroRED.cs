@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaUsuario.Alertas {
+namespace Monitoreo.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace CapaUsuario.Alertas {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptAlertaControlPuerperio : ReportClass {
+    public class rptReporteGestantesSinTratamientoMicroRED : ReportClass {
         
-        public rptAlertaControlPuerperio() {
+        public rptReporteGestantesSinTratamientoMicroRED() {
         }
         
         public override string ResourceName {
             get {
-                return "rptAlertaControlPuerperio.rpt";
+                return "rptReporteGestantesSinTratamientoMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CapaUsuario.Alertas {
         
         public override string FullResourceName {
             get {
-                return "CapaUsuario.Alertas.rptAlertaControlPuerperio.rpt";
+                return "Monitoreo.Reportes.rptReporteGestantesSinTratamientoMicroRED.rpt";
             }
             set {
                 // Do nothing
@@ -74,7 +74,7 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,7 +98,7 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[6];
             }
@@ -106,7 +106,23 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_pidtobstetra {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[7];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[8];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_paño {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,17 +130,25 @@ namespace CapaUsuario.Alertas {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_pidtestablecimientosalud {
+        public CrystalDecisions.Shared.IParameterField Parameter_pmes {
             get {
                 return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_pidtmicrored {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptAlertaControlPuerperio : Component, ICachedReport {
+    public class CachedrptReporteGestantesSinTratamientoMicroRED : Component, ICachedReport {
         
-        public CachedrptAlertaControlPuerperio() {
+        public CachedrptReporteGestantesSinTratamientoMicroRED() {
         }
         
         [Browsable(false)]
@@ -161,7 +185,7 @@ namespace CapaUsuario.Alertas {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptAlertaControlPuerperio rpt = new rptAlertaControlPuerperio();
+            rptReporteGestantesSinTratamientoMicroRED rpt = new rptReporteGestantesSinTratamientoMicroRED();
             rpt.Site = this.Site;
             return rpt;
         }

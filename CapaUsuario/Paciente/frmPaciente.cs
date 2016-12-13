@@ -33,6 +33,11 @@ namespace CapaUsuario.Paciente
         {
             try
             {
+                if (txtDNI.Text == "" || txtNombre.Text == "" || txtApePaterno.Text == "" || txtApeMaterno.Text == "" || txtCodigoHistoriaClinica.Text == "")
+                {
+                    MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 bool bOk = false;
                 miPaciente.idtpaciente = sidtpaciente;
                 miPaciente.codigohistoriaclinica = txtCodigoHistoriaClinica.Text;
@@ -92,7 +97,7 @@ namespace CapaUsuario.Paciente
         {
             DataTable oDataPaciente = new DataTable();
             oDataPaciente = miPaciente.ListarPaciente(sidtestablecimientosalud);
-            if (txtDNI.Text.Length == 8 && txtDNI.Text != "")
+            if (txtDNI.Text.Length == 8)
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
                 {
@@ -153,6 +158,12 @@ namespace CapaUsuario.Paciente
             }
             if (e.KeyChar == 13)
             {
+                if (txtDNI.Text.Length != 8)
+                {
+                    MessageBox.Show("El DNI ingresado no es el correcto.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDNI.Select();
+                    return;
+                }
                 txtCodigoHistoriaClinica.Focus();
             }
         }

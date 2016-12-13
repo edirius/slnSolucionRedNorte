@@ -22,13 +22,18 @@ namespace Monitoreo.Administrador
 
         private void frmPaciente_Load(object sender, EventArgs e)
         {
-
+            txtDNI.Select();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (txtNombre.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
+                {
+                    MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 bool bOk = false;
                 CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
                 miAdministrador.idtadministrador = sidtadministrador;
@@ -82,7 +87,7 @@ namespace Monitoreo.Administrador
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
                 {
-                    MessageBox.Show("El DNI ingresado ya pertenece a otro Obrero.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El DNI ingresado ya pertenece a otro Administrador.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtDNI.Text = "";
                     return;
                 }
@@ -104,6 +109,117 @@ namespace Monitoreo.Administrador
             txtUsuario.Text = pusuario;
             txtPassword.Text = ppassword;
             saccion = paccion;
+        }
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == 13)
+            {
+                if (txtDNI.Text.Length != 8)
+                {
+                    MessageBox.Show("El DNI ingresado no es el correcto.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtDNI.Select();
+                    txtDNI.Focus();
+                    return;
+                }
+                txtNombre.Focus();
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApePaterno.Focus();
+            }
+        }
+
+        private void txtApePaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtApeMaterno.Focus();
+            }
+        }
+
+        private void txtApeMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                rbtFemenino.Focus();
+            }
+        }
+
+        private void rbtFemenino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFechaNacimiento.Focus();
+            }
+        }
+
+        private void rbtMasculino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                dtpFechaNacimiento.Focus();
+            }
+        }
+
+        private void dtpFechaNacimiento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtCelular.Focus();
+            }
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtDireccion.Focus();
+            }
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtUsuario.Focus();
+            }
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnAceptar.Focus();
+            }
         }
     }
 }
