@@ -59,8 +59,10 @@ namespace CapaUsuario.Reportes
         private void buImprimir_Click(object sender, EventArgs e)
         {
             CapaDeNegocios.cGestanteMorbilidad oGM = new CapaDeNegocios.cGestanteMorbilidad();
+            CapaDeNegocios.cUtilitarios oUtil = new CapaDeNegocios.cUtilitarios();
             DataTable odtGM = new DataTable();
             fReporteMorbilidadExtrema fRME = new fReporteMorbilidadExtrema();
+
 
             if (!cbEnero.Checked && !cbFeb.Checked && !cbMarzo.Checked && !cbAbr.Checked && !cbMay.Checked && !cbAbr.Checked && !cbMay.Checked && !cbJun.Checked && !cbJul.Checked && !cbAgo.Checked && !cbSep.Checked && !cbOct.Checked && !cbNov.Checked && !cbDiciembre.Checked && cantidad_años==0 )
             {
@@ -88,7 +90,8 @@ namespace CapaUsuario.Reportes
                     reporteListaGestantes.Show();
                     */
 
-                    rptReporteMorbilidadExtrema rRME = new rptReporteMorbilidadExtrema();
+                    //rptReporteMorbilidadExtrema rRME = new rptReporteMorbilidadExtrema();
+                    rptReporteMorbilidad rRME = new rptReporteMorbilidad();
                     rRME.SetDataSource(odtGM);
 
                     CrystalDecisions.CrystalReports.Engine.TextObject txtReportHeader;
