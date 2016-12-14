@@ -16,6 +16,7 @@ namespace CapaUsuario.Obstetra
         string sidtobstetra= "";
         string sidtestablecimientosalud = "";
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
+        CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
 
         public frmObstetra()
         {
@@ -24,6 +25,7 @@ namespace CapaUsuario.Obstetra
 
         private void frmPaciente_Load(object sender, EventArgs e)
         {
+            txtDNI.Select();
             txtDNI.Focus();
         }
 
@@ -31,13 +33,17 @@ namespace CapaUsuario.Obstetra
         {
             try
             {
-                if (txtNombre.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
+                if (txtDNI.Text == "" || txtNombre.Text == "" || txtApePaterno.Text == "" || txtApeMaterno.Text == "")
+                {
+                    MessageBox.Show("Debe tener un DNI, Nombre, Apellido Paterno y Apellido Materno.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txtUsuario.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 bool bOk = false;
-                CapaDeNegocios.Obstetra.cObstetra miObstetra = new CapaDeNegocios.Obstetra.cObstetra();
                 miObstetra.idtobstetra = sidtobstetra;
                 miObstetra.nombres = txtNombre.Text ;
                 miObstetra.apellidopaterno = txtApePaterno.Text ;
@@ -92,6 +98,7 @@ namespace CapaUsuario.Obstetra
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
             DataTable oDataPaciente = new DataTable();
+            oDataPaciente = miObstetra.ListarObstetra();
             if (txtDNI.Text.Length == 8)
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))

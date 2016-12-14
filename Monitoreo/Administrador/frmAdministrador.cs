@@ -15,6 +15,8 @@ namespace Monitoreo.Administrador
         int saccion;
         string sidtadministrador= "";
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
+        CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
+
         public frmAdministrador()
         {
             InitializeComponent();
@@ -29,13 +31,17 @@ namespace Monitoreo.Administrador
         {
             try
             {
-                if (txtNombre.Text == "" || txtUsuario.Text == "" || txtPassword.Text == "")
+                if (txtDNI.Text == "" || txtNombre.Text == "" || txtApePaterno.Text == "" || txtApeMaterno.Text == "")
+                {
+                    MessageBox.Show("Debe tener un DNI, Nombre, Apellido Paterno y Apellido Materno.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (txtUsuario.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Debe tener un Usuario y Contraseña.", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 bool bOk = false;
-                CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
                 miAdministrador.idtadministrador = sidtadministrador;
                 miAdministrador.nombres = txtNombre.Text ;
                 miAdministrador.apellidopaterno = txtApePaterno.Text ;
@@ -82,7 +88,7 @@ namespace Monitoreo.Administrador
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
             DataTable oDataPaciente = new DataTable();
-
+            oDataPaciente = miAdministrador.ListarAdministrador();
             if (txtDNI.Text.Length == 8)
             {
                 foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
