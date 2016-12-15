@@ -121,9 +121,9 @@ namespace CapaDeNegocios
         {
             DataColumnCollection columns = dt.Columns;
 
-            if (!columns.Contains("Nº"))
+            if (!columns.Contains("NRO"))
             {
-                dt.Columns.Add("Nº", typeof(string)).SetOrdinal(posicion);
+                dt.Columns.Add("NRO", typeof(string)).SetOrdinal(posicion);
             }
                 
             for (int i = 0; i < dt.Rows.Count; i++)

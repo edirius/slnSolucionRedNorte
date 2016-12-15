@@ -387,10 +387,10 @@
     <Compile Include="Reportes\fReporteMorbilidadExtrema.Designer.cs">
       <DependentUpon>fReporteMorbilidadExtrema.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\rptReporteMorbilidadExtrema.cs">
+    <Compile Include="Reportes\rptReporteMorbilidad.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptReporteMorbilidadExtrema.rpt</DependentUpon>
+      <DependentUpon>rptReporteMorbilidad.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Seguridad\frmAlerta.cs">
@@ -577,9 +577,9 @@
     <EmbeddedResource Include="Reportes\fReporteMorbilidadExtrema.resx">
       <DependentUpon>fReporteMorbilidadExtrema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rptReporteMorbilidadExtrema.rpt">
+    <EmbeddedResource Include="Reportes\rptReporteMorbilidad.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptReporteMorbilidadExtrema.cs</LastGenOutput>
+      <LastGenOutput>rptReporteMorbilidad.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmAlerta.resx">
       <DependentUpon>frmAlerta.cs</DependentUpon>

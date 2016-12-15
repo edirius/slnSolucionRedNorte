@@ -97,30 +97,60 @@ namespace CapaUsuario
             switch (seleccionado) {
                 case "Apellido Paterno" :
                     oGestante.apellidopaterno = buscar;
+
+                    if (buscar.Length >= 150)
+                        oGestante.apellidopaterno = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 150)
+                        oGestante.apellidopaterno = buscar;
+
                     dgvGestante.DataSource = oGestante.ListarPacienteXApellidoPaterno();
                     dgvGestante.Columns[1].Visible = false;
                     break; 
 
                 case "Apellido Materno":
-                    oGestante.apellidomaterno = buscar;
+
+                    if (buscar.Length >= 150)
+                        oGestante.apellidomaterno = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 150)
+                        oGestante.apellidomaterno = buscar;
+                    
                     dgvGestante.DataSource = oGestante.ListarPacienteXApellidoMaterno();
                     dgvGestante.Columns[1].Visible = false;
                     break;
 
                 case "Nombres":
-                    oGestante.nombres = buscar;
+                    if (buscar.Length >= 150)
+                        oGestante.nombres = buscar.Substring(0, 149);
+
+                    if (buscar.Length <= 150)
+                        oGestante.nombres = buscar;
+
+                    
                     dgvGestante.DataSource = oGestante.ListarPacienteXNombres();
                     dgvGestante.Columns[1].Visible = false;
                     break;
 
                 case "DNI":
-                    oGestante.dni = buscar;
+                    if (buscar.Length >= 8)
+                        oGestante.dni = buscar.Substring(0, 7);
+
+                    if (buscar.Length <= 8)
+                        oGestante.dni = buscar;
+                     
                     dgvGestante.DataSource = oGestante.ListarPacienteXDNI();
                     dgvGestante.Columns[1].Visible = false;
                     break;
 
                 case "Codigo Historia Clinica":
-                    oGestante.codigohistoriaclinica = buscar;
+                    if (buscar.Length >= 10)
+                        oGestante.codigohistoriaclinica = buscar.Substring(0,9);
+
+                    if (buscar.Length <= 10)
+                        oGestante.codigohistoriaclinica = buscar;
+
+                     
                     dgvGestante.DataSource = oGestante.ListarPacienteXCodigoHistoriaClinica();
                     dgvGestante.Columns[1].Visible = false;
                     break;

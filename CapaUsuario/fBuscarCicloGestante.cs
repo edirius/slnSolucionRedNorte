@@ -69,10 +69,10 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    if (buscar.Length >= 9)
+                    if (buscar.Length >= 10)
                         oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar.Substring(0, 9);
 
-                    if (buscar.Length <= 9)
+                    if (buscar.Length <= 10)
                         oHistoriaClinica.oPaciente.codigohistoriaclinica = buscar;
 
 
@@ -87,10 +87,10 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    if (buscar.Length >= 149)
+                    if (buscar.Length >= 150)
                         oPaciente.apellidopaterno = buscar.Substring(0, 149);
 
-                    if (buscar.Length <= 149)
+                    if (buscar.Length <= 150)
                         oPaciente.apellidopaterno = buscar;
 
                     oPaciente.idtobstetra = IdObstetra;
@@ -104,10 +104,10 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    if (buscar.Length >= 149)
+                    if (buscar.Length >= 150)
                         oPaciente.apellidomaterno = buscar.Substring(0, 149);
 
-                    if (buscar.Length <= 149)
+                    if (buscar.Length <= 150)
                         oPaciente.apellidomaterno = buscar;
 
                     oPaciente.idtobstetra = IdObstetra;
@@ -121,10 +121,10 @@ namespace CapaUsuario
             {
                 if (buscar.Length > 1)
                 {
-                    if (buscar.Length >= 149)
+                    if (buscar.Length >= 150)
                         oPaciente.nombres = buscar.Substring(0, 149);
 
-                    if (buscar.Length <= 149)
+                    if (buscar.Length <= 150)
                         oPaciente.nombres = buscar;
 
                     oPaciente.idtobstetra = IdObstetra;

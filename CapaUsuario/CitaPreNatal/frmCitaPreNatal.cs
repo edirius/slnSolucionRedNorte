@@ -238,9 +238,12 @@ namespace CapaUsuario.CitaPreNatal
                     numero_cita = i;
             }
 
-            dtgCitasMedicas.Rows[numero_cita].Selected = true;
-            dtgCitasMedicas.CurrentCell = dtgCitasMedicas.Rows[numero_cita].Cells[3];
-            cargar_cita();
+
+            if (dtgCitasMedicas.RowCount > 0) { 
+                dtgCitasMedicas.Rows[numero_cita].Selected = true;
+                dtgCitasMedicas.CurrentCell = dtgCitasMedicas.Rows[numero_cita].Cells[3];
+                cargar_cita();
+            }
 
 
         }
@@ -491,6 +494,7 @@ namespace CapaUsuario.CitaPreNatal
 
                 
                 CargarDatos();
+            seleccionar_fecha_cercana();
         /*
             }
             

@@ -394,6 +394,7 @@ namespace CapaUsuario
             txtPeso.Text = "";
             txtTalla.Text = "";
             lblIMC.Text="";
+            txtOrigenEESS.Text = "";
 
             idtpaciente = "";
 
@@ -1107,6 +1108,13 @@ namespace CapaUsuario
                 mensaje = "Porfavor llenar Semana(s) APN.";
             }
 
+            if ( dtpFUR.Value.Date > dtpFecha.Value.Date )
+            {
+                completo = true;
+                mensaje = "Porfavor llenar una fecha de registro mayor o igual a FUR.";
+                dtpFUR.Focus();
+            }
+                    
             /*
             if (oHistoriaClinica.Tiempollegada == "00:00")
             {
@@ -1378,7 +1386,7 @@ namespace CapaUsuario
                     MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Porfavor ingrese en FUR una fecha menor o igual a la fecha de atención.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Porfavor ingrese en FUR una fecha menor o igual a la fecha de registro.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

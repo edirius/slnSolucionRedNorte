@@ -307,7 +307,7 @@
             // 
             this.pbCR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCR.Image = ((System.Drawing.Image)(resources.GetObject("pbCR.Image")));
-            this.pbCR.Location = new System.Drawing.Point(121, 580);
+            this.pbCR.Location = new System.Drawing.Point(124, 20);
             this.pbCR.Name = "pbCR";
             this.pbCR.Size = new System.Drawing.Size(60, 66);
             this.pbCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -318,7 +318,7 @@
             // 
             this.pbARN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbARN.Image = ((System.Drawing.Image)(resources.GetObject("pbARN.Image")));
-            this.pbARN.Location = new System.Drawing.Point(121, 501);
+            this.pbARN.Location = new System.Drawing.Point(124, 579);
             this.pbARN.Name = "pbARN";
             this.pbARN.Size = new System.Drawing.Size(60, 66);
             this.pbARN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -329,7 +329,7 @@
             // 
             this.pbCP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCP.Image = ((System.Drawing.Image)(resources.GetObject("pbCP.Image")));
-            this.pbCP.Location = new System.Drawing.Point(121, 421);
+            this.pbCP.Location = new System.Drawing.Point(124, 499);
             this.pbCP.Name = "pbCP";
             this.pbCP.Size = new System.Drawing.Size(60, 66);
             this.pbCP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -340,7 +340,7 @@
             // 
             this.pbTG.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbTG.Image = ((System.Drawing.Image)(resources.GetObject("pbTG.Image")));
-            this.pbTG.Location = new System.Drawing.Point(121, 340);
+            this.pbTG.Location = new System.Drawing.Point(124, 418);
             this.pbTG.Name = "pbTG";
             this.pbTG.Size = new System.Drawing.Size(60, 66);
             this.pbTG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -351,7 +351,7 @@
             // 
             this.pbVD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbVD.Image = ((System.Drawing.Image)(resources.GetObject("pbVD.Image")));
-            this.pbVD.Location = new System.Drawing.Point(121, 259);
+            this.pbVD.Location = new System.Drawing.Point(124, 337);
             this.pbVD.Name = "pbVD";
             this.pbVD.Size = new System.Drawing.Size(60, 66);
             this.pbVD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -362,7 +362,7 @@
             // 
             this.pbRB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRB.Image = ((System.Drawing.Image)(resources.GetObject("pbRB.Image")));
-            this.pbRB.Location = new System.Drawing.Point(121, 180);
+            this.pbRB.Location = new System.Drawing.Point(124, 258);
             this.pbRB.Name = "pbRB";
             this.pbRB.Size = new System.Drawing.Size(60, 66);
             this.pbRB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -373,7 +373,7 @@
             // 
             this.pbAPN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbAPN.Image = ((System.Drawing.Image)(resources.GetObject("pbAPN.Image")));
-            this.pbAPN.Location = new System.Drawing.Point(121, 100);
+            this.pbAPN.Location = new System.Drawing.Point(124, 178);
             this.pbAPN.Name = "pbAPN";
             this.pbAPN.Size = new System.Drawing.Size(60, 66);
             this.pbAPN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -384,7 +384,7 @@
             // 
             this.pbMM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbMM.Image = ((System.Drawing.Image)(resources.GetObject("pbMM.Image")));
-            this.pbMM.Location = new System.Drawing.Point(121, 20);
+            this.pbMM.Location = new System.Drawing.Point(124, 98);
             this.pbMM.Name = "pbMM";
             this.pbMM.Size = new System.Drawing.Size(60, 66);
             this.pbMM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -395,7 +395,7 @@
             // 
             this.pbCronograma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbCronograma.Image = ((System.Drawing.Image)(resources.GetObject("pbCronograma.Image")));
-            this.pbCronograma.Location = new System.Drawing.Point(121, 580);
+            this.pbCronograma.Location = new System.Drawing.Point(124, 20);
             this.pbCronograma.Name = "pbCronograma";
             this.pbCronograma.Size = new System.Drawing.Size(60, 66);
             this.pbCronograma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -406,7 +406,7 @@
             // 
             this.pbRecienNAcido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRecienNAcido.Image = ((System.Drawing.Image)(resources.GetObject("pbRecienNAcido.Image")));
-            this.pbRecienNAcido.Location = new System.Drawing.Point(121, 501);
+            this.pbRecienNAcido.Location = new System.Drawing.Point(124, 579);
             this.pbRecienNAcido.Name = "pbRecienNAcido";
             this.pbRecienNAcido.Size = new System.Drawing.Size(60, 66);
             this.pbRecienNAcido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -417,7 +417,7 @@
             // 
             this.pbControlPuerperio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbControlPuerperio.Image = ((System.Drawing.Image)(resources.GetObject("pbControlPuerperio.Image")));
-            this.pbControlPuerperio.Location = new System.Drawing.Point(121, 421);
+            this.pbControlPuerperio.Location = new System.Drawing.Point(124, 499);
             this.pbControlPuerperio.Name = "pbControlPuerperio";
             this.pbControlPuerperio.Size = new System.Drawing.Size(60, 66);
             this.pbControlPuerperio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -428,7 +428,7 @@
             // 
             this.pbTerminoGestacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbTerminoGestacion.Image = ((System.Drawing.Image)(resources.GetObject("pbTerminoGestacion.Image")));
-            this.pbTerminoGestacion.Location = new System.Drawing.Point(121, 340);
+            this.pbTerminoGestacion.Location = new System.Drawing.Point(124, 418);
             this.pbTerminoGestacion.Name = "pbTerminoGestacion";
             this.pbTerminoGestacion.Size = new System.Drawing.Size(60, 66);
             this.pbTerminoGestacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -439,7 +439,7 @@
             // 
             this.pbVisitaDomiciliaria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbVisitaDomiciliaria.Image = ((System.Drawing.Image)(resources.GetObject("pbVisitaDomiciliaria.Image")));
-            this.pbVisitaDomiciliaria.Location = new System.Drawing.Point(121, 259);
+            this.pbVisitaDomiciliaria.Location = new System.Drawing.Point(124, 337);
             this.pbVisitaDomiciliaria.Name = "pbVisitaDomiciliaria";
             this.pbVisitaDomiciliaria.Size = new System.Drawing.Size(60, 66);
             this.pbVisitaDomiciliaria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -450,7 +450,7 @@
             // 
             this.pbRegBateria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbRegBateria.Image = ((System.Drawing.Image)(resources.GetObject("pbRegBateria.Image")));
-            this.pbRegBateria.Location = new System.Drawing.Point(121, 180);
+            this.pbRegBateria.Location = new System.Drawing.Point(124, 258);
             this.pbRegBateria.Name = "pbRegBateria";
             this.pbRegBateria.Size = new System.Drawing.Size(60, 66);
             this.pbRegBateria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -461,7 +461,7 @@
             // 
             this.pbPrenatal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPrenatal.Image = ((System.Drawing.Image)(resources.GetObject("pbPrenatal.Image")));
-            this.pbPrenatal.Location = new System.Drawing.Point(121, 100);
+            this.pbPrenatal.Location = new System.Drawing.Point(124, 178);
             this.pbPrenatal.Name = "pbPrenatal";
             this.pbPrenatal.Size = new System.Drawing.Size(60, 66);
             this.pbPrenatal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -472,7 +472,7 @@
             // 
             this.pbMorbilidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbMorbilidad.Image = ((System.Drawing.Image)(resources.GetObject("pbMorbilidad.Image")));
-            this.pbMorbilidad.Location = new System.Drawing.Point(121, 20);
+            this.pbMorbilidad.Location = new System.Drawing.Point(124, 98);
             this.pbMorbilidad.Name = "pbMorbilidad";
             this.pbMorbilidad.Size = new System.Drawing.Size(60, 66);
             this.pbMorbilidad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -488,7 +488,7 @@
             this.buCronograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buCronograma.ForeColor = System.Drawing.Color.White;
             this.buCronograma.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buCronograma.Location = new System.Drawing.Point(3, 579);
+            this.buCronograma.Location = new System.Drawing.Point(6, 19);
             this.buCronograma.Name = "buCronograma";
             this.buCronograma.Size = new System.Drawing.Size(115, 68);
             this.buCronograma.TabIndex = 40;
@@ -507,7 +507,7 @@
             this.buRegistroBateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buRegistroBateria.ForeColor = System.Drawing.Color.White;
             this.buRegistroBateria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buRegistroBateria.Location = new System.Drawing.Point(3, 179);
+            this.buRegistroBateria.Location = new System.Drawing.Point(6, 257);
             this.buRegistroBateria.Name = "buRegistroBateria";
             this.buRegistroBateria.Size = new System.Drawing.Size(115, 68);
             this.buRegistroBateria.TabIndex = 35;
@@ -526,7 +526,7 @@
             this.buAtencionPrenatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buAtencionPrenatal.ForeColor = System.Drawing.Color.White;
             this.buAtencionPrenatal.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buAtencionPrenatal.Location = new System.Drawing.Point(3, 99);
+            this.buAtencionPrenatal.Location = new System.Drawing.Point(6, 177);
             this.buAtencionPrenatal.Name = "buAtencionPrenatal";
             this.buAtencionPrenatal.Size = new System.Drawing.Size(115, 68);
             this.buAtencionPrenatal.TabIndex = 34;
@@ -545,7 +545,7 @@
             this.btnRecienNacido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecienNacido.ForeColor = System.Drawing.Color.White;
             this.btnRecienNacido.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnRecienNacido.Location = new System.Drawing.Point(3, 499);
+            this.btnRecienNacido.Location = new System.Drawing.Point(6, 577);
             this.btnRecienNacido.Name = "btnRecienNacido";
             this.btnRecienNacido.Size = new System.Drawing.Size(115, 68);
             this.btnRecienNacido.TabIndex = 39;
@@ -564,7 +564,7 @@
             this.buMorbilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buMorbilidad.ForeColor = System.Drawing.Color.White;
             this.buMorbilidad.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buMorbilidad.Location = new System.Drawing.Point(3, 19);
+            this.buMorbilidad.Location = new System.Drawing.Point(6, 97);
             this.buMorbilidad.Name = "buMorbilidad";
             this.buMorbilidad.Size = new System.Drawing.Size(115, 68);
             this.buMorbilidad.TabIndex = 33;
@@ -583,7 +583,7 @@
             this.buControlPuerperio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buControlPuerperio.ForeColor = System.Drawing.Color.White;
             this.buControlPuerperio.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buControlPuerperio.Location = new System.Drawing.Point(3, 419);
+            this.buControlPuerperio.Location = new System.Drawing.Point(6, 497);
             this.buControlPuerperio.Name = "buControlPuerperio";
             this.buControlPuerperio.Size = new System.Drawing.Size(115, 68);
             this.buControlPuerperio.TabIndex = 38;
@@ -602,7 +602,7 @@
             this.buVisitaDomiciliaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buVisitaDomiciliaria.ForeColor = System.Drawing.Color.White;
             this.buVisitaDomiciliaria.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(3, 259);
+            this.buVisitaDomiciliaria.Location = new System.Drawing.Point(6, 337);
             this.buVisitaDomiciliaria.Name = "buVisitaDomiciliaria";
             this.buVisitaDomiciliaria.Size = new System.Drawing.Size(115, 68);
             this.buVisitaDomiciliaria.TabIndex = 36;
@@ -621,7 +621,7 @@
             this.btnTerminoGestacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminoGestacion.ForeColor = System.Drawing.Color.White;
             this.btnTerminoGestacion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnTerminoGestacion.Location = new System.Drawing.Point(3, 339);
+            this.btnTerminoGestacion.Location = new System.Drawing.Point(6, 417);
             this.btnTerminoGestacion.Name = "btnTerminoGestacion";
             this.btnTerminoGestacion.Size = new System.Drawing.Size(115, 68);
             this.btnTerminoGestacion.TabIndex = 37;
