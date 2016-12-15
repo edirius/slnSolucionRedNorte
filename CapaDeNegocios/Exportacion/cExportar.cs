@@ -93,6 +93,7 @@ namespace CapaDeNegocios.Exportacion
                             break;
                         case "System.DateTime":
                             /*Desencriptar Aquí en las columnas */
+                            string X = columnas[j];
                             DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
                             //DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
