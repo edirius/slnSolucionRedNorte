@@ -1013,6 +1013,7 @@ namespace CapaUsuario
             }else
                  oHistoriaClinica.Partos = Convert.ToInt16(nudPartos.Text);
 
+
             if (nudAbortos.Text == "")
             {
                 completo = true;
