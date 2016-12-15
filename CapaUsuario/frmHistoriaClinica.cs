@@ -991,11 +991,53 @@ namespace CapaUsuario
             if (txtEdad.Text != "")
                 oHistoriaClinica.Edad = Convert.ToInt16(txtEdad.Text);
 
-            oHistoriaClinica.Gestas = Convert.ToInt16(nudGestas.Text);
-            oHistoriaClinica.Partos = Convert.ToInt16(nudPartos.Text);
-            oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
-            oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
-            oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
+            
+            
+            
+            
+            
+
+            if (nudGestas.Text == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en Gestas.";
+                nudGestas.Focus();
+            }else
+                oHistoriaClinica.Gestas = Convert.ToInt16(nudGestas.Text);
+
+            if (nudPartos.Text == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en Partos.";
+                nudPartos.Focus();
+            }else
+                 oHistoriaClinica.Partos = Convert.ToInt16(nudPartos.Text);
+
+            if (nudAbortos.Text == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en Abortos.";
+                nudAbortos.Focus();
+            }else
+                oHistoriaClinica.Abortos = Convert.ToInt16(nudAbortos.Text);
+
+            if (nudHv.Text == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en Hijos vivos.";
+                nudHv.Focus();
+            }else
+                oHistoriaClinica.Hijosvivos = Convert.ToInt16(nudHv.Text);
+
+            if (nudHm.Text == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en Hijos muertos.";
+                nudHm.Focus();
+            }else
+                oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
+
+
             oHistoriaClinica.Fur = dtpFUR.Value.Date;
             oHistoriaClinica.Fpp = dtpFPP.Value.Date;
 
@@ -1078,7 +1120,23 @@ namespace CapaUsuario
                 bool bpeso = oUtilitarios.es_numerico(txtPeso.Text);
                 bool btalla = oUtilitarios.es_numerico(txtTalla.Text);
 
-            if ( !bpeso  || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
+            
+
+            if (nudEdadGestacional.Value.ToString() == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en semanas de edad gestacional en ecografia.";
+                nudEdadGestacional.Focus();
+            }
+
+            if (nudDiasEcografia.Value.ToString() == "")
+            {
+                completo = true;
+                mensaje = "Porfavor ingresar un valor correcto en dias de edad gestacional en ecografia.";
+                nudDiasEcografia.Focus();
+            }
+
+                if ( !bpeso  || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
             {
                 completo = true;
                 mensaje = "Porfavor ingresar un peso correcto de la gestante.";
