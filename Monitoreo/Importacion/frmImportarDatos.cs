@@ -119,10 +119,10 @@ namespace Monitoreo.Importacion
                         archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
                         if (archivos.Length != 0)
                         {
-                            //oExportar.BorrarDatosTabla(CodigoEstablecimiento);
+                            oExportar.BorrarDatosTabla(CodigoEstablecimiento);
                             total_lineas = 0;
                             ContarDatosImportados(dlgAbrir.FileName);
-                            //oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
                         }
                         else
                         {

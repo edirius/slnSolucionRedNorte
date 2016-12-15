@@ -98,12 +98,14 @@ namespace CapaDeNegocios.Exportacion
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
                             lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd hh:mm:ss") + "'";
                             break;
-                        case "System.Decimal":
-                            /*Desencriptar Aquí en las columnas */
-                            //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
-                            //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
-                            lineaSQL = lineaSQL + "'" + Convert.ToDecimal(columnas[j]) + "'";
-                            break;
+                            
+                        //case "System.Decimal":
+                        //    /*Desencriptar Aquí en las columnas */
+                        //    //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                        //    //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
+                        //    lineaSQL = lineaSQL + "" + cSeguridad.DesEncriptar(Convert.ToDecimal(columnas[j]).ToString()) + "";
+                        //    break;
+                            
                         default:
                             /*Desencriptar Aquí en las columnas */
                             lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
@@ -193,9 +195,10 @@ namespace CapaDeNegocios.Exportacion
         public bool ImportarDatosArchivoABaseDeDatos(string nombreArchivo)
         {
 
+            /*
             try
             {
-
+            */
                 string[] archivos;
 
                 using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
@@ -218,12 +221,13 @@ namespace CapaDeNegocios.Exportacion
                 }
 
                 return true;
-
+            /*
             }
             catch (Exception ex)
             {
                 throw new cReglaNegocioException("Error al importar Datos: " + ex.Message);
             }
+            */
 
         }
     }

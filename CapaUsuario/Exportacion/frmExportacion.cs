@@ -51,6 +51,7 @@ namespace CapaUsuario.Exportacion
         public bool InsertarDatosTablaAarchivo(string nombreArchivo, params string[] nombresTablas)
         {
             int porcentaje_avanzado = 0;
+            string campo = "";
             DataTable tAuxiliar;
             try
             {
@@ -71,8 +72,12 @@ namespace CapaUsuario.Exportacion
                                 {
 
                                     /*Encriptar Aquí*/
-                                    Output.Write(cSeguridad.Encriptar(tAuxiliar.Rows[i][col.Ordinal].ToString()));
-                                    //Output.Write(tAuxiliar.Rows[i][col.Ordinal].ToString());
+                                    
+                                    campo = tAuxiliar.Rows[i][col.Ordinal].ToString();
+                                    campo = campo.Replace(System.Environment.NewLine, " ");
+
+                                    //Output.Write(campo);
+                                    Output.Write(cSeguridad.Encriptar(campo));
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write("®");
