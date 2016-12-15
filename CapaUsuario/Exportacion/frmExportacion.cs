@@ -78,6 +78,7 @@ namespace CapaUsuario.Exportacion
 
                                     //Output.Write(campo);
                                     Output.Write(cSeguridad.Encriptar(campo));
+
                                     if (col.Ordinal < tAuxiliar.Columns.Count - 1)
                                     {
                                         Output.Write("®");
