@@ -75,10 +75,10 @@ namespace Monitoreo.Importacion
                 total_lineas = 0;
             }
         }
+
         public bool ContarDatosImportados(string nombreArchivo)
         {
             int porcentaje_avanzado = 0;
-            
                     //
                     string[] lineas = File.ReadAllLines(nombreArchivo);
                     total_lineas = lineas.Count();
@@ -96,6 +96,7 @@ namespace Monitoreo.Importacion
                     }
             return true;
         }
+
         private void btnImportar_Click(object sender, EventArgs e)  
         {
             circularProgressBar.Value = 0;
@@ -128,7 +129,6 @@ namespace Monitoreo.Importacion
                         {
                             MessageBox.Show("El archivo esta vacio.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
                     }
                 }
                 else
@@ -140,8 +140,8 @@ namespace Monitoreo.Importacion
                 MessageBox.Show("¡La importación fue cancelada!", "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             //}
             //    catch { }
-
         }
+
         private void frmImportarDatos_Load(object sender, EventArgs e)
         {
             cbMicrored.ValueMember = "idtmicrored";

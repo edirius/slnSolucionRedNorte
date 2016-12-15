@@ -66,7 +66,7 @@ namespace CapaUsuario.Seguridad
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            MoverArchivo();
+            //MoverArchivo();
 
             try
             {
