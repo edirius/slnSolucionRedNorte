@@ -2673,7 +2673,7 @@ namespace CapaUsuario
                     }
                 }
                 ocupado = false;
-
+                semana_gestacional = edad_gestacional_citas;
                 k++;
                 odtCitas.Columns.Add(k + "°", typeof(string));
 

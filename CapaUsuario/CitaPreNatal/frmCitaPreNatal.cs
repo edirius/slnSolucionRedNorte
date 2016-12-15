@@ -187,6 +187,9 @@ namespace CapaUsuario.CitaPreNatal
                         ocupado = true;
                     }
                 }
+
+                semana_gestacional = edad_gestacional_citas;
+
                 ocupado = false;
                 odrCitas[1] = Fecha_Registro;
                 odrCitas[2] = edad_gestacional_citas;
