@@ -87,7 +87,7 @@ namespace CapaUsuario.CitaPreNatal
             //fecha_fin = Fecha_Registro.AddDays(28);
             semana_gestacional = edad_gestacional_citas;
             
-            while ( semana_gestacional <= 42 && Fecha_Registro < FPP ) {
+            while ( semana_gestacional <= 42 && Fecha_Registro.Date < FPP.Date ) {
 
                 /*nº cita, fecha cita, edad gestacional */
                 odrCitas = odtCitas.NewRow();

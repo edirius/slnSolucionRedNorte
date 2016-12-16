@@ -125,7 +125,8 @@ namespace CapaUsuario.Exportacion
                 oExportar.CodigoEstablecimiento = IdEstablecimientoSalud;
                 dlgGuardar.Filter = "Archivos de Exportacion de GESSYS (*.GSYS)|*.GSYS";
                 dlgGuardar.DefaultExt = ".GSYS";
-
+                lblStatus.Text = "Cargando...";
+                lblStatus.Update();
                 char[] delimiter = { '/' };
                 string[] substring = (IdEstablecimientoSalud + NombreEstablecimientoSalud + DateTime.Today.ToShortDateString()).Split(delimiter);
                 NombreArchivo = substring[0].ToString() + substring[1].ToString() + substring[2].ToString();
@@ -136,13 +137,15 @@ namespace CapaUsuario.Exportacion
                     total_lineas = 0;
                     total_lineas = oExportar.ContarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
                     //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
-                    lblStatus.Text = "Cargando...";
+                    
                     InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
                     MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName, "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("¡La exportación fue cancelada!", "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    lblStatus.Text = "";
+                    lblStatus.Update();
                 }
                 dlgGuardar.Dispose();
             }

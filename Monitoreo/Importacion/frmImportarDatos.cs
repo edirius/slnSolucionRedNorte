@@ -238,16 +238,18 @@ namespace Monitoreo.Importacion
 
         }
 
-        private void btnImportar_Click(object sender, EventArgs e)  
+        private void btnImportar_Click(object sender, EventArgs e)
         {
             circularProgressBar.Value = 0;
             //try
             //{
-                string CodigoEstablecimiento;
-                dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
+            string CodigoEstablecimiento;
+            dlgAbrir.Filter = "Archivos de Exportacion de GESSYS (*.gsys)|*.gsys|Todos los archivos (*.*)|*.*";
             if (this.dlgAbrir.ShowDialog() == DialogResult.OK)
             {
                 string CadenaTexto = "";
+                lblStatus.Text = "Cargando...";
+                lblStatus.Update();
                 CadenaTexto = dlgAbrir.FileName.ToString();
                 CodigoEstablecimiento = (ExtractFilename(CadenaTexto)).Substring(0, 4);
                 if (cbEstablecimientoSalud.SelectedValue.ToString() == CodigoEstablecimiento)
@@ -264,7 +266,7 @@ namespace Monitoreo.Importacion
                             oExportar.BorrarDatosTabla(CodigoEstablecimiento);
                             total_lineas = 0;
                             ContarDatosImportados(dlgAbrir.FileName);
-                            lblStatus.Text = "Cargando...";
+
                             ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
                         }
                         else
@@ -278,8 +280,11 @@ namespace Monitoreo.Importacion
                     MessageBox.Show("El código de establecimiento '" + cbEstablecimientoSalud.Text + "' no coincide con el código del establecimiento del archivo. Asegúrese que esta importando los datos del establecimiento seleccionado.", "Mensaje de error...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else { 
                 MessageBox.Show("¡La importación fue cancelada!", "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                lblStatus.Text = "";
+                lblStatus.Update();
+            }
             //}
             //    catch { }
         }
