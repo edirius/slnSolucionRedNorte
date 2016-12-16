@@ -92,6 +92,7 @@ namespace CapaUsuario.Exportacion
                                         progressBar.Update();
 
                                         lblStatus.Text = string.Format("Exportando información...{0}%", progressBar.Value);
+                                        lblStatus.Update();
 
                                         if (progressBar.Value == 100) {
                                             lblStatus.Text = "¡Datos exportados exitosamente!";
@@ -135,6 +136,7 @@ namespace CapaUsuario.Exportacion
                     total_lineas = 0;
                     total_lineas = oExportar.ContarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
                     //oExportar.InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
+                    lblStatus.Text = "Cargando...";
                     InsertarDatosTablaAarchivo(dlgGuardar.FileName, "tobstetra", "tpaciente", "thistoriaclinica", "tecografia", "todontologia", "tgestantemorbilidad", "tcitaprenatal", "tbateria", "tcontrolpeuperio", "treciennacido", "tterminogestacion", "tvisitadomiciliariagestante", "tvisitadomiciliariapuerperarn");
                     MessageBox.Show("Datos exportando en la ubicación: " + dlgGuardar.FileName, "Mensaje...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

@@ -983,21 +983,39 @@ namespace CapaUsuario
             bool completo = false;
             string mensaje = "";
 
-
-
             oHistoriaClinica.Idtestablecimientosalud = IdEstablecimiento;
             oHistoriaClinica.Tipollegada = cboTipoLlegada.Text;
             oHistoriaClinica.Tiempollegada = dtpTiempoLlegada.Text;
             if (txtEdad.Text != "")
                 oHistoriaClinica.Edad = Convert.ToInt16(txtEdad.Text);
 
-            
-            
-            
-            
+            DateTime fecha_atencion = dtpFecha.Value ;
+            DateTime fur = dtpFUR.Value;
+
+            TimeSpan dias = fecha_atencion - fur;
+            //double NrOfDays = dias.TotalDays;
+            //double NrOfDays = (fecha_atencion.Date - fur.Date).TotalDays;
+
+            double NrOfDays = dias.TotalDays;
+
+            //int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
+            int semanas = (int)Math.Abs(NrOfDays / 7);
+            dias_gestacional = NrOfDays;
+
+            if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum)
+            {
+                completo = false;
+            }
+            else {
+                completo = true;
+                mensaje = "Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante a partir de la fecha de registro.";
+                dtpFUR.Focus();
+
+            }
+                
             
 
-            if (nudGestas.Text == "")
+                if (nudGestas.Text == "")
             {
                 completo = true;
                 mensaje = "Porfavor ingresar un valor correcto en Gestas.";
@@ -1121,21 +1139,10 @@ namespace CapaUsuario
                 bool bpeso = oUtilitarios.es_numerico(txtPeso.Text);
                 bool btalla = oUtilitarios.es_numerico(txtTalla.Text);
 
-            
 
-            if (nudEdadGestacional.Value.ToString() == "")
-            {
-                completo = true;
-                mensaje = "Porfavor ingresar un valor correcto en semanas de edad gestacional en ecografia.";
-                nudEdadGestacional.Focus();
-            }
 
-            if (nudDiasEcografia.Value.ToString() == "")
-            {
-                completo = true;
-                mensaje = "Porfavor ingresar un valor correcto en dias de edad gestacional en ecografia.";
-                nudDiasEcografia.Focus();
-            }
+
+
 
                 if ( !bpeso  || Convert.ToDecimal(txtPeso.Text) < 0 || Convert.ToDecimal(txtPeso.Text) > 400 )
             {
@@ -1442,7 +1449,7 @@ namespace CapaUsuario
                 if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum) 
                     nudSemanas.Value = semanas;
                 else
-                    MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante a partir de la fecha de registro.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
                 MessageBox.Show("Porfavor ingrese en FUR una fecha menor o igual a la fecha de registro.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
