@@ -27,7 +27,7 @@ namespace Monitoreo
         {
             try
             {
-                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdmonitoreogestantes", "root", "root");
+                Conexion.IniciarSesion(Settings.Default.ConexionMySql, "bdcontrolgestantes", "root", "root");
                 txtUsuario.Focus();
             }
             catch (Exception ex)
