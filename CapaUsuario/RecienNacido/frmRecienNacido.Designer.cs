@@ -413,7 +413,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(86, 26);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(157, 24);
+            this.dtpFecha.Size = new System.Drawing.Size(95, 24);
             this.dtpFecha.TabIndex = 82;
             // 
             // label3
