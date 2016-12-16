@@ -11,6 +11,8 @@ using System.Threading;
 using CapaDeNegocios;
 using CapaDeNegocios.Exportacion;
 using System.IO;
+using CapaDeDatos;
+
 namespace Monitoreo.Importacion
 {
     public partial class frmImportarDatos : Form
@@ -22,6 +24,10 @@ namespace Monitoreo.Importacion
         public string IdObstetra { get; set; }
         public string NombreEstablecimientoSalud { get; set; }
         public string IdEstablecimientoSalud { get; set; }
+        public int total_lineas = 0;
+        int porcentaje_avanzado = 0;
+        int total_delimitadores = 0;
+
         public frmImportarDatos()
         {
             InitializeComponent();
@@ -58,7 +64,8 @@ namespace Monitoreo.Importacion
                     return String.Empty;
             }
         }
-        public int total_lineas = 0;
+        
+        /*
         private void MostrarProgreso(int CantidadLineas)
         {
             int porcentaje_avanzado = 0;
@@ -75,6 +82,7 @@ namespace Monitoreo.Importacion
                 total_lineas = 0;
             }
         }
+        */
 
         public bool ContarDatosImportados(string nombreArchivo)
         {
@@ -82,19 +90,152 @@ namespace Monitoreo.Importacion
                     //
                     string[] lineas = File.ReadAllLines(nombreArchivo);
                     total_lineas = lineas.Count();
-                    for (int j = 0; j <= total_lineas; j++)
-                    {
-                        porcentaje_avanzado++;
-                        circularProgressBar.Value = (porcentaje_avanzado * 100) / total_lineas;
-                        circularProgressBar.Update();
-                        lblStatus.Text = string.Format("Importando información...{0}%", circularProgressBar.Value);
-                        if (circularProgressBar.Value == 100)
-                        {
-                            lblStatus.Text = "¡Datos importados exitosamente!";
-                            total_lineas = 0;
-                        }
-                    }
+                    
             return true;
+        }
+
+        public bool InsertarDatosTabla(string nombreTabla, string[] datosTabla)
+        {
+            
+            DataTable tablaAuxiliar;
+            string lineaInsertCabeza = "Insert into " + nombreTabla + "(";
+            string lineaSQL = "";
+            tablaAuxiliar = Conexion.GDatos.TraerDataTableSql("Select * from " + nombreTabla);
+            for (int i = 0; i < tablaAuxiliar.Columns.Count; i++)
+            {
+                lineaInsertCabeza = lineaInsertCabeza + tablaAuxiliar.Columns[i].ColumnName;
+                if (i < tablaAuxiliar.Columns.Count - 1)
+                {
+                    lineaInsertCabeza = lineaInsertCabeza + ",";
+                }
+            }
+            lineaInsertCabeza = lineaInsertCabeza + ") values (";
+
+            //if (nombreTabla == "thistoriaclinica")
+
+
+
+            string[] columnas = null;
+
+            for (int i = 0; i < datosTabla.Length; i++)
+            {
+                lineaSQL = lineaInsertCabeza;
+
+                columnas = datosTabla[i].Split('®');
+                for (int j = 0; j < columnas.Length; j++)
+                {
+
+                    switch (tablaAuxiliar.Columns[j].DataType.ToString())
+                    {
+                        case "System.String":
+                            /*Desencriptar Aquí en las columnas */
+                            lineaSQL = lineaSQL + "'" + cSeguridad.DesEncriptar(columnas[j]) + "'";
+                            //lineaSQL = lineaSQL + "'" + columnas[j] + "'";
+                            break;
+                        case "System.DateTime":
+                            /*Desencriptar Aquí en las columnas */
+                            DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                            //DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
+                            //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
+                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd hh:mm:ss") + "'";
+                            break;
+
+                        //case "System.Decimal":
+                        //    /*Desencriptar Aquí en las columnas */
+                        //    //DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
+                        //    //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
+                        //    lineaSQL = lineaSQL + "" + cSeguridad.DesEncriptar(Convert.ToDecimal(columnas[j]).ToString()) + "";
+                        //    break;
+
+                        default:
+                            /*Desencriptar Aquí en las columnas */
+                            lineaSQL = lineaSQL + cSeguridad.DesEncriptar(columnas[j]);
+                            //lineaSQL = lineaSQL + columnas[j];
+                            break;
+                    }
+
+
+                    if (j < columnas.Length - 1)
+                    {
+                        lineaSQL = lineaSQL + ",";
+                    }
+                    else
+                    {
+                        lineaSQL = lineaSQL + ")";
+                    }
+
+
+
+                }
+
+                Conexion.GDatos.EjecutarSql(lineaSQL);
+
+                porcentaje_avanzado++;
+                circularProgressBar.Value = (porcentaje_avanzado * 100) / (total_lineas- total_delimitadores/2);
+                
+                circularProgressBar.Update();
+                this.Update();
+                lblStatus.Text = string.Format("Importando información...{0}%", circularProgressBar.Value);
+                lblStatus.Update();
+
+                //txtPb.Text = circularProgressBar.Value+"%";
+                //txtPb.Update();
+
+                //MessageBox.Show(circularProgressBar.Value+"%");
+                if (circularProgressBar.Value == 100)
+                {
+                    lblStatus.Text = "¡Datos importados exitosamente!";
+                    total_lineas = 0;
+                    porcentaje_avanzado = 0;
+                }
+
+            }
+            return true;
+        }
+
+        public bool ImportarDatosArchivoABaseDeDatos(string nombreArchivo)
+        {
+
+            /*
+            try
+            {
+            */
+            string[] archivos;
+            
+
+            using (System.IO.StreamReader ReadFile = new System.IO.StreamReader(nombreArchivo))
+            {
+                string FileText = ReadFile.ReadToEnd();
+                string[] delimiters = new string[] { "@@" };
+                archivos = FileText.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            }
+            string nombreTablaAuxiliar = "";
+            string[] contenidoAuxiliar = null;
+            string[] camposAuxiliar = null;
+
+            total_delimitadores = archivos.Length;
+
+            for (int i = 0; i < archivos.Length; i = i + 2)
+            {
+                nombreTablaAuxiliar = archivos[i];
+                string[] delimiters2 = new string[] { "\r\n" };
+                contenidoAuxiliar = archivos[i + 1].Split(delimiters2, StringSplitOptions.RemoveEmptyEntries);
+                
+                InsertarDatosTabla(nombreTablaAuxiliar, contenidoAuxiliar);
+                
+                
+
+            }
+
+            return true;
+            /*
+            }
+            catch (Exception ex)
+            {
+                throw new cReglaNegocioException("Error al importar Datos: " + ex.Message);
+            }
+            */
+
         }
 
         private void btnImportar_Click(object sender, EventArgs e)  
@@ -123,7 +264,8 @@ namespace Monitoreo.Importacion
                             oExportar.BorrarDatosTabla(CodigoEstablecimiento);
                             total_lineas = 0;
                             ContarDatosImportados(dlgAbrir.FileName);
-                            oExportar.ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
+                            lblStatus.Text = "Cargando...";
+                            ImportarDatosArchivoABaseDeDatos(dlgAbrir.FileName);
                         }
                         else
                         {
