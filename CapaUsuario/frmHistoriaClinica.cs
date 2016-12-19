@@ -2804,10 +2804,14 @@ namespace CapaUsuario
                     odrCitas = odtCitas.NewRow();
                     odrCitas[odtCitas.Columns.Count - 1] = edad_gestacional_citas;
                     odtCitas.Rows.InsertAt(odrCitas, 1);
+
+                    odrCitas = odtCitas.NewRow();
+                    odtCitas.Rows.InsertAt(odrCitas, 2);
                 }
 
                 odtCitas.Rows[0][odtCitas.Columns.Count - 1] = fecha_cita.ToString("dd/MM/yyyy");
                 odtCitas.Rows[1][odtCitas.Columns.Count - 1] = "EG: " + edad_gestacional_citas + "sm";
+                odtCitas.Rows[2][odtCitas.Columns.Count - 1] = edad_gestacional_citas ;
             }
 
             return odtCitas;
@@ -2823,6 +2827,10 @@ namespace CapaUsuario
             int EdadGestacional = 0;
             DateTime FParto = DateTime.Now;
             bool bFP = false;
+            DateTime primera_fecha_max=DateTime.Now  ;
+            DateTime segunda_fecha_max=DateTime.Now ;
+            int indice_primera_fecha_max = -1;
+            int indice_segunda_fecha_max = -1;
 
             DataTable odt = new DataTable();
             DataRow odr = odt.NewRow();
@@ -2858,7 +2866,7 @@ namespace CapaUsuario
             if (fecha_reg.Date < FPP.Date)
             {
 
-                odtHC.Columns.Add("", typeof(string));
+            odtHC.Columns.Add("", typeof(string));
             odtHC.Columns.Add("", typeof(string));
 
             odrHC = odtHC.NewRow();
@@ -2876,7 +2884,6 @@ namespace CapaUsuario
             odrHC[1] = FPP;
             odtHC.Rows.InsertAt(odrHC, 2);
 
-
             odt = realizar_citas(odtCitas, fecha_reg, edad_gestacional);
 
             odtOdontologia.Columns.Add(" ", typeof(string));
@@ -2885,21 +2892,43 @@ namespace CapaUsuario
 
             odrOdontologia = odtOdontologia.NewRow();
             odrOdontologia[0] = "FECHA MAXIMA:";
-            
 
-            if (odt.Columns.Count > 3) {
-                odrOdontologia[1] = odt.Rows[0][1].ToString();
-                odrOdontologia[2] = odt.Rows[0][3].ToString();
-            }
-            else if(odt.Columns.Count == 1)
+            /*Cuando la primera cita empieza en 16 semanas*/
+
+            for (int i = 0; i < odt.Columns.Count; i++)
             {
-                odrOdontologia[1] = odt.Rows[0][0].ToString();
+                int sm = Convert.ToInt32(odt.Rows[2][i].ToString());
+                if ( sm <= 16)
+                {
+                    primera_fecha_max = Convert.ToDateTime(odt.Rows[0][i].ToString());
+                    indice_primera_fecha_max = i;
+                }
+                if ( sm <= 36)
+                {
+                    segunda_fecha_max = Convert.ToDateTime(odt.Rows[0][i].ToString());
+                    indice_segunda_fecha_max = i;
+                }
+            }
+
+            if (indice_primera_fecha_max == -1)
+            {
+
+                    //primera_fecha_max = (DateTime) odt.Rows[0][2];
+                    //odrOdontologia[1] = primera_fecha_max;
+                    odrOdontologia[1] = "";
+                }
+            else {
+                
+                odrOdontologia[1] = primera_fecha_max.Date.ToString();
+                
+            }
+
+            if (indice_segunda_fecha_max == -1)
+            {
                 odrOdontologia[2] = "";
             }
-            else if (odt.Columns.Count == 2  )
-            {
-                odrOdontologia[1] = odt.Rows[0][1].ToString();
-                odrOdontologia[2] = "";
+            else {
+                odrOdontologia[2] = segunda_fecha_max.Date.ToString();
             }
 
             odtOdontologia.Rows.InsertAt(odrOdontologia, 0);
@@ -2910,22 +2939,28 @@ namespace CapaUsuario
 
             odrEcografia = odtEcografia.NewRow();
             odrEcografia[0] = "FECHA MAXIMA";
-            
 
-            if (odt.Columns.Count > 3)
+            if (indice_primera_fecha_max == -1)
             {
-                odrEcografia[1] = odt.Rows[0][1].ToString();
-                odrEcografia[2] = odt.Rows[0][3].ToString();
+
+                //primera_fecha_max = (DateTime) odt.Rows[0][2];
+                //odrOdontologia[1] = primera_fecha_max;
+                odrEcografia[1] = "";
             }
-            else if (odt.Columns.Count == 1)
+            else
             {
-                odrEcografia[1] = odt.Rows[0][0].ToString();
+
+                odrEcografia[1] = primera_fecha_max.Date.ToString();
+
+            }
+
+            if (indice_segunda_fecha_max == -1)
+            {
                 odrEcografia[2] = "";
             }
-            else if (odt.Columns.Count == 2)
+            else
             {
-                odrEcografia[1] = odt.Rows[0][1].ToString();
-                odrEcografia[2] = "";
+                odrEcografia[2] = segunda_fecha_max.Date.ToString();
             }
 
             odtEcografia.Rows.InsertAt(odrEcografia, 0);
@@ -2937,23 +2972,32 @@ namespace CapaUsuario
             odrBateria = odtBateria.NewRow();
             odrBateria[0] = "FECHA MAXIMA";
 
-            if (odt.Columns.Count > 3)
+            if (indice_primera_fecha_max == -1)
             {
-                odrBateria[1] = odt.Rows[0][1].ToString();
-                odrBateria[2] = odt.Rows[0][3].ToString();
+
+                //primera_fecha_max = (DateTime) odt.Rows[0][2];
+                //odrOdontologia[1] = primera_fecha_max;
+                 odrBateria[1] = "";
             }
-            else if (odt.Columns.Count == 1)
+            else
             {
-                odrBateria[1] = odt.Rows[0][0].ToString();
-                odrBateria[2] = "";
-            }
-            else if (odt.Columns.Count == 2)
-            {
-                odrBateria[1] = odt.Rows[0][1].ToString();
-                odrBateria[2] = "";
+
+                 odrBateria[1] = primera_fecha_max.Date.ToString();
+
             }
 
-            odtBateria.Rows.InsertAt(odrBateria, 0);
+            if (indice_segunda_fecha_max == -1)
+            {
+                odrBateria[2] = "";
+            }
+            else
+            {
+                odrBateria[2] = segunda_fecha_max.Date.ToString();
+            }
+
+             odtBateria.Rows.InsertAt(odrBateria, 0);
+
+            odt.Rows.RemoveAt(2);
 
             odtPuerperio.Columns.Add(" ", typeof(string));
             odtPuerperio.Columns.Add("  ", typeof(string));
@@ -3698,4 +3742,5 @@ namespace CapaUsuario
 
 
 }
+
 
