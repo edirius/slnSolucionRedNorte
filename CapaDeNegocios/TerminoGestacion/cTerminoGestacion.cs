@@ -57,6 +57,16 @@ namespace CapaDeNegocios.TerminoGestacion
             return Conexion.GDatos.TraerDataTable("spListarTerminoGestacion", idthistoriaclinica);
         }
 
+        public DataTable ListarTerminoGestacionXCodigoHC(string codigohistoriaclinica)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarTerminoGestacionXCodigoHC", codigohistoriaclinica);
+        }
+
+        public DataTable ListarFPPXCodigoHC(string codigohistoriaclinica)
+        {
+            return Conexion.GDatos.TraerDataTable("spListarFPPXCodigoHC", codigohistoriaclinica);
+        }
+
         public DataTable ListarTerminoGestacionR(string idthistoriaclinica)
         {
             return Conexion.GDatos.TraerDataTable("spListarTerminoGestacionR", idthistoriaclinica);

@@ -97,7 +97,7 @@ namespace CapaDeNegocios.Exportacion
                             DateTime fechaAUxiliar = Convert.ToDateTime(cSeguridad.DesEncriptar(columnas[j]));
                             //DateTime fechaAUxiliar = Convert.ToDateTime(columnas[j]);
                             //lineaSQL = lineaSQL + "'" + fechaAUxiliar + "'";
-                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd hh:mm:ss") + "'";
+                            lineaSQL = lineaSQL + "'" + fechaAUxiliar.ToString("yyyy-MM-dd") + "'";
                             break;
                             
                         //case "System.Decimal":

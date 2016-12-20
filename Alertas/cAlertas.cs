@@ -46,7 +46,7 @@ namespace Alertas
         //RN
         public DataTable AlertaRecienNacidoBajoPeso(string mes, string año)
         {
-            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso", mes, año);
+            return Conexion.GDatos.TraerDataTable("spReporteRecienNacidosBajoPeso2", mes, año);
         }
         //CITAS PRENATALES
         public DataTable AlertaGestanteNoAcudeCitas()
