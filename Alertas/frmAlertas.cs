@@ -120,7 +120,6 @@ namespace Alertas
                         FechaTexto = "DICIEMBRE";
                         break;
                     }
-
             }
         }
         private void CargarAños()
@@ -234,6 +233,9 @@ namespace Alertas
 
             dgvGestanteNoAcudeCitas.DataSource = miAlerta.AlertaGestanteNoAcudeCitas();
 
+            dgvOdontologia.DataSource = miAlerta.AlertaOdontologia();
+
+            dgvEcografia.DataSource = miAlerta.AlertaEcografia();
         }
         private void OcultarGrids()
         {
@@ -249,6 +251,9 @@ namespace Alertas
             dgvPuerperaSinControl.Visible = false;
             dgvPuerperaSin2doControl.Visible = false;
             dgvGestanteNoAcudeCitas.Visible = false;
+            dgvEcografia.Visible = false;
+            dgvOdontologia.Visible = false;
+            
         }
         private void MostrarNuevasGestantesConProblemas()
         {
@@ -372,6 +377,26 @@ namespace Alertas
                 dgvGestanteNoAcudeCitas.Text = valorcelda8;
             }
             catch { }
+            try
+            {
+
+                int contarRegistro12 = dgvEcografia.RowCount;
+                string valorcelda9 = dgvEcografia[2, contarRegistro12 - 1].Value.ToString();
+                dgvEcografia.ClearSelection();
+                dgvEcografia[1, contarRegistro12 - 1].Selected = true;
+                txtEcografia.Text = valorcelda9;
+            }
+            catch { }
+            try
+            {
+
+                int contarRegistro13 = dgvOdontologia.RowCount;
+                string valorcelda10 = dgvOdontologia[2, contarRegistro13 - 1].Value.ToString();
+                dgvOdontologia.ClearSelection();
+                dgvOdontologia[1, contarRegistro13 - 1].Selected = true;
+                txtodontologia.Text = valorcelda10;
+            }
+            catch { }
         }
 
         private void Arbol_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -380,7 +405,7 @@ namespace Alertas
             {
                 switch (e.Node.Parent.Text)
                 {
-                    case "Alertas en bateria":
+                    case "Alertas en Bateria":
                         switch (e.Node.Text)
                         {
                             case "Gestantes sin bateria":
@@ -486,6 +511,32 @@ namespace Alertas
                                 break;
                         }
                         break;
+                    case "Alertas en Ecografia":
+                        switch (e.Node.Text)
+                        {
+                            case "Gestantes sin examen de ecografia":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ECOGRAFIA";
+                                OcultarGrids();
+                                dgvEcografia.Visible = true;
+                                dgvEcografia.Location = new Point(55, 91);
+                                //
+                                break;
+                        }
+                        break;
+                    case "Alertas en Odontologia":
+                        switch (e.Node.Text)
+                        {
+                            case "Gestantes sin examen de odontologia":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ODONTOLOGIA";
+                                OcultarGrids();
+                                dgvOdontologia.Visible = true;
+                                dgvOdontologia.Location = new Point(55, 91);
+                                break;
+                        }
+                        break;
+
+
+
                 }
 
             }
@@ -667,6 +718,20 @@ namespace Alertas
                 dgvGestanteNoAcudeCitas.Visible = true;
                 lblTipoDeAlerta.Text = formulario;
             }
+            if (formulario == "GESTANTES SIN EXAMEN DE ODONTOLOGIA")
+            {
+                OcultarGrids();
+                dgvOdontologia.Location = new Point(55, 91);
+                dgvOdontologia.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN EXAMEN DE ECOGRAFIA")
+            {
+                OcultarGrids();
+                dgvEcografia.Location = new Point(55, 91);
+                dgvEcografia.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
 
         }
         private void timerActualizar_Tick(object sender, EventArgs e)
@@ -717,6 +782,22 @@ namespace Alertas
         {
             notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE QUE NO ACUDE A SUS CITAS PRENATALES:" + "\n" + txtGestanteNoAcudeCitas.Text, ToolTipIcon.Warning);
             notifyIcon1.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtodontologia_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN EXAMEN DE ODONTOLOGIA:" + "\n" + txtodontologia.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN EXAMEN DE ODONTOLOGIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtEcografia_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN EXAMEN DE ECOGRAFIA:" + "\n" + txtEcografia.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN EXAMEN DE ECOGRAFIA";
             mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using CapaDeDatos;
-using CapaDeNegocios;
 namespace Alertas
 {
     public class cAlertas
@@ -66,6 +65,14 @@ namespace Alertas
         public DataTable AlertaPuerperaSin2doControlPuerperio(string mes, string año)
         {
             return Conexion.GDatos.TraerDataTable("spAlertaSinControlPuerperio2", mes, año);
+        }
+        public DataTable AlertaOdontologia()
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaOdontologia");
+        }
+        public DataTable AlertaEcografia()
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaEcografia");
         }
 
     }
