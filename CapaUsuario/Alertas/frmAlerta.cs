@@ -85,5 +85,23 @@ namespace CapaUsuario.Alertas
             frmRNBajoPeso.CodigoObstetra = CodigoObstetra;
             frmRNBajoPeso.Show();
         }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Alertas.CRGestanteOdonto RpGestanteOdonto= new Alertas.CRGestanteOdonto();
+            //RpGestanteOdonto.SetDataSource(Alertas.AlertaOdontologia());
+            //Alertas.GestantesSinExamenOdontologico frmReporteOdonto = new Alertas.GestantesSinExamenOdontologico();
+            //frmReporteOdonto.CRVGestanteOdonto.ReportSource = RpGestanteOdonto;
+            //frmReporteOdonto.Show();
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Alertas.CRGestanteEco RpGestanteEco = new Alertas.CRGestanteEco();
+            //RpGestanteEco.SetDataSource(Alertas.AlertaEcografia());
+            //Alertas.GestantesSinExamenEcografico frmReporteEco = new Alertas.GestantesSinExamenEcografico();
+            //frmReporteEco.CRVGestanteEco.ReportSource = RpGestanteEco;
+            //frmReporteEco.Show();
+        }
     }
 }
