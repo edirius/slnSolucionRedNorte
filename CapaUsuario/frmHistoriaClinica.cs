@@ -2766,6 +2766,8 @@ namespace CapaUsuario
             oHC.Idthistoriaclinica = IdtHistoriaClinica;
             odt = oHC.ListarHistoriaClinicaLargo();
 
+            if (IdtHistoriaClinica != "") { 
+
             FUR = Convert.ToDateTime(odt.Rows[0]["FUR"]);
             FPP = Convert.ToDateTime(odt.Rows[0]["FPP"]);
             EdadGestacional = (int)odt.Rows[0]["SEMANA APN"];
@@ -3155,7 +3157,8 @@ namespace CapaUsuario
             {
                 MessageBox.Show("No se puede realizar un cronograma que tenga una fecha de registro mayor a la FPP.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
+            }else
+                MessageBox.Show("Porfavor seleccione un control gestante.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
 
