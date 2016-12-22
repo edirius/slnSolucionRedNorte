@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestante));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bnGestante = new System.Windows.Forms.BindingNavigator(this.components);
             this.bnctGestante = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -95,7 +95,7 @@
             this.bnctGestante.Name = "bnctGestante";
             this.bnctGestante.Size = new System.Drawing.Size(43, 22);
             this.bnctGestante.Text = "of {0}";
-            this.bnctGestante.ToolTipText = "Total number of items";
+            this.bnctGestante.ToolTipText = "Número total de items";
             this.bnctGestante.Click += new System.EventHandler(this.bindingNavigatorCountItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
@@ -291,8 +291,8 @@
             // 
             this.dgvGestante.AllowUserToAddRows = false;
             this.dgvGestante.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.dgvGestante.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGestante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

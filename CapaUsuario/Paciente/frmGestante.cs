@@ -39,6 +39,8 @@ namespace CapaUsuario
         {
             CargarDatos();
             seleccionado = false;
+            bnctGestante.ForeColor = Color.White;
+            bnctGestante.Enabled = true;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -282,6 +284,7 @@ namespace CapaUsuario
 
             bnpiGestante.Text = cantidad_total_registros.ToString() ;
             bnctGestante.Text = "de " + total_registros_paciente;
+            bnctGestante.ForeColor = Color.White;
             bnGestante.Enabled = true;
             bindingNavigatorMoveNextItem.Enabled = true;
             bindingNavigatorMoveLastItem.Enabled = true;
@@ -348,7 +351,7 @@ namespace CapaUsuario
 
         }
 
-        private void llenar_datos_gestamte(int indice)
+        private void llenar_datos_gestante(int indice)
         {
             idtpaciente = dgvGestante.Rows[indice].Cells[1].Value.ToString();
             codigohistoriaclinica = dgvGestante.Rows[indice].Cells[2].Value.ToString();
@@ -366,10 +369,12 @@ namespace CapaUsuario
         {
             CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
             int indice = 0;
+
+            
             if ( dgvGestante.Rows.Count >0 && !seleccionado)
             {
-                indice = dgvGestante.Rows.Count-1;
-                llenar_datos_gestamte(indice);
+                indice = dgvGestante.Rows.Count - 1;
+                llenar_datos_gestante(indice);
                 DialogResult = DialogResult.OK;
             }
 
@@ -377,8 +382,11 @@ namespace CapaUsuario
                 MessageBox.Show("No hay gestantes disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
 
-            if (seleccionado)
+            if (seleccionado) {
+                indice = dgvGestante.CurrentRow.Index;
+                llenar_datos_gestante(indice);
                 DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
@@ -403,7 +411,7 @@ namespace CapaUsuario
                 if (dgvGestante.Rows.Count > 0 && !seleccionado)
                 {
                     indice = dgvGestante.CurrentRow.Index;
-                    llenar_datos_gestamte(indice);
+                    llenar_datos_gestante(indice);
                     DialogResult = DialogResult.OK;
                 }
 
@@ -411,7 +419,12 @@ namespace CapaUsuario
                     MessageBox.Show("No hay gestantes disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 if (seleccionado)
+                {
+                    indice = dgvGestante.CurrentRow.Index;
+                    llenar_datos_gestante(indice);
                     DialogResult = DialogResult.OK;
+                }
+
                 return;
             }
             else

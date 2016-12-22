@@ -323,10 +323,11 @@ namespace CapaUsuario
             int indice;
             
 
-            if ((e.KeyData & Keys.KeyCode) == Keys.Enter) { 
+            if ((e.KeyData & Keys.KeyCode) == Keys.Enter) {
+                indice = dgvHC.CurrentRow.Index;
+
                 if (dgvHC.Rows.Count > 0 && !seleccionado)
                 {
-                    indice = dgvHC.CurrentRow.Index;
                     IdtHistoriaClinica = dgvHC.Rows[indice].Cells[1].Value.ToString();
                     DialogResult = DialogResult.OK;
                 }
@@ -334,8 +335,11 @@ namespace CapaUsuario
                 if (dgvHC.Rows.Count == 0)
                     MessageBox.Show("No hay registros disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                if (seleccionado)
+                if (seleccionado) {
+                    IdtHistoriaClinica = dgvHC.Rows[indice].Cells[1].Value.ToString();
                     DialogResult = DialogResult.OK;
+
+                }
                 return;
             }
             else
