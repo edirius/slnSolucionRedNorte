@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBuscarCicloGestante));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBuscarCicloGestante));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvHC = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.gbFiltrar = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
@@ -53,13 +53,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buAgregar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvHC = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.gbFiltrar.SuspendLayout();
             this.gbBuscar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -68,51 +74,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.dgvHC);
+            this.groupBox3.Controls.Add(this.tableLayoutPanel2);
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(3, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1174, 523);
-            this.groupBox3.TabIndex = 8;
+            this.groupBox3.Size = new System.Drawing.Size(1174, 570);
+            this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Explorar Control de Gestantes:";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // dgvHC
-            // 
-            this.dgvHC.AllowUserToAddRows = false;
-            this.dgvHC.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvHC.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHC.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvHC.Location = new System.Drawing.Point(18, 96);
-            this.dgvHC.MultiSelect = false;
-            this.dgvHC.Name = "dgvHC";
-            this.dgvHC.ReadOnly = true;
-            this.dgvHC.RowHeadersVisible = false;
-            this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHC.Size = new System.Drawing.Size(1145, 412);
-            this.dgvHC.TabIndex = 31;
-            this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick_1);
-            this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick_1);
-            this.dgvHC.DoubleClick += new System.EventHandler(this.dgvHC_DoubleClick_1);
             // 
             // tableLayoutPanel4
             // 
@@ -143,7 +115,7 @@
             this.gbFiltrar.Location = new System.Drawing.Point(631, 3);
             this.gbFiltrar.Name = "gbFiltrar";
             this.gbFiltrar.Size = new System.Drawing.Size(339, 61);
-            this.gbFiltrar.TabIndex = 32;
+            this.gbFiltrar.TabIndex = 3;
             this.gbFiltrar.TabStop = false;
             this.gbFiltrar.Text = "Filtrar por:";
             // 
@@ -169,7 +141,7 @@
             this.cbMonth.Location = new System.Drawing.Point(182, 19);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(148, 26);
-            this.cbMonth.TabIndex = 28;
+            this.cbMonth.TabIndex = 4;
             this.cbMonth.SelectedIndexChanged += new System.EventHandler(this.cbMonth_SelectedIndexChanged);
             // 
             // label17
@@ -203,7 +175,7 @@
             this.cbYear.Location = new System.Drawing.Point(50, 20);
             this.cbYear.Name = "cbYear";
             this.cbYear.Size = new System.Drawing.Size(79, 26);
-            this.cbYear.TabIndex = 27;
+            this.cbYear.TabIndex = 3;
             this.cbYear.SelectedIndexChanged += new System.EventHandler(this.cbYear_SelectedIndexChanged);
             // 
             // gbBuscar
@@ -222,7 +194,7 @@
             this.gbBuscar.Location = new System.Drawing.Point(3, 3);
             this.gbBuscar.Name = "gbBuscar";
             this.gbBuscar.Size = new System.Drawing.Size(622, 61);
-            this.gbBuscar.TabIndex = 31;
+            this.gbBuscar.TabIndex = 1;
             this.gbBuscar.TabStop = false;
             // 
             // comboBox2
@@ -315,7 +287,7 @@
             this.txtBuscar.Location = new System.Drawing.Point(261, 19);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(168, 24);
-            this.txtBuscar.TabIndex = 26;
+            this.txtBuscar.TabIndex = 2;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // cbBuscar
@@ -333,7 +305,7 @@
             this.cbBuscar.Location = new System.Drawing.Point(95, 17);
             this.cbBuscar.Name = "cbBuscar";
             this.cbBuscar.Size = new System.Drawing.Size(144, 26);
-            this.cbBuscar.TabIndex = 25;
+            this.cbBuscar.TabIndex = 1;
             this.cbBuscar.SelectedIndexChanged += new System.EventHandler(this.cbBuscar_SelectedIndexChanged);
             // 
             // label12
@@ -348,7 +320,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(976, 3);
             this.groupBox1.Name = "groupBox1";
@@ -364,10 +335,10 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(80, 11);
+            this.btnSalir.Location = new System.Drawing.Point(186, 16);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(79, 47);
-            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Size = new System.Drawing.Size(171, 56);
+            this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -380,10 +351,96 @@
             this.pictureBox1.InitialImage = global::CapaUsuario.Properties.Resources.madre_bebe;
             this.pictureBox1.Location = new System.Drawing.Point(5, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 47);
+            this.pictureBox1.Size = new System.Drawing.Size(150, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
+            // 
+            // buAgregar
+            // 
+            this.buAgregar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buAgregar.BackgroundImage")));
+            this.buAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buAgregar.ForeColor = System.Drawing.Color.White;
+            this.buAgregar.Location = new System.Drawing.Point(9, 16);
+            this.buAgregar.Name = "buAgregar";
+            this.buAgregar.Size = new System.Drawing.Size(171, 56);
+            this.buAgregar.TabIndex = 6;
+            this.buAgregar.Text = "&Seleccionar";
+            this.buAgregar.UseVisualStyleBackColor = true;
+            this.buAgregar.Click += new System.EventHandler(this.buAgregar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buAgregar);
+            this.groupBox2.Controls.Add(this.btnSalir);
+            this.groupBox2.Location = new System.Drawing.Point(3, 387);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(366, 78);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.dgvHC, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 96);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.05128F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.94872F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1148, 468);
+            this.tableLayoutPanel2.TabIndex = 33;
+            // 
+            // dgvHC
+            // 
+            this.dgvHC.AllowUserToAddRows = false;
+            this.dgvHC.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvHC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvHC.BackgroundColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHC.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHC.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHC.Location = new System.Drawing.Point(3, 3);
+            this.dgvHC.MultiSelect = false;
+            this.dgvHC.Name = "dgvHC";
+            this.dgvHC.ReadOnly = true;
+            this.dgvHC.RowHeadersVisible = false;
+            this.dgvHC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHC.Size = new System.Drawing.Size(1142, 378);
+            this.dgvHC.TabIndex = 5;
+            this.dgvHC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellClick_2);
+            this.dgvHC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHC_CellContentClick_2);
+            this.dgvHC.DoubleClick += new System.EventHandler(this.dgvHC_DoubleClick_2);
+            this.dgvHC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvHC_KeyDown);
+            this.dgvHC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvHC_KeyPress);
             // 
             // fBuscarCicloGestante
             // 
@@ -391,14 +448,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CapaUsuario.Properties.Resources.FondoFormularios5;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1178, 547);
+            this.ClientSize = new System.Drawing.Size(1178, 594);
             this.Controls.Add(this.groupBox3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fBuscarCicloGestante";
             this.Text = "Buscar en Control de Gestante(s)";
+            this.Activated += new System.EventHandler(this.fBuscarCicloGestante_Activated);
             this.Load += new System.EventHandler(this.fBuscarCicloGestante_Load);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.gbFiltrar.ResumeLayout(false);
             this.gbFiltrar.PerformLayout();
@@ -406,6 +463,9 @@
             this.gbBuscar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +492,10 @@
         private System.Windows.Forms.ComboBox cbYear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgvHC;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button buAgregar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvHC;
     }
 }

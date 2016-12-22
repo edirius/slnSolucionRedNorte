@@ -25,7 +25,7 @@ namespace CapaUsuario
         int pagina = 0;
         int cantidad_registros = 10;
         int cantidad_total_registros = 0;
-        
+        bool seleccionado = false;
 
         CapaDeNegocios.Paciente.cPaciente miPaciente = new CapaDeNegocios.Paciente.cPaciente();
 
@@ -38,17 +38,12 @@ namespace CapaUsuario
         private void frmGestante_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            seleccionado = false;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Paciente.frmPaciente fPaciente = new Paciente.frmPaciente();
-            fPaciente.RecibirDatos("", "", "", "", "", "", DateTime.Today, "", "", IdtEstablecimientoSalud, 1);
-            fPaciente.MdiParent = this.MdiParent;
-            if (fPaciente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                CargarDatos();
-            }
+           
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -334,6 +329,7 @@ namespace CapaUsuario
                 fn = Convert.ToDateTime(dgvGestante.Rows[e.RowIndex].Cells[7].Value);
                 sdireccion = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[8].Value);
                 stelefono = Convert.ToString(dgvGestante.Rows[e.RowIndex].Cells[9].Value);
+                seleccionado = true;
             }
         }
 
@@ -350,6 +346,76 @@ namespace CapaUsuario
         private void bnGestante_RefreshItems(object sender, EventArgs e)
         {
 
+        }
+
+        private void llenar_datos_gestamte(int indice)
+        {
+            idtpaciente = dgvGestante.Rows[indice].Cells[1].Value.ToString();
+            codigohistoriaclinica = dgvGestante.Rows[indice].Cells[2].Value.ToString();
+            nombres = dgvGestante.Rows[indice].Cells[3].Value.ToString();
+            app = dgvGestante.Rows[indice].Cells[4].Value.ToString();
+            apm = dgvGestante.Rows[indice].Cells[5].Value.ToString();
+            DNI = Convert.ToString(dgvGestante.Rows[indice].Cells[6].Value);
+            fn = Convert.ToDateTime(dgvGestante.Rows[indice].Cells[7].Value);
+            sdireccion = Convert.ToString(dgvGestante.Rows[indice].Cells[8].Value);
+            stelefono = Convert.ToString(dgvGestante.Rows[indice].Cells[9].Value);
+            
+        }
+
+        private void buAgregar_Click(object sender, EventArgs e)
+        {
+            CapaDeNegocios.Paciente.cPaciente oGestante = new CapaDeNegocios.Paciente.cPaciente();
+            int indice = 0;
+            if ( dgvGestante.Rows.Count >0 && !seleccionado)
+            {
+                indice = dgvGestante.Rows.Count-1;
+                llenar_datos_gestamte(indice);
+                DialogResult = DialogResult.OK;
+            }
+
+            if (dgvGestante.Rows.Count == 0)
+                MessageBox.Show("No hay gestantes disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+            if (seleccionado)
+                DialogResult = DialogResult.OK;
+        }
+
+        private void btnNuevo_Click_1(object sender, EventArgs e)
+        {
+            Paciente.frmPaciente fPaciente = new Paciente.frmPaciente();
+            fPaciente.RecibirDatos("", "", "", "", "", "", DateTime.Today, "", "", IdtEstablecimientoSalud, 1);
+            fPaciente.MdiParent = this.MdiParent;
+            if (fPaciente.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CargarDatos();
+                dgvGestante.Focus();
+            }
+        }
+
+        private void dgvGestante_KeyDown(object sender, KeyEventArgs e)
+        {
+            int indice;
+
+
+            if ((e.KeyData & Keys.KeyCode) == Keys.Enter)
+            {
+                if (dgvGestante.Rows.Count > 0 && !seleccionado)
+                {
+                    indice = dgvGestante.CurrentRow.Index;
+                    llenar_datos_gestamte(indice);
+                    DialogResult = DialogResult.OK;
+                }
+
+                if (dgvGestante.Rows.Count == 0)
+                    MessageBox.Show("No hay gestantes disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                if (seleccionado)
+                    DialogResult = DialogResult.OK;
+                return;
+            }
+            else
+                base.OnKeyDown(e);
         }
     }
 }
