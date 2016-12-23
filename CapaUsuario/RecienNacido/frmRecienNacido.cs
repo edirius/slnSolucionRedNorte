@@ -21,6 +21,7 @@ namespace CapaUsuario.RecienNacido
         public string aIdHistoria = "";
         public string aIdEstablecimiento = "";
         public string IdObstetra { get; set; }
+        public bool Archivado { get; set; }
         public frmRecienNacido(string IdHistoria, string IdEstablecimiento)
         {
             InitializeComponent();
@@ -178,47 +179,56 @@ namespace CapaUsuario.RecienNacido
         }
         private void Eliminar()
         {
-            if (txtCodigoRN.Text != "")
-            {
-                miRecienNacido.IdRecienNacido = txtCodigoRN.Text;
-                Tabla = miRecienNacido.EliminarRecienNacido();
-                respuesta = Tabla.Rows[0][0].ToString();
-                mensaje = Tabla.Rows[0][1].ToString();
-                if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados.", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                    if (respuesta == "1")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Nuevo();
-                        dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
-                    }
+            if (!Archivado) { 
+                if (txtCodigoRN.Text != "")
+                {
+                    miRecienNacido.IdRecienNacido = txtCodigoRN.Text;
+                    Tabla = miRecienNacido.EliminarRecienNacido();
+                    respuesta = Tabla.Rows[0][0].ToString();
+                    mensaje = Tabla.Rows[0][1].ToString();
+                    if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados.", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                        if (respuesta == "1")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Nuevo();
+                            dgvRecienNacido.DataSource = miRecienNacido.ListarRecienNacido(txtCodigoHistoria.Text);
+                        }
 
-                    else if (respuesta == "0")
-                    {
-                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ConfiguracionInicial();
-                    }
-                    else
-                    {
-                        /*NO HACER NADA*/
-                    }
+                        else if (respuesta == "0")
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            ConfiguracionInicial();
+                        }
+                        else
+                        {
+                            /*NO HACER NADA*/
+                        }
+                }
+                else
+                    MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoRN.Text == "")
-            {
-                if (cbSexo.Text == "")
+            if (!Archivado) { 
+                if (txtCodigoRN.Text == "")
                 {
-                    MessageBox.Show("Por favor seleccione el tipo de sexo del Recien Nacido ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    if (cbSexo.Text == "")
+                    {
+                        MessageBox.Show("Por favor seleccione el tipo de sexo del Recien Nacido ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    Agregar();
                 }
                 else
-                Agregar();
+                    Modificar();
             }
             else
-                Modificar();
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {

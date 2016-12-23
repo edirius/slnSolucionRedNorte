@@ -463,6 +463,7 @@ namespace CapaUsuario
             if (IdtHistoriaClinica != "") {
                 Bateria.frmBateria fBateria = new Bateria.frmBateria(IdtHistoriaClinica,IdEstablecimiento);
                 fBateria.IdObstetra = IdObstetra;
+                fBateria.Archivado = Archivado;
                 fBateria.ShowDialog();
             }
             else
@@ -811,6 +812,7 @@ namespace CapaUsuario
                 fCitaPrenatal.Semana_Gestacional = edad_gestacional;
                 fCitaPrenatal.dias_gestacional = dias_gestacional;
                 fCitaPrenatal.IdObstetra = IdObstetra;
+                fCitaPrenatal.Archivado = Archivado;
                 fCitaPrenatal.ShowDialog();
             }
             else
@@ -823,6 +825,7 @@ namespace CapaUsuario
             {
                 RecienNacido.frmRecienNacido miRecienNacido = new RecienNacido.frmRecienNacido(IdtHistoriaClinica, IdEstablecimiento);
                 miRecienNacido.IdObstetra = IdObstetra;
+                miRecienNacido.Archivado = Archivado;
                 miRecienNacido.ShowDialog();
             }
             else
@@ -1516,7 +1519,7 @@ namespace CapaUsuario
             DateTime fecha_atencion = dtpFecha.Value;
             DateTime fur = dtpFUR.Value;
 
-            if (fecha_atencion >= fur) {
+            if (fecha_atencion.Date >= fur.Date) {
                 TimeSpan dias = fecha_atencion - fur;
                 //double NrOfDays = dias.TotalDays;
                 //double NrOfDays = (fecha_atencion.Date - fur.Date).TotalDays;
@@ -1705,6 +1708,7 @@ namespace CapaUsuario
             if (Codigo_Historia_Clinica != null)
             {
                 VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria = new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdtHistoriaClinica);
+                fMantenimientoVisitaDomiciliaria.Archivado = Archivado;
                 fMantenimientoVisitaDomiciliaria.ShowDialog();
             }
             else
@@ -1717,6 +1721,7 @@ namespace CapaUsuario
             if (Codigo_Historia_Clinica != null)
             {
                 TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdtHistoriaClinica);
+                fMantenimientoTerminoGestacion.Archivado = Archivado;
                 fMantenimientoTerminoGestacion.ShowDialog();
             }
             else
@@ -1728,6 +1733,7 @@ namespace CapaUsuario
             if (Codigo_Historia_Clinica != null)
             {
                 ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPuerperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdtHistoriaClinica);
+                fMantenimientoControlPuerperio.Archivado = Archivado;
                 fMantenimientoControlPuerperio.ShowDialog();
             }
             else
@@ -1784,6 +1790,7 @@ namespace CapaUsuario
             buAgregarOdontologia.Enabled = bandera;
             dgvEcografia.Enabled = bandera;
             dgvOdontologia.Enabled = bandera;
+
         }
 
         private void cbArchivado_CheckedChanged(object sender, EventArgs e)
@@ -2766,6 +2773,8 @@ namespace CapaUsuario
             oHC.Idthistoriaclinica = IdtHistoriaClinica;
             odt = oHC.ListarHistoriaClinicaLargo();
 
+            if (IdtHistoriaClinica != "") { 
+
             FUR = Convert.ToDateTime(odt.Rows[0]["FUR"]);
             FPP = Convert.ToDateTime(odt.Rows[0]["FPP"]);
             EdadGestacional = (int)odt.Rows[0]["SEMANA APN"];
@@ -3155,7 +3164,8 @@ namespace CapaUsuario
             {
                 MessageBox.Show("No se puede realizar un cronograma que tenga una fecha de registro mayor a la FPP.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
+            }else
+                MessageBox.Show("Porfavor seleccione un control gestante.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
 
@@ -3411,11 +3421,13 @@ namespace CapaUsuario
                         lblArchivado.BackColor = System.Drawing.Color.Green;
                         cbArchivado.Checked = true;
                         bloquear_hc(false);
+                        ancho_odo_eco_dgv();
                     }
                     else
                     {
                         cbArchivado.Checked = false;
                         bloquear_hc(true);
+                        ancho_odo_eco_dgv();
                     }
                 }
 
@@ -3424,6 +3436,7 @@ namespace CapaUsuario
                     lblArchivado.Text = "SIN ARCHIVAR";
                     lblArchivado.BackColor = System.Drawing.Color.Red;
                     bloquear_hc(true);
+                    ancho_odo_eco_dgv();
                 }
             }
             else
@@ -3434,6 +3447,7 @@ namespace CapaUsuario
                     lblArchivado.BackColor = System.Drawing.Color.Green;
                     cbArchivado.Checked = true;
                     bloquear_hc(false);
+                    ancho_odo_eco_dgv();
                 }
 
                 if (cbArchivado.Checked == false)
@@ -3441,8 +3455,10 @@ namespace CapaUsuario
                     lblArchivado.Text = "SIN ARCHIVAR";
                     lblArchivado.BackColor = System.Drawing.Color.Red;
                     bloquear_hc(true);
+                    ancho_odo_eco_dgv();
                 }
             }
+            ancho_odo_eco_dgv();
         }
 
         private void txtPeso_Enter(object sender, EventArgs e)
@@ -3529,6 +3545,11 @@ namespace CapaUsuario
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void txtOrigenEESS_Enter_1(object sender, EventArgs e)

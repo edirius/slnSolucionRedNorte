@@ -16,6 +16,7 @@ namespace CapaUsuario.Bateria
     public partial class frmBateria : Form
     {
         cBateria miBateria = new cBateria();
+        public bool Archivado { get; set; }
         cSiguienteCodigo micodigo = new cSiguienteCodigo();
         cUtilitarios miUtilitario = new cUtilitarios();
         DataTable Tabla = new DataTable();
@@ -199,41 +200,45 @@ namespace CapaUsuario.Bateria
         }
         private void Eliminar()
         {
-            if (txtCodigoBateria.Text != "")
-            {
-                if (Convert.ToDateTime(dtpFecha.Value.ToShortDateString()) >= Convert.ToDateTime(DateTime.Now.ToShortDateString()))
+            if (!Archivado) { 
+                if (txtCodigoBateria.Text != "")
                 {
-                    miBateria.IdBateria = txtCodigoBateria.Text;
-                    Tabla = miBateria.EliminarBateria();
-                    respuesta = Tabla.Rows[0][0].ToString();
-                    mensaje = Tabla.Rows[0][1].ToString();
+                    if (Convert.ToDateTime(dtpFecha.Value.ToShortDateString()) >= Convert.ToDateTime(DateTime.Now.ToShortDateString()))
+                    {
+                        miBateria.IdBateria = txtCodigoBateria.Text;
+                        Tabla = miBateria.EliminarBateria();
+                        respuesta = Tabla.Rows[0][0].ToString();
+                        mensaje = Tabla.Rows[0][1].ToString();
 
-                    if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
-                        if (respuesta == "1")
-                        {
-                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ActualizarLista();
-                            Nuevo();
-                        }
+                        if (MessageBox.Show("¿Desea Eliminar? Los Datos no podran ser recuperados", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                            if (respuesta == "1")
+                            {
+                                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ActualizarLista();
+                                Nuevo();
+                            }
 
-                        else if (respuesta == "0")
-                        {
-                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            Nuevo();
-                        }
-                        else
-                        {
-                            /*NO HACER NADA*/
-                        }
+                            else if (respuesta == "0")
+                            {
+                                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Nuevo();
+                            }
+                            else
+                            {
+                                /*NO HACER NADA*/
+                            }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede eliminar una bateria antigua", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
                 else
-                {
-                    MessageBox.Show("No puede eliminar una bateria antigua", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             else
-                MessageBox.Show("Por favor seleccione una bateria para elimarla", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         int Tiempo;
@@ -616,7 +621,7 @@ namespace CapaUsuario.Bateria
         //nudHemoglobina.Value.ToString() != "" || nudGlucosa.Value.ToString() != ""
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
+            if (!Archivado){
                 if (txtCodigoBateria.Text == "")
                 {
                     if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
@@ -629,18 +634,21 @@ namespace CapaUsuario.Bateria
                         Agregar();
                     }
                 }
-                if (txtCodigoBateria.Text != "")
+            if (txtCodigoBateria.Text != "")
+            {
+                if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
                 {
-                    if (lblMensajeHemo.Text != "" || lblMensajeVIH.Text != "" || lblMensajeSifilis.Text != "" || lblMensajeOrina.Text != "" && txtFechaTratamiento.Text == "")
-                    {
-                        MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Modificar();
-                    }
-                    else
-                    {
-                        Modificar();
-                    }
-                }   
+                    MessageBox.Show("La gestante presenta complicaciones y no le ha dado una fecha para su tratamiento.", "Mensaje de Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Modificar();
+                }
+                else
+                {
+                    Modificar();
+                }
+            }
+        }else
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

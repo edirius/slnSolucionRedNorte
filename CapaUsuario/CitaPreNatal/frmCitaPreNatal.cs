@@ -19,6 +19,7 @@ namespace CapaUsuario.CitaPreNatal
             InitializeComponent();
         }
         public string IdObstetra { get; set; }
+        public bool Archivado { get; set; }
         public string Establecimiento
         { get; set; }
 
@@ -461,6 +462,10 @@ namespace CapaUsuario.CitaPreNatal
             try
             {
             */
+
+            if (!Archivado)
+            {
+
                 oCitaPrenatal.HistoriaClinica.Idthistoriaclinica = HistoriaClinica;
                 oCitaPrenatal.NumeroCita = Convert.ToInt16(txtNumeroCita.Text);
                 oCitaPrenatal.EdadGestacional = Convert.ToInt16(numEdadGestacional.Value);
@@ -469,10 +474,10 @@ namespace CapaUsuario.CitaPreNatal
                 oCitaPrenatal.PresionArterialD = Convert.ToInt16(numPresionArterialD.Value);
                 oCitaPrenatal.PresionArterialS = Convert.ToInt16(numPresionArterialS.Value);
                 oCitaPrenatal.FechaProximaCitaPrenatal = dtpProximaCita.Value;
-                oCitaPrenatal.SulfatoFerroso = Convert.ToInt16( nudSulfatoFerroso.Value  );
+                oCitaPrenatal.SulfatoFerroso = Convert.ToInt16(nudSulfatoFerroso.Value);
                 oCitaPrenatal.Asistencia = 1;
                 oCitaPrenatal.IdObstetra = IdObstetra;
-                
+
 
                 switch (estado)
                 {
@@ -486,18 +491,21 @@ namespace CapaUsuario.CitaPreNatal
                         MessageBox.Show("Se agrego la cita Prenatal");
                         break;
                     case "modificar":
-                        oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString(); 
+                        oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString();
                         oCitaPrenatal.ModificarCita(oCitaPrenatal);
-                        
+
                         MessageBox.Show("Se Guardo la Cita Prenatal");
                         break;
                     default:
                         break;
                 }
 
-                
+
                 CargarDatos();
-            seleccionar_fecha_cercana();
+                seleccionar_fecha_cercana();
+            
+        }else
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         /*
             }
             
@@ -527,23 +535,27 @@ namespace CapaUsuario.CitaPreNatal
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dtgCitasMedicas.SelectedRows.Count > 0)
-            {
-                if (estado == "modificar")
+            if (!Archivado) { 
+                if (dtgCitasMedicas.SelectedRows.Count > 0)
                 {
-                    if (MessageBox.Show("Desea Eliminar la Cita Prenatal", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (estado == "modificar")
                     {
-                        oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString();
-                        oCitaPrenatal.EliminarCita(oCitaPrenatal);
-                        MessageBox.Show("Se elimino la Cita Pre Natal");
-                        CargarDatos();
+                        if (MessageBox.Show("Desea Eliminar la Cita Prenatal", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            oCitaPrenatal.CodigoCitaPrenatal = dtgCitasMedicas.SelectedRows[0].Cells["colidtcitaprenatal"].Value.ToString();
+                            oCitaPrenatal.EliminarCita(oCitaPrenatal);
+                            MessageBox.Show("Se elimino la Cita Pre Natal");
+                            CargarDatos();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecciona una Cita Pre Natal");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Selecciona una Cita Pre Natal");
-                }
             }
+            else
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

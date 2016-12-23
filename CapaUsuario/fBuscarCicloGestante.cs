@@ -16,6 +16,7 @@ namespace CapaUsuario
         public string IdtHistoriaClinica = "";
         public string IdtEstablecimientoSalud = "";
         public string IdObstetra = "";
+        bool seleccionado = false;
         int año = 0;
         int mes = 0;
 
@@ -218,7 +219,7 @@ namespace CapaUsuario
             dgvHC.DataSource = oUtilitarios.enumerar_datatable(oHistoriaClinica.ListarHistoriaClinica(), 0);
             dgvHC.Columns[1].Visible = false;
             //dgvHC.DataSource = odtHistoriaClinica;
-
+            seleccionado = false;
 
             bandera_combobox_año = true;
         }
@@ -239,6 +240,7 @@ namespace CapaUsuario
             if (e.RowIndex != -1)
             {
                 IdtHistoriaClinica = dgvHC.Rows[e.RowIndex].Cells[1].Value.ToString();
+                seleccionado = true;
             }
         }
 
@@ -259,17 +261,90 @@ namespace CapaUsuario
 
         private void dgvHC_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            llenar_datos_hc(e);
+            
         }
 
         private void dgvHC_DoubleClick_1(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+           
         }
 
         private void dgvHC_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void buAgregar_Click(object sender, EventArgs e)
+        {
+            if (dgvHC.Rows.Count > 0 && !seleccionado) { 
+                IdtHistoriaClinica = dgvHC.Rows[0].Cells[1].Value.ToString();
+                DialogResult = DialogResult.OK;
+            }
+            
+            if (dgvHC.Rows.Count == 0)
+                MessageBox.Show("No hay registros disponibles.","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            if (seleccionado)
+                DialogResult = DialogResult.OK;
+
+        }
+
+        private void dgvHC_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
             llenar_datos_hc(e);
+        }
+
+        private void dgvHC_CellClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            llenar_datos_hc(e);
+        }
+
+        private void dgvHC_DoubleClick_2(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void dgvHC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            
+            
+
+        }
+
+        private void fBuscarCicloGestante_Activated(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
+        }
+
+        private void dgvHC_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            int indice;
+            
+
+            if ((e.KeyData & Keys.KeyCode) == Keys.Enter) {
+                indice = dgvHC.CurrentRow.Index;
+
+                if (dgvHC.Rows.Count > 0 && !seleccionado)
+                {
+                    IdtHistoriaClinica = dgvHC.Rows[indice].Cells[1].Value.ToString();
+                    DialogResult = DialogResult.OK;
+                }
+
+                if (dgvHC.Rows.Count == 0)
+                    MessageBox.Show("No hay registros disponibles.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                if (seleccionado) {
+                    IdtHistoriaClinica = dgvHC.Rows[indice].Cells[1].Value.ToString();
+                    DialogResult = DialogResult.OK;
+
+                }
+                return;
+            }
+            else
+                base.OnKeyDown(e);
+
         }
     }
 }

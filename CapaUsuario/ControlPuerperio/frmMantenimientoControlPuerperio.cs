@@ -18,7 +18,7 @@ namespace CapaUsuario.ControlPeuperio
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string sidtobstetra = "";
-
+        public bool Archivado { get; set; }
         CapaDeNegocios.ControlPeuperio.cControlPeuperio miControlPeuperio = new CapaDeNegocios.ControlPeuperio.cControlPeuperio();
 
         public frmMantenimientoControlPeuperio(string pidthistoriaclinica)
@@ -63,43 +63,48 @@ namespace CapaUsuario.ControlPeuperio
         {
             try
             {
-                bool bOk = false;
-                miControlPeuperio.idtcontrolpeuperio = sidtcontrolpeuperio;
-                miControlPeuperio.numero = snumerocontrol;
-                miControlPeuperio.fecha = dtpFecha.Value;
-                miControlPeuperio.presionarterials = Convert.ToInt32(numPresionArterialS.Value);
-                miControlPeuperio.presionarteriald = Convert.ToInt32(numPresionArterialD.Value);
-                miControlPeuperio.alturauterino = Convert.ToInt32(numAlturaUterino.Value);
-                miControlPeuperio.fua = txtFUA.Text;
-                miControlPeuperio.detalle = txtDetalle.Text;
-                miControlPeuperio.idthistoriaclinica = sidthistoriaclinica;
-                miControlPeuperio.idtobstetra = sidtobstetra;
-                if (saccion == 1)
+                if (!Archivado)
                 {
-                    CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
-                    foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcontrolpeuperio", sidtestablecimientosalud).Rows)
+                    bool bOk = false;
+                    miControlPeuperio.idtcontrolpeuperio = sidtcontrolpeuperio;
+                    miControlPeuperio.numero = snumerocontrol;
+                    miControlPeuperio.fecha = dtpFecha.Value;
+                    miControlPeuperio.presionarterials = Convert.ToInt32(numPresionArterialS.Value);
+                    miControlPeuperio.presionarteriald = Convert.ToInt32(numPresionArterialD.Value);
+                    miControlPeuperio.alturauterino = Convert.ToInt32(numAlturaUterino.Value);
+                    miControlPeuperio.fua = txtFUA.Text;
+                    miControlPeuperio.detalle = txtDetalle.Text;
+                    miControlPeuperio.idthistoriaclinica = sidthistoriaclinica;
+                    miControlPeuperio.idtobstetra = sidtobstetra;
+                    if (saccion == 1)
                     {
-                        miControlPeuperio.idtcontrolpeuperio = row[0].ToString();
+                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tcontrolpeuperio", sidtestablecimientosalud).Rows)
+                        {
+                            miControlPeuperio.idtcontrolpeuperio = row[0].ToString();
+                        }
+                        miControlPeuperio.CrearControlPeuperio(miControlPeuperio);
+                        MessageBox.Show("Control Puerperio registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bOk = true;
                     }
-                    miControlPeuperio.CrearControlPeuperio(miControlPeuperio);
-                    MessageBox.Show("Control Puerperio registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    bOk = true;
-                }
-                if (saccion == 2)
-                {
-                    miControlPeuperio.ModificarControlPeuperio(miControlPeuperio);
-                    MessageBox.Show("Control Puerperio modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    bOk = true;
-                }
-                if (bOk == true)
-                {
-                    //DialogResult = System.Windows.Forms.DialogResult.OK;
+                    if (saccion == 2)
+                    {
+                        miControlPeuperio.ModificarControlPeuperio(miControlPeuperio);
+                        MessageBox.Show("Control Puerperio modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        bOk = true;
+                    }
+                    if (bOk == true)
+                    {
+                        //DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    CargarDatos();
                 }
                 else
-                {
-                    MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                CargarDatos();
+                    MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception m)
             {
@@ -109,21 +114,25 @@ namespace CapaUsuario.ControlPeuperio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (sidtcontrolpeuperio == "")
-            {
-                MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+            if (!Archivado) { 
+                if (sidtcontrolpeuperio == "")
+                {
+                    MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
+                {
+                    return;
+                }
+                miControlPeuperio.EliminarControlPeuperio(sidtcontrolpeuperio);
+                CargarDatos();
+                if (dgvControlPeuperio.Rows.Count == 0)
+                {
+                    btnNuevo_Click(sender, e);
+                }
             }
-            if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
-            {
-                return;
-            }
-            miControlPeuperio.EliminarControlPeuperio(sidtcontrolpeuperio);
-            CargarDatos();
-            if (dgvControlPeuperio.Rows.Count == 0)
-            {
-                btnNuevo_Click(sender, e);
-            }
+            else
+                MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
