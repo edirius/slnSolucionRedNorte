@@ -152,6 +152,7 @@
             this.linkLabel5.TabIndex = 118;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "GESTANTES SIN EXAMEN ECOGRAFICO";
+            this.linkLabel5.Visible = false;
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
@@ -165,6 +166,7 @@
             this.linkLabel4.TabIndex = 117;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "GESTANTES SIN EXAMEN ODONTOLOGICO";
+            this.linkLabel4.Visible = false;
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // pictureBox1
