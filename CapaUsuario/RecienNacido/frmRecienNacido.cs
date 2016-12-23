@@ -375,16 +375,31 @@ namespace CapaUsuario.RecienNacido
         private void nudApgar1_KeyPress(object sender, KeyPressEventArgs e)
         {
             miUtilitario.SoloNumeros(e);
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void nudApgar5_KeyPress(object sender, KeyPressEventArgs e)
         {
             miUtilitario.SoloNumeros(e);
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void nudPeso_KeyPress(object sender, KeyPressEventArgs e)
         {
             miUtilitario.SoloNumeros(e);
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
 
         private void txtMensajeApgar1_TextChanged(object sender, EventArgs e)
@@ -434,6 +449,24 @@ namespace CapaUsuario.RecienNacido
         private void lblAlerta_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtpFecha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void cbSexo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
         }
     }
 }

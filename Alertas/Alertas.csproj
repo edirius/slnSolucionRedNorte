@@ -103,12 +103,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDeNegocios\CapaDeNegocios.csproj">
-      <Project>{87fda639-1f04-4224-acfc-1cc205be4ed8}</Project>
-      <Name>CapaDeNegocios</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\images %283%29.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +116,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDeNegocios\CapaDeNegocios.csproj">
+      <Project>{87fda639-1f04-4224-acfc-1cc205be4ed8}</Project>
+      <Name>CapaDeNegocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -100,9 +100,6 @@ namespace CapaDeNegocios
             {
 
                 /*nº cita, fecha cita, edad gestacional */
-
-
-
                 if (k != 0)
                 {
                     if (edad_gestacional_citas <= 28 && !ocupado)
