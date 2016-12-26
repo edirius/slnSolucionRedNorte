@@ -140,6 +140,18 @@
     <Compile Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.Designer.cs">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alertas\GestantesSinExamenEcografico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\GestantesSinExamenEcografico.Designer.cs">
+      <DependentUpon>GestantesSinExamenEcografico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alertas\GestantesSinExamenOdontologico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alertas\GestantesSinExamenOdontologico.Designer.cs">
+      <DependentUpon>GestantesSinExamenOdontologico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alertas\rptAlertaControlPuerperio.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -440,6 +452,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\frmReporteListaGestantesQueNoAcudenCitaPreNatal.resx">
       <DependentUpon>frmReporteListaGestantesQueNoAcudenCitaPreNatal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\GestantesSinExamenEcografico.resx">
+      <DependentUpon>GestantesSinExamenEcografico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alertas\GestantesSinExamenOdontologico.resx">
+      <DependentUpon>GestantesSinExamenOdontologico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\rptAlertaControlPuerperio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

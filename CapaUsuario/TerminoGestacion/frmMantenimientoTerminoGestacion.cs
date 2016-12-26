@@ -17,6 +17,7 @@ namespace CapaUsuario.TerminoGestacion
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string sidtobstetra = "";
+        public bool Archivado { get; set; }
 
         CapaDeNegocios.TerminoGestacion.cTerminoGestacion miTerminoGestacion = new CapaDeNegocios.TerminoGestacion.cTerminoGestacion();
 
@@ -37,67 +38,71 @@ namespace CapaUsuario.TerminoGestacion
         {
             try
             {
-                bool bOk = false;
-                miTerminoGestacion.idtterminogestacion = sidtterminogestacion;
-                if (rbtNormal.Checked == true) { miTerminoGestacion.gestacion = rbtNormal.Text; }
-                else if (rbtAborto.Checked == true) { miTerminoGestacion.gestacion = rbtAborto.Text; }
-                if (rbtInstitucion.Checked == true) { miTerminoGestacion.lugar = rbtInstitucion.Text; }
-                else if (rbtDomicilio.Checked == true) { miTerminoGestacion.lugar = rbtDomicilio.Text; }
-                if (rbtUnico.Checked == true) { miTerminoGestacion.reciennacido = rbtUnico.Text; }
-                else if (rbtMultiple.Checked == true) { miTerminoGestacion.reciennacido = rbtMultiple.Text; }
-                miTerminoGestacion.fecha = dtpFecha.Value;
-                miTerminoGestacion.persona = txtPersona.Text;
-                if (rbtEutosico.Checked == false && rbtDistocico.Checked == false)
-                { miTerminoGestacion.tipoparto = ""; }
-                else
-                {
-                    if (rbtEutosico.Checked == true) { miTerminoGestacion.tipoparto = rbtEutosico.Text; }
-                    else if (rbtDistocico.Checked == true) { miTerminoGestacion.tipoparto = rbtDistocico.Text; }
-                }
-                miTerminoGestacion.modoparto = cboTipoParto.Text;
-                if (rbtAlumbramientoSI.Checked == false && rbtAlumbramientoNO.Checked == false)
-                { miTerminoGestacion.manejoalumbramiento = ""; }
-                else
-                {
-                    if (rbtAlumbramientoSI.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoSI.Text; }
-                    else if (rbtAlumbramientoNO.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoNO.Text; }
-                }
-                miTerminoGestacion.tipoinstitucion = cboHospital.Text;
-                miTerminoGestacion.nombreinstitucion = txtHospital.Text;
-                miTerminoGestacion.idthistoriaclinica = sidthistoriaclinica;
-                miTerminoGestacion.idtobstetra = sidtobstetra;
-                if (saccion == 1)
-                {
-                    CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
-                    foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tterminogestacion", sidtestablecimientosalud).Rows)
+                if (!Archivado) { 
+                    bool bOk = false;
+                    miTerminoGestacion.idtterminogestacion = sidtterminogestacion;
+                    if (rbtNormal.Checked == true) { miTerminoGestacion.gestacion = rbtNormal.Text; }
+                    else if (rbtAborto.Checked == true) { miTerminoGestacion.gestacion = rbtAborto.Text; }
+                    if (rbtInstitucion.Checked == true) { miTerminoGestacion.lugar = rbtInstitucion.Text; }
+                    else if (rbtDomicilio.Checked == true) { miTerminoGestacion.lugar = rbtDomicilio.Text; }
+                    if (rbtUnico.Checked == true) { miTerminoGestacion.reciennacido = rbtUnico.Text; }
+                    else if (rbtMultiple.Checked == true) { miTerminoGestacion.reciennacido = rbtMultiple.Text; }
+                    miTerminoGestacion.fecha = dtpFecha.Value;
+                    miTerminoGestacion.persona = txtPersona.Text;
+                    if (rbtEutosico.Checked == false && rbtDistocico.Checked == false)
+                    { miTerminoGestacion.tipoparto = ""; }
+                    else
                     {
-                        miTerminoGestacion.idtterminogestacion = row[0].ToString();
+                        if (rbtEutosico.Checked == true) { miTerminoGestacion.tipoparto = rbtEutosico.Text; }
+                        else if (rbtDistocico.Checked == true) { miTerminoGestacion.tipoparto = rbtDistocico.Text; }
                     }
-                    miTerminoGestacion.CrearTerminoGestacion(miTerminoGestacion);
-                    bOk = true;
-                }
-                if (saccion == 2)
-                {
-                    miTerminoGestacion.ModificarTerminoGestacion(miTerminoGestacion);
-                    bOk = true;
-                }
-                if (bOk == true)
-                {
+                    miTerminoGestacion.modoparto = cboTipoParto.Text;
+                    if (rbtAlumbramientoSI.Checked == false && rbtAlumbramientoNO.Checked == false)
+                    { miTerminoGestacion.manejoalumbramiento = ""; }
+                    else
+                    {
+                        if (rbtAlumbramientoSI.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoSI.Text; }
+                        else if (rbtAlumbramientoNO.Checked == true) { miTerminoGestacion.manejoalumbramiento = rbtAlumbramientoNO.Text; }
+                    }
+                    miTerminoGestacion.tipoinstitucion = cboHospital.Text;
+                    miTerminoGestacion.nombreinstitucion = txtHospital.Text;
+                    miTerminoGestacion.idthistoriaclinica = sidthistoriaclinica;
+                    miTerminoGestacion.idtobstetra = sidtobstetra;
                     if (saccion == 1)
                     {
-                        MessageBox.Show("Termino de Gestación registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tterminogestacion", sidtestablecimientosalud).Rows)
+                        {
+                            miTerminoGestacion.idtterminogestacion = row[0].ToString();
+                        }
+                        miTerminoGestacion.CrearTerminoGestacion(miTerminoGestacion);
+                        bOk = true;
                     }
                     if (saccion == 2)
                     {
-                        MessageBox.Show("Termino de Gestación modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        miTerminoGestacion.ModificarTerminoGestacion(miTerminoGestacion);
+                        bOk = true;
                     }
-                    DialogResult = System.Windows.Forms.DialogResult.OK;
+                    if (bOk == true)
+                    {
+                        if (saccion == 1)
+                        {
+                            MessageBox.Show("Termino de Gestación registrado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        if (saccion == 2)
+                        {
+                            MessageBox.Show("Termino de Gestación modificado correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    CargarDatos();
                 }
                 else
-                {
-                    MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                CargarDatos();
+                    MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception m)
             {

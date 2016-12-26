@@ -19,6 +19,7 @@ namespace CapaUsuario.VisitaDomiciliaria
         string sidthistoriaclinica = "";
         string sidtestablecimientosalud = "";
         string sidtobstetra = "";
+        public bool Archivado { get; set; }
 
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante miVisitaDomiciliariaGestante = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaGestante();
         CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN miVisitaDomiciliariaPuerperaRN = new CapaDeNegocios.VisitaDomiciliaria.cVisitaDomiciliariaPuerperaRN();
@@ -70,85 +71,90 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             try
             {
-                bool bOk = false;
-                if (stipo == "GESTANTE")
-                {
-                    if (cboMotivoGestante.Text == "")
-                    {
-                        MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliariagestante;
-                    miVisitaDomiciliariaGestante.fecha = dtpFechaGestante.Value;
-                    miVisitaDomiciliariaGestante.motivo = cboMotivoGestante.Text;
-                    miVisitaDomiciliariaGestante.fua = txtFuaGestante.Text;
-                    miVisitaDomiciliariaGestante.detalle = txtDetalleGestante.Text;
-                    miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
-                    miVisitaDomiciliariaGestante.idtobstetra = sidtobstetra;
-                    if (saccion == 1)
-                    {
-                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
-                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariagestante", sidtestablecimientosalud).Rows)
-                        {
-                            miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
-                        }
-                        miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
-                        MessageBox.Show("Visita Domiciliaria Durante el Embarazo registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bOk = true;
-                    }
-                    if (saccion == 2)
-                    {
-                        miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
-                        MessageBox.Show("Visita Domiciliaria Durante el Embarazo modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bOk = true;
-                    }
-                }
-                else if (stipo == "PUERPERIA/R.NACIDO")
-                {
-                    if (cboMotivoPuerpera.Text == "")
-                    {
-                        MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = sidtvisitadomiciliariapuerperarn;
-                    miVisitaDomiciliariaPuerperaRN.fecha = dtpFechaPuerpera.Value;
-                    miVisitaDomiciliariaPuerperaRN.motivopuerpera = cboMotivoPuerpera.Text;
-                    miVisitaDomiciliariaPuerperaRN.fuapuerpera = txtFuaPuerpera.Text;
-                    miVisitaDomiciliariaPuerperaRN.detallepuerpera = txtDetallePuerpera.Text;
-                    miVisitaDomiciliariaPuerperaRN.motivoreciennacido = cboMotivoRN.Text;
-                    miVisitaDomiciliariaPuerperaRN.fuareciennacido = txtFuaRN.Text;
-                    miVisitaDomiciliariaPuerperaRN.detallereciennacido = txtDetalleRN.Text;
-                    miVisitaDomiciliariaPuerperaRN.idthistoriaclinica = sidthistoriaclinica;
-                    miVisitaDomiciliariaPuerperaRN.idtobstetra = sidtobstetra;
-                    if (saccion == 1)
-                    {
-                        CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
-                        foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariapuerperarn", sidtestablecimientosalud).Rows)
-                        {
-                            miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = row[0].ToString();
-                        }
-                        miVisitaDomiciliariaPuerperaRN.CrearVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
-                        MessageBox.Show("Visita a la Madre y Recien Nacido registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        bOk = true;
-                    }
-                    if (saccion == 2)
+                if (!Archivado) { 
+                    bool bOk = false;
+                    if (stipo == "GESTANTE")
                     {
-                        miVisitaDomiciliariaPuerperaRN.ModificarVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
-                        MessageBox.Show("Visita a la Madre y Recien Nacido modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        bOk = true;
+                        if (cboMotivoGestante.Text == "")
+                        {
+                            MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = sidtvisitadomiciliariagestante;
+                        miVisitaDomiciliariaGestante.fecha = dtpFechaGestante.Value;
+                        miVisitaDomiciliariaGestante.motivo = cboMotivoGestante.Text;
+                        miVisitaDomiciliariaGestante.fua = txtFuaGestante.Text;
+                        miVisitaDomiciliariaGestante.detalle = txtDetalleGestante.Text;
+                        miVisitaDomiciliariaGestante.idthistoriaclinica = sidthistoriaclinica;
+                        miVisitaDomiciliariaGestante.idtobstetra = sidtobstetra;
+                        if (saccion == 1)
+                        {
+                            CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                            foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariagestante", sidtestablecimientosalud).Rows)
+                            {
+                                miVisitaDomiciliariaGestante.idtvisitadomiciliariagestante = row[0].ToString();
+                            }
+                            miVisitaDomiciliariaGestante.CrearVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                            MessageBox.Show("Visita Domiciliaria Durante el Embarazo registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bOk = true;
+                        }
+                        if (saccion == 2)
+                        {
+                            miVisitaDomiciliariaGestante.ModificarVisitaDomiciliariaGestante(miVisitaDomiciliariaGestante);
+                            MessageBox.Show("Visita Domiciliaria Durante el Embarazo modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bOk = true;
+                        }
                     }
-                }
-                if (bOk == true)
-                {
-                    //DialogResult = System.Windows.Forms.DialogResult.OK;
+                    else if (stipo == "PUERPERIA/R.NACIDO")
+                    {
+                        if (cboMotivoPuerpera.Text == "")
+                        {
+                            MessageBox.Show("Visita Domiciliaria no tiene un Motivo.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = sidtvisitadomiciliariapuerperarn;
+                        miVisitaDomiciliariaPuerperaRN.fecha = dtpFechaPuerpera.Value;
+                        miVisitaDomiciliariaPuerperaRN.motivopuerpera = cboMotivoPuerpera.Text;
+                        miVisitaDomiciliariaPuerperaRN.fuapuerpera = txtFuaPuerpera.Text;
+                        miVisitaDomiciliariaPuerperaRN.detallepuerpera = txtDetallePuerpera.Text;
+                        miVisitaDomiciliariaPuerperaRN.motivoreciennacido = cboMotivoRN.Text;
+                        miVisitaDomiciliariaPuerperaRN.fuareciennacido = txtFuaRN.Text;
+                        miVisitaDomiciliariaPuerperaRN.detallereciennacido = txtDetalleRN.Text;
+                        miVisitaDomiciliariaPuerperaRN.idthistoriaclinica = sidthistoriaclinica;
+                        miVisitaDomiciliariaPuerperaRN.idtobstetra = sidtobstetra;
+                        if (saccion == 1)
+                        {
+                            CapaDeNegocios.cSiguienteCodigo miSiguienteCodigo = new CapaDeNegocios.cSiguienteCodigo();
+                            foreach (DataRow row in miSiguienteCodigo.SiguientesCodigo("tvisitadomiciliariapuerperarn", sidtestablecimientosalud).Rows)
+                            {
+                                miVisitaDomiciliariaPuerperaRN.idtvisitadomiciliariapuerperarn = row[0].ToString();
+                            }
+                            miVisitaDomiciliariaPuerperaRN.CrearVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
+                            MessageBox.Show("Visita a la Madre y Recien Nacido registrada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            bOk = true;
+                        }
+                        if (saccion == 2)
+                        {
+                            miVisitaDomiciliariaPuerperaRN.ModificarVisitaDomiciliariaPuerperaRN(miVisitaDomiciliariaPuerperaRN);
+                            MessageBox.Show("Visita a la Madre y Recien Nacido modificada correctamente.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            bOk = true;
+                        }
+                    }
+                    if (bOk == true)
+                    {
+                        //DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    CargarDatosGestante();
+                    CargarDatosPuerperaRN();
                 }
                 else
-                {
-                    MessageBox.Show("No se puede registrar estos datos", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                CargarDatosGestante();
-                CargarDatosPuerperaRN();
+                    MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception m)
             {
@@ -160,38 +166,42 @@ namespace CapaUsuario.VisitaDomiciliaria
         {
             try
             {
+                if (!Archivado){ 
                 if (MessageBox.Show("Está seguro que desea eliminar la Visita Domiciliaria.", "Confirmar Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == System.Windows.Forms.DialogResult.No)
-                {
-                    return;
-                }
-                if (stipo == "GESTANTE")
-                {
-                    if (sidtvisitadomiciliariagestante == "")
                     {
-                        MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
-                    CargarDatosGestante();
-                    if (dgvVisitaDomiciliariaGestante.Rows.Count == 0)
+                    if (stipo == "GESTANTE")
                     {
-                        btnNuevo_Click(sender, e);
+                        if (sidtvisitadomiciliariagestante == "")
+                        {
+                            MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        miVisitaDomiciliariaGestante.EliminarVisitaDomiciliariaGestante(sidtvisitadomiciliariagestante);
+                        CargarDatosGestante();
+                        if (dgvVisitaDomiciliariaGestante.Rows.Count == 0)
+                        {
+                            btnNuevo_Click(sender, e);
+                        }
+                    }
+                    else if (stipo == "PUERPERIA/R.NACIDO")
+                    {
+                        if (sidtvisitadomiciliariapuerperarn == "")
+                        {
+                            MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        miVisitaDomiciliariaPuerperaRN.EliminarVisitaDomiciliariaPuerperaRN(sidtvisitadomiciliariapuerperarn);
+                        CargarDatosPuerperaRN();
+                        if (dgvVisitaDomiciliariaPuerperaRN.Rows.Count == 0)
+                        {
+                            btnNuevo_Click(sender, e);
+                        }
                     }
                 }
-                else if (stipo == "PUERPERIA/R.NACIDO")
-                {
-                    if (sidtvisitadomiciliariapuerperarn == "")
-                    {
-                        MessageBox.Show("No existena datos que se puedan Eliminar", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    miVisitaDomiciliariaPuerperaRN.EliminarVisitaDomiciliariaPuerperaRN(sidtvisitadomiciliariapuerperarn);
-                    CargarDatosPuerperaRN();
-                    if (dgvVisitaDomiciliariaPuerperaRN.Rows.Count == 0)
-                    {
-                        btnNuevo_Click(sender, e);
-                    }
-                }
+                else
+                    MessageBox.Show("Control de gestante archivado; No se puede hacer modificaciones.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception m)
             {

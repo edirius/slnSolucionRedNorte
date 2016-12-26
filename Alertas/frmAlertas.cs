@@ -13,6 +13,8 @@ using System.Media;
 using WMPLib;
 using System.Runtime.InteropServices;
 using System.Collections;
+using System.Data.SqlClient;
+
 namespace Alertas
 {
     public partial class frmAlertas : Form
@@ -27,7 +29,7 @@ namespace Alertas
         private static extern int DrawMenuBar(IntPtr hwnd);
         private const int MF_BYPOSITION = 0x0400;
         private const int MF_DISABLED = 0x0002;
-
+        
         cAlertas miAlerta = new cAlertas();
         ArrayList miLista = new ArrayList();
         DateTime Ahora = DateTime.Today;
@@ -41,6 +43,86 @@ namespace Alertas
             DateTime Ahora = DateTime.Today;
             CargarMes(Ahora);
             CargarTodosGrid();
+
+        }
+        DataTable odt = new DataTable();
+        public DateTime FUR;
+        public DateTime FPP;
+        public DateTime FechaRegistro;
+        int SemanaAPN;
+        DataTable NroCitas;
+        DateTime primera_fecha_max = DateTime.Now;
+        DateTime segunda_fecha_max = DateTime.Now;
+
+        private void CalcularCitas()
+        {
+            dgvOdontologia.DataSource = miAlerta.AlertaOdontologia();
+            dgvEcografia.DataSource = miAlerta.AlertaEcografia();
+            dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2();
+            foreach (DataGridViewRow Fila in dgvOdontologia.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur1"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp1"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha1"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn1"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                Fila.Cells["PrimerControlOdo"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
+                //Fila.Cells["SegundoControlOdo"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
+            foreach (DataGridViewRow Fila in dgvEcografia.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur2"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp2"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha2"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn2"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                Fila.Cells["PrimerControlEco"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
+                //Fila.Cells["SegundoControlOdo"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
+            foreach (DataGridViewRow Fila in dgvGestantesSinBateria.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur3"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp3"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha3"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn3"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                Fila.Cells["FechaBateria1"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
+                //Fila.Cells["SegundoControlOdo"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
+            ///----------------------------------------------------------------------------------------------------
+            dgvOdontologia2.DataSource = miAlerta.AlertaOdontologia2();
+            dgvEcografia2.DataSource = miAlerta.AlertaEcografia2();
+            dgvGestantesSinBateria2.DataSource = miAlerta.AlertaGestanteSinBateria3();
+            foreach (DataGridViewRow Fila in dgvOdontologia2.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur5"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp5"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha5"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn5"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                //Fila.Cells["PrimerControlOdo"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
+                Fila.Cells["FechaControlOdo2"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
+            foreach (DataGridViewRow Fila in dgvEcografia2.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur4"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp4"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha4"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn4"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                //Fila.Cells["PrimerControlEco"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
+                Fila.Cells["FechaControlEco2"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
+            foreach (DataGridViewRow Fila in dgvGestantesSinBateria2.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur9"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp9"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha9"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn9"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                //Fila.Cells["FechaBateria9"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString()/*;*/
+                Fila.Cells["FechaBateria9"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
 
         }
         private void HacerConeccion()
@@ -120,7 +202,6 @@ namespace Alertas
                         FechaTexto = "DICIEMBRE";
                         break;
                     }
-
             }
         }
         private void CargarAños()
@@ -210,8 +291,6 @@ namespace Alertas
         }
         private void CargarTodosGrid()
         {
-            dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2(cbMes.Text, cbAños.Text);
-            
             dgvGestantesConAnemia.DataSource = miAlerta.AlertaGestanteAnemia2(cbMes.Text, cbAños.Text);
             
             dgvGestantesSinTratamiento.DataSource = miAlerta.AlertaGestanteSinFechaTratamiento2(cbMes.Text, cbAños.Text);
@@ -233,7 +312,8 @@ namespace Alertas
             dgvPuerperaSin2doControl.DataSource = miAlerta.AlertaPuerperaSin2doControlPuerperio(cbMes.Text, cbAños.Text);
 
             dgvGestanteNoAcudeCitas.DataSource = miAlerta.AlertaGestanteNoAcudeCitas();
-
+            
+            CalcularCitas();
         }
         private void OcultarGrids()
         {
@@ -249,14 +329,19 @@ namespace Alertas
             dgvPuerperaSinControl.Visible = false;
             dgvPuerperaSin2doControl.Visible = false;
             dgvGestanteNoAcudeCitas.Visible = false;
+            dgvEcografia.Visible = false;
+            dgvOdontologia.Visible = false;
+            dgvEcografia2.Visible = false;
+            dgvOdontologia2.Visible = false;
+            dgvGestantesSinBateria2.Visible = false;
+
         }
         private void MostrarNuevasGestantesConProblemas()
         {
             try
             {
-                
                 int contarRegistro = dgvGestantesSinBateria.RowCount;
-                string valorcelda = dgvGestantesSinBateria[1, contarRegistro - 1].Value.ToString();
+                string valorcelda = dgvGestantesSinBateria[2, contarRegistro - 1].Value.ToString();
                 dgvGestantesSinBateria.ClearSelection();
                 dgvGestantesSinBateria[1, contarRegistro - 1].Selected = true;
                 txtUltimaGestanteSinBateria.Text = valorcelda;
@@ -264,7 +349,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro2 = dgvGestantesConAnemia.RowCount;
                 string valorcelda2 = dgvGestantesConAnemia[1, contarRegistro2 - 1].Value.ToString();
                 dgvGestantesConAnemia.ClearSelection();
@@ -274,7 +358,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro3 = dgvGestantesSinTratamiento.RowCount;
                 string valorcelda3 = dgvGestantesSinTratamiento[1, contarRegistro3 - 1].Value.ToString();
                 dgvGestantesSinTratamiento.ClearSelection();
@@ -284,7 +367,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro4 = dgvGestantesSifilis.RowCount;
                 string valorcelda4 = dgvGestantesSifilis[1, contarRegistro4 - 1].Value.ToString();
                 dgvGestantesSifilis.ClearSelection();
@@ -294,7 +376,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro5 = dgvGestantesVIH.RowCount;
                 string valorcelda5 = dgvGestantesVIH[1, contarRegistro5 - 1].Value.ToString();
                 dgvGestantesVIH.ClearSelection();
@@ -304,7 +385,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro6 = dgvGestantesInfeccionUrinaria.RowCount;
                 string valorcelda6 = dgvGestantesInfeccionUrinaria[1, contarRegistro6 - 1].Value.ToString();
                 dgvGestantesInfeccionUrinaria.ClearSelection();
@@ -314,7 +394,6 @@ namespace Alertas
             catch { }
             try
             {
-                
                 int contarRegistro7 = dgvGestantesSinExamenOrina.RowCount;
                 string valorcelda7 = dgvGestantesSinExamenOrina[1, contarRegistro7 - 1].Value.ToString();
                 dgvGestantesSinExamenOrina.ClearSelection();
@@ -323,9 +402,7 @@ namespace Alertas
             }
             catch { }
             try
-            {
-                
-                int contarRegistro8 = dgvRecienNacidosBajoPeso.RowCount;
+            {                int contarRegistro8 = dgvRecienNacidosBajoPeso.RowCount;
                 string valorcelda8 = dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Value.ToString();
                 dgvRecienNacidosBajoPeso.ClearSelection();
                 dgvRecienNacidosBajoPeso[1, contarRegistro8 - 1].Selected = true;
@@ -334,7 +411,6 @@ namespace Alertas
             catch { }
             try
             {
-
                 int contarRegistro9 = dgvGestantePAalta.RowCount;
                 string valorcelda8 = dgvGestantePAalta[1, contarRegistro9 - 1].Value.ToString();
                 dgvGestantePAalta.ClearSelection();
@@ -344,7 +420,6 @@ namespace Alertas
             catch { }
             try
             {
-
                 int contarRegistro10 = dgvPuerperaSinControl.RowCount;
                 string valorcelda8 = dgvPuerperaSinControl[1, contarRegistro10 - 1].Value.ToString();
                 dgvPuerperaSinControl.ClearSelection();
@@ -354,7 +429,6 @@ namespace Alertas
             catch { }
             try
             {
-
                 int contarRegistro11 = dgvPuerperaSin2doControl.RowCount;
                 string valorcelda8 = dgvPuerperaSin2doControl[1, contarRegistro11 - 1].Value.ToString();
                 dgvPuerperaSin2doControl.ClearSelection();
@@ -364,12 +438,56 @@ namespace Alertas
             catch { }
             try
             {
-
                 int contarRegistro11 = dgvGestanteNoAcudeCitas.RowCount;
                 string valorcelda8 = dgvGestanteNoAcudeCitas[1, contarRegistro11 - 1].Value.ToString();
                 dgvGestanteNoAcudeCitas.ClearSelection();
                 dgvGestanteNoAcudeCitas[1, contarRegistro11 - 1].Selected = true;
                 dgvGestanteNoAcudeCitas.Text = valorcelda8;
+            }
+            catch { }
+            try
+            {
+                int contarRegistro12 = dgvEcografia.RowCount;
+                string valorcelda9 = dgvEcografia[2, contarRegistro12 - 1].Value.ToString();
+                dgvEcografia.ClearSelection();
+                dgvEcografia[1, contarRegistro12 - 1].Selected = true;
+                txtEcografia.Text = valorcelda9;
+            }
+            catch { }
+            try
+            {
+                int contarRegistro13 = dgvOdontologia.RowCount;
+                string valorcelda10 = dgvOdontologia[2, contarRegistro13 - 1].Value.ToString();
+                dgvOdontologia.ClearSelection();
+                dgvOdontologia[1, contarRegistro13 - 1].Selected = true;
+                txtodontologia.Text = valorcelda10;
+            }
+            catch { }
+            try
+            {
+                int contarRegistro14 = dgvEcografia2.RowCount;
+                string valorcelda9 = dgvEcografia2[2, contarRegistro14 - 1].Value.ToString();
+                dgvEcografia2.ClearSelection();
+                dgvEcografia2[1, contarRegistro14 - 1].Selected = true;
+                txtEcografia2.Text = valorcelda9;
+            }
+            catch { }
+            try
+            {
+                int contarRegistro15 = dgvOdontologia2.RowCount;
+                string valorcelda10 = dgvOdontologia[2, contarRegistro15 - 1].Value.ToString();
+                dgvOdontologia2.ClearSelection();
+                dgvOdontologia2[1, contarRegistro15 - 1].Selected = true;
+                txtOdontologia2.Text = valorcelda10;
+            }
+            catch { }
+            try
+            {
+                int contarRegistro16 = dgvGestantesSinBateria2.RowCount;
+                string valorcelda11 = dgvGestantesSinBateria2[2, contarRegistro16 - 1].Value.ToString();
+                dgvGestantesSinBateria2.ClearSelection();
+                dgvGestantesSinBateria2[1, contarRegistro16 - 1].Selected = true;
+                txtSinBateria2.Text = valorcelda11;
             }
             catch { }
         }
@@ -380,15 +498,20 @@ namespace Alertas
             {
                 switch (e.Node.Parent.Text)
                 {
-                    case "Alertas en bateria":
+                    case "Alertas en Bateria":
                         switch (e.Node.Text)
                         {
-                            case "Gestantes sin bateria":
-                                lblTipoDeAlerta.Text = "GESTANTES SIN BATERIA";
+                            case "Gestantes sin 1er control en bateria":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN 1ER CONTROL EN BATERIA";
                                 OcultarGrids();
                                 dgvGestantesSinBateria.Visible = true;
                                 dgvGestantesSinBateria.Location = new Point(55, 91);
-
+                                break;
+                            case "Gestantes sin 2do control en bateria":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
+                                OcultarGrids();
+                                dgvGestantesSinBateria2.Visible = true;
+                                dgvGestantesSinBateria2.Location = new Point(55, 91);
                                 break;
                             case "Gestantes con anemia":
                                 lblTipoDeAlerta.Text = "GESTANTES CON ANEMIA";
@@ -486,8 +609,41 @@ namespace Alertas
                                 break;
                         }
                         break;
+                    case "Alertas en Ecografia":
+                        switch (e.Node.Text)
+                        {
+                            case "Gestantes sin examen de ecografia":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ECOGRAFIA";
+                                OcultarGrids();
+                                dgvEcografia.Visible = true;
+                                dgvEcografia.Location = new Point(55, 91);
+                                break;
+                            case "Gestantes sin 2do examen de ecografia":
+                                lblTipoDeAlerta.Text = "GESTANTES 2DO SIN EXAMEN DE ECOGRAFIA";
+                                OcultarGrids();
+                                dgvEcografia2.Visible = true;
+                                dgvEcografia2.Location = new Point(55, 91);
+                                break;
+                        }
+                        break;
+                    case "Alertas en Odontologia":
+                        switch (e.Node.Text)
+                        {
+                            case "Gestantes sin examen de odontologia":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ODONTOLOGIA";
+                                OcultarGrids();
+                                dgvOdontologia.Visible = true;
+                                dgvOdontologia.Location = new Point(55, 91);
+                                break;
+                            case "Gestantes sin 2do examen de odontologia":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN 2DO EXAMEN DE ODONTOLOGIA";
+                                OcultarGrids();
+                                dgvOdontologia2.Visible = true;
+                                dgvOdontologia2.Location = new Point(55, 91);
+                                break;
+                        }
+                        break;
                 }
-
             }
         }
         private void frmAlertas_Load(object sender, EventArgs e)
@@ -667,7 +823,41 @@ namespace Alertas
                 dgvGestanteNoAcudeCitas.Visible = true;
                 lblTipoDeAlerta.Text = formulario;
             }
-
+            if (formulario == "GESTANTES SIN EXAMEN DE ODONTOLOGIA")
+            {
+                OcultarGrids();
+                dgvOdontologia.Location = new Point(55, 91);
+                dgvOdontologia.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN EXAMEN DE ECOGRAFIA")
+            {
+                OcultarGrids();
+                dgvEcografia.Location = new Point(55, 91);
+                dgvEcografia.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN 2DO EXAMEN DE ODONTOLOGIA")
+            {
+                OcultarGrids();
+                dgvOdontologia2.Location = new Point(55, 91);
+                dgvOdontologia2.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN 2DO EXAMEN DE ECOGRAFIA")
+            {
+                OcultarGrids();
+                dgvEcografia2.Location = new Point(55, 91);
+                dgvEcografia2.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
+            if (formulario == "GESTANTES SIN 2DO CONTROL EN BATERIA")
+            {
+                OcultarGrids();
+                dgvGestantesSinBateria2.Location = new Point(55, 91);
+                dgvGestantesSinBateria2.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
         }
         private void timerActualizar_Tick(object sender, EventArgs e)
         {
@@ -717,6 +907,115 @@ namespace Alertas
         {
             notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE QUE NO ACUDE A SUS CITAS PRENATALES:" + "\n" + txtGestanteNoAcudeCitas.Text, ToolTipIcon.Warning);
             notifyIcon1.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtodontologia_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN EXAMEN DE ODONTOLOGIA:" + "\n" + txtodontologia.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN EXAMEN DE ODONTOLOGIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtEcografia_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN EXAMEN DE ECOGRAFIA:" + "\n" + txtEcografia.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN EXAMEN DE ECOGRAFIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+        private void dgvOdontologia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvOdontologia.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if (Convert.ToDateTime(dgvOdontologia.Rows[e.RowIndex].Cells["PrimerControlOdo"].Value) <= DateTime.Now)
+                {
+                    dgvOdontologia.Rows[e.RowIndex].Cells["PrimerControlOdo"].Style.BackColor = Color.Red;
+                }
+            }
+            else { }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvEcografia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvEcografia.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if (Convert.ToDateTime(dgvEcografia.Rows[e.RowIndex].Cells["PrimerControlEco"].Value) <= DateTime.Now)
+                {
+                    dgvEcografia.Rows[e.RowIndex].Cells["PrimerControlEco"].Style.BackColor = Color.Red;
+                }
+            }
+            else { }
+        }
+
+        private void dgvGestantesSinBateria_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvGestantesSinBateria.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if (Convert.ToDateTime(dgvGestantesSinBateria.Rows[e.RowIndex].Cells["FechaBateria1"].Value) <= DateTime.Now)
+                {
+                    dgvGestantesSinBateria.Rows[e.RowIndex].Cells["FechaBateria1"].Style.BackColor = Color.Red;
+                }
+            }
+            else { }
+        }
+
+        private void txtEcografia2_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN 2DO EXAMEN DE ECOGRAFIA:" + "\n" + txtEcografia2.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN 2DO EXAMEN DE ECOGRAFIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void txtOdontologia2_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN 2DO EXAMEN DE ECOGRAFIA:" + "\n" + txtOdontologia2.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN 2DO EXAMEN DE ECOGRAFIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
+        }
+
+        private void dgvEcografia2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvEcografia2.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if (Convert.ToDateTime(dgvEcografia2.Rows[e.RowIndex].Cells["FechaControlEco2"].Value) <= DateTime.Now)
+                {
+                    dgvEcografia2.Rows[e.RowIndex].Cells["FechaControlEco2"].Style.BackColor = Color.Red;
+                }
+            }
+            else { }
+        }
+
+        private void dgvOdontologia2_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvOdontologia2.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                if (Convert.ToDateTime(dgvOdontologia2.Rows[e.RowIndex].Cells["FechaControlOdo2"].Value) <= DateTime.Now)
+                {
+                    dgvOdontologia2.Rows[e.RowIndex].Cells["FechaControlOdo2"].Style.BackColor = Color.Red;
+                }
+            }
+            else { }
+        }
+
+        private void dgvRecienNacidosBajoPeso_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSinBateria2_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN 2DO CONTROL EN BATERIA:" + "\n" + txtSinBateria2.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
             mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
         }

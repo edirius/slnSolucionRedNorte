@@ -89,9 +89,8 @@ namespace CapaUsuario.Bateria
                 Bateria.frmReporteGestantesSinBateria miFrmReporte = new frmReporteGestantesSinBateria();
                 miFrmReporte.crystalReportViewer1.ReportSource = RPGestanteSinBateria;
                 miFrmReporte.Show();
+
             }
-
-
         }
         
         private void CargarMes(DateTime FechaActual)

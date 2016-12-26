@@ -91,7 +91,14 @@ namespace CapaDeNegocios
         {
             return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria", id, id2, mes, año);
         }
-
-
+        //Odontologia y ecografia
+        public DataTable AlertaGestanteOdontologia()
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaOdontologia");
+        }
+        public DataTable AlertaGestanteEcografia()
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaEcografia");
+        }
     }
 }
