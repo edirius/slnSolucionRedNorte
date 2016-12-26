@@ -92,7 +92,7 @@ namespace Alertas
             ///----------------------------------------------------------------------------------------------------
             dgvOdontologia2.DataSource = miAlerta.AlertaOdontologia2();
             dgvEcografia2.DataSource = miAlerta.AlertaEcografia2();
-            //dgvGestantesSinBateria.DataSource = miAlerta.AlertaGestanteSinBateria2();
+            dgvGestantesSinBateria2.DataSource = miAlerta.AlertaGestanteSinBateria3();
             foreach (DataGridViewRow Fila in dgvOdontologia2.Rows)
             {
                 FUR = Convert.ToDateTime(Fila.Cells["fur5"].Value);
@@ -113,16 +113,16 @@ namespace Alertas
                 //Fila.Cells["PrimerControlEco"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
                 Fila.Cells["FechaControlEco2"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
             }
-            //foreach (DataGridViewRow Fila in dgvGestantesSinBateria.Rows)
-            //{
-            //    FUR = Convert.ToDateTime(Fila.Cells["fur3"].Value);
-            //    FPP = Convert.ToDateTime(Fila.Cells["fpp3"].Value);
-            //    FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha3"].Value);
-            //    SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn3"].Value);
-            //    odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
-            //    Fila.Cells["FechaBateria1"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString();
-            //    //Fila.Cells["SegundoControlOdo"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
-            //}
+            foreach (DataGridViewRow Fila in dgvGestantesSinBateria2.Rows)
+            {
+                FUR = Convert.ToDateTime(Fila.Cells["fur9"].Value);
+                FPP = Convert.ToDateTime(Fila.Cells["fpp9"].Value);
+                FechaRegistro = Convert.ToDateTime(Fila.Cells["fecha9"].Value);
+                SemanaAPN = Convert.ToInt16(Fila.Cells["semanaapn9"].Value);
+                odt = miAlerta.realizar_citas(FPP, FechaRegistro, SemanaAPN);
+                //Fila.Cells["FechaBateria9"].Value = miAlerta.determinar_1er_control(odt).ToShortDateString()/*;*/
+                Fila.Cells["FechaBateria9"].Value = miAlerta.determinar_2do_control(odt).ToShortDateString();
+            }
 
         }
         private void HacerConeccion()
@@ -333,6 +333,7 @@ namespace Alertas
             dgvOdontologia.Visible = false;
             dgvEcografia2.Visible = false;
             dgvOdontologia2.Visible = false;
+            dgvGestantesSinBateria2.Visible = false;
 
         }
         private void MostrarNuevasGestantesConProblemas()
@@ -480,6 +481,15 @@ namespace Alertas
                 txtOdontologia2.Text = valorcelda10;
             }
             catch { }
+            try
+            {
+                int contarRegistro16 = dgvGestantesSinBateria2.RowCount;
+                string valorcelda11 = dgvGestantesSinBateria2[2, contarRegistro16 - 1].Value.ToString();
+                dgvGestantesSinBateria2.ClearSelection();
+                dgvGestantesSinBateria2[1, contarRegistro16 - 1].Selected = true;
+                txtSinBateria2.Text = valorcelda11;
+            }
+            catch { }
         }
 
         private void Arbol_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -491,12 +501,17 @@ namespace Alertas
                     case "Alertas en Bateria":
                         switch (e.Node.Text)
                         {
-                            case "Gestantes sin bateria":
-                                lblTipoDeAlerta.Text = "GESTANTES SIN BATERIA";
+                            case "Gestantes sin 1er control en bateria":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN 1ER CONTROL EN BATERIA";
                                 OcultarGrids();
                                 dgvGestantesSinBateria.Visible = true;
                                 dgvGestantesSinBateria.Location = new Point(55, 91);
-
+                                break;
+                            case "Gestantes sin 2do control en bateria":
+                                lblTipoDeAlerta.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
+                                OcultarGrids();
+                                dgvGestantesSinBateria2.Visible = true;
+                                dgvGestantesSinBateria2.Location = new Point(55, 91);
                                 break;
                             case "Gestantes con anemia":
                                 lblTipoDeAlerta.Text = "GESTANTES CON ANEMIA";
@@ -628,11 +643,7 @@ namespace Alertas
                                 break;
                         }
                         break;
-
-
-
                 }
-
             }
         }
         private void frmAlertas_Load(object sender, EventArgs e)
@@ -840,7 +851,13 @@ namespace Alertas
                 dgvEcografia2.Visible = true;
                 lblTipoDeAlerta.Text = formulario;
             }
-
+            if (formulario == "GESTANTES SIN 2DO CONTROL EN BATERIA")
+            {
+                OcultarGrids();
+                dgvGestantesSinBateria2.Location = new Point(55, 91);
+                dgvGestantesSinBateria2.Visible = true;
+                lblTipoDeAlerta.Text = formulario;
+            }
         }
         private void timerActualizar_Tick(object sender, EventArgs e)
         {
@@ -988,6 +1005,19 @@ namespace Alertas
                 }
             }
             else { }
+        }
+
+        private void dgvRecienNacidosBajoPeso_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSinBateria2_TextChanged(object sender, EventArgs e)
+        {
+            notifyIcon1.ShowBalloonTip(1000, "NUEVA GESTANTE CON PROBLEMAS EN GESSYS V.1", "GESTANTE SIN 2DO CONTROL EN BATERIA:" + "\n" + txtSinBateria2.Text, ToolTipIcon.Warning);
+            notifyIcon1.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
+            mostrarAlertaSeleccionada(notifyIcon1.Text);
+            SonidoAlerta();
         }
     }
 }

@@ -84,7 +84,10 @@ namespace Alertas
         {
             return Conexion.GDatos.TraerDataTable("spAlertaEcografia2");
         }
-
+        public DataTable AlertaGestanteSinBateria3()
+        {
+            return Conexion.GDatos.TraerDataTable("spAlertaGestanteBateria3");
+        }
         public DateTime determinar_1er_control(DataTable odtCitas)
         {
 
