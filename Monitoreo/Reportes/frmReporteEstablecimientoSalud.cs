@@ -22,8 +22,9 @@ namespace Monitoreo.Reportes
 
         private void frmReporteEstablecimientoSalud_Load(object sender, EventArgs e)
         {
-            cboMes.Text = Convert.ToString(DateTime.Now.ToString("MMMM"));
             CargarAños();
+            //cboMes.Text = Convert.ToString(DateTime.Now.ToString("MMMM"));
+            cboMes.Text = "TODOS";
             CargarMicroRED();
         }
 
@@ -34,6 +35,11 @@ namespace Monitoreo.Reportes
                 sidtmicrored = cboMicroRED.SelectedValue.ToString();
                 CargarEstablecimientoSalud();
             }
+        }
+
+        private void dgvEstablecimientoSalud_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void dgvEstablecimientoSalud_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +101,72 @@ namespace Monitoreo.Reportes
                 cboAño.Items.Add(i);
             }
             cboAño.Text = Convert.ToString(DateTime.Now.Year);
+        }
+
+        string Mes(string pmes)
+        {
+            string x = "";
+            switch (pmes)
+            {
+                case "TODOS":
+                    x = "TODOS";
+                    break;
+                case "ENERO":
+                    x = "01";
+                    break;
+                case "FEBRERO":
+                    x = "02";
+                    break;
+                case "MARZO":
+                    x = "03";
+                    break;
+                case "ABRIL":
+                    x = "04";
+                    break;
+                case "MAYO":
+                    x = "05";
+                    break;
+                case "JUNIO":
+                    x = "06";
+                    break;
+                case "JULIO":
+                    x = "07";
+                    break;
+                case "AGOSTO":
+                    x = "08";
+                    break;
+                case "SETIEMBRE":
+                    x = "09";
+                    break;
+                case "OCTUBRE":
+                    x = "10";
+                    break;
+                case "NOVIEMBRE":
+                    x = "11";
+                    break;
+                case "DICIEMBRE":
+                    x = "12";
+                    break;
+            }
+            return x;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnReporObstetras_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteObstetras", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesNominal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
