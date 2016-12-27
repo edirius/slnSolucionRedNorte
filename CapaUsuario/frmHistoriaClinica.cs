@@ -873,7 +873,7 @@ namespace CapaUsuario
             dtpFPP.Value = FUR;
             FPP = dtpFPP.Value;
             fecha_reg = dtpFecha.Value;
-            edad_gestacional = (int) nudSemanas.Value ;
+            edad_gestacional = (int) nudSemanas.Value;
         }
 
         private void nudGestas_KeyPress(object sender, KeyPressEventArgs e)
@@ -1529,8 +1529,11 @@ namespace CapaUsuario
                 //int semanas = (int) Math.Ceiling(Math.Abs(NrOfDays / 7));
                  int semanas = (int) Math.Abs(NrOfDays / 7);
                 dias_gestacional = NrOfDays;
-                if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum) 
+                if (semanas >= nudSemanas.Minimum && semanas <= nudSemanas.Maximum)
+                {
                     nudSemanas.Value = semanas;
+                    nudEdadGestacional.Value = semanas;
+                }
                 else
                     MessageBox.Show("Porfavor ingrese en FUR una fecha que este dentro de tres trimestres del gestante a partir de la fecha de registro.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
