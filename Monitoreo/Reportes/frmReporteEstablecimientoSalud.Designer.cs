@@ -153,6 +153,7 @@
             this.cboMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMes.FormattingEnabled = true;
             this.cboMes.Items.AddRange(new object[] {
+            "TODOS",
             "ENERO",
             "FEBRERO",
             "MARZO",
@@ -304,6 +305,7 @@
             this.btnTranseuntes.Text = "Transeuntes";
             this.btnTranseuntes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTranseuntes.UseVisualStyleBackColor = false;
+            this.btnTranseuntes.Click += new System.EventHandler(this.btnTranseuntes_Click);
             // 
             // btnGestantesFechaPP
             // 
@@ -321,6 +323,7 @@
             this.btnGestantesFechaPP.Text = "Gestantes Fecha P.P.";
             this.btnGestantesFechaPP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesFechaPP.UseVisualStyleBackColor = false;
+            this.btnGestantesFechaPP.Click += new System.EventHandler(this.btnGestantesFechaPP_Click);
             // 
             // btnRNBajoPeso
             // 
@@ -338,6 +341,7 @@
             this.btnRNBajoPeso.Text = "Recien Nacidos con Bajo Peso";
             this.btnRNBajoPeso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRNBajoPeso.UseVisualStyleBackColor = false;
+            this.btnRNBajoPeso.Click += new System.EventHandler(this.btnRNBajoPeso_Click);
             // 
             // btnGestantesDadoParto
             // 
@@ -355,6 +359,7 @@
             this.btnGestantesDadoParto.Text = "Gestantes Dado Parto";
             this.btnGestantesDadoParto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesDadoParto.UseVisualStyleBackColor = false;
+            this.btnGestantesDadoParto.Click += new System.EventHandler(this.btnGestantesDadoParto_Click);
             // 
             // btnSalir
             // 
@@ -422,6 +427,7 @@
             this.btnGestantesSin2ControlPuerperio.Text = "Puerpera sin 2do Control Puerperio";
             this.btnGestantesSin2ControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSin2ControlPuerperio.UseVisualStyleBackColor = false;
+            this.btnGestantesSin2ControlPuerperio.Click += new System.EventHandler(this.btnGestantesSin2ControlPuerperio_Click);
             // 
             // btnGestantesMorbilidad
             // 
@@ -439,6 +445,7 @@
             this.btnGestantesMorbilidad.Text = "Morbilidad Gestantes";
             this.btnGestantesMorbilidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesMorbilidad.UseVisualStyleBackColor = false;
+            this.btnGestantesMorbilidad.Click += new System.EventHandler(this.btnGestantesMorbilidad_Click);
             // 
             // btnGestantesPresionAlta
             // 
@@ -456,6 +463,7 @@
             this.btnGestantesPresionAlta.Text = "Gestantes con Presion Arterial Elevada";
             this.btnGestantesPresionAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesPresionAlta.UseVisualStyleBackColor = false;
+            this.btnGestantesPresionAlta.Click += new System.EventHandler(this.btnGestantesPresionAlta_Click);
             // 
             // btnGestantesConAnemia
             // 
@@ -473,6 +481,7 @@
             this.btnGestantesConAnemia.Text = "Gestantes con Anemia";
             this.btnGestantesConAnemia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConAnemia.UseVisualStyleBackColor = false;
+            this.btnGestantesConAnemia.Click += new System.EventHandler(this.btnGestantesConAnemia_Click);
             // 
             // btnGestantesConSifilis
             // 
@@ -490,6 +499,7 @@
             this.btnGestantesConSifilis.Text = "Gestantes con Sifilis";
             this.btnGestantesConSifilis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConSifilis.UseVisualStyleBackColor = false;
+            this.btnGestantesConSifilis.Click += new System.EventHandler(this.btnGestantesConSifilis_Click);
             // 
             // btnGestantesConVIH
             // 
@@ -507,6 +517,7 @@
             this.btnGestantesConVIH.Text = "Gestantes con VIH";
             this.btnGestantesConVIH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConVIH.UseVisualStyleBackColor = false;
+            this.btnGestantesConVIH.Click += new System.EventHandler(this.btnGestantesConVIH_Click);
             // 
             // btnGestantesConInfeccionUrinaria
             // 
@@ -524,6 +535,7 @@
             this.btnGestantesConInfeccionUrinaria.Text = "Gestantes con Infección Urinaria";
             this.btnGestantesConInfeccionUrinaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConInfeccionUrinaria.UseVisualStyleBackColor = false;
+            this.btnGestantesConInfeccionUrinaria.Click += new System.EventHandler(this.btnGestantesConInfeccionUrinaria_Click);
             // 
             // btnGestantesSinTratamiento
             // 
@@ -541,6 +553,7 @@
             this.btnGestantesSinTratamiento.Text = "Gestantes sin Tratamiento";
             this.btnGestantesSinTratamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinTratamiento.UseVisualStyleBackColor = false;
+            this.btnGestantesSinTratamiento.Click += new System.EventHandler(this.btnGestantesSinTratamiento_Click);
             // 
             // btnGestantesSinBateria
             // 
@@ -558,6 +571,7 @@
             this.btnGestantesSinBateria.Text = "Gestantes sin Bateria";
             this.btnGestantesSinBateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinBateria.UseVisualStyleBackColor = false;
+            this.btnGestantesSinBateria.Click += new System.EventHandler(this.btnGestantesSinBateria_Click);
             // 
             // btnGestantesSinExamenOrina
             // 
@@ -575,6 +589,7 @@
             this.btnGestantesSinExamenOrina.Text = "Gestantes sin Examen Orina";
             this.btnGestantesSinExamenOrina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinExamenOrina.UseVisualStyleBackColor = false;
+            this.btnGestantesSinExamenOrina.Click += new System.EventHandler(this.btnGestantesSinExamenOrina_Click);
             // 
             // btnGestantesSinControlPuerperio
             // 
@@ -592,6 +607,7 @@
             this.btnGestantesSinControlPuerperio.Text = "Puerpera sin 1er Control Puerperio";
             this.btnGestantesSinControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinControlPuerperio.UseVisualStyleBackColor = false;
+            this.btnGestantesSinControlPuerperio.Click += new System.EventHandler(this.btnGestantesSinControlPuerperio_Click);
             // 
             // btnGestantesSinCita
             // 
@@ -609,6 +625,7 @@
             this.btnGestantesSinCita.Text = "Gestantes que no Acuden a sus Citas";
             this.btnGestantesSinCita.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinCita.UseVisualStyleBackColor = false;
+            this.btnGestantesSinCita.Click += new System.EventHandler(this.btnGestantesSinCita_Click);
             // 
             // frmReporteEstablecimientoSalud
             // 
