@@ -59,11 +59,25 @@ namespace Monitoreo
             }
         }
 
-        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void generalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmReportesGenerales fReportesGenerales = new Reportes.frmReportesGenerales();
+            fReportesGenerales.MdiParent = this;
+            fReportesGenerales.Show();
+        }
+
+        private void porMicroREDToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reportes.frmReporteMicroRED fReporteMicroRED = new Reportes.frmReporteMicroRED();
             fReporteMicroRED.MdiParent = this;
             fReporteMicroRED.Show();
+        }
+
+        private void porEstablecimientoDeSaludToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmReporteEstablecimientoSalud fReporteEstablecimientoSalud = new Reportes.frmReporteEstablecimientoSalud();
+            fReporteEstablecimientoSalud.MdiParent = this;
+            fReporteEstablecimientoSalud.Show();
         }
 
         private void importaciónDeDatosToolStripMenuItem_Click(object sender, EventArgs e)

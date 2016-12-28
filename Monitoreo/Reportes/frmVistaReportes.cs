@@ -24,7 +24,7 @@ namespace Monitoreo.Reportes
         ParameterValues crParameterValues = new ParameterValues();
         ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
         string Reporte = "";
-        string saño; string smes; string sidtmicrored;
+        string saño; string smes; string sidtmicrored; string sidtestablecimientosalud;
 
         public frmVistaReportes()
         {
@@ -39,6 +39,7 @@ namespace Monitoreo.Reportes
                 {
                     Reportes.rptReporteObstetraMicroRED rptReporteObstetras = new Reportes.rptReporteObstetraMicroRED();
                     MicroRed(rptReporteObstetras, sidtmicrored);
+                    EstablecimientoSalud(rptReporteObstetras, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rptReporteObstetras;
                     crystalReportViewer1.Refresh();
                 }
@@ -211,6 +212,15 @@ namespace Monitoreo.Reportes
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
         }
 
+        private void EstablecimientoSalud(ReportClass rpt, string pidtestablecimientosalud)
+        {
+            crParameterDiscreteValue.Value = pidtestablecimientosalud;
+            crParameterFieldDefinitions = rpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = crParameterFieldDefinitions["pidtestablecimientosalud"];
+            crParameterValues.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+        }
+
         private void Año(ReportClass rpt, string paño)
         {
             crParameterDiscreteValue.Value = paño;
@@ -229,12 +239,13 @@ namespace Monitoreo.Reportes
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
         }
 
-        public void Reportes(string ptipo, string paño, string pmes, string pidtmicrored)
+        public void Reportes(string ptipo, string paño, string pmes, string pidtmicrored, string pidtestablecimientosalud)
         {
             Reporte = ptipo;
             saño = paño;
             smes = pmes;
             sidtmicrored = pidtmicrored;
+            sidtestablecimientosalud = pidtestablecimientosalud;
         }
     }
 }
