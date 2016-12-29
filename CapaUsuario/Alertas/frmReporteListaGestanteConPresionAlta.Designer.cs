@@ -51,7 +51,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteListaGestanteConPresionAlta";
-            this.Text = "frmReporteListaGestanteConPresionAlta";
+            this.Text = "Reporte de Lista de Gestantes Con Presión Alta";
             this.ResumeLayout(false);
 
         }

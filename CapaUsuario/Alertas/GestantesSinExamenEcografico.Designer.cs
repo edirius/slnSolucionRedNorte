@@ -51,7 +51,7 @@
             this.Controls.Add(this.CRVGestantesEco);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestantesSinExamenEcografico";
-            this.Text = "Reporte de Gestantes sin examen ecografico";
+            this.Text = "Reporte de Gestantes sin examen ecográfico";
             this.ResumeLayout(false);
 
         }

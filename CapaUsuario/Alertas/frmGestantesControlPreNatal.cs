@@ -43,7 +43,6 @@ namespace CapaUsuario.Alertas
             frmReporteListaGestantesQueNoAcudenCitaPreNatal reporteListaGestantes = new frmReporteListaGestantesQueNoAcudenCitaPreNatal();
             reporteListaGestantes.crystalReportViewer1.ReportSource = rListaGestantesControlPrenatal;
             reporteListaGestantes.Show();
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
