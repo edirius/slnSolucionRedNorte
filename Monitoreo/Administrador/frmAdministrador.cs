@@ -12,7 +12,7 @@ namespace Monitoreo.Administrador
 {
     public partial class frmAdministrador : Form
     {
-        int saccion;
+        int saccion = 0;
         string sidtadministrador= "";
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
         CapaDeNegocios.Administrador.cAdministrador miAdministrador = new CapaDeNegocios.Administrador.cAdministrador();
@@ -89,13 +89,16 @@ namespace Monitoreo.Administrador
         {
             DataTable oDataPaciente = new DataTable();
             oDataPaciente = miAdministrador.ListarAdministrador();
-            if (txtDNI.Text.Length == 8)
+            if (saccion != 0)
             {
-                foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
+                if (txtDNI.Text.Length == 8)
                 {
-                    MessageBox.Show("El DNI ingresado ya pertenece a otro Administrador.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtDNI.Text = "";
-                    return;
+                    foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
+                    {
+                        MessageBox.Show("El DNI ingresado ya pertenece a otro Administrador.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDNI.Text = "";
+                        return;
+                    }
                 }
             }
         }

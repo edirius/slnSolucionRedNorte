@@ -145,6 +145,7 @@
             this.Name = "frmReportesGenerales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes Generales";
+            this.Load += new System.EventHandler(this.frmReportesGenerales_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

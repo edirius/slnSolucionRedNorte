@@ -49,7 +49,8 @@ namespace CapaUsuario.ControlPeuperio
                 snumerocontrol = 1;
             }
             txtNumero.Text = GenerarNumero(snumerocontrol) + " CONTROL";
-            dtpFecha.Value = DateTime.Today;
+            if (dtpFecha.MinDate > DateTime.Today) { dtpFecha.Value = dtpFecha.MinDate; }
+            else { dtpFecha.Value = DateTime.Today; }
             numPresionArterialS.Value = 120;
             numPresionArterialD.Value = 80;
             numAlturaUterino.Value = 0;

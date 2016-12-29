@@ -13,37 +13,68 @@ namespace Monitoreo.Reportes
 {
     public partial class frmReportesGenerales : Form
     {
+        string directorio = "";
+        string ruta = "";
         public frmReportesGenerales()
         {
             InitializeComponent();
         }
 
+        private void frmReportesGenerales_Load(object sender, EventArgs e)
+        {
+            directorio = AppDomain.CurrentDomain.BaseDirectory;
+        }
+
         private void btnGestantes_Click(object sender, EventArgs e)
         {
-            OpenMicrosoftExcel(@"D:\ReporteGestantes.xlsx");
+            try
+            {
+                ruta = directorio + "ReporteGestantes.xlsx";
+                Process.Start(ruta);
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnPuerperas_Click(object sender, EventArgs e)
         {
-            OpenMicrosoftExcel(@"D:\ReportePuerperas.xlsx");
+            try
+            {
+                ruta = directorio + "ReportePuerperas.xlsx";
+                Process.Start(ruta);
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnVDGestantes_Click(object sender, EventArgs e)
         {
-            OpenMicrosoftExcel(@"D:\ReporteVDGestantes.xlsx");
+            try
+            {
+                ruta = directorio + "ReporteVDGestantes.xlsx";
+                Process.Start(ruta);
+            }
+            catch
+            {
+
+            }
         }
 
         private void btnVDPuerperas_Click(object sender, EventArgs e)
         {
-            OpenMicrosoftExcel(@"D:\ReporteVDPuerperas.xlsx");
-        }
+            try
+            {
+                ruta = directorio + "ReporteVDPuerperas.xlsx";
+                Process.Start(ruta);
+            }
+            catch
+            {
 
-        static void OpenMicrosoftExcel(string f)
-        {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "EXCEL.EXE";
-            startInfo.Arguments = f;
-            Process.Start(startInfo);
+            }
         }
     }
 }
