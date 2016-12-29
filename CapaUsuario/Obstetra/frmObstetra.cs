@@ -12,7 +12,7 @@ namespace CapaUsuario.Obstetra
 {
     public partial class frmObstetra : Form
     {
-        int saccion;
+        int saccion = 0;
         string sidtobstetra= "";
         string sidtestablecimientosalud = "";
         CapaDeNegocios.Obstetra.cUsuario miUsuario = new CapaDeNegocios.Obstetra.cUsuario();
@@ -99,13 +99,16 @@ namespace CapaUsuario.Obstetra
         {
             DataTable oDataPaciente = new DataTable();
             oDataPaciente = miObstetra.ListarObstetra();
-            if (txtDNI.Text.Length == 8)
+            if (saccion != 0)
             {
-                foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
+                if (txtDNI.Text.Length == 8)
                 {
-                    MessageBox.Show("El DNI ingresado ya pertenece a otro Obstetra.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtDNI.Text = "";
-                    return;
+                    foreach (DataRow row in oDataPaciente.Select("dni = '" + txtDNI.Text + "'"))
+                    {
+                        MessageBox.Show("El DNI ingresado ya pertenece a otro Obstetra.", "Gestión del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDNI.Text = "";
+                        return;
+                    }
                 }
             }
         }

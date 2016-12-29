@@ -49,6 +49,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesNominalMicroRED, saño);
                     Mes(rReporteGestantesNominalMicroRED, smes);
                     MicroRed(rReporteGestantesNominalMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesNominalMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesNominalMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -58,6 +59,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesTranseuntesMicroRED, saño);
                     Mes(rReporteGestantesTranseuntesMicroRED, smes);
                     MicroRed(rReporteGestantesTranseuntesMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesTranseuntesMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesTranseuntesMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -67,6 +69,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesFechaPPMicroRED, saño);
                     Mes(rReporteGestantesFechaPPMicroRED, smes);
                     MicroRed(rReporteGestantesFechaPPMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesFechaPPMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesFechaPPMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -76,6 +79,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesDadoPartoMicroRED, saño);
                     Mes(rReporteGestantesDadoPartoMicroRED, smes);
                     MicroRed(rReporteGestantesDadoPartoMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesDadoPartoMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesDadoPartoMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -85,6 +89,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteRNBajoPesoMicroRED, saño);
                     Mes(rReporteRNBajoPesoMicroRED, smes);
                     MicroRed(rReporteRNBajoPesoMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteRNBajoPesoMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteRNBajoPesoMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -94,6 +99,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesMorbilidadMicroRED, saño);
                     Mes(rReporteGestantesMorbilidadMicroRED, smes);
                     MicroRed(rReporteGestantesMorbilidadMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesMorbilidadMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesMorbilidadMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -103,6 +109,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesConPresionAltaMicroRED, saño);
                     Mes(rReporteGestantesConPresionAltaMicroRED, smes);
                     MicroRed(rReporteGestantesConPresionAltaMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesConPresionAltaMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesConPresionAltaMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -112,6 +119,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesNoAcudenCitasMicroRED, saño);
                     Mes(rReporteGestantesNoAcudenCitasMicroRED, smes);
                     MicroRed(rReporteGestantesNoAcudenCitasMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesNoAcudenCitasMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesNoAcudenCitasMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -121,6 +129,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesSinBateriaMicroRED, saño);
                     Mes(rReporteGestantesSinBateriaMicroRED, smes);
                     MicroRed(rReporteGestantesSinBateriaMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesSinBateriaMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesSinBateriaMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -130,6 +139,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesConAnemiaMicroRED, saño);
                     Mes(rReporteGestantesConAnemiaMicroRED, smes);
                     MicroRed(rReporteGestantesConAnemiaMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesConAnemiaMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesConAnemiaMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -139,6 +149,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesConSifilisMicroRED, saño);
                     Mes(rReporteGestantesConSifilisMicroRED, smes);
                     MicroRed(rReporteGestantesConSifilisMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesConSifilisMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesConSifilisMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -148,6 +159,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesConVIHMicroRED, saño);
                     Mes(rReporteGestantesConVIHMicroRED, smes);
                     MicroRed(rReporteGestantesConVIHMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesConVIHMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesConVIHMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -157,6 +169,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesConInfeccionUrinariaMicroRED, saño);
                     Mes(rReporteGestantesConInfeccionUrinariaMicroRED, smes);
                     MicroRed(rReporteGestantesConInfeccionUrinariaMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesConInfeccionUrinariaMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesConInfeccionUrinariaMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -166,6 +179,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesSinTratamientoMicroRED, saño);
                     Mes(rReporteGestantesSinTratamientoMicroRED, smes);
                     MicroRed(rReporteGestantesSinTratamientoMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesSinTratamientoMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesSinTratamientoMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -175,6 +189,7 @@ namespace Monitoreo.Reportes
                     Año(rReporteGestantesSinExamenOrinaMicroRED, saño);
                     Mes(rReporteGestantesSinExamenOrinaMicroRED, smes);
                     MicroRed(rReporteGestantesSinExamenOrinaMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReporteGestantesSinExamenOrinaMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReporteGestantesSinExamenOrinaMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -184,6 +199,7 @@ namespace Monitoreo.Reportes
                     Año(rReportePuerperaSinControlPuerperioMicroRED, saño);
                     Mes(rReportePuerperaSinControlPuerperioMicroRED, smes);
                     MicroRed(rReportePuerperaSinControlPuerperioMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReportePuerperaSinControlPuerperioMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReportePuerperaSinControlPuerperioMicroRED;
                     crystalReportViewer1.Refresh();
                 }
@@ -193,6 +209,7 @@ namespace Monitoreo.Reportes
                     Año(rReportePuerperaSin2ControlPuerperioMicroRED, saño);
                     Mes(rReportePuerperaSin2ControlPuerperioMicroRED, smes);
                     MicroRed(rReportePuerperaSin2ControlPuerperioMicroRED, sidtmicrored);
+                    EstablecimientoSalud(rReportePuerperaSin2ControlPuerperioMicroRED, sidtestablecimientosalud);
                     crystalReportViewer1.ReportSource = rReportePuerperaSin2ControlPuerperioMicroRED;
                     crystalReportViewer1.Refresh();
                 }

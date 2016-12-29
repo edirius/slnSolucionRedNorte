@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_03EA87B208CA447090AABD3F8D75C98C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0DDD1B89BF9BF83E47355CE5B6851A9B"
         "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +47,18 @@
         {
         "MsmKey" = "8:_85FE1EC2E5C37B9A057CE21EF9CDCE2E"
         "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87B3BA6C054248E08233E384A20C7300"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_88069E87240A4480B20614E1E6F27DA1"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -119,6 +137,12 @@
         {
         "MsmKey" = "8:_ED2E5FFC75D18BDCA9A2189CD1D0144B"
         "OwnerKey" = "8:_2C500EFD2F8C4133BD0565C38E37DC5D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F5E2AE3D522F4C9EA7E811A49EB373E5"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -283,6 +307,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_03EA87B208CA447090AABD3F8D75C98C"
+            {
+            "SourcePath" = "8:..\\Monitoreo\\bin\\Debug\\ReporteGestantes.xlsx"
+            "TargetName" = "8:ReporteGestantes.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0DDD1B89BF9BF83E47355CE5B6851A9B"
             {
             "AssemblyRegister" = "3:1"
@@ -374,6 +418,46 @@
             "Register" = "3:1"
             "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87B3BA6C054248E08233E384A20C7300"
+            {
+            "SourcePath" = "8:..\\Monitoreo\\bin\\Debug\\ReporteVDPuerperas.xlsx"
+            "TargetName" = "8:ReporteVDPuerperas.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_88069E87240A4480B20614E1E6F27DA1"
+            {
+            "SourcePath" = "8:..\\Monitoreo\\bin\\Debug\\ReporteVDGestantes.xlsx"
+            "TargetName" = "8:ReporteVDGestantes.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_938C686421A96ADCB62420C892949B6F"
@@ -642,6 +726,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F5E2AE3D522F4C9EA7E811A49EB373E5"
+            {
+            "SourcePath" = "8:..\\Monitoreo\\bin\\Debug\\ReportePuerperas.xlsx"
+            "TargetName" = "8:ReportePuerperas.xlsx"
+            "Tag" = "8:"
+            "Folder" = "8:_A929AFDF281949A9B2CC014279E67195"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }

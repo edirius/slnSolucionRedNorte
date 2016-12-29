@@ -37,6 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGestantesNominal = new System.Windows.Forms.Button();
             this.dgvMicroRED = new System.Windows.Forms.DataGridView();
+            this.idtmicrored = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGestantesFechaPP = new System.Windows.Forms.Button();
@@ -57,9 +60,6 @@
             this.btnGestantesSinExamenOrina = new System.Windows.Forms.Button();
             this.btnGestantesSinControlPuerperio = new System.Windows.Forms.Button();
             this.btnGestantesSinCita = new System.Windows.Forms.Button();
-            this.idtmicrored = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMicroRED)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,7 +87,7 @@
             this.cboAño.Location = new System.Drawing.Point(53, 3);
             this.cboAño.Name = "cboAño";
             this.cboAño.Size = new System.Drawing.Size(171, 21);
-            this.cboAño.TabIndex = 1;
+            this.cboAño.TabIndex = 0;
             this.cboAño.SelectedIndexChanged += new System.EventHandler(this.cboAño_SelectedIndexChanged);
             // 
             // btnSalir
@@ -102,7 +102,7 @@
             this.btnSalir.Location = new System.Drawing.Point(3, 429);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(115, 70);
-            this.btnSalir.TabIndex = 107;
+            this.btnSalir.TabIndex = 20;
             this.btnSalir.Text = "&Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -120,7 +120,7 @@
             this.btnReporObstetras.Location = new System.Drawing.Point(3, 3);
             this.btnReporObstetras.Name = "btnReporObstetras";
             this.btnReporObstetras.Size = new System.Drawing.Size(115, 65);
-            this.btnReporObstetras.TabIndex = 106;
+            this.btnReporObstetras.TabIndex = 14;
             this.btnReporObstetras.Text = "Obstetras";
             this.btnReporObstetras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReporObstetras.UseVisualStyleBackColor = false;
@@ -149,7 +149,7 @@
             this.cboMes.Location = new System.Drawing.Point(280, 3);
             this.cboMes.Name = "cboMes";
             this.cboMes.Size = new System.Drawing.Size(225, 21);
-            this.cboMes.TabIndex = 109;
+            this.cboMes.TabIndex = 1;
             this.cboMes.SelectedIndexChanged += new System.EventHandler(this.cboMes_SelectedIndexChanged);
             // 
             // label2
@@ -175,7 +175,7 @@
             this.btnGestantesNominal.Location = new System.Drawing.Point(3, 74);
             this.btnGestantesNominal.Name = "btnGestantesNominal";
             this.btnGestantesNominal.Size = new System.Drawing.Size(115, 65);
-            this.btnGestantesNominal.TabIndex = 110;
+            this.btnGestantesNominal.TabIndex = 15;
             this.btnGestantesNominal.Text = "Nominal Gestantes";
             this.btnGestantesNominal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesNominal.UseVisualStyleBackColor = false;
@@ -193,7 +193,7 @@
             this.dgvMicroRED.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtmicrored,
             this.microred,
-            this.dirección});
+            this.direccion});
             this.dgvMicroRED.Location = new System.Drawing.Point(6, 19);
             this.dgvMicroRED.Name = "dgvMicroRED";
             this.dgvMicroRED.RowHeadersVisible = false;
@@ -202,6 +202,25 @@
             this.dgvMicroRED.TabIndex = 111;
             this.dgvMicroRED.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellClick);
             this.dgvMicroRED.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellContentClick);
+            // 
+            // idtmicrored
+            // 
+            this.idtmicrored.HeaderText = "idtmicrored";
+            this.idtmicrored.Name = "idtmicrored";
+            this.idtmicrored.ReadOnly = true;
+            this.idtmicrored.Visible = false;
+            // 
+            // microred
+            // 
+            this.microred.HeaderText = "Micro RED";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -216,7 +235,7 @@
             this.groupBox1.Size = new System.Drawing.Size(508, 249);
             this.groupBox1.TabIndex = 112;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Micro Red";
+            this.groupBox1.Text = "Micro RED";
             // 
             // tableLayoutPanel1
             // 
@@ -251,7 +270,7 @@
             this.btnGestantesFechaPP.Location = new System.Drawing.Point(3, 216);
             this.btnGestantesFechaPP.Name = "btnGestantesFechaPP";
             this.btnGestantesFechaPP.Size = new System.Drawing.Size(115, 65);
-            this.btnGestantesFechaPP.TabIndex = 114;
+            this.btnGestantesFechaPP.TabIndex = 17;
             this.btnGestantesFechaPP.Text = "Gestantes Fecha P.P.";
             this.btnGestantesFechaPP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesFechaPP.UseVisualStyleBackColor = false;
@@ -269,7 +288,7 @@
             this.btnGestantesDadoParto.Location = new System.Drawing.Point(3, 287);
             this.btnGestantesDadoParto.Name = "btnGestantesDadoParto";
             this.btnGestantesDadoParto.Size = new System.Drawing.Size(115, 65);
-            this.btnGestantesDadoParto.TabIndex = 115;
+            this.btnGestantesDadoParto.TabIndex = 18;
             this.btnGestantesDadoParto.Text = "Gestantes Dado Parto";
             this.btnGestantesDadoParto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesDadoParto.UseVisualStyleBackColor = false;
@@ -287,8 +306,8 @@
             this.btnTranseuntes.Location = new System.Drawing.Point(3, 145);
             this.btnTranseuntes.Name = "btnTranseuntes";
             this.btnTranseuntes.Size = new System.Drawing.Size(115, 65);
-            this.btnTranseuntes.TabIndex = 116;
-            this.btnTranseuntes.Text = "Transeúntes";
+            this.btnTranseuntes.TabIndex = 16;
+            this.btnTranseuntes.Text = "Transeuntes";
             this.btnTranseuntes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTranseuntes.UseVisualStyleBackColor = false;
             this.btnTranseuntes.Click += new System.EventHandler(this.btnTranseuntes_Click);
@@ -305,7 +324,7 @@
             this.btnGestantesMorbilidad.Location = new System.Drawing.Point(3, 3);
             this.btnGestantesMorbilidad.Name = "btnGestantesMorbilidad";
             this.btnGestantesMorbilidad.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesMorbilidad.TabIndex = 117;
+            this.btnGestantesMorbilidad.TabIndex = 2;
             this.btnGestantesMorbilidad.Text = "Morbilidad Gestantes";
             this.btnGestantesMorbilidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesMorbilidad.UseVisualStyleBackColor = false;
@@ -350,8 +369,8 @@
             this.btnRNBajoPeso.Location = new System.Drawing.Point(3, 358);
             this.btnRNBajoPeso.Name = "btnRNBajoPeso";
             this.btnRNBajoPeso.Size = new System.Drawing.Size(115, 65);
-            this.btnRNBajoPeso.TabIndex = 120;
-            this.btnRNBajoPeso.Text = "Recién Nacidos con Bajo Peso";
+            this.btnRNBajoPeso.TabIndex = 19;
+            this.btnRNBajoPeso.Text = "Recien Nacidos con Bajo Peso";
             this.btnRNBajoPeso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRNBajoPeso.UseVisualStyleBackColor = false;
             this.btnRNBajoPeso.Click += new System.EventHandler(this.btnRNBajoPeso_Click);
@@ -400,7 +419,7 @@
             this.btnGestantesSin2ControlPuerperio.Location = new System.Drawing.Point(384, 143);
             this.btnGestantesSin2ControlPuerperio.Name = "btnGestantesSin2ControlPuerperio";
             this.btnGestantesSin2ControlPuerperio.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSin2ControlPuerperio.TabIndex = 130;
+            this.btnGestantesSin2ControlPuerperio.TabIndex = 13;
             this.btnGestantesSin2ControlPuerperio.Text = "Puerpera sin 2do Control Puerperio";
             this.btnGestantesSin2ControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSin2ControlPuerperio.UseVisualStyleBackColor = false;
@@ -418,8 +437,8 @@
             this.btnGestantesPresionAlta.Location = new System.Drawing.Point(130, 3);
             this.btnGestantesPresionAlta.Name = "btnGestantesPresionAlta";
             this.btnGestantesPresionAlta.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesPresionAlta.TabIndex = 121;
-            this.btnGestantesPresionAlta.Text = "Gestantes con Presión Arterial Elevada";
+            this.btnGestantesPresionAlta.TabIndex = 3;
+            this.btnGestantesPresionAlta.Text = "Gestantes con Presion Arterial Elevada";
             this.btnGestantesPresionAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesPresionAlta.UseVisualStyleBackColor = false;
             this.btnGestantesPresionAlta.Click += new System.EventHandler(this.btnGestantesPresionAlta_Click);
@@ -436,7 +455,7 @@
             this.btnGestantesConAnemia.Location = new System.Drawing.Point(3, 73);
             this.btnGestantesConAnemia.Name = "btnGestantesConAnemia";
             this.btnGestantesConAnemia.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesConAnemia.TabIndex = 120;
+            this.btnGestantesConAnemia.TabIndex = 6;
             this.btnGestantesConAnemia.Text = "Gestantes con Anemia";
             this.btnGestantesConAnemia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConAnemia.UseVisualStyleBackColor = false;
@@ -454,8 +473,8 @@
             this.btnGestantesConSifilis.Location = new System.Drawing.Point(130, 73);
             this.btnGestantesConSifilis.Name = "btnGestantesConSifilis";
             this.btnGestantesConSifilis.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesConSifilis.TabIndex = 122;
-            this.btnGestantesConSifilis.Text = "Gestantes con Sífilis";
+            this.btnGestantesConSifilis.TabIndex = 7;
+            this.btnGestantesConSifilis.Text = "Gestantes con Sifilis";
             this.btnGestantesConSifilis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConSifilis.UseVisualStyleBackColor = false;
             this.btnGestantesConSifilis.Click += new System.EventHandler(this.btnGestantesConSifilis_Click);
@@ -472,7 +491,7 @@
             this.btnGestantesConVIH.Location = new System.Drawing.Point(257, 73);
             this.btnGestantesConVIH.Name = "btnGestantesConVIH";
             this.btnGestantesConVIH.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesConVIH.TabIndex = 123;
+            this.btnGestantesConVIH.TabIndex = 8;
             this.btnGestantesConVIH.Text = "Gestantes con VIH";
             this.btnGestantesConVIH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConVIH.UseVisualStyleBackColor = false;
@@ -490,7 +509,7 @@
             this.btnGestantesConInfeccionUrinaria.Location = new System.Drawing.Point(384, 73);
             this.btnGestantesConInfeccionUrinaria.Name = "btnGestantesConInfeccionUrinaria";
             this.btnGestantesConInfeccionUrinaria.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesConInfeccionUrinaria.TabIndex = 124;
+            this.btnGestantesConInfeccionUrinaria.TabIndex = 9;
             this.btnGestantesConInfeccionUrinaria.Text = "Gestantes con Infección Urinaria";
             this.btnGestantesConInfeccionUrinaria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConInfeccionUrinaria.UseVisualStyleBackColor = false;
@@ -508,7 +527,7 @@
             this.btnGestantesSinTratamiento.Location = new System.Drawing.Point(3, 143);
             this.btnGestantesSinTratamiento.Name = "btnGestantesSinTratamiento";
             this.btnGestantesSinTratamiento.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSinTratamiento.TabIndex = 128;
+            this.btnGestantesSinTratamiento.TabIndex = 10;
             this.btnGestantesSinTratamiento.Text = "Gestantes sin Tratamiento";
             this.btnGestantesSinTratamiento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinTratamiento.UseVisualStyleBackColor = false;
@@ -526,8 +545,8 @@
             this.btnGestantesSinBateria.Location = new System.Drawing.Point(384, 3);
             this.btnGestantesSinBateria.Name = "btnGestantesSinBateria";
             this.btnGestantesSinBateria.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSinBateria.TabIndex = 127;
-            this.btnGestantesSinBateria.Text = "Gestantes sin Batería";
+            this.btnGestantesSinBateria.TabIndex = 5;
+            this.btnGestantesSinBateria.Text = "Gestantes sin Bateria";
             this.btnGestantesSinBateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinBateria.UseVisualStyleBackColor = false;
             this.btnGestantesSinBateria.Click += new System.EventHandler(this.btnGestantesSinBateria_Click);
@@ -544,7 +563,7 @@
             this.btnGestantesSinExamenOrina.Location = new System.Drawing.Point(130, 143);
             this.btnGestantesSinExamenOrina.Name = "btnGestantesSinExamenOrina";
             this.btnGestantesSinExamenOrina.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSinExamenOrina.TabIndex = 129;
+            this.btnGestantesSinExamenOrina.TabIndex = 11;
             this.btnGestantesSinExamenOrina.Text = "Gestantes sin Examen Orina";
             this.btnGestantesSinExamenOrina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinExamenOrina.UseVisualStyleBackColor = false;
@@ -562,7 +581,7 @@
             this.btnGestantesSinControlPuerperio.Location = new System.Drawing.Point(257, 143);
             this.btnGestantesSinControlPuerperio.Name = "btnGestantesSinControlPuerperio";
             this.btnGestantesSinControlPuerperio.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSinControlPuerperio.TabIndex = 126;
+            this.btnGestantesSinControlPuerperio.TabIndex = 12;
             this.btnGestantesSinControlPuerperio.Text = "Puerpera sin 1er Control Puerperio";
             this.btnGestantesSinControlPuerperio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinControlPuerperio.UseVisualStyleBackColor = false;
@@ -580,30 +599,11 @@
             this.btnGestantesSinCita.Location = new System.Drawing.Point(257, 3);
             this.btnGestantesSinCita.Name = "btnGestantesSinCita";
             this.btnGestantesSinCita.Size = new System.Drawing.Size(121, 64);
-            this.btnGestantesSinCita.TabIndex = 125;
+            this.btnGestantesSinCita.TabIndex = 4;
             this.btnGestantesSinCita.Text = "Gestantes que no Acuden a sus Citas";
             this.btnGestantesSinCita.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinCita.UseVisualStyleBackColor = false;
             this.btnGestantesSinCita.Click += new System.EventHandler(this.btnGestantesSinCita_Click);
-            // 
-            // idtmicrored
-            // 
-            this.idtmicrored.HeaderText = "idtmicrored";
-            this.idtmicrored.Name = "idtmicrored";
-            this.idtmicrored.ReadOnly = true;
-            this.idtmicrored.Visible = false;
-            // 
-            // microred
-            // 
-            this.microred.HeaderText = "Micro Red";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            // 
-            // dirección
-            // 
-            this.dirección.HeaderText = "Direccion";
-            this.dirección.Name = "dirección";
-            this.dirección.ReadOnly = true;
             // 
             // frmReporteMicroRED
             // 
@@ -643,6 +643,9 @@
         private System.Windows.Forms.DataGridView dgvMicroRED;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtmicrored;
+        private System.Windows.Forms.DataGridViewTextBoxColumn microred;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.Button btnGestantesFechaPP;
         private System.Windows.Forms.Button btnGestantesDadoParto;
         private System.Windows.Forms.Button btnTranseuntes;
@@ -661,8 +664,5 @@
         private System.Windows.Forms.Button btnGestantesSinCita;
         private System.Windows.Forms.Button btnGestantesSinControlPuerperio;
         private System.Windows.Forms.Button btnGestantesSin2ControlPuerperio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtmicrored;
-        private System.Windows.Forms.DataGridViewTextBoxColumn microred;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dirección;
     }
 }

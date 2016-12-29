@@ -166,7 +166,138 @@ namespace Monitoreo.Reportes
 
         private void btnGestantesNominal_Click(object sender, EventArgs e)
         {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesNominalMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
 
+        private void btnTranseuntes_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesTranseuntesMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesFechaPP_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesFechaPPMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesDadoParto_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesDadoPartoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnRNBajoPeso_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteRNBajoPesoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesMorbilidad_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesMorbilidadMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesPresionAlta_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesConPresionAltaMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSinCita_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesNoAcudenCitasMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSinBateria_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesSinBateriaMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesConAnemia_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesConAnemiaMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesConSifilis_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesConSifilisMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesConVIH_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesConVIHMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesConInfeccionUrinaria_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesConInfeccionUrinariaMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSinTratamiento_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesSinTratamientoMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSinExamenOrina_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReporteGestantesSinExamenOrinaMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSinControlPuerperio_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReportePuerperaSinControlPuerperioMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
+        }
+
+        private void btnGestantesSin2ControlPuerperio_Click(object sender, EventArgs e)
+        {
+            frmVistaReportes frmVistaReportes = new frmVistaReportes();
+            frmVistaReportes.Reportes("rptReportePuerperaSin2ControlPuerperioMicroRED", cboAño.Text, Mes(cboMes.Text), sidtmicrored, sidtestablecimientosalud);
+            frmVistaReportes.MdiParent = this.MdiParent;
+            frmVistaReportes.Show();
         }
     }
 }
