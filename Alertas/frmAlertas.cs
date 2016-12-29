@@ -863,7 +863,7 @@ namespace Alertas
         {
             string Tiempo;
             Tiempo = DateTime.Now.Second.ToString();
-            if ((int.Parse(Tiempo) % 60) == 0)
+            if ((int.Parse(Tiempo) % 20) == 0)
             {
                 CargarTodosGrid();
                 MostrarNuevasGestantesConProblemas();
