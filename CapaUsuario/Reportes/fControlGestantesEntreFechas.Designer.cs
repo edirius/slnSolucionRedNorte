@@ -64,13 +64,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cbArchivado = new System.Windows.Forms.CheckBox();
+            this.cbTranseunte = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbArchivado = new System.Windows.Forms.CheckBox();
-            this.cbTranseunte = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecienNacido)).BeginInit();
@@ -494,6 +494,28 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Mostrar:";
             // 
+            // cbArchivado
+            // 
+            this.cbArchivado.AutoSize = true;
+            this.cbArchivado.Location = new System.Drawing.Point(17, 61);
+            this.cbArchivado.Name = "cbArchivado";
+            this.cbArchivado.Size = new System.Drawing.Size(92, 22);
+            this.cbArchivado.TabIndex = 4;
+            this.cbArchivado.Text = "Archivado";
+            this.cbArchivado.UseVisualStyleBackColor = true;
+            this.cbArchivado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbArchivado_KeyPress);
+            // 
+            // cbTranseunte
+            // 
+            this.cbTranseunte.AutoSize = true;
+            this.cbTranseunte.Location = new System.Drawing.Point(17, 33);
+            this.cbTranseunte.Name = "cbTranseunte";
+            this.cbTranseunte.Size = new System.Drawing.Size(119, 22);
+            this.cbTranseunte.TabIndex = 3;
+            this.cbTranseunte.Text = "Transeúnte(s)";
+            this.cbTranseunte.UseVisualStyleBackColor = true;
+            this.cbTranseunte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTranseunte_KeyPress);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtpFechaFin);
@@ -544,28 +566,6 @@
             this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inicio:";
-            // 
-            // cbArchivado
-            // 
-            this.cbArchivado.AutoSize = true;
-            this.cbArchivado.Location = new System.Drawing.Point(17, 61);
-            this.cbArchivado.Name = "cbArchivado";
-            this.cbArchivado.Size = new System.Drawing.Size(92, 22);
-            this.cbArchivado.TabIndex = 4;
-            this.cbArchivado.Text = "Archivado";
-            this.cbArchivado.UseVisualStyleBackColor = true;
-            this.cbArchivado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbArchivado_KeyPress);
-            // 
-            // cbTranseunte
-            // 
-            this.cbTranseunte.AutoSize = true;
-            this.cbTranseunte.Location = new System.Drawing.Point(17, 33);
-            this.cbTranseunte.Name = "cbTranseunte";
-            this.cbTranseunte.Size = new System.Drawing.Size(119, 22);
-            this.cbTranseunte.TabIndex = 3;
-            this.cbTranseunte.Text = "Transeunte(s)";
-            this.cbTranseunte.UseVisualStyleBackColor = true;
-            this.cbTranseunte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTranseunte_KeyPress);
             // 
             // fControlGestantesEntreFechas
             // 

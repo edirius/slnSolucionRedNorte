@@ -92,7 +92,7 @@
             this.btnPuerperas.Name = "btnPuerperas";
             this.btnPuerperas.Size = new System.Drawing.Size(158, 105);
             this.btnPuerperas.TabIndex = 121;
-            this.btnPuerperas.Text = "Reporte de Puerperas";
+            this.btnPuerperas.Text = "Reporte de Puérperas";
             this.btnPuerperas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPuerperas.UseVisualStyleBackColor = false;
             this.btnPuerperas.Click += new System.EventHandler(this.btnPuerperas_Click);
@@ -128,7 +128,7 @@
             this.btnVDPuerperas.Name = "btnVDPuerperas";
             this.btnVDPuerperas.Size = new System.Drawing.Size(158, 106);
             this.btnVDPuerperas.TabIndex = 122;
-            this.btnVDPuerperas.Text = "Visita Puerperas";
+            this.btnVDPuerperas.Text = "Visita Puérperas";
             this.btnVDPuerperas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnVDPuerperas.UseVisualStyleBackColor = false;
             this.btnVDPuerperas.Click += new System.EventHandler(this.btnVDPuerperas_Click);

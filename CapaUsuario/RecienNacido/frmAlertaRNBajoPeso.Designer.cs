@@ -254,7 +254,7 @@
             this.groupBox1.Size = new System.Drawing.Size(981, 437);
             this.groupBox1.TabIndex = 114;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar Recien Nacidos con Bajo Peso:";
+            this.groupBox1.Text = "Buscar Recién Nacidos con Bajo Peso:";
             // 
             // btnSalir
             // 
@@ -287,7 +287,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmAlertaRNBajoPeso";
-            this.Text = "Cuadro de alertas de recien nacidos con bajo peso";
+            this.Text = "Cuadro de alertas de recién nacidos con bajo peso";
             this.Load += new System.EventHandler(this.frmAlertaRNBajoPeso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaRN)).EndInit();
             this.groupBox1.ResumeLayout(false);

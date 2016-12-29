@@ -240,14 +240,14 @@
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column3.DataPropertyName = "Telefono";
-            this.Column3.HeaderText = "Telefono";
+            this.Column3.HeaderText = "Teléfono";
             this.Column3.Name = "Column3";
             this.Column3.Width = 85;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "Direccion";
-            this.Column4.HeaderText = "Direccion";
+            this.Column4.HeaderText = "Dirección";
             this.Column4.Name = "Column4";
             // 
             // btnSalir
@@ -285,7 +285,7 @@
             this.MaximumSize = new System.Drawing.Size(755, 685);
             this.Name = "frmAlertaGestanteBateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cuadro de Alertas en Bateria de Gestante:";
+            this.Text = "Cuadro de Alertas en Batería de Gestante:";
             this.Load += new System.EventHandler(this.frmAlertaGestanteBateria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

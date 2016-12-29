@@ -26,5 +26,10 @@ namespace CapaUsuario.Bateria
         {
 
         }
+
+        private void cbTipoAlerta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

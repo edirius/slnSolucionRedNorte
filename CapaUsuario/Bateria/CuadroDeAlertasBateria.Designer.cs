@@ -126,7 +126,7 @@
             this.cbTipoAlerta.FormattingEnabled = true;
             this.cbTipoAlerta.Items.AddRange(new object[] {
             "Gestantes sin fecha de tratamiento",
-            "Gestantes con sifilis",
+            "Gestantes con Sífilis",
             "Gestantes con VIH",
             "Gestanges con Orina Alta",
             "Gestantes sin examen de orina"});
@@ -134,6 +134,7 @@
             this.cbTipoAlerta.Name = "cbTipoAlerta";
             this.cbTipoAlerta.Size = new System.Drawing.Size(279, 26);
             this.cbTipoAlerta.TabIndex = 113;
+            this.cbTipoAlerta.SelectedIndexChanged += new System.EventHandler(this.cbTipoAlerta_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -151,7 +152,7 @@
             this.groupBox1.Size = new System.Drawing.Size(591, 90);
             this.groupBox1.TabIndex = 112;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Alertas en Bateria:";
+            this.groupBox1.Text = "Alertas en Batería:";
             // 
             // btnSalir
             // 
@@ -181,7 +182,7 @@
             this.Controls.Add(this.dgvAlertasBateria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CuadroDeAlertasBateria";
-            this.Text = "Cuadro de Alertas de Bateria";
+            this.Text = "Cuadro de Alertas de Batería";
             this.Load += new System.EventHandler(this.CuadroDeAlertasBateria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlertasBateria)).EndInit();
             this.groupBox1.ResumeLayout(false);
