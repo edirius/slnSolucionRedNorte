@@ -505,53 +505,53 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "GESTANTES SIN 1ER CONTROL EN BATERIA";
                                 OcultarGrids();
                                 dgvGestantesSinBateria.Visible = true;
-                                dgvGestantesSinBateria.Location = new Point(55, 91);
+                                dgvGestantesSinBateria.Location = new Point(55, 89);
                                 break;
                             case "Gestantes sin 2do control en bateria":
                                 lblTipoDeAlerta.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
                                 OcultarGrids();
                                 dgvGestantesSinBateria2.Visible = true;
-                                dgvGestantesSinBateria2.Location = new Point(55, 91);
+                                dgvGestantesSinBateria2.Location = new Point(55, 89);
                                 break;
                             case "Gestantes con anemia":
                                 lblTipoDeAlerta.Text = "GESTANTES CON ANEMIA";
                                 OcultarGrids();
                                 dgvGestantesConAnemia.Visible = true;
-                                dgvGestantesConAnemia.Location = new Point(55, 91);
+                                dgvGestantesConAnemia.Location = new Point(55, 89);
                                 break;
                             case "Gestantes sin tratamiento":
                                 lblTipoDeAlerta.Text = "GESTANTES SIN TRATAMIENTO";
                                 OcultarGrids();
                                 dgvGestantesSinTratamiento.Visible = true;
-                                dgvGestantesSinTratamiento.Location = new Point(55, 91);
+                                dgvGestantesSinTratamiento.Location = new Point(55, 89);
 
                                 break;
                             case "Gestantes con sifilis reactivo":
                                 lblTipoDeAlerta.Text = "GESTANTES CON SIFILIS REACTIVO";
                                 OcultarGrids();
                                 dgvGestantesSifilis.Visible = true;
-                                dgvGestantesSifilis.Location = new Point(55, 91);
+                                dgvGestantesSifilis.Location = new Point(55, 89);
 
                                 break;
                             case "Gestantes con VIH reactivo":
                                 lblTipoDeAlerta.Text = "GESTANTES CON VIH REACTIVO";
                                 OcultarGrids();
                                 dgvGestantesVIH.Visible = true;
-                                dgvGestantesVIH.Location = new Point(55, 91);
+                                dgvGestantesVIH.Location = new Point(55, 89);
 
                                 break;
                             case "Gestantes con infección urinaria":
                                 lblTipoDeAlerta.Text = "GESTANTES CON INFECCION URINARIA";
                                 OcultarGrids();
                                 dgvGestantesInfeccionUrinaria.Visible = true;
-                                dgvGestantesInfeccionUrinaria.Location = new Point(55, 91);
+                                dgvGestantesInfeccionUrinaria.Location = new Point(55, 89);
 
                                 break;
                             case "Gestantes sin examen de orina":
                                 lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ORINA";
                                 OcultarGrids();
                                 dgvGestantesSinExamenOrina.Visible = true;
-                                dgvGestantesSinExamenOrina.Location = new Point(55, 91);
+                                dgvGestantesSinExamenOrina.Location = new Point(55, 89);
                                 break;
                         }
                         break;
@@ -562,7 +562,7 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "GESTANTES QUE NO ACUDEN A SUS CITAS PRENATALES";
                                 OcultarGrids();
                                 dgvGestanteNoAcudeCitas.Visible = true;
-                                dgvGestanteNoAcudeCitas.Location = new Point(7, 91);
+                                dgvGestanteNoAcudeCitas.Location = new Point(20, 91);
                                 break;
                         }
                         break;
@@ -573,7 +573,7 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "GESTANTES CON PRESION ARTERIAL ELEVADA";
                                 OcultarGrids();
                                 dgvGestantePAalta.Visible = true;
-                                dgvGestantePAalta.Location = new Point(55, 91);
+                                dgvGestantePAalta.Location = new Point(55, 89);
                                 //
                                 break;
                         }
@@ -585,7 +585,7 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "RECIEN NACIDOS CON BAJO PESO";
                                 OcultarGrids();
                                 dgvRecienNacidosBajoPeso.Visible = true;
-                                dgvRecienNacidosBajoPeso.Location = new Point(7, 91);
+                                dgvRecienNacidosBajoPeso.Location = new Point(20, 91);
                                 //
                                 break;
                         }
@@ -597,14 +597,14 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "PUERPERA SIN CONTROL PUERPERIO";
                                 OcultarGrids();
                                 dgvPuerperaSinControl.Visible = true;
-                                dgvPuerperaSinControl.Location = new Point(55, 91);
+                                dgvPuerperaSinControl.Location = new Point(55, 89);
                                 //
                                 break;
                             case "Puerpera sin 2do control puerperio":
                                 lblTipoDeAlerta.Text = "PUERPERA SIN 2DO CONTROL PUERPERIO";
                                 OcultarGrids();
                                 dgvPuerperaSin2doControl.Visible = true;
-                                dgvPuerperaSin2doControl.Location = new Point(55, 91);
+                                dgvPuerperaSin2doControl.Location = new Point(55, 89);
                                 //
                                 break;
                         }
@@ -616,13 +616,13 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ECOGRAFIA";
                                 OcultarGrids();
                                 dgvEcografia.Visible = true;
-                                dgvEcografia.Location = new Point(55, 91);
+                                dgvEcografia.Location = new Point(55, 89);
                                 break;
                             case "Gestantes sin 2do examen de ecografia":
                                 lblTipoDeAlerta.Text = "GESTANTES 2DO SIN EXAMEN DE ECOGRAFIA";
                                 OcultarGrids();
                                 dgvEcografia2.Visible = true;
-                                dgvEcografia2.Location = new Point(55, 91);
+                                dgvEcografia2.Location = new Point(55, 89);
                                 break;
                         }
                         break;
@@ -633,13 +633,13 @@ namespace Alertas
                                 lblTipoDeAlerta.Text = "GESTANTES SIN EXAMEN DE ODONTOLOGIA";
                                 OcultarGrids();
                                 dgvOdontologia.Visible = true;
-                                dgvOdontologia.Location = new Point(55, 91);
+                                dgvOdontologia.Location = new Point(55, 89);
                                 break;
                             case "Gestantes sin 2do examen de odontologia":
                                 lblTipoDeAlerta.Text = "GESTANTES SIN 2DO EXAMEN DE ODONTOLOGIA";
                                 OcultarGrids();
                                 dgvOdontologia2.Visible = true;
-                                dgvOdontologia2.Location = new Point(55, 91);
+                                dgvOdontologia2.Location = new Point(55, 89);
                                 break;
                         }
                         break;
@@ -863,11 +863,11 @@ namespace Alertas
         {
             string Tiempo;
             Tiempo = DateTime.Now.Second.ToString();
-            if ((int.Parse(Tiempo) % 5) == 0)
+            if ((int.Parse(Tiempo) % 20) == 0)
             {
                 CargarTodosGrid();
                 MostrarNuevasGestantesConProblemas();
-
+                AlertaDeFechas();
             }
             else { }
         }
@@ -1018,6 +1018,33 @@ namespace Alertas
             notifyIcon1.Text = "GESTANTES SIN 2DO CONTROL EN BATERIA";
             mostrarAlertaSeleccionada(notifyIcon1.Text);
             SonidoAlerta();
+        }
+        void AlertaDeFechas()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Nombres", typeof(System.String));
+            dt.Columns.Add("DNI", typeof(System.String));
+            dt.Columns.Add("Telefono", typeof(System.String));
+            dt.Columns.Add("Direccion", typeof(System.String));
+            dt.Columns.Add("FechaBateria1", typeof(System.String));
+            foreach (DataGridViewRow rowGrid in dgvGestantesSinBateria.Rows)
+            {
+                DataRow row = dt.NewRow();
+                row["Nombres"] = Convert.ToString(rowGrid.Cells["NombresBateria"].Value);
+                row["DNI"] = Convert.ToString(rowGrid.Cells["DNIBateria"].Value);
+                row["Telefono"] = Convert.ToString(rowGrid.Cells["TelefonoBateria"].Value);
+                row["Direccion"] = Convert.ToString(rowGrid.Cells["DireccionBateria"].Value);
+                row["FechaBateria1"] = Convert.ToString(rowGrid.Cells["FechaBateria1"].Value);
+                dt.Rows.Add(row);
+            }
+            //dt.DefaultView.RowFilter = ("Contact='" + cbFiltrar.Text + "'");
+            dt.DefaultView.RowFilter = ("FechaBateria1 <='"+FechaActual.ToShortDateString()+"'");
+            dataGridView1.DataSource = dt.DefaultView;
+        }
+        DateTime FechaActual = DateTime.Now;
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            AlertaDeFechas();
         }
     }
 }

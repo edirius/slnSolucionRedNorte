@@ -24,7 +24,6 @@ namespace Monitoreo.EstablecimientoSalud
             InitializeComponent();
             
         }
-
         private void frmEstablecimientoSalud_Load(object sender, EventArgs e)
         {
             ConfiguracionInicial();
