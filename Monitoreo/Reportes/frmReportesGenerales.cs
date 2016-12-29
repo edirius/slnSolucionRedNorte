@@ -27,36 +27,33 @@ namespace Monitoreo.Reportes
 
         private void btnGestantes_Click(object sender, EventArgs e)
         {
-            ruta = "C:\\ReporteGestantes.xlsx";
-            OpenMicrosoftExcel(@ruta);
+            ruta = "C:\\Program Files (x86)\\EDIRIUS SOFT S.A.C\\SistemaMonitoreoGestantes\\ReporteGestantes.xlsx";
+            OpenMicrosoftExcel(ruta);
         }
 
         private void btnPuerperas_Click(object sender, EventArgs e)
         {
-            //ruta = directorio + "\\ReportePuerperas.xlsx";
-            ruta = "C:\\ReportePuerperas.xlsx";
-            OpenMicrosoftExcel(@ruta);
+            ruta = @directorio + "ReportePuerperas.xlsx";
+            OpenMicrosoftExcel(ruta);
         }
 
         private void btnVDGestantes_Click(object sender, EventArgs e)
         {
-            //ruta = directorio + "\\ReporteVDGestantes.xlsx";
-            ruta = "C:\\ReporteVDGestantes.xlsx";
-            OpenMicrosoftExcel(@ruta);
+            ruta = @directorio + "ReporteVDGestantes.xlsx";
+            OpenMicrosoftExcel(ruta);
         }
 
         private void btnVDPuerperas_Click(object sender, EventArgs e)
         {
-            //ruta = directorio + "\\ReporteVDPuerperas.xlsx";
-            ruta = "C:\\ReporteVDPuerperas.xlsx";
-            OpenMicrosoftExcel(@ruta);
+            ruta = @directorio + "ReporteVDPuerperas.xlsx";
+            OpenMicrosoftExcel(ruta);
         }
 
         static void OpenMicrosoftExcel(string f)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "EXCEL.EXE";
-            startInfo.Arguments = f;
+            startInfo.Arguments = @f;
             Process.Start(startInfo);
         }
     }
