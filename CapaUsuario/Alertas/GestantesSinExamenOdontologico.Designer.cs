@@ -51,7 +51,7 @@
             this.Controls.Add(this.CRVGestanteOdonto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestantesSinExamenOdontologico";
-            this.Text = "Reporte de Gestantes sin examen odontologico";
+            this.Text = "Reporte de Gestantes sin examen odontológico";
             this.ResumeLayout(false);
 
         }
