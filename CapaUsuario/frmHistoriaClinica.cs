@@ -384,6 +384,8 @@ namespace CapaUsuario
             txtEdad.Text = "";
             txtDNI.Text = "";
             txtNombreCompleto.Text = "";
+            txtApellidoMaterno.Text = "";
+            txtApellidoPaterno.Text = "";
 
             nudGestas.Value = 0;
             nudPartos.Value = 0;
@@ -801,6 +803,7 @@ namespace CapaUsuario
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             if  (IdtHistoriaClinica != "")
             {
                 CitaPreNatal.frmCitaPreNatal fCitaPrenatal = new CitaPreNatal.frmCitaPreNatal();
@@ -1091,8 +1094,6 @@ namespace CapaUsuario
                 }else
                     oHistoriaClinica.Hijosmuertos = Convert.ToInt16(nudHm.Text);
 
-                odt = oTG.ListarTerminoGestacionXCodigoHC(Codigo_Historia_Clinica, nombre, app, apm );
-
                 
 
                 if (fecha_reg.Date >= FPP.Date)
@@ -1101,6 +1102,8 @@ namespace CapaUsuario
                     mensaje = "No se puede guardar una fecha de registro mayor a la FPP.";
                     dtpFecha.Focus();
                 }
+
+                odt = oTG.ListarTerminoGestacionXCodigoHC(Codigo_Historia_Clinica, nombre, app, apm);
 
                 if (odt.Rows.Count > 0)
                 {
@@ -1119,7 +1122,18 @@ namespace CapaUsuario
                         }
                     }
                 }
+
+                odt = oTG.ListarHistoriaClinicaXPaciente(nombre, app, apm);
+
+                if (odt.Rows.Count > 0)
+                {
+                    completo = true;
+                    mensaje = "Paciente gestando, no se puede grabar un nuevo control del gestante hasta un dia despues del parto.";
+                    nudHm.Focus();
+                }
                 
+
+                /*
                 odt = oTG.ListarFPPXCodigoHC(Codigo_Historia_Clinica,nombre,app,apm);
                 if (odt.Rows.Count > 0) { 
                     FP = (DateTime)odt.Rows[0]["FECHA"];
@@ -1135,7 +1149,7 @@ namespace CapaUsuario
                         }
                     }
                 }
-                
+                */
 
 
 
@@ -1684,7 +1698,7 @@ namespace CapaUsuario
 
         private void buMorbilidad_Click(object sender, EventArgs e)
         {
-            if (Codigo_Historia_Clinica != null) {
+            if (Codigo_Historia_Clinica != "") {
 
                 frmMorbilidad fMorbilidad = new frmMorbilidad();
                 fMorbilidad.Codigo_Historia_Clinica = Codigo_Historia_Clinica;
@@ -1708,7 +1722,7 @@ namespace CapaUsuario
         private void buVisitaDomiciliaria_Click(object sender, EventArgs e)
         {
 
-            if (Codigo_Historia_Clinica != null)
+            if (Codigo_Historia_Clinica != "")
             {
                 VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria = new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdtHistoriaClinica);
                 fMantenimientoVisitaDomiciliaria.Archivado = Archivado;
@@ -1721,7 +1735,7 @@ namespace CapaUsuario
 
         private void btnTerminoGestacion_Click(object sender, EventArgs e)
         {
-            if (Codigo_Historia_Clinica != null)
+            if (Codigo_Historia_Clinica != "")
             {
                 TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdtHistoriaClinica);
                 fMantenimientoTerminoGestacion.Archivado = Archivado;
@@ -1733,7 +1747,7 @@ namespace CapaUsuario
 
         private void buControlPuerperio_Click(object sender, EventArgs e)
         {
-            if (Codigo_Historia_Clinica != null)
+            if (Codigo_Historia_Clinica != "")
             {
                 ControlPeuperio.frmMantenimientoControlPeuperio fMantenimientoControlPuerperio = new ControlPeuperio.frmMantenimientoControlPeuperio(IdtHistoriaClinica);
                 fMantenimientoControlPuerperio.Archivado = Archivado;
