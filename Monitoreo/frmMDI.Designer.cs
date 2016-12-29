@@ -36,10 +36,10 @@
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porMicroREDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.porEstablecimientoDeSaludToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importaciónDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -104,11 +104,18 @@
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // generalesToolStripMenuItem
+            // 
+            this.generalesToolStripMenuItem.Name = "generalesToolStripMenuItem";
+            this.generalesToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.generalesToolStripMenuItem.Text = "Generales";
+            this.generalesToolStripMenuItem.Click += new System.EventHandler(this.generalesToolStripMenuItem_Click);
+            // 
             // porMicroREDToolStripMenuItem
             // 
             this.porMicroREDToolStripMenuItem.Name = "porMicroREDToolStripMenuItem";
             this.porMicroREDToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.porMicroREDToolStripMenuItem.Text = "Por Micro RED";
+            this.porMicroREDToolStripMenuItem.Text = "Por Micro Red";
             this.porMicroREDToolStripMenuItem.Click += new System.EventHandler(this.porMicroREDToolStripMenuItem_Click);
             // 
             // porEstablecimientoDeSaludToolStripMenuItem
@@ -124,13 +131,6 @@
             this.importaciónDeDatosToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.importaciónDeDatosToolStripMenuItem.Text = "Importación de datos";
             this.importaciónDeDatosToolStripMenuItem.Click += new System.EventHandler(this.importaciónDeDatosToolStripMenuItem_Click);
-            // 
-            // generalesToolStripMenuItem
-            // 
-            this.generalesToolStripMenuItem.Name = "generalesToolStripMenuItem";
-            this.generalesToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.generalesToolStripMenuItem.Text = "Generales";
-            this.generalesToolStripMenuItem.Click += new System.EventHandler(this.generalesToolStripMenuItem_Click);
             // 
             // frmMDI
             // 

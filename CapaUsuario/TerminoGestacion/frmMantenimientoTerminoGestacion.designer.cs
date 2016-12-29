@@ -191,7 +191,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 18);
             this.label5.TabIndex = 141;
-            this.label5.Text = "Personal que Atendio :";
+            this.label5.Text = "Personal que Atendió :";
             // 
             // dtpFecha
             // 
@@ -346,7 +346,7 @@
             this.rbtMultiple.Name = "rbtMultiple";
             this.rbtMultiple.Size = new System.Drawing.Size(139, 52);
             this.rbtMultiple.TabIndex = 1;
-            this.rbtMultiple.Text = "Multiple";
+            this.rbtMultiple.Text = "Múltiple";
             this.rbtMultiple.UseVisualStyleBackColor = true;
             this.rbtMultiple.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtMultiple_KeyPress);
             // 
@@ -363,7 +363,7 @@
             this.rbtUnico.Size = new System.Drawing.Size(139, 52);
             this.rbtUnico.TabIndex = 0;
             this.rbtUnico.TabStop = true;
-            this.rbtUnico.Text = "Unico";
+            this.rbtUnico.Text = "Único";
             this.rbtUnico.UseVisualStyleBackColor = true;
             this.rbtUnico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtUnico_KeyPress);
             // 
@@ -430,7 +430,7 @@
             this.rbtInstitucion.Size = new System.Drawing.Size(139, 51);
             this.rbtInstitucion.TabIndex = 0;
             this.rbtInstitucion.TabStop = true;
-            this.rbtInstitucion.Text = "Institucion";
+            this.rbtInstitucion.Text = "Institución";
             this.rbtInstitucion.UseVisualStyleBackColor = true;
             this.rbtInstitucion.CheckedChanged += new System.EventHandler(this.rbtInstitucional_CheckedChanged);
             this.rbtInstitucion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rbtInstitucional_KeyPress);
@@ -530,7 +530,7 @@
             this.rbtEutosico.Size = new System.Drawing.Size(240, 30);
             this.rbtEutosico.TabIndex = 117;
             this.rbtEutosico.TabStop = true;
-            this.rbtEutosico.Text = "EUTOSICO";
+            this.rbtEutosico.Text = "EUTOCICO";
             this.rbtEutosico.UseVisualStyleBackColor = true;
             this.rbtEutosico.CheckedChanged += new System.EventHandler(this.rbtEutosico_CheckedChanged);
             // 

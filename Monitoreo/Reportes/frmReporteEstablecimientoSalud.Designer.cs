@@ -38,9 +38,6 @@
             this.cboMes = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvEstablecimientoSalud = new System.Windows.Forms.DataGridView();
-            this.idtestablecimientosalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.establecimientosalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGestantesNominal = new System.Windows.Forms.Button();
             this.btnReporObstetras = new System.Windows.Forms.Button();
@@ -62,6 +59,9 @@
             this.btnGestantesSinExamenOrina = new System.Windows.Forms.Button();
             this.btnGestantesSinControlPuerperio = new System.Windows.Forms.Button();
             this.btnGestantesSinCita = new System.Windows.Forms.Button();
+            this.idtestablecimientosalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.establecimientosalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstablecimientoSalud)).BeginInit();
@@ -99,9 +99,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 119;
-            this.label3.Text = "Micro RED";
+            this.label3.Text = "Micro Red";
             // 
             // cboMicroRED
             // 
@@ -206,25 +206,6 @@
             this.dgvEstablecimientoSalud.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstablecimientoSalud_CellClick);
             this.dgvEstablecimientoSalud.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEstablecimientoSalud_CellContentClick);
             // 
-            // idtestablecimientosalud
-            // 
-            this.idtestablecimientosalud.HeaderText = "idtestablecimientosalud";
-            this.idtestablecimientosalud.Name = "idtestablecimientosalud";
-            this.idtestablecimientosalud.ReadOnly = true;
-            this.idtestablecimientosalud.Visible = false;
-            // 
-            // establecimientosalud
-            // 
-            this.establecimientosalud.HeaderText = "Establecimiento de Salud";
-            this.establecimientosalud.Name = "establecimientosalud";
-            this.establecimientosalud.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -301,7 +282,7 @@
             this.btnTranseuntes.Name = "btnTranseuntes";
             this.btnTranseuntes.Size = new System.Drawing.Size(115, 65);
             this.btnTranseuntes.TabIndex = 116;
-            this.btnTranseuntes.Text = "Transeuntes";
+            this.btnTranseuntes.Text = "Transeúntes";
             this.btnTranseuntes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTranseuntes.UseVisualStyleBackColor = false;
             // 
@@ -335,7 +316,7 @@
             this.btnRNBajoPeso.Name = "btnRNBajoPeso";
             this.btnRNBajoPeso.Size = new System.Drawing.Size(115, 65);
             this.btnRNBajoPeso.TabIndex = 120;
-            this.btnRNBajoPeso.Text = "Recien Nacidos con Bajo Peso";
+            this.btnRNBajoPeso.Text = "Recién Nacidos con Bajo Peso";
             this.btnRNBajoPeso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRNBajoPeso.UseVisualStyleBackColor = false;
             // 
@@ -453,7 +434,7 @@
             this.btnGestantesPresionAlta.Name = "btnGestantesPresionAlta";
             this.btnGestantesPresionAlta.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesPresionAlta.TabIndex = 121;
-            this.btnGestantesPresionAlta.Text = "Gestantes con Presion Arterial Elevada";
+            this.btnGestantesPresionAlta.Text = "Gestantes con Presión Arterial Elevada";
             this.btnGestantesPresionAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesPresionAlta.UseVisualStyleBackColor = false;
             // 
@@ -487,7 +468,7 @@
             this.btnGestantesConSifilis.Name = "btnGestantesConSifilis";
             this.btnGestantesConSifilis.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesConSifilis.TabIndex = 122;
-            this.btnGestantesConSifilis.Text = "Gestantes con Sifilis";
+            this.btnGestantesConSifilis.Text = "Gestantes con Sífilis";
             this.btnGestantesConSifilis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConSifilis.UseVisualStyleBackColor = false;
             // 
@@ -555,7 +536,7 @@
             this.btnGestantesSinBateria.Name = "btnGestantesSinBateria";
             this.btnGestantesSinBateria.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesSinBateria.TabIndex = 127;
-            this.btnGestantesSinBateria.Text = "Gestantes sin Bateria";
+            this.btnGestantesSinBateria.Text = "Gestantes sin Batería";
             this.btnGestantesSinBateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinBateria.UseVisualStyleBackColor = false;
             // 
@@ -610,6 +591,25 @@
             this.btnGestantesSinCita.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinCita.UseVisualStyleBackColor = false;
             // 
+            // idtestablecimientosalud
+            // 
+            this.idtestablecimientosalud.HeaderText = "idtestablecimientosalud";
+            this.idtestablecimientosalud.Name = "idtestablecimientosalud";
+            this.idtestablecimientosalud.ReadOnly = true;
+            this.idtestablecimientosalud.Visible = false;
+            // 
+            // establecimientosalud
+            // 
+            this.establecimientosalud.HeaderText = "Establecimiento de Salud";
+            this.establecimientosalud.Name = "establecimientosalud";
+            this.establecimientosalud.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
             // frmReporteEstablecimientoSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,9 +647,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboMicroRED;
         private System.Windows.Forms.DataGridView dgvEstablecimientoSalud;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtestablecimientosalud;
-        private System.Windows.Forms.DataGridViewTextBoxColumn establecimientosalud;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnGestantesNominal;
         private System.Windows.Forms.Button btnReporObstetras;
@@ -671,5 +668,8 @@
         private System.Windows.Forms.Button btnGestantesSinExamenOrina;
         private System.Windows.Forms.Button btnGestantesSinControlPuerperio;
         private System.Windows.Forms.Button btnGestantesSinCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtestablecimientosalud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn establecimientosalud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
     }
 }

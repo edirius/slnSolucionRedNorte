@@ -87,7 +87,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 18);
             this.label6.TabIndex = 111;
-            this.label6.Text = "Direccion :";
+            this.label6.Text = "Dirección :";
             // 
             // txtDireccion
             // 
@@ -235,7 +235,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(131, 18);
             this.label7.TabIndex = 116;
-            this.label7.Text = "Titulo Profesional :";
+            this.label7.Text = "Título Profesional :";
             // 
             // txtTituloProfesional
             // 

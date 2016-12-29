@@ -393,7 +393,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 18);
             this.label6.TabIndex = 149;
-            this.label6.Text = "Presion Arterial :";
+            this.label6.Text = "Presión Arterial :";
             // 
             // txtDetalle
             // 

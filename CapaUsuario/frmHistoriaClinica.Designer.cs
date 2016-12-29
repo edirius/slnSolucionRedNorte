@@ -511,7 +511,7 @@
             this.buRegistroBateria.Name = "buRegistroBateria";
             this.buRegistroBateria.Size = new System.Drawing.Size(115, 68);
             this.buRegistroBateria.TabIndex = 35;
-            this.buRegistroBateria.Text = "&Registro Bateria";
+            this.buRegistroBateria.Text = "&Registro Batería";
             this.buRegistroBateria.UseVisualStyleBackColor = false;
             this.buRegistroBateria.Click += new System.EventHandler(this.button3_Click);
             this.buRegistroBateria.MouseEnter += new System.EventHandler(this.buRegistroBateria_MouseEnter);
@@ -549,7 +549,7 @@
             this.btnRecienNacido.Name = "btnRecienNacido";
             this.btnRecienNacido.Size = new System.Drawing.Size(115, 68);
             this.btnRecienNacido.TabIndex = 39;
-            this.btnRecienNacido.Text = "A&tención Recien Nacido";
+            this.btnRecienNacido.Text = "A&tención Recién Nacido";
             this.btnRecienNacido.UseVisualStyleBackColor = false;
             this.btnRecienNacido.Click += new System.EventHandler(this.btnRecienNacido_Click);
             this.btnRecienNacido.MouseEnter += new System.EventHandler(this.btnRecienNacido_MouseEnter);
@@ -587,7 +587,7 @@
             this.buControlPuerperio.Name = "buControlPuerperio";
             this.buControlPuerperio.Size = new System.Drawing.Size(115, 68);
             this.buControlPuerperio.TabIndex = 38;
-            this.buControlPuerperio.Text = "&Control Puerperio";
+            this.buControlPuerperio.Text = "&Control Puérperio";
             this.buControlPuerperio.UseVisualStyleBackColor = false;
             this.buControlPuerperio.Click += new System.EventHandler(this.buControlPuerperio_Click);
             this.buControlPuerperio.MouseEnter += new System.EventHandler(this.buControlPuerperio_MouseEnter);
@@ -875,7 +875,7 @@
             this.cbTranseunte.Name = "cbTranseunte";
             this.cbTranseunte.Size = new System.Drawing.Size(101, 22);
             this.cbTranseunte.TabIndex = 25;
-            this.cbTranseunte.Text = "Transeunte";
+            this.cbTranseunte.Text = "Transeúnte";
             this.cbTranseunte.UseVisualStyleBackColor = true;
             this.cbTranseunte.CheckedChanged += new System.EventHandler(this.cbTranseunte_CheckedChanged);
             this.cbTranseunte.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbTranseunte_KeyPress_2);
@@ -945,7 +945,7 @@
             this.gbFormula.Size = new System.Drawing.Size(126, 218);
             this.gbFormula.TabIndex = 2;
             this.gbFormula.TabStop = false;
-            this.gbFormula.Text = "Formula Obstetrica:";
+            this.gbFormula.Text = "Formula Obstétrica:";
             // 
             // label18
             // 
@@ -1187,7 +1187,7 @@
             this.gbOdontologico.Size = new System.Drawing.Size(285, 176);
             this.gbOdontologico.TabIndex = 10;
             this.gbOdontologico.TabStop = false;
-            this.gbOdontologico.Text = "Atención en el Servicio Odontologico:";
+            this.gbOdontologico.Text = "Atención del Servicio Odontológico:";
             // 
             // dgvOdontologia
             // 
@@ -1248,7 +1248,7 @@
             this.gbPrenatal.Size = new System.Drawing.Size(227, 126);
             this.gbPrenatal.TabIndex = 32;
             this.gbPrenatal.TabStop = false;
-            this.gbPrenatal.Text = "Primera atencion pre natal:";
+            this.gbPrenatal.Text = "Primera atención pre-natal:";
             // 
             // groupBox10
             // 
@@ -1363,7 +1363,7 @@
             this.gbEcografia.Size = new System.Drawing.Size(428, 176);
             this.gbEcografia.TabIndex = 14;
             this.gbEcografia.TabStop = false;
-            this.gbEcografia.Text = "Ecografia Obstetrica de gestante:";
+            this.gbEcografia.Text = "Ecografía Obstétrica del Gestante:";
             // 
             // groupBox11
             // 
@@ -1420,7 +1420,7 @@
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(52, 18);
             this.label25.TabIndex = 18;
-            this.label25.Text = "Dia(s):";
+            this.label25.Text = "Día(s):";
             // 
             // label14
             // 

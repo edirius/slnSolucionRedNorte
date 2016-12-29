@@ -37,9 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGestantesNominal = new System.Windows.Forms.Button();
             this.dgvMicroRED = new System.Windows.Forms.DataGridView();
-            this.idtmicrored = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnGestantesFechaPP = new System.Windows.Forms.Button();
@@ -60,6 +57,9 @@
             this.btnGestantesSinExamenOrina = new System.Windows.Forms.Button();
             this.btnGestantesSinControlPuerperio = new System.Windows.Forms.Button();
             this.btnGestantesSinCita = new System.Windows.Forms.Button();
+            this.idtmicrored = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMicroRED)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -193,7 +193,7 @@
             this.dgvMicroRED.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idtmicrored,
             this.microred,
-            this.direccion});
+            this.dirección});
             this.dgvMicroRED.Location = new System.Drawing.Point(6, 19);
             this.dgvMicroRED.Name = "dgvMicroRED";
             this.dgvMicroRED.RowHeadersVisible = false;
@@ -202,25 +202,6 @@
             this.dgvMicroRED.TabIndex = 111;
             this.dgvMicroRED.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellClick);
             this.dgvMicroRED.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMicroRED_CellContentClick);
-            // 
-            // idtmicrored
-            // 
-            this.idtmicrored.HeaderText = "idtmicrored";
-            this.idtmicrored.Name = "idtmicrored";
-            this.idtmicrored.ReadOnly = true;
-            this.idtmicrored.Visible = false;
-            // 
-            // microred
-            // 
-            this.microred.HeaderText = "Micro RED";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -235,7 +216,7 @@
             this.groupBox1.Size = new System.Drawing.Size(508, 249);
             this.groupBox1.TabIndex = 112;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Micro RED";
+            this.groupBox1.Text = "Micro Red";
             // 
             // tableLayoutPanel1
             // 
@@ -307,7 +288,7 @@
             this.btnTranseuntes.Name = "btnTranseuntes";
             this.btnTranseuntes.Size = new System.Drawing.Size(115, 65);
             this.btnTranseuntes.TabIndex = 116;
-            this.btnTranseuntes.Text = "Transeuntes";
+            this.btnTranseuntes.Text = "Transeúntes";
             this.btnTranseuntes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTranseuntes.UseVisualStyleBackColor = false;
             this.btnTranseuntes.Click += new System.EventHandler(this.btnTranseuntes_Click);
@@ -370,7 +351,7 @@
             this.btnRNBajoPeso.Name = "btnRNBajoPeso";
             this.btnRNBajoPeso.Size = new System.Drawing.Size(115, 65);
             this.btnRNBajoPeso.TabIndex = 120;
-            this.btnRNBajoPeso.Text = "Recien Nacidos con Bajo Peso";
+            this.btnRNBajoPeso.Text = "Recién Nacidos con Bajo Peso";
             this.btnRNBajoPeso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnRNBajoPeso.UseVisualStyleBackColor = false;
             this.btnRNBajoPeso.Click += new System.EventHandler(this.btnRNBajoPeso_Click);
@@ -438,7 +419,7 @@
             this.btnGestantesPresionAlta.Name = "btnGestantesPresionAlta";
             this.btnGestantesPresionAlta.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesPresionAlta.TabIndex = 121;
-            this.btnGestantesPresionAlta.Text = "Gestantes con Presion Arterial Elevada";
+            this.btnGestantesPresionAlta.Text = "Gestantes con Presión Arterial Elevada";
             this.btnGestantesPresionAlta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesPresionAlta.UseVisualStyleBackColor = false;
             this.btnGestantesPresionAlta.Click += new System.EventHandler(this.btnGestantesPresionAlta_Click);
@@ -474,7 +455,7 @@
             this.btnGestantesConSifilis.Name = "btnGestantesConSifilis";
             this.btnGestantesConSifilis.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesConSifilis.TabIndex = 122;
-            this.btnGestantesConSifilis.Text = "Gestantes con Sifilis";
+            this.btnGestantesConSifilis.Text = "Gestantes con Sífilis";
             this.btnGestantesConSifilis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesConSifilis.UseVisualStyleBackColor = false;
             this.btnGestantesConSifilis.Click += new System.EventHandler(this.btnGestantesConSifilis_Click);
@@ -546,7 +527,7 @@
             this.btnGestantesSinBateria.Name = "btnGestantesSinBateria";
             this.btnGestantesSinBateria.Size = new System.Drawing.Size(121, 64);
             this.btnGestantesSinBateria.TabIndex = 127;
-            this.btnGestantesSinBateria.Text = "Gestantes sin Bateria";
+            this.btnGestantesSinBateria.Text = "Gestantes sin Batería";
             this.btnGestantesSinBateria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGestantesSinBateria.UseVisualStyleBackColor = false;
             this.btnGestantesSinBateria.Click += new System.EventHandler(this.btnGestantesSinBateria_Click);
@@ -605,6 +586,25 @@
             this.btnGestantesSinCita.UseVisualStyleBackColor = false;
             this.btnGestantesSinCita.Click += new System.EventHandler(this.btnGestantesSinCita_Click);
             // 
+            // idtmicrored
+            // 
+            this.idtmicrored.HeaderText = "idtmicrored";
+            this.idtmicrored.Name = "idtmicrored";
+            this.idtmicrored.ReadOnly = true;
+            this.idtmicrored.Visible = false;
+            // 
+            // microred
+            // 
+            this.microred.HeaderText = "Micro Red";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            // 
+            // dirección
+            // 
+            this.dirección.HeaderText = "Direccion";
+            this.dirección.Name = "dirección";
+            this.dirección.ReadOnly = true;
+            // 
             // frmReporteMicroRED
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,9 +643,6 @@
         private System.Windows.Forms.DataGridView dgvMicroRED;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtmicrored;
-        private System.Windows.Forms.DataGridViewTextBoxColumn microred;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.Button btnGestantesFechaPP;
         private System.Windows.Forms.Button btnGestantesDadoParto;
         private System.Windows.Forms.Button btnTranseuntes;
@@ -664,5 +661,8 @@
         private System.Windows.Forms.Button btnGestantesSinCita;
         private System.Windows.Forms.Button btnGestantesSinControlPuerperio;
         private System.Windows.Forms.Button btnGestantesSin2ControlPuerperio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtmicrored;
+        private System.Windows.Forms.DataGridViewTextBoxColumn microred;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dirección;
     }
 }

@@ -80,7 +80,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 111;
-            this.label6.Text = "Direccion :";
+            this.label6.Text = "Dirección :";
             // 
             // txtDireccion
             // 

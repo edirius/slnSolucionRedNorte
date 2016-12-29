@@ -35,12 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListarEstablecimiento = new System.Windows.Forms.DataGridView();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.renaes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
@@ -55,6 +49,12 @@
             this.txtContenido = new System.Windows.Forms.TextBox();
             this.cbCampo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.microred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.renaes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarEstablecimiento)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDireccion.Location = new System.Drawing.Point(166, 127);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(466, 24);
             this.txtDireccion.TabIndex = 2;
@@ -76,12 +76,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(75, 132);
+            this.label2.Location = new System.Drawing.Point(63, 132);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 69;
-            this.label2.Text = "Direccion:";
+            this.label2.Text = "Dirección:";
             // 
             // label1
             // 
@@ -89,12 +89,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(81, 55);
+            this.label1.Location = new System.Drawing.Point(57, 55);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 67;
-            this.label1.Text = "Microred:";
+            this.label1.Text = "Micro Red:";
             // 
             // dgvListarEstablecimiento
             // 
@@ -119,7 +119,7 @@
             this.renaes});
             this.dgvListarEstablecimiento.GridColor = System.Drawing.Color.White;
             this.dgvListarEstablecimiento.Location = new System.Drawing.Point(21, 245);
-            this.dgvListarEstablecimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListarEstablecimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListarEstablecimiento.Name = "dgvListarEstablecimiento";
             this.dgvListarEstablecimiento.RowHeadersVisible = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -129,51 +129,6 @@
             this.dgvListarEstablecimiento.Size = new System.Drawing.Size(674, 316);
             this.dgvListarEstablecimiento.TabIndex = 66;
             this.dgvListarEstablecimiento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarEstablecimiento_CellClick);
-            // 
-            // Numero
-            // 
-            this.Numero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Numero.DataPropertyName = "Nro";
-            this.Numero.HeaderText = "N°";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Width = 60;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // microred
-            // 
-            this.microred.DataPropertyName = "Microred";
-            this.microred.HeaderText = "Microred";
-            this.microred.Name = "microred";
-            this.microred.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "Descripcion";
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "Direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // renaes
-            // 
-            this.renaes.DataPropertyName = "RENAES";
-            this.renaes.HeaderText = "RENAES";
-            this.renaes.Name = "renaes";
-            this.renaes.ReadOnly = true;
             // 
             // tableLayoutPanel1
             // 
@@ -190,7 +145,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnInsertar, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnNuevo, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 569);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -207,7 +162,7 @@
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Location = new System.Drawing.Point(452, 4);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(218, 53);
             this.btnSalir.TabIndex = 47;
@@ -225,7 +180,7 @@
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
             this.btnInsertar.Location = new System.Drawing.Point(4, 4);
-            this.btnInsertar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInsertar.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(216, 53);
             this.btnInsertar.TabIndex = 8;
@@ -243,7 +198,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Location = new System.Drawing.Point(228, 4);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(216, 53);
             this.btnNuevo.TabIndex = 11;
@@ -257,7 +212,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(166, 17);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(150, 24);
             this.txtCodigo.TabIndex = 64;
@@ -268,7 +223,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(93, 21);
+            this.label3.Location = new System.Drawing.Point(78, 21);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 18);
@@ -282,7 +237,7 @@
             this.cbMicrored.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMicrored.FormattingEnabled = true;
             this.cbMicrored.Location = new System.Drawing.Point(166, 51);
-            this.cbMicrored.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMicrored.Margin = new System.Windows.Forms.Padding(4);
             this.cbMicrored.Name = "cbMicrored";
             this.cbMicrored.Size = new System.Drawing.Size(317, 26);
             this.cbMicrored.TabIndex = 0;
@@ -293,7 +248,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescripcion.Location = new System.Drawing.Point(166, 89);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(466, 24);
             this.txtDescripcion.TabIndex = 1;
@@ -305,19 +260,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(58, 93);
+            this.label4.Location = new System.Drawing.Point(47, 93);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 74;
-            this.label4.Text = "Descripcion:";
+            this.label4.Text = "Descripción:";
             // 
             // txtRenaes
             // 
             this.txtRenaes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRenaes.Location = new System.Drawing.Point(166, 163);
-            this.txtRenaes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRenaes.Margin = new System.Windows.Forms.Padding(4);
             this.txtRenaes.Name = "txtRenaes";
             this.txtRenaes.Size = new System.Drawing.Size(150, 24);
             this.txtRenaes.TabIndex = 3;
@@ -342,7 +297,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContenido.Location = new System.Drawing.Point(308, 210);
-            this.txtContenido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContenido.Margin = new System.Windows.Forms.Padding(4);
             this.txtContenido.Name = "txtContenido";
             this.txtContenido.Size = new System.Drawing.Size(385, 24);
             this.txtContenido.TabIndex = 5;
@@ -362,7 +317,7 @@
             "Direccion",
             "RENAES"});
             this.cbCampo.Location = new System.Drawing.Point(122, 209);
-            this.cbCampo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCampo.Margin = new System.Windows.Forms.Padding(4);
             this.cbCampo.Name = "cbCampo";
             this.cbCampo.Size = new System.Drawing.Size(174, 26);
             this.cbCampo.TabIndex = 79;
@@ -379,6 +334,51 @@
             this.label6.Size = new System.Drawing.Size(85, 18);
             this.label6.TabIndex = 80;
             this.label6.Text = "Buscar por:";
+            // 
+            // Numero
+            // 
+            this.Numero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Numero.DataPropertyName = "Nro";
+            this.Numero.HeaderText = "N°";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 60;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
+            // 
+            // microred
+            // 
+            this.microred.DataPropertyName = "Microred";
+            this.microred.HeaderText = "Micro Red";
+            this.microred.Name = "microred";
+            this.microred.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "Descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "Direccion";
+            this.direccion.HeaderText = "Dirección";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // renaes
+            // 
+            this.renaes.DataPropertyName = "RENAES";
+            this.renaes.HeaderText = "RENAES";
+            this.renaes.Name = "renaes";
+            this.renaes.ReadOnly = true;
             // 
             // frmEstablecimientoSalud
             // 
@@ -404,7 +404,7 @@
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEstablecimientoSalud";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento de Establecimientos de Salud";

@@ -762,7 +762,7 @@
             this.sifilis.DataPropertyName = "sifilis";
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sifilis.DefaultCellStyle = dataGridViewCellStyle8;
-            this.sifilis.HeaderText = "Examen Sifilis";
+            this.sifilis.HeaderText = "Examen Sífilis";
             this.sifilis.Name = "sifilis";
             this.sifilis.ReadOnly = true;
             this.sifilis.Width = 110;
