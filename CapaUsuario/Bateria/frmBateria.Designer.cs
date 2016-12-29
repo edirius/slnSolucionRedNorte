@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,6 +44,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBateria));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFechaTratamiento = new System.Windows.Forms.TextBox();
             this.dtpFechaTratamiento = new System.Windows.Forms.DateTimePicker();
@@ -69,6 +69,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCodigoBateria = new System.Windows.Forms.TextBox();
             this.dgvListaBateria = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hemoglobina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sifilis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.glucosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblMensajeTratamiento = new System.Windows.Forms.Label();
@@ -85,17 +96,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hemoglobina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sifilis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.glucosa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechatratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOrina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGlucosa)).BeginInit();
@@ -136,7 +136,7 @@
             this.groupBox1.Size = new System.Drawing.Size(873, 199);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos bateria";
+            this.groupBox1.Text = "Datos batería";
             // 
             // txtFechaTratamiento
             // 
@@ -380,7 +380,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 18);
             this.label4.TabIndex = 87;
-            this.label4.Text = "Examen de Sifilis:";
+            this.label4.Text = "Examen de Sífilis:";
             // 
             // label8
             // 
@@ -476,6 +476,123 @@
             this.dgvListaBateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaBateria_CellClick_1);
             this.dgvListaBateria.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaBateria_CellFormatting);
             this.dgvListaBateria.SelectionChanged += new System.EventHandler(this.dgvListaBateria_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idtbateria";
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.HeaderText = "Codigo Bateria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idthistoriaclinica";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column2.HeaderText = "Codigo Historia";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column3.DataPropertyName = "fecha";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column3.HeaderText = "Fecha Examen";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 83;
+            // 
+            // hemoglobina
+            // 
+            this.hemoglobina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.hemoglobina.DataPropertyName = "hemoglobina";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hemoglobina.DefaultCellStyle = dataGridViewCellStyle6;
+            this.hemoglobina.HeaderText = "Examen Hemo- globina";
+            this.hemoglobina.Name = "hemoglobina";
+            this.hemoglobina.ReadOnly = true;
+            this.hemoglobina.Width = 70;
+            // 
+            // vih
+            // 
+            this.vih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.vih.DataPropertyName = "vih";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vih.DefaultCellStyle = dataGridViewCellStyle7;
+            this.vih.HeaderText = "Examen VIH";
+            this.vih.Name = "vih";
+            this.vih.ReadOnly = true;
+            this.vih.Width = 110;
+            // 
+            // sifilis
+            // 
+            this.sifilis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sifilis.DataPropertyName = "sifilis";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sifilis.DefaultCellStyle = dataGridViewCellStyle8;
+            this.sifilis.HeaderText = "Examen Sífilis";
+            this.sifilis.Name = "sifilis";
+            this.sifilis.ReadOnly = true;
+            this.sifilis.Width = 110;
+            // 
+            // glucosa
+            // 
+            this.glucosa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.glucosa.DataPropertyName = "glucosa";
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.glucosa.DefaultCellStyle = dataGridViewCellStyle9;
+            this.glucosa.HeaderText = "Examen de Glucosa";
+            this.glucosa.Name = "glucosa";
+            this.glucosa.ReadOnly = true;
+            this.glucosa.Width = 80;
+            // 
+            // orina
+            // 
+            this.orina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.orina.DataPropertyName = "orina";
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orina.DefaultCellStyle = dataGridViewCellStyle10;
+            this.orina.HeaderText = "Examen de Orina";
+            this.orina.Name = "orina";
+            this.orina.ReadOnly = true;
+            this.orina.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column9.DataPropertyName = "fechaexamenorina";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Column9.HeaderText = "Fecha Examen Orina";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 85;
+            // 
+            // fechatratamiento
+            // 
+            this.fechatratamiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.fechatratamiento.DataPropertyName = "fechatratamiento";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechatratamiento.DefaultCellStyle = dataGridViewCellStyle12;
+            this.fechatratamiento.HeaderText = "Fecha de Tratamien- to";
+            this.fechatratamiento.Name = "fechatratamiento";
+            this.fechatratamiento.ReadOnly = true;
+            this.fechatratamiento.Width = 85;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Nombres";
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Column4.HeaderText = "Nombre de la Obstetra";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // timer
             // 
@@ -702,123 +819,6 @@
             this.groupBox3.TabIndex = 106;
             this.groupBox3.TabStop = false;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idtbateria";
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.HeaderText = "Codigo Bateria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "idthistoriaclinica";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column2.HeaderText = "Codigo Historia";
-            this.Column2.Name = "Column2";
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column3.DataPropertyName = "fecha";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column3.HeaderText = "Fecha Examen";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 83;
-            // 
-            // hemoglobina
-            // 
-            this.hemoglobina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.hemoglobina.DataPropertyName = "hemoglobina";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hemoglobina.DefaultCellStyle = dataGridViewCellStyle6;
-            this.hemoglobina.HeaderText = "Examen Hemo- globina";
-            this.hemoglobina.Name = "hemoglobina";
-            this.hemoglobina.ReadOnly = true;
-            this.hemoglobina.Width = 70;
-            // 
-            // vih
-            // 
-            this.vih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.vih.DataPropertyName = "vih";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vih.DefaultCellStyle = dataGridViewCellStyle7;
-            this.vih.HeaderText = "Examen VIH";
-            this.vih.Name = "vih";
-            this.vih.ReadOnly = true;
-            this.vih.Width = 110;
-            // 
-            // sifilis
-            // 
-            this.sifilis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sifilis.DataPropertyName = "sifilis";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sifilis.DefaultCellStyle = dataGridViewCellStyle8;
-            this.sifilis.HeaderText = "Examen Sífilis";
-            this.sifilis.Name = "sifilis";
-            this.sifilis.ReadOnly = true;
-            this.sifilis.Width = 110;
-            // 
-            // glucosa
-            // 
-            this.glucosa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.glucosa.DataPropertyName = "glucosa";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.glucosa.DefaultCellStyle = dataGridViewCellStyle9;
-            this.glucosa.HeaderText = "Examen de Glucosa";
-            this.glucosa.Name = "glucosa";
-            this.glucosa.ReadOnly = true;
-            this.glucosa.Width = 80;
-            // 
-            // orina
-            // 
-            this.orina.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.orina.DataPropertyName = "orina";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orina.DefaultCellStyle = dataGridViewCellStyle10;
-            this.orina.HeaderText = "Examen de Orina";
-            this.orina.Name = "orina";
-            this.orina.ReadOnly = true;
-            this.orina.Width = 80;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Column9.DataPropertyName = "fechaexamenorina";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column9.HeaderText = "Fecha Examen Orina";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 85;
-            // 
-            // fechatratamiento
-            // 
-            this.fechatratamiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.fechatratamiento.DataPropertyName = "fechatratamiento";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechatratamiento.DefaultCellStyle = dataGridViewCellStyle12;
-            this.fechatratamiento.HeaderText = "Fecha de Tratamien- to";
-            this.fechatratamiento.Name = "fechatratamiento";
-            this.fechatratamiento.ReadOnly = true;
-            this.fechatratamiento.Width = 85;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Nombres";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Column4.HeaderText = "Nombre de la Obstetra";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
             // frmBateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -837,7 +837,7 @@
             this.MaximizeBox = false;
             this.Name = "frmBateria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registro de Bateria";
+            this.Text = "Registro de Batería";
             this.Load += new System.EventHandler(this.frmBateria_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
