@@ -42,6 +42,7 @@
             this.CRVGestanteOdonto.Name = "CRVGestanteOdonto";
             this.CRVGestanteOdonto.Size = new System.Drawing.Size(991, 535);
             this.CRVGestanteOdonto.TabIndex = 1;
+            this.CRVGestanteOdonto.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // GestantesSinExamenOdontologico
             // 
@@ -51,7 +52,9 @@
             this.Controls.Add(this.CRVGestanteOdonto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestantesSinExamenOdontologico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Gestantes sin examen odontológico";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
