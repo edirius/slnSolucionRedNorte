@@ -1122,16 +1122,25 @@ namespace CapaUsuario
                         }
                     }
                 }
+                else {
+                    odt = oTG.ListarHistoriaClinicaXPaciente(nombre, app, apm);
 
-                odt = oTG.ListarHistoriaClinicaXPaciente(nombre, app, apm);
+                    ID_HC = odt.Rows[0]["idthistoriaclinica"].ToString();
 
-                if (odt.Rows.Count > 0)
-                {
-                    completo = true;
-                    mensaje = "Paciente gestando, no se puede grabar un nuevo control del gestante hasta un dia despues del parto.";
-                    nudHm.Focus();
+                    if (IdtHistoriaClinica != ID_HC)
+                    {
+                        if (odt.Rows.Count > 0)
+                        {
+                            completo = true;
+                            mensaje = "Paciente gestando, no se puede grabar un nuevo control del gestante hasta un dia despues del parto.";
+                            nudHm.Focus();
+                        }
+                    }
                 }
+
+                /*
                 
+                */
 
                 /*
                 odt = oTG.ListarFPPXCodigoHC(Codigo_Historia_Clinica,nombre,app,apm);
