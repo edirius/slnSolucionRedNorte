@@ -131,8 +131,8 @@ namespace CapaUsuario
             pbARN.Visible = false;
             pbCR.Visible = false;
 
+            //Codigo_Historia_Clinica = "";
 
- 
 
             bandera_combobox_año = true;
 
@@ -1707,7 +1707,7 @@ namespace CapaUsuario
 
         private void buMorbilidad_Click(object sender, EventArgs e)
         {
-            if (Codigo_Historia_Clinica != "") {
+            if (IdtHistoriaClinica != "") {
 
                 frmMorbilidad fMorbilidad = new frmMorbilidad();
                 fMorbilidad.Codigo_Historia_Clinica = Codigo_Historia_Clinica;
@@ -1731,7 +1731,7 @@ namespace CapaUsuario
         private void buVisitaDomiciliaria_Click(object sender, EventArgs e)
         {
 
-            if (Codigo_Historia_Clinica != "")
+            if (IdtHistoriaClinica != "")
             {
                 VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria fMantenimientoVisitaDomiciliaria = new VisitaDomiciliaria.frmMantenimientoVisitaDomiciliaria(IdtHistoriaClinica);
                 fMantenimientoVisitaDomiciliaria.Archivado = Archivado;
@@ -1744,7 +1744,7 @@ namespace CapaUsuario
 
         private void btnTerminoGestacion_Click(object sender, EventArgs e)
         {
-            if (Codigo_Historia_Clinica != "")
+            if (IdtHistoriaClinica != "")
             {
                 TerminoGestacion.frmMantenimientoTerminoGestacion fMantenimientoTerminoGestacion = new TerminoGestacion.frmMantenimientoTerminoGestacion(IdtHistoriaClinica);
                 fMantenimientoTerminoGestacion.Archivado = Archivado;
