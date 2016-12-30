@@ -208,7 +208,7 @@ namespace CapaUsuario
             cantidad_años = oHistoriaClinica.ListarYear().Rows.Count;
 
             establecer_combos_fecha_actual();
-
+            txtBuscar.Text = "";
             cbBuscar.SelectedItem = cbBuscar.Items[0];
 
             /*Id de obstetra*/

@@ -393,6 +393,8 @@ namespace CapaUsuario
             nudHv.Value = 0;
             nudHm.Value = 0;
 
+            dtpFUR.Value = DateTime.Now;
+
             odtEcografia.Rows.Clear();
             odtOdontologo.Rows.Clear();
 
