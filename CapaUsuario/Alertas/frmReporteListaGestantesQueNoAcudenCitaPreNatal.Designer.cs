@@ -42,6 +42,7 @@
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(715, 409);
             this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmReporteListaGestantesQueNoAcudenCitaPreNatal
             // 
@@ -52,6 +53,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteListaGestantesQueNoAcudenCitaPreNatal";
             this.Text = "Reporte de Lista de Gestantes que no Acuden a su Cita PreNatal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmReporteListaGestantesQueNoAcudenCitaPreNatal_Load);
             this.ResumeLayout(false);
 

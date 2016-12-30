@@ -42,6 +42,7 @@
             this.CRVGestantesEco.Name = "CRVGestantesEco";
             this.CRVGestantesEco.Size = new System.Drawing.Size(998, 536);
             this.CRVGestantesEco.TabIndex = 0;
+            this.CRVGestantesEco.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // GestantesSinExamenEcografico
             // 
@@ -51,7 +52,9 @@
             this.Controls.Add(this.CRVGestantesEco);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GestantesSinExamenEcografico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Gestantes sin examen ecográfico";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
