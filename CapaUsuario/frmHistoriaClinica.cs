@@ -1125,7 +1125,8 @@ namespace CapaUsuario
                 else {
                     odt = oTG.ListarHistoriaClinicaXPaciente(nombre, app, apm);
 
-                    ID_HC = odt.Rows[0]["idthistoriaclinica"].ToString();
+                    if (odt.Rows.Count > 0)
+                        ID_HC = odt.Rows[0]["idthistoriaclinica"].ToString();
 
                     if (IdtHistoriaClinica != ID_HC)
                     {
