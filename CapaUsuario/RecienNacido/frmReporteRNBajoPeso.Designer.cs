@@ -42,7 +42,6 @@
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(907, 412);
             this.crystalReportViewer1.TabIndex = 5;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmReporteRNBajoPeso
             // 
@@ -52,9 +51,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteRNBajoPeso";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmReporteRNBajoPeso";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Reporte de Recién Nacidos con Bajo Peso";
             this.ResumeLayout(false);
 
         }
